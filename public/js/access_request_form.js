@@ -40153,7 +40153,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "p-8" }, [
     _c(
       "form",
       {
@@ -40186,7 +40186,7 @@ var render = function() {
             )
           : _vm._e(),
         _vm._v(" "),
-        _c("h3", { staticClass: "mb-6" }, [_vm._v("Rep Information")]),
+        _c("h3", { staticClass: "mb-6" }, [_vm._v("Sales Rep Information")]),
         _vm._v(" "),
         _c("div", { staticClass: "mb-6" }, [
           _c(

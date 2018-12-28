@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="p-8">
         <form method="POST" @submit.prevent="submitForm">
             <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6" :class="{'alert-success' : formMessageType=='success', 'alert-danger' :
             formMessageType=='error'}" v-if="formMessage"
@@ -7,7 +7,7 @@
                 {{ formMessage }}
             </div>
 
-            <h3 class="mb-6">Rep Information</h3>
+            <h3 class="mb-6">Sales Rep Information</h3>
             <div class="mb-6">
                 <label for="sales_rep" class="block text-grey-darker text-sm font-bold mb-2">
                     Sales Representative requesting access:*
