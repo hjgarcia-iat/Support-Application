@@ -176,7 +176,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Davispeixoto\Laravel5Salesforce\SalesforceServiceProvider::class,
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
     ],
 
     /*
