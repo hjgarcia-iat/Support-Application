@@ -40492,7 +40492,7 @@ var render = function() {
               staticClass: "block text-grey-darker text-sm font-bold mb-2",
               attrs: { for: "district" }
             },
-            [_vm._v("School District:*")]
+            [_vm._v("District:*")]
           ),
           _vm._v(" "),
           _c("input", {
@@ -40616,7 +40616,7 @@ var render = function() {
               staticClass: "block text-grey-darker text-sm font-bold mb-2",
               attrs: { for: "zip_code" }
             },
-            [_vm._v("School:*")]
+            [_vm._v("Zip Code:*")]
           ),
           _vm._v(" "),
           _c("input", {
@@ -41414,154 +41414,186 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "mb-6" }, [
-          _c(
-            "label",
-            { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
-            [_vm._v("Version:*")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.ide_version,
-                  expression: "ide_version"
-                }
-              ],
-              attrs: {
-                id: "version-1",
-                name: "version",
-                type: "radio",
-                value: "IQWST2.0.5"
-              },
-              domProps: { checked: _vm._q(_vm.ide_version, "IQWST2.0.5") },
-              on: {
-                change: function($event) {
-                  _vm.ide_version = "IQWST2.0.5"
-                }
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.showVersion,
+                expression: "showVersion"
               }
-            }),
+            ],
+            staticClass: "mb-6"
+          },
+          [
+            _c(
+              "label",
+              { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
+              [_vm._v("Version:*")]
+            ),
             _vm._v(" "),
-            _c("label", { staticClass: "ml-2", attrs: { for: "version-1" } }, [
-              _vm._v("\n                    IQWST 2.0.5\n                ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.ide_version,
-                  expression: "ide_version"
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-1",
+                  name: "version",
+                  type: "radio",
+                  value: "IQWST2.0.5"
+                },
+                domProps: { checked: _vm._q(_vm.ide_version, "IQWST2.0.5") },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "IQWST2.0.5"
+                  }
                 }
-              ],
-              attrs: {
-                id: "version-2",
-                name: "version",
-                type: "radio",
-                value: "IQWST3.0.0"
-              },
-              domProps: { checked: _vm._q(_vm.ide_version, "IQWST3.0.0") },
-              on: {
-                change: function($event) {
-                  _vm.ide_version = "IQWST3.0.0"
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { staticClass: "ml-2", attrs: { for: "version-2" } }, [
-              _vm._v(
-                "\n                    IQWST 3.0.0 (Please note IQWST 3.0.0 is not yet available in IDE. Expected Release Date early August 2018)\n                "
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-1" } },
+                [_vm._v("\n                    IQWST 2.0.5\n                ")]
               )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.ide_version,
-                  expression: "ide_version"
-                }
-              ],
-              attrs: {
-                id: "version-3",
-                name: "version",
-                type: "radio",
-                value: "IQWSTCA"
-              },
-              domProps: { checked: _vm._q(_vm.ide_version, "IQWSTCA") },
-              on: {
-                change: function($event) {
-                  _vm.ide_version = "IQWSTCA"
-                }
-              }
-            }),
+            ]),
             _vm._v(" "),
-            _c("label", { staticClass: "ml-2", attrs: { for: "version-3" } }, [
-              _vm._v("\n                    IQWST California\n                ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-3" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.ide_version,
-                  expression: "ide_version"
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-2",
+                  name: "version",
+                  type: "radio",
+                  value: "IQWST3.0.0"
+                },
+                domProps: { checked: _vm._q(_vm.ide_version, "IQWST3.0.0") },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "IQWST3.0.0"
+                  }
                 }
-              ],
-              attrs: {
-                id: "version-4",
-                name: "version",
-                type: "radio",
-                value: "IQWSTOK"
-              },
-              domProps: { checked: _vm._q(_vm.ide_version, "IQWSTOK") },
-              on: {
-                change: function($event) {
-                  _vm.ide_version = "IQWSTOK"
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { staticClass: "ml-2", attrs: { for: "version-4" } }, [
-              _vm._v("\n                    IQWST Oklahoma\n                ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass:
-                "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-            },
-            [
-              _vm._v(
-                "Please indicate which version of IQWST IDE you will need."
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-2" } },
+                [
+                  _vm._v(
+                    "\n                    IQWST 3.0.0 (Please note IQWST 3.0.0 is not yet available in IDE. Expected Release Date early August 2018)\n                "
+                  )
+                ]
               )
-            ]
-          ),
-          _vm._v(" "),
-          _vm.formErrors.access_ide_version
-            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-3",
+                  name: "version",
+                  type: "radio",
+                  value: "IQWSTCA"
+                },
+                domProps: { checked: _vm._q(_vm.ide_version, "IQWSTCA") },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "IQWSTCA"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-3" } },
+                [
+                  _vm._v(
+                    "\n                    IQWST California\n                "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-4",
+                  name: "version",
+                  type: "radio",
+                  value: "IQWSTOK"
+                },
+                domProps: { checked: _vm._q(_vm.ide_version, "IQWSTOK") },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "IQWSTOK"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-4" } },
+                [
+                  _vm._v(
+                    "\n                    IQWST Oklahoma\n                "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c(
+              "small",
+              {
+                staticClass:
+                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
+              },
+              [
                 _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.formErrors.access_ide_version[0]) +
-                    "\n            "
+                  "Please indicate which version of IQWST IDE you will need."
                 )
-              ])
-            : _vm._e()
-        ]),
+              ]
+            ),
+            _vm._v(" "),
+            _vm.formErrors.access_ide_version
+              ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.formErrors.access_ide_version[0]) +
+                      "\n            "
+                  )
+                ])
+              : _vm._e()
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "mb-6" }, [
           _c(

@@ -70,7 +70,7 @@
             <h3 class="mb-6">School Information</h3>
 
             <div class="mb-6">
-                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">School District:*</label>
+                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District:*</label>
                 <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="district"
                        placeholder="District Name" name="district" v-model="district">
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please enter the name of the school district associated with this customer
@@ -92,7 +92,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="zip_code" class="block text-grey-darker text-sm font-bold mb-2">School:*</label>
+                <label for="zip_code" class="block text-grey-darker text-sm font-bold mb-2">Zip Code:*</label>
                 <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="zip_code" placeholder="School Zip code"
                        name="zip_code" v-model="zip">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.zip_code">
@@ -231,7 +231,7 @@
             </div>
 
 
-            <div class="mb-6">
+            <div class="mb-6" v-show="showVersion">
                 <label class="block text-grey-darker text-sm font-bold mb-2">Version:*</label>
 
                 <div class="mb-3">
