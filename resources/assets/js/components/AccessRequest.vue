@@ -194,8 +194,8 @@
 
             <div v-show="showEbooks">
                 <div class="mb-6">
-                    <label class="block text-grey-darker text-sm font-bold mb-2" for="access_ebook_list"> E-Book List</label>
-                    <select name="access_ebook_list" id="access_ebook_list" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                    <label class="block text-grey-darker text-sm font-bold mb-2" for="ebook_list"> E-Book List</label>
+                    <select name="ebook_list" id="ebook_list" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                             v-model="ebook" multiple>
                         <option value="">Select an E-Book...</option>
                         <option value="Active Physics">Active Physics</option>
@@ -224,8 +224,8 @@
                     </select>
                     <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one or more e-books. Use the Command
                         or Control key to select more than one.</small>
-                    <div class="text-sm text-red-dark mt-3" v-if="formErrors.access_ebook_list">
-                        {{ formErrors.access_ebook_list[0] }}
+                    <div class="text-sm text-red-dark mt-3" v-if="formErrors.ebook_list">
+                        {{ formErrors.ebook_list[0] }}
                     </div>
                 </div>
             </div>
@@ -394,7 +394,7 @@
                     'version'        : this.ide_version,
                     'time_frame'     : this.time_frame,
                     'zip_code'                      : this.zip,
-                    'access_ebook_list'             : this.ebook,
+                    'ebook_list'             : this.ebook,
                     'note'           : this.notes,
                 }).then(response => {
                     this.resetData();

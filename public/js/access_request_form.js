@@ -40121,7 +40121,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'version': this.ide_version,
                 'time_frame': this.time_frame,
                 'zip_code': this.zip,
-                'access_ebook_list': this.ebook,
+                'ebook_list': this.ebook,
                 'note': this.notes
             }).then(function (response) {
                 _this.resetData();
@@ -41220,7 +41220,7 @@ var render = function() {
                 "label",
                 {
                   staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                  attrs: { for: "access_ebook_list" }
+                  attrs: { for: "ebook_list" }
                 },
                 [_vm._v(" E-Book List")]
               ),
@@ -41238,11 +41238,7 @@ var render = function() {
                   ],
                   staticClass:
                     "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
-                  attrs: {
-                    name: "access_ebook_list",
-                    id: "access_ebook_list",
-                    multiple: ""
-                  },
+                  attrs: { name: "ebook_list", id: "ebook_list", multiple: "" },
                   on: {
                     change: function($event) {
                       var $$selectedVal = Array.prototype.filter
@@ -41401,11 +41397,11 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm.formErrors.access_ebook_list
+              _vm.formErrors.ebook_list
                 ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
                     _vm._v(
                       "\n                    " +
-                        _vm._s(_vm.formErrors.access_ebook_list[0]) +
+                        _vm._s(_vm.formErrors.ebook_list[0]) +
                         "\n                "
                     )
                   ])
