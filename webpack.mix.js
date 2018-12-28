@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+var tailwindcss = require('tailwindcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,4 +12,17 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .browserSync({
+        proxy: "127.0.0.1:8000",
+        files: [
+            "public/js/*.js",
+            "public/css/*.css",
+            "app/*.*",
+            "app/**/*.*",
+            "resources/views/**/*.*"
+        ]
+    });
+
+mix.postCss('resources/assets/css/app.css', 'public/css', [
+    tailwindcss('./tailwind.js'),
+]);

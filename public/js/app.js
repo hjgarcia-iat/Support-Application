@@ -1003,19 +1003,6 @@ var app = new Vue({
 
 
 window._ = __webpack_require__(12);
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-  window.$ = window.jQuery = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-  __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"bootstrap-sass\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-} catch (e) {}
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -30678,7 +30665,7 @@ if (false) {
 /* 40 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\nundefined\r\n^\r\n      File to import not found or unreadable: node_modules/bootstrap-sass/assets/stylesheets/bootstrap.\r\n      in c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\resources\\assets\\sass\\app.scss (line 9, column 1)\n    at runLoaders (c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\neo-async\\async.js:8077:18)\n    at options.error (c:\\Users\\Henry Garcia\\Desktop\\Work\\Web\\Code\\support.activatelearning.com\\node_modules\\node-sass\\lib\\index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
