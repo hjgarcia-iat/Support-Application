@@ -40061,6 +40061,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -41178,18 +41179,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass:
-                "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-            },
-            [
-              _vm._v(
-                "Select one or more of the following resources. - PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW."
-              )
-            ]
-          ),
+          _vm._m(0),
           _vm._v(" "),
           _vm.formErrors.resource
             ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
@@ -41488,11 +41478,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "ml-2", attrs: { for: "version-2" } },
-                [
-                  _vm._v(
-                    "\n                    IQWST 3.0.0 (Please note IQWST 3.0.0 is not yet available in IDE. Expected Release Date early August 2018)\n                "
-                  )
-                ]
+                [_vm._v("\n                    IQWST 3.0.0\n                ")]
               )
             ]),
             _vm._v(" "),
@@ -41877,7 +41863,29 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "small",
+      {
+        staticClass:
+          "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
+      },
+      [
+        _vm._v(
+          "Select one or more of the following resources.\n                "
+        ),
+        _c("br"),
+        _vm._v(
+          "PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW."
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

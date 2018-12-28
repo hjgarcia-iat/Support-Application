@@ -185,7 +185,8 @@
                         IMP CyberPD
                     </label>
                 </div>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one or more of the following resources. - PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.</small>
+                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one or more of the following resources.
+                    <br>PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.</small>
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.resource">
                     {{ formErrors.resource[0] }}
                 </div>
@@ -245,7 +246,7 @@
                     <input id="version-2" name="version"
                            type="radio" value="IQWST3.0.0" v-model="ide_version">
                     <label class="ml-2" for="version-2">
-                        IQWST 3.0.0 (Please note IQWST 3.0.0 is not yet available in IDE. Expected Release Date early August 2018)
+                        IQWST 3.0.0
                     </label>
                 </div>
                 <div class="mb-3">
