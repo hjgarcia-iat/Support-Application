@@ -1,11 +1,11 @@
 @extends('layout.app')
 
 @section('content')
-    <div id="digital-setup-request">
-        <digital-setup-request-form></digital-setup-request-form>
+    <div id="digital-setup">
+        <digital-setup-form></digital-setup-form>
     </div>
 @endsection
 
 @section('scripts')
-    <script src="{{ mix('js/access_request_form.js') }}"></script>
+    <script src="{{ mix('js/digital_setup_form.js') }}"></script>
 @endsection
