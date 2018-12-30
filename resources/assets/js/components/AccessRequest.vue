@@ -1,5 +1,6 @@
 <template>
     <div class="p-8">
+        <h1 class="mb-4">Access Request Form</h1>
         <form method="POST" @submit.prevent="submitForm">
             <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6"
                  :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}"
