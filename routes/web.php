@@ -8,3 +8,4 @@ Route::get('/access-request', 'AccessRequestController@create')->name('access_re
 Route::post('/access-request', 'AccessRequestController@store')->name('access_request.store');
 
 Route::get('/digital-setup-request','DigitalSetupController@create')->name('digital_setup_request.create');
+Route::post('/digital-setup-request','DigitalSetupController@store')->name('digital_setup_request.store');
