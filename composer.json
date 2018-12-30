@@ -12,7 +12,8 @@
         "doctrine/dbal": "~2.3",
         "msurguy/honeypot": "dev-master",
         "davispeixoto/laravel5-salesforce": "2.0.*",
-        "spinen/laravel-mail-assertions": "^0.3.0"
+        "spinen/laravel-mail-assertions": "^0.3.0",
+        "league/csv": "^9.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
