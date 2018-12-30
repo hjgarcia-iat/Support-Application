@@ -264,8 +264,8 @@
                     </label>
                 </div>
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please indicate which version of IQWST IDE you will need.</small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.access_ide_version">
-                    {{ formErrors.access_ide_version[0] }}
+                <div class="text-sm text-red-dark mt-3" v-if="formErrors.version">
+                    {{ formErrors.version[0] }}
                 </div>
             </div>
 
