@@ -40060,6 +40060,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -40124,7 +40165,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'note': this.notes
             }).then(function (response) {
                 _this.resetData();
-                _this.formMessage = response.data.success;
+                _this.formMessageType = 'success';
+                _this.formMessage = response.data.message;
                 _this.loading = false;
             }).catch(function (error) {
                 _this.formErrors = error.response.data;
@@ -40172,8 +40214,10 @@ var render = function() {
                 staticClass:
                   "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6",
                 class: {
-                  "alert-success": _vm.formMessageType == "success",
-                  "alert-danger": _vm.formMessageType == "error"
+                  "bg-green-lightest border border-green-light text-green-dark":
+                    _vm.formMessageType == "success",
+                  "bg-red-lightest border border-red-light":
+                    _vm.formMessageType == "error"
                 },
                 attrs: { role: "alert" }
               },
@@ -40326,7 +40370,7 @@ var render = function() {
               staticClass: "block text-grey-darker text-sm font-bold mb-2",
               attrs: { for: "first_name" }
             },
-            [_vm._v("Customer First Name:*")]
+            [_vm._v("Customer First\n                Name:*")]
           ),
           _vm._v(" "),
           _c("input", {
@@ -40360,9 +40404,9 @@ var render = function() {
           _vm.formErrors.first_name
             ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
                 _vm._v(
-                  "\n               " +
+                  "\n                " +
                     _vm._s(_vm.formErrors.first_name[0]) +
-                    "\n           "
+                    "\n            "
                 )
               ])
             : _vm._e()
@@ -40375,7 +40419,7 @@ var render = function() {
               staticClass: "block text-grey-darker text-sm font-bold mb-2",
               attrs: { for: "last_name" }
             },
-            [_vm._v("Customer Last Name:*")]
+            [_vm._v("Customer Last\n                Name:*")]
           ),
           _vm._v(" "),
           _c("input", {
@@ -40424,7 +40468,7 @@ var render = function() {
               staticClass: "block text-grey-darker text-sm font-bold mb-2",
               attrs: { for: "email" }
             },
-            [_vm._v("Customer Email Address:*")]
+            [_vm._v("Customer Email\n                Address:*")]
           ),
           _vm._v(" "),
           _c("input", {
@@ -40464,7 +40508,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "This MUST be a school email address (not gmail, yahoo, etc...)\n            "
+                "This MUST be a\n                school email address (not gmail, yahoo, etc...)\n            "
               )
             ]
           ),
@@ -40530,7 +40574,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "Please enter the name of the school district associated with this customer\n            "
+                "Please enter\n                the name of the school district associated with this customer\n            "
               )
             ]
           ),
@@ -40592,7 +40636,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "Please enter the name of the school associated with this customer\n            "
+                "Please enter\n                the name of the school associated with this customer\n            "
               )
             ]
           ),
@@ -41281,7 +41325,11 @@ var render = function() {
                         value: "Environmental Science and Biocomplexity"
                       }
                     },
-                    [_vm._v("Environmental Science and Biocomplexity")]
+                    [
+                      _vm._v(
+                        "Environmental Science and\n                        Biocomplexity\n                    "
+                      )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -41380,7 +41428,7 @@ var render = function() {
                 },
                 [
                   _vm._v(
-                    "Select one or more e-books. Use the Command\n                    or Control key to select more than one."
+                    "Select one\n                    or more e-books. Use the Command\n                    or Control key to select more than one.\n                "
                   )
                 ]
               ),
@@ -41558,7 +41606,7 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "Please indicate which version of IQWST IDE you will need."
+                  "Please indicate\n                which version of IQWST IDE you will need.\n            "
                 )
               ]
             ),
@@ -41749,7 +41797,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "Please indicate the length of time access is to be granted."
+                "Please indicate\n                the length of time access is to be granted.\n            "
               )
             ]
           ),
@@ -41812,7 +41860,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "Any additional information you may have - e.g. name of the school and/or district, product interest (K-5, 6-8, 9-12), etc."
+                "Any additional\n                information you may have - e.g. name of the school and/or district, product interest (K-5, 6-8,\n                9-12), etc.\n            "
               )
             ]
           )
@@ -41874,11 +41922,11 @@ var staticRenderFns = [
       },
       [
         _vm._v(
-          "Select one or more of the following resources.\n                "
+          "Select one or\n                more of the following resources.\n                "
         ),
         _c("br"),
         _vm._v(
-          "PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW."
+          "PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN\n                UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.\n            "
         )
       ]
     )
