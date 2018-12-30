@@ -116,6 +116,34 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name'              => 'Name',
+        'dm_name'           => 'District/IT Manager\'s Name',
+        'teacher_name'      => 'Teachers\'s Name',
+        'dm_email'          => 'District/IT Manager\'s Email Address',
+        'teacher_email'     => 'Teachers\'s Email Address',
+        'teacher_school'    => 'School Name',
+        'district_manager'  => 'District/IT Manager',
+        'curriculum'        => 'Curriculum',
+        'district'          => 'District',
+        'po_number'         => 'Purchase Order Number',
+        'start_date'        => 'Start Date',
+        'email'             => 'Email Address',
+        'first_name'        => 'First Name',
+        'last_name'         => 'Last Name',
+        'company'           => 'Company',
+        'zip'               => 'Zip code',
+        'zipcode'           => 'Zip code',
+        'description'       => 'Description',
+        'comment'           => 'Comment',
+        'teachers.*.name'   => 'Teacher Name',
+        'teachers.*.email'  => 'Teacher Email',
+        'teachers.*.school' => 'Teacher School',
+        'title'             => 'Title',
+        'city'              => 'City',
+        'state'             => 'State',
+        'license'           => 'License',
+        'company'           => 'School',
+    ],
 
 ];

@@ -30602,6 +30602,8 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 //
 //
 //
@@ -30775,19 +30777,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -30828,10 +30818,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.formErrors.hasOwnProperty(field);
         },
         addTeacher: function addTeacher() {
-            this.teachers.push(Vue.util.extend({}, this.teacher));
+            this.teachers.push(__WEBPACK_IMPORTED_MODULE_1_vue__["util"].extend({}, this.teacher));
         },
         removeTeacher: function removeTeacher(index) {
-            Vue.delete(this.teachers, index);
+            __WEBPACK_IMPORTED_MODULE_1_vue__["delete"](this.teachers, index);
         },
         submit: function submit() {
             var _this = this;
@@ -32407,7 +32397,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "p-8" }, [
+    _c("h1", { staticClass: "mb-4" }, [_vm._v("Digital Setup Request Form")]),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -32423,10 +32415,13 @@ var render = function() {
           ? _c(
               "div",
               {
-                staticClass: "alert mb-5",
+                staticClass:
+                  "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6",
                 class: {
-                  "alert-success": _vm.formMessageType == "success",
-                  "alert-danger": _vm.formMessageType == "error"
+                  "bg-green-lightest border border-green-light text-green-dark":
+                    _vm.formMessageType == "success",
+                  "bg-red-lightest border border-red-light":
+                    _vm.formMessageType == "error"
                 },
                 attrs: { role: "alert" }
               },
@@ -32438,740 +32433,756 @@ var render = function() {
             )
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "row mb-4" }, [
-          _vm._m(0),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            {
+              staticClass: "block text-grey-darker text-sm font-bold mb-2",
+              attrs: { for: "name" }
+            },
+            [_vm._v("PO Number:*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.name,
+                expression: "name"
+              }
+            ],
+            staticClass:
+              "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+            attrs: {
+              type: "text",
+              id: "name",
+              placeholder: "Enter Your Full Name",
+              name: "name"
+            },
+            domProps: { value: _vm.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.name = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.name
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.name[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            {
+              staticClass: "block text-grey-darker text-sm font-bold mb-2",
+              attrs: { for: "po_number" }
+            },
+            [_vm._v("PO Number:*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.po_number,
+                expression: "po_number"
+              }
+            ],
+            staticClass:
+              "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+            attrs: {
+              type: "text",
+              id: "po_number",
+              placeholder: "Enter PO Number",
+              name: "po_number"
+            },
+            domProps: { value: _vm.po_number },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.po_number = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.po_number
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.po_number[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            {
+              staticClass: "block text-grey-darker text-sm font-bold mb-2",
+              attrs: { for: "email" }
+            },
+            [_vm._v("PO Number:*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              }
+            ],
+            staticClass:
+              "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+            attrs: {
+              type: "text",
+              id: "email",
+              placeholder: "Enter your Email Address",
+              name: "email"
+            },
+            domProps: { value: _vm.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.email
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.email[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            {
+              staticClass: "block text-grey-darker text-sm font-bold mb-2",
+              attrs: { for: "district" }
+            },
+            [_vm._v("District Name:*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.district,
+                expression: "district"
+              }
+            ],
+            staticClass:
+              "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+            attrs: {
+              type: "text",
+              id: "district",
+              placeholder: "Enter District Name",
+              name: "district"
+            },
+            domProps: { value: _vm.district },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.district = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.formErrors.district
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.district[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mb-6" },
+          [
+            _c(
+              "label",
+              {
+                staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                attrs: { for: "start_date" }
+              },
+              [_vm._v("School Start Date:*")]
+            ),
+            _vm._v(" "),
+            _c("datepicker", {
+              attrs: {
+                format: "M/d/yyyy",
+                id: _vm.start_date,
+                "input-class":
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                placeholder: "Select School Start Date"
+              },
+              model: {
+                value: _vm.start_date,
+                callback: function($$v) {
+                  _vm.start_date = $$v
+                },
+                expression: "start_date"
+              }
+            }),
+            _vm._v(" "),
+            _vm.formErrors.start_date
+              ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.formErrors.start_date[0]) +
+                      "\n            "
+                  )
+                ])
+              : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            {
+              staticClass: "block text-grey-darker text-sm font-bold mb-2",
+              attrs: { for: "curriculum" }
+            },
+            [_vm._v("Curriculum")]
+          ),
           _vm._v(" "),
           _c(
-            "div",
+            "select",
             {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.curriculum,
+                  expression: "curriculum"
+                }
+              ],
               staticClass:
-                "col-12 col-lg-9 d-flex bg-light px-4 py-4 justify-content-center"
+                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+              attrs: { name: "curriculum", id: "curriculum" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.curriculum = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                }
+              }
             },
             [
-              _c(
-                "section",
-                {
-                  staticClass:
-                    "flex-fill d-flex flex-column justify-content-around"
-                },
-                [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "name" } },
-                      [_vm._v("PO Number:*")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.name,
-                          expression: "name"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "name",
-                        placeholder: "Enter Your Full Name",
-                        name: "name"
-                      },
-                      domProps: { value: _vm.name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.name = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.name
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.name[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "email" } },
-                      [_vm._v("PO Number:*")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.email,
-                          expression: "email"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "email",
-                        placeholder: "Enter your Email Address",
-                        name: "email"
-                      },
-                      domProps: { value: _vm.email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.email = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.email
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.email[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "po_number" } },
-                      [_vm._v("PO Number:*")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.po_number,
-                          expression: "po_number"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "po_number",
-                        placeholder: "Enter PO Number",
-                        name: "po_number"
-                      },
-                      domProps: { value: _vm.po_number },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.po_number = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.po_number
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.po_number[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "district" } },
-                      [_vm._v("District Name:*")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.district,
-                          expression: "district"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "district",
-                        placeholder: "Enter District Name",
-                        name: "district"
-                      },
-                      domProps: { value: _vm.district },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.district = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.district
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.district[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "sr-only",
-                          attrs: { for: "start_date" }
-                        },
-                        [_vm._v("School Start Date:*")]
-                      ),
-                      _vm._v(" "),
-                      _c("datepicker", {
-                        attrs: {
-                          format: "M/d/yyyy",
-                          id: _vm.start_date,
-                          "bootstrap-styling": true,
-                          placeholder: "Select School Start Date"
-                        },
-                        model: {
-                          value: _vm.start_date,
-                          callback: function($$v) {
-                            _vm.start_date = $$v
-                          },
-                          expression: "start_date"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.formErrors.start_date
-                        ? _c("div", { staticClass: "invalid-feedback" }, [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(_vm.formErrors.start_date[0]) +
-                                "\n                        "
-                            )
-                          ])
-                        : _vm._e()
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "curriculum" } },
-                      [_vm._v("Curriculum")]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.curriculum,
-                            expression: "curriculum"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { name: "curriculum", id: "curriculum" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.curriculum = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Select a curriculum")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Active Science" } }, [
-                          _vm._v("Active Science")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Conceptua Math" } }, [
-                          _vm._v("Conceptua Math")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IQWST IDE" } }, [
-                          _vm._v("IQWST IDE")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "IQWST Teacher Portal" } },
-                          [_vm._v("IQWST Teacher Portal")]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm.formErrors.curriculum
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.curriculum[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-check form-check-inline" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.district_manager,
-                            expression: "district_manager"
-                          }
-                        ],
-                        staticClass: "form-check-input",
-                        attrs: {
-                          type: "radio",
-                          name: "district_manager",
-                          id: "district_manager_1",
-                          value: "yes"
-                        },
-                        domProps: {
-                          checked: _vm._q(_vm.district_manager, "yes")
-                        },
-                        on: {
-                          change: function($event) {
-                            _vm.district_manager = "yes"
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-check-label",
-                          attrs: { for: "district_manager_1" }
-                        },
-                        [_vm._v("Yes")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-check form-check-inline" }, [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.district_manager,
-                            expression: "district_manager"
-                          }
-                        ],
-                        staticClass: "form-check-input",
-                        attrs: {
-                          type: "radio",
-                          name: "district_manager",
-                          id: "district_manager_2",
-                          value: "no"
-                        },
-                        domProps: {
-                          checked: _vm._q(_vm.district_manager, "no")
-                        },
-                        on: {
-                          change: function($event) {
-                            _vm.district_manager = "no"
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-check-label",
-                          attrs: { for: "district_manager_2" }
-                        },
-                        [_vm._v("No")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _vm.formErrors.district_manager
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.district_manager[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ])
-                ]
-              )
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Select a curriculum")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "Active Science" } }, [
+                _vm._v("Active Science")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "Conceptua Math" } }, [
+                _vm._v("Conceptua Math")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "IQWST IDE" } }, [
+                _vm._v("IQWST IDE")
+              ]),
+              _vm._v(" "),
+              _c("option", { attrs: { value: "IQWST Teacher Portal" } }, [
+                _vm._v("IQWST Teacher Portal")
+              ])
             ]
-          )
+          ),
+          _vm._v(" "),
+          _vm.formErrors.curriculum
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.curriculum[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-6" }, [
+          _c(
+            "label",
+            { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
+            [_vm._v("Is there a District/IT Manager Available?")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.district_manager,
+                  expression: "district_manager"
+                }
+              ],
+              attrs: {
+                type: "radio",
+                name: "district_manager",
+                id: "district_manager_1",
+                value: "yes"
+              },
+              domProps: { checked: _vm._q(_vm.district_manager, "yes") },
+              on: {
+                change: function($event) {
+                  _vm.district_manager = "yes"
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "ml-2 text-grey-darker text-sm font-bold mb-2",
+                attrs: { for: "district_manager_1" }
+              },
+              [_vm._v("Yes")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.district_manager,
+                  expression: "district_manager"
+                }
+              ],
+              attrs: {
+                type: "radio",
+                name: "district_manager",
+                id: "district_manager_2",
+                value: "no"
+              },
+              domProps: { checked: _vm._q(_vm.district_manager, "no") },
+              on: {
+                change: function($event) {
+                  _vm.district_manager = "no"
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "ml-2 text-grey-darker text-sm font-bold mb-2",
+                attrs: { for: "district_manager_2" }
+              },
+              [_vm._v("No")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.formErrors.district_manager
+            ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.formErrors.district_manager[0]) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
         ]),
         _vm._v(" "),
         _vm.district_manager === "yes"
-          ? _c("div", { staticClass: "row mb-4" }, [
-              _vm._m(2),
+          ? _c("div", { staticClass: "mb-4" }, [
+              _c("p", [
+                _vm._v(
+                  "\n                If you have a District Manager /IT coordinator that will be setting up your district in IDE, Please provide their information here. You do not need to provide specific teacher information if you have a District/IT Manager.\n            "
+                )
+              ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-12 col-lg-9 bg-light px-4 py-4" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                    If you have a District Manager /IT coordinator that will be setting up your district in IDE, Please provide their information here. You do not need to provide specific teacher information if you have a District/IT Manager.\n                "
-                  )
+              _c("div", { staticClass: "d-flex justify-content-between" }, [
+                _c("div", { staticClass: "mb-6 w-100 mr-2" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "block text-grey-darker text-sm font-bold mb-2",
+                      attrs: { for: "dm_name" }
+                    },
+                    [_vm._v("Name")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.dm_name,
+                        expression: "dm_name"
+                      }
+                    ],
+                    staticClass:
+                      "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: {
+                      type: "text",
+                      id: "dm_name",
+                      placeholder: "District/IT Manager's Name",
+                      name: "dm_name"
+                    },
+                    domProps: { value: _vm.dm_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.dm_name = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.dm_name
+                    ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.formErrors.dm_name[0]) +
+                            "\n                    "
+                        )
+                      ])
+                    : _vm._e()
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "d-flex justify-content-between" }, [
-                  _c("div", { staticClass: "form-group w-100 mr-2" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "dm_name" } },
-                      [_vm._v("Name")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.dm_name,
-                          expression: "dm_name"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "dm_name",
-                        placeholder: "District/IT Manager's Name",
-                        name: "dm_name"
-                      },
-                      domProps: { value: _vm.dm_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.dm_name = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.dm_name
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.dm_name[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ]),
+                _c("div", { staticClass: "mb-6 w-100 ml-2" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "block text-grey-darker text-sm font-bold mb-2",
+                      attrs: { for: "dm_email" }
+                    },
+                    [_vm._v("Email")]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "form-group w-100 ml-2" }, [
-                    _c(
-                      "label",
-                      { staticClass: "sr-only", attrs: { for: "dm_email" } },
-                      [_vm._v("Email")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.dm_email,
-                          expression: "dm_email"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "text",
-                        id: "dm_email",
-                        placeholder: "District/IT Manager's Email Address",
-                        name: "dm_email"
-                      },
-                      domProps: { value: _vm.dm_email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.dm_email = $event.target.value
-                        }
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.dm_email,
+                        expression: "dm_email"
                       }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.dm_email
-                      ? _c("div", { staticClass: "invalid-feedback" }, [
-                          _vm._v(
-                            "\n                            " +
-                              _vm._s(_vm.formErrors.dm_email[0]) +
-                              "\n                        "
-                          )
-                        ])
-                      : _vm._e()
-                  ])
+                    ],
+                    staticClass:
+                      "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: {
+                      type: "text",
+                      id: "dm_email",
+                      placeholder: "District/IT Manager's Email Address",
+                      name: "dm_email"
+                    },
+                    domProps: { value: _vm.dm_email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.dm_email = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.dm_email
+                    ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.formErrors.dm_email[0]) +
+                            "\n                    "
+                        )
+                      ])
+                    : _vm._e()
                 ])
               ])
             ])
           : _vm._e(),
         _vm._v(" "),
         _vm.district_manager === "no"
-          ? _c("div", { staticClass: "row mb-4" }, [
-              _vm._m(3),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-12 col-lg-9 bg-light px-4 py-4" },
-                [
-                  _c("p", [
-                    _vm._v(
-                      "\n                    If you do not have a dedicated District/IT Manager please complete the teacher information below.\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "If you need to add more than one teacher click the button below\n\n                "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-right" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { href: "" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.addTeacher($event)
-                          }
+          ? _c(
+              "div",
+              { staticClass: "mb-4" },
+              [
+                _c("p", [
+                  _vm._v(
+                    "\n                If you do not have a dedicated District/IT Manager please complete the teacher information below.\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    "If you need to add more than one teacher click the button below\n\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-right" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.addTeacher($event)
                         }
-                      },
-                      [
-                        _vm._v("Add More Teachers\n                        "),
-                        _c("i", { staticClass: "fa fa-plus-circle" })
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.teachers, function(teacher, key, index) {
-                    return _c(
-                      "section",
-                      { staticClass: "d-flex justify-content-between" },
-                      [
-                        _c("div", { staticClass: "form-group" }, [
-                          _c(
-                            "label",
+                      }
+                    },
+                    [
+                      _vm._v("Add More Teachers\n                    "),
+                      _c("i", { staticClass: "fa fa-plus-circle" })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.teachers, function(teacher, key, index) {
+                  return _c(
+                    "section",
+                    { staticClass: "flex justify-between items-center" },
+                    [
+                      _c("div", { staticClass: "mr-2" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "block text-grey-darker text-sm font-bold mb-2",
+                            attrs: { for: "teacher_name_" + index }
+                          },
+                          [_vm._v("Name")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
                             {
-                              staticClass: "sr-only",
-                              attrs: { for: "teacher_name_" + index }
-                            },
-                            [_vm._v("Name")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: teacher.name,
-                                expression: "teacher.name"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "teacher_name_" + index,
-                              placeholder: "Teacher Full Name",
-                              name: "teachers[]['name']"
-                            },
-                            domProps: { value: teacher.name },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(teacher, "name", $event.target.value)
-                              }
+                              name: "model",
+                              rawName: "v-model",
+                              value: teacher.name,
+                              expression: "teacher.name"
                             }
-                          }),
-                          _vm._v(" "),
-                          _vm.checkForArrayError("teachers." + key + ".name")
-                            ? _c("div", { staticClass: "invalid-feedback" }, [
+                          ],
+                          staticClass:
+                            "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                          attrs: {
+                            type: "text",
+                            id: "teacher_name_" + index,
+                            placeholder: "Teacher Full Name",
+                            name: "teachers[]['name']"
+                          },
+                          domProps: { value: teacher.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(teacher, "name", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.checkForArrayError("teachers." + key + ".name")
+                          ? _c(
+                              "div",
+                              { staticClass: "text-sm text-red-dark mt-3" },
+                              [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                        " +
                                     _vm._s(
                                       _vm.formErrors[
                                         "teachers." + key + ".name"
                                       ][0]
                                     ) +
-                                    "\n                        "
+                                    "\n                    "
                                 )
-                              ])
-                            : _vm._e()
-                        ]),
+                              ]
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mr-2" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "block text-grey-darker text-sm font-bold mb-2",
+                            attrs: { for: "teacher_email_" + index }
+                          },
+                          [_vm._v("Email")]
+                        ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "form-group mx-3" }, [
-                          _c(
-                            "label",
+                        _c("input", {
+                          directives: [
                             {
-                              staticClass: "sr-only",
-                              attrs: { for: "teacher_email_" + index }
-                            },
-                            [_vm._v("Email")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: teacher.email,
-                                expression: "teacher.email"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "teacher_email_" + index,
-                              placeholder: "Teacher Email Address",
-                              name: "teachers[]['email']"
-                            },
-                            domProps: { value: teacher.email },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(teacher, "email", $event.target.value)
-                              }
+                              name: "model",
+                              rawName: "v-model",
+                              value: teacher.email,
+                              expression: "teacher.email"
                             }
-                          }),
-                          _vm._v(" "),
-                          _vm.checkForArrayError("teachers." + key + ".email")
-                            ? _c("div", { staticClass: "invalid-feedback" }, [
+                          ],
+                          staticClass:
+                            "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                          attrs: {
+                            type: "text",
+                            id: "teacher_email_" + index,
+                            placeholder: "Teacher Email Address",
+                            name: "teachers[]['email']"
+                          },
+                          domProps: { value: teacher.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(teacher, "email", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.checkForArrayError("teachers." + key + ".email")
+                          ? _c(
+                              "div",
+                              { staticClass: "text-sm text-red-dark mt-3" },
+                              [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                        " +
                                     _vm._s(
                                       _vm.formErrors[
                                         "teachers." + key + ".email"
                                       ][0]
                                     ) +
-                                    "\n                        "
+                                    "\n                    "
                                 )
-                              ])
-                            : _vm._e()
-                        ]),
+                              ]
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mr-2" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "block text-grey-darker text-sm font-bold mb-2",
+                            attrs: { for: "teacher_school_" + index }
+                          },
+                          [_vm._v("School")]
+                        ),
                         _vm._v(" "),
-                        _c("div", { staticClass: "form-group" }, [
-                          _c(
-                            "label",
+                        _c("input", {
+                          directives: [
                             {
-                              staticClass: "sr-only",
-                              attrs: { for: "teacher_school_" + index }
-                            },
-                            [_vm._v("School")]
-                          ),
-                          _vm._v(" "),
-                          _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: teacher.school,
-                                expression: "teacher.school"
-                              }
-                            ],
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "teacher_school_" + index,
-                              placeholder: "School Name",
-                              name: "teachers[]['school']"
-                            },
-                            domProps: { value: teacher.school },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(teacher, "school", $event.target.value)
-                              }
+                              name: "model",
+                              rawName: "v-model",
+                              value: teacher.school,
+                              expression: "teacher.school"
                             }
-                          }),
-                          _vm._v(" "),
-                          _vm.checkForArrayError("teachers." + key + ".school")
-                            ? _c("div", { staticClass: "invalid-feedback" }, [
+                          ],
+                          staticClass:
+                            "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                          attrs: {
+                            type: "text",
+                            id: "teacher_school_" + index,
+                            placeholder: "School Name",
+                            name: "teachers[]['school']"
+                          },
+                          domProps: { value: teacher.school },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(teacher, "school", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.checkForArrayError("teachers." + key + ".school")
+                          ? _c(
+                              "div",
+                              { staticClass: "text-sm text-red-dark mt-3" },
+                              [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                        " +
                                     _vm._s(
                                       _vm.formErrors[
                                         "teachers." + key + ".school"
                                       ][0]
                                     ) +
-                                    "\n                        "
+                                    "\n                    "
                                 )
-                              ])
-                            : _vm._e()
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "ml-3" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "btn btn-sm btn-default",
-                              attrs: { href: "" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  _vm.removeTeacher(key)
-                                }
+                              ]
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "flex items-end h-full" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                            attrs: { href: "" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                _vm.removeTeacher(key)
                               }
-                            },
-                            [_c("i", { staticClass: "fa fa-remove" })]
-                          )
-                        ])
-                      ]
-                    )
-                  })
-                ],
-                2
-              )
-            ])
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-remove" })]
+                        )
+                      ])
+                    ]
+                  )
+                })
+              ],
+              2
+            )
           : _vm._e(),
         _vm._v(" "),
         _c("hr"),
@@ -33180,7 +33191,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-primary mr-2",
+              staticClass:
+                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [
@@ -33198,7 +33210,8 @@ var render = function() {
           _c(
             "button",
             {
-              staticClass: "btn btn-default",
+              staticClass:
+                "bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
               attrs: { type: "reset" },
               on: {
                 click: function($event) {
@@ -33217,40 +33230,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-lg-3" }, [
-      _c("p", [_vm._v("Customer Information")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", [
-      _c("strong", [_vm._v("Is there a District/IT Manager Available?")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-lg-3" }, [
-      _c("p", [_vm._v("District Manager Information")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-lg-3" }, [
-      _c("p", [_vm._v("Teacher Information")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
