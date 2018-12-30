@@ -40060,8 +40060,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -41845,7 +41843,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-grey hover:bg-grey-darker text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+              "bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
             attrs: { type: "reset" },
             on: {
               click: function($event) {

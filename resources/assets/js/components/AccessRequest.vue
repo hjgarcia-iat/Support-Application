@@ -314,7 +314,6 @@
                 </div>
             </div>
 
-
             <div class="mb-6">
                 <label for="note" class="block text-grey-darker text-sm font-bold mb-2">Notes</label>
 
@@ -325,12 +324,11 @@
 
             <hr class="border-t mt-8 mb-6">
 
-
             <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading">
                 <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
                 Send
             </button>
-            <button type="reset" class="bg-grey hover:bg-grey-darker text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click.prevent="clearForm">
+            <button type="reset" class="bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click.prevent="clearForm">
                 <i class="fa fa-remove"></i>
                 Clear
             </button>
