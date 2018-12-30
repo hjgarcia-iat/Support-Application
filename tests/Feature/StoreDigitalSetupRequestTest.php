@@ -17,6 +17,66 @@ class StoreDigitalSetupRequestTest extends TestCase
     /**
      * @test
      */
+    public function we_can_send_the_digital_setup_request_form_with_it_manager_information()
+    {
+        $response = $this->from(route('digital_setup_request.create'))
+            ->post(route('digital_setup_request.store'), $this->validData());
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Your message was sent!']);
+
+        $this->seeEmailWasSent();
+        $this->seeEmailTo(env('DESK_SUPPORT_EMAIL'));
+        $this->seeEmailFrom($this->validData()['email']);
+        $this->seeEmailSubjectContains('NEW ORDER - IDE setup form');
+        $this->seeEmailContains($this->validData()['name']);
+        $this->seeEmailContains($this->validData()['email']);
+        $this->seeEmailContains($this->validData()['po_number']);
+        $this->seeEmailContains($this->validData()['district']);
+        $this->seeEmailContains($this->validData()['start_date']);
+        $this->seeEmailContains($this->validData()['curriculum']);
+        $this->seeEmailContains($this->validData()['dm_name']);
+        $this->seeEmailContains($this->validData()['dm_email']);
+    }
+
+    /**
+     * @test
+     */
+    public function we_can_send_digital_setup_information_with_teacher_information()
+    {
+        $response = $this->from(route('digital_setup_request.create'))
+            ->post(route('digital_setup_request.store'), $this->validData([
+                'district_manager' => 'no',
+                'teachers'         => [
+                    [
+                        'name'   => 'Jane Doe',
+                        'email'  => 'email@email.com',
+                        'school' => 'school',
+                    ],
+                ],
+            ]));
+
+        $response->assertStatus(200);
+        $response->assertJson(['success' => 'Your message was sent!']);
+
+        $this->seeEmailWasSent();
+        $this->seeEmailSubjectContains('NEW ORDER - IDE setup form');
+        $this->seeEmailFrom($this->validData()['email']);
+        $this->seeEmailContains($this->validData()['name']);
+        $this->seeEmailContains($this->validData()['email']);
+        $this->seeEmailContains($this->validData()['po_number']);
+        $this->seeEmailContains($this->validData()['district']);
+        $this->seeEmailContains($this->validData()['start_date']);
+        $this->seeEmailContains($this->validData()['curriculum']);
+        $this->seeEmailContains('Jane Doe');
+        $this->seeEmailContains('email@email.com');
+        $this->seeEmailContains('school');
+    }
+
+
+    /**
+     * @test
+     */
     public function the_name_field_is_required()
     {
         $response = $this->from(route('digital_setup_request.create'))
