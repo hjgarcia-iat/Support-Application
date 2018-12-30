@@ -41,6 +41,22 @@ class AccessFormRequest extends FormRequest
             $rules['ebook_list'] = 'required';
         }
 
+        if (!empty($resource) and in_array('IQWST Demo Portal', $resource)) {
+            $rules['version'] = 'required';
+        }
+
+        if (!empty($resource) and in_array('California Demo Portal', $resource)) {
+            $rules['version'] = 'required';
+        }
+
+        if (!empty($resource) and in_array('IQWST IDE Demo', $resource)) {
+            $rules['version'] = 'required';
+        }
+
+        if (!empty($resource) and in_array('IQWST IDE Demo - Spanish', $resource)) {
+            $rules['version'] = 'required';
+        }
+
         return $rules;
     }
 }

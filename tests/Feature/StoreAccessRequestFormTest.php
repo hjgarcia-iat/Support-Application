@@ -233,6 +233,62 @@ class StoreAccessRequestFormTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function that_when_resource_field_is_when_iqwst_demo_portal_the_version_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['IQWST Demo Portal'], 'version' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('version');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
+     * @test
+     */
+    public function test_that_when_resource_field_is_california_demo_portal_the_version_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['California Demo Portal'], 'version' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('version');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
+     * @test
+     */
+    public function test_that_when_resource_field_is_iqwst_ide_demo_the_version_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['IQWST IDE Demo'], 'version' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('version');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
+     * @test
+     */
+    public function test_that_when_resource_field_is_iqwst_ide_demo_spanish_the_version_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['IQWST IDE Demo - Spanish'], 'version' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('version');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
      * Get valid form data
      *
      * @param array $overrides
@@ -242,16 +298,16 @@ class StoreAccessRequestFormTest extends TestCase
     {
         return array_merge([
             'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'jdoe@email.com',
-            'district' => 'District',
-            'school' => 'School',
-            'resource' => ['IQWST'],
-            'version' => 'IQWST2.0.5',
-            'sales_rep' => 'test@email.com',
+            'last_name'  => 'Doe',
+            'email'      => 'jdoe@email.com',
+            'district'   => 'District',
+            'school'     => 'School',
+            'resource'   => ['IQWST'],
+            'version'    => 'IQWST2.0.5',
+            'sales_rep'  => 'test@email.com',
             'time_frame' => '2 weeks',
-            'note' => 'Note',
-            'zip_code' => factory(Zip::class)->create(['zip_code' => '00000'])->zip_code,
+            'note'       => 'Note',
+            'zip_code'   => factory(Zip::class)->create(['zip_code' => '00000'])->zip_code,
             'ebook_list' => ['Some Book'],
         ], $overrides);
     }
