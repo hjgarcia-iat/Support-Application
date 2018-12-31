@@ -11,3 +11,4 @@ Route::get('/digital-setup-request', 'DigitalSetupController@create')->name('dig
 Route::post('/digital-setup-request', 'DigitalSetupController@store')->name('digital_setup_request.store');
 
 Route::get('/conceptua-math/request-a-demo', 'RequestDemoController@create')->name('conceptua.request_demo.create');
+Route::post('/conceptua-math/request-a-demo', 'RequestDemoController@store')->name('conceptua.request_demo.store');
