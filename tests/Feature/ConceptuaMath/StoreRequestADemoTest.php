@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\ConceptuaMath;
 
+use App\Services\CRMInterface;
+use App\Services\FakeCRM;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Spinen\MailAssertions\MailTracking;
@@ -14,6 +16,31 @@ use Tests\TestCase;
 class StoreRequestADemoTest extends TestCase
 {
     use MailTracking, DatabaseTransactions, DatabaseMigrations;
+
+    /**
+     * @var FakeCRM
+     */
+    public $salesforce;
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->salesforce = new FakeCRM();
+        $this->app->instance(CRMInterface::class, $this->salesforce);
+    }
+
+    public function test_we_can_store_conceptua_demo_request()
+    {
+        $response = $this->from(route('conceptua.request_demo.create'))
+            ->post(route('conceptua.request_demo.store'), $this->validParams());
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Your message was sent!']);
+
+        $this->seeEmailWasSent();
+        $this->seeEmailTo($this->validParams()['email']);
+        $this->seeEmailContains($this->validParams()['first_name']);
+    }
 
 
     /**

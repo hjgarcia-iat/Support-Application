@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RequestADemoForm;
+use App\Mail\RequestADemoMail;
+use App\Services\CRMInterface;
 
 /**
  * Class RequestDemoController
@@ -10,6 +12,17 @@ use App\Http\Requests\RequestADemoForm;
  */
 class RequestDemoController extends Controller
 {
+    /**
+     * @var CRMInterface
+     */
+    private $crm;
+
+    public function __construct(CRMInterface $crm)
+    {
+        $this->crm = $crm;
+    }
+
+
     /**
      * Show create form
      *
@@ -22,6 +35,8 @@ class RequestDemoController extends Controller
 
     public function store(RequestADemoForm $request)
     {
+        $this->crm->createConceptuaDemoRequestLead($request);
 
+        \Mail::to($request->get('email'))->send(new RequestADemoMail($request));
     }
 }

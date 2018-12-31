@@ -32,5 +32,6 @@
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value=":memory:"/>
         <env name="DESK_SUPPORT_EMAIL" value="support@email.com"/>
+        <env name="GENERAL_ACTIVATE_LEARNING_EMAIL" value="general@email.com"/>
     </php>
 </phpunit>
