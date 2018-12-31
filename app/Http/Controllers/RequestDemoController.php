@@ -38,5 +38,10 @@ class RequestDemoController extends Controller
         $this->crm->createConceptuaDemoRequestLead($request);
 
         \Mail::to($request->get('email'))->send(new RequestADemoMail($request));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'The request was sent!'
+        ]);
     }
 }

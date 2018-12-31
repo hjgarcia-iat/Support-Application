@@ -35,7 +35,7 @@ class StoreRequestADemoTest extends TestCase
             ->post(route('conceptua.request_demo.store'), $this->validParams());
 
         $response->assertStatus(200);
-        $response->assertJson(['message' => 'Your message was sent!']);
+        $response->assertJson(['message' => 'The request was sent!']);
 
         $this->seeEmailWasSent();
         $this->seeEmailTo($this->validParams()['email']);
