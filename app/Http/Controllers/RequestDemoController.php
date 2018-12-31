@@ -22,7 +22,6 @@ class RequestDemoController extends Controller
         $this->crm = $crm;
     }
 
-
     /**
      * Show create form
      *
