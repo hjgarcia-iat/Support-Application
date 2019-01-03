@@ -3,9 +3,36 @@
 namespace Tests\Feature\ConceptuaMath;
 
 use Tests\TestCase;
+use App\Services\FakeCRM;
+use App\Services\CRMInterface;
+use Spinen\MailAssertions\MailTracking;
 
 class StoreCaseStudentRequestTest extends TestCase
 {
+    use MailTracking;
+
+    /**
+     * @var FakeCRM
+     */
+    public $salesforce;
+
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->salesforce = new FakeCRM();
+        $this->app->instance(CRMInterface::class, $this->salesforce);
+    }
+
+    public function test_we_can_send_a_case_study_request()
+    {
+        $response = $this->json('post', route('conceptua.request_case.store'), $this->validParams());
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Your message was sent.']);
+
+        $this->seeEmailWasSent()->seeEmailTo($this->validParams()['email']);
+    }
+
     /**
      * @test
      */
