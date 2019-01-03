@@ -30607,6 +30607,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormAlert__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormAlert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormAlert__);
 //
 //
 //
@@ -30774,19 +30776,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
+
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */]
+        Datepicker: __WEBPACK_IMPORTED_MODULE_0_vuejs_datepicker__["a" /* default */],
+        Alert: __WEBPACK_IMPORTED_MODULE_2__components_partials_FormAlert___default.a
     },
     data: function data() {
         return {
@@ -32414,27 +32412,9 @@ var render = function() {
         }
       },
       [
-        _vm.formMessage
-          ? _c(
-              "div",
-              {
-                staticClass:
-                  "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6",
-                class: {
-                  "bg-green-lightest border border-green-light text-green-dark":
-                    _vm.formMessageType == "success",
-                  "bg-red-lightest border border-red-light":
-                    _vm.formMessageType == "error"
-                },
-                attrs: { role: "alert" }
-              },
-              [
-                _vm._v(
-                  "\n            " + _vm._s(_vm.formMessage) + "\n        "
-                )
-              ]
-            )
-          : _vm._e(),
+        _c("alert", {
+          attrs: { message: _vm.formMessage, type: _vm.formMessageType }
+        }),
         _vm._v(" "),
         _c("div", { staticClass: "mb-6" }, [
           _c(
@@ -33229,7 +33209,8 @@ var render = function() {
             ]
           )
         ])
-      ]
+      ],
+      1
     )
   ])
 }
@@ -33240,6 +33221,136 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-e023a140", module.exports)
+  }
+}
+
+/***/ }),
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(9)
+/* script */
+var __vue_script__ = __webpack_require__(71)
+/* template */
+var __vue_template__ = __webpack_require__(72)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/partials/FormAlert.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0647d0f2", Component.options)
+  } else {
+    hotAPI.reload("data-v-0647d0f2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['message', 'type']
+});
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.message
+    ? _c(
+        "div",
+        {
+          staticClass:
+            "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6",
+          class: {
+            "bg-green-lightest border border-green-light text-green-dark":
+              _vm.type === "success",
+            "bg-red-lightest border border-red-light": _vm.type == "error"
+          },
+          attrs: { role: "alert" }
+        },
+        [
+          _vm._v("\n    " + _vm._s(_vm.message) + "\n    "),
+          _vm.type === "success"
+            ? _c("p", [
+                _vm._v("\n        Go Back to\n        "),
+                _c("a", { attrs: { href: "http://activatelearning.com" } }, [
+                  _vm._v("Activate Learning")
+                ])
+              ])
+            : _vm._e()
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0647d0f2", module.exports)
   }
 }
 

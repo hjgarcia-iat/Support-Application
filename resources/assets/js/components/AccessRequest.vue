@@ -2,12 +2,7 @@
     <div class="p-8">
         <h1 class="mb-4">Access Request Form</h1>
         <form method="POST" @submit.prevent="submitForm">
-            <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6"
-                 :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}"
-                 v-if="formMessage"
-                 role="alert">
-                {{ formMessage }}
-            </div>
+            <alert :message=formMessage :type=formMessageType></alert>
 
             <h3 class="mb-6">Sales Rep Information</h3>
             <div class="mb-6">
@@ -379,7 +374,12 @@
 </template>
 
 <script>
+    import Alert from '../components/partials/FormAlert.vue'
+
     export default {
+        components: {
+            Alert
+        },
         data() {
             return {
                 rep: '',
@@ -397,6 +397,7 @@
                 loading: false,
                 formErrors: {},
                 formMessage: '',
+                formMessageType: 'success',
             }
         },
         methods: {
@@ -416,7 +417,6 @@
                 this.loading = false;
                 this.formErrors = {};
                 this.formMessage = '';
-                this.formMessageType = 'success';
             },
             clearForm() {
                 this.resetData();

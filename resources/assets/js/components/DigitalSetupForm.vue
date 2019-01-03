@@ -2,13 +2,7 @@
     <div class="p-8">
         <h1 class="mb-4">Digital Setup Request Form</h1>
         <form @submit.prevent="submit">
-            <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6"
-                 :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}"
-                 v-if="formMessage"
-                 role="alert">
-                {{ formMessage }}
-            </div>
-
+            <alert :message=formMessage :type=formMessageType></alert>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
                 <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="Enter Your Full Name"
@@ -172,12 +166,14 @@
 </template>
 
 <script>
-    import Datepicker from 'vuejs-datepicker';
-    import * as Vue from "vue";
+    import Datepicker from "vuejs-datepicker"
+    import * as Vue from "vue"
+    import Alert from "../components/partials/FormAlert"
 
     export default {
         components: {
-            Datepicker
+            Datepicker,
+            Alert
         },
         data() {
             return {
