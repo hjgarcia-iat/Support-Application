@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReturnRequestForm;
 use Illuminate\Http\Request;
 
 /**
@@ -18,5 +19,10 @@ class ReturnRequestController extends Controller
     public function create()
     {
         return view('return_request.create');
+    }
+
+    public function store(ReturnRequestForm $request)
+    {
+
     }
 }
