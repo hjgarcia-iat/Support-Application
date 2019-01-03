@@ -17,3 +17,4 @@ Route::get('/conceptua-math/request-a-quote', 'RequestQuoteController@create')->
 Route::post('/conceptua-math/request-a-quote', 'RequestQuoteController@store')->name('conceptua.request_quote.store');
 
 Route::get('/conceptua-math/request-a-case-study', 'RequestCaseController@create')->name('conceptua.request_case.create');
+Route::post('/conceptua-math/request-a-case-study', 'RequestCaseController@store')->name('conceptua.request_case.store');
