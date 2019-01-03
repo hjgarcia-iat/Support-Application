@@ -14,6 +14,7 @@ var tailwindcss = require('tailwindcss');
 mix.js('resources/assets/js/access_request_form.js', 'public/js')
     .js('resources/assets/js/digital_setup_form.js', 'public/js')
     .js('resources/assets/js/request_demo_form.js', 'public/js')
+    .js('resources/assets/js/request_quote_form.js', 'public/js')
     .browserSync({
         proxy: "127.0.0.1:8000",
         files: [
