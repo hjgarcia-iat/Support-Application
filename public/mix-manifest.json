@@ -2,6 +2,7 @@
     "/js/access_request_form.js": "/js/access_request_form.js",
     "/css/app.css": "/css/app.css",
     "/js/digital_setup_form.js": "/js/digital_setup_form.js",
+    "/js/request_quote_form.js": "/js/request_quote_form.js",
     "/js/request_demo_form.js": "/js/request_demo_form.js",
-    "/js/request_quote_form.js": "/js/request_quote_form.js"
+    "/js/request_case_form.js": "/js/request_case_form.js"
 }

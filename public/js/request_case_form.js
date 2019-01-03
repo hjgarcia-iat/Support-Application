@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 63);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -30531,44 +30531,60 @@ module.exports = function normalizeComponent (
 /* 55 */,
 /* 56 */,
 /* 57 */,
-/* 58 */
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(64);
 
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaQuoteRequest_vue__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaQuoteRequest_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ConceptuaQuoteRequest_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaCaseRequest_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaCaseRequest_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ConceptuaCaseRequest_vue__);
 __webpack_require__(10);
 
 
 
 
 new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#request-quote-form',
+    el: '#request-case-form',
     components: {
-        'request-quote-form': __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaQuoteRequest_vue___default.a
+        'request-demo-form': __WEBPACK_IMPORTED_MODULE_1__components_ConceptuaCaseRequest_vue___default.a
     }
 });
 
 /***/ }),
-/* 60 */
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(34)
 /* script */
-var __vue_script__ = __webpack_require__(61)
+var __vue_script__ = __webpack_require__(77)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(78)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30585,7 +30601,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/ConceptuaQuoteRequest.vue"
+Component.options.__file = "resources/assets/js/components/ConceptuaCaseRequest.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30594,9 +30610,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-38f62860", Component.options)
+    hotAPI.createRecord("data-v-a42a723c", Component.options)
   } else {
-    hotAPI.reload("data-v-38f62860", Component.options)
+    hotAPI.reload("data-v-a42a723c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30607,28 +30623,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 61 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -30815,11 +30814,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             last_name: '',
             email: '',
             company: '',
-            title: '',
-            license: '',
             city: '',
             state: '',
             phone: '',
+            title: '',
             loading: false,
             formErrors: {},
             formMessage: '',
@@ -30836,9 +30834,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 company: this.company,
                 city: this.city,
                 state: this.state,
-                title: this.title,
-                license: this.license,
-                phone: this.phone
+                phone: this.phone,
+                title: this.title
             };
         },
         submit: function submit() {
@@ -30846,7 +30843,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.loading = true;
 
-            axios.post('/conceptua-math/request-a-quote', this.formData()).then(function (response) {
+            axios.post('/conceptua-math/request-a-case-study', this.formData()).then(function (response) {
                 if (response.data.success) {
                     window.location = "http://www.conceptuamath.com/request-success";
                     return;
@@ -30868,11 +30865,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.last_name = '';
             this.email = '';
             this.company = '';
-            this.title = '';
-            this.license = '';
             this.city = '';
             this.state = '';
             this.phone = '';
+            this.title = '';
         }
     },
     created: function created() {
@@ -30887,7 +30883,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 62 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30964,7 +30960,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "first_name",
                   type: "text",
@@ -31006,7 +31002,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "last_name",
                   type: "text",
@@ -31048,12 +31044,12 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "email",
                   type: "text",
                   name: "email",
-                  placeholder: "Work Email Address"
+                  placeholder: "Enter Work Email Address"
                 },
                 domProps: { value: _vm.email },
                 on: {
@@ -31097,7 +31093,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "phone",
                   type: "text",
@@ -31141,7 +31137,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                    "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                   attrs: { id: "title", name: "title" },
                   on: {
                     change: function($event) {
@@ -31192,71 +31188,6 @@ var render = function() {
             _c("div", { staticClass: "mb-6" }, [
               _vm._m(4),
               _vm._v(" "),
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.license,
-                      expression: "license"
-                    }
-                  ],
-                  staticClass:
-                    "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
-                  attrs: { id: "license", name: "license" },
-                  on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.license = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
-                    }
-                  }
-                },
-                [
-                  _c("option", { attrs: { value: "" } }, [
-                    _vm._v("Choose One")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "Classroom" } }, [
-                    _vm._v("Classroom")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "Campus" } }, [
-                    _vm._v("Campus")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "option",
-                    { attrs: { value: "Multi-Campus or District" } },
-                    [_vm._v("Multi-Campus or District")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _vm.formErrors.license
-                ? _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(_vm.formErrors.license[0]) +
-                        "\n            "
-                    )
-                  ])
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-6" }, [
-              _vm._m(5),
-              _vm._v(" "),
               _c("input", {
                 directives: [
                   {
@@ -31267,7 +31198,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "company",
                   type: "text",
@@ -31297,7 +31228,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-6" }, [
-              _vm._m(6),
+              _vm._m(5),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -31309,7 +31240,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                 attrs: {
                   id: "city",
                   type: "text",
@@ -31339,7 +31270,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-6" }, [
-              _vm._m(7),
+              _vm._m(6),
               _vm._v(" "),
               _c(
                 "select",
@@ -31353,7 +31284,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                    "hadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
                   attrs: { name: "state", id: "state" },
                   on: {
                     change: function($event) {
@@ -31601,22 +31532,6 @@ var staticRenderFns = [
       "label",
       {
         staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "license" }
-      },
-      [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
-        _vm._v("\n                License Type\n            ")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
         attrs: { for: "company" }
       },
       [
@@ -31665,7 +31580,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-38f62860", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-a42a723c", module.exports)
   }
 }
 
