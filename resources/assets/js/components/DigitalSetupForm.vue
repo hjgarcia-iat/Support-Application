@@ -5,65 +5,70 @@
             <alert :message=formMessage :type=formMessageType></alert>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="Enter Your Full Name"
+                <input type="text"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="name" placeholder="Enter Your Full Name"
                        name="name" v-model="name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.name">
-                    {{ formErrors.name[0] }}
-                </div>
+
+                <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="po_number" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="po_number" placeholder="Enter PO Number"
+                <input type="text"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="po_number" placeholder="Enter PO Number"
                        name="po_number" v-model="po_number">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.po_number">
-                    {{ formErrors.po_number[0] }}
-                </div>
+
+                <form-error :error=formErrors.po_number[0] v-if="formErrors.po_number"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" placeholder="Enter your Email Address"
+                <input type="text"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="email" placeholder="Enter your Email Address"
                        name="email" v-model="email">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.email">
-                    {{ formErrors.email[0] }}
-                </div>
+
+                <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District Name:*</label>
-                <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="district" placeholder="Enter District Name"
+                <input type="text"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="district" placeholder="Enter District Name"
                        name="district" v-model="district">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.district">
-                    {{ formErrors.district[0] }}
-                </div>
+
+                <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">School Start Date:*</label>
+                <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">School Start
+                    Date:*</label>
                 <datepicker :format="'M/d/yyyy'" v-model="start_date" :id="start_date"
                             :input-class="'shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline'"
                             :placeholder="'Select School Start Date'"></datepicker>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.start_date">
-                    {{ formErrors.start_date[0] }}
-                </div>
+
+                <form-error :error=formErrors.start_date[0] v-if="formErrors.start_date"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="curriculum" class="block text-grey-darker text-sm font-bold mb-2">Curriculum</label>
-                <select name="curriculum" id="curriculum" v-model="curriculum" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
+                <select name="curriculum" id="curriculum" v-model="curriculum"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Select a curriculum</option>
                     <option value="Active Science">Active Science</option>
                     <option value="Conceptua Math">Conceptua Math</option>
                     <option value="IQWST IDE">IQWST IDE</option>
                     <option value="IQWST Teacher Portal">IQWST Teacher Portal</option>
                 </select>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.curriculum">
-                    {{ formErrors.curriculum[0] }}
-                </div>
+
+                <form-error :error=formErrors.curriculum[0] v-if="formErrors.curriculum"></form-error>
             </div>
 
             <div class="mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2">Is there a District/IT Manager Available?</label>
+                <label class="block text-grey-darker text-sm font-bold mb-2">Is there a District/IT Manager
+                    Available?</label>
                 <div class="form-check form-check-inline">
                     <input type="radio" name="district_manager"
                            id="district_manager_1" value="yes" v-model="district_manager">
@@ -74,33 +79,35 @@
                            id="district_manager_2" value="no" v-model="district_manager">
                     <label class="ml-2 text-grey-darker text-sm font-bold mb-2" for="district_manager_2">No</label>
                 </div>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.district_manager">
-                    {{ formErrors.district_manager[0] }}
-                </div>
+
+                <form-error :error=formErrors.district_manager[0] v-if="formErrors.district_manager"></form-error>
             </div>
 
             <div class="mb-4" v-if="district_manager === 'yes'">
                 <p>
-                    If you have a District Manager /IT coordinator that will be setting up your district in IDE, Please provide their information here. You do not need to provide specific teacher information if you have a District/IT Manager.
+                    If you have a District Manager /IT coordinator that will be setting up your district in IDE, Please
+                    provide their information here. You do not need to provide specific teacher information if you have
+                    a District/IT Manager.
                 </p>
-                <div class="d-flex justify-content-between">
-                    <div class="mb-6 w-100 mr-2">
-                        <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="dm_name"
-                               placeholder="District/IT Manager's Name" name="dm_name" v-model="dm_name">
-                        <div class="text-sm text-red-dark mt-3" v-if="formErrors.dm_name">
-                            {{ formErrors.dm_name[0] }}
-                        </div>
-                    </div>
-                    <div class="mb-6 w-100 ml-2">
-                        <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">Email</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="dm_email"
-                               placeholder="District/IT Manager's Email Address" name="dm_email" v-model="dm_email">
-                        <div class="text-sm text-red-dark mt-3" v-if="formErrors.dm_email">
-                            {{ formErrors.dm_email[0] }}
-                        </div>
-                    </div>
+
+                <div class="mb-6">
+                    <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
+                    <input type="text"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                           id="dm_name"
+                           placeholder="District/IT Manager's Name" name="dm_name" v-model="dm_name">
+                    <form-error :error=formErrors.dm_name[0] v-if="formErrors.dm_name"></form-error>
                 </div>
+                <div class="mb-6">
+                    <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">Email</label>
+                    <input type="text"
+                           class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                           id="dm_email"
+                           placeholder="District/IT Manager's Email Address" name="dm_email" v-model="dm_email">
+
+                    <form-error :error=formErrors.dm_email[0] v-if="formErrors.dm_email"></form-error>
+                </div>
+
             </div>
 
             <div class="mb-4" v-if="district_manager === 'no'">
@@ -118,32 +125,37 @@
                 </p>
                 <section class="flex justify-between items-center" v-for="(teacher, key, index) in teachers">
                     <div class="mr-2">
-                        <label :for="'teacher_name_' + index" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" :id="'teacher_name_' + index"
+                        <label :for="'teacher_name_' + index"
+                               class="block text-grey-darker text-sm font-bold mb-2">Name</label>
+                        <input type="text"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                               :id="'teacher_name_' + index"
                                placeholder="Teacher Full Name" name="teachers[]['name']" v-model="teacher.name">
-                        <div class="text-sm text-red-dark mt-3" v-if="checkForArrayError('teachers.' + key + '.name')">
-                            {{ formErrors['teachers.' + key + '.name'][0] }}
-                        </div>
+                        <form-error :error="getErrorForArray(key, 'name')" v-if="checkForArrayError('teachers.' + key + '.name')"></form-error>
                     </div>
                     <div class="mr-2">
                         <label :for="'teacher_email_' + index" class="block text-grey-darker text-sm font-bold mb-2">Email</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" :id="'teacher_email_' + index"
+                        <input type="text"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                               :id="'teacher_email_' + index"
                                placeholder="Teacher Email Address" name="teachers[]['email']"
                                v-model="teacher.email">
-                        <div class="text-sm text-red-dark mt-3" v-if="checkForArrayError('teachers.' + key + '.email')">
-                            {{ formErrors['teachers.' + key + '.email'][0] }}
-                        </div>
+                        <form-error :error="getErrorForArray(key,'email')"
+                                    v-if="checkForArrayError('teachers.' + key + '.email')"></form-error>
                     </div>
                     <div class="mr-2">
                         <label :for="'teacher_school_'+index" class="block text-grey-darker text-sm font-bold mb-2">School</label>
-                        <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" :id="'teacher_school_'+index"
+                        <input type="text"
+                               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                               :id="'teacher_school_'+index"
                                placeholder="School Name" name="teachers[]['school']" v-model="teacher.school">
-                        <div class="text-sm text-red-dark mt-3" v-if="checkForArrayError('teachers.' + key + '.school')">
-                            {{ formErrors['teachers.' + key + '.school'][0] }}
-                        </div>
+
+                        <form-error :error="getErrorForArray(key,'school')"
+                                    v-if="checkForArrayError('teachers.' + key + '.school')"></form-error>
                     </div>
                     <div class="flex items-end h-full">
-                        <a href="" @click.prevent="removeTeacher(key)" class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        <a href="" @click.prevent="removeTeacher(key)"
+                           class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             <i class="fa fa-remove"></i>
                         </a>
                     </div>
@@ -152,11 +164,15 @@
 
             <hr>
             <section class="d-flex justify-content-end">
-                <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading">
+                <button type="submit"
+                        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        :disabled="loading">
                     <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
                     Send
                 </button>
-                <button type="reset" class="bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" @click.prevent="clear">
+                <button type="reset"
+                        class="bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        @click.prevent="clear">
                     <i class="fa fa-remove"></i>
                     Clear
                 </button>
@@ -169,44 +185,49 @@
     import Datepicker from "vuejs-datepicker"
     import * as Vue from "vue"
     import Alert from "../components/partials/FormAlert"
+    import FormError from "../components/partials/FormError"
 
     export default {
         components: {
             Datepicker,
-            Alert
+            Alert,
+            FormError
         },
         data() {
             return {
-                name            : '',
-                email           : '',
-                po_number       : '',
-                district        : '',
+                name: '',
+                email: '',
+                po_number: '',
+                district: '',
                 district_manager: '',
-                start_date      : '',
-                curriculum      : '',
-                dm_name         : '',
-                dm_email        : '',
-                teachers        : [
+                start_date: '',
+                curriculum: '',
+                dm_name: '',
+                dm_email: '',
+                teachers: [
                     {
-                        name  : '',
-                        email : '',
+                        name: '',
+                        email: '',
                         school: '',
                     }
                 ],
-                teacher         : {
-                    name  : '',
-                    email : '',
+                teacher: {
+                    name: '',
+                    email: '',
                     school: '',
                 },
-                formErrors      : [],
-                formMessageType : 'success',
-                formMessage     : '',
-                loading         : false,
+                formErrors: [],
+                formMessageType: 'success',
+                formMessage: '',
+                loading: false,
             }
         },
-        methods   : {
+        methods: {
             checkForArrayError(field) {
                 return this.formErrors.hasOwnProperty(field);
+            },
+            getErrorForArray(key, field) {
+                return this.formErrors['teachers.' + key + '.' + field][0];
             },
             addTeacher() {
                 this.teachers.push(Vue.util.extend({}, this.teacher))
@@ -217,16 +238,16 @@
             submit() {
                 this.loading = true;
                 axios.post('/digital-setup-request', {
-                    name            : this.name,
-                    email           : this.email,
-                    po_number       : this.po_number,
-                    district        : this.district,
+                    name: this.name,
+                    email: this.email,
+                    po_number: this.po_number,
+                    district: this.district,
                     district_manager: this.district_manager,
-                    start_date      : this.start_date,
-                    curriculum      : this.curriculum,
-                    dm_name         : this.dm_name,
-                    dm_email        : this.dm_email,
-                    teachers        : this.teachers,
+                    start_date: this.start_date,
+                    curriculum: this.curriculum,
+                    dm_name: this.dm_name,
+                    dm_email: this.dm_email,
+                    teachers: this.teachers,
                 }).then(response => {
                     if (response.data.success) {
                         this.reset();
@@ -258,27 +279,27 @@
                 this.dm_email = '';
                 this.teachers = [
                     {
-                        name  : '',
-                        email : '',
+                        name: '',
+                        email: '',
                         school: '',
                     }
                 ];
                 this.teacher = {
-                    'name'  : '',
-                    'email' : '',
+                    'name': '',
+                    'email': '',
                     'school': '',
                 };
                 this.formErrors = [];
                 this.formMessage = '';
             }
         },
-        watch     : {
+        watch: {
             district_manager() {
                 if (this.district_manager === 'yes') {
                     this.teachers = [];
                     this.teacher = {
-                        'name'  : '',
-                        'email' : '',
+                        'name': '',
+                        'email': '',
                         'school': '',
                     };
                 }

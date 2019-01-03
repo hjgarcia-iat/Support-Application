@@ -27,9 +27,7 @@
                     <option value="tpence@activatelearning.com">Tom Pence</option>
                 </select>
 
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.sales_rep">
-                    {{ formErrors.sales_rep[0] }}
-                </div>
+                <form-error :error=formErrors.sales_rep[0] v-if="formErrors.sales_rep"></form-error>
             </div>
 
             <hr class="border-t my-8">
@@ -41,9 +39,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="first_name"
                        placeholder="First Name" name="first_name" v-model="first_name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.first_name">
-                    {{ formErrors.first_name[0] }}
-                </div>
+
+                <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
             </div>
 
             <div class="mb-6">
@@ -53,9 +50,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="last_name"
                        placeholder="Last Name" name="last_name" v-model="last_name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.last_name">
-                    {{ formErrors.last_name[0] }}
-                </div>
+
+                <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
             </div>
 
             <div class="mb-6">
@@ -69,9 +65,8 @@
                        class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">This MUST be a
                     school email address (not gmail, yahoo, etc...)
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.email">
-                    {{ formErrors.email[0] }}
-                </div>
+
+                <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
 
             <hr class="border-t my-8">
@@ -86,9 +81,8 @@
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please enter
                     the name of the school district associated with this customer
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.district">
-                    {{ formErrors.district[0] }}
-                </div>
+
+                <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
             </div>
             <div class="mb-6">
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">School:*</label>
@@ -100,9 +94,8 @@
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please enter
                     the name of the school associated with this customer
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.school">
-                    {{ formErrors.school[0] }}
-                </div>
+
+                <form-error :error=formErrors.school[0] v-if="formErrors.school"></form-error>
             </div>
 
             <div class="mb-6">
@@ -111,9 +104,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="zip_code" placeholder="School Zip code"
                        name="zip_code" v-model="zip">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.zip_code">
-                    {{ formErrors.zip_code[0] }}
-                </div>
+
+                <form-error :error=formErrors.zip_code[0] v-if="formErrors.zip_code"></form-error>
             </div>
 
             <hr class="border-t my-8">
@@ -206,10 +198,8 @@
                     <br>PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN
                     UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.resource">
-                    {{ formErrors.resource[0] }}
-                </div>
 
+                <form-error :error=formErrors.resource[0] v-if="formErrors.resource"></form-error>
             </div>
 
             <div v-show="showEbooks">
@@ -249,9 +239,7 @@
                         or more e-books. Use the Command
                         or Control key to select more than one.
                     </small>
-                    <div class="text-sm text-red-dark mt-3" v-if="formErrors.ebook_list">
-                        {{ formErrors.ebook_list[0] }}
-                    </div>
+                    <form-error :error=formErrors.ebook_list[0] v-if="formErrors.ebook_list"></form-error>
                 </div>
             </div>
 
@@ -290,9 +278,8 @@
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please indicate
                     which version of IQWST IDE you will need.
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.version">
-                    {{ formErrors.version[0] }}
-                </div>
+
+                <form-error :error=formErrors.version[0] v-if="formErrors.version"></form-error>
             </div>
 
 
@@ -337,9 +324,8 @@
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please indicate
                     the length of time access is to be granted.
                 </small>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.time_frame">
-                    {{ formErrors.time_frame[0] }}
-                </div>
+
+                <form-error :error=formErrors.time_frame[0] v-if="formErrors.time_frame"></form-error>
             </div>
 
             <div class="mb-6">
@@ -375,10 +361,12 @@
 
 <script>
     import Alert from '../components/partials/FormAlert.vue'
+    import FormError from '../components/partials/FormError';
 
     export default {
         components: {
-            Alert
+            Alert,
+            FormError
         },
         data() {
             return {
