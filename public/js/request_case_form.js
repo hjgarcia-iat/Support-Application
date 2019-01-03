@@ -30649,7 +30649,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/partials/Loader.vue"
+Component.options.__file = "resources/assets/js/components/partials/FormError.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30658,9 +30658,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-71bfb909", Component.options)
+    hotAPI.createRecord("data-v-7116e39e", Component.options)
   } else {
-    hotAPI.reload("data-v-71bfb909", Component.options)
+    hotAPI.reload("data-v-7116e39e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30682,10 +30682,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['load']
+  props: ["error"]
 });
 
 /***/ }),
@@ -30696,13 +30695,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.load === true
-    ? _c("div", { staticClass: "loader flex items-center flex-col" }, [
-        _c("i", { staticClass: "fa fa-spinner fa-spin fa-2x fa-fw" }),
-        _vm._v(" "),
-        _c("span", { staticClass: "block" }, [_vm._v("Loading...")])
-      ])
-    : _vm._e()
+  return _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+    _vm._v("\n  " + _vm._s(_vm.error) + "\n")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -30710,7 +30705,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-71bfb909", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-7116e39e", module.exports)
   }
 }
 
@@ -30740,7 +30735,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/partials/FormError.vue"
+Component.options.__file = "resources/assets/js/components/partials/Loader.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30749,9 +30744,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7116e39e", Component.options)
+    hotAPI.createRecord("data-v-71bfb909", Component.options)
   } else {
-    hotAPI.reload("data-v-7116e39e", Component.options)
+    hotAPI.reload("data-v-71bfb909", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30773,9 +30768,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["error"]
+  props: ['load']
 });
 
 /***/ }),
@@ -30786,9 +30782,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
-    _vm._v("\n  " + _vm._s(_vm.error) + "\n")
-  ])
+  return _vm.load === true
+    ? _c("div", { staticClass: "loader flex items-center flex-col" }, [
+        _c("i", { staticClass: "fa fa-spinner fa-spin fa-2x fa-fw" }),
+        _vm._v(" "),
+        _c("span", { staticClass: "block" }, [_vm._v("Loading...")])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -30796,7 +30796,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7116e39e", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-71bfb909", module.exports)
   }
 }
 
@@ -30910,11 +30910,11 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_partials_Loader_vue__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_partials_Loader_vue__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_partials_Loader_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_partials_Loader_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError_vue__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError_vue__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormError_vue__);
 //
 //
@@ -31170,6 +31170,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "p-8" },
     [
       _c("loader", { attrs: { load: _vm.pre_load } }),
       _vm._v(" "),
@@ -31185,6 +31186,8 @@ var render = function() {
               }
             },
             [
+              _c("h1", { staticClass: "mb-6" }, [_vm._v("Request a Demo")]),
+              _vm._v(" "),
               _c("alert", {
                 attrs: { message: _vm.formMessage, type: _vm.formMessageType }
               }),

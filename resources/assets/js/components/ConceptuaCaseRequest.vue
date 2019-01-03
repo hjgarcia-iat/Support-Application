@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="p-8">
         <loader :load=pre_load></loader>
 
         <form @submit.prevent="submit" v-if="pre_load === false">
-
+            <h1 class="mb-6">Request a Demo</h1>
             <alert :message=formMessage :type=formMessageType></alert>
 
             <div class="mb-6">
