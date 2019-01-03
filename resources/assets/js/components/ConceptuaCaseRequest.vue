@@ -1,14 +1,11 @@
 <template>
     <div>
         <loader :load=pre_load></loader>
+
         <form @submit.prevent="submit" v-if="pre_load === false">
-            <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6" :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}" v-if="formMessage" role="alert">
-                {{ formMessage }}
-                <p v-if="formMessageType === 'success'">
-                    Go Back to
-                    <a href="http://activatelearning.com">Activate Learning</a>
-                </p>
-            </div>
+
+            <alert :message=formMessage :type=formMessageType></alert>
+
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">
                     <span class="text-danger mr-1">*</span>
@@ -174,9 +171,12 @@
 
 <script>
     import Loader from '../components/partials/Loader.vue'
+    import Alert from '../components/partials/FormAlert.vue'
+
     export default {
         components: {
-            Loader
+            Loader,
+            Alert
         },
         data() {
             return {

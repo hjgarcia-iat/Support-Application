@@ -2,19 +2,17 @@
     <div class="p-8">
         <loader :load=pre_load></loader>
         <form @submit.prevent="submit" v-if="pre_load === false">
-            <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6" :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}" v-if="formMessage" role="alert">
-                {{ formMessage }}
-                <p v-if="formMessageType === 'success'">
-                    Go Back to
-                    <a href="http://activatelearning.com">Activate Learning</a>
-                </p>
-            </div>
+
+            <alert :message=formMessage :type=formMessageType></alert>
+
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">
                     <span class="text-danger mr-1">*</span>
                     First Name
                 </label>
-                <input v-model="first_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="first_name" type="text" name="first_name"
+                <input v-model="first_name"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="first_name" type="text" name="first_name"
                        placeholder="Enter First Name">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.first_name">
                     {{ formErrors.first_name[0] }}
@@ -25,7 +23,9 @@
                     <span class="text-danger mr-1">*</span>
                     Last Name
                 </label>
-                <input v-model="last_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="last_name" type="text" name="last_name"
+                <input v-model="last_name"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="last_name" type="text" name="last_name"
                        placeholder="Enter Last Name">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.last_name">
                     {{ formErrors.last_name[0] }}
@@ -36,7 +36,9 @@
                     <span class="text-danger mr-1">*</span>
                     Work Email
                 </label>
-                <input v-model="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" name="email"
+                <input v-model="email"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="email" type="text" name="email"
                        placeholder="Enter Work Email Address">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.email">
                     {{ formErrors.email[0] }}
@@ -47,7 +49,9 @@
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="phone">
                     Phone Number
                 </label>
-                <input v-model="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" name="phone"
+                <input v-model="phone"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="phone" type="text" name="phone"
                        placeholder="Enter Phone Number">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.phone">
                     {{ formErrors.phone[0] }}
@@ -59,7 +63,9 @@
                     <span class="text-danger mr-1">*</span>
                     Role
                 </label>
-                <select v-model="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="title" name="title">
+                <select v-model="title"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                        id="title" name="title">
                     <option value="">Choose One</option>
                     <option value="Classroom Teacher">Classroom Teacher</option>
                     <option value="Instructional Coach">Instructional Coach</option>
@@ -75,7 +81,9 @@
                     <span class="text-danger mr-1">*</span>
                     School, District Or Organization Name
                 </label>
-                <input v-model="company" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="company" type="text" name="company"
+                <input v-model="company"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="company" type="text" name="company"
                        placeholder="Enter School, District Or Organization Name">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.company">
                     {{ formErrors.company[0] }}
@@ -87,7 +95,9 @@
                     <span class="text-danger mr-1">*</span>
                     City
                 </label>
-                <input v-model="city" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="city" type="text" name="city" placeholder="Enter City">
+                <input v-model="city"
+                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       id="city" type="text" name="city" placeholder="Enter City">
                 <div class="text-sm text-red-dark mt-3" v-if="formErrors.city">
                     {{ formErrors.city[0] }}
                 </div>
@@ -98,7 +108,9 @@
                     <span class="text-danger mr-1">*</span>
                     State
                 </label>
-                <select name="state" id="state" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" v-model="state">
+                <select name="state" id="state"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                        v-model="state">
                     <option value="" selected>Select a State</option>
                     <option value="Canada">Canada</option>
                     <option value="Other">Other</option>
@@ -162,7 +174,9 @@
             <hr>
             <section class="d-flex justify-content-end">
                 <div>
-                    <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading">
+                    <button type="submit"
+                            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            :disabled="loading">
                         <i class="fa" :class="{'fa-refresh fa-spin btn-disabled' : loading, 'fa-send': !loading}"></i>
                         Send
                     </button>
@@ -174,24 +188,27 @@
 
 <script>
     import Loader from '../components/partials/Loader.vue'
+    import Alert from '../components/partials/FormAlert.Vue'
+
     export default {
         components: {
-            Loader
+            Loader,
+            Alert
         },
         data() {
             return {
-                "pre_load"     : false,
-                first_name     : '',
-                last_name      : '',
-                email          : '',
-                company        : '',
-                city           : '',
-                state          : '',
-                phone          : '',
-                title          : '',
-                loading        : false,
-                formErrors     : {},
-                formMessage    : '',
+                "pre_load": false,
+                first_name: '',
+                last_name: '',
+                email: '',
+                company: '',
+                city: '',
+                state: '',
+                phone: '',
+                title: '',
+                loading: false,
+                formErrors: {},
+                formMessage: '',
                 formMessageType: 'success',
             }
         },
@@ -199,13 +216,13 @@
             formData() {
                 return {
                     first_name: this.first_name,
-                    last_name : this.last_name,
-                    email     : this.email,
-                    company   : this.company,
-                    city      : this.city,
-                    state     : this.state,
-                    phone     : this.phone,
-                    title     : this.title,
+                    last_name: this.last_name,
+                    email: this.email,
+                    company: this.company,
+                    city: this.city,
+                    state: this.state,
+                    phone: this.phone,
+                    title: this.title,
                 }
             },
             submit() {

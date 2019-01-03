@@ -7,9 +7,6 @@
 
 <script>
 export default {
-  props: ['load'],
-  created() {
-      console.log(this.load);
-  }
+  props: ['load']
 };
 </script>
