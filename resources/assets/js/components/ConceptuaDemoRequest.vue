@@ -1,9 +1,6 @@
 <template>
     <div class="p-8">
-        <div class="loader flex items-center flex-col" v-if="pre_load === true">
-            <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
-            <p class="mt-4">Loading...</p>
-        </div>
+        <loader :load=pre_load></loader>
         <form @submit.prevent="submit" v-if="pre_load === false">
             <div class="bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6" :class="{'bg-green-lightest border border-green-light text-green-dark' : formMessageType=='success', 'bg-red-lightest border border-red-light' : formMessageType=='error'}" v-if="formMessage" role="alert">
                 {{ formMessage }}
@@ -176,7 +173,11 @@
 </template>
 
 <script>
+    import Loader from '../components/partials/Loader.vue'
     export default {
+        components: {
+            Loader
+        },
         data() {
             return {
                 "pre_load"     : false,
