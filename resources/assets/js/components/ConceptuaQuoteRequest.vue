@@ -14,9 +14,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="first_name" type="text" name="first_name"
                        placeholder="Enter First Name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.first_name">
-                    {{ formErrors.first_name[0] }}
-                </div>
+                
+                <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
             </div>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">
@@ -27,9 +26,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="last_name" type="text" name="last_name"
                        placeholder="Enter Last Name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.last_name">
-                    {{ formErrors.last_name[0] }}
-                </div>
+            
+                <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
             </div>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
@@ -40,9 +38,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="email" type="text" name="email"
                        placeholder="Work Email Address">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.email">
-                    {{ formErrors.email[0] }}
-                </div>
+            
+                <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
 
             <div class="mb-6">
@@ -53,9 +50,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="phone" type="text" name="phone"
                        placeholder="Enter Phone Number">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.phone">
-                    {{ formErrors.phone[0] }}
-                </div>
+            
+                <form-error :error=formErrors.phone[0] v-if="formErrors.phone"></form-error>
             </div>
 
             <div class="mb-6">
@@ -71,9 +67,8 @@
                     <option value="Instructional Coach">Instructional Coach</option>
                     <option value="Administrator">Administrator</option>
                 </select>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.title">
-                    {{ formErrors.title[0] }}
-                </div>
+                
+                <form-error :error=formErrors.title[0] v-if="formErrors.title"></form-error>
             </div>
 
             <div class="mb-6">
@@ -89,9 +84,7 @@
                     <option value="Campus">Campus</option>
                     <option value="Multi-Campus or District">Multi-Campus or District</option>
                 </select>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.license">
-                    {{ formErrors.license[0] }}
-                </div>
+                <form-error :error=formErrors.license[0] v-if="formErrors.license"></form-error>
             </div>
 
             <div class="mb-6">
@@ -103,9 +96,7 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="company" type="text" name="company"
                        placeholder="Enter School, District Or Organization Name">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.company">
-                    {{ formErrors.company[0] }}
-                </div>
+                <form-error :error=formErrors.company[0] v-if="formErrors.company"></form-error>
             </div>
 
             <div class="mb-6">
@@ -117,9 +108,8 @@
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="city" type="text" name="city"
                        placeholder="Enter City">
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.city">
-                    {{ formErrors.city[0] }}
-                </div>
+                
+                <form-error :error=formErrors.city[0] v-if="formErrors.city"></form-error>
             </div>
 
             <div class="mb-6">
@@ -185,9 +175,7 @@
                     <option value="WI">WI</option>
                     <option value="WY">WY</option>
                 </select>
-                <div class="text-sm text-red-dark mt-3" v-if="formErrors.state">
-                    {{ formErrors.state[0] }}
-                </div>
+                <form-error :error=formErrors.state[0] v-if="formErrors.state"></form-error>
             </div>
 
             <hr>
@@ -207,12 +195,14 @@
 
 <script>
     import Loader from '../components/partials/Loader.vue'
-    import Alert from '../components/partials/FormAlert.Vue'
+    import Alert from '../components/partials/FormAlert.vue'
+    import FormError from '../components/partials/FormError.vue'
 
     export default {
         components: {
             Loader,
-            Alert
+            Alert,
+            FormError
         },
         data() {
             return {
