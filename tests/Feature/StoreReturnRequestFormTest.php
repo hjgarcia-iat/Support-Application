@@ -12,16 +12,25 @@ use Tests\TestCase;
  */
 class StoreReturnRequestFormTest extends TestCase
 {
+    /**
+     * @var FakeSpreadsheet
+     */
     protected $spreadsheet;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->spreadsheet = new FakeSpreadsheet();
+        $this->app->instance(SpreadsheetInterface::class, $this->spreadsheet);
+
+    }
 
     /**
      * @test
      */
     public function the_data_is_saved_to_the_spreadsheet()
     {
-        $spreadsheet = new FakeSpreadsheet();
-        $this->app->instance(SpreadsheetInterface::class, $spreadsheet);
-
         $response = $this->from(route('return_request.create'))
             ->post(route('return_request.store'), $this->validParams());
 
@@ -35,7 +44,7 @@ class StoreReturnRequestFormTest extends TestCase
             'Reason for Return'     => 'some valid reason',
             'SKU'                   => 1234,
             'QTY'                   => 1,
-        ], $spreadsheet->get()[0]);
+        ], $this->spreadsheet->get()[0]);
 
         $this->assertEquals([
             'Requester Name'        => 'Jane Doe',
@@ -45,7 +54,7 @@ class StoreReturnRequestFormTest extends TestCase
             'Reason for Return'     => 'some valid reason',
             'SKU'                   => 1236,
             'QTY'                   => 4,
-        ], $spreadsheet->get()[1]);
+        ], $this->spreadsheet->get()[1]);
     }
 
 

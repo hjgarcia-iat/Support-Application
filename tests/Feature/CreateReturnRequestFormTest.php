@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Services\Spreadsheet\FakeSpreadsheet;
+use App\Services\Spreadsheet\SpreadsheetInterface;
 use Tests\TestCase;
 
 /**
@@ -15,6 +17,8 @@ class CreateReturnRequestFormTest extends TestCase
      */
     public function we_can_view_the_return_request_form()
     {
+        $spreadsheet = new FakeSpreadsheet();
+        $this->app->instance(SpreadsheetInterface::class, $spreadsheet);
         $response = $this->get(route('return_request.create'));
 
         $response->assertStatus(200);
