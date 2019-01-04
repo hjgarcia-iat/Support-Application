@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReturnRequestForm;
+use App\Services\Spreadsheet\SpreadsheetInterface;
 use Illuminate\Http\Request;
 
 /**
@@ -11,6 +12,20 @@ use Illuminate\Http\Request;
  */
 class ReturnRequestController extends Controller
 {
+    /**
+     * @var SpreadsheetInterface
+     */
+    private $spreadsheet;
+
+    /**
+     * ReturnRequestController constructor.
+     * @param SpreadsheetInterface $spreadsheet
+     */
+    public function __construct(SpreadsheetInterface $spreadsheet)
+    {
+        $this->spreadsheet = $spreadsheet;
+    }
+
     /**
      * Show create form
      *
@@ -21,8 +36,16 @@ class ReturnRequestController extends Controller
         return view('return_request.create');
     }
 
+    /**
+     * Save the response to the spreadsheet
+     *
+     * @param ReturnRequestForm $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(ReturnRequestForm $request)
     {
+        $this->spreadsheet->save($request->all());
 
+        return response()->json(['success' => true, 'message' => 'Your information was saved. We will get back to you shortly.']);
     }
 }

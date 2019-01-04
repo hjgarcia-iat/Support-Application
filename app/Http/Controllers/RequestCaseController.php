@@ -20,9 +20,8 @@ class RequestCaseController extends Controller
     }
 
     /**
-     * Show create form
-     *
-     * @return void
+     * Show creatae form
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -32,7 +31,8 @@ class RequestCaseController extends Controller
     /**
      * Show create form
      *
-     * @return void
+     * @param ConceptuaMathCaseStudyRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(ConceptuaMathCaseStudyRequest $request)
     {

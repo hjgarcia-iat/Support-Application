@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Services\Spreadsheet\FakeSpreadsheet;
+use App\Services\Spreadsheet\SpreadsheetInterface;
 use Tests\TestCase;
 
 /**
@@ -10,6 +12,43 @@ use Tests\TestCase;
  */
 class StoreReturnRequestFormTest extends TestCase
 {
+    protected $spreadsheet;
+
+    /**
+     * @test
+     */
+    public function the_data_is_saved_to_the_spreadsheet()
+    {
+        $spreadsheet = new FakeSpreadsheet();
+        $this->app->instance(SpreadsheetInterface::class, $spreadsheet);
+
+        $response = $this->from(route('return_request.create'))
+            ->post(route('return_request.store'), $this->validParams());
+
+        $response->assertStatus(200);
+        $response->assertJson(['message' => 'Your information was saved. We will get back to you shortly.']);
+        $this->assertEquals([
+            'Requester Name'        => 'Jane Doe',
+            'Requester Email'       => 'jdoe@email.com',
+            'District/Company Name' => 'Some District',
+            'Order# or PO#'         => '12345',
+            'Reason for Return'     => 'some valid reason',
+            'SKU'                   => 1234,
+            'QTY'                   => 1,
+        ], $spreadsheet->get()[0]);
+
+        $this->assertEquals([
+            'Requester Name'        => 'Jane Doe',
+            'Requester Email'       => 'jdoe@email.com',
+            'District/Company Name' => 'Some District',
+            'Order# or PO#'         => '12345',
+            'Reason for Return'     => 'some valid reason',
+            'SKU'                   => 1236,
+            'QTY'                   => 4,
+        ], $spreadsheet->get()[1]);
+    }
+
+
     /**
      * @test
      */
@@ -107,7 +146,7 @@ class StoreReturnRequestFormTest extends TestCase
     public function the_quantity_field_is_required()
     {
         $response = $this->from(route('return_request.create'))
-            ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234','quantity' => '']]));
+            ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234', 'quantity' => '']]));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('return_request.create'));
@@ -120,14 +159,18 @@ class StoreReturnRequestFormTest extends TestCase
     public function the_quantity_field_is_a_number()
     {
         $response = $this->from(route('return_request.create'))
-            ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234','quantity' => 'invalid-quantity']]));
+            ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234', 'quantity' => 'invalid-quantity']]));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('return_request.create'));
         $response->assertSessionHasErrors('products.*.quantity');
     }
 
-
+    /**
+     * Valid Data
+     * @param array $data
+     * @return array
+     */
     private function validParams($data = [])
     {
         return array_merge([
@@ -138,6 +181,7 @@ class StoreReturnRequestFormTest extends TestCase
             'reason'       => 'some valid reason',
             'products'     => [
                 ['sku' => '1234', 'quantity' => 1],
+                ['sku' => '1236', 'quantity' => 4],
             ],
         ], $data);
     }
