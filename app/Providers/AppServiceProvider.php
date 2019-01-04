@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Services\CRMInterface;
 use App\Services\SalesforceCrm;
+use App\Services\Spreadsheet\GoogleSpreadsheet;
+use App\Services\Spreadsheet\SpreadsheetInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->instance(CRMInterface::class, new SalesforceCrm());
+        $this->app->instance(SpreadsheetInterface::class, new GoogleSpreadsheet());
     }
 }
