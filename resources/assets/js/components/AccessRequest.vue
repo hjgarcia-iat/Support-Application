@@ -4,10 +4,11 @@
         <form method="POST" @submit.prevent="submitForm">
             <alert :message=formMessage :type=formMessageType></alert>
 
-            <h3 class="mb-6">Sales Rep Information</h3>
+            <h2 class="mb-6">Sales Rep Information</h2>
             <div class="mb-6">
                 <label for="sales_rep" class="block text-grey-darker text-sm font-bold mb-2">
-                    Sales Representative requesting access:*
+                    <small class="text-lg text-red">*</small>
+                    Sales Representative requesting access
                 </label>
 
                 <select name="sales_rep" id="sales_rep"
@@ -31,10 +32,12 @@
             </div>
 
             <hr class="border-t my-8">
-            <h3 class="mb-6">Customer Information</h3>
+            <h2 class="mb-6">Customer Information</h2>
             <div class="mb-6">
-                <label for="first_name" class="block text-grey-darker text-sm font-bold mb-2">Customer First
-                    Name:*</label>
+                <label for="first_name" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Customer First
+                    Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="first_name"
@@ -44,8 +47,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="last_name" class="block text-grey-darker text-sm font-bold mb-2">Customer Last
-                    Name:*</label>
+                <label for="last_name" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Customer Last
+                    Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="last_name"
@@ -55,8 +60,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">Customer Email
-                    Address:*</label>
+                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Customer Email
+                    Address</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="email"
@@ -70,10 +77,12 @@
             </div>
 
             <hr class="border-t my-8">
-            <h3 class="mb-6">School Information</h3>
+            <h2 class="mb-6">School Information</h2>
 
             <div class="mb-6">
-                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District:*</label>
+                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    District</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="district"
@@ -85,7 +94,10 @@
                 <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
             </div>
             <div class="mb-6">
-                <label for="school" class="block text-grey-darker text-sm font-bold mb-2">School:*</label>
+
+                <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    School</label>
 
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
@@ -99,7 +111,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="zip_code" class="block text-grey-darker text-sm font-bold mb-2">Zip Code:*</label>
+                <label for="zip_code" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Zip Code</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="zip_code" placeholder="School Zip code"
@@ -109,9 +123,11 @@
             </div>
 
             <hr class="border-t my-8">
-            <h3 class="mb-6">Resource Information</h3>
+            <h2 class="mb-6">Resource Information</h2>
             <div class="mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2">Digital Resources:*</label>
+                <label class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Digital Resources</label>
 
                 <div class="mb-3">
 
@@ -204,7 +220,9 @@
 
             <div v-show="showEbooks">
                 <div class="mb-6">
-                    <label class="block text-grey-darker text-sm font-bold mb-2" for="ebook_list"> E-Book List</label>
+                    <label class="block text-grey-darker text-sm font-bold mb-2" for="ebook_list">
+                        <small class="text-lg text-red">*</small>
+                        E-Book List</label>
                     <select name="ebook_list" id="ebook_list"
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                             v-model="ebook" multiple>
@@ -245,7 +263,10 @@
 
 
             <div class="mb-6" v-show="showVersion">
-                <label class="block text-grey-darker text-sm font-bold mb-2">Version:*</label>
+
+                <label class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Version</label>
 
                 <div class="mb-3">
                     <input id="version-1" name="version"
@@ -284,7 +305,9 @@
 
 
             <div class="mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2">Requested time frame for access:*</label>
+                <label class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Requested time frame for access</label>
 
                 <div class="mb-3">
                     <input id="time_frame-1" name="time_frame"
@@ -346,14 +369,8 @@
             <button type="submit"
                     class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     :disabled="loading">
-                <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
-                Send
-            </button>
-            <button type="reset"
-                    class="bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    @click.prevent="clearForm">
-                <i class="fa fa-remove"></i>
-                Clear
+                <i class="fa fa-refresh fa-spin" v-if="loading"></i>
+                Send Request
             </button>
         </form>
     </div>
@@ -406,9 +423,6 @@
                 this.formErrors = {};
                 this.formMessage = '';
             },
-            clearForm() {
-                this.resetData();
-            },
             submitForm() {
                 this.loading = true;
 
@@ -453,12 +467,3 @@
         }
     }
 </script>
-
-<style>
-    .btn-primary.disabled, .btn-primary:disabled {
-        color            : #ffffff;
-        background-color : #007bff;
-        border-color     : #007bff;
-        cursor           : not-allowed;
-    }
-</style>
