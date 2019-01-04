@@ -31074,10 +31074,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -31690,29 +31686,21 @@ var render = function() {
                 1
               ),
               _vm._v(" "),
-              _c("hr"),
-              _vm._v(" "),
-              _c("section", { staticClass: "d-flex justify-content-end" }, [
-                _c("div", [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
-                      attrs: { type: "submit", disabled: _vm.loading }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fa",
-                        class: {
-                          "fa-refresh fa-spin btn-disabled": _vm.loading,
-                          "fa-send": !_vm.loading
-                        }
-                      }),
-                      _vm._v("\n                    Send\n                ")
-                    ]
-                  )
-                ])
+              _c("section", { staticClass: "flex" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                    attrs: { type: "submit", disabled: _vm.loading }
+                  },
+                  [
+                    _vm.loading
+                      ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                      : _vm._e(),
+                    _vm._v("\n                Send Request\n            ")
+                  ]
+                )
               ])
             ],
             1
@@ -31734,7 +31722,7 @@ var staticRenderFns = [
         attrs: { for: "first_name" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                First Name\n            ")
       ]
     )
@@ -31750,7 +31738,7 @@ var staticRenderFns = [
         attrs: { for: "last_name" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                Last Name\n            ")
       ]
     )
@@ -31766,7 +31754,7 @@ var staticRenderFns = [
         attrs: { for: "email" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                Work Email\n            ")
       ]
     )
@@ -31782,7 +31770,7 @@ var staticRenderFns = [
         attrs: { for: "title" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                Role\n            ")
       ]
     )
@@ -31798,7 +31786,7 @@ var staticRenderFns = [
         attrs: { for: "company" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v(
           "\n                School, District Or Organization Name\n            "
         )
@@ -31816,7 +31804,7 @@ var staticRenderFns = [
         attrs: { for: "city" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                City\n            ")
       ]
     )
@@ -31832,7 +31820,7 @@ var staticRenderFns = [
         attrs: { for: "state" }
       },
       [
-        _c("span", { staticClass: "text-danger mr-1" }, [_vm._v("*")]),
+        _c("span", { staticClass: "text-red" }, [_vm._v("*")]),
         _vm._v("\n                State\n            ")
       ]
     )

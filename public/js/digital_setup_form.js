@@ -31011,6 +31011,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -32932,15 +32934,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
-              [
-                _vm._v(
-                  "Is there a District/IT Manager\n                Available?"
-                )
-              ]
-            ),
+            _vm._m(5),
             _vm._v(" "),
             _c("div", { staticClass: "form-check form-check-inline" }, [
               _c("input", {
@@ -33031,7 +33025,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(5),
+                  _vm._m(6),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -33074,7 +33068,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(6),
+                  _vm._m(7),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -33457,6 +33451,21 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Curriculum")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v(
+          "\n                Is there a District/IT Manager\n                Available?"
+        )
       ]
     )
   },

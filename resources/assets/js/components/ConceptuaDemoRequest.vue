@@ -7,7 +7,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="first_name">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     First Name
                 </label>
                 <input v-model="first_name"
@@ -18,7 +18,7 @@
             </div>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="last_name">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     Last Name
                 </label>
                 <input v-model="last_name"
@@ -29,7 +29,7 @@
             </div>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     Work Email
                 </label>
                 <input v-model="email"
@@ -52,7 +52,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="title">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     Role
                 </label>
                 <select v-model="title"
@@ -68,7 +68,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="company">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     School, District Or Organization Name
                 </label>
                 <input v-model="company"
@@ -80,7 +80,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="city">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     City
                 </label>
                 <input v-model="city"
@@ -91,7 +91,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="state">
-                    <span class="text-danger mr-1">*</span>
+                    <span class="text-red">*</span>
                     State
                 </label>
                 <select name="state" id="state"
@@ -155,16 +155,12 @@
                 <form-error :error=formErrors.state[0] v-if="formErrors.state"></form-error>
             </div>
 
-            <hr>
-            <section class="d-flex justify-content-end">
-                <div>
-                    <button type="submit"
-                            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            :disabled="loading">
-                        <i class="fa" :class="{'fa-refresh fa-spin btn-disabled' : loading, 'fa-send': !loading}"></i>
-                        Send
-                    </button>
-                </div>
+
+            <section class="flex">
+                <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" :disabled="loading">
+                    <i class="fa fa-refresh fa-spin" v-if="loading"></i>
+                    Send Request
+                </button>
             </section>
         </form>
     </div>
