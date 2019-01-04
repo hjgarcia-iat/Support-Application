@@ -30996,6 +30996,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31078,9 +31093,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.formMessageType = 'error';
                 _this.loading = false;
             });
-        },
-        clear: function clear() {
-            this.reset();
         },
         reset: function reset() {
             this.name = '';
@@ -32645,14 +32657,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "name" }
-              },
-              [_vm._v("Name")]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -32693,14 +32698,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "po_number" }
-              },
-              [_vm._v("PO Number:*")]
-            ),
+            _vm._m(1),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -32791,14 +32789,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "district" }
-              },
-              [_vm._v("District Name:*")]
-            ),
+            _vm._m(2),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -32841,14 +32832,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "start_date" }
-              },
-              [_vm._v("School Start\n                Date:*")]
-            ),
+            _vm._m(3),
             _vm._v(" "),
             _c("datepicker", {
               attrs: {
@@ -32880,14 +32864,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "curriculum" }
-              },
-              [_vm._v("Curriculum")]
-            ),
+            _vm._m(4),
             _vm._v(" "),
             _c(
               "select",
@@ -33054,15 +33031,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "block text-grey-darker text-sm font-bold mb-2",
-                      attrs: { for: "dm_name" }
-                    },
-                    [_vm._v("Name")]
-                  ),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -33105,15 +33074,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "block text-grey-darker text-sm font-bold mb-2",
-                      attrs: { for: "dm_email" }
-                    },
-                    [_vm._v("Email")]
-                  ),
+                  _vm._m(6),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -33207,7 +33168,12 @@ var render = function() {
                                 "block text-grey-darker text-sm font-bold mb-2",
                               attrs: { for: "teacher_name_" + index }
                             },
-                            [_vm._v("Name")]
+                            [
+                              _c("small", { staticClass: "text-lg text-red" }, [
+                                _vm._v("*")
+                              ]),
+                              _vm._v("\n                        Name")
+                            ]
                           ),
                           _vm._v(" "),
                           _c("input", {
@@ -33260,7 +33226,12 @@ var render = function() {
                                 "block text-grey-darker text-sm font-bold mb-2",
                               attrs: { for: "teacher_email_" + index }
                             },
-                            [_vm._v("Email")]
+                            [
+                              _c("small", { staticClass: "text-lg text-red" }, [
+                                _vm._v("*")
+                              ]),
+                              _vm._v("\n                        Email")
+                            ]
                           ),
                           _vm._v(" "),
                           _c("input", {
@@ -33313,7 +33284,12 @@ var render = function() {
                                 "block text-grey-darker text-sm font-bold mb-2",
                               attrs: { for: "teacher_school_" + index }
                             },
-                            [_vm._v("School")]
+                            [
+                              _c("small", { staticClass: "text-lg text-red" }, [
+                                _vm._v("*")
+                              ]),
+                              _vm._v("\n                        School")
+                            ]
                           ),
                           _vm._v(" "),
                           _c("input", {
@@ -33360,7 +33336,7 @@ var render = function() {
                           "a",
                           {
                             staticClass:
-                              "block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                              "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
                             attrs: { href: "" },
                             on: {
                               click: function($event) {
@@ -33369,7 +33345,7 @@ var render = function() {
                               }
                             }
                           },
-                          [_c("i", { staticClass: "fa fa-remove" })]
+                          [_c("i", { staticClass: "fa fa-trash" })]
                         )
                       ])
                     ]
@@ -33391,33 +33367,10 @@ var render = function() {
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [
-              _c("i", {
-                staticClass: "fa",
-                class: {
-                  "fa-refresh fa-spin": _vm.loading,
-                  "fa-send": !_vm.loading
-                }
-              }),
-              _vm._v("\n                Send\n            ")
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
-              attrs: { type: "reset" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.clear($event)
-                }
-              }
-            },
-            [
-              _c("i", { staticClass: "fa fa-remove" }),
-              _vm._v("\n                Clear\n            ")
+              _vm.loading
+                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                : _vm._e(),
+              _vm._v("\n                Send Request\n            ")
             ]
           )
         ])
@@ -33426,7 +33379,120 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "name" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Name")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "po_number" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                PO Number")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "district" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                District Name")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "start_date" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                School Start\n                Date")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "curriculum" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Curriculum")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "dm_name" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                    Name")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "dm_email" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                    Email")
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

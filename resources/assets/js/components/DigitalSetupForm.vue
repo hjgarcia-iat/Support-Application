@@ -4,7 +4,9 @@
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType></alert>
             <div class="mb-6">
-                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
+                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="name" placeholder="Enter Your Full Name"
@@ -14,7 +16,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="po_number" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
+                <label for="po_number" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    PO Number</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="po_number" placeholder="Enter PO Number"
@@ -33,7 +37,9 @@
                 <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
             <div class="mb-6">
-                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District Name:*</label>
+                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    District Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="district" placeholder="Enter District Name"
@@ -43,8 +49,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">School Start
-                    Date:*</label>
+                <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    School Start
+                    Date</label>
                 <datepicker :format="'M/d/yyyy'" v-model="start_date" :id="start_date"
                             :input-class="'shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline'"
                             :placeholder="'Select School Start Date'"></datepicker>
@@ -53,7 +61,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="curriculum" class="block text-grey-darker text-sm font-bold mb-2">Curriculum</label>
+                <label for="curriculum" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Curriculum</label>
                 <select name="curriculum" id="curriculum" v-model="curriculum"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                     <option value="">Select a curriculum</option>
@@ -91,7 +101,9 @@
                 </p>
 
                 <div class="mb-6">
-                    <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
+                    <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">
+                        <small class="text-lg text-red">*</small>
+                        Name</label>
                     <input type="text"
                            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                            id="dm_name"
@@ -99,7 +111,9 @@
                     <form-error :error=formErrors.dm_name[0] v-if="formErrors.dm_name"></form-error>
                 </div>
                 <div class="mb-6">
-                    <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">Email</label>
+                    <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">
+                        <small class="text-lg text-red">*</small>
+                        Email</label>
                     <input type="text"
                            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                            id="dm_email"
@@ -126,15 +140,20 @@
                 <section class="flex justify-between items-center" v-for="(teacher, key, index) in teachers">
                     <div class="mr-2">
                         <label :for="'teacher_name_' + index"
-                               class="block text-grey-darker text-sm font-bold mb-2">Name</label>
+                               class="block text-grey-darker text-sm font-bold mb-2">
+                            <small class="text-lg text-red">*</small>
+                            Name</label>
                         <input type="text"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                                :id="'teacher_name_' + index"
                                placeholder="Teacher Full Name" name="teachers[]['name']" v-model="teacher.name">
-                        <form-error :error="getErrorForArray(key, 'name')" v-if="checkForArrayError('teachers.' + key + '.name')"></form-error>
+                        <form-error :error="getErrorForArray(key, 'name')"
+                                    v-if="checkForArrayError('teachers.' + key + '.name')"></form-error>
                     </div>
                     <div class="mr-2">
-                        <label :for="'teacher_email_' + index" class="block text-grey-darker text-sm font-bold mb-2">Email</label>
+                        <label :for="'teacher_email_' + index" class="block text-grey-darker text-sm font-bold mb-2">
+                            <small class="text-lg text-red">*</small>
+                            Email</label>
                         <input type="text"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                                :id="'teacher_email_' + index"
@@ -144,7 +163,9 @@
                                     v-if="checkForArrayError('teachers.' + key + '.email')"></form-error>
                     </div>
                     <div class="mr-2">
-                        <label :for="'teacher_school_'+index" class="block text-grey-darker text-sm font-bold mb-2">School</label>
+                        <label :for="'teacher_school_'+index" class="block text-grey-darker text-sm font-bold mb-2">
+                            <small class="text-lg text-red">*</small>
+                            School</label>
                         <input type="text"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                                :id="'teacher_school_'+index"
@@ -155,8 +176,8 @@
                     </div>
                     <div class="flex items-end h-full">
                         <a href="" @click.prevent="removeTeacher(key)"
-                           class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            <i class="fa fa-remove"></i>
+                           class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            <i class="fa fa-trash"></i>
                         </a>
                     </div>
                 </section>
@@ -167,14 +188,8 @@
                 <button type="submit"
                         class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         :disabled="loading">
-                    <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
-                    Send
-                </button>
-                <button type="reset"
-                        class="bg-grey hover:bg-grey-darker hover:text-white text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                        @click.prevent="clear">
-                    <i class="fa fa-remove"></i>
-                    Clear
+                    <i class="fa fa-refresh fa-spin" v-if="loading"></i>
+                    Send Request
                 </button>
             </section>
         </form>
@@ -263,9 +278,6 @@
                     this.loading = false;
                 });
 
-            },
-            clear() {
-                this.reset();
             },
             reset() {
                 this.name = '';
