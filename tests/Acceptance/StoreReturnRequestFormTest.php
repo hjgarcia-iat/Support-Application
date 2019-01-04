@@ -20,6 +20,10 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_data_is_saved_to_the_spreadsheet()
     {
+        Sheets::setService(Google::make('sheets'));
+        Sheets::spreadsheet(env('GOOGLE_SPREADSHEET'));
+        Sheets::sheet('Authorized Returns')->range('2:100')->clear();
+
         $response = $this->from(route('return_request.create'))
             ->post(route('return_request.store'), $this->validParams());
 
