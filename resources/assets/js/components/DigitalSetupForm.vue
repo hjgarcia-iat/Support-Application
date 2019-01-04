@@ -77,7 +77,9 @@
             </div>
 
             <div class="mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2">Is there a District/IT Manager
+                <label class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Is there a District/IT Manager
                     Available?</label>
                 <div class="form-check form-check-inline">
                     <input type="radio" name="district_manager"
