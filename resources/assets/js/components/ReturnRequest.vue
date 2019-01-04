@@ -102,8 +102,8 @@
                     </div>
                     <div>
                         <a href="" @click.prevent="removeProduct(key)"
-                           class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">
-                            <i class="fa fa-remove"></i>
+                           class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">
+                            <i class="fa fa-trash"></i>
                         </a>
                     </div>
                 </section>
@@ -113,7 +113,7 @@
                 <button type="submit"
                         class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         :disabled="loading">
-                    <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
+                    <i class="fa fa-refresh fa-spin mr-1" v-if="loading"></i>
                     Process Return
                 </button>
             </section>

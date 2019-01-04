@@ -31219,7 +31219,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        "block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block",
+                        "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block",
                       attrs: { href: "" },
                       on: {
                         click: function($event) {
@@ -31228,7 +31228,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_c("i", { staticClass: "fa fa-remove" })]
+                    [_c("i", { staticClass: "fa fa-trash" })]
                   )
                 ])
               ]
@@ -31246,13 +31246,9 @@ var render = function() {
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [
-              _c("i", {
-                staticClass: "fa",
-                class: {
-                  "fa-refresh fa-spin": _vm.loading,
-                  "fa-send": !_vm.loading
-                }
-              }),
+              _vm.loading
+                ? _c("i", { staticClass: "fa fa-refresh fa-spin mr-1" })
+                : _vm._e(),
               _vm._v("\n                Process Return\n            ")
             ]
           )
