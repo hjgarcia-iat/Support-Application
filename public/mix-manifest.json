@@ -4,5 +4,6 @@
     "/js/request_quote_form.js": "/js/request_quote_form.js",
     "/js/request_demo_form.js": "/js/request_demo_form.js",
     "/js/request_case_form.js": "/js/request_case_form.js",
-    "/js/digital_setup_form.js": "/js/digital_setup_form.js"
+    "/js/digital_setup_form.js": "/js/digital_setup_form.js",
+    "/js/return_request.js": "/js/return_request.js"
 }

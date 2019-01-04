@@ -4,7 +4,7 @@
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType></alert>
             <div class="mb-6">
-                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
+                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="name" placeholder="Enter Your Full Name"
@@ -24,7 +24,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">PO Number:*</label>
+                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">Email Address</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="email" placeholder="Enter your Email Address"
