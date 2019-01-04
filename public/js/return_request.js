@@ -30858,18 +30858,13 @@ var render = function() {
           attrs: { message: _vm.formMessage, type: _vm.formMessageType }
         }),
         _vm._v(" "),
+        _c("h2", { staticClass: "mb-4" }, [_vm._v("General Information")]),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "name" }
-              },
-              [_vm._v("Name:*")]
-            ),
+            _vm._m(0),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -30910,14 +30905,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "email" }
-              },
-              [_vm._v("Email Address")]
-            ),
+            _vm._m(1),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -30958,14 +30946,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "district" }
-              },
-              [_vm._v("District Name:*")]
-            ),
+            _vm._m(2),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31008,14 +30989,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "order_number" }
-              },
-              [_vm._v("Order or PO\n                Number:")]
-            ),
+            _vm._m(3),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31058,14 +31032,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _c(
-              "label",
-              {
-                staticClass: "block text-grey-darker text-sm font-bold mb-2",
-                attrs: { for: "reason" }
-              },
-              [_vm._v("Reason for Return")]
-            ),
+            _vm._m(4),
             _vm._v(" "),
             _c("textarea", {
               directives: [
@@ -31078,7 +31045,13 @@ var render = function() {
               ],
               staticClass:
                 "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
-              attrs: { name: "reason", id: "reason", cols: "30", rows: "10" },
+              attrs: {
+                name: "reason",
+                id: "reason",
+                cols: "30",
+                rows: "10",
+                placeholder: "Enter Reason"
+              },
               domProps: { value: _vm.reason },
               on: {
                 input: function($event) {
@@ -31129,7 +31102,7 @@ var render = function() {
               [
                 _c(
                   "div",
-                  { staticClass: "mr-2" },
+                  { staticClass: "mr-2 w-full" },
                   [
                     _c(
                       "label",
@@ -31138,7 +31111,12 @@ var render = function() {
                           "block text-grey-darker text-sm font-bold mb-2",
                         attrs: { for: "sku_" + index }
                       },
-                      [_vm._v("SKU")]
+                      [
+                        _c("small", { staticClass: "text-lg text-red" }, [
+                          _vm._v("*")
+                        ]),
+                        _vm._v("\n                        SKU")
+                      ]
                     ),
                     _vm._v(" "),
                     _c("input", {
@@ -31180,7 +31158,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "mr-2" },
+                  { staticClass: "mr-2 w-full" },
                   [
                     _c(
                       "label",
@@ -31189,7 +31167,12 @@ var render = function() {
                           "block text-grey-darker text-sm font-bold mb-2",
                         attrs: { for: "quantity_" + index }
                       },
-                      [_vm._v("Quantity")]
+                      [
+                        _c("small", { staticClass: "text-lg text-red" }, [
+                          _vm._v("*")
+                        ]),
+                        _vm._v("\n                        Quantity")
+                      ]
                     ),
                     _vm._v(" "),
                     _c("input", {
@@ -31231,12 +31214,12 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "flex items-end h-full" }, [
+                _c("div", [
                   _c(
                     "a",
                     {
                       staticClass:
-                        "block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-6",
+                        "block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block",
                       attrs: { href: "" },
                       on: {
                         click: function($event) {
@@ -31254,9 +31237,7 @@ var render = function() {
           0
         ),
         _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("section", { staticClass: "d-flex justify-content-end" }, [
+        _c("section", { staticClass: "mt-6" }, [
           _c(
             "button",
             {
@@ -31272,7 +31253,7 @@ var render = function() {
                   "fa-send": !_vm.loading
                 }
               }),
-              _vm._v("\n                Send\n            ")
+              _vm._v("\n                Process Return\n            ")
             ]
           )
         ])
@@ -31281,7 +31262,88 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "name" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Name")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "email" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Email Address")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "district" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                District Name")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "order_number" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Order or PO\n                Number")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "reason" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                Reason for Return:")
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -31303,6 +31365,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //

@@ -3,8 +3,11 @@
         <h1 class="mb-4">Return Request</h1>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType></alert>
+            <h2 class="mb-4">General Information</h2>
             <div class="mb-6">
-                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">Name:*</label>
+                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="name" placeholder="Enter name"
@@ -14,7 +17,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">Email Address</label>
+                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Email Address</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="email" placeholder="Enter Email Address"
@@ -24,7 +29,9 @@
             </div>
 
             <div class="mb-6">
-                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District Name:*</label>
+                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    District Name</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="district" placeholder="Enter District Name"
@@ -34,8 +41,10 @@
             </div>
 
             <div class="mb-6">
-                <label for="order_number" class="block text-grey-darker text-sm font-bold mb-2">Order or PO
-                    Number:</label>
+                <label for="order_number" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Order or PO
+                    Number</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="order_number" placeholder="Enter Order or PO Number"
@@ -45,8 +54,12 @@
             </div>
 
             <div class="mb-6">
-                <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">Reason for Return</label>
-                <textarea name="reason" id="reason" cols="30" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" v-model="reason"></textarea>
+                <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Reason for Return:</label>
+                <textarea name="reason" id="reason" cols="30" rows="10"
+                          class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                          v-model="reason" placeholder="Enter Reason"></textarea>
                 <form-error :error=formErrors.reason[0] v-if="formErrors.reason"></form-error>
             </div>
 
@@ -62,9 +75,11 @@
 
             <div class="mb-4">
                 <section class="flex justify-between items-center mb-4" v-for="(product, key, index) in products">
-                    <div class="mr-2">
+                    <div class="mr-2 w-full">
                         <label :for="'sku_' + index"
-                               class="block text-grey-darker text-sm font-bold mb-2">SKU</label>
+                               class="block text-grey-darker text-sm font-bold mb-2">
+                            <small class="text-lg text-red">*</small>
+                            SKU</label>
                         <input type="text"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                                :id="'sku_' + index"
@@ -72,8 +87,11 @@
                         <form-error :error="getErrorForArray(key, 'sku')"
                                     v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
                     </div>
-                    <div class="mr-2">
-                        <label :for="'quantity_'+index" class="block text-grey-darker text-sm font-bold mb-2">Quantity</label>
+                    <div class="mr-2 w-full">
+                        <label :for="'quantity_'+index"
+                               class="block text-grey-darker text-sm font-bold mb-2">
+                            <small class="text-lg text-red">*</small>
+                            Quantity</label>
                         <input type="text"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                                :id="'quantity_'+index"
@@ -82,22 +100,21 @@
                         <form-error :error="getErrorForArray(key,'quantity')"
                                     v-if="checkForArrayError('products.' + key + '.quantity')"></form-error>
                     </div>
-                    <div class="flex items-end h-full">
+                    <div>
                         <a href="" @click.prevent="removeProduct(key)"
-                           class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-6">
+                           class="block bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">
                             <i class="fa fa-remove"></i>
                         </a>
                     </div>
                 </section>
             </div>
 
-            <hr>
-            <section class="d-flex justify-content-end">
+            <section class="mt-6">
                 <button type="submit"
                         class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                         :disabled="loading">
                     <i class="fa" :class="{'fa-refresh fa-spin' : loading, 'fa-send': !loading}"></i>
-                    Send
+                    Process Return
                 </button>
             </section>
         </form>
