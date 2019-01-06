@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 77);
+/******/ 	return __webpack_require__(__webpack_require__.s = 72);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -30741,26 +30741,21 @@ if (false) {
 /* 69 */,
 /* 70 */,
 /* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(73);
 
 
 /***/ }),
-/* 78 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ReturnRequest_vue__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ReturnRequest_vue__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ReturnRequest_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ReturnRequest_vue__);
 __webpack_require__(11);
 
@@ -30775,26 +30770,15 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(92)
+var __vue_script__ = __webpack_require__(75)
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(76)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30833,7 +30817,235 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 91 */
+/* 75 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        Alert: __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default.a,
+        FormError: __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default.a
+    },
+    data: function data() {
+        return {
+            name: '',
+            email: '',
+            district: '',
+            order_number: '',
+            reason: '',
+            products: [{
+                sku: '',
+                quantity: ''
+            }],
+            product: {
+                sku: '',
+                quantity: ''
+            },
+            formErrors: [],
+            formMessageType: 'success',
+            formMessage: '',
+            loading: false
+        };
+    },
+
+    methods: {
+        checkForArrayError: function checkForArrayError(field) {
+            return this.formErrors.hasOwnProperty(field);
+        },
+        getErrorForArray: function getErrorForArray(key, field) {
+            return this.formErrors['products.' + key + '.' + field][0];
+        },
+        addProduct: function addProduct() {
+            this.products.push(__WEBPACK_IMPORTED_MODULE_0_vue__["util"].extend({}, this.product));
+        },
+        removeProduct: function removeProduct(index) {
+            __WEBPACK_IMPORTED_MODULE_0_vue__["delete"](this.products, index);
+        },
+        submit: function submit() {
+            var _this = this;
+
+            this.loading = true;
+            axios.post('/return-request', {
+                name: this.name,
+                email: this.email,
+                order_number: this.order_number,
+                district: this.district,
+                reason: this.reason,
+                products: this.products
+            }).then(function (response) {
+                if (response.data.success) {
+                    _this.reset();
+                    _this.formMessageType = 'success';
+                    _this.formMessage = response.data.success;
+                }
+
+                _this.loading = false;
+            }).catch(function (error) {
+                _this.formMessage = 'Please see errors below!';
+                _this.formErrors = error.response.data;
+                _this.formMessageType = 'error';
+                _this.loading = false;
+            });
+        },
+        reset: function reset() {
+            this.name = '';
+            this.email = '';
+            this.order_number = '';
+            this.district = '';
+            this.reason = '';
+            this.products = [{
+                name: '',
+                email: '',
+                school: ''
+            }];
+            this.product = {
+                'name': '',
+                'email': '',
+                'school': ''
+            };
+            this.formErrors = [];
+            this.formMessage = '';
+        }
+    }
+});
+
+/***/ }),
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31348,234 +31560,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-7a12d1d0", module.exports)
   }
 }
-
-/***/ }),
-/* 92 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        Alert: __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default.a,
-        FormError: __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default.a
-    },
-    data: function data() {
-        return {
-            name: '',
-            email: '',
-            district: '',
-            order_number: '',
-            reason: '',
-            products: [{
-                sku: '',
-                quantity: ''
-            }],
-            product: {
-                sku: '',
-                quantity: ''
-            },
-            formErrors: [],
-            formMessageType: 'success',
-            formMessage: '',
-            loading: false
-        };
-    },
-
-    methods: {
-        checkForArrayError: function checkForArrayError(field) {
-            return this.formErrors.hasOwnProperty(field);
-        },
-        getErrorForArray: function getErrorForArray(key, field) {
-            return this.formErrors['products.' + key + '.' + field][0];
-        },
-        addProduct: function addProduct() {
-            this.products.push(__WEBPACK_IMPORTED_MODULE_0_vue__["util"].extend({}, this.product));
-        },
-        removeProduct: function removeProduct(index) {
-            __WEBPACK_IMPORTED_MODULE_0_vue__["delete"](this.products, index);
-        },
-        submit: function submit() {
-            var _this = this;
-
-            this.loading = true;
-            axios.post('/return-request', {
-                name: this.name,
-                email: this.email,
-                order_number: this.order_number,
-                district: this.district,
-                reason: this.reason,
-                products: this.products
-            }).then(function (response) {
-                if (response.data.success) {
-                    _this.reset();
-                    _this.formMessageType = 'success';
-                    _this.formMessage = response.data.success;
-                }
-
-                _this.loading = false;
-            }).catch(function (error) {
-                _this.formMessage = 'Please see errors below!';
-                _this.formErrors = error.response.data;
-                _this.formMessageType = 'error';
-                _this.loading = false;
-            });
-        },
-        reset: function reset() {
-            this.name = '';
-            this.email = '';
-            this.order_number = '';
-            this.district = '';
-            this.reason = '';
-            this.products = [{
-                name: '',
-                email: '',
-                school: ''
-            }];
-            this.product = {
-                'name': '',
-                'email': '',
-                'school': ''
-            };
-            this.formErrors = [];
-            this.formMessage = '';
-        }
-    }
-});
 
 /***/ })
 /******/ ]);
