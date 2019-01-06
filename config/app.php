@@ -232,7 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Google' => PulkitJalan\Google\Facades\Google::class,
         'Sheets' => GoogleSheets\Facades\Sheets::class,
-
+        'Salesforce' => Davispeixoto\Laravel5Salesforce\SalesforceFacade::class,
     ],
 
 ];

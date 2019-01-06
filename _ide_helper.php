@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.36 on 2019-01-04 01:49:43.
+ * Generated for Laravel 5.4.36 on 2019-01-06 19:07:58.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -11915,6 +11915,37 @@ namespace GoogleSheets\Facades {
  
 }
 
+namespace Davispeixoto\Laravel5Salesforce { 
+
+    class SalesforceFacade {
+        
+        /**
+         * Connect user into salesforce
+         *
+         * @param $configExternal
+         * @throws SalesforceException
+         * @static 
+         */ 
+        public static function connect($configExternal)
+        {
+            return \Davispeixoto\Laravel5Salesforce\Salesforce::connect($configExternal);
+        }
+        
+        /**
+         * 
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function dump()
+        {
+            return \Davispeixoto\Laravel5Salesforce\Salesforce::dump();
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14007,8 +14038,33 @@ namespace  {
     class Google extends \PulkitJalan\Google\Facades\Google {}
 
     class Sheets extends \GoogleSheets\Facades\Sheets {}
+
+    class Salesforce extends \Davispeixoto\Laravel5Salesforce\SalesforceFacade {}
  
 }
 
 
 
+namespace Illuminate\Support {
+    /**
+     * Methods commonly used in migrations
+     *
+     * @method Fluent after(string $column) Add the after modifier
+     * @method Fluent charset(string $charset) Add the character set modifier
+     * @method Fluent collation(string $collation) Add the collation modifier
+     * @method Fluent comment(string $comment) Add comment
+     * @method Fluent default(mixed $value) Add the default modifier
+     * @method Fluent first() Select first row
+     * @method Fluent index(string $name = null) Add the in dex clause
+     * @method Fluent on(string $table) `on` of a foreign key
+     * @method Fluent onDelete(string $action) `on delete` of a foreign key
+     * @method Fluent onUpdate(string $action) `on update` of a foreign key
+     * @method Fluent primary() Add the primary key modifier
+     * @method Fluent references(string $column) `references` of a foreign key
+     * @method Fluent nullable() Add the nullable modifier
+     * @method Fluent unique(string $name = null) Add unique index clause
+     * @method Fluent unsigned() Add the unsigned modifier
+     * @method Fluent useCurrent() Add the default timestamp value
+     */
+    class Fluent {}
+}
