@@ -15,8 +15,10 @@ class StoreRequestADemoTest extends TestCase
 {
     use MailTracking, DatabaseTransactions, DatabaseMigrations;
 
-
-    public function test_we_can_store_conceptua_demo_request()
+    /**
+     * @test
+     */
+    public function we_can_store_conceptua_demo_request_in_salesforce()
     {
         $response = $this->from(route('conceptua.request_demo.create'))
             ->post(route('conceptua.request_demo.store'), $this->validParams());
@@ -31,6 +33,9 @@ class StoreRequestADemoTest extends TestCase
         $this->assertEquals($this->validParams()['email'], \Salesforce::query("SELECT Id,Email from Lead WHERE email='" . $this->validParams()['email'] . "'")->records[0]->Email);
     }
 
+    /**
+     * Tear Down
+     */
     public function tearDown()
     {
         //delete the lead that was generated

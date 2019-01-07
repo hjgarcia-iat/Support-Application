@@ -15,7 +15,10 @@ class StoreCaseStudentRequestTest extends TestCase
 {
     use MailTracking;
 
-    public function test_we_can_send_a_case_study_request()
+    /**
+     * @test
+     */
+    public function we_can_send_a_case_study_request_in_salesforce()
     {
         $response = $this->json('post', route('conceptua.request_case.store'), $this->validParams());
 
