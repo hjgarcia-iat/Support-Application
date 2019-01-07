@@ -20,18 +20,23 @@ class SalesforceCrm implements CRMInterface
      */
     public function createConceptuaDemoRequestLead($request)
     {
-        $sObject                                 = new stdclass();
-        $sObject->FirstName                      = $request->get('first_name');
-        $sObject->LastName                       = $request->get('last_name');
-        $sObject->Email                          = $request->get('email');
-        $sObject->City                           = $request->get('city');
-        $sObject->State                          = $request->get('state');
-        $sObject->Company                        = $request->get('company');
-        $sObject->Title                          = $request->get('title');
-        $sObject->LeadSource                     = 'Web Lead';
-        $sObject->High_Level_Product_Interest__c = 'Conceptua Math';
-        $sObject->Additional_Lead_Sources__c     = 'Conceptua Math Demo Request';
-        $sObject->OwnerId                        = $this->setLeadOwner($request->get('state'));
+        $sObject                             = new stdclass();
+        $sObject->FirstName                  = $request->get('first_name');
+        $sObject->LastName                   = $request->get('last_name');
+        $sObject->Email                      = $request->get('email');
+        $sObject->City                       = $request->get('city');
+        $sObject->State                      = $request->get('state');
+        $sObject->Company                    = $request->get('company');
+        $sObject->Title                      = $request->get('title');
+        $sObject->LeadSource                 = 'Web Lead';
+        $sObject->Additional_Lead_Sources__c = 'Conceptua Math Demo Request';
+
+        $sObject->Role__c                    = 'Classroom Teacher';
+        $sObject->Product_Interest__c        = 'Conceptua Math';
+        $sObject->License_Type_Interest__c   = 'Classroom';
+        $sObject->License_Type__c            = 'Conceptua Math';
+
+        $sObject->OwnerId                    = $this->setLeadOwner($request->get('state'));
 
 
         if ($request->has('phone')) {
@@ -39,6 +44,7 @@ class SalesforceCrm implements CRMInterface
         }
 
         $lead = \Salesforce::create([$sObject], 'Lead');
+
 
         $this->sendLeadEmailToRep($request, $lead[0]->id);
 
@@ -64,7 +70,12 @@ class SalesforceCrm implements CRMInterface
         $sObject->City                           = $request->get('city');
         $sObject->State                          = $request->get('state');
         $sObject->LeadSource                     = 'Web Lead';
-        $sObject->High_Level_Product_Interest__c = 'Conceptua Math';
+
+        $sObject->Role__c = 'Classroom Teacher';
+        $sObject->Product_Interest__c = 'Conceptua Math';
+        $sObject->License_Type_Interest__c = 'Classroom';
+        $sObject->License_Type__c = 'Conceptua Math';
+
         $sObject->Additional_Lead_Sources__c     = 'Conceptua Math Quote Request';
         $sObject->OwnerId                        = $this->setLeadOwner($request->get('state'));
 
@@ -121,7 +132,12 @@ class SalesforceCrm implements CRMInterface
         $sObject->Company                        = $request->get('company');
         $sObject->Title                          = $request->get('title');
         $sObject->LeadSource                     = 'Web Lead';
-        $sObject->High_Level_Product_Interest__c = 'Conceptua Math';
+
+        $sObject->Role__c = 'Classroom Teacher';
+        $sObject->Product_Interest__c = 'Conceptua Math';
+        $sObject->License_Type_Interest__c = 'Classroom';
+        $sObject->License_Type__c = 'Conceptua Math';
+
         $sObject->Additional_Lead_Sources__c     = 'Conceptua Math Case Study Request';
         $sObject->OwnerId                        = $this->setLeadOwner($request->get('state'));
 
