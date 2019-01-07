@@ -55,7 +55,7 @@ class StoreRequestAQuoteTest extends TestCase
             'title' => 'Teacher Title',
             'license' => 'The License',
             'city' => 'Some City',
-            'state' => 'Some State',
+            'state' => 'NY',
         ], $overrides);
     }
 }
