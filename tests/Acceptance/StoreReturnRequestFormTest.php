@@ -31,27 +31,27 @@ class StoreReturnRequestFormTest extends TestCase
         $response->assertJson(['message' => 'Your information was saved. We will get back to you shortly.']);
         $this->assertTrue(resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()->contains(
             [
-                'Requester Name'        => 'Jane Doe',
-                'Requester Email'       => 'jdoe@email.com',
+                'Requester Name' => 'Jane Doe',
+                'Requester Email' => 'jdoe@email.com',
                 'District/Company Name' => 'Some District',
-                'Order# or PO#'         => '12345',
-                "RMA#"                  => "",
-                'Reason for Return'     => 'some valid reason',
-                'SKU'                   => 1234,
-                'QTY'                   => 1,
+                'Order# or PO#' => '12345',
+                "RMA#" => '12345',
+                'Reason for Return' => 'some valid reason',
+                'SKU' => 1234,
+                'QTY' => 1,
             ]
         ));
 
         $this->assertTrue(resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()->contains(
             [
-                'Requester Name'        => 'Jane Doe',
-                'Requester Email'       => 'jdoe@email.com',
+                'Requester Name' => 'Jane Doe',
+                'Requester Email' => 'jdoe@email.com',
                 'District/Company Name' => 'Some District',
-                'Order# or PO#'         => '12345',
-                "RMA#"                  => "",
-                'Reason for Return'     => 'some valid reason',
-                'SKU'                   => 1236,
-                'QTY'                   => 4,
+                'Order# or PO#' => '12345',
+                "RMA#" => '12345',
+                'Reason for Return' => 'some valid reason',
+                'SKU' => 1236,
+                'QTY' => 4,
             ]
         ));
     }
@@ -64,12 +64,13 @@ class StoreReturnRequestFormTest extends TestCase
     private function validParams($data = [])
     {
         return array_merge([
-            'name'         => 'Jane Doe',
-            'email'        => 'jdoe@email.com',
-            'district'     => 'Some District',
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+            'district' => 'Some District',
             'order_number' => '12345',
-            'reason'       => 'some valid reason',
-            'products'     => [
+            'rma_number' => '12345',
+            'reason' => 'some valid reason',
+            'products' => [
                 ['sku' => '1234', 'quantity' => 1],
                 ['sku' => '1236', 'quantity' => 4],
             ],

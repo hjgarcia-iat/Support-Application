@@ -44,7 +44,7 @@ class GoogleSpreadsheet implements SpreadsheetInterface
                     $data['email'],
                     $data['district'],
                     $data['order_number'],
-                    '',//for the RMA number column
+                    $data['rma_number'],
                     $data['reason'],
                     $product['sku'],
                     $product['quantity'],
