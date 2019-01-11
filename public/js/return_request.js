@@ -31313,7 +31313,60 @@ var render = function() {
           [
             _vm._m(6),
             _vm._v(" "),
-            _vm._m(7),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.reason,
+                    expression: "reason"
+                  }
+                ],
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                attrs: { name: "reason", id: "reason" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.reason = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("Select a Reason for Return")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Overstock" } }, [
+                  _vm._v("Overstock")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Ordered in error" } }, [
+                  _vm._v("Ordered in error")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "option",
+                  { attrs: { value: "Never implemented program" } },
+                  [_vm._v("Never implemented program")]
+                ),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "Incorrect items received" } }, [
+                  _vm._v("Incorrect items received")
+                ])
+              ]
+            ),
             _vm._v(" "),
             _vm.formErrors.reason
               ? _c("form-error", { attrs: { error: _vm.formErrors.reason[0] } })
@@ -31618,38 +31671,6 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Reason for Return:")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      {
-        staticClass:
-          "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
-        attrs: { name: "reason", id: "reason" }
-      },
-      [
-        _c("option", { attrs: { value: "" } }, [
-          _vm._v("Select a Reason for Return")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "Overstock" } }, [_vm._v("Overstock")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "Ordered in error" } }, [
-          _vm._v("Ordered in error")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "Never implemented program" } }, [
-          _vm._v("Never implemented program")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "Incorrect items received" } }, [
-          _vm._v("Incorrect items received")
-        ])
       ]
     )
   }
