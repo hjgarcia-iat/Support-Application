@@ -19793,7 +19793,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v("Digital Setup Request Form")]),
+    _c("h1", { staticClass: "mb-4" }, [_vm._v("Digital Setup Request")]),
     _vm._v(" "),
     _c(
       "form",

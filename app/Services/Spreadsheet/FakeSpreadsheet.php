@@ -2,6 +2,7 @@
 
 namespace App\Services\Spreadsheet;
 
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 /**
@@ -34,6 +35,7 @@ class FakeSpreadsheet implements SpreadsheetInterface
 
         foreach ($products as $product) {
             $this->spreadsheet[] = [
+                'Date Entered' => Carbon::now()->format('m/d/Y'),
                 'Requester Name' => $data['name'],
                 'Requester Email' => $data['email'],
                 'District/Company Name' => $data['district'],

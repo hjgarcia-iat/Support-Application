@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Services\Spreadsheet\FakeSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
+use Carbon\Carbon;
 use Tests\TestCase;
 
 /**
@@ -37,6 +38,7 @@ class StoreReturnRequestFormTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['message' => 'Your information was saved. We will get back to you shortly.']);
         $this->assertEquals([
+            'Date Entered' => Carbon::now()->format('m/d/Y'),
             'Requester Name' => 'Jane Doe',
             'Requester Email' => 'jdoe@email.com',
             'District/Company Name' => 'Some District',
@@ -48,6 +50,7 @@ class StoreReturnRequestFormTest extends TestCase
         ], $this->spreadsheet->get()[0]);
 
         $this->assertEquals([
+            'Date Entered' => Carbon::now()->format('m/d/Y'),
             'Requester Name' => 'Jane Doe',
             'Requester Email' => 'jdoe@email.com',
             'District/Company Name' => 'Some District',

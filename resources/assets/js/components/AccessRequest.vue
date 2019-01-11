@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Access Request Form</h1>
+        <h1 class="mb-4">Access Request</h1>
         <form method="POST" @submit.prevent="submitForm">
             <alert :message=formMessage :type=formMessageType></alert>
 

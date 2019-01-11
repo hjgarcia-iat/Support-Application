@@ -2,6 +2,7 @@
 
 namespace App\Services\Spreadsheet;
 
+use Carbon\Carbon;
 use Google;
 use Illuminate\Support\Collection;
 use Sheets;
@@ -22,7 +23,7 @@ class GoogleSpreadsheet implements SpreadsheetInterface
 
         $rows = Sheets::sheet('Authorized Returns')->get();
 
-        $header = $rows->pull(0);
+        $header = $rows->pull(1);
 
         return Sheets::collection($header, $rows);
     }
@@ -40,6 +41,7 @@ class GoogleSpreadsheet implements SpreadsheetInterface
         foreach ($data['products'] as $product) {
             Sheets::sheet('Authorized Returns')->range('')->append([
                 [
+                    Carbon::now()->format('m/d/Y'),
                     $data['name'],
                     $data['email'],
                     $data['district'],

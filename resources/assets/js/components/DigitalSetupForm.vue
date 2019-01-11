@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Digital Setup Request Form</h1>
+        <h1 class="mb-4">Digital Setup Request</h1>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType></alert>
             <div class="mb-6">
