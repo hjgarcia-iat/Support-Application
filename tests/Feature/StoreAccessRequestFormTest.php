@@ -142,22 +142,6 @@ class StoreAccessRequestFormTest extends TestCase
     /**
      * @test
      */
-    public function the_school_field_is_required()
-    {
-        $response = $this->from(route('access_request.create'))
-            ->post(route('access_request.store'), $this->validData([
-                'school' => '',
-            ]));
-
-        $response->assertStatus(302);
-        $response->assertRedirect('access-request');
-        $response->assertSessionHasErrors('school');
-        $this->seeEmailWasNotSent();
-    }
-
-    /**
-     * @test
-     */
     public function the_resource_field_is_required()
     {
         $response = $this->from(route('access_request.create'))

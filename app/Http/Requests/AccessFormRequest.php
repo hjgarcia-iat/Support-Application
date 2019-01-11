@@ -29,7 +29,6 @@ class AccessFormRequest extends FormRequest
             'last_name' => ['required'],
             'email' => ['required', 'email'],
             'district' => ['required'],
-            'school' => ['required'],
             'resource' => ['required'],
             'time_frame' => ['required'],
             'zip_code' => ['required', 'exists:zipcodes,zip_code'],

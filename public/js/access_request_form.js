@@ -39920,8 +39920,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -40083,6 +40081,12 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "option",
+                  { attrs: { value: "alandrum@activatelearning.com" } },
+                  [_vm._v("Andrew Landrum")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "option",
                   { attrs: { value: "bspears@activatelearning.com" } },
                   [_vm._v("Brian Spears")]
                 ),
@@ -40143,8 +40147,20 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "option",
+                  { attrs: { value: "tnatenberg@activatelearning.com" } },
+                  [_vm._v("Todd Natenberg")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "option",
                   { attrs: { value: "tpence@activatelearning.com" } },
                   [_vm._v("Tom Pence")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "option",
+                  { attrs: { value: "tmarmolejo@activatelearning.com" } },
+                  [_vm._v("Tracy Marmolejo")]
                 )
               ]
             ),
@@ -40367,7 +40383,14 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(5),
+            _c(
+              "label",
+              {
+                staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                attrs: { for: "school" }
+              },
+              [_vm._v("\n                School")]
+            ),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -40421,7 +40444,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(6),
+            _vm._m(5),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -40468,7 +40491,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(7),
+            _vm._m(6),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -41015,7 +41038,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(8),
+            _vm._m(7),
             _vm._v(" "),
             _vm.formErrors.resource
               ? _c("form-error", {
@@ -41043,7 +41066,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(9),
+                _vm._m(8),
                 _vm._v(" "),
                 _c(
                   "select",
@@ -41256,7 +41279,7 @@ var render = function() {
             staticClass: "mb-6"
           },
           [
-            _vm._m(10),
+            _vm._m(9),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -41416,7 +41439,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(11),
+            _vm._m(10),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -41646,7 +41669,7 @@ var render = function() {
             },
             [
               _vm._v(
-                "Any additional\n                information you may have - e.g. name of the school and/or district, product interest (K-5, 6-8,\n                9-12), etc.\n            "
+                "Any additional information you need to convey to Support."
               )
             ]
           )
@@ -41753,22 +41776,6 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                District")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "school" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
-        _vm._v("\n                School")
       ]
     )
   },

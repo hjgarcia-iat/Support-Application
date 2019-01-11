@@ -15,6 +15,7 @@
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                         v-model="rep">
                     <option value="">Make a selection...</option>
+                    <option value="alandrum@activatelearning.com">Andrew Landrum</option>
                     <option value="bspears@activatelearning.com">Brian Spears</option>
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
@@ -25,7 +26,9 @@
                     <option value="lbefanis@activatelearning.com">Lisa Befanis</option>
                     <option value="lpabon@activatelearning.com">Liz Pabon</option>
                     <option value="rantinori@activatelearning.com">Ron Antinori</option>
+                    <option value="tnatenberg@activatelearning.com">Todd Natenberg</option>
                     <option value="tpence@activatelearning.com">Tom Pence</option>
+                    <option value="tmarmolejo@activatelearning.com">Tracy Marmolejo</option>
                 </select>
 
                 <form-error :error=formErrors.sales_rep[0] v-if="formErrors.sales_rep"></form-error>
@@ -96,9 +99,7 @@
             <div class="mb-6">
 
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
                     School</label>
-
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                        id="school"
@@ -358,10 +359,7 @@
                           class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
                           cols="30"
                           placeholder="Notes" rows="5" v-model="notes"></textarea>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Any additional
-                    information you may have - e.g. name of the school and/or district, product interest (K-5, 6-8,
-                    9-12), etc.
-                </small>
+                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Any additional information you need to convey to Support.</small>
             </div>
 
             <hr class="border-t mt-8 mb-6">
