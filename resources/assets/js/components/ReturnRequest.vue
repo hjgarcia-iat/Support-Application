@@ -201,7 +201,7 @@
                     if (response.data.success) {
                         this.reset();
                         this.formMessageType = 'success';
-                        this.formMessage = response.data.success;
+                        this.formMessage = response.data.message;
                     }
 
                     this.loading = false;

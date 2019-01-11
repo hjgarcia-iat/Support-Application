@@ -30602,7 +30602,7 @@ var render = function() {
         [
           _vm._v("\n    " + _vm._s(_vm.message) + "\n    "),
           _vm.type === "success"
-            ? _c("p", [
+            ? _c("p", { staticClass: "mt-4" }, [
                 _vm._v("\n        Go Back to\n        "),
                 _c("a", { attrs: { href: "http://activatelearning.com" } }, [
                   _vm._v("Activate Learning")
@@ -31032,7 +31032,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (response.data.success) {
                     _this.reset();
                     _this.formMessageType = 'success';
-                    _this.formMessage = response.data.success;
+                    _this.formMessage = response.data.message;
                 }
 
                 _this.loading = false;

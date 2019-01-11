@@ -4,7 +4,7 @@
          v-if="message"
          role="alert">
         {{ message }}
-        <p v-if="type === 'success'">
+        <p class="mt-4" v-if="type === 'success'">
             Go Back to
             <a href="http://activatelearning.com">Activate Learning</a>
         </p>
