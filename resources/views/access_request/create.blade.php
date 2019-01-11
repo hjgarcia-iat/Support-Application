@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('pageTitle','Access Request')
 @section('content')
     <div id="access-request">
         <access-request-form></access-request-form>

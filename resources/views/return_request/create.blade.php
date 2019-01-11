@@ -1,5 +1,5 @@
 @extends('layout.app')
-
+@section('pageTitle','Return Request')
 @section('content')
     <div id="request-quote-form">
         <return-request-form></return-request-form>
