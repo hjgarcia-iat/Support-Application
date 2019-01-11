@@ -1,6 +1,10 @@
 <template>
     <div class="p-8">
         <h1 class="mb-4">Return Request</h1>
+        <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are subject to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
+            memo will be issued for the approved returned items along with a restocking fee of 20%.  If you have questions regarding your return please contact our Customer Service Group at
+            <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
+        </p>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType></alert>
             <h2 class="mb-4">General Information</h2>
@@ -43,11 +47,10 @@
             <div class="mb-6">
                 <label for="order_number" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
-                    Order or PO
-                    Number</label>
+                    Order Number or PO Number</label>
                 <input type="text"
                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-                       id="order_number" placeholder="Enter Order or PO Number"
+                       id="order_number" placeholder="Order Number or PO Number"
                        name="order_number" v-model="order_number">
 
                 <form-error :error=formErrors.order_number[0] v-if="formErrors.order_number"></form-error>
@@ -57,9 +60,13 @@
                 <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
                     Reason for Return:</label>
-                <textarea name="reason" id="reason" cols="30" rows="10"
-                          class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-                          v-model="reason" placeholder="Enter Reason"></textarea>
+                <select name="reason" id="reason" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Select a Reason for Return</option>
+                    <option value="Overstock">Overstock</option>
+                    <option value="Ordered in error">Ordered in error</option>
+                    <option value="Never implemented program">Never implemented program</option>
+                    <option value="Incorrect items received">Incorrect items received</option>
+                </select>
                 <form-error :error=formErrors.reason[0] v-if="formErrors.reason"></form-error>
             </div>
 

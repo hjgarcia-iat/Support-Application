@@ -146,7 +146,7 @@ return [
         'license'             => 'License',
         'company'             => 'School',
         'reason'              => 'Reason',
-        'order_number'        => 'Order Number',
+        'order_number'        => 'Order Number or PO Number',
     ],
 
 ];

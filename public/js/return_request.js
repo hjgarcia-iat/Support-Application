@@ -30951,6 +30951,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31055,6 +31062,8 @@ var render = function() {
   return _c("div", { staticClass: "p-8" }, [
     _c("h1", { staticClass: "mb-4" }, [_vm._v("Return Request")]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "form",
       {
@@ -31076,7 +31085,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31117,7 +31126,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(1),
+            _vm._m(2),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31158,7 +31167,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(2),
+            _vm._m(3),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31201,7 +31210,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(3),
+            _vm._m(4),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -31217,7 +31226,7 @@ var render = function() {
               attrs: {
                 type: "text",
                 id: "order_number",
-                placeholder: "Enter Order or PO Number",
+                placeholder: "Order Number or PO Number",
                 name: "order_number"
               },
               domProps: { value: _vm.order_number },
@@ -31244,36 +31253,9 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(4),
+            _vm._m(5),
             _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.reason,
-                  expression: "reason"
-                }
-              ],
-              staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
-              attrs: {
-                name: "reason",
-                id: "reason",
-                cols: "30",
-                rows: "10",
-                placeholder: "Enter Reason"
-              },
-              domProps: { value: _vm.reason },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.reason = $event.target.value
-                }
-              }
-            }),
+            _vm._m(6),
             _vm._v(" "),
             _vm.formErrors.reason
               ? _c("form-error", { attrs: { error: _vm.formErrors.reason[0] } })
@@ -31475,6 +31457,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "mb-4" }, [
+      _vm._v(
+        "The district or school will be responsible for shipment of returned items. All returns are subject to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit\n        memo will be issued for the approved returned items along with a restocking fee of 20%.  If you have questions regarding your return please contact our Customer Service Group at\n        "
+      ),
+      _c("a", { attrs: { href: "mailto:csr@activatelearning.com" } }, [
+        _vm._v("csr@activatelearning.com")
+      ]),
+      _vm._v(".\n    ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
       "label",
       {
@@ -31531,7 +31527,7 @@ var staticRenderFns = [
       },
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
-        _vm._v("\n                Order or PO\n                Number")
+        _vm._v("\n                Order Number or PO Number")
       ]
     )
   },
@@ -31548,6 +31544,38 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Reason for Return:")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass:
+          "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+        attrs: { name: "reason", id: "reason" }
+      },
+      [
+        _c("option", { attrs: { value: "" } }, [
+          _vm._v("Select a Reason for Return")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Overstock" } }, [_vm._v("Overstock")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Ordered in error" } }, [
+          _vm._v("Ordered in error")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Never implemented program" } }, [
+          _vm._v("Never implemented program")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Incorrect items received" } }, [
+          _vm._v("Incorrect items received")
+        ])
       ]
     )
   }
