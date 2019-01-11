@@ -28724,7 +28724,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey",
                 attrs: { name: "sales_rep", id: "sales_rep" },
                 on: {
                   change: function($event) {
@@ -28862,7 +28862,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "first_name",
@@ -28905,7 +28905,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "last_name",
@@ -28948,7 +28948,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -28969,8 +28969,7 @@ var render = function() {
             _c(
               "small",
               {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded",
+                staticClass: "mt-3 block text-grey-dark",
                 attrs: { id: "emailHelp" }
               },
               [
@@ -29007,7 +29006,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -29025,18 +29024,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-              },
-              [
-                _vm._v(
-                  "Please enter\n                the name of the school district associated with this customer\n            "
-                )
-              ]
-            ),
+            _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+              _vm._v(
+                "Please enter\n                the name of the school district associated with this customer\n            "
+              )
+            ]),
             _vm._v(" "),
             _vm.formErrors.district
               ? _c("form-error", {
@@ -29070,7 +29062,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "school",
@@ -29088,18 +29080,11 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-              },
-              [
-                _vm._v(
-                  "Please enter\n                the name of the school associated with this customer\n            "
-                )
-              ]
-            ),
+            _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+              _vm._v(
+                "Please enter\n                the name of the school associated with this customer\n            "
+              )
+            ]),
             _vm._v(" "),
             _vm.formErrors.school
               ? _c("form-error", { attrs: { error: _vm.formErrors.school[0] } })
@@ -29124,7 +29109,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "zip_code",
@@ -29706,18 +29691,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-              },
-              [
-                _vm._v(
-                  "Select one or\n                more of the following resources.\n            "
-                )
-              ]
-            ),
+            _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+              _vm._v(
+                "Select one or\n                more of the following resources.\n            "
+              )
+            ]),
             _vm._v(" "),
             _vm.formErrors.resource
               ? _c("form-error", {
@@ -29759,7 +29737,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                      "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       name: "ebook_list",
                       id: "ebook_list",
@@ -29920,18 +29898,11 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "small",
-                  {
-                    staticClass:
-                      "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-                  },
-                  [
-                    _vm._v(
-                      "Select one\n                    or more e-books. Use the Command\n                    or Control key to select more than one.\n                "
-                    )
-                  ]
-                ),
+                _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+                  _vm._v(
+                    "Select one\n                    or more e-books. Use the Command\n                    or Control key to select more than one.\n                "
+                  )
+                ]),
                 _vm._v(" "),
                 _vm.formErrors.ebook_list
                   ? _c("form-error", {
@@ -30129,18 +30100,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-              },
-              [
-                _vm._v(
-                  "Please indicate\n                which version of IQWST IDE you will need.\n            "
-                )
-              ]
-            ),
+            _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+              _vm._v(
+                "Please indicate\n                which version of IQWST IDE you will need.\n            "
+              )
+            ]),
             _vm._v(" "),
             _vm.formErrors.version
               ? _c("form-error", {
@@ -30316,18 +30280,11 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                staticClass:
-                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-              },
-              [
-                _vm._v(
-                  "Please indicate\n                the length of time access is to be granted.\n            "
-                )
-              ]
-            ),
+            _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+              _vm._v(
+                "Please indicate\n                the length of time access is to be granted.\n            "
+              )
+            ]),
             _vm._v(" "),
             _vm.formErrors.time_frame
               ? _c("form-error", {
@@ -30358,7 +30315,7 @@ var render = function() {
               }
             ],
             staticClass:
-              "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
             attrs: {
               name: "note",
               id: "note",
@@ -30377,18 +30334,9 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c(
-            "small",
-            {
-              staticClass:
-                "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-            },
-            [
-              _vm._v(
-                "Any additional information you need to convey to Support."
-              )
-            ]
-          )
+          _c("small", { staticClass: "mt-3 block text-grey-dark" }, [
+            _vm._v("Any additional information you need to convey to Support.")
+          ])
         ]),
         _vm._v(" "),
         _c("hr", { staticClass: "border-t mt-8 mb-6" }),

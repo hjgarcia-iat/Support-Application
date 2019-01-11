@@ -12,7 +12,7 @@
                 </label>
 
                 <select name="sales_rep" id="sales_rep"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="rep">
                     <option value="">Make a selection...</option>
                     <option value="alandrum@activatelearning.com">Andrew Landrum</option>
@@ -42,7 +42,7 @@
                     Customer First
                     Name</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="first_name"
                        placeholder="First Name" name="first_name" v-model="first_name">
 
@@ -55,7 +55,7 @@
                     Customer Last
                     Name</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="last_name"
                        placeholder="Last Name" name="last_name" v-model="last_name">
 
@@ -68,11 +68,11 @@
                     Customer Email
                     Address</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="email"
                        placeholder="Email Address" name="email" v-model="email">
                 <small id="emailHelp"
-                       class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">This MUST be a
+                       class="mt-3 block text-grey-dark">This MUST be a
                     school email address (not gmail, yahoo, etc...)
                 </small>
 
@@ -87,10 +87,10 @@
                     <small class="text-lg text-red">*</small>
                     District</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="district"
                        placeholder="District Name" name="district" v-model="district">
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please enter
+                <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school district associated with this customer
                 </small>
 
@@ -101,10 +101,10 @@
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
                     School</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="school"
                        placeholder="School Name" name="school" v-model="school">
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please enter
+                <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school associated with this customer
                 </small>
 
@@ -116,7 +116,7 @@
                     <small class="text-lg text-red">*</small>
                     Zip Code</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="zip_code" placeholder="School Zip code"
                        name="zip_code" v-model="zip">
 
@@ -210,7 +210,7 @@
                         IMP CyberPD
                     </label>
                 </div>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one or
+                <small class="mt-3 block text-grey-dark">Select one or
                     more of the following resources.
                 </small>
 
@@ -223,7 +223,7 @@
                         <small class="text-lg text-red">*</small>
                         E-Book List</label>
                     <select name="ebook_list" id="ebook_list"
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             v-model="ebook" multiple>
                         <option value="">Select an E-Book...</option>
                         <option value="Active Physics">Active Physics</option>
@@ -252,7 +252,7 @@
                         <option value="PBIScience: Moving Big Things">PBIScience: Moving Big Things</option>
                         <option value="PBIScience: Vehicles in Motion">PBIScience: Vehicles in Motion</option>
                     </select>
-                    <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one
+                    <small class="mt-3 block text-grey-dark">Select one
                         or more e-books. Use the Command
                         or Control key to select more than one.
                     </small>
@@ -302,7 +302,7 @@
                         IQWST Oklahoma
                     </label>
                 </div>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please indicate
+                <small class="mt-3 block text-grey-dark">Please indicate
                     which version of IQWST IDE you will need.
                 </small>
 
@@ -350,7 +350,7 @@
                         Other (please indicate in the Notes section below the length of time you need)
                     </label>
                 </div>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Please indicate
+                <small class="mt-3 block text-grey-dark">Please indicate
                     the length of time access is to be granted.
                 </small>
 
@@ -361,10 +361,10 @@
                 <label for="note" class="block text-grey-darker text-sm font-bold mb-2">Notes</label>
 
                 <textarea name="note" id="note"
-                          class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                          class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                           cols="30"
                           placeholder="Notes" rows="5" v-model="notes"></textarea>
-                <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Any additional information you need to convey to Support.</small>
+                <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.</small>
             </div>
 
             <hr class="border-t mt-8 mb-6">
