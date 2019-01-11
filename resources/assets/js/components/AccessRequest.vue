@@ -12,7 +12,7 @@
                 </label>
 
                 <select name="sales_rep" id="sales_rep"
-                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="rep">
                     <option value="">Make a selection...</option>
                     <option value="alandrum@activatelearning.com">Andrew Landrum</option>
@@ -42,7 +42,7 @@
                     Customer First
                     Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="first_name"
                        placeholder="First Name" name="first_name" v-model="first_name">
 
@@ -55,7 +55,7 @@
                     Customer Last
                     Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="last_name"
                        placeholder="Last Name" name="last_name" v-model="last_name">
 
@@ -68,7 +68,7 @@
                     Customer Email
                     Address</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="email"
                        placeholder="Email Address" name="email" v-model="email">
                 <small id="emailHelp"
@@ -87,7 +87,7 @@
                     <small class="text-lg text-red">*</small>
                     District</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="district"
                        placeholder="District Name" name="district" v-model="district">
                 <small class="mt-3 block text-grey-dark">Please enter
@@ -101,7 +101,7 @@
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
                     School</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="school"
                        placeholder="School Name" name="school" v-model="school">
                 <small class="mt-3 block text-grey-dark">Please enter
@@ -116,7 +116,7 @@
                     <small class="text-lg text-red">*</small>
                     Zip Code</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="zip_code" placeholder="School Zip code"
                        name="zip_code" v-model="zip">
 
@@ -223,7 +223,7 @@
                         <small class="text-lg text-red">*</small>
                         E-Book List</label>
                     <select name="ebook_list" id="ebook_list"
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             v-model="ebook" multiple>
                         <option value="">Select an E-Book...</option>
                         <option value="Active Physics">Active Physics</option>
@@ -361,7 +361,7 @@
                 <label for="note" class="block text-grey-darker text-sm font-bold mb-2">Notes</label>
 
                 <textarea name="note" id="note"
-                          class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                          class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                           cols="30"
                           placeholder="Notes" rows="5" v-model="notes"></textarea>
                 <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.</small>
@@ -370,7 +370,7 @@
             <hr class="border-t mt-8 mb-6">
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Send Request

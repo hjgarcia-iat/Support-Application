@@ -19826,7 +19826,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "name",
@@ -19867,7 +19867,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "po_number",
@@ -19910,7 +19910,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -19951,7 +19951,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -19989,7 +19989,7 @@ var render = function() {
                 format: "M/d/yyyy",
                 id: _vm.start_date,
                 "input-class":
-                  "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                 placeholder: "Select School Start Date"
               },
               model: {
@@ -20028,7 +20028,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                 attrs: { name: "curriculum", id: "curriculum" },
                 on: {
                   change: function($event) {
@@ -20185,7 +20185,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "dm_name",
@@ -20228,7 +20228,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "dm_email",
@@ -20328,7 +20328,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_name_" + index,
@@ -20386,7 +20386,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_email_" + index,
@@ -20444,7 +20444,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_school_" + index,
@@ -20478,7 +20478,7 @@ var render = function() {
                           "a",
                           {
                             staticClass:
-                              "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                              "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
                             attrs: { href: "" },
                             on: {
                               click: function($event) {
@@ -20505,7 +20505,7 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [

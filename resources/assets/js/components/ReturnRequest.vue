@@ -13,7 +13,7 @@
                     <small class="text-lg text-red">*</small>
                     Name</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="name" placeholder="Enter name"
                        name="name" v-model="name">
 
@@ -25,7 +25,7 @@
                     <small class="text-lg text-red">*</small>
                     Email Address</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="email" placeholder="Enter Email Address"
                        name="email" v-model="email">
 
@@ -37,7 +37,7 @@
                     <small class="text-lg text-red">*</small>
                     District Name</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="district" placeholder="Enter District Name"
                        name="district" v-model="district">
 
@@ -49,7 +49,7 @@
                     <small class="text-lg text-red">*</small>
                     Order Number or PO Number</label>
                 <input type="text"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                        id="order_number" placeholder="Order Number or PO Number"
                        name="order_number" v-model="order_number">
 
@@ -61,7 +61,7 @@
                     <small class="text-lg text-red">*</small>
                     RMA Number</label>
                 <input type="text"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="rma_number" placeholder="RMA Number"
                         name="rma_number" v-model="rma_number">
 
@@ -72,7 +72,7 @@
                 <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
                     Reason for Return:</label>
-                <select name="reason" id="reason" v-model="reason" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
+                <select name="reason" id="reason" v-model="reason" class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="">Select a Reason for Return</option>
                     <option value="Overstock">Overstock</option>
                     <option value="Ordered in error">Ordered in error</option>
@@ -87,7 +87,7 @@
             <div class="flex items-center mb-4">
                 <h2 class="mr-auto">Products to Return</h2>
                 <a href="" @click.prevent="addProduct"
-                   class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline">
+                   class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline">
                     <small>Add Product</small>
                 </a>
             </div>
@@ -100,7 +100,7 @@
                             <small class="text-lg text-red">*</small>
                             SKU</label>
                         <input type="text"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                               class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                :id="'sku_' + index"
                                placeholder="Enter SKU" name="teachers[]['name']" v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
@@ -112,7 +112,7 @@
                             <small class="text-lg text-red">*</small>
                             Quantity</label>
                         <input type="text"
-                               class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                               class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                :id="'quantity_'+index"
                                placeholder="Enter Quantity" name="teachers[]['school']" v-model="product.quantity">
 
@@ -121,7 +121,7 @@
                     </div>
                     <div>
                         <a href="" @click.prevent="removeProduct(key)"
-                           class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block">
+                           class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline block">
                             <i class="fa fa-trash"></i>
                         </a>
                     </div>
@@ -130,7 +130,7 @@
 
             <section class="mt-6">
                 <button type="submit"
-                        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                         :disabled="loading">
                     <i class="fa fa-refresh fa-spin mr-1" v-if="loading"></i>
                     Process Return

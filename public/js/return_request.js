@@ -19751,7 +19751,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "name",
@@ -19792,7 +19792,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -19833,7 +19833,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -19876,7 +19876,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "order_number",
@@ -19919,7 +19919,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "rma_number",
@@ -19964,7 +19964,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                  "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                 attrs: { name: "reason", id: "reason" },
                 on: {
                   change: function($event) {
@@ -20023,7 +20023,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline",
+                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
               attrs: { href: "" },
               on: {
                 click: function($event) {
@@ -20073,7 +20073,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                       attrs: {
                         type: "text",
                         id: "sku_" + index,
@@ -20129,7 +20129,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                       attrs: {
                         type: "text",
                         id: "quantity_" + index,
@@ -20163,7 +20163,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block",
+                        "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline block",
                       attrs: { href: "" },
                       on: {
                         click: function($event) {
@@ -20186,7 +20186,7 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [

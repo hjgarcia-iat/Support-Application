@@ -28724,7 +28724,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey",
+                  "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey",
                 attrs: { name: "sales_rep", id: "sales_rep" },
                 on: {
                   change: function($event) {
@@ -28862,7 +28862,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "first_name",
@@ -28905,7 +28905,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "last_name",
@@ -28948,7 +28948,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -29006,7 +29006,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -29062,7 +29062,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "school",
@@ -29109,7 +29109,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "zip_code",
@@ -29737,7 +29737,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       name: "ebook_list",
                       id: "ebook_list",
@@ -30315,7 +30315,7 @@ var render = function() {
               }
             ],
             staticClass:
-              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
             attrs: {
               name: "note",
               id: "note",
@@ -30345,7 +30345,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
             attrs: { type: "submit", disabled: _vm.loading }
           },
           [
