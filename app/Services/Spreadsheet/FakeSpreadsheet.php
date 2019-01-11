@@ -34,13 +34,14 @@ class FakeSpreadsheet implements SpreadsheetInterface
 
         foreach ($products as $product) {
             $this->spreadsheet[] = [
-                'Requester Name'        => $data['name'],
-                'Requester Email'       => $data['email'],
+                'Requester Name' => $data['name'],
+                'Requester Email' => $data['email'],
                 'District/Company Name' => $data['district'],
-                'Order# or PO#'         => $data['order_number'],
-                'Reason for Return'     => $data['reason'],
-                'SKU'                   => $product['sku'],
-                'QTY'                   => $product['quantity'],
+                'Order# or PO#' => $data['order_number'],
+                'RMA Number' => $data['rma_number'],
+                'Reason for Return' => $data['reason'],
+                'SKU' => $product['sku'],
+                'QTY' => $product['quantity'],
             ];
         }
 
@@ -55,12 +56,13 @@ class FakeSpreadsheet implements SpreadsheetInterface
     private function validParams($data = [])
     {
         return array_merge([
-            'name'         => 'Jane Doe',
-            'email'        => 'jdoe@email.com',
-            'district'     => 'Some District',
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+            'district' => 'Some District',
             'order_number' => '12345',
-            'reason'       => 'some valid reason',
-            'products'     => [
+            'rma_number' => '12345',
+            'reason' => 'some valid reason',
+            'products' => [
                 ['sku' => '1234', 'quantity' => 1],
             ],
         ], $data);

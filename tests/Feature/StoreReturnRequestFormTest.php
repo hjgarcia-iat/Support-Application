@@ -37,23 +37,25 @@ class StoreReturnRequestFormTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['message' => 'Your information was saved. We will get back to you shortly.']);
         $this->assertEquals([
-            'Requester Name'        => 'Jane Doe',
-            'Requester Email'       => 'jdoe@email.com',
+            'Requester Name' => 'Jane Doe',
+            'Requester Email' => 'jdoe@email.com',
             'District/Company Name' => 'Some District',
-            'Order# or PO#'         => '12345',
-            'Reason for Return'     => 'some valid reason',
-            'SKU'                   => 1234,
-            'QTY'                   => 1,
+            'Order# or PO#' => '12345',
+            'RMA Number' => '12345',
+            'Reason for Return' => 'some valid reason',
+            'SKU' => 1234,
+            'QTY' => 1,
         ], $this->spreadsheet->get()[0]);
 
         $this->assertEquals([
-            'Requester Name'        => 'Jane Doe',
-            'Requester Email'       => 'jdoe@email.com',
+            'Requester Name' => 'Jane Doe',
+            'Requester Email' => 'jdoe@email.com',
             'District/Company Name' => 'Some District',
-            'Order# or PO#'         => '12345',
-            'Reason for Return'     => 'some valid reason',
-            'SKU'                   => 1236,
-            'QTY'                   => 4,
+            'Order# or PO#' => '12345',
+            'RMA Number' => '12345',
+            'Reason for Return' => 'some valid reason',
+            'SKU' => 1236,
+            'QTY' => 4,
         ], $this->spreadsheet->get()[1]);
     }
 
@@ -196,13 +198,13 @@ class StoreReturnRequestFormTest extends TestCase
     private function validParams($data = [])
     {
         return array_merge([
-            'name'         => 'Jane Doe',
-            'email'        => 'jdoe@email.com',
-            'district'     => 'Some District',
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+            'district' => 'Some District',
             'order_number' => '12345',
             'rma_number' => '12345',
-            'reason'       => 'some valid reason',
-            'products'     => [
+            'reason' => 'some valid reason',
+            'products' => [
                 ['sku' => '1234', 'quantity' => 1],
                 ['sku' => '1236', 'quantity' => 4],
             ],
