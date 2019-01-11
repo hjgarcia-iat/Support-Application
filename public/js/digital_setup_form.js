@@ -31070,7 +31070,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (response.data.success) {
                     _this.reset();
                     _this.formMessageType = 'success';
-                    _this.formMessage = response.data.success;
+                    _this.formMessage = response.data.message;
                 }
 
                 _this.loading = false;
