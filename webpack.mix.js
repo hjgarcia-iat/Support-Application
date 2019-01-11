@@ -17,6 +17,7 @@ mix.js('resources/assets/js/access_request_form.js', 'public/js')
     .js('resources/assets/js/request_quote_form.js', 'public/js')
     .js('resources/assets/js/request_case_form.js', 'public/js')
     .js('resources/assets/js/return_request.js', 'public/js')
+    .version()
     .browserSync({
         proxy: "127.0.0.1:8000",
         files: [
