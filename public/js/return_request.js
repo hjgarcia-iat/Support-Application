@@ -30958,6 +30958,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -30974,6 +30986,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             email: '',
             district: '',
             order_number: '',
+            rma_number: '',
             reason: '',
             products: [{
                 sku: '',
@@ -31011,6 +31024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 name: this.name,
                 email: this.email,
                 order_number: this.order_number,
+                rma_number: this.rma_number,
                 district: this.district,
                 reason: this.reason,
                 products: this.products
@@ -31033,6 +31047,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.name = '';
             this.email = '';
             this.order_number = '';
+            this.rma_number = '';
             this.district = '';
             this.reason = '';
             this.products = [{
@@ -31255,7 +31270,50 @@ var render = function() {
           [
             _vm._m(5),
             _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.rma_number,
+                  expression: "rma_number"
+                }
+              ],
+              staticClass:
+                "shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline",
+              attrs: {
+                type: "text",
+                id: "rma_number",
+                placeholder: "RMA Number",
+                name: "rma_number"
+              },
+              domProps: { value: _vm.rma_number },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.rma_number = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.formErrors.rma_number
+              ? _c("form-error", {
+                  attrs: { error: _vm.formErrors.rma_number[0] }
+                })
+              : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mb-6" },
+          [
             _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
             _vm._v(" "),
             _vm.formErrors.reason
               ? _c("form-error", { attrs: { error: _vm.formErrors.reason[0] } })
@@ -31528,6 +31586,22 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Order Number or PO Number")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "rma_number" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                RMA Number")
       ]
     )
   },

@@ -32,6 +32,7 @@ class ReturnRequestForm extends FormRequest
             'email'          => 'required|email',
             'district'       => 'required',
             'order_number'   => 'required',
+            'rma_number'   => 'required',
             'reason'         => 'required',
             'products'       => 'required',
             'products.*.sku' => 'required',

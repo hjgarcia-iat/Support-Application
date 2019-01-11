@@ -126,6 +126,19 @@ class StoreReturnRequestFormTest extends TestCase
     /**
      * @test
      */
+    public function the_rma_number_field_is_required()
+    {
+        $response = $this->from(route('return_request.create'))
+            ->post(route('return_request.store'), $this->validParams(['rma_number' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('return_request.create'));
+        $response->assertSessionHasErrors('rma_number');
+    }
+
+    /**
+     * @test
+     */
     public function the_reason_field_is_required()
     {
         $response = $this->from(route('return_request.create'))
@@ -187,6 +200,7 @@ class StoreReturnRequestFormTest extends TestCase
             'email'        => 'jdoe@email.com',
             'district'     => 'Some District',
             'order_number' => '12345',
+            'rma_number' => '12345',
             'reason'       => 'some valid reason',
             'products'     => [
                 ['sku' => '1234', 'quantity' => 1],

@@ -57,6 +57,18 @@
             </div>
 
             <div class="mb-6">
+                <label for="rma_number" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    RMA Number</label>
+                <input type="text"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+                        id="rma_number" placeholder="RMA Number"
+                        name="rma_number" v-model="rma_number">
+
+                <form-error :error=formErrors.rma_number[0] v-if="formErrors.rma_number"></form-error>
+            </div>
+
+            <div class="mb-6">
                 <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
                     Reason for Return:</label>
@@ -144,6 +156,7 @@
                 email: '',
                 district: '',
                 order_number: '',
+                rma_number: '',
                 reason: '',
                 products: [
                     {
@@ -180,6 +193,7 @@
                     name: this.name,
                     email: this.email,
                     order_number: this.order_number,
+                    rma_number: this.rma_number,
                     district: this.district,
                     reason: this.reason,
                     products: this.products,
@@ -203,6 +217,7 @@
                 this.name = '';
                 this.email = '';
                 this.order_number = '';
+                this.rma_number = '';
                 this.district = '';
                 this.reason = '';
                 this.products = [
