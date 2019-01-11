@@ -212,8 +212,6 @@
                 </div>
                 <small class="mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded">Select one or
                     more of the following resources.
-                    <br>PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN
-                    UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.
                 </small>
 
                 <form-error :error=formErrors.resource[0] v-if="formErrors.resource"></form-error>
@@ -280,7 +278,7 @@
                     <input id="version-2" name="version"
                            type="radio" value="IQWST3.0.0" v-model="ide_version">
                     <label class="ml-2" for="version-2">
-                        IQWST 3.0.0
+                        IQWST 3.0
                     </label>
                 </div>
                 <div class="mb-3">
@@ -288,6 +286,13 @@
                            type="radio" value="IQWSTCA" v-model="ide_version">
                     <label class="ml-2" for="version-3">
                         IQWST California
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input id="version-5" name="version"
+                            type="radio" value="IQWST Integrated" v-model="ide_version">
+                    <label class="ml-2" for="version-5">
+                        IQWST Integreated
                     </label>
                 </div>
                 <div class="mb-3">

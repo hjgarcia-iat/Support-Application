@@ -39920,6 +39920,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -41038,7 +41043,18 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(7),
+            _c(
+              "small",
+              {
+                staticClass:
+                  "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
+              },
+              [
+                _vm._v(
+                  "Select one or\n                more of the following resources.\n            "
+                )
+              ]
+            ),
             _vm._v(" "),
             _vm.formErrors.resource
               ? _c("form-error", {
@@ -41066,7 +41082,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(8),
+                _vm._m(7),
                 _vm._v(" "),
                 _c(
                   "select",
@@ -41279,7 +41295,7 @@ var render = function() {
             staticClass: "mb-6"
           },
           [
-            _vm._m(9),
+            _vm._m(8),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -41339,7 +41355,7 @@ var render = function() {
               _c(
                 "label",
                 { staticClass: "ml-2", attrs: { for: "version-2" } },
-                [_vm._v("\n                    IQWST 3.0.0\n                ")]
+                [_vm._v("\n                    IQWST 3.0\n                ")]
               )
             ]),
             _vm._v(" "),
@@ -41373,6 +41389,43 @@ var render = function() {
                 [
                   _vm._v(
                     "\n                    IQWST California\n                "
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-5",
+                  name: "version",
+                  type: "radio",
+                  value: "IQWST Integrated"
+                },
+                domProps: {
+                  checked: _vm._q(_vm.ide_version, "IQWST Integrated")
+                },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "IQWST Integrated"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-5" } },
+                [
+                  _vm._v(
+                    "\n                    IQWST Integreated\n                "
                   )
                 ]
               )
@@ -41439,7 +41492,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(10),
+            _vm._m(9),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -41805,27 +41858,6 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Digital Resources")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "small",
-      {
-        staticClass:
-          "mt-3 text-grey-darkest block bg-grey-light p-2 border border-grey rounded"
-      },
-      [
-        _vm._v(
-          "Select one or\n                more of the following resources.\n                "
-        ),
-        _c("br"),
-        _vm._v(
-          "PLEASE NOTE: WHEN DEMO IDE ACCESS IS REQUESTED, DEMO TEACHER PORTAL ACCESS WILL ALSO BE GIVEN\n                UNLESS OTHERWISE SPECIFIED IN THE NOTES SECTION BELOW.\n            "
-        )
       ]
     )
   },
