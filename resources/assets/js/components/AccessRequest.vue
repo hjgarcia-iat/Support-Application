@@ -2,7 +2,7 @@
     <div class="p-8">
         <h1 class="mb-4">Access Request</h1>
         <form method="POST" @submit.prevent="submitForm">
-            <alert :message=formMessage :type=formMessageType></alert>
+            <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
 
             <h2 class="mb-6">Sales Rep Information</h2>
             <div class="mb-6">
@@ -42,9 +42,9 @@
                     Customer First
                     Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="first_name"
-                       placeholder="First Name" name="first_name" v-model="first_name">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="first_name"
+                        placeholder="First Name" name="first_name" v-model="first_name">
 
                 <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
             </div>
@@ -55,9 +55,9 @@
                     Customer Last
                     Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="last_name"
-                       placeholder="Last Name" name="last_name" v-model="last_name">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="last_name"
+                        placeholder="Last Name" name="last_name" v-model="last_name">
 
                 <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
             </div>
@@ -68,11 +68,11 @@
                     Customer Email
                     Address</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="email"
-                       placeholder="Email Address" name="email" v-model="email">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="email"
+                        placeholder="Email Address" name="email" v-model="email">
                 <small id="emailHelp"
-                       class="mt-3 block text-grey-dark">This MUST be a
+                        class="mt-3 block text-grey-dark">This MUST be a
                     school email address (not gmail, yahoo, etc...)
                 </small>
 
@@ -87,9 +87,9 @@
                     <small class="text-lg text-red">*</small>
                     District</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="district"
-                       placeholder="District Name" name="district" v-model="district">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="district"
+                        placeholder="District Name" name="district" v-model="district">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school district associated with this customer
                 </small>
@@ -101,9 +101,9 @@
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
                     School</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="school"
-                       placeholder="School Name" name="school" v-model="school">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="school"
+                        placeholder="School Name" name="school" v-model="school">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school associated with this customer
                 </small>
@@ -116,9 +116,9 @@
                     <small class="text-lg text-red">*</small>
                     Zip Code</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="zip_code" placeholder="School Zip code"
-                       name="zip_code" v-model="zip">
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="zip_code" placeholder="School Zip code"
+                        name="zip_code" v-model="zip">
 
                 <form-error :error=formErrors.zip_code[0] v-if="formErrors.zip_code"></form-error>
             </div>
@@ -133,7 +133,7 @@
                 <div class="mb-3">
 
                     <input id="resource-20" name="resource[]"
-                           type="checkbox" value="Active Science" v-model="resources">
+                            type="checkbox" value="Active Science" v-model="resources">
                     <label class="ml-2" for="resource-20">
                         Active Science
                     </label>
@@ -141,14 +141,14 @@
                 <div class="mb-3">
 
                     <input id="resource-1" name="resource[]"
-                           type="checkbox" value="IQWST Demo Portal" v-model="resources">
+                            type="checkbox" value="IQWST Demo Portal" v-model="resources">
                     <label class="ml-2" for="resource-1">
                         IQWST Demo Portal
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="resource-2" name="resource[]"
-                           type="checkbox" value="California Demo Portal" v-model="resources">
+                            type="checkbox" value="California Demo Portal" v-model="resources">
 
                     <label class="ml-2" for="resource-2">
                         California Demo Portal
@@ -156,7 +156,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-3" name="resource[]"
-                           type="checkbox" value="IQWST IDE Demo" v-model="resources">
+                            type="checkbox" value="IQWST IDE Demo" v-model="resources">
 
                     <label class="ml-2" for="resource-3">
                         IQWST IDE Demo (English Units)
@@ -164,7 +164,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-4" name="resource[]"
-                           type="checkbox" value="IQWST IDE Demo - Spanish" v-model="resources">
+                            type="checkbox" value="IQWST IDE Demo - Spanish" v-model="resources">
 
                     <label class="ml-2" for="resource-4">
                         IQWST IDE Demo (Spanish units)
@@ -172,7 +172,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-8" name="resource[]"
-                           type="checkbox" value="IQWST IDE Full Access" v-model="resources">
+                            type="checkbox" value="IQWST IDE Full Access" v-model="resources">
 
                     <label class="ml-2" for="resource-8">
                         IQWST IDE Full Access (For State Adoption/RFP's)
@@ -180,7 +180,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-5" name="resource[]"
-                           type="checkbox" value="Ebook" v-model="resources">
+                            type="checkbox" value="Ebook" v-model="resources">
 
                     <label class="ml-2" for="resource-5">
                         E-Book
@@ -188,7 +188,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-6" name="resource[]"
-                           type="checkbox" value="PBIS Cyberpd" v-model="resources">
+                            type="checkbox" value="PBIS Cyberpd" v-model="resources">
 
                     <label class="ml-2" for="resource-6">
                         PBIScience Cyberpd
@@ -197,14 +197,14 @@
                 <div class="mb-3">
 
                     <input id="resource-7" name="resource[]"
-                           type="checkbox" value="Active Physics-Active Chemistry PD" v-model="resources">
+                            type="checkbox" value="Active Physics-Active Chemistry PD" v-model="resources">
                     <label class="ml-2" for="resource-7">
                         Active Physics / Active Chemistry Professional Development Website
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="resource-9" name="resource[]"
-                           type="checkbox" value="IMP Cyberpd" v-model="resources">
+                            type="checkbox" value="IMP Cyberpd" v-model="resources">
 
                     <label class="ml-2" for="resource-9">
                         IMP CyberPD
@@ -269,21 +269,21 @@
 
                 <div class="mb-3">
                     <input id="version-1" name="version"
-                           type="radio" value="IQWST2.0.5" v-model="ide_version">
+                            type="radio" value="IQWST2.0.5" v-model="ide_version">
                     <label class="ml-2" for="version-1">
                         IQWST 2.0.5
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="version-2" name="version"
-                           type="radio" value="IQWST3.0.0" v-model="ide_version">
+                            type="radio" value="IQWST3.0.0" v-model="ide_version">
                     <label class="ml-2" for="version-2">
                         IQWST 3.0
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="version-3" name="version"
-                           type="radio" value="IQWSTCA" v-model="ide_version">
+                            type="radio" value="IQWSTCA" v-model="ide_version">
                     <label class="ml-2" for="version-3">
                         IQWST California
                     </label>
@@ -297,7 +297,7 @@
                 </div>
                 <div class="mb-3">
                     <input id="version-4" name="version"
-                           type="radio" value="IQWSTOK" v-model="ide_version">
+                            type="radio" value="IQWSTOK" v-model="ide_version">
                     <label class="ml-2" for="version-4">
                         IQWST Oklahoma
                     </label>
@@ -317,35 +317,35 @@
 
                 <div class="mb-3">
                     <input id="time_frame-1" name="time_frame"
-                           type="radio" value="1 week" v-model="time_frame">
+                            type="radio" value="1 week" v-model="time_frame">
                     <label class="ml-2" for="time_frame-1">
                         1 week
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="time_frame-2" name="time_frame"
-                           type="radio" value="2 weeks" v-model="time_frame">
+                            type="radio" value="2 weeks" v-model="time_frame">
                     <label class="ml-2" for="time_frame-2">
                         2 weeks
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="time_frame-3" name="time_frame"
-                           type="radio" value="30 days" v-model="time_frame">
+                            type="radio" value="30 days" v-model="time_frame">
                     <label class="ml-2" for="time_frame-3">
                         30 days
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="time_frame-4" name="time_frame"
-                           type="radio" value="60 days" v-model="time_frame">
+                            type="radio" value="60 days" v-model="time_frame">
                     <label class="ml-2" for="time_frame-4">
                         60 days
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="time_frame-5" name="time_frame"
-                           type="radio" value="Other" v-model="time_frame">
+                            type="radio" value="Other" v-model="time_frame">
                     <label class="ml-2" for="time_frame-5">
                         Other (please indicate in the Notes section below the length of time you need)
                     </label>
@@ -361,10 +361,11 @@
                 <label for="note" class="block text-grey-darker text-sm font-bold mb-2">Notes</label>
 
                 <textarea name="note" id="note"
-                          class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          cols="30"
-                          placeholder="Notes" rows="5" v-model="notes"></textarea>
-                <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.</small>
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        cols="30"
+                        placeholder="Notes" rows="5" v-model="notes"></textarea>
+                <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.
+                </small>
             </div>
 
             <hr class="border-t mt-8 mb-6">
@@ -406,9 +407,13 @@
                 formErrors: {},
                 formMessage: '',
                 formMessageType: 'success',
+                alertVisible: true
             }
         },
         methods: {
+            hideAlert() {
+                this.alertVisible = false;
+            },
             resetData() {
                 this.rep = '';
                 this.first_name = '';
@@ -444,10 +449,12 @@
                     'note': this.notes,
                 }).then(response => {
                     this.resetData();
+                    this.alertVisible = true;
                     this.formMessageType = 'success';
                     this.formMessage = response.data.message;
                     this.loading = false;
                 }).catch(error => {
+                    this.alertVisible = true;
                     this.formErrors = error.response.data;
                     this.formMessageType = 'error';
                     this.formMessage = 'Please see errors below!';

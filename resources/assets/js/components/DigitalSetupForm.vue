@@ -2,7 +2,7 @@
     <div class="p-8">
         <h1 class="mb-4">Digital Setup Request</h1>
         <form @submit.prevent="submit">
-            <alert :message=formMessage :type=formMessageType></alert>
+            <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
@@ -227,9 +227,13 @@
                 formMessageType: 'success',
                 formMessage: '',
                 loading: false,
+                alertVisible: true
             }
         },
         methods: {
+            hideAlert() {
+                this.alertVisible = false;
+            },
             checkForArrayError(field) {
                 return this.formErrors.hasOwnProperty(field);
             },
@@ -257,6 +261,7 @@
                     teachers: this.teachers,
                 }).then(response => {
                     if (response.data.success) {
+                        this.alertVisible = true;
                         this.reset();
                         this.formMessageType = 'success';
                         this.formMessage = response.data.message;
@@ -264,6 +269,7 @@
 
                     this.loading = false;
                 }).catch(error => {
+                    this.alertVisible = true;
                     this.formMessage = 'Please see errors below!';
                     this.formErrors = error.response.data;
                     this.formMessageType = 'error';

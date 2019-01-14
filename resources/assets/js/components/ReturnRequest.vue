@@ -6,7 +6,7 @@
             <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
-            <alert :message=formMessage :type=formMessageType></alert>
+            <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <h2 class="mb-4">General Information</h2>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
@@ -172,9 +172,13 @@
                 formMessageType: 'success',
                 formMessage: '',
                 loading: false,
+                alertVisible: true
             }
         },
         methods: {
+            hideAlert() {
+                this.alertVisible = false;
+            },
             checkForArrayError(field) {
                 return this.formErrors.hasOwnProperty(field);
             },
@@ -199,6 +203,7 @@
                     products: this.products,
                 }).then(response => {
                     if (response.data.success) {
+                        this.alertVisible = true;
                         this.reset();
                         this.formMessageType = 'success';
                         this.formMessage = response.data.message;
@@ -206,6 +211,7 @@
 
                     this.loading = false;
                 }).catch(error => {
+                    this.alertVisible = true;
                     this.formMessage = 'Please see errors below!';
                     this.formErrors = error.response.data;
                     this.formMessageType = 'error';

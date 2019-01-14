@@ -1911,9 +1911,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["message", "type"]
+    props: ['message', 'type', 'visible'],
+    methods: {
+        hide: function hide() {
+            this.$emit("alert-hide", false);
+        }
+    }
 });
 
 /***/ }),
@@ -19676,24 +19682,62 @@ var render = function() {
     ? _c(
         "div",
         {
-          staticClass: "border-l-4  p-4 mb-6",
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.visible,
+              expression: "visible"
+            }
+          ],
+          staticClass: "border-l-4  p-4 mb-6 relative",
           class: {
             "bg-green-lightest border-green text-green-dark":
               _vm.type === "success",
-            "bg-red-lightest border-red text-red-dark": _vm.type == "error"
+            "bg-red-lightest border-red text-red-dark": _vm.type === "error"
           },
           attrs: { role: "alert" }
         },
         [
-          _vm._v("\n  " + _vm._s(_vm.message) + "\n  "),
+          _vm._v("\n      " + _vm._s(_vm.message) + "\n      "),
           _vm.type === "success"
             ? _c("p", { staticClass: "mt-4" }, [
-                _vm._v("\n    Go Back to\n    "),
+                _vm._v("\n          Go Back to\n          "),
                 _c("a", { attrs: { href: "http://activatelearning.com" } }, [
                   _vm._v("Activate Learning")
                 ])
               ])
-            : _vm._e()
+            : _vm._e(),
+          _vm._v(" "),
+          _c(
+            "span",
+            {
+              staticClass: "absolute pin-t pin-b pin-r px-4 py-3",
+              on: { click: _vm.hide }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "fill-current h-6 w-6 text-red",
+                  attrs: {
+                    role: "button",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 20 20"
+                  }
+                },
+                [
+                  _c("title", [_vm._v("Close")]),
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+                    }
+                  })
+                ]
+              )
+            ]
+          )
         ]
       )
     : _vm._e()
