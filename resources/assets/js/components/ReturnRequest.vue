@@ -85,10 +85,10 @@
             <hr class="border-t my-8">
 
             <div class="flex items-center mb-4">
-                <h2 class="mr-auto">Products to Return</h2>
+                <h2 class="mr-auto mb-0">Products to Return</h2>
                 <a href="" @click.prevent="addProduct"
                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline">
-                    <small>Add Product</small>
+                    <small><i class="fa fa-plus mr-2"></i>Add Product</small>
                 </a>
             </div>
 

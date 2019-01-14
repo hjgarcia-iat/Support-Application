@@ -20076,7 +20076,9 @@ var render = function() {
         _c("hr", { staticClass: "border-t my-8" }),
         _vm._v(" "),
         _c("div", { staticClass: "flex items-center mb-4" }, [
-          _c("h2", { staticClass: "mr-auto" }, [_vm._v("Products to Return")]),
+          _c("h2", { staticClass: "mr-auto mb-0" }, [
+            _vm._v("Products to Return")
+          ]),
           _vm._v(" "),
           _c(
             "a",
@@ -20091,7 +20093,7 @@ var render = function() {
                 }
               }
             },
-            [_c("small", [_vm._v("Add Product")])]
+            [_vm._m(7)]
           )
         ]),
         _vm._v(" "),
@@ -20371,6 +20373,15 @@ var staticRenderFns = [
         _vm._v("\n                Reason for Return:")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("small", [
+      _c("i", { staticClass: "fa fa-plus mr-2" }),
+      _vm._v("Add Product")
+    ])
   }
 ]
 render._withStripped = true

@@ -122,16 +122,20 @@
 
             <div class="mb-4" v-if="district_manager === 'no'">
 
-                <p>
-                    If you do not have a dedicated District/IT Manager please complete the teacher information below.
-                </p>
-                <p>If you need to add more than one teacher click the button below
+                <hr class="border-t my-8">
 
+                <div class="flex items-center mb-4">
+                    <h2 class="mr-auto mb-0">Add Teachers</h2>
+                    <a href="" @click.prevent="addTeacher"
+                            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline"><small><i
+                            class="fa fa-plus mr-2"></i> Add Teacher</small></a>
+                </div>
+
+                <p>
+                    If you do not have a dedicated District/IT Manager please complete the teacher information below. If
+                    you need to add more than one teacher click the "Add Teacher" button.
                 </p>
-                <p class="text-right">
-                    <a href="" @click.prevent="addTeacher" class="btn btn-primary">Add More Teachers <i
-                            class="fa fa-plus-circle"></i> </a>
-                </p>
+
                 <section class="flex justify-between items-center" v-for="(teacher, key, index) in teachers">
                     <div class="mr-2">
                         <label :for="'teacher_name_' + index"

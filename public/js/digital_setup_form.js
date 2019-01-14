@@ -1835,6 +1835,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -20321,23 +20325,18 @@ var render = function() {
               "div",
               { staticClass: "mb-4" },
               [
-                _c("p", [
-                  _vm._v(
-                    "\n                If you do not have a dedicated District/IT Manager please complete the teacher information below.\n            "
-                  )
-                ]),
+                _c("hr", { staticClass: "border-t my-8" }),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "If you need to add more than one teacher click the button below\n\n            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-right" }, [
+                _c("div", { staticClass: "flex items-center mb-4" }, [
+                  _c("h2", { staticClass: "mr-auto mb-0" }, [
+                    _vm._v("Add Teachers")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass:
+                        "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
                       attrs: { href: "" },
                       on: {
                         click: function($event) {
@@ -20346,10 +20345,13 @@ var render = function() {
                         }
                       }
                     },
-                    [
-                      _vm._v("Add More Teachers "),
-                      _c("i", { staticClass: "fa fa-plus-circle" })
-                    ]
+                    [_vm._m(9)]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v(
+                    '\n                If you do not have a dedicated District/IT Manager please complete the teacher information below. If\n                you need to add more than one teacher click the "Add Teacher" button.\n            '
                   )
                 ]),
                 _vm._v(" "),
@@ -20721,6 +20723,15 @@ var staticRenderFns = [
         _vm._v("\n                    Email")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("small", [
+      _c("i", { staticClass: "fa fa-plus mr-2" }),
+      _vm._v(" Add Teacher")
+    ])
   }
 ]
 render._withStripped = true
