@@ -28,14 +28,14 @@ class ReturnRequestForm extends FormRequest
     public function rules()
     {
         return [
-            'name'           => 'required',
-            'email'          => 'required|email',
-            'district'       => 'required',
-            'order_number'   => 'required',
-            'rma_number'   => 'required',
-            'reason'         => 'required',
-            'products'       => 'required',
-            'products.*.sku' => 'required',
+            'name'                => 'required',
+            'email'               => 'required|email',
+            'district'            => 'required',
+            'order_number'        => 'required',
+            'rma_number'          => 'required',
+            'reason'              => 'required',
+            'products'            => 'required',
+            'products.*.sku'      => 'required',
             'products.*.quantity' => 'required|integer',
         ];
     }

@@ -1902,9 +1902,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['message', 'type']
+  props: ["message", "type"]
 });
 
 /***/ }),
@@ -19648,20 +19653,19 @@ var render = function() {
     ? _c(
         "div",
         {
-          staticClass:
-            "bg-red-lightest border border-red-light text-red-dark px-4 py-3 rounded relative mb-6",
+          staticClass: "border-l-4  p-4 mb-6",
           class: {
-            "bg-green-lightest border border-green-light text-green-dark":
+            "bg-green-lightest border-green text-green-dark":
               _vm.type === "success",
-            "bg-red-lightest border border-red-light": _vm.type == "error"
+            "bg-red-lightest border-red text-red-dark": _vm.type == "error"
           },
           attrs: { role: "alert" }
         },
         [
-          _vm._v("\n    " + _vm._s(_vm.message) + "\n    "),
+          _vm._v("\n  " + _vm._s(_vm.message) + "\n  "),
           _vm.type === "success"
             ? _c("p", { staticClass: "mt-4" }, [
-                _vm._v("\n        Go Back to\n        "),
+                _vm._v("\n    Go Back to\n    "),
                 _c("a", { attrs: { href: "http://activatelearning.com" } }, [
                   _vm._v("Activate Learning")
                 ])
