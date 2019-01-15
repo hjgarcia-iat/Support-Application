@@ -11,7 +11,7 @@
             <a href="http://activatelearning.com">Activate Learning</a>
         </p>
 
-        <a href="" @click="hide" class="no-underline float-right" :class="{'text-green-dark' : type==='success', 'text-red-dark' : type==='error'}">
+        <a href="" @click.prevent="hide" class="no-underline float-right" :class="{'text-green-dark' : type==='success', 'text-red-dark' : type==='error'}">
             <i class="fa fa-remove"></i>
         </a>
     </div>
