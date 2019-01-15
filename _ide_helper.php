@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.36 on 2019-01-06 19:07:58.
+ * Generated for Laravel 5.4.36 on 2019-01-15 01:39:38.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -11915,37 +11915,6 @@ namespace GoogleSheets\Facades {
  
 }
 
-namespace Davispeixoto\Laravel5Salesforce { 
-
-    class SalesforceFacade {
-        
-        /**
-         * Connect user into salesforce
-         *
-         * @param $configExternal
-         * @throws SalesforceException
-         * @static 
-         */ 
-        public static function connect($configExternal)
-        {
-            return \Davispeixoto\Laravel5Salesforce\Salesforce::connect($configExternal);
-        }
-        
-        /**
-         * 
-         *
-         * @return mixed 
-         * @static 
-         */ 
-        public static function dump()
-        {
-            return \Davispeixoto\Laravel5Salesforce\Salesforce::dump();
-        }
-         
-    }
- 
-}
-
 
 namespace  { 
 
@@ -14038,8 +14007,6 @@ namespace  {
     class Google extends \PulkitJalan\Google\Facades\Google {}
 
     class Sheets extends \GoogleSheets\Facades\Sheets {}
-
-    class Salesforce extends \Davispeixoto\Laravel5Salesforce\SalesforceFacade {}
  
 }
 

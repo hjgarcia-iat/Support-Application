@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Services\Spreadsheet\FakeSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Tests\TestCase;
 
@@ -36,13 +37,15 @@ class FakeSpreadsheetTest extends TestCase
 
         $this->assertEquals($spreadsheet->spreadsheet, [
             [
-                'Requester Name'        => 'Jane Doe',
-                'Requester Email'       => 'jdoe@email.com',
+                "Date Entered" => Carbon::now()->format('m/d/Y'),
+                'Requester Name' => 'Jane Doe',
+                'Requester Email' => 'jdoe@email.com',
                 'District/Company Name' => 'Some District',
-                'Order# or PO#'         => '12345',
-                'Reason for Return'     => 'some valid reason',
-                'SKU'                   => 1234,
-                'QTY'                   => 1,
+                'Order# or PO#' => '12345',
+                "RMA Number" => "12345",
+                'Reason for Return' => 'some valid reason',
+                'SKU' => '1234',
+                'QTY' => 1,
             ]
         ]);
     }
@@ -53,12 +56,13 @@ class FakeSpreadsheetTest extends TestCase
     private function validData()
     {
         return [
-            'name'         => 'Jane Doe',
-            'email'        => 'jdoe@email.com',
-            'district'     => 'Some District',
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+            'district' => 'Some District',
+            'rma_number' => '12345',
             'order_number' => '12345',
-            'reason'       => 'some valid reason',
-            'products'     => [
+            'reason' => 'some valid reason',
+            'products' => [
                 ['sku' => '1234', 'quantity' => 1],
             ],
         ];
