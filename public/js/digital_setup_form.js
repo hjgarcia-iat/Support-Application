@@ -19794,7 +19794,12 @@ var render = function() {
                 "text-red-dark": _vm.type === "error"
               },
               attrs: { href: "" },
-              on: { click: _vm.hide }
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.hide($event)
+                }
+              }
             },
             [_c("i", { staticClass: "fa fa-remove" })]
           )

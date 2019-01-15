@@ -18,8 +18,8 @@
     </section>
 </header>
 
-<main role="main" class="flex justify-center mb-5">
-    <section class="w-3/5 border bg-white">
+<main role="main" class="xl:flex justify-center mb-5">
+    <section class="xl:w-3/5 border bg-white">
         @yield('content')
     </section>
 </main>
