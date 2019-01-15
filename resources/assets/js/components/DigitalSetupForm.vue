@@ -136,48 +136,58 @@
                     you need to add more than one teacher click the "Add Teacher" button.
                 </p>
 
-                <section class="flex justify-between items-center" v-for="(teacher, key, index) in teachers">
-                    <div class="mr-2">
-                        <label :for="'teacher_name_' + index"
-                                class="block text-grey-darker text-sm font-bold mb-2">
-                            <small class="text-lg text-red">*</small>
-                            Name</label> <input type="text"
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            :id="'teacher_name_' + index"
-                            placeholder="Teacher Full Name" name="teachers[]['name']"
-                            v-model="teacher.name">
-                        <form-error :error="getErrorForArray(key, 'name')"
-                                v-if="checkForArrayError('teachers.' + key + '.name')"></form-error>
-                    </div>
-                    <div class="mr-2">
-                        <label :for="'teacher_email_' + index" class="block text-grey-darker text-sm font-bold mb-2">
-                            <small class="text-lg text-red">*</small>
-                            Email</label> <input type="text"
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            :id="'teacher_email_' + index"
-                            placeholder="Teacher Email Address" name="teachers[]['email']"
-                            v-model="teacher.email">
-                        <form-error :error="getErrorForArray(key,'email')"
-                                v-if="checkForArrayError('teachers.' + key + '.email')"></form-error>
-                    </div>
-                    <div class="mr-2">
-                        <label :for="'teacher_school_'+index" class="block text-grey-darker text-sm font-bold mb-2">
-                            <small class="text-lg text-red">*</small>
-                            School</label> <input type="text"
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            :id="'teacher_school_'+index"
-                            placeholder="School Name" name="teachers[]['school']"
-                            v-model="teacher.school">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th><small class="text-lg text-red">*</small> Name</th>
+                        <th><small class="text-lg text-red">*</small> Email</th>
+                        <th><small class="text-lg text-red">*</small> School</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(teacher, key, index) in teachers">
+                        <td class="text-center">
+                            <a href="" @click.prevent="removeTeacher(key)"
+                                    class="block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                        <td>
 
-                        <form-error :error="getErrorForArray(key,'school')"
-                                v-if="checkForArrayError('teachers.' + key + '.school')"></form-error>
-                    </div>
-                    <div class="flex items-end h-full">
-                        <a href="" @click.prevent="removeTeacher(key)"
-                                class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
-                            <i class="fa fa-trash"></i> </a>
-                    </div>
-                </section>
+                            <input type="text"
+                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    :id="'teacher_name_' + index"
+                                    placeholder="Teacher Full Name" name="teachers[]['name']"
+                                    v-model="teacher.name">
+                            <form-error :error="getErrorForArray(key, 'name')"
+                                    v-if="checkForArrayError('teachers.' + key + '.name')"></form-error>
+
+                        </td>
+                        <td>
+
+                            <input type="text"
+                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    :id="'teacher_email_' + index"
+                                    placeholder="Teacher Email Address" name="teachers[]['email']"
+                                    v-model="teacher.email">
+                            <form-error :error="getErrorForArray(key,'email')"
+                                    v-if="checkForArrayError('teachers.' + key + '.email')"></form-error>
+
+                        </td>
+                        <td>
+                            <input type="text"
+                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    :id="'teacher_school_'+index"
+                                    placeholder="School Name" name="teachers[]['school']"
+                                    v-model="teacher.school">
+
+                            <form-error :error="getErrorForArray(key,'school')"
+                                    v-if="checkForArrayError('teachers.' + key + '.school')"></form-error>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
             <hr>

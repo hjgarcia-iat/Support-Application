@@ -1839,6 +1839,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20325,64 +20335,65 @@ var render = function() {
           : _vm._e(),
         _vm._v(" "),
         _vm.district_manager === "no"
-          ? _c(
-              "div",
-              { staticClass: "mb-4" },
-              [
-                _c("hr", { staticClass: "border-t my-8" }),
+          ? _c("div", { staticClass: "mb-4" }, [
+              _c("hr", { staticClass: "border-t my-8" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex items-center mb-4" }, [
+                _c("h2", { staticClass: "mr-auto mb-0" }, [
+                  _vm._v("Add Teachers")
+                ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "flex items-center mb-4" }, [
-                  _c("h2", { staticClass: "mr-auto mb-0" }, [
-                    _vm._v("Add Teachers")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
-                      attrs: { href: "" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.addTeacher($event)
-                        }
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
+                    attrs: { href: "" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.addTeacher($event)
                       }
-                    },
-                    [_vm._m(9)]
-                  )
-                ]),
+                    }
+                  },
+                  [_vm._m(9)]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  '\n                If you do not have a dedicated District/IT Manager please complete the teacher information below. If\n                you need to add more than one teacher click the "Add Teacher" button.\n            '
+                )
+              ]),
+              _vm._v(" "),
+              _c("table", { staticClass: "table" }, [
+                _vm._m(10),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    '\n                If you do not have a dedicated District/IT Manager please complete the teacher information below. If\n                you need to add more than one teacher click the "Add Teacher" button.\n            '
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.teachers, function(teacher, key, index) {
-                  return _c(
-                    "section",
-                    { staticClass: "flex justify-between items-center" },
-                    [
+                _c(
+                  "tbody",
+                  _vm._l(_vm.teachers, function(teacher, key, index) {
+                    return _c("tr", [
+                      _c("td", { staticClass: "text-center" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block",
+                            attrs: { href: "" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                _vm.removeTeacher(key)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-remove" })]
+                        )
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "div",
-                        { staticClass: "mr-2" },
+                        "td",
                         [
-                          _c(
-                            "label",
-                            {
-                              staticClass:
-                                "block text-grey-darker text-sm font-bold mb-2",
-                              attrs: { for: "teacher_name_" + index }
-                            },
-                            [
-                              _c("small", { staticClass: "text-lg text-red" }, [
-                                _vm._v("*")
-                              ]),
-                              _vm._v("\n                        Name")
-                            ]
-                          ),
-                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -20423,24 +20434,8 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "div",
-                        { staticClass: "mr-2" },
+                        "td",
                         [
-                          _c(
-                            "label",
-                            {
-                              staticClass:
-                                "block text-grey-darker text-sm font-bold mb-2",
-                              attrs: { for: "teacher_email_" + index }
-                            },
-                            [
-                              _c("small", { staticClass: "text-lg text-red" }, [
-                                _vm._v("*")
-                              ]),
-                              _vm._v("\n                        Email")
-                            ]
-                          ),
-                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -20481,24 +20476,8 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c(
-                        "div",
-                        { staticClass: "mr-2" },
+                        "td",
                         [
-                          _c(
-                            "label",
-                            {
-                              staticClass:
-                                "block text-grey-darker text-sm font-bold mb-2",
-                              attrs: { for: "teacher_school_" + index }
-                            },
-                            [
-                              _c("small", { staticClass: "text-lg text-red" }, [
-                                _vm._v("*")
-                              ]),
-                              _vm._v("\n                        School")
-                            ]
-                          ),
-                          _vm._v(" "),
                           _c("input", {
                             directives: [
                               {
@@ -20536,31 +20515,13 @@ var render = function() {
                             : _vm._e()
                         ],
                         1
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "flex items-end h-full" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-                            attrs: { href: "" },
-                            on: {
-                              click: function($event) {
-                                $event.preventDefault()
-                                _vm.removeTeacher(key)
-                              }
-                            }
-                          },
-                          [_c("i", { staticClass: "fa fa-trash" })]
-                        )
-                      ])
-                    ]
-                  )
-                })
-              ],
-              2
-            )
+                      )
+                    ])
+                  }),
+                  0
+                )
+              ])
+            ])
           : _vm._e(),
         _vm._v(" "),
         _c("hr"),
@@ -20735,6 +20696,31 @@ var staticRenderFns = [
     return _c("small", [
       _c("i", { staticClass: "fa fa-plus mr-2" }),
       _vm._v(" Add Teacher")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [
+          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _vm._v(" Name")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _vm._v(" Email")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _vm._v(" School")
+        ])
+      ])
     ])
   }
 ]
