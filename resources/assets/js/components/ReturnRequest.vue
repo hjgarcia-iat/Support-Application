@@ -92,41 +92,43 @@
                 </a>
             </div>
 
-            <div class="mb-4">
-                <section class="flex justify-between items-center mb-4" v-for="(product, key, index) in products">
-                    <div class="mr-2 w-full">
-                        <label :for="'sku_' + index"
-                               class="block text-grey-darker text-sm font-bold mb-2">
-                            <small class="text-lg text-red">*</small>
-                            SKU</label>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th><small class="text-lg text-red">*</small> SKU</th>
+                    <th><small class="text-lg text-red">*</small> Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(product, key, index) in products">
+                    <td class="text-center">
+                        <a href="" @click.prevent="removeProduct(key)"
+                                class="block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
+                            <i class="fa fa-remove"></i>
+                        </a>
+                    </td>
+                    <td>
                         <input type="text"
-                               class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                               :id="'sku_' + index"
-                               placeholder="Enter SKU" name="teachers[]['name']" v-model="product.sku">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                :id="'sku_' + index"
+                                placeholder="Enter SKU" name="products[]['name']" v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
-                                    v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
-                    </div>
-                    <div class="mr-2 w-full">
-                        <label :for="'quantity_'+index"
-                               class="block text-grey-darker text-sm font-bold mb-2">
-                            <small class="text-lg text-red">*</small>
-                            Quantity</label>
+                                v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
+                    </td>
+                    <td>
                         <input type="text"
-                               class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                               :id="'quantity_'+index"
-                               placeholder="Enter Quantity" name="teachers[]['school']" v-model="product.quantity">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                :id="'quantity_'+index"
+                                placeholder="Enter Quantity" name="products[]['school']" v-model="product.quantity">
 
                         <form-error :error="getErrorForArray(key,'quantity')"
-                                    v-if="checkForArrayError('products.' + key + '.quantity')"></form-error>
-                    </div>
-                    <div>
-                        <a href="" @click.prevent="removeProduct(key)"
-                           class="block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline block">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </div>
-                </section>
-            </div>
+                                v-if="checkForArrayError('products.' + key + '.quantity')"></form-error>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
 
             <section class="mt-6">
                 <button type="submit"

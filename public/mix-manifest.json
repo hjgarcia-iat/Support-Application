@@ -1,9 +1,6 @@
 {
-    "/js/request_quote_form.js": "/js/request_quote_form.js?id=7f76942007b911c02624",
-    "/js/request_demo_form.js": "/js/request_demo_form.js?id=674e2ba37be2e61dfe78",
-    "/js/request_case_form.js": "/js/request_case_form.js?id=ac096d3cca9453a5bae6",
     "/js/access_request_form.js": "/js/access_request_form.js?id=bcc9e5a86e1f37057fca",
-    "/css/app.css": "/css/app.css?id=27fec684d362e23194e5",
+    "/css/app.css": "/css/app.css?id=f40ed1de276c3506dbbb",
     "/js/digital_setup_form.js": "/js/digital_setup_form.js?id=722a3e048a58f62e552c",
-    "/js/return_request.js": "/js/return_request.js?id=ddab7014468c86a61bb3"
+    "/js/return_request.js": "/js/return_request.js?id=c8fde53581303cc29817"
 }

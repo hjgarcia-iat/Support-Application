@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1644,6 +1644,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_partials_FormAlert__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__ = __webpack_require__("./resources/assets/js/components/partials/FormError.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_partials_FormError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_partials_FormError__);
+//
+//
 //
 //
 //
@@ -20097,33 +20099,34 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "mb-4" },
-          _vm._l(_vm.products, function(product, key, index) {
-            return _c(
-              "section",
-              { staticClass: "flex justify-between items-center mb-4" },
-              [
+        _c("table", { staticClass: "table" }, [
+          _vm._m(8),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.products, function(product, key, index) {
+              return _c("tr", [
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block",
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.removeProduct(key)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-remove" })]
+                  )
+                ]),
+                _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "mr-2 w-full" },
+                  "td",
                   [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block text-grey-darker text-sm font-bold mb-2",
-                        attrs: { for: "sku_" + index }
-                      },
-                      [
-                        _c("small", { staticClass: "text-lg text-red" }, [
-                          _vm._v("*")
-                        ]),
-                        _vm._v("\n                        SKU")
-                      ]
-                    ),
-                    _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
@@ -20139,7 +20142,7 @@ var render = function() {
                         type: "text",
                         id: "sku_" + index,
                         placeholder: "Enter SKU",
-                        name: "teachers[]['name']"
+                        name: "products[]['name']"
                       },
                       domProps: { value: product.sku },
                       on: {
@@ -20162,24 +20165,8 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "div",
-                  { staticClass: "mr-2 w-full" },
+                  "td",
                   [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block text-grey-darker text-sm font-bold mb-2",
-                        attrs: { for: "quantity_" + index }
-                      },
-                      [
-                        _c("small", { staticClass: "text-lg text-red" }, [
-                          _vm._v("*")
-                        ]),
-                        _vm._v("\n                        Quantity")
-                      ]
-                    ),
-                    _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
@@ -20195,7 +20182,7 @@ var render = function() {
                         type: "text",
                         id: "quantity_" + index,
                         placeholder: "Enter Quantity",
-                        name: "teachers[]['school']"
+                        name: "products[]['school']"
                       },
                       domProps: { value: product.quantity },
                       on: {
@@ -20217,30 +20204,12 @@ var render = function() {
                       : _vm._e()
                   ],
                   1
-                ),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "a",
-                    {
-                      staticClass:
-                        "block bg-grey hover:bg-grey-dark text-grey-darkest font-bold py-2 px-4 focus:outline-none focus:shadow-outline block",
-                      attrs: { href: "" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.removeProduct(key)
-                        }
-                      }
-                    },
-                    [_c("i", { staticClass: "fa fa-trash" })]
-                  )
-                ])
-              ]
-            )
-          }),
-          0
-        ),
+                )
+              ])
+            }),
+            0
+          )
+        ]),
         _vm._v(" "),
         _c("section", { staticClass: "mt-6" }, [
           _c(
@@ -20381,6 +20350,26 @@ var staticRenderFns = [
     return _c("small", [
       _c("i", { staticClass: "fa fa-plus mr-2" }),
       _vm._v("Add Product")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th"),
+        _vm._v(" "),
+        _c("th", [
+          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _vm._v(" SKU")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _vm._v(" Quantity")
+        ])
+      ])
     ])
   }
 ]
@@ -31763,7 +31752,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 
 /***/ }),
 
-/***/ 5:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./resources/assets/js/return_request.js");
