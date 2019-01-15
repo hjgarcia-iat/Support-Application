@@ -13,9 +13,6 @@ var tailwindcss = require('tailwindcss');
 
 mix.js('resources/assets/js/access_request_form.js', 'public/js')
     .js('resources/assets/js/digital_setup_form.js', 'public/js')
-    .js('resources/assets/js/request_demo_form.js', 'public/js')
-    .js('resources/assets/js/request_quote_form.js', 'public/js')
-    .js('resources/assets/js/request_case_form.js', 'public/js')
     .js('resources/assets/js/return_request.js', 'public/js')
     .version()
     .browserSync({
