@@ -24,8 +24,8 @@
     </section>
 </main>
 
-<footer role="contentinfo" class="flex justify-center">
-    <section class="w-3/5 border-t p-5 text-center">
+<footer role="contentinfo" class="xl:flex justify-center">
+    <section class="xl:w-3/5 border-t p-5 text-center">
         <p class="text-grey-darker">&copy; {{ date('Y') }} Activate Learning</p>
         <p class="text-grey-darker">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
     </section>
