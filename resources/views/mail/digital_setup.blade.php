@@ -18,7 +18,7 @@
 <p><strong>Curriculum</strong>: {{ $curriculum }}</p>
 
 @if($district_manager == 'yes')
-    <<p><strong>District Manager Name</strong>: {{ $dm_name }}</p>
+    <p><strong>District Manager Name</strong>: {{ $dm_name }}</p>
     <p><strong>District Manager Email</strong>: {{ $dm_email }}</p>
 @endif
 
