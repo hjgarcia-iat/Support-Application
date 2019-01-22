@@ -10,26 +10,26 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body class="bg-grey-lightest">
-
-<header class="page-header flex justify-center mb-5" role="banner">
-    <section class="logo my-5">
-        <img src="{{ asset('img/logo.png') }}" width="400" alt="{{ config('app.name') }}">
-    </section>
-</header>
-
-<main role="main" class="xl:flex justify-center mb-5">
-    <section class="xl:w-3/5 border bg-white">
-        @yield('content')
-    </section>
-</main>
-
-<footer role="contentinfo" class="xl:flex justify-center">
-    <section class="xl:w-3/5 border-t p-5 text-center">
-        <p class="text-grey-darker">&copy; {{ date('Y') }} Activate Learning</p>
-        <p class="text-grey-darker">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
-    </section>
-</footer>
-
+    <div class="grid-col-container-12 app-grid h-full">
+        <header class="page-header grid-col-12 flex justify-center mb-5" role="banner">
+            <section class="logo my-5">
+                <img src="{{ asset('img/logo.png') }}" width="400" alt="{{ config('app.name') }}">
+            </section>
+        </header>
+        <main role="main" class="grid-col-12">
+            <section  class="xl:flex justify-center mb-5">
+                <section class="xl:w-3/5 border bg-white">
+                    @yield('content')
+                </section>
+            </section>
+        </main>
+        <footer role="contentinfo" class="grid-col-12 xl:flex justify-center">
+            <section class="xl:w-3/5 border-t p-5 text-center">
+                <p class="text-grey-darker">&copy; {{ date('Y') }} Activate Learning</p>
+                <p class="text-grey-darker">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
+            </section>
+        </footer>
+    </div>
 @yield('scripts')
 </body>
 </html>
