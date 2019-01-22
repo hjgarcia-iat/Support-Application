@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -41785,13 +41785,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/assets/css/app.css":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/assets/js/access_request_form.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42009,11 +42002,18 @@ module.exports = Component.exports
 
 /***/ }),
 
+/***/ "./resources/assets/sass/app.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__("./resources/assets/js/access_request_form.js");
-module.exports = __webpack_require__("./resources/assets/css/app.css");
+module.exports = __webpack_require__("./resources/assets/sass/app.scss");
 
 
 /***/ })

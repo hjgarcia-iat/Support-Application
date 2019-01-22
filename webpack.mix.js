@@ -1,5 +1,6 @@
 let mix = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+require('laravel-mix-tailwind');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,7 +15,9 @@ var tailwindcss = require('tailwindcss');
 mix.js('resources/assets/js/access_request_form.js', 'public/js')
     .js('resources/assets/js/digital_setup_form.js', 'public/js')
     .js('resources/assets/js/return_request.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css')
     .version()
+    .tailwind()
     .browserSync({
         proxy: "support.activatelearning.test",
         files: [
@@ -26,6 +29,3 @@ mix.js('resources/assets/js/access_request_form.js', 'public/js')
         ]
     });
 
-mix.postCss('resources/assets/css/app.css', 'public/css', [
-    tailwindcss('./tailwind.js'),
-]);
