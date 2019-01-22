@@ -23,10 +23,11 @@
                 </section>
             </section>
         </main>
-        <footer role="contentinfo" class="grid-col-12 xl:flex justify-center">
-            <section class="xl:w-3/5 border-t p-5 text-center">
-                <p class="text-grey-darker">&copy; {{ date('Y') }} Activate Learning</p>
-                <p class="text-grey-darker">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
+
+        <footer role="contentinfo" class="grid-col-12 xl:flex justify-center bg-grey-lighter border-t p-5 text-center text-grey-dark text-sm">
+            <section class="xl:w-3/5 text-center">
+                <p class="text-grey-darkest mb-0">&copy; {{ date('Y') }} Activate Learning. All Rights Reserved.</p>
+                <p class="text-grey-darkest mb-0">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
             </section>
         </footer>
     </div>
