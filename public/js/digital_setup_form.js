@@ -1847,8 +1847,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -20509,24 +20507,23 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("section", { staticClass: "d-flex justify-content-end" }, [
-          _c(
-            "button",
-            {
-              staticClass:
-                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-              attrs: { type: "submit", disabled: _vm.loading }
+        _c(
+          "button",
+          {
+            staticClass:
+              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+            class: {
+              "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
             },
-            [
-              _vm.loading
-                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                : _vm._e(),
-              _vm._v(" Send Request\n            ")
-            ]
-          )
-        ])
+            attrs: { type: "submit", disabled: _vm.loading }
+          },
+          [
+            _vm.loading
+              ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+              : _vm._e(),
+            _vm._v("\n            Send Request\n        ")
+          ]
+        )
       ],
       1
     )

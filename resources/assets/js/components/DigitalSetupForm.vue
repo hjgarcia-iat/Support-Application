@@ -190,14 +190,12 @@
                 </table>
             </div>
 
-            <hr>
-            <section class="d-flex justify-content-end">
-                <button type="submit"
-                        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                        :disabled="loading">
-                    <i class="fa fa-refresh fa-spin" v-if="loading"></i> Send Request
-                </button>
-            </section>
+            <button type="submit"
+                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                    :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                <i class="fa fa-refresh fa-spin" v-if="loading"></i>
+                Send Request
+            </button>
         </form>
     </div>
 </template>
