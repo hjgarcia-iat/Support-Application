@@ -32,10 +32,18 @@ class CreateReturnRequestFormTest extends TestCase
     {
         $refund = factory(Refund::class)->create();
 
-        $response = $this->get(route('return_request.create',$refund->rma_number));
+        $response = $this->get(route('return_request.create', $refund->rma_number));
 
         $response->assertStatus(200);
         $response->assertViewIs('return_request.create');
+    }
+
+    /**
+     * @test
+     */
+    public function we_get_a_404_error_if_the_rma_code_does_not_exist()
+    {
+        $this->get(route('return_request.create', ['non-existent-rma-code']))->assertStatus(404);
     }
 
     /**
