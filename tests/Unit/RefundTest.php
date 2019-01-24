@@ -60,4 +60,14 @@ class RefundTest extends TestCase
 
         $this->assertEquals('some reason', $refund->reason);
     }
+
+    /**
+     * @test
+     */
+    public function it_has_an_rma_number_field()
+    {
+        $refund = factory(Refund::class)->create(['rma_number' => 'some rma number']);
+
+        $this->assertEquals('some rma number', $refund->rma_number);
+    }
 }

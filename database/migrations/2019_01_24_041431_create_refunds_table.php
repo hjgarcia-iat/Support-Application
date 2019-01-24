@@ -19,6 +19,7 @@ class CreateRefundsTable extends Migration
             $table->string('email')->index();
             $table->string('district');
             $table->string('order_number')->index();
+            $table->string('rma_number')->index();
             $table->string('reason')->index();
             $table->timestamps();
         });
