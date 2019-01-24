@@ -29,10 +29,13 @@ class ReturnRequestController extends Controller
     /**
      * Show create form
      *
+     * @param string $code
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create($code = '')
     {
+        abort_if($code === '', 404);
+
         return view('return_request.create');
     }
 
