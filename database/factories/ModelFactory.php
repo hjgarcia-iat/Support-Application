@@ -32,3 +32,14 @@ $factory->define(\App\Zip::class, function (Faker\Generator $faker) {
         'abbr' => $faker->citySuffix,
     ];
 });
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(\App\Refund::class, function (Faker\Generator $faker) {
+    return [
+       'name' => $faker->name,
+       'email' => $faker->email,
+       'district' => $faker->company,
+       'order_number' => $faker->bothify('##?#?$???'),
+       'reason' => 'reason',
+    ];
+});
