@@ -36,10 +36,11 @@ $factory->define(\App\Zip::class, function (Faker\Generator $faker) {
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(\App\Refund::class, function (Faker\Generator $faker) {
     return [
-       'name' => $faker->name,
-       'email' => $faker->email,
-       'district' => $faker->company,
-       'order_number' => $faker->bothify('##?#?$???'),
-       'reason' => 'reason',
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'district' => $faker->company,
+        'order_number' => $faker->bothify('##?#?$???'),
+        'rma_number' => $faker->bothify('##?#?$???'),
+        'reason' => 'reason',
     ];
 });
