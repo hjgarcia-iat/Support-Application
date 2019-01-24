@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReturnRequestForm;
+use App\Refund;
 use App\Services\Spreadsheet\SpreadsheetInterface;
-use Illuminate\Http\Request;
 
 /**
  * Class ReturnRequestController
@@ -34,9 +34,9 @@ class ReturnRequestController extends Controller
      */
     public function create($code = '')
     {
-        abort_if($code === '', 404);
-
-        return view('return_request.create');
+        return view('return_request.create', [
+            'refund' => Refund::whereRmaCode($code)->firstOrFail()
+        ]);
     }
 
     /**
