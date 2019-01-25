@@ -34,7 +34,9 @@ class ReturnRequestController extends Controller
      */
     public function create($code = '')
     {
-        return view('return_request.create');
+        return view('return_request.create', [
+            'refund' => Refund::whereRmaNumber($code)->firstOrFail()
+        ]);
     }
 
     /**
