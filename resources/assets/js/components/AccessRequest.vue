@@ -26,7 +26,6 @@
                     <option value="lbefanis@activatelearning.com">Lisa Befanis</option>
                     <option value="lpabon@activatelearning.com">Liz Pabon</option>
                     <option value="rantinori@activatelearning.com">Ron Antinori</option>
-                    <option value="tnatenberg@activatelearning.com">Todd Natenberg</option>
                     <option value="tpence@activatelearning.com">Tom Pence</option>
                     <option value="tmarmolejo@activatelearning.com">Tracy Marmolejo</option>
                 </select>
