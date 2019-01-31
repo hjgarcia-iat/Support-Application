@@ -198,15 +198,15 @@
                     <input id="resource-7" name="resource[]"
                             type="checkbox" value="Active Physics-Active Chemistry PD" v-model="resources">
                     <label class="ml-2" for="resource-7">
-                        Active Physics / Active Chemistry Professional Development Website
+                        Active Physics / Active Chemistry Professional Development Website (Haiku)
                     </label>
                 </div>
                 <div class="mb-3">
                     <input id="resource-9" name="resource[]"
-                            type="checkbox" value="IMP Cyberpd" v-model="resources">
+                            type="checkbox" value="IMP/MM Cyberpd" v-model="resources">
 
                     <label class="ml-2" for="resource-9">
-                        IMP CyberPD
+                        IMP/MM CyberPD
                     </label>
                 </div>
                 <small class="mt-3 block text-grey-dark">Select one or
