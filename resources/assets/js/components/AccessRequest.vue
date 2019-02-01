@@ -291,7 +291,7 @@
                     <input id="version-5" name="version"
                             type="radio" value="IQWST Integrated" v-model="ide_version">
                     <label class="ml-2" for="version-5">
-                        IQWST Integreated
+                        IQWST Integrated
                     </label>
                 </div>
                 <div class="mb-3">
