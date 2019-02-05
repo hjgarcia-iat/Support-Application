@@ -133,6 +133,7 @@ return [
         'last_name' => 'Last Name',
         'zip' => 'Zip code',
         'zipcode' => 'Zip code',
+        'zip_code' => 'Zip code',
         'description' => 'Description',
         'comment' => 'Comment',
         'teachers.*.name' => 'Teacher Name',
@@ -148,6 +149,12 @@ return [
         'reason' => 'Reason',
         'order_number' => 'Order Number or PO Number',
         'rma_number' => 'RMA Number',
+        'access_type' => 'Access Type',
+        'time_frame' => 'Time Frame',
+        'resource' => 'Resource ',
+        'ebook_list' => 'E-Book',
+        'version' => 'Version',
+        'sales_rep' => 'Sales Representative'
     ],
 
 ];

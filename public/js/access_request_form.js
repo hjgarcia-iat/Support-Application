@@ -2023,6 +2023,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2042,6 +2066,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             school: '',
             zip: '',
             resources: [],
+            access_type: '',
             ebook: [],
             ide_version: '',
             time_frame: '',
@@ -2068,6 +2093,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.zip = '';
             this.resources = [];
             this.ebook = [];
+            this.access_type = '';
             this.ide_version = '';
             this.time_frame = '';
             this.notes = '';
@@ -2088,6 +2114,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'district': this.district,
                 'school': this.school,
                 'resource': this.resources,
+                'access_type': this.access_type,
                 'version': this.ide_version,
                 'time_frame': this.time_frame,
                 'zip_code': this.zip,
@@ -2114,6 +2141,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         showEbooks: function showEbooks() {
             return this.resources.includes('Ebook');
+        },
+        showAccessType: function showAccessType() {
+            return this.resources.includes('Active Physics-Active Chemistry PD') || this.resources.includes('IMP/MM Cyberpd');
         }
     }
 });
@@ -29816,6 +29846,110 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
+                value: _vm.showAccessType,
+                expression: "showAccessType"
+              }
+            ]
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "mb-6" },
+              [
+                _vm._m(7),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.access_type,
+                        expression: "access_type"
+                      }
+                    ],
+                    attrs: {
+                      id: "access_type_1",
+                      name: "version",
+                      type: "radio",
+                      value: "Full Access"
+                    },
+                    domProps: {
+                      checked: _vm._q(_vm.access_type, "Full Access")
+                    },
+                    on: {
+                      change: function($event) {
+                        _vm.access_type = "Full Access"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    { staticClass: "ml-2", attrs: { for: "access_type_1" } },
+                    [
+                      _vm._v(
+                        "\n                        Full Access\n                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.access_type,
+                        expression: "access_type"
+                      }
+                    ],
+                    attrs: {
+                      id: "access_type_2",
+                      name: "version",
+                      type: "radio",
+                      value: "Demo Access"
+                    },
+                    domProps: {
+                      checked: _vm._q(_vm.access_type, "Demo Access")
+                    },
+                    on: {
+                      change: function($event) {
+                        _vm.access_type = "Demo Access"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "label",
+                    { staticClass: "ml-2", attrs: { for: "access_type_2" } },
+                    [
+                      _vm._v(
+                        "\n                        Demo Access\n                    "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.formErrors.access_type
+                  ? _c("form-error", {
+                      attrs: { error: _vm.formErrors.access_type[0] }
+                    })
+                  : _vm._e()
+              ],
+              1
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
                 value: _vm.showEbooks,
                 expression: "showEbooks"
               }
@@ -29826,7 +29960,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(7),
+                _vm._m(8),
                 _vm._v(" "),
                 _c(
                   "select",
@@ -30032,7 +30166,7 @@ var render = function() {
             staticClass: "mb-6"
           },
           [
-            _vm._m(8),
+            _vm._m(9),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -30222,7 +30356,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(9),
+            _vm._m(10),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -30577,6 +30711,19 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
         _vm._v("\n                Digital Resources")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v("\n                    Access Type")
       ]
     )
   },

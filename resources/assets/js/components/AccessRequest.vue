@@ -216,6 +216,30 @@
                 <form-error :error=formErrors.resource[0] v-if="formErrors.resource"></form-error>
             </div>
 
+            <div v-show="showAccessType">
+                <div class="mb-6">
+                    <label class="block text-grey-darker text-sm font-bold mb-2">
+                        <small class="text-lg text-red">*</small>
+                        Access Type</label>
+
+                    <div class="mb-3">
+                        <input id="access_type_1" name="version"
+                                type="radio" value="Full Access" v-model="access_type">
+                        <label class="ml-2" for="access_type_1">
+                            Full Access
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <input id="access_type_2" name="version"
+                                type="radio" value="Demo Access" v-model="access_type">
+                        <label class="ml-2" for="access_type_2">
+                            Demo Access
+                        </label>
+                    </div>
+                    <form-error :error=formErrors.access_type[0] v-if="formErrors.access_type"></form-error>
+                </div>
+            </div>
+
             <div v-show="showEbooks">
                 <div class="mb-6">
                     <label class="block text-grey-darker text-sm font-bold mb-2" for="ebook_list">
@@ -398,6 +422,7 @@
                 school: '',
                 zip: '',
                 resources: [],
+                access_type: '',
                 ebook: [],
                 ide_version: '',
                 time_frame: '',
@@ -423,6 +448,7 @@
                 this.zip = '';
                 this.resources = [];
                 this.ebook = [];
+                this.access_type = '';
                 this.ide_version = '';
                 this.time_frame = '';
                 this.notes = '';
@@ -441,6 +467,7 @@
                     'district': this.district,
                     'school': this.school,
                     'resource': this.resources,
+                    'access_type': this.access_type,
                     'version': this.ide_version,
                     'time_frame': this.time_frame,
                     'zip_code': this.zip,
@@ -472,6 +499,10 @@
 
             showEbooks() {
                 return this.resources.includes('Ebook');
+            },
+            showAccessType() {
+                return this.resources.includes('Active Physics-Active Chemistry PD') ||
+                    this.resources.includes('IMP/MM Cyberpd')
             }
         }
     }
