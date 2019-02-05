@@ -4,6 +4,10 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class AccessFormRequest
+ * @package App\Http\Requests
+ */
 class AccessFormRequest extends FormRequest
 {
     /**
@@ -34,12 +38,53 @@ class AccessFormRequest extends FormRequest
             'zip_code' => ['required', 'exists:zipcodes,zip_code'],
         ];
 
-        $resource = $this->get('resource');
+        $rules = $this->validateAccessType($this->get('resource'), $rules);
 
+        $rules = $this->validateEbookList($this->get('resource'), $rules);
+
+        $rules = $this->validateVersion($this->get('resource'), $rules);
+
+        return $rules;
+    }
+
+    /**
+     * @param $resource
+     * @param array $rules
+     * @return array
+     */
+    protected function validateAccessType($resource, array $rules)
+    {
+        if (!empty($resource) and in_array('Active Physics-Active Chemistry PD', $resource)) {
+            $rules['access_type'] = 'required';
+        }
+
+        if (!empty($resource) and in_array('IMP/MM Cyberpd', $resource)) {
+            $rules['access_type'] = 'required';
+        }
+
+        return $rules;
+    }
+
+    /**
+     * @param $resource
+     * @param array $rules
+     * @return array
+     */
+    protected function validateEbookList($resource, array $rules)
+    {
         if (!empty($resource) and in_array('Ebook', $resource)) {
             $rules['ebook_list'] = 'required';
         }
+        return $rules;
+    }
 
+    /**
+     * @param $resource
+     * @param array $rules
+     * @return array
+     */
+    protected function validateVersion($resource, array $rules)
+    {
         if (!empty($resource) and in_array('IQWST Demo Portal', $resource)) {
             $rules['version'] = 'required';
         }
@@ -55,7 +100,6 @@ class AccessFormRequest extends FormRequest
         if (!empty($resource) and in_array('IQWST IDE Demo - Spanish', $resource)) {
             $rules['version'] = 'required';
         }
-
         return $rules;
     }
 }

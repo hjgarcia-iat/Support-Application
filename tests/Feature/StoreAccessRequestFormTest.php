@@ -219,6 +219,34 @@ class StoreAccessRequestFormTest extends TestCase
     /**
      * @test
      */
+    public function when_the_resource_field_is_haiku_the_access_type_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['Active Physics-Active Chemistry PD'], 'access_type' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('access_type');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
+     * @test
+     */
+    public function when_the_resource_field_is_cyberpd_the_access_type_field_is_required()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['resource' => ['IMP/MM Cyberpd'], 'access_type' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('access_type');
+        $this->seeEmailWasNotSent();
+    }
+
+    /**
+     * @test
+     */
     public function that_when_resource_field_is_when_iqwst_demo_portal_the_version_field_is_required()
     {
         $response = $this->from(route('access_request.create'))
