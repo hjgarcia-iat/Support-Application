@@ -35,6 +35,10 @@
     @endforeach
 </ul>
 
+@if($access_type)
+    <p><strong>Access Length</strong>:{{ $access_type }}</p>
+@endif
+
 @if($version)
     <p><strong>Version</strong>:{{ $version }}</p>
 @endif

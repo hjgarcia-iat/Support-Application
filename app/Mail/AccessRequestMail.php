@@ -40,6 +40,7 @@ class AccessRequestMail extends Mailable
                 'state' => $zip->abbr,
                 'sales_reps' => request()->get('sales_reps'),
                 'resources' => request()->get('resource'),
+                'access_type' => request()->get('access_type'),
                 'version' => request()->get('version'),
                 'ebooks' => request()->get('ebook_list'),
                 'time_frame' => request()->get('time_frame'),

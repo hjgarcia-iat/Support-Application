@@ -36,6 +36,7 @@ class StoreAccessRequestFormTest extends TestCase
         $this->seeEmailContains($this->validData()['zip_code']);
         $this->seeEmailContains($this->validData()['resource'][0]);
         $this->seeEmailContains($this->validData()['ebook_list'][0]);
+        $this->seeEmailContains($this->validData()['access_type']);
         $this->seeEmailContains($this->validData()['version']);
         $this->seeEmailContains($this->validData()['time_frame']);
         $this->seeEmailContains($this->validData()['note']);
@@ -315,6 +316,7 @@ class StoreAccessRequestFormTest extends TestCase
             'district'   => 'District',
             'school'     => 'School',
             'resource'   => ['IQWST'],
+            'access_type'   => 'Demo',
             'version'    => 'IQWST2.0.5',
             'sales_rep'  => 'test@email.com',
             'time_frame' => '2 weeks',
