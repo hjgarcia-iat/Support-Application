@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Next Gen PET Fulfillment Support Form</h1>
+        <h1 class="mb-4">Next GEN PET Fulfillment Support Form</h1>
         <form method="POST" @submit.prevent="submitForm">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">

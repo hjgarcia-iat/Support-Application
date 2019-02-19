@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle','Next Gen PET Fulfillment Support Form')
+@section('pageTitle','Next GEN PET Fulfillment Support Form')
 @section('content')
     <div id="nextgenpet-form">
         <nextgenpet-form></nextgenpet-form>
