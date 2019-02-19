@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NextGenPetRequestMail;
 use Illuminate\Http\Request;
 
 /**
@@ -18,5 +19,21 @@ class NextGenPetRequestController extends Controller
     public function create()
     {
         return view('nextgen_pet_request.create');
+    }
+
+    /**
+     * Store the next gen pet request
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store()
+    {
+        \Mail::to([env('DESK_SUPPORT_EMAIL'),env('FULFILLMENT_EMAIL')])
+            ->send(new NextGenPetRequestMail());
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Your message was sent!',
+        ]);
     }
 }

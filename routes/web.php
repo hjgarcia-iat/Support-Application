@@ -14,3 +14,4 @@ Route::get('/return-request', 'ReturnRequestController@create')->name('return_re
 Route::post('/return-request', 'ReturnRequestController@store')->name('return_request.store');
 
 Route::get('/next-gen-pet','NextGenPetRequestController@create')->name('nextgen_pet.create');
+Route::post('/next-gen-pet','NextGenPetRequestController@store')->name('nextgen_pet.store');
