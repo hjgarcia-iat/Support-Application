@@ -49,7 +49,7 @@
             <div class="mb-6">
                 <label for="inquiry" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
-                    Please Choose Your Concern
+                    Please Choose Your Inquiry
                 </label>
 
                 <select name="inquiry" id="inquiry"
@@ -73,6 +73,7 @@
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         cols="30"
                         placeholder="Comments" rows="5" v-model="comment"></textarea>
+                <form-error :error=formErrors.comment[0] v-if="formErrors.comment"></form-error>
             </div>
             <button type="submit"
                     class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"

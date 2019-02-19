@@ -116,7 +116,7 @@ class StoreNextGenPetRequestTest extends TestCase
     public function test_the_comment_field_is_required_if_inquiry_is_other()
     {
         $response = $this->from(route('nextgen_pet.create'))
-            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'other', 'comment' => '']));
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'Other', 'comment' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('nextgen_pet.create'));
@@ -127,7 +127,7 @@ class StoreNextGenPetRequestTest extends TestCase
     public function test_the_comment_field_is_required_if_inquiry_is_order_cancellation()
     {
         $response = $this->from(route('nextgen_pet.create'))
-            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'order_cancellation', 'comment' => '']));
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'Order Cancellation', 'comment' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('nextgen_pet.create'));
@@ -138,7 +138,7 @@ class StoreNextGenPetRequestTest extends TestCase
     public function test_the_comment_field_is_required_if_inquiry_is_order_modification()
     {
         $response = $this->from(route('nextgen_pet.create'))
-            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'order_modification', 'comment' => '']));
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'Order Modification', 'comment' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('nextgen_pet.create'));

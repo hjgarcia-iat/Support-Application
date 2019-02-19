@@ -29,7 +29,7 @@ class NextGenPetRequest extends FormRequest
             'email' => 'required|email',
             'po_number' => 'required',
             'inquiry' => 'required',
-            'comment' => 'required_if:inquiry,other,order_cancellation,order_modification',
+            'comment' => 'required_if:inquiry,Other,Order Cancellation,Order Modification',
         ];
     }
 }

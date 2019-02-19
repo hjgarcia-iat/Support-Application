@@ -1728,6 +1728,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -19935,45 +19936,56 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "mb-6" }, [
-          _c(
-            "label",
-            {
-              staticClass: "block text-grey-darker text-sm font-bold mb-2",
-              attrs: { for: "comment" }
-            },
-            [_vm._v("Comments")]
-          ),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
+        _c(
+          "div",
+          { staticClass: "mb-6" },
+          [
+            _c(
+              "label",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.comment,
-                expression: "comment"
-              }
-            ],
-            staticClass:
-              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-            attrs: {
-              name: "comment",
-              id: "comment",
-              cols: "30",
-              placeholder: "Comments",
-              rows: "5"
-            },
-            domProps: { value: _vm.comment },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+                staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                attrs: { for: "comment" }
+              },
+              [_vm._v("Comments")]
+            ),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.comment,
+                  expression: "comment"
                 }
-                _vm.comment = $event.target.value
+              ],
+              staticClass:
+                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+              attrs: {
+                name: "comment",
+                id: "comment",
+                cols: "30",
+                placeholder: "Comments",
+                rows: "5"
+              },
+              domProps: { value: _vm.comment },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.comment = $event.target.value
+                }
               }
-            }
-          })
-        ]),
+            }),
+            _vm._v(" "),
+            _vm.formErrors.comment
+              ? _c("form-error", {
+                  attrs: { error: _vm.formErrors.comment[0] }
+                })
+              : _vm._e()
+          ],
+          1
+        ),
         _vm._v(" "),
         _c(
           "button",
@@ -20074,7 +20086,7 @@ var staticRenderFns = [
       },
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
-        _vm._v("\n                Please Choose Your Concern\n            ")
+        _vm._v("\n                Please Choose Your Inquiry\n            ")
       ]
     )
   }
