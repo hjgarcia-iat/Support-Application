@@ -47,6 +47,105 @@ class StoreNextGenPetRequestTest extends TestCase
         $this->seeEmailContains($this->validParams()['inquiry']);
     }
 
+    public function test_the_instution_name_field_is_required()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['institution_name' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('institution_name');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_name_field_is_required()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['name' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('name');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_email_field_is_required()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['email' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('email');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_email_field_is_valid()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['email' => 'invalid-email']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('email');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_po_number_field_is_required()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['po_number' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('po_number');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_inquiry_field_is_required()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('inquiry');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_comment_field_is_required_if_inquiry_is_other()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'other', 'comment' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('comment');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_comment_field_is_required_if_inquiry_is_order_cancellation()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'order_cancellation', 'comment' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('comment');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function test_the_comment_field_is_required_if_inquiry_is_order_modification()
+    {
+        $response = $this->from(route('nextgen_pet.create'))
+            ->post(route('nextgen_pet.store'), $this->validParams(['inquiry' => 'order_modification', 'comment' => '']));
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('nextgen_pet.create'));
+        $response->assertSessionHasErrors('comment');
+        $this->seeEmailWasNotSent();
+    }
+
 
     /**
      * Return valid form paramaters
