@@ -154,7 +154,9 @@ return [
         'resource' => 'Resource ',
         'ebook_list' => 'E-Book',
         'version' => 'Version',
-        'sales_rep' => 'Sales Representative'
+        'sales_rep' => 'Sales Representative',
+        'institution_name' => 'Institution Name',
+        'inquiry' => 'Inquiry'
     ],
 
 ];
