@@ -1,6 +1,11 @@
 <template>
     <div class="p-8">
         <h1 class="mb-4">Next GEN PET Fulfillment Support Form</h1>
+        <p class="mb-4">If you have questions or issues regarding an existing order, please complete the form below.
+            If you need assistance with placing a new order, please contact our Customer Service Group at <a
+                    href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
+            All purchase orders should be submitted to <a href="mailto:orders@activatelearning.com">orders@activatelearning.com</a>.
+        </p>
         <form method="POST" @submit.prevent="submitForm">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
@@ -56,11 +61,11 @@
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="inquiry">
                     <option value="">Make a selection...</option>
+                    <option value="Order Modification">Order Modification</option>
+                    <option value="Order Cancellation">Order Cancellation</option>
+                    <option value="Shipping Status">Shipping Status</option>
                     <option value="Item Missing">Item Missing</option>
                     <option value="Item Damaged">Item Damaged</option>
-                    <option value="Shipping Status">Shipping Status</option>
-                    <option value="Order Cancellation">Order Cancellation</option>
-                    <option value="Order Modification">Order Modification</option>
                     <option value="Other">Other</option>
                 </select>
 
