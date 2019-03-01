@@ -32,11 +32,9 @@ class ReturnRequestController extends Controller
      * @param string $code
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create($code = '')
+    public function create()
     {
-        return view('return_request.create', [
-            'refund' => Refund::whereRmaCode($code)->firstOrFail()
-        ]);
+        return view('return_request.create');
     }
 
     /**
