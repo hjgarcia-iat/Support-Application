@@ -12,3 +12,6 @@ Route::post('/digital-setup-request', 'DigitalSetupController@store')->name('dig
 
 Route::get('/return-request', 'ReturnRequestController@create')->name('return_request.create');
 Route::post('/return-request', 'ReturnRequestController@store')->name('return_request.store');
+
+Route::get('/next-gen-pet-request', 'NextGenPetRequestController@create')->name('nextgen_pet.create');
+Route::post('/next-gen-pet-request', 'NextGenPetRequestController@store')->name('nextgen_pet.store');
