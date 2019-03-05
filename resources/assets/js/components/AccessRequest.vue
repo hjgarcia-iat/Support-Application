@@ -252,7 +252,9 @@
                             v-model="ebook" multiple>
                         <option value="">Select an E-Book...</option>
                         <option value="Active Physics">Active Physics</option>
+                        <option value="Active Physics Video Series">Active Physics Video Series</option>
                         <option value="Active Chemistry">Active Chemistry</option>
+                        <option value="Active Chemistry Video Series">Active Chemistry Video Series</option>
                         <option value="Active Physical Science">Active Physical Science</option>
                         <option value="Astrobiology">Astrobiology</option>
                         <option value="EarthComm">EarthComm</option>
@@ -276,6 +278,7 @@
                         <option value="PBIScience: Energy">PBIScience: Energy</option>
                         <option value="PBIScience: Moving Big Things">PBIScience: Moving Big Things</option>
                         <option value="PBIScience: Vehicles in Motion">PBIScience: Vehicles in Motion</option>
+                        <option value="PBIScience: Video Series">PBIScience: Video Series</option>
                     </select>
                     <small class="mt-3 block text-grey-dark">Select one
                         or more e-books. Use the Command
