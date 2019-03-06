@@ -38,7 +38,7 @@ class AccessRequestMail extends Mailable
                 'zip_code' => $zip->zip_code,
                 'city' => $zip->city,
                 'state' => $zip->abbr,
-                'sales_reps' => request()->get('sales_reps'),
+                'sales_rep' => request()->get('sales_rep'),
                 'resources' => request()->get('resource'),
                 'access_type' => request()->get('access_type'),
                 'version' => request()->get('version'),

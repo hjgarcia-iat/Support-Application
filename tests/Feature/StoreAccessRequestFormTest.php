@@ -28,6 +28,7 @@ class StoreAccessRequestFormTest extends TestCase
         $response->assertJson(['success' => true]);
 
         $this->seeEmailWasSent();
+        $this->seeEmailContains($this->validData()['sales_rep']);
         $this->seeEmailContains($this->validData()['first_name']);
         $this->seeEmailContains($this->validData()['last_name']);
         $this->seeEmailContains($this->validData()['email']);

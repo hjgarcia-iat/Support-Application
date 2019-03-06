@@ -16,7 +16,7 @@
 
 <p><strong>Customer Email Address</strong>: {{ $email }}</p>
 
-<p><strong>Sales Representative</strong>: {{ $sales_reps }}</p>
+<p><strong>Sales Representative Email Address</strong>: {{ $sales_rep }}</p>
 
 <p><strong>School District</strong>: {{ $school_district }}</p>
 
