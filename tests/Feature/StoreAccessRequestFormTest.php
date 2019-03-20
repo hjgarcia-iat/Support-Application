@@ -44,6 +44,34 @@ class StoreAccessRequestFormTest extends TestCase
         $this->seeEmailTo(env('DESK_SUPPORT_EMAIL'));
     }
 
+    /**
+     * @test
+     */
+    public function we_can_submit_the_form_if_the_zip_code_is_not_present()
+    {
+        $response = $this->from(route('access_request.create'))
+            ->post(route('access_request.store'), $this->validData(['zip_code' => '11111']));
+
+        $response->assertStatus(200);
+        $response->assertJson(['success' => true]);
+
+
+        $this->seeEmailWasSent();
+        $this->seeEmailContains($this->validData()['sales_rep']);
+        $this->seeEmailContains($this->validData()['first_name']);
+        $this->seeEmailContains($this->validData()['last_name']);
+        $this->seeEmailContains($this->validData()['email']);
+        $this->seeEmailContains($this->validData()['district']);
+        $this->seeEmailContains($this->validData()['school']);
+        $this->seeEmailContains($this->validData()['resource'][0]);
+        $this->seeEmailContains($this->validData()['ebook_list'][0]);
+        $this->seeEmailContains($this->validData()['access_type']);
+        $this->seeEmailContains($this->validData()['version']);
+        $this->seeEmailContains($this->validData()['time_frame']);
+        $this->seeEmailContains($this->validData()['note']);
+        $this->seeEmailTo(env('DESK_SUPPORT_EMAIL'));
+    }
+
 
     /**
      * @test
@@ -183,20 +211,6 @@ class StoreAccessRequestFormTest extends TestCase
         )->post(route('access_request.store'), $this->validData([
             'zip_code' => '',
         ]));
-
-        $response->assertStatus(302);
-        $response->assertRedirect('access-request');
-        $response->assertSessionHasErrors('zip_code');
-        $this->seeEmailWasNotSent();
-    }
-
-    /**
-     * @test
-     */
-    public function the_zip_code_must_exists()
-    {
-        $response = $this->from(route('access_request.create'))
-            ->post(route('access_request.store'), $this->validData(['zip_code' => '11111']));
 
         $response->assertStatus(302);
         $response->assertRedirect('access-request');
