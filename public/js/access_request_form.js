@@ -2053,6 +2053,72 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2070,7 +2136,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             email: '',
             district: '',
             school: '',
-            zip: '',
+            city: '',
+            state: '',
             resources: [],
             access_type: '',
             ebook: [],
@@ -2096,7 +2163,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.email = '';
             this.district = '';
             this.school = '';
-            this.zip = '';
+            this.city = '';
+            this.state = '';
             this.resources = [];
             this.ebook = [];
             this.access_type = '';
@@ -2123,7 +2191,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 'access_type': this.access_type,
                 'version': this.ide_version,
                 'time_frame': this.time_frame,
-                'zip_code': this.zip,
+                'city': this.city,
+                'state': this.state,
                 'ebook_list': this.ebook,
                 'note': this.notes
             }).then(function (response) {
@@ -29255,33 +29324,219 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.zip,
-                  expression: "zip"
+                  value: _vm.city,
+                  expression: "city"
                 }
               ],
               staticClass:
                 "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
-                id: "zip_code",
-                placeholder: "School Zip code",
-                name: "zip_code"
+                id: "city",
+                placeholder: "School City",
+                name: "city"
               },
-              domProps: { value: _vm.zip },
+              domProps: { value: _vm.city },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.zip = $event.target.value
+                  _vm.city = $event.target.value
                 }
               }
             }),
             _vm._v(" "),
-            _vm.formErrors.zip_code
-              ? _c("form-error", {
-                  attrs: { error: _vm.formErrors.zip_code[0] }
-                })
+            _vm.formErrors.city
+              ? _c("form-error", { attrs: { error: _vm.formErrors.city[0] } })
+              : _vm._e()
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mb-6" },
+          [
+            _vm._m(6),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.state,
+                    expression: "state"
+                  }
+                ],
+                staticClass:
+                  "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey",
+                attrs: { name: "state", id: "state" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.state = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              [
+                _c("option", { attrs: { value: "" } }, [
+                  _vm._v("Select a state")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "AL" } }, [_vm._v("Alabama")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "AK" } }, [_vm._v("Alaska")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "AZ" } }, [_vm._v("Arizona")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "AR" } }, [_vm._v("Arkansas")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "CA" } }, [
+                  _vm._v("California")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "CO" } }, [_vm._v("Colorado")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "CT" } }, [
+                  _vm._v("Connecticut")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "DE" } }, [_vm._v("Delaware")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "DC" } }, [
+                  _vm._v("District Of Columbia")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "FL" } }, [_vm._v("Florida")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "GA" } }, [_vm._v("Georgia")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "HI" } }, [_vm._v("Hawaii")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "ID" } }, [_vm._v("Idaho")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "IL" } }, [_vm._v("Illinois")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "IN" } }, [_vm._v("Indiana")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "IA" } }, [_vm._v("Iowa")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "KS" } }, [_vm._v("Kansas")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "KY" } }, [_vm._v("Kentucky")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "LA" } }, [_vm._v("Louisiana")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "ME" } }, [_vm._v("Maine")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MD" } }, [_vm._v("Maryland")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MA" } }, [
+                  _vm._v("Massachusetts")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MI" } }, [_vm._v("Michigan")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MN" } }, [_vm._v("Minnesota")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MS" } }, [
+                  _vm._v("Mississippi")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MO" } }, [_vm._v("Missouri")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "MT" } }, [_vm._v("Montana")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NE" } }, [_vm._v("Nebraska")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NV" } }, [_vm._v("Nevada")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NH" } }, [
+                  _vm._v("New Hampshire")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NJ" } }, [
+                  _vm._v("New Jersey")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NM" } }, [
+                  _vm._v("New Mexico")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NY" } }, [_vm._v("New York")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "NC" } }, [
+                  _vm._v("North Carolina")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "ND" } }, [
+                  _vm._v("North Dakota")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "OH" } }, [_vm._v("Ohio")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "OK" } }, [_vm._v("Oklahoma")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "OR" } }, [_vm._v("Oregon")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "PA" } }, [
+                  _vm._v("Pennsylvania")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "RI" } }, [
+                  _vm._v("Rhode Island")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "SC" } }, [
+                  _vm._v("South Carolina")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "SD" } }, [
+                  _vm._v("South Dakota")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "TN" } }, [_vm._v("Tennessee")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "TX" } }, [_vm._v("Texas")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "UT" } }, [_vm._v("Utah")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "VT" } }, [_vm._v("Vermont")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "VA" } }, [_vm._v("Virginia")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "WA" } }, [
+                  _vm._v("Washington")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "WV" } }, [
+                  _vm._v("West Virginia")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "WI" } }, [_vm._v("Wisconsin")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "WY" } }, [_vm._v("Wyoming")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT" } }, [
+                  _vm._v("International")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm.formErrors.state
+              ? _c("form-error", { attrs: { error: _vm.formErrors.state[0] } })
               : _vm._e()
           ],
           1
@@ -29295,7 +29550,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(6),
+            _vm._m(7),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -29878,7 +30133,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(7),
+                _vm._m(8),
                 _vm._v(" "),
                 _c("div", { staticClass: "mb-3" }, [
                   _c("input", {
@@ -29982,7 +30237,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(8),
+                _vm._m(9),
                 _vm._v(" "),
                 _c(
                   "select",
@@ -30206,7 +30461,7 @@ var render = function() {
             staticClass: "mb-6"
           },
           [
-            _vm._m(9),
+            _vm._m(10),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -30396,7 +30651,7 @@ var render = function() {
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(10),
+            _vm._m(11),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("input", {
@@ -30733,11 +30988,29 @@ var staticRenderFns = [
       "label",
       {
         staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "zip_code" }
+        attrs: { for: "city" }
       },
       [
         _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
-        _vm._v("\n                Zip Code")
+        _vm._v("\n                City")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "state" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _vm._v(
+          "\n                Sales Representative requesting access\n            "
+        )
       ]
     )
   },

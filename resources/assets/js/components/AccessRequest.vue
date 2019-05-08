@@ -114,15 +114,81 @@
             </div>
 
             <div class="mb-6">
-                <label for="zip_code" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="city" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
-                    Zip Code</label>
+                    City</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="zip_code" placeholder="School Zip code"
-                        name="zip_code" v-model="zip">
+                        id="city" placeholder="School City"
+                        name="city" v-model="city">
 
-                <form-error :error=formErrors.zip_code[0] v-if="formErrors.zip_code"></form-error>
+                <form-error :error=formErrors.city[0] v-if="formErrors.city"></form-error>
+            </div>
+            <div class="mb-6">
+                <label for="state" class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red">*</small>
+                    Sales Representative requesting access
+                </label>
+
+                <select name="state" id="state"
+                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                        v-model="state">
+                    <option value="">Select a state</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="INT">International</option>
+                </select>
+
+                <form-error :error=formErrors.state[0] v-if="formErrors.state"></form-error>
             </div>
 
             <hr class="border-t my-8">
@@ -426,7 +492,8 @@
                 email: '',
                 district: '',
                 school: '',
-                zip: '',
+                city: '',
+                state: '',
                 resources: [],
                 access_type: '',
                 ebook: [],
@@ -451,7 +518,8 @@
                 this.email = '';
                 this.district = '';
                 this.school = '';
-                this.zip = '';
+                this.city = '';
+                this.state = '';
                 this.resources = [];
                 this.ebook = [];
                 this.access_type = '';
@@ -476,7 +544,8 @@
                     'access_type': this.access_type,
                     'version': this.ide_version,
                     'time_frame': this.time_frame,
-                    'zip_code': this.zip,
+                    'city': this.city,
+                    'state': this.state,
                     'ebook_list': this.ebook,
                     'note': this.notes,
                 }).then(response => {
