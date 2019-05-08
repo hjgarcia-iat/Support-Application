@@ -34,7 +34,8 @@ class StoreAccessRequestFormTest extends TestCase
         $this->seeEmailContains($this->validData()['email']);
         $this->seeEmailContains($this->validData()['district']);
         $this->seeEmailContains($this->validData()['school']);
-        $this->seeEmailContains($this->validData()['zip_code']);
+        $this->seeEmailContains($this->validData()['city']);
+        $this->seeEmailContains($this->validData()['state']);
         $this->seeEmailContains($this->validData()['resource'][0]);
         $this->seeEmailContains($this->validData()['ebook_list'][0]);
         $this->seeEmailContains($this->validData()['access_type']);
@@ -205,16 +206,29 @@ class StoreAccessRequestFormTest extends TestCase
     /**
      * @test
      */
-    public function the_zip_code_field_is_required()
+    public function the_city_field_is_required()
     {
         $response = $this->from(route('access_request.create')
         )->post(route('access_request.store'), $this->validData([
-            'zip_code' => '',
+            'city' => '',
         ]));
 
         $response->assertStatus(302);
         $response->assertRedirect('access-request');
-        $response->assertSessionHasErrors('zip_code');
+        $response->assertSessionHasErrors('city');
+        $this->seeEmailWasNotSent();
+    }
+
+    public function the_state_field_is_required()
+    {
+        $response = $this->from(route('access_request.create')
+        )->post(route('access_request.store'), $this->validData([
+            'state' => '',
+        ]));
+
+        $response->assertStatus(302);
+        $response->assertRedirect('access-request');
+        $response->assertSessionHasErrors('state');
         $this->seeEmailWasNotSent();
     }
 
@@ -326,17 +340,18 @@ class StoreAccessRequestFormTest extends TestCase
     {
         return array_merge([
             'first_name' => 'John',
-            'last_name'  => 'Doe',
-            'email'      => 'jdoe@email.com',
-            'district'   => 'District',
-            'school'     => 'School',
-            'resource'   => ['IQWST'],
-            'access_type'   => 'Demo',
-            'version'    => 'IQWST2.0.5',
-            'sales_rep'  => 'test@email.com',
+            'last_name' => 'Doe',
+            'email' => 'jdoe@email.com',
+            'district' => 'District',
+            'school' => 'School',
+            'resource' => ['IQWST'],
+            'access_type' => 'Demo',
+            'version' => 'IQWST2.0.5',
+            'sales_rep' => 'test@email.com',
             'time_frame' => '2 weeks',
-            'note'       => 'Note',
-            'zip_code'   => factory(Zip::class)->create(['zip_code' => '00000'])->zip_code,
+            'note' => 'Note',
+            'city' => 'city',
+            'state' => 'state',
             'ebook_list' => ['Some Book'],
         ], $overrides);
     }

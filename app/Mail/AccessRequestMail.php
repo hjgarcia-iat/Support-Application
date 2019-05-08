@@ -24,28 +24,23 @@ class AccessRequestMail extends Mailable
      */
     public function build()
     {
-        $zip = Zip::whereZipCode(request()->get('zip_code'))->first();
 
         $data = [
-            'first_name'      => request()->get('first_name'),
-            'last_name'       => request()->get('last_name'),
-            'email'           => request()->get('email'),
+            'first_name' => request()->get('first_name'),
+            'last_name' => request()->get('last_name'),
+            'email' => request()->get('email'),
             'school_district' => request()->get('district'),
-            'school'          => request()->get('school'),
-            'sales_rep'   => request()->get('sales_rep'),
-            'resources'   => request()->get('resource'),
+            'school' => request()->get('school'),
+            'sales_rep' => request()->get('sales_rep'),
+            'resources' => request()->get('resource'),
             'access_type' => request()->get('access_type'),
-            'version'     => request()->get('version'),
-            'ebooks'      => request()->get('ebook_list'),
-            'time_frame'  => request()->get('time_frame'),
-            'note'        => request()->get('note'),
+            'version' => request()->get('version'),
+            'ebooks' => request()->get('ebook_list'),
+            'time_frame' => request()->get('time_frame'),
+            'note' => request()->get('note'),
+            'city' => request('city'),
+            'state' => request('state'),
         ];
-
-        if ($zip) {
-            $data['zip_code'] = $zip->zip_code;
-            $data['city']     = $zip->city;
-            $data['state']    = $zip->state;
-        }
 
         return $this->view('mail.access_request')
             ->from(request()->get('sales_rep'))

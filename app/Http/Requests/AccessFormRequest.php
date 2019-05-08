@@ -35,7 +35,8 @@ class AccessFormRequest extends FormRequest
             'district' => ['required'],
             'resource' => ['required'],
             'time_frame' => ['required'],
-            'zip_code' => ['required'],
+            'city' => ['required'],
+            'state' => ['required'],
         ];
 
         $rules = $this->validateAccessType($this->get('resource'), $rules);

@@ -44,11 +44,6 @@
         <strong>State</strong>
         : {{ $state }}</p>
 @endisset
-@isset($zip_code)
-    <p>
-        <strong>Zip Code</strong>
-        : {{ $zip_code }}</p>
-@endisset
 
 <p>
     <strong>Resources</strong>
