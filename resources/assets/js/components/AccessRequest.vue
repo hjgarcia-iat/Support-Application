@@ -127,7 +127,7 @@
             <div class="mb-6">
                 <label for="state" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red">*</small>
-                    Sales Representative requesting access
+                    State
                 </label>
 
                 <select name="state" id="state"
