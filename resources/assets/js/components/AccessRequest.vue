@@ -15,7 +15,6 @@
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="rep">
                     <option value="">Make a selection...</option>
-                    <option value="alandrum@activatelearning.com">Andrew Landrum</option>
                     <option value="awhittet@activatelearning.com">Andrew Whittet</option>
                     <option value="bspears@activatelearning.com">Brian Spears</option>
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
@@ -30,6 +29,7 @@
                     <option value="rantinori@activatelearning.com">Ron Antinori</option>
                     <option value="smiller@activatelearning.com">Saeida Miller</option>
                     <option value="tpence@activatelearning.com">Tom Pence</option>
+                    <option value="tlaster@activatelearning.com">Tom Laster</option>
                     <option value="tmarmolejo@activatelearning.com">Tracy Marmolejo</option>
                 </select>
 
@@ -134,6 +134,7 @@
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="state">
                     <option value="">Select a state</option>
+                    <option value="INT">International</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -185,7 +186,6 @@
                     <option value="WV">West Virginia</option>
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
-                    <option value="INT">International</option>
                 </select>
 
                 <form-error :error=formErrors.state[0] v-if="formErrors.state"></form-error>
@@ -244,6 +244,14 @@
 
                     <label class="ml-2" for="resource-8">
                         IQWST IDE Full Access (For State Adoption/RFP's)
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input id="resource-10" name="resource[]"
+                           type="checkbox" value="Active Physics IDE Demo" v-model="resources">
+
+                    <label class="ml-2" for="resource-10">
+                        Active Physics IDE Demo
                     </label>
                 </div>
                 <div class="mb-3">
