@@ -21,6 +21,7 @@
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
                     <option value="jdivito@activatelearning.com">Jon Divito</option>
                     <option value="kangelo@activatelearning.com">Kelly Angelo</option>
+                    <option value="kkilroy@activatelearning.com">Kevin Kilroy</option>
                     <option value="kmitchell@activatelearning.com">Kristina Mitchell</option>
                     <option value="lsalerno@activatlearning.com">Lindsey Salerno</option>
                     <option value="lbefanis@activatelearning.com">Lisa Befanis</option>
