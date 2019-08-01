@@ -67,8 +67,7 @@
                 <option value="Conceptua Math">Conceptua Math</option>
                 <option value="IQWST IDE">IQWST IDE</option>
                 <option value="IQWST Teacher Portal">IQWST Teacher Portal</option>
-                <option value="Science Companion">Science Companion</option>
-                <option value="Science Companion Prime">Science Companion Prime</option>
+                <option value="Activate Learning Prime">Activate Learning Prime</option>
             </select>
 
                 <form-error :error=formErrors.curriculum[0] v-if="formErrors.curriculum"></form-error>
