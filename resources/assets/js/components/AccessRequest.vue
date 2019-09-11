@@ -200,11 +200,17 @@
                     Digital Resources</label>
 
                 <div class="mb-3">
-
                     <input id="resource-20" name="resource[]"
-                            type="checkbox" value="Active Science" v-model="resources">
+                           type="checkbox" value="Active Science" v-model="resources">
                     <label class="ml-2" for="resource-20">
                         Active Science
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input id="resource-21" name="resource[]"
+                           type="checkbox" value="Conceptua Math" v-model="resources">
+                    <label class="ml-2" for="resource-21">
+                        Conceptua Math
                     </label>
                 </div>
                 <div class="mb-3">
