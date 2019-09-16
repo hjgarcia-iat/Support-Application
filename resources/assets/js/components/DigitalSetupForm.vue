@@ -65,9 +65,41 @@
                 <option value="">Select a curriculum</option>
                 <option value="Active Science">Active Science</option>
                 <option value="Conceptua Math">Conceptua Math</option>
-                <option value="IQWST IDE">IQWST IDE</option>
+                <option value="IDE Active Physics">IDE Active Physics</option>
+                <option value="IDE IQWST">IDE IQWST</option>
                 <option value="IQWST Teacher Portal">IQWST Teacher Portal</option>
+                <option value="PBIScience Cyberpd">PBIScience Cyberpd</option>
+                <option value="IMP/MM Cyberpd">IMP/MM Cyberpd</option>
                 <option value="Activate Learning Prime">Activate Learning Prime</option>
+                <option value="Ebook: Active Physics">Ebook: Active Physics</option>
+                <option value="Ebook: Active Physics Video Series">Ebook: Active Physics Video Series</option>
+                <option value="Ebook: Active Chemistry">Ebook: Active Chemistry</option>
+                <option value="Ebook: Active Chemistry Video Series">Ebook: Active Chemistry Video Series</option>
+                <option value="Ebook: Active Physical Science">Ebook: Active Physical Science</option>
+                Ebook: <option value="Ebook: Astrobiology">Ebook: Astrobiology</option>
+                <option value="Ebook: EarthComm">Ebook: EarthComm</option>
+                <option value="Ebook: Engineering the Future">Ebook: Engineering the Future</option>
+                <option value="Ebook: Environmental Science and Biocomplexity">Ebook: Environmental Science and
+                    Biocomplexity
+                </option>
+                <option value="Ebook: Investigating Astronomy">Ebook: Investigating Astronomy</option>
+                <option value="Ebook: Interactive Mathematics Program">Ebook: Interactive Mathematics Program</option>
+                <option value="Ebook: Meaningful Math">Ebook: Meaningful Math</option>
+                <option value="Ebook: PBIScience: Animals in Action">Ebook: PBIScience: Animals in Action</option>
+                <option value="Ebook: PBIScience: Genetics">Ebook: PBIScience: Genetics</option>
+                <option value="Ebook: PBIScience: Good Friends & Germs">Ebook: PBIScience: Good Friends & Germs</option>
+                <option value="Ebook: PBIScience: Living Together">Ebook: PBIScience: Living Together</option>
+                <option value="Ebook: PBIScience: Digging In">Ebook: PBIScience: Digging In</option>
+                <option value="Ebook: PBIScience: Astronomy">Ebook: PBIScience: Astronomy</option>
+                <option value="Ebook: PBIScience: Ever-Changing Earth">Ebook: PBIScience: Ever-Changing Earth</option>
+                <option value="Ebook: PBIScience: Weather Watch">Ebook: PBIScience: Weather Watch</option>
+                <option value="Ebook: PBIScience: Diving Into Science">Ebook: PBIScience: Diving Into Science</option>
+                <option value="Ebook: PBIScience: Air Quality">Ebook: PBIScience: Air Quality</option>
+                <option value="Ebook: PBIScience: Energy">Ebook: PBIScience: Energy</option>
+                <option value="Ebook: PBIScience: Moving Big Things">Ebook: PBIScience: Moving Big Things</option>
+                <option value="Ebook: PBIScience: Vehicles in Motion">Ebook: PBIScience: Vehicles in Motion</option>
+                <option value="Ebook: PBIScience: Video Series">Ebook: PBIScience: Video Series</option>
+
             </select>
 
                 <form-error :error=formErrors.curriculum[0] v-if="formErrors.curriculum"></form-error>
