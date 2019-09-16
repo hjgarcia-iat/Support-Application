@@ -15,7 +15,6 @@
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="rep">
                     <option value="">Make a selection...</option>
-                    <option value="awhittet@activatelearning.com">Andrew Whittet</option>
                     <option value="bspears@activatelearning.com">Brian Spears</option>
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
@@ -28,7 +27,6 @@
                     <option value="lpabon@activatelearning.com">Liz Pabon</option>
                     <option value="aw@activatelearning.com">Matt Anthes-Washburn</option>
                     <option value="rantinori@activatelearning.com">Ron Antinori</option>
-                    <option value="smiller@activatelearning.com">Saeida Miller</option>
                     <option value="tpence@activatelearning.com">Tom Pence</option>
                     <option value="tlaster@activatelearning.com">Tom Laster</option>
                     <option value="tmarmolejo@activatelearning.com">Tracy Marmolejo</option>
