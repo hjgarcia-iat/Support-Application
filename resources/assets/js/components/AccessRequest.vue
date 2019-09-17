@@ -15,6 +15,7 @@
                         class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
                         v-model="rep">
                     <option value="">Make a selection...</option>
+                    <option value="awhittet@activatelearning.com">Andrew Whittet</option>
                     <option value="bspears@activatelearning.com">Brian Spears</option>
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
