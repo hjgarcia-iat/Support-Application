@@ -294,10 +294,10 @@
                 </div>
                 <div class="mb-3">
                     <input id="resource-11" name="resource[]"
-                           type="checkbox" value="Science Companion" v-model="resources">
+                           type="checkbox" value="Active Learning Prime" v-model="resources">
 
                     <label class="ml-2" for="resource-11">
-                        Science Companion
+                        Active Learning Prime
                     </label>
                 </div>
                 <small class="mt-3 block text-grey-dark">Select one or
