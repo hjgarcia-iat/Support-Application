@@ -26,7 +26,6 @@
                     <option value="lsalerno@activatlearning.com">Lindsey Salerno</option>
                     <option value="lbefanis@activatelearning.com">Lisa Befanis</option>
                     <option value="lpabon@activatelearning.com">Liz Pabon</option>
-                    <option value="aw@activatelearning.com">Matt Anthes-Washburn</option>
                     <option value="rantinori@activatelearning.com">Ron Antinori</option>
                     <option value="tpence@activatelearning.com">Tom Pence</option>
                     <option value="tlaster@activatelearning.com">Tom Laster</option>
