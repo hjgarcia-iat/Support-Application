@@ -346,7 +346,7 @@
                         <option value="Active Physical Science">Active Physical Science</option>
                         <option value="Astrobiology">Astrobiology</option>
                         <option value="EarthComm">EarthComm</option>
-                        <option value="EarthComm">EarthComm Video Series</option>
+                        <option value="EarthComm Video Series">EarthComm Video Series</option>
                         <option value="Engineering the Future">Engineering the Future</option>
                         <option value="Environmental Science and Biocomplexity">Environmental Science and
                             Biocomplexity
