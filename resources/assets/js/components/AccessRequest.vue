@@ -19,6 +19,7 @@
                     <option value="bspears@activatelearning.com">Brian Spears</option>
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
+                    <option value="jgutierrez@activatelearning.com">Jen Gutierrez</option>
                     <option value="jdivito@activatelearning.com">Jon Divito</option>
                     <option value="kangelo@activatelearning.com">Kelly Angelo</option>
                     <option value="kkilroy@activatelearning.com">Kevin Kilroy</option>
