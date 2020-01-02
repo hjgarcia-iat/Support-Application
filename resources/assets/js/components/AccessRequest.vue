@@ -20,7 +20,6 @@
                     <option value="cweller@activatelearning.com">Cynthia Weller</option>
                     <option value="dtoberman@activatelearning.com">Dan Toberman</option>
                     <option value="jgutierrez@activatelearning.com">Jen Gutierrez</option>
-                    <option value="jdivito@activatelearning.com">Jon Divito</option>
                     <option value="kangelo@activatelearning.com">Kelly Angelo</option>
                     <option value="kkilroy@activatelearning.com">Kevin Kilroy</option>
                     <option value="kmitchell@activatelearning.com">Kristina Mitchell</option>
@@ -499,7 +498,7 @@
 </template>
 
 <script>
-    import Alert from '../components/partials/FormAlert.vue'
+    import Alert from './partials/FormAlert.vue'
     import FormError from '../components/partials/FormError';
 
     export default {
