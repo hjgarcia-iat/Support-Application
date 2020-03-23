@@ -355,6 +355,7 @@
                         <option value="Investigating Astronomy">Investigating Astronomy</option>
                         <option value="Interactive Mathematics Program">Interactive Mathematics Program</option>
                         <option value="Meaningful Math">Meaningful Math</option>
+                        <option value="NextGEN PET">NextGEN PET</option>
                         <option value="PBIScience: Animals in Action">PBIScience: Animals in Action</option>
                         <option value="PBIScience: Genetics">PBIScience: Genetics</option>
                         <option value="PBIScience: Good Friends & Germs">PBIScience: Good Friends & Germs</option>
