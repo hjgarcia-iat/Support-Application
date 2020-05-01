@@ -205,6 +205,7 @@
                         Active Science
                     </label>
                 </div>
+                
                 <div class="mb-3">
                     <input id="resource-21" name="resource[]"
                            type="checkbox" value="Conceptua Math" v-model="resources">
@@ -299,6 +300,11 @@
                     <label class="ml-2" for="resource-11">
                         Activate Learning Prime
                     </label>
+                </div>
+                <div class="mb-3">
+                    <input id="resource-24" name="resource[]"
+                           type="checkbox" value="Activate Learning PRIME Teacher Portal" v-model="resources">
+                    <label class="ml-2" for="resource-24">Activate Learning PRIME Teacher Portal</label>
                 </div>
                 <small class="mt-3 block text-grey-dark">Select one or
                     more of the following resources.
