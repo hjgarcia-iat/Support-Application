@@ -45,8 +45,7 @@
                     Name</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="first_name"
-                        placeholder="First Name" name="first_name" v-model="first_name">
+                        id="first_name" placeholder="First Name" name="first_name" v-model="first_name">
 
                 <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
             </div>
@@ -58,8 +57,7 @@
                     Name</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="last_name"
-                        placeholder="Last Name" name="last_name" v-model="last_name">
+                        id="last_name" placeholder="Last Name" name="last_name" v-model="last_name">
 
                 <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
             </div>
@@ -71,10 +69,8 @@
                     Address</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="email"
-                        placeholder="Email Address" name="email" v-model="email">
-                <small id="emailHelp"
-                        class="mt-3 block text-grey-dark">This MUST be a
+                        id="email" placeholder="Email Address" name="email" v-model="email">
+                <small id="emailHelp" class="mt-3 block text-grey-dark">This MUST be a
                     school email address (not gmail, yahoo, etc...)
                 </small>
 
@@ -90,8 +86,7 @@
                     District</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="district"
-                        placeholder="District Name" name="district" v-model="district">
+                        id="district" placeholder="District Name" name="district" v-model="district">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school district associated with this customer
                 </small>
@@ -104,8 +99,7 @@
                     School</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="school"
-                        placeholder="School Name" name="school" v-model="school">
+                        id="school" placeholder="School Name" name="school" v-model="school">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school associated with this customer
                 </small>
@@ -119,8 +113,7 @@
                     City</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="city" placeholder="School City"
-                        name="city" v-model="city">
+                        id="city" placeholder="School City" name="city" v-model="city">
 
                 <form-error :error=formErrors.city[0] v-if="formErrors.city"></form-error>
             </div>
@@ -199,79 +192,90 @@
                     Digital Resources</label>
 
                 <div class="mb-3">
-                    <input id="resource-20" name="resource[]"
-                           type="checkbox" value="Active Science" v-model="resources">
+                    <input id="resource-20" name="resource[]" type="checkbox" value="Active Science"
+                            v-model="resources">
                     <label class="ml-2" for="resource-20">
                         Active Science
                     </label>
                 </div>
-                
+
                 <div class="mb-3">
-                    <input id="resource-21" name="resource[]"
-                           type="checkbox" value="Conceptua Math" v-model="resources">
+                    <input id="resource-11" name="resource[]" type="checkbox" value="Activate Learning PRIME"
+                            v-model="resources">
+
+                    <label class="ml-2" for="resource-11">
+                        Activate Learning PRIME
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input id="resource-24" name="resource[]" type="checkbox"
+                            value="Activate Learning PRIME Teacher Portal" v-model="resources">
+                    <label class="ml-2" for="resource-24">Activate Learning PRIME Teacher Portal</label>
+                </div>
+
+                <div class="mb-3">
+                    <input id="resource-21" name="resource[]" type="checkbox" value="Conceptua Math"
+                            v-model="resources">
                     <label class="ml-2" for="resource-21">
                         Conceptua Math
                     </label>
                 </div>
                 <div class="mb-3">
 
-                    <input id="resource-1" name="resource[]"
-                            type="checkbox" value="IQWST Demo Portal" v-model="resources">
+                    <input id="resource-1" name="resource[]" type="checkbox" value="IQWST Demo Portal"
+                            v-model="resources">
                     <label class="ml-2" for="resource-1">
                         IQWST Demo Portal
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-2" name="resource[]"
-                            type="checkbox" value="California Demo Portal" v-model="resources">
+                    <input id="resource-2" name="resource[]" type="checkbox" value="California Demo Portal"
+                            v-model="resources">
 
                     <label class="ml-2" for="resource-2">
                         California Demo Portal
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-3" name="resource[]"
-                            type="checkbox" value="IQWST IDE Demo" v-model="resources">
+                    <input id="resource-3" name="resource[]" type="checkbox" value="IQWST IDE Demo" v-model="resources">
 
                     <label class="ml-2" for="resource-3">
                         IQWST IDE Demo (English Units)
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-4" name="resource[]"
-                            type="checkbox" value="IQWST IDE Demo - Spanish" v-model="resources">
+                    <input id="resource-4" name="resource[]" type="checkbox" value="IQWST IDE Demo - Spanish"
+                            v-model="resources">
 
                     <label class="ml-2" for="resource-4">
                         IQWST IDE Demo (Spanish units)
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-8" name="resource[]"
-                            type="checkbox" value="IQWST IDE Full Access" v-model="resources">
+                    <input id="resource-8" name="resource[]" type="checkbox" value="IQWST IDE Full Access"
+                            v-model="resources">
 
                     <label class="ml-2" for="resource-8">
                         IQWST IDE Full Access (For State Adoption/RFP's)
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-10" name="resource[]"
-                           type="checkbox" value="Active Physics IDE Demo" v-model="resources">
+                    <input id="resource-10" name="resource[]" type="checkbox" value="Active Physics IDE Demo"
+                            v-model="resources">
 
                     <label class="ml-2" for="resource-10">
                         Active Physics IDE Demo
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-5" name="resource[]"
-                            type="checkbox" value="Ebook" v-model="resources">
+                    <input id="resource-5" name="resource[]" type="checkbox" value="Ebook" v-model="resources">
 
                     <label class="ml-2" for="resource-5">
                         E-Book
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-6" name="resource[]"
-                            type="checkbox" value="PBIS Cyberpd" v-model="resources">
+                    <input id="resource-6" name="resource[]" type="checkbox" value="PBIS Cyberpd" v-model="resources">
 
                     <label class="ml-2" for="resource-6">
                         PBIScience Cyberpd
@@ -279,33 +283,21 @@
                 </div>
                 <div class="mb-3">
 
-                    <input id="resource-7" name="resource[]"
-                            type="checkbox" value="Active Physics / Active Chemistry Professional Development Website (Haiku)" v-model="resources">
+                    <input id="resource-7" name="resource[]" type="checkbox"
+                            value="Active Physics / Active Chemistry Professional Development Website (Haiku)"
+                            v-model="resources">
                     <label class="ml-2" for="resource-7">
                         Active Physics / Active Chemistry Professional Development Website (Haiku)
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="resource-9" name="resource[]"
-                            type="checkbox" value="IMP/MM Cyberpd" v-model="resources">
+                    <input id="resource-9" name="resource[]" type="checkbox" value="IMP/MM Cyberpd" v-model="resources">
 
                     <label class="ml-2" for="resource-9">
                         IMP/MM CyberPD
                     </label>
                 </div>
-                <div class="mb-3">
-                    <input id="resource-11" name="resource[]"
-                           type="checkbox" value="Activate Learning Prime" v-model="resources">
 
-                    <label class="ml-2" for="resource-11">
-                        Activate Learning Prime
-                    </label>
-                </div>
-                <div class="mb-3">
-                    <input id="resource-24" name="resource[]"
-                           type="checkbox" value="Activate Learning PRIME Teacher Portal" v-model="resources">
-                    <label class="ml-2" for="resource-24">Activate Learning PRIME Teacher Portal</label>
-                </div>
                 <small class="mt-3 block text-grey-dark">Select one or
                     more of the following resources.
                 </small>
@@ -320,15 +312,13 @@
                         Access Type</label>
 
                     <div class="mb-3">
-                        <input id="access_type_1" name="version"
-                                type="radio" value="Full Access" v-model="access_type">
+                        <input id="access_type_1" name="version" type="radio" value="Full Access" v-model="access_type">
                         <label class="ml-2" for="access_type_1">
                             Full Access
                         </label>
                     </div>
                     <div class="mb-3">
-                        <input id="access_type_2" name="version"
-                                type="radio" value="Demo Access" v-model="access_type">
+                        <input id="access_type_2" name="version" type="radio" value="Demo Access" v-model="access_type">
                         <label class="ml-2" for="access_type_2">
                             Demo Access
                         </label>
@@ -393,36 +383,31 @@
                     Version</label>
 
                 <div class="mb-3">
-                    <input id="version-1" name="version"
-                            type="radio" value="IQWST2.0.5" v-model="ide_version">
+                    <input id="version-1" name="version" type="radio" value="IQWST2.0.5" v-model="ide_version">
                     <label class="ml-2" for="version-1">
                         IQWST 2.0.5
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="version-2" name="version"
-                            type="radio" value="IQWST3.0.0" v-model="ide_version">
+                    <input id="version-2" name="version" type="radio" value="IQWST3.0.0" v-model="ide_version">
                     <label class="ml-2" for="version-2">
                         IQWST 3.0
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="version-3" name="version"
-                            type="radio" value="IQWSTCA" v-model="ide_version">
+                    <input id="version-3" name="version" type="radio" value="IQWSTCA" v-model="ide_version">
                     <label class="ml-2" for="version-3">
                         IQWST California
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="version-5" name="version"
-                            type="radio" value="IQWST Integrated" v-model="ide_version">
+                    <input id="version-5" name="version" type="radio" value="IQWST Integrated" v-model="ide_version">
                     <label class="ml-2" for="version-5">
                         IQWST Integrated
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="version-4" name="version"
-                            type="radio" value="IQWSTOK" v-model="ide_version">
+                    <input id="version-4" name="version" type="radio" value="IQWSTOK" v-model="ide_version">
                     <label class="ml-2" for="version-4">
                         IQWST Oklahoma
                     </label>
@@ -441,36 +426,31 @@
                     Requested time frame for access</label>
 
                 <div class="mb-3">
-                    <input id="time_frame-1" name="time_frame"
-                            type="radio" value="1 week" v-model="time_frame">
+                    <input id="time_frame-1" name="time_frame" type="radio" value="1 week" v-model="time_frame">
                     <label class="ml-2" for="time_frame-1">
                         1 week
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="time_frame-2" name="time_frame"
-                            type="radio" value="2 weeks" v-model="time_frame">
+                    <input id="time_frame-2" name="time_frame" type="radio" value="2 weeks" v-model="time_frame">
                     <label class="ml-2" for="time_frame-2">
                         2 weeks
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="time_frame-3" name="time_frame"
-                            type="radio" value="30 days" v-model="time_frame">
+                    <input id="time_frame-3" name="time_frame" type="radio" value="30 days" v-model="time_frame">
                     <label class="ml-2" for="time_frame-3">
                         30 days
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="time_frame-4" name="time_frame"
-                            type="radio" value="60 days" v-model="time_frame">
+                    <input id="time_frame-4" name="time_frame" type="radio" value="60 days" v-model="time_frame">
                     <label class="ml-2" for="time_frame-4">
                         60 days
                     </label>
                 </div>
                 <div class="mb-3">
-                    <input id="time_frame-5" name="time_frame"
-                            type="radio" value="Other" v-model="time_frame">
+                    <input id="time_frame-5" name="time_frame" type="radio" value="Other" v-model="time_frame">
                     <label class="ml-2" for="time_frame-5">
                         Other (please indicate in the Notes section below the length of time you need)
                     </label>
@@ -487,8 +467,7 @@
 
                 <textarea name="note" id="note"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        cols="30"
-                        placeholder="Notes" rows="5" v-model="notes"></textarea>
+                        cols="30" placeholder="Notes" rows="5" v-model="notes"></textarea>
                 <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.
                 </small>
             </div>
