@@ -17,7 +17,7 @@
     "font-awesome": "4.7.*",
     "laravel-mix": "2.1.*",
     "laravel-mix-tailwind": "^0.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "tailwindcss": "0.7.*",
     "tailwindcss-tables": "0.2.*",
     "vee-validate": "2.1.*",
