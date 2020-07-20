@@ -8,7 +8,7 @@ use Tests\TestCase;
  * Class CreateNextGenPetSupportForm
  * @package Tests\Feature
  */
-class CreateNextGenPetSupportForm extends TestCase
+class CreateNextGenPetSupportFormTest extends TestCase
 {
     /**
      * @test

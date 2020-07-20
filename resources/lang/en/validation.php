@@ -119,7 +119,7 @@ return [
     'attributes' => [
         'name' => 'Name',
         'dm_name' => 'District/IT Manager\'s Name',
-        'teacher_name' => 'Teachers\'s Name',
+        'teacher_name' => 'Teacher\'s Name',
         'dm_email' => 'District/IT Manager\'s Email Address',
         'teacher_email' => 'Teachers\'s Email Address',
         'teacher_school' => 'School Name',
@@ -156,7 +156,8 @@ return [
         'version' => 'Version',
         'sales_rep' => 'Sales Representative',
         'institution_name' => 'Institution Name',
-        'inquiry' => 'Inquiry'
+        'inquiry' => 'Inquiry',
+        'student_name' => 'Student Name',
     ],
 
 ];

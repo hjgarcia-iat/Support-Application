@@ -8,7 +8,7 @@ use Tests\TestCase;
  * Class CreateAccessRequestForm
  * @package Tests\Feature
  */
-class CreateAccessRequestForm extends TestCase
+class CreateAccessRequestFormTest extends TestCase
 {
     /**
      * @test

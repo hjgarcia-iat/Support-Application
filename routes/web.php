@@ -16,4 +16,5 @@ Route::post('/return-request', 'ReturnRequestController@store')->name('return_re
 Route::get('/next-gen-pet-request', 'NextGenPetRequestController@create')->name('nextgen_pet.create');
 Route::post('/next-gen-pet-request', 'NextGenPetRequestController@store')->name('nextgen_pet.store');
 
-Route::get('/student-support','StudentSupportRequestController@create')->name('student_support.create');
+Route::get('/remote-learning-support','RemoteSupportRequestController@create')->name('remote_support.create');
+Route::post('/remote-learning-support','RemoteSupportRequestController@store')->name('remote_support.store');
