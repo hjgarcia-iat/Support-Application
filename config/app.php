@@ -176,12 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Davispeixoto\Laravel5Salesforce\SalesforceServiceProvider::class,
-        Msurguy\Honeypot\HoneypotServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Msurguy\Honeypot\HoneypotServiceProvider::class,
         PulkitJalan\Google\GoogleServiceProvider::class,
-        GoogleSheets\Providers\SheetsServiceProvider::class,
     ],
 
     /*
@@ -232,7 +228,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Google' => PulkitJalan\Google\Facades\Google::class,
         'Sheets' => GoogleSheets\Facades\Sheets::class,
-        'Salesforce' => Davispeixoto\Laravel5Salesforce\SalesforceFacade::class,
     ],
 
 ];

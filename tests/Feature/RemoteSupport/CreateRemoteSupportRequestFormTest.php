@@ -15,6 +15,8 @@ class CreateRemoteSupportRequestFormTest extends TestCase
      */
     public function we_can_see_the_access_request_form_page()
     {
-        $this->get(route('remote_support.create'))->assertStatus(200)->assertViewIs('remote_support.create');
+        $response = $this->get(route('remote_support.create'));
+
+        $response->assertStatus(200)->assertViewIs('remote_support.create');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\NextGenPetRequest;
 
 use Tests\TestCase;
 
@@ -10,10 +10,7 @@ use Tests\TestCase;
  */
 class CreateNextGenPetSupportFormTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function we_can_see_the_access_request_form_page()
+    public function test_we_can_see_the_access_request_form_page()
     {
         $response = $this->get(route('nextgen_pet.create'));
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\DigitalSetupRequest;
 
 use Carbon\Carbon;
 use Spinen\MailAssertions\MailTracking;

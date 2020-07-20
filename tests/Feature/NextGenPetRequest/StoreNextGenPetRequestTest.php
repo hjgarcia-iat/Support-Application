@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\NextGenPetRequest;
 
 use Spinen\MailAssertions\MailTracking;
 use Tests\TestCase;

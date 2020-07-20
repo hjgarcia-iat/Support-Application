@@ -1,8 +1,7 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\ReturnRequest;
 
-use App\Refund;
 use App\Services\Spreadsheet\FakeSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -17,7 +16,7 @@ class CreateReturnRequestFormTest extends TestCase
 {
     use DatabaseTransactions, DatabaseMigrations;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

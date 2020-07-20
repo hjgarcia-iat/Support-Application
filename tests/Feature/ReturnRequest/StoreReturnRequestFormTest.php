@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\ReturnRequest;
 
 use App\Services\Spreadsheet\FakeSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
@@ -18,13 +18,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     protected $spreadsheet;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
-
         $this->spreadsheet = new FakeSpreadsheet();
         $this->app->instance(SpreadsheetInterface::class, $this->spreadsheet);
-
     }
 
     /**
