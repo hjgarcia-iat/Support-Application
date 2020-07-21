@@ -1,6 +1,5 @@
-let mix = require('laravel-mix');
-require('laravel-mix-tailwind');
-
+const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -18,8 +17,11 @@ mix.js('resources/assets/js/access_request_form.js', 'public/js')
     .js('resources/assets/js/nextgenpet_request.js', 'public/js')
     .js('resources/assets/js/student_request.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('tailwind.js')],
+    })
     .version()
-    .tailwind()
     .browserSync({
         proxy: "support.activatelearning.test",
         files: [

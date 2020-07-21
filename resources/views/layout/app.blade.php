@@ -9,25 +9,23 @@
     <title>Support - @yield('pageTitle')</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body class="bg-grey-lightest">
-    <div class="grid-col-container-12 app-grid h-full">
-        <header class="page-header grid-col-12 flex justify-center mb-5" role="banner">
+<body class="bg-gray-100">
+    <div class="h-full app-grid w-full md:w-3/5 xl:w-2/5 mx-auto">
+        <header class="flex justify-center mb-5" role="banner">
             <section class="logo my-5">
                 <img src="{{ asset('img/logo.png') }}" width="400" alt="{{ config('app.name') }}">
             </section>
         </header>
-        <main role="main" class="grid-col-12">
-            <section  class="xl:flex justify-center mb-5">
-                <section class="xl:w-3/5 border bg-white">
-                    @yield('content')
-                </section>
+        <main role="main">
+            <section  class="mb-5 border bg-white">
+                @yield('content')
             </section>
         </main>
 
-        <footer role="contentinfo" class="grid-col-12 xl:flex justify-center bg-grey-lighter border-t p-5 text-center text-grey-dark text-sm">
-            <section class="xl:w-3/5 text-center">
-                <p class="text-grey-darkest mb-0">&copy; {{ date('Y') }} Activate Learning. All Rights Reserved.</p>
-                <p class="text-grey-darkest mb-0">44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
+        <footer role="contentinfo" class="flex justify-center border-t p-5 text-center text-gray-600 text-sm">
+            <section class="text-center">
+                <p>&copy; {{ date('Y') }} Activate Learning. All Rights Reserved.</p>
+                <p>44 Amogerone Crossway #7862, Greenwich, CT 06836 Phone: 646-502-5231</p>
             </section>
         </footer>
     </div>
