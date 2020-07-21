@@ -20153,119 +20153,124 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("table", { staticClass: "w-full mb-4" }, [
-          _vm._m(8),
-          _vm._v(" "),
-          _c(
-            "tbody",
+        _c(
+          "section",
+          { staticClass: "mb-5" },
+          [
+            _vm._m(8),
+            _vm._v(" "),
             _vm._l(_vm.products, function(product, key, index) {
-              return _c("tr", { staticClass: "mb-2" }, [
-                _c("td", { staticClass: "text-center px-2 mb-2" }, [
+              return _c(
+                "div",
+                { staticClass: "grid grid-cols-7 grid-flow-row-dense mb-3" },
+                [
+                  _c("div", { staticClass: "col-span-1" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "block bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline",
+                        attrs: { href: "" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.removeProduct(key)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-remove" })]
+                    )
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "a",
-                    {
-                      staticClass:
-                        "block bg-red-300 hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline block",
-                      attrs: { href: "" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.removeProduct(key)
+                    "div",
+                    { staticClass: "col-span-3 px-2 flex flex-col row-span-2" },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: product.sku,
+                            expression: "product.sku"
+                          }
+                        ],
+                        staticClass:
+                          "appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white",
+                        attrs: {
+                          type: "text",
+                          id: "sku_" + index,
+                          placeholder: "Enter SKU",
+                          name: "products[]['name']"
+                        },
+                        domProps: { value: product.sku },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(product, "sku", $event.target.value)
+                          }
                         }
-                      }
-                    },
-                    [_c("i", { staticClass: "fa fa-remove" })]
+                      }),
+                      _vm._v(" "),
+                      _vm.checkForArrayError("products." + key + ".sku")
+                        ? _c("form-error", {
+                            attrs: { error: _vm.getErrorForArray(key, "sku") }
+                          })
+                        : _vm._e()
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "col-span-3 px-2 flex flex-col row-span-2" },
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: product.quantity,
+                            expression: "product.quantity"
+                          }
+                        ],
+                        staticClass:
+                          "appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white",
+                        attrs: {
+                          type: "text",
+                          id: "quantity_" + index,
+                          placeholder: "Enter Quantity",
+                          name: "products[]['school']"
+                        },
+                        domProps: { value: product.quantity },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(product, "quantity", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _vm.checkForArrayError("products." + key + ".quantity")
+                        ? _c("form-error", {
+                            attrs: {
+                              error: _vm.getErrorForArray(key, "quantity")
+                            }
+                          })
+                        : _vm._e()
+                    ],
+                    1
                   )
-                ]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "px-2" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: product.sku,
-                          expression: "product.sku"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "sku_" + index,
-                        placeholder: "Enter SKU",
-                        name: "products[]['name']"
-                      },
-                      domProps: { value: product.sku },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(product, "sku", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.checkForArrayError("products." + key + ".sku")
-                      ? _c("form-error", {
-                          attrs: { error: _vm.getErrorForArray(key, "sku") }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  { staticClass: "px-2" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: product.quantity,
-                          expression: "product.quantity"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "quantity_" + index,
-                        placeholder: "Enter Quantity",
-                        name: "products[]['school']"
-                      },
-                      domProps: { value: product.quantity },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(product, "quantity", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.checkForArrayError("products." + key + ".quantity")
-                      ? _c("form-error", {
-                          attrs: {
-                            error: _vm.getErrorForArray(key, "quantity")
-                          }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                )
-              ])
-            }),
-            0
-          )
-        ]),
+                ]
+              )
+            })
+          ],
+          2
+        ),
         _vm._v(" "),
         _c(
           "button",
@@ -20296,7 +20301,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "mb-4" }, [
       _vm._v(
-        "The district or school will be responsible for shipment of returned items. All returns are subject to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit\n        memo will be issued for the approved returned items along with a restocking fee of 20%.  If you have questions regarding your return please contact our Customer Service Group at\n        "
+        "The district or school will be responsible for shipment of returned items. All returns are\n        subject\n        to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit\n        memo will be issued for the approved returned items along with a restocking fee of 20%. If you have\n        questions\n        regarding your return please contact our Customer Service Group at\n        "
       ),
       _c("a", { attrs: { href: "mailto:csr@activatelearning.com" } }, [
         _vm._v("csr@activatelearning.com")
@@ -20413,20 +20418,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th"),
-        _vm._v(" "),
-        _c("th", [
-          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-          _vm._v(" SKU")
-        ]),
-        _vm._v(" "),
-        _c("th", [
-          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-          _vm._v(" Quantity")
-        ])
-      ])
+    return _c("div", { staticClass: "grid grid-cols-7 mb-2" }, [
+      _c("div", { staticClass: "col-span-1" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-span-3 px-2 flex" }, [_vm._v("SKU")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-span-3 px-2 flex" }, [_vm._v("Quantity")])
     ])
   }
 ]
