@@ -2407,7 +2407,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = false;
       })["catch"](function (error) {
         _this.alertVisible = true;
-        _this.formErrors = error.response.data;
+        _this.formErrors = error.response.data.errors;
         _this.formMessageType = 'error';
         _this.formMessage = 'Please see errors below!';
         _this.loading = false;
@@ -29088,7 +29088,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v("Access Request")]),
+    _c("h1", { staticClass: "mb-4 text-3xl uppercase leading-loose" }, [
+      _vm._v("Access Request")
+    ]),
     _vm._v(" "),
     _c(
       "form",
@@ -29111,7 +29113,9 @@ var render = function() {
           on: { "alert-hide": _vm.hideAlert }
         }),
         _vm._v(" "),
-        _c("h2", { staticClass: "mb-6" }, [_vm._v("Sales Rep Information")]),
+        _c("h2", { staticClass: "mb-4 text-2xl uppercase leading-loose" }, [
+          _vm._v("Sales Rep Information")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -29263,7 +29267,9 @@ var render = function() {
         _vm._v(" "),
         _c("hr", { staticClass: "border-t my-8" }),
         _vm._v(" "),
-        _c("h2", { staticClass: "mb-6" }, [_vm._v("Customer Information")]),
+        _c("h2", { staticClass: "mb-4 text-2xl uppercase leading-loose" }, [
+          _vm._v("Customer Information")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -29407,7 +29413,9 @@ var render = function() {
         _vm._v(" "),
         _c("hr", { staticClass: "border-t my-8" }),
         _vm._v(" "),
-        _c("h2", { staticClass: "mb-6" }, [_vm._v("School Information")]),
+        _c("h2", { staticClass: "mb-4 text-2xl uppercase leading-loose" }, [
+          _vm._v("School Information")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -29743,7 +29751,9 @@ var render = function() {
         _vm._v(" "),
         _c("hr", { staticClass: "border-t my-8" }),
         _vm._v(" "),
-        _c("h2", { staticClass: "mb-6" }, [_vm._v("Resource Information")]),
+        _c("h2", { staticClass: "mb-4 text-2xl uppercase leading-loose" }, [
+          _vm._v("Resource Information")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -31309,7 +31319,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+              "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
             class: {
               "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
             },
@@ -31339,7 +31349,7 @@ var staticRenderFns = [
         attrs: { for: "sales_rep" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v(
           "\n                Sales Representative requesting access\n            "
         )
@@ -31357,7 +31367,7 @@ var staticRenderFns = [
         attrs: { for: "first_name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Customer First\n                Name")
       ]
     )
@@ -31373,7 +31383,7 @@ var staticRenderFns = [
         attrs: { for: "last_name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Customer Last\n                Name")
       ]
     )
@@ -31389,7 +31399,7 @@ var staticRenderFns = [
         attrs: { for: "email" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Customer Email\n                Address")
       ]
     )
@@ -31405,7 +31415,7 @@ var staticRenderFns = [
         attrs: { for: "district" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                District")
       ]
     )
@@ -31421,7 +31431,7 @@ var staticRenderFns = [
         attrs: { for: "city" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                City")
       ]
     )
@@ -31437,7 +31447,7 @@ var staticRenderFns = [
         attrs: { for: "state" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                State\n            ")
       ]
     )
@@ -31450,7 +31460,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Digital Resources")
       ]
     )
@@ -31463,7 +31473,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                    Access Type")
       ]
     )
@@ -31479,7 +31489,7 @@ var staticRenderFns = [
         attrs: { for: "ebook_list" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                    E-Book List")
       ]
     )
@@ -31492,7 +31502,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Version")
       ]
     )
@@ -31505,7 +31515,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Requested time frame for access")
       ]
     )

@@ -1,13 +1,13 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Access Request</h1>
+        <h1 class="mb-4 text-3xl uppercase leading-loose">Access Request</h1>
         <form method="POST" @submit.prevent="submitForm">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
 
-            <h2 class="mb-6">Sales Rep Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">Sales Rep Information</h2>
             <div class="mb-6">
                 <label for="sales_rep" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Sales Representative requesting access
                 </label>
 
@@ -37,10 +37,10 @@
             </div>
 
             <hr class="border-t my-8">
-            <h2 class="mb-6">Customer Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">Customer Information</h2>
             <div class="mb-6">
                 <label for="first_name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Customer First
                     Name</label>
                 <input type="text"
@@ -52,7 +52,7 @@
 
             <div class="mb-6">
                 <label for="last_name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Customer Last
                     Name</label>
                 <input type="text"
@@ -64,7 +64,7 @@
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Customer Email
                     Address</label>
                 <input type="text"
@@ -78,11 +78,11 @@
             </div>
 
             <hr class="border-t my-8">
-            <h2 class="mb-6">School Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">School Information</h2>
 
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     District</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -109,7 +109,7 @@
 
             <div class="mb-6">
                 <label for="city" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     City</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -119,7 +119,7 @@
             </div>
             <div class="mb-6">
                 <label for="state" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     State
                 </label>
 
@@ -185,10 +185,10 @@
             </div>
 
             <hr class="border-t my-8">
-            <h2 class="mb-6">Resource Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">Resource Information</h2>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Digital Resources</label>
 
                 <div class="mb-3">
@@ -308,7 +308,7 @@
             <div v-show="showAccessType">
                 <div class="mb-6">
                     <label class="block text-grey-darker text-sm font-bold mb-2">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         Access Type</label>
 
                     <div class="mb-3">
@@ -330,7 +330,7 @@
             <div v-show="showEbooks">
                 <div class="mb-6">
                     <label class="block text-grey-darker text-sm font-bold mb-2" for="ebook_list">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         E-Book List</label>
                     <select name="ebook_list" id="ebook_list"
                             class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -379,7 +379,7 @@
             <div class="mb-6" v-show="showVersion">
 
                 <label class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Version</label>
 
                 <div class="mb-3">
@@ -422,7 +422,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Requested time frame for access</label>
 
                 <div class="mb-3">
@@ -475,7 +475,7 @@
             <hr class="border-t mt-8 mb-6">
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Send Request
@@ -565,7 +565,7 @@
                     this.loading = false;
                 }).catch(error => {
                     this.alertVisible = true;
-                    this.formErrors = error.response.data;
+                    this.formErrors = error.response.data.errors;
                     this.formMessageType = 'error';
                     this.formMessage = 'Please see errors below!';
                     this.loading = false;
