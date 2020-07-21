@@ -21013,9 +21013,9 @@ var render = function() {
           ],
           staticClass: "border-l-4 p-4 mb-6",
           class: {
-            "bg-green-lightest border-green text-green-dark":
+            "bg-green-200 border-green-800 text-green-800":
               _vm.type === "success",
-            "bg-red-lightest border-red text-red-dark": _vm.type === "error"
+            "bg-red-200 border-red-800 text-red-800": _vm.type === "error"
           },
           attrs: { role: "alert" }
         },
@@ -21074,7 +21074,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+  return _c("div", { staticClass: "text-sm text-red-600 mt-3" }, [
     _vm._v("\n  " + _vm._s(_vm.error) + "\n")
   ])
 }

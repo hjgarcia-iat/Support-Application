@@ -2046,7 +2046,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios.post('/student-support', {
+      axios.post('/remote-learning-support', {
         'subject': this.subject,
         'name': this.name,
         'email': this.email,
@@ -2064,7 +2064,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = false;
       })["catch"](function (error) {
         _this.alertVisible = true;
-        _this.formErrors = error.response.data;
+        _this.formErrors = error.response.data.errors;
         _this.formMessageType = 'error';
         _this.formMessage = 'Please see errors below!';
         _this.loading = false;
@@ -19806,7 +19806,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v("Remote Learning Support")]),
+    _c("h1", { staticClass: "mb-4 text-3xl uppercase leading-loose" }, [
+      _vm._v("Remote Learning Support")
+    ]),
     _vm._v(" "),
     _c("p", { staticClass: "mb-4" }, [
       _vm._v(
@@ -19851,7 +19853,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "name",
@@ -19892,7 +19894,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -19933,7 +19935,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "student_name",
@@ -19976,7 +19978,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "teacher_name",
@@ -20019,7 +20021,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -20064,7 +20066,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey",
+                  "block appearance-none w-full bg-gray-100 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey",
                 attrs: { name: "state", id: "state" },
                 on: {
                   change: function($event) {
@@ -20255,7 +20257,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "subject",
@@ -20298,7 +20300,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 name: "comment",
                 id: "comment",
@@ -20330,7 +20332,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+              "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
             class: {
               "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
             },
@@ -20360,7 +20362,7 @@ var staticRenderFns = [
         attrs: { for: "name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        Full Name")
       ]
     )
@@ -20376,7 +20378,7 @@ var staticRenderFns = [
         attrs: { for: "email" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        Email")
       ]
     )
@@ -20392,7 +20394,7 @@ var staticRenderFns = [
         attrs: { for: "student_name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        Student Full Name")
       ]
     )
@@ -20408,7 +20410,7 @@ var staticRenderFns = [
         attrs: { for: "teacher_name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        Teacher Full Name")
       ]
     )
@@ -20424,7 +20426,7 @@ var staticRenderFns = [
         attrs: { for: "district" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        School District")
       ]
     )
@@ -20440,7 +20442,7 @@ var staticRenderFns = [
         attrs: { for: "state" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n        State\n      ")
       ]
     )
@@ -20456,7 +20458,7 @@ var staticRenderFns = [
         attrs: { for: "comment" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("Comments")
       ]
     )
@@ -20497,9 +20499,9 @@ var render = function() {
           ],
           staticClass: "border-l-4 p-4 mb-6",
           class: {
-            "bg-green-lightest border-green text-green-dark":
+            "bg-green-200 border-green-800 text-green-800":
               _vm.type === "success",
-            "bg-red-lightest border-red text-red-dark": _vm.type === "error"
+            "bg-red-200 border-red-800 text-red-800": _vm.type === "error"
           },
           attrs: { role: "alert" }
         },
@@ -20558,7 +20560,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "text-sm text-red-dark mt-3" }, [
+  return _c("div", { staticClass: "text-sm text-red-600 mt-3" }, [
     _vm._v("\n  " + _vm._s(_vm.error) + "\n")
   ])
 }

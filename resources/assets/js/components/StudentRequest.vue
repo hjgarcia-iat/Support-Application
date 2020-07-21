@@ -1,6 +1,6 @@
 <template>
   <div class="p-8">
-    <h1 class="mb-4">Remote Learning Support</h1>
+    <h1 class="mb-4 text-3xl uppercase leading-loose">Remote Learning Support</h1>
     <p class="mb-4">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis, hic ipsa ipsum maxime nam perferendis quidem suscipit? Error excepturi facere incidunt magni necessitatibus nihil, perferendis suscipit temporibus! Sed, velit!
     </p>
@@ -9,10 +9,10 @@
 
       <div class="mb-6">
         <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           Full Name</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="name" placeholder="Full Name" name="name" v-model="name">
 
         <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
@@ -20,10 +20,10 @@
 
       <div class="mb-6">
         <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           Email</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="email" placeholder="Email" name="email" v-model="email">
 
         <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
@@ -32,10 +32,10 @@
 
       <div class="mb-6">
         <label for="student_name" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           Student Full Name</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="student_name" placeholder="Student Full Name" name="student_name" v-model="student_name">
 
         <form-error :error=formErrors.student_name[0] v-if="formErrors.student_name"></form-error>
@@ -43,10 +43,10 @@
 
       <div class="mb-6">
         <label for="teacher_name" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           Teacher Full Name</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="teacher_name" placeholder="Teacher Full Name" name="teacher_name" v-model="teacher_name">
 
         <form-error :error=formErrors.teacher_name[0] v-if="formErrors.teacher_name"></form-error>
@@ -54,10 +54,10 @@
 
       <div class="mb-6">
         <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           School District</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="district" placeholder="School District" name="district" v-model="district">
 
         <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
@@ -66,11 +66,11 @@
 
       <div class="mb-6">
         <label for="state" class="block text-grey-darker text-sm font-bold mb-2">
-          <small class="text-lg text-red">*</small>
+          <small class="text-lg text-red-600">*</small>
           State
         </label>
         <select name="state" id="state"
-            class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+            class="block appearance-none w-full bg-gray-100 border border-grey-lighter text-grey-darker py-3 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-grey"
             v-model="state">
           <option value="" selected>Select a state</option>
           <option value="AL">Alabama</option>
@@ -134,21 +134,21 @@
       <div class="mb-6">
         <label for="subject" class="block text-grey-darker text-sm font-bold mb-2">Subject</label>
         <input type="text"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="subject" placeholder="Subject" name="subject" v-model="subject">
         <form-error :error=formErrors.subject[0] v-if="formErrors.subject"></form-error>
       </div>
 
       <div class="mb-6">
-        <label for="comment" class="block text-grey-darker text-sm font-bold mb-2"><small class="text-lg text-red">*</small>Comments</label>
+        <label for="comment" class="block text-grey-darker text-sm font-bold mb-2"><small class="text-lg text-red-600">*</small>Comments</label>
 
         <textarea name="comment" id="comment"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             cols="30" placeholder="Comments" rows="5" v-model="comment"></textarea>
         <form-error :error=formErrors.comment[0] v-if="formErrors.comment"></form-error>
       </div>
       <button type="submit"
-          class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+          class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
           :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
         <i class="fa fa-refresh fa-spin" v-if="loading"></i>
         Send Request
@@ -205,7 +205,7 @@ export default {
     submitForm() {
       this.loading = true;
 
-      axios.post('/student-support', {
+      axios.post('/remote-learning-support', {
         'subject': this.subject,
         'name': this.name,
         'email': this.email,
@@ -222,13 +222,12 @@ export default {
         this.loading = false;
       }).catch(error => {
         this.alertVisible = true;
-        this.formErrors = error.response.data;
+        this.formErrors = error.response.data.errors;
         this.formMessageType = 'error';
         this.formMessage = 'Please see errors below!';
         this.loading = false;
       });
     }
-
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div class="border-l-4 p-4 mb-6"
-            :class="{'bg-green-lightest border-green text-green-dark' : type==='success', 'bg-red-lightest border-red text-red-dark' : type==='error'}"
+            :class="{'bg-green-200 border-green-800 text-green-800' : type==='success', 'bg-red-200 border-red-800 text-red-800' : type==='error'}"
             v-if="message"
             v-show="visible"
             role="alert">
