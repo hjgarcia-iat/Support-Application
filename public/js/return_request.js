@@ -2057,7 +2057,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this.alertVisible = true;
         _this.formMessage = 'Please see errors below!';
-        _this.formErrors = error.response.data;
+        _this.formErrors = error.response.data.errors;
         _this.formMessageType = 'error';
         _this.loading = false;
       });
@@ -19818,7 +19818,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v("Return Request")]),
+    _c("h1", { staticClass: "mb-4 text-3xl uppercase leading-loose" }, [
+      _vm._v("Return Request")
+    ]),
     _vm._v(" "),
     _vm._m(0),
     _vm._v(" "),
@@ -19842,7 +19844,9 @@ var render = function() {
           on: { "alert-hide": _vm.hideAlert }
         }),
         _vm._v(" "),
-        _c("h2", { staticClass: "mb-4" }, [_vm._v("General Information")]),
+        _c("h2", { staticClass: "mb-4 text-2xl uppercase leading-loose" }, [
+          _vm._v("General Information")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -20126,15 +20130,17 @@ var render = function() {
         _c("hr", { staticClass: "border-t my-8" }),
         _vm._v(" "),
         _c("div", { staticClass: "flex items-center mb-4" }, [
-          _c("h2", { staticClass: "mr-auto mb-0" }, [
-            _vm._v("Products to Return")
-          ]),
+          _c(
+            "h2",
+            { staticClass: "mb-4 text-2xl mr-auto uppercase leading-loose" },
+            [_vm._v("Products to Return")]
+          ),
           _vm._v(" "),
           _c(
             "a",
             {
               staticClass:
-                "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
+                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
               attrs: { href: "" },
               on: {
                 click: function($event) {
@@ -20147,7 +20153,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("table", { staticClass: "table" }, [
+        _c("table", { staticClass: "table mb-4" }, [
           _vm._m(8),
           _vm._v(" "),
           _c(
@@ -20159,7 +20165,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        "block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block",
+                        "block bg-red-300 hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline block",
                       attrs: { href: "" },
                       on: {
                         click: function($event) {
@@ -20263,7 +20269,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+              "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
             class: {
               "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
             },
@@ -20307,7 +20313,7 @@ var staticRenderFns = [
         attrs: { for: "name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Name")
       ]
     )
@@ -20323,7 +20329,7 @@ var staticRenderFns = [
         attrs: { for: "email" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Email Address")
       ]
     )
@@ -20339,7 +20345,7 @@ var staticRenderFns = [
         attrs: { for: "district" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                District Name")
       ]
     )
@@ -20355,7 +20361,7 @@ var staticRenderFns = [
         attrs: { for: "order_number" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Order Number or PO Number")
       ]
     )
@@ -20371,7 +20377,7 @@ var staticRenderFns = [
         attrs: { for: "rma_number" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                RMA Number")
       ]
     )
@@ -20387,7 +20393,7 @@ var staticRenderFns = [
         attrs: { for: "reason" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Reason for Return:")
       ]
     )
@@ -20410,12 +20416,12 @@ var staticRenderFns = [
         _c("th"),
         _vm._v(" "),
         _c("th", [
-          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
           _vm._v(" SKU")
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
           _vm._v(" Quantity")
         ])
       ])

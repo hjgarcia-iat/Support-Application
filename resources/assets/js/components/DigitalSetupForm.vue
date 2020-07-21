@@ -5,9 +5,9 @@
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Name</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="name" placeholder="Enter Your Full Name"
                     name="name" v-model="name">
 
@@ -16,9 +16,9 @@
 
             <div class="mb-6">
                 <label for="po_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     PO Number</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="po_number" placeholder="Enter PO Number"
                     name="po_number" v-model="po_number">
 
@@ -27,9 +27,9 @@
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Email Address</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="email" placeholder="Enter your Email Address"
                     name="email" v-model="email">
 
@@ -37,9 +37,9 @@
             </div>
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     District Name</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="district" placeholder="Enter District Name"
                     name="district" v-model="district">
 
@@ -48,10 +48,10 @@
 
             <div class="mb-6">
                 <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     School Start Date</label>
                 <datepicker :format="'M/d/yyyy'" v-model="start_date" :id="start_date"
-                        :input-class="'appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'"
+                        :input-class="'appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'"
                         :placeholder="'Select School Start Date'"></datepicker>
 
                 <form-error :error=formErrors.start_date[0] v-if="formErrors.start_date"></form-error>
@@ -59,9 +59,9 @@
 
             <div class="mb-6">
                 <label for="curriculum" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Curriculum</label> <select name="curriculum" id="curriculum" v-model="curriculum"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                 <option value="">Select a curriculum</option>
                 <option value="Active Science">Active Science</option>
                 <option value="Conceptua Math">Conceptua Math</option>
@@ -107,7 +107,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Is there a District/IT Manager Available?</label>
                 <div class="form-check form-check-inline">
                     <input type="radio" name="district_manager"
@@ -132,18 +132,18 @@
 
                 <div class="mb-6">
                     <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         Name</label> <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="dm_name"
                         placeholder="District/IT Manager's Name" name="dm_name" v-model="dm_name">
                     <form-error :error=formErrors.dm_name[0] v-if="formErrors.dm_name"></form-error>
                 </div>
                 <div class="mb-6">
                     <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         Email</label> <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="dm_email"
                         placeholder="District/IT Manager's Email Address" name="dm_email"
                         v-model="dm_email">
@@ -173,9 +173,9 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th><small class="text-lg text-red">*</small> Name</th>
-                        <th><small class="text-lg text-red">*</small> Email</th>
-                        <th><small class="text-lg text-red">*</small> School</th>
+                        <th><small class="text-lg text-red-600">*</small> Name</th>
+                        <th><small class="text-lg text-red-600">*</small> Email</th>
+                        <th><small class="text-lg text-red-600">*</small> School</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -189,7 +189,7 @@
                         <td>
 
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_name_' + index"
                                     placeholder="Teacher Full Name" name="teachers[]['name']"
                                     v-model="teacher.name">
@@ -200,7 +200,7 @@
                         <td>
 
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_email_' + index"
                                     placeholder="Teacher Email Address" name="teachers[]['email']"
                                     v-model="teacher.email">
@@ -210,7 +210,7 @@
                         </td>
                         <td>
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_school_'+index"
                                     placeholder="School Name" name="teachers[]['school']"
                                     v-model="teacher.school">
@@ -224,7 +224,7 @@
             </div>
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Send Request

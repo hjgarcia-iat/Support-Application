@@ -19980,7 +19980,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "name",
@@ -20021,7 +20021,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "po_number",
@@ -20064,7 +20064,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "email",
@@ -20105,7 +20105,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
               attrs: {
                 type: "text",
                 id: "district",
@@ -20143,7 +20143,7 @@ var render = function() {
                 format: "M/d/yyyy",
                 id: _vm.start_date,
                 "input-class":
-                  "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                 placeholder: "Select School Start Date"
               },
               model: {
@@ -20182,7 +20182,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                 attrs: { name: "curriculum", id: "curriculum" },
                 on: {
                   change: function($event) {
@@ -20517,7 +20517,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "dm_name",
@@ -20560,7 +20560,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "dm_email",
@@ -20659,7 +20659,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_name_" + index,
@@ -20701,7 +20701,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_email_" + index,
@@ -20743,7 +20743,7 @@ var render = function() {
                               }
                             ],
                             staticClass:
-                              "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                              "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                             attrs: {
                               type: "text",
                               id: "teacher_school_" + index,
@@ -20783,7 +20783,7 @@ var render = function() {
           "button",
           {
             staticClass:
-              "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+              "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
             class: {
               "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
             },
@@ -20813,7 +20813,7 @@ var staticRenderFns = [
         attrs: { for: "name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Name")
       ]
     )
@@ -20829,7 +20829,7 @@ var staticRenderFns = [
         attrs: { for: "po_number" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                PO Number")
       ]
     )
@@ -20845,7 +20845,7 @@ var staticRenderFns = [
         attrs: { for: "email" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Email Address")
       ]
     )
@@ -20861,7 +20861,7 @@ var staticRenderFns = [
         attrs: { for: "district" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                District Name")
       ]
     )
@@ -20877,7 +20877,7 @@ var staticRenderFns = [
         attrs: { for: "start_date" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                School Start Date")
       ]
     )
@@ -20893,7 +20893,7 @@ var staticRenderFns = [
         attrs: { for: "curriculum" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Curriculum")
       ]
     )
@@ -20906,7 +20906,7 @@ var staticRenderFns = [
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                Is there a District/IT Manager Available?")
       ]
     )
@@ -20922,7 +20922,7 @@ var staticRenderFns = [
         attrs: { for: "dm_name" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                    Name")
       ]
     )
@@ -20938,7 +20938,7 @@ var staticRenderFns = [
         attrs: { for: "dm_email" }
       },
       [
-        _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v("\n                    Email")
       ]
     )
@@ -20961,17 +20961,17 @@ var staticRenderFns = [
         _c("th"),
         _vm._v(" "),
         _c("th", [
-          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
           _vm._v(" Name")
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
           _vm._v(" Email")
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("small", { staticClass: "text-lg text-red" }, [_vm._v("*")]),
+          _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
           _vm._v(" School")
         ])
       ])

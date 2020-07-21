@@ -44,7 +44,7 @@
                     Customer First
                     Name</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="first_name" placeholder="First Name" name="first_name" v-model="first_name">
 
                 <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
@@ -56,7 +56,7 @@
                     Customer Last
                     Name</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="last_name" placeholder="Last Name" name="last_name" v-model="last_name">
 
                 <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
@@ -68,7 +68,7 @@
                     Customer Email
                     Address</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="email" placeholder="Email Address" name="email" v-model="email">
                 <small id="emailHelp" class="mt-3 block text-grey-dark">This MUST be a
                     school email address (not gmail, yahoo, etc...)
@@ -85,7 +85,7 @@
                     <small class="text-lg text-red-600">*</small>
                     District</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="district" placeholder="District Name" name="district" v-model="district">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school district associated with this customer
@@ -98,7 +98,7 @@
                 <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
                     School</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="school" placeholder="School Name" name="school" v-model="school">
                 <small class="mt-3 block text-grey-dark">Please enter
                     the name of the school associated with this customer
@@ -112,7 +112,7 @@
                     <small class="text-lg text-red-600">*</small>
                     City</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="city" placeholder="School City" name="city" v-model="city">
 
                 <form-error :error=formErrors.city[0] v-if="formErrors.city"></form-error>
@@ -333,7 +333,7 @@
                         <small class="text-lg text-red-600">*</small>
                         E-Book List</label>
                     <select name="ebook_list" id="ebook_list"
-                            class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             v-model="ebook" multiple>
                         <option value="">Select an E-Book...</option>
                         <option value="Active Physics">Active Physics</option>
@@ -466,7 +466,7 @@
                 <label for="note" class="block text-grey-darker text-sm font-bold mb-2">Notes</label>
 
                 <textarea name="note" id="note"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         cols="30" placeholder="Notes" rows="5" v-model="notes"></textarea>
                 <small class="mt-3 block text-grey-dark">Any additional information you need to convey to Support.
                 </small>

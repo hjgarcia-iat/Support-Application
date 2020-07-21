@@ -1,16 +1,16 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Return Request</h1>
+        <h1 class="mb-4 text-3xl uppercase leading-loose">Return Request</h1>
         <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are subject to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
             memo will be issued for the approved returned items along with a restocking fee of 20%.  If you have questions regarding your return please contact our Customer Service Group at
             <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-            <h2 class="mb-4">General Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">General Information</h2>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Name</label>
                 <input type="text"
                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -22,7 +22,7 @@
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Email Address</label>
                 <input type="text"
                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -34,7 +34,7 @@
 
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     District Name</label>
                 <input type="text"
                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -46,7 +46,7 @@
 
             <div class="mb-6">
                 <label for="order_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Order Number or PO Number</label>
                 <input type="text"
                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -58,7 +58,7 @@
 
             <div class="mb-6">
                 <label for="rma_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     RMA Number</label>
                 <input type="text"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -70,7 +70,7 @@
 
             <div class="mb-6">
                 <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Reason for Return:</label>
                 <select name="reason" id="reason" v-model="reason" class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="">Select a Reason for Return</option>
@@ -85,27 +85,27 @@
             <hr class="border-t my-8">
 
             <div class="flex items-center mb-4">
-                <h2 class="mr-auto mb-0">Products to Return</h2>
+                <h2 class="mb-4 text-2xl mr-auto uppercase leading-loose">Products to Return</h2>
                 <a href="" @click.prevent="addProduct"
-                   class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline">
+                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
                     <small><i class="fa fa-plus mr-2"></i>Add Product</small>
                 </a>
             </div>
 
 
-            <table class="table">
+            <table class="table mb-4">
                 <thead>
                 <tr>
                     <th></th>
-                    <th><small class="text-lg text-red">*</small> SKU</th>
-                    <th><small class="text-lg text-red">*</small> Quantity</th>
+                    <th><small class="text-lg text-red-600">*</small> SKU</th>
+                    <th><small class="text-lg text-red-600">*</small> Quantity</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="(product, key, index) in products">
                     <td class="text-center">
                         <a href="" @click.prevent="removeProduct(key)"
-                                class="block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
+                                class="block bg-red-300 hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
                             <i class="fa fa-remove"></i>
                         </a>
                     </td>
@@ -131,7 +131,7 @@
             </table>
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Process Return
@@ -213,7 +213,7 @@
                 }).catch(error => {
                     this.alertVisible = true;
                     this.formMessage = 'Please see errors below!';
-                    this.formErrors = error.response.data;
+                    this.formErrors = error.response.data.errors;
                     this.formMessageType = 'error';
                     this.loading = false;
                 });
