@@ -93,7 +93,7 @@
             </div>
 
 
-            <table class="table mb-4">
+            <table class="w-full mb-4">
                 <thead>
                 <tr>
                     <th></th>
@@ -102,24 +102,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(product, key, index) in products">
-                    <td class="text-center">
+                <tr v-for="(product, key, index) in products" class="mb-2">
+                    <td class="text-center px-2 mb-2">
                         <a href="" @click.prevent="removeProduct(key)"
                                 class="block bg-red-300 hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
                             <i class="fa fa-remove"></i>
                         </a>
                     </td>
-                    <td>
+                    <td class="px-2">
                         <input type="text"
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                 :id="'sku_' + index"
                                 placeholder="Enter SKU" name="products[]['name']" v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
                                 v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
                     </td>
-                    <td>
+                    <td class="px-2">
                         <input type="text"
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                                 :id="'quantity_'+index"
                                 placeholder="Enter Quantity" name="products[]['school']" v-model="product.quantity">
 

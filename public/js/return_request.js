@@ -20153,14 +20153,14 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("table", { staticClass: "table mb-4" }, [
+        _c("table", { staticClass: "w-full mb-4" }, [
           _vm._m(8),
           _vm._v(" "),
           _c(
             "tbody",
             _vm._l(_vm.products, function(product, key, index) {
-              return _c("tr", [
-                _c("td", { staticClass: "text-center" }, [
+              return _c("tr", { staticClass: "mb-2" }, [
+                _c("td", { staticClass: "text-center px-2 mb-2" }, [
                   _c(
                     "a",
                     {
@@ -20180,6 +20180,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "td",
+                  { staticClass: "px-2" },
                   [
                     _c("input", {
                       directives: [
@@ -20191,7 +20192,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
                       attrs: {
                         type: "text",
                         id: "sku_" + index,
@@ -20220,6 +20221,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "td",
+                  { staticClass: "px-2" },
                   [
                     _c("input", {
                       directives: [
@@ -20231,7 +20233,7 @@ var render = function() {
                         }
                       ],
                       staticClass:
-                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                        "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
                       attrs: {
                         type: "text",
                         id: "quantity_" + index,
