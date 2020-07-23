@@ -2,7 +2,8 @@
   <div class="p-8">
     <h1 class="mb-4 text-3xl uppercase leading-loose">Remote Learning Support</h1>
     <p class="mb-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis, hic ipsa ipsum maxime nam perferendis quidem suscipit? Error excepturi facere incidunt magni necessitatibus nihil, perferendis suscipit temporibus! Sed, velit!
+        To protect minors and their personal identifying information, on the advice of our legal counsel it is our
+        company policy to not speak or correspond directly with the students.
     </p>
     <form method="POST" @submit.prevent="submitForm">
       <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
@@ -10,10 +11,10 @@
       <div class="mb-6">
         <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
           <small class="text-lg text-red-600">*</small>
-          Full Name</label>
+          Parent Full Name</label>
         <input type="text"
             class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="name" placeholder="Full Name" name="name" v-model="name">
+            id="name" placeholder="Parant Full Name" name="name" v-model="name">
 
         <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
       </div>
@@ -21,10 +22,10 @@
       <div class="mb-6">
         <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
           <small class="text-lg text-red-600">*</small>
-          Email</label>
+          Parent Email</label>
         <input type="text"
             class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="email" placeholder="Email" name="email" v-model="email">
+            id="email" placeholder="Parent Email" name="email" v-model="email">
 
         <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
       </div>
