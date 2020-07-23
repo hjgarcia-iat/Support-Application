@@ -14,7 +14,7 @@
           Parent Full Name</label>
         <input type="text"
             class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="name" placeholder="Parant Full Name" name="name" v-model="name">
+            id="name" placeholder="Parent Full Name" name="name" v-model="name">
 
         <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
       </div>
