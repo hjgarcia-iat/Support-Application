@@ -2161,7 +2161,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this.alertVisible = true;
         _this.formMessage = 'Please see errors below!';
-        _this.formErrors = error.response.data;
+        _this.formErrors = error.response.data.errors;
         _this.formMessageType = 'error';
         _this.loading = false;
       });
@@ -19942,7 +19942,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4" }, [_vm._v("Digital Setup Request")]),
+    _c("h1", { staticClass: "mb-4 text-3xl uppercase leading-loose" }, [
+      _vm._v("Digital Setup Request")
+    ]),
     _vm._v(" "),
     _c(
       "form",
@@ -20594,15 +20596,17 @@ var render = function() {
               _c("hr", { staticClass: "border-t my-8" }),
               _vm._v(" "),
               _c("div", { staticClass: "flex items-center mb-4" }, [
-                _c("h2", { staticClass: "mr-auto mb-0" }, [
-                  _vm._v("Add Teachers")
-                ]),
+                _c(
+                  "h2",
+                  { staticClass: "mr-auto text-2xl uppercase leading-loose" },
+                  [_vm._v("Add Teachers")]
+                ),
                 _vm._v(" "),
                 _c(
                   "a",
                   {
                     staticClass:
-                      "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline",
+                      "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
                     attrs: { href: "" },
                     on: {
                       click: function($event) {

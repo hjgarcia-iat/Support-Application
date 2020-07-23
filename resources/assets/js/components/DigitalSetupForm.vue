@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Digital Setup Request</h1>
+        <h1 class="mb-4 text-3xl uppercase leading-loose">Digital Setup Request</h1>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
@@ -158,9 +158,9 @@
                 <hr class="border-t my-8">
 
                 <div class="flex items-center mb-4">
-                    <h2 class="mr-auto mb-0">Add Teachers</h2>
+                    <h2 class="mr-auto text-2xl uppercase leading-loose">Add Teachers</h2>
                     <a href="" @click.prevent="addTeacher"
-                            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline"><small><i
+                            class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"><small><i
                             class="fa fa-plus mr-2"></i> Add Teacher</small></a>
                 </div>
 
@@ -316,7 +316,7 @@
                 }).catch(error => {
                     this.alertVisible = true;
                     this.formMessage = 'Please see errors below!';
-                    this.formErrors = error.response.data;
+                    this.formErrors = error.response.data.errors;
                     this.formMessageType = 'error';
                     this.loading = false;
                 });
