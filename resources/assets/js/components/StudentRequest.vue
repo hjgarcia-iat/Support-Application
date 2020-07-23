@@ -1,9 +1,9 @@
 <template>
   <div class="p-8">
     <h1 class="mb-4 text-3xl uppercase leading-loose">Remote Learning Support</h1>
-    <p class="mb-4">
-        To protect minors and their personal identifying information, on the advice of our legal counsel it is our
-        company policy to not speak or correspond directly with the students.
+    <p class="mb-4">To protect minors and their personal identifying information, it is our company policy to not speak
+        or correspond directly with the students. Please provide contact information for an adult (18 years or older) in
+        the household.
     </p>
     <form method="POST" @submit.prevent="submitForm">
       <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
