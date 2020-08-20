@@ -18,3 +18,6 @@ Route::post('/return-request', 'ReturnRequestController@store')->name('return_re
 
 Route::get('/remote-learning-support','RemoteSupportRequestController@create')->name('remote_support.create');
 Route::post('/remote-learning-support','RemoteSupportRequestController@store')->name('remote_support.store');
+
+Route::get('/remote-learning-request', 'RemoteLearningRequestController@create')->name('remote_learning_request.create');
+Route::post('/remote-learning-request', 'RemoteLearningRequestController@store')->name('remote_learning_request.store');
