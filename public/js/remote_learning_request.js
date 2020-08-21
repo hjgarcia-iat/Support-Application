@@ -20178,7 +20178,7 @@ var render = function() {
                 ],
                 staticClass:
                   "appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                attrs: { name: "units", id: "units" },
+                attrs: { name: "units[]", id: "units", multiple: "" },
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter

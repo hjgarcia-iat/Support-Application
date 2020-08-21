@@ -113,7 +113,7 @@
                 <label for="units" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     Units</label>
-                <select name="units" id="units" v-model="units"
+                <select name="units[]" id="units" v-model="units" multiple
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="LS1">LS1</option>
                     <option value="LS2">LS2</option>
