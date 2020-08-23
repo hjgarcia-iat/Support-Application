@@ -115,18 +115,30 @@
                     Units</label>
                 <select name="units[]" id="units" v-model="units" multiple
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
-                    <option value="LS1">LS1</option>
-                    <option value="LS2">LS2</option>
-                    <option value="LS3">LS3</option>
-                    <option value="IC1">IC1</option>
-                    <option value="IC2">IC2</option>
-                    <option value="IC3">IC3</option>
-                    <option value="ES1">ES1</option>
-                    <option value="ES2">ES2</option>
-                    <option value="ES3">ES3</option>
-                    <option value="PS1">PS1</option>
-                    <option value="PS2">PS2</option>
-                    <option value="PS3">PS3</option>
+                    <option value="LS1">LS1-Where Have All the Creatures Gone?</option>
+                    <option value="LS2">LS2-What’s Going On Inside of Me?</option>
+                    <option value="LS3">LS3-Why Do Organisms Look The Way They Do?</option>
+                    <option value="IC1">IC1-How Can I Smell Things from a Distance?</option>
+                    <option value="IC2">IC2-How Can I Make New Stuff From Old Stuff?</option>
+                    <option value="IC3">IC3-How Does Food Provide My Body with Energy?</option>
+                    <option value="ES1">ES1-How Does Water Shape Our World?</option>
+                    <option value="ES2">ES2-What Makes the Weather Change?</option>
+                    <option value="ES3">ES3-How Is the Earth Changing?</option>
+                    <option value="PS1">PS1-Can I Believe My Eyes?</option>
+                    <option value="PS2">PS2-Why Do Some Things Stop While Others Keep Going?</option>
+                    <option value="PS3">PS3-How Will It Move?</option>
+                    <option value="INT 6.1">INT 6.1-What Is Going On Inside Me?</option>
+                    <option value="INT 6.2">INT 6.2-Why is It so Challenging to Predict the Weather?</option>
+                    <option value="INT 6.3">INT 6.3-Why Do Organisms Look the Way they Do?</option>
+                    <option value="INT 6.4">INT 6.4-How Do Humans Affect the Earth Around Us?</option>
+                    <option value="INT 7.1">INT 7.1-What Makes Up Earth’s Natural Resources?</option>
+                    <option value="INT 7.2">INT 7.2-How Can I Make New Substances from Old Substances?</option>
+                    <option value="INT 7.3">INT 7.3-What Do I Have in Common with Planet Earth?</option>
+                    <option value="INT 7.4">INT 7.4-What Can Cause Populations to Change?</option>
+                    <option value="INT 8.1">INT 8.1-How Does the Universe Affect Me?</option>
+                    <option value="INT 8.2">INT 8.2-How Do Forces Impact Me?</option>
+                    <option value="INT 8.3">INT 8.3-How Do Living Things Change Over Time?</option>
+                    <option value="INT 8.4">INT 8.4-On What Issues of Sustainability Will You Take Action?</option>
                 </select>
                 <form-error :error=formErrors.units[0] v-if="formErrors.units"></form-error>
             </div>

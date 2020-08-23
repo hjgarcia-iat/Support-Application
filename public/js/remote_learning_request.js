@@ -1986,6 +1986,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20196,29 +20208,107 @@ var render = function() {
                 }
               },
               [
-                _c("option", { attrs: { value: "LS1" } }, [_vm._v("LS1")]),
+                _c("option", { attrs: { value: "LS1" } }, [
+                  _vm._v("LS1-Where Have All the Creatures Gone?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "LS2" } }, [_vm._v("LS2")]),
+                _c("option", { attrs: { value: "LS2" } }, [
+                  _vm._v("LS2-What’s Going On Inside of Me?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "LS3" } }, [_vm._v("LS3")]),
+                _c("option", { attrs: { value: "LS3" } }, [
+                  _vm._v("LS3-Why Do Organisms Look The Way They Do?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "IC1" } }, [_vm._v("IC1")]),
+                _c("option", { attrs: { value: "IC1" } }, [
+                  _vm._v("IC1-How Can I Smell Things from a Distance?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "IC2" } }, [_vm._v("IC2")]),
+                _c("option", { attrs: { value: "IC2" } }, [
+                  _vm._v("IC2-How Can I Make New Stuff From Old Stuff?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "IC3" } }, [_vm._v("IC3")]),
+                _c("option", { attrs: { value: "IC3" } }, [
+                  _vm._v("IC3-How Does Food Provide My Body with Energy?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "ES1" } }, [_vm._v("ES1")]),
+                _c("option", { attrs: { value: "ES1" } }, [
+                  _vm._v("ES1-How Does Water Shape Our World?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "ES2" } }, [_vm._v("ES2")]),
+                _c("option", { attrs: { value: "ES2" } }, [
+                  _vm._v("ES2-What Makes the Weather Change?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "ES3" } }, [_vm._v("ES3")]),
+                _c("option", { attrs: { value: "ES3" } }, [
+                  _vm._v("ES3-How Is the Earth Changing?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "PS1" } }, [_vm._v("PS1")]),
+                _c("option", { attrs: { value: "PS1" } }, [
+                  _vm._v("PS1-Can I Believe My Eyes?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "PS2" } }, [_vm._v("PS2")]),
+                _c("option", { attrs: { value: "PS2" } }, [
+                  _vm._v("PS2-Why Do Some Things Stop While Others Keep Going?")
+                ]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "PS3" } }, [_vm._v("PS3")])
+                _c("option", { attrs: { value: "PS3" } }, [
+                  _vm._v("PS3-How Will It Move?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 6.1" } }, [
+                  _vm._v("INT 6.1-What Is Going On Inside Me?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 6.2" } }, [
+                  _vm._v(
+                    "INT 6.2-Why is It so Challenging to Predict the Weather?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 6.3" } }, [
+                  _vm._v("INT 6.3-Why Do Organisms Look the Way they Do?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 6.4" } }, [
+                  _vm._v("INT 6.4-How Do Humans Affect the Earth Around Us?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 7.1" } }, [
+                  _vm._v("INT 7.1-What Makes Up Earth’s Natural Resources?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 7.2" } }, [
+                  _vm._v(
+                    "INT 7.2-How Can I Make New Substances from Old Substances?"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 7.3" } }, [
+                  _vm._v("INT 7.3-What Do I Have in Common with Planet Earth?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 7.4" } }, [
+                  _vm._v("INT 7.4-What Can Cause Populations to Change?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 8.1" } }, [
+                  _vm._v("INT 8.1-How Does the Universe Affect Me?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 8.2" } }, [
+                  _vm._v("INT 8.2-How Do Forces Impact Me?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 8.3" } }, [
+                  _vm._v("INT 8.3-How Do Living Things Change Over Time?")
+                ]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "INT 8.4" } }, [
+                  _vm._v(
+                    "INT 8.4-On What Issues of Sustainability Will You Take Action?"
+                  )
+                ])
               ]
             ),
             _vm._v(" "),
@@ -32900,7 +32990,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Work\code\support.activatelearning.com\resources\assets\js\remote_learning_request.js */"./resources/assets/js/remote_learning_request.js");
+module.exports = __webpack_require__(/*! D:\Work\Code\support.activatelearning.com\resources\assets\js\remote_learning_request.js */"./resources/assets/js/remote_learning_request.js");
 
 
 /***/ })
