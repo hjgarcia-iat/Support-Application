@@ -17,7 +17,7 @@
     "barryvdh/laravel-ide-helper": "v2.7.0",
     "doctrine/dbal": "~2.3",
     "spinen/laravel-mail-assertions": "1.2.*",
-    "revolution/laravel-google-sheets": "5.2.2"
+    "revolution/laravel-google-sheets": "5.3.*"
   },
   "require-dev": {
     "facade/ignition": "^2.0",
