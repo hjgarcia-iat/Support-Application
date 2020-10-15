@@ -297,6 +297,13 @@
                         IMP/MM CyberPD
                     </label>
                 </div>
+              <div class="mb-3">
+                <input id="resource-22" name="resource[]" type="checkbox" value="OnPar" v-model="resources">
+
+                <label class="ml-2" for="resource-22">
+                  OnPar
+                </label>
+              </div>
 
                 <small class="mt-3 block text-grey-dark">Select one or
                     more of the following resources.
