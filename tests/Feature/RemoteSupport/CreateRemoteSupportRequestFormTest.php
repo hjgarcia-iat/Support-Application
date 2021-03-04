@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\RemoteSupport\Feature;
+namespace Tests\Feature\RemoteSupport;
 
 use Tests\TestCase;
 
