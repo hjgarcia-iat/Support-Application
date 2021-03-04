@@ -12,6 +12,7 @@ const tailwindcss = require('tailwindcss')
  */
 
 mix.js('resources/assets/js/access_request_form.js', 'public/js')
+mix.js('resources/assets/js/contact_request.js', 'public/js')
     .js('resources/assets/js/digital_setup_form.js', 'public/js')
     .js('resources/assets/js/return_request.js', 'public/js')
     .js('resources/assets/js/nextgenpet_request.js', 'public/js')
