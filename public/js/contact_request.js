@@ -2092,6 +2092,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -28816,10 +28822,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-8" }, [
-    _c("h1", { staticClass: "mb-4 text-3xl uppercase leading-loose" }, [
-      _vm._v("Contact Us")
-    ]),
-    _vm._v(" "),
     _c(
       "div",
       {
@@ -28833,11 +28835,13 @@ var render = function() {
         ]
       },
       [
+        _vm._m(0),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "mb-6" },
           [
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c("div", { staticClass: "flex items-center" }, [
               _c("input", {
@@ -28863,7 +28867,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(1)
+              _vm._m(2)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex items-center" }, [
@@ -28890,7 +28894,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(3)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex items-center" }, [
@@ -28917,7 +28921,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(4)
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex items-center" }, [
@@ -28944,7 +28948,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _vm._m(4)
+              _vm._m(5)
             ]),
             _vm._v(" "),
             _vm.formErrors.reason
@@ -28989,6 +28993,8 @@ var render = function() {
         ]
       },
       [
+        _vm._m(6),
+        _vm._v(" "),
         _c(
           "form",
           {
@@ -29014,7 +29020,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(5),
+                _vm._m(7),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29057,7 +29063,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(6),
+                _vm._m(8),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29100,7 +29106,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(7),
+                _vm._m(9),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29143,7 +29149,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(8),
+                _vm._m(10),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29282,6 +29288,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
+      "div",
+      { staticClass: "flex mb-4 items-center justify-between" },
+      [
+        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
+          _vm._v("Contact Us")
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
+          _vm._v("1 of 2")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
       "label",
       { staticClass: "block text-grey-darker text-sm font-bold mb-2" },
       [
@@ -29359,6 +29383,24 @@ var staticRenderFns = [
         _vm._v(
           " —\n                Login issues not related to any of our integrations."
         )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "flex mb-4 items-center justify-between" },
+      [
+        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
+          _vm._v("Contact Us")
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
+          _vm._v("2 of 2")
+        ])
       ]
     )
   },

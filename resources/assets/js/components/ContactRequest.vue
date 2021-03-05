@@ -1,8 +1,10 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4 text-3xl uppercase leading-loose">Contact Us</h1>
-
         <div v-show="step === 1">
+            <div class="flex mb-4 items-center justify-between">
+                <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
+                <h2 class="text-2xl uppercase text-gray-500">1 of 2</h2>
+            </div>
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2"> <small
                     class="text-lg text-red-600">*</small> Reason:</label>
@@ -45,6 +47,10 @@
         </div>
 
         <div v-show="step === 2">
+            <div class="flex mb-4 items-center justify-between">
+                <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
+                <h2 class="text-2xl uppercase text-gray-500">2 of 2</h2>
+            </div>
             <form method="POST"
                 @submit.prevent="submitForm">
                 <alert :message=formMessage
