@@ -3,6 +3,8 @@
 namespace Tests\Feature\ContactForm;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Spinen\MailAssertions\MailTracking;
 use Tests\TestCase;
 
@@ -16,13 +18,16 @@ class StoreContactFormTest extends TestCase
 
     public function test_the_contact_form_can_submit()
     {
+        Storage::fake('s3');
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData());
+                         ->post(route('contact_request.store'), $this->validData([
+                             'file' => UploadedFile::fake()->image('image.jpg'),
+                         ]));
 
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
         $this->seeEmailWasSent();
-        $this->seeEmailSubjectEquals("[". $this->validData()['reason'] ."]" . $this->validData()['subject']);
+        $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "]" . $this->validData()['subject']);
         $this->seeEmailContains($this->validData()['reason']);
         $this->seeEmailContains($this->validData()['name']);
         $this->seeEmailContains($this->validData()['email']);
@@ -33,7 +38,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_reason_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['reason' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['reason' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -44,7 +49,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_name_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['name' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['name' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -55,7 +60,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_email_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['email' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['email' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -66,7 +71,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_email_field_is_valid()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['email' => 'invalid-email']));
+                         ->post(route('contact_request.store'), $this->validData(['email' => 'invalid-email']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -77,7 +82,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_district_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['district' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['district' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -88,7 +93,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_subject_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['subject' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['subject' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -99,7 +104,7 @@ class StoreContactFormTest extends TestCase
     public function test_the_details_field_is_required()
     {
         $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData(['details' => '']));
+                         ->post(route('contact_request.store'), $this->validData(['details' => '']));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
