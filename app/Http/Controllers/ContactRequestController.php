@@ -17,7 +17,7 @@ class ContactRequestController extends Controller
     public function store(ContactFormRequest $request)
     {
         //upload file
-        Storage::disk('s3')->putFile('images', $request->file('file'));
+        Storage::disk('s3')->putFile('contact-request', $request->file('file'),'public');
         $filename = $request->file('file')->hashName();
 
         //save to the database

@@ -40,7 +40,7 @@ class ContactRequest extends Mailable
             'email' => $this->request->get('email'),
             'district' => $this->request->get('district'),
             'details' => $this->request->get('details'),
-            'file' => \Storage::disk('s3')->url("images/{$this->filename}"),
+            'file' => \Storage::disk('s3')->url("contact-request/{$this->filename}"),
         ];
 
         return $this->view('mail.contact_request')

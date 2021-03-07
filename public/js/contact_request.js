@@ -2098,6 +2098,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2115,6 +2154,7 @@ __webpack_require__.r(__webpack_exports__);
       district: '',
       subject: '',
       details: '',
+      file: '',
       loading: false,
       formErrors: {},
       formMessage: '',
@@ -2123,6 +2163,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    selectFile: function selectFile(e) {
+      this.file = e.target.files[0];
+    },
     isInvalid: function isInvalid() {
       if (this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '') {
         return false;
@@ -2149,6 +2192,7 @@ __webpack_require__.r(__webpack_exports__);
       this.district = '';
       this.subject = '';
       this.details = '';
+      this.file = '';
       this.loading = false;
       this.formErrors = {};
       this.formMessage = '';
@@ -2158,14 +2202,20 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios.post('/contact-request', {
-        'reason': this.reason,
-        'name': this.name,
-        'email': this.email,
-        'district': this.district,
-        'subject': this.subject,
-        'details': this.details
-      }).then(function (response) {
+      var formData = new FormData();
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
+      formData.append('reason', this.reason);
+      formData.append('name', this.name);
+      formData.append('email', this.email);
+      formData.append('district', this.district);
+      formData.append('subject', this.subject);
+      formData.append('details', this.details);
+      formData.append('file', this.file);
+      axios.post('/contact-request', formData, config).then(function (response) {
         _this.resetData();
 
         _this.alertVisible = true;
@@ -28998,7 +29048,7 @@ var render = function() {
         _c(
           "form",
           {
-            attrs: { method: "POST" },
+            attrs: { method: "POST", enctype: "multipart/form-data" },
             on: {
               submit: function($event) {
                 $event.preventDefault()
@@ -29241,6 +29291,36 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
+              "div",
+              { staticClass: "mb-6" },
+              [
+                _c(
+                  "label",
+                  {
+                    staticClass: "block text-grey-darker text-sm font-bold mb-2"
+                  },
+                  [_vm._v("File")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass:
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  attrs: { type: "file", name: "file" },
+                  on: { change: _vm.selectFile }
+                }),
+                _vm._v(" "),
+                _vm._m(11),
+                _vm._v(" "),
+                _vm.formErrors.file
+                  ? _c("form-error", {
+                      attrs: { error: _vm.formErrors.file[0] }
+                    })
+                  : _vm._e()
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
               "button",
               {
                 staticClass:
@@ -29363,7 +29443,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Technical Problem")]),
         _vm._v(
-          " —\n                Something is not working as it should. I this category too broad?"
+          " —\n                                                                  Something is not working as it should. I this\n                                                                  category too broad?"
         )
       ]
     )
@@ -29381,7 +29461,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Login Issue")]),
         _vm._v(
-          " —\n                Login issues not related to any of our integrations."
+          " —\n                                                            Login issues not related to any of our\n                                                            integrations."
         )
       ]
     )
@@ -29466,6 +29546,16 @@ var staticRenderFns = [
         _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v(" Subject")
       ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "flex justify-between items-center text-gray-500" },
+      [_c("span", [_vm._v("Accepted file type: jpg, png, gif, doc, pdf")])]
     )
   }
 ]
@@ -42023,7 +42113,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
 
 
 /***/ })

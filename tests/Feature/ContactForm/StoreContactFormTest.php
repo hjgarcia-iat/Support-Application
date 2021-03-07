@@ -27,6 +27,11 @@ class StoreContactFormTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
+
+        Storage::disk('s3')->assertExists("contact-request/{$file->hashName()}");
+
+
+
         $this->seeEmailWasSent();
         $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "]" . $this->validData()['subject']);
         $this->seeEmailContains($this->validData()['reason']);
@@ -35,8 +40,8 @@ class StoreContactFormTest extends TestCase
         $this->seeEmailContains($this->validData()['district']);
         $this->seeEmailContains($this->validData()['details']);
         $this->seeEmailContains($this->validData()['details']);
-        $this->seeEmailContains(Storage::disk('s3')->url("images/{$file->hashName()}"));
-        Storage::disk('s3')->assertExists("images/{$file->hashName()}");
+        $this->seeEmailContains(Storage::disk('s3')->url("contact-request/{$file->hashName()}"));
+
         $this->assertDatabaseHas('contacts', [
             'reason'   => $this->validData()['reason'],
             'name'     => $this->validData()['name'],
