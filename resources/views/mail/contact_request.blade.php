@@ -16,6 +16,7 @@
 <p><strong>Email</strong>: {{ $email }}</p>
 <p><strong>District</strong>: {{ $district }}</p>
 <p><strong>Details</strong><br>: {{ $details }}</p>
+<p><strong>File</strong><br>: {{ $file }}</p>
 
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Http\Requests\ContactFormRequest;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,13 +13,18 @@ class ContactRequest extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Create a new message instance.
-     *
-     * @return void
+     * @var ContactFormRequest $request
      */
-    public function __construct()
+    protected $request;
+    /**
+     * @var String $filename
+     */
+    protected $filename;
+
+    public function __construct(ContactFormRequest $request, $filename)
     {
-        //
+        $this->request = $request;
+        $this->filename = $filename;
     }
 
     /**
@@ -29,11 +35,12 @@ class ContactRequest extends Mailable
     public function build()
     {
         $data = [
-            'reason' => request()->get('reason'),
-            'name' => request()->get('name'),
-            'email' => request()->get('email'),
-            'district' => request()->get('district'),
-            'details' => request()->get('details'),
+            'reason' => $this->request->get('reason'),
+            'name' => $this->request->get('name'),
+            'email' => $this->request->get('email'),
+            'district' => $this->request->get('district'),
+            'details' => $this->request->get('details'),
+            'file' => \Storage::disk('s3')->url("images/{$this->filename}"),
         ];
 
         return $this->view('mail.contact_request')

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Http\Requests\ContactFormRequest;
 use App\Mail\ContactRequest;
+use Storage;
 
 class ContactRequestController extends Controller
 {
@@ -14,7 +16,23 @@ class ContactRequestController extends Controller
 
     public function store(ContactFormRequest $request)
     {
-        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest());
+        //upload file
+        Storage::disk('s3')->putFile('images', $request->file('file'));
+        $filename = $request->file('file')->hashName();
+
+        //save to the database
+        Contact::create([
+            'reason'   => $request->get('reason'),
+            'name'     => $request->get('name'),
+            'email'    => $request->get('email'),
+            'district' => $request->get('district'),
+            'subject'  => $request->get('subject'),
+            'details'  => $request->get('details'),
+            'file'     => $filename,
+        ]);
+
+        //mail to support
+        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest($request, $filename));
 
         return response()->json([
             'success' => true,
