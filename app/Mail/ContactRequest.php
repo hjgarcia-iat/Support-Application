@@ -2,9 +2,8 @@
 
 namespace App\Mail;
 
-use App\Http\Requests\ContactFormRequest;
+use App\Contact;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -12,19 +11,11 @@ class ContactRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * @var ContactFormRequest $request
-     */
-    protected $request;
-    /**
-     * @var String $filename
-     */
-    protected $filename;
+    protected Contact $contact;
 
-    public function __construct(ContactFormRequest $request, $filename)
+    public function __construct(Contact $contact)
     {
-        $this->request = $request;
-        $this->filename = $filename;
+        $this->contact = $contact;
     }
 
     /**
@@ -32,20 +23,20 @@ class ContactRequest extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(): ContactRequest
     {
         $data = [
-            'reason' => $this->request->get('reason'),
-            'name' => $this->request->get('name'),
-            'email' => $this->request->get('email'),
-            'district' => $this->request->get('district'),
-            'details' => $this->request->get('details'),
-            'file' => \Storage::disk('s3')->url("contact-request/{$this->filename}"),
+            'reason'   => $this->contact->reason,
+            'name'     => $this->contact->name,
+            'email'    => $this->contact->email,
+            'district' => $this->contact->district,
+            'details'  => $this->contact->details,
+            'file'     => ($this->contact->file !== null) ? \Storage::disk('s3')->url("contact-request/{$this->contact->file}") : null,
         ];
 
         return $this->view('mail.contact_request')
-            ->from(request()->get('email'))
-            ->subject("[". request('reason') ."]".request('subject'))
-            ->with($data);
+                    ->from(request()->get('email'))
+                    ->subject("[" . request('reason') . "]" . request('subject'))
+                    ->with($data);
     }
 }

@@ -17,7 +17,7 @@ class CreateContacts extends Migration
             $table->string('district');
             $table->string('subject');
             $table->string('details');
-            $table->string('file');
+            $table->string('file')->nullable();
 
             $table->timestamps();
         });

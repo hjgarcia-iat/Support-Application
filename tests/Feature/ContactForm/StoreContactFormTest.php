@@ -30,8 +30,6 @@ class StoreContactFormTest extends TestCase
 
         Storage::disk('s3')->assertExists("contact-request/{$file->hashName()}");
 
-
-
         $this->seeEmailWasSent();
         $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "]" . $this->validData()['subject']);
         $this->seeEmailContains($this->validData()['reason']);
@@ -52,6 +50,35 @@ class StoreContactFormTest extends TestCase
             'file'     => $file->hashName(),
         ]);
     }
+
+    public function test_we_can_submit_the_contact_form_without_a_file()
+    {
+        $response = $this->withoutExceptionHandling()->from(route('contact_request.create'))
+                         ->post(route('contact_request.store'), $this->validData());
+
+        $response->assertStatus(200);
+        $response->assertJson(['success' => true]);
+
+        $this->seeEmailWasSent();
+        $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "]" . $this->validData()['subject']);
+        $this->seeEmailContains($this->validData()['reason']);
+        $this->seeEmailContains($this->validData()['name']);
+        $this->seeEmailContains($this->validData()['email']);
+        $this->seeEmailContains($this->validData()['district']);
+        $this->seeEmailContains($this->validData()['details']);
+        $this->seeEmailContains($this->validData()['details']);
+        $this->seeEmailDoesNotContain('View FIle');
+
+        $this->assertDatabaseHas('contacts', [
+            'reason'   => $this->validData()['reason'],
+            'name'     => $this->validData()['name'],
+            'email'    => $this->validData()['email'],
+            'district' => $this->validData()['district'],
+            'subject'  => $this->validData()['subject'],
+            'details'  => $this->validData()['details'],
+        ]);
+    }
+
 
     public function test_the_reason_field_is_required()
     {
