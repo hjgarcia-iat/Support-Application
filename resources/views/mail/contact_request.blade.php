@@ -16,7 +16,7 @@
 <p><strong>Email</strong>: {{ $email }}</p>
 <p><strong>District</strong>: {{ $district }}</p>
 <p><strong>Details</strong><br>: {{ $details }}</p>
-<p><strong>File</strong><br>: {{ $file }}</p>
+<p><strong>File</strong><br>: <a href="{{ $file }}" target="_blank">View File</a></p>
 
 </body>
 </html>
