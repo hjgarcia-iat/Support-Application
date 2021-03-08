@@ -23,13 +23,19 @@ class ContactFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'reason' => 'required',
-            'name' => 'required',
-            'email' => 'required|email',
+        $rules = [
+            'reason'   => 'required',
+            'name'     => 'required',
+            'email'    => 'required|email',
             'district' => 'required',
-            'subject' => 'required',
-            'details' => 'required',
+            'subject'  => 'required',
+            'details'  => 'required',
         ];
+
+        if ($this->hasFile('file')) {
+            $rules['file'] = 'mimes:jpg,png,gif,pdf,doc,docx';
+        }
+
+        return $rules;
     }
 }
