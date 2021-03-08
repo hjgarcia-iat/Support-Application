@@ -20,6 +20,10 @@ class RemoveContacts extends Command
         $count = $contacts->count();
         if($count > 0) {
             foreach ($contacts as $contact) {
+                if($contact->file !== null) {
+                    \Storage::disk('s3')->delete("contact-request/{$contact->file}");
+                }
+
                 $contact->delete();
             }
         }
