@@ -36,7 +36,6 @@ class RemoveContactsTest extends TestCase
         $this->assertDatabaseMissing('contacts', ['id' => $contactF->id]);
         $this->assertDatabaseHas('contacts', ['id' => $contactE->id]);
 
-
         Storage::disk('s3')->assertMissing("contact-request/$contactA->file");
         Storage::disk('s3')->assertMissing("contact-request/$contactB->file");
         Storage::disk('s3')->assertMissing("contact-request/$contactC->file");
@@ -45,23 +44,5 @@ class RemoveContactsTest extends TestCase
 
         $this->seeEmailWasSent();
         $this->seeEmailContains("5 records were deleted.");
-    }
-
-    /**
-     * Get valid form data
-     *
-     * @param array $overrides
-     * @return array
-     */
-    private function validData($overrides = []): array
-    {
-        return array_merge([
-            'reason'   => 'Curriculum Question',
-            'name'     => 'Jane Doe',
-            'email'    => 'jdoe@email.com',
-            'district' => 'district',
-            'subject'  => 'subject',
-            'details'  => 'details',
-        ], $overrides);
     }
 }

@@ -28,7 +28,7 @@ class RemoveContacts extends Command
             }
         }
 
-        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactsDeleted($count));
+        \Mail::to(env('DEV_EMAIL'))->send(new ContactsDeleted($count));
 
     }
 }

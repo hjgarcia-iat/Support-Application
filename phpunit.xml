@@ -26,6 +26,7 @@
         <env name="FILESYSTEM_DRIVER" value="local"/>
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value=":memory:"/>
+        <env name="DEV_EMAIL" value="email@email.com"/>
         <env name="DESK_SUPPORT_EMAIL" value="support@email.com"/>
         <env name="REMOTE_SETUP_REQUEST" value="remote-setup@email.com"/>
         <env name="FULFILLMENT_EMAIL" value="fulfillment@email.com"/>
