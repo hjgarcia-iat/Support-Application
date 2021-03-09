@@ -2137,6 +2137,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -28934,12 +28966,12 @@ var render = function() {
                   type: "radio",
                   name: "reason",
                   id: "reason_2",
-                  value: "Feedback"
+                  value: "Errata"
                 },
-                domProps: { checked: _vm._q(_vm.reason, "Feedback") },
+                domProps: { checked: _vm._q(_vm.reason, "Errata") },
                 on: {
                   change: function($event) {
-                    _vm.reason = "Feedback"
+                    _vm.reason = "Errata"
                   }
                 }
               }),
@@ -28961,12 +28993,12 @@ var render = function() {
                   type: "radio",
                   name: "reason",
                   id: "reason_3",
-                  value: "Tech Issue"
+                  value: "Integration"
                 },
-                domProps: { checked: _vm._q(_vm.reason, "Tech Issue") },
+                domProps: { checked: _vm._q(_vm.reason, "Integration") },
                 on: {
                   change: function($event) {
-                    _vm.reason = "Tech Issue"
+                    _vm.reason = "Integration"
                   }
                 }
               }),
@@ -28988,17 +29020,98 @@ var render = function() {
                   type: "radio",
                   name: "reason",
                   id: "reason_4",
-                  value: "Login Issue"
+                  value: "Operations"
                 },
-                domProps: { checked: _vm._q(_vm.reason, "Login Issue") },
+                domProps: { checked: _vm._q(_vm.reason, "Operations") },
                 on: {
                   change: function($event) {
-                    _vm.reason = "Login Issue"
+                    _vm.reason = "Operations"
                   }
                 }
               }),
               _vm._v(" "),
               _vm._m(5)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex items-center" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.reason,
+                    expression: "reason"
+                  }
+                ],
+                attrs: {
+                  type: "radio",
+                  name: "reason",
+                  id: "reason_5",
+                  value: "Product"
+                },
+                domProps: { checked: _vm._q(_vm.reason, "Product") },
+                on: {
+                  change: function($event) {
+                    _vm.reason = "Product"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(6)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex items-center" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.reason,
+                    expression: "reason"
+                  }
+                ],
+                attrs: {
+                  type: "radio",
+                  name: "reason",
+                  id: "reason_6",
+                  value: "Feedback"
+                },
+                domProps: { checked: _vm._q(_vm.reason, "Feedback") },
+                on: {
+                  change: function($event) {
+                    _vm.reason = "Feedback"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(7)
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex items-center" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.reason,
+                    expression: "reason"
+                  }
+                ],
+                attrs: {
+                  type: "radio",
+                  name: "reason",
+                  id: "reason_7",
+                  value: "Other Issue"
+                },
+                domProps: { checked: _vm._q(_vm.reason, "Other Issue") },
+                on: {
+                  change: function($event) {
+                    _vm.reason = "Other Issue"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(8)
             ]),
             _vm._v(" "),
             _vm.formErrors.reason
@@ -29043,7 +29156,7 @@ var render = function() {
         ]
       },
       [
-        _vm._m(6),
+        _vm._m(9),
         _vm._v(" "),
         _c(
           "form",
@@ -29070,7 +29183,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(7),
+                _vm._m(10),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29113,7 +29226,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(8),
+                _vm._m(11),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29156,7 +29269,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(9),
+                _vm._m(12),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29199,7 +29312,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(10),
+                _vm._m(13),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -29309,7 +29422,7 @@ var render = function() {
                   on: { change: _vm.selectFile }
                 }),
                 _vm._v(" "),
-                _vm._m(11),
+                _vm._m(14),
                 _vm._v(" "),
                 _vm.formErrors.file
                   ? _c("form-error", {
@@ -29405,9 +29518,9 @@ var staticRenderFns = [
         attrs: { for: "reason_1" }
       },
       [
-        _c("strong", [_vm._v("Curriculum Question")]),
+        _c("strong", [_vm._v("Curriculum Usage")]),
         _vm._v(
-          "\n                —\n                Questions about how our curriculum is to be used in the classroom. Can't find curriculum resources."
+          "\n                —\n                Questions about how our curriculum is to be used in the classroom or where to find curriculum\n                resources."
         )
       ]
     )
@@ -29423,9 +29536,9 @@ var staticRenderFns = [
         attrs: { for: "reason_2" }
       },
       [
-        _c("strong", [_vm._v("Feedback/Feature Request")]),
+        _c("strong", [_vm._v("Curriculum Error")]),
         _vm._v(
-          "\n                —\n                Let us know your ideas for improving our products or provide feedback about our products."
+          "\n                —\n                Curriculum issues such as typos, incorrect label, or factual correctness."
         )
       ]
     )
@@ -29441,9 +29554,9 @@ var staticRenderFns = [
         attrs: { for: "reason_3" }
       },
       [
-        _c("strong", [_vm._v("Technical Problem")]),
+        _c("strong", [_vm._v("Integration Issue")]),
         _vm._v(
-          " —\n                                                                  Something is not working as it should. I this\n                                                                  category too broad?"
+          " —\n                Rostering or login issues related to integrations with Clever, Canvas, Schoology, Google Classroom,\n                etc."
         )
       ]
     )
@@ -29459,9 +29572,63 @@ var staticRenderFns = [
         attrs: { for: "reason_4" }
       },
       [
-        _c("strong", [_vm._v("Login Issue")]),
+        _c("strong", [_vm._v("Coupons, Specimens, Kits")]),
         _vm._v(
-          " —\n                                                            Login issues not related to any of our\n                                                            integrations."
+          " —\n                Redeem coupons, report missing or damaged materials."
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "ml-2 text-grey-darker text-sm mb-2",
+        attrs: { for: "reason_5" }
+      },
+      [
+        _c("strong", [_vm._v("Product Usage")]),
+        _vm._v(
+          " —\n                Questions like how do I do this, Where do I find that. But not about the curriculum."
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "ml-2 text-grey-darker text-sm mb-2",
+        attrs: { for: "reason_6" }
+      },
+      [
+        _c("strong", [_vm._v("Feedback/Feature Request")]),
+        _vm._v(
+          " —\n                Ideas for improving our products or providing feedback about our products and services."
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "ml-2 text-grey-darker text-sm mb-2",
+        attrs: { for: "reason_7" }
+      },
+      [
+        _c("strong", [_vm._v("Other Issue")]),
+        _vm._v(
+          " —\n                Something is not working as it should, forgotten password, or other issue not listed above."
         )
       ]
     )
@@ -42113,7 +42280,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
 
 
 /***/ })

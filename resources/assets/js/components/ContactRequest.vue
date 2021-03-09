@@ -15,42 +15,77 @@
                         value="Curriculum"
                         v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_1"><strong>Curriculum Question</strong>
+                    for="reason_1"><strong>Curriculum Usage</strong>
                     &mdash;
-                    Questions about how our curriculum is to be used in the classroom. Can't find curriculum resources.</label>
+                    Questions about how our curriculum is to be used in the classroom or where to find curriculum
+                    resources.</label>
                 </div>
                 <div class="flex items-center">
                     <input type="radio"
                         name="reason"
                         id="reason_2"
-                        value="Feedback"
+                        value="Errata"
                         v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_2"><strong>Feedback/Feature Request</strong>
+                    for="reason_2"><strong>Curriculum Error</strong>
                     &mdash;
-                    Let us know your ideas for improving our products or provide feedback about our products.</label>
+                    Curriculum issues such as typos, incorrect label, or factual correctness.</label>
                 </div>
 
                 <div class="flex items-center">
                     <input type="radio"
                         name="reason"
                         id="reason_3"
-                        value="Tech Issue"
+                        value="Integration"
                         v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_3"><strong>Technical Problem</strong> &mdash;
-                    Something is not working as it should. I this category too broad?</label>
+                    for="reason_3"><strong>Integration Issue</strong> &mdash;
+                    Rostering or login issues related to integrations with Clever, Canvas, Schoology, Google Classroom,
+                    etc.</label>
                 </div>
 
                 <div class="flex items-center">
                     <input type="radio"
                         name="reason"
                         id="reason_4"
-                        value="Login Issue"
+                        value="Operations"
                         v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_4"><strong>Login Issue</strong> &mdash;
-                    Login issues not related to any of our integrations.</label>
+                    for="reason_4"><strong>Coupons, Specimens, Kits</strong> &mdash;
+                    Redeem coupons, report missing or damaged materials.</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="radio"
+                        name="reason"
+                        id="reason_5"
+                        value="Product"
+                        v-model="reason"> <label
+                    class="ml-2 text-grey-darker text-sm mb-2"
+                    for="reason_5"><strong>Product Usage</strong> &mdash;
+                    Questions like how do I do this, Where do I find that. But not about the curriculum.</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="radio"
+                        name="reason"
+                        id="reason_6"
+                        value="Feedback"
+                        v-model="reason"> <label
+                    class="ml-2 text-grey-darker text-sm mb-2"
+                    for="reason_6"><strong>Feedback/Feature Request</strong> &mdash;
+                    Ideas for improving our products or providing feedback about our products and services.</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="radio"
+                        name="reason"
+                        id="reason_7"
+                        value="Other Issue"
+                        v-model="reason"> <label
+                    class="ml-2 text-grey-darker text-sm mb-2"
+                    for="reason_7"><strong>Other Issue</strong> &mdash;
+                    Something is not working as it should, forgotten password, or other issue not listed above.</label>
                 </div>
 
                 <form-error :error=formErrors.reason[0]
