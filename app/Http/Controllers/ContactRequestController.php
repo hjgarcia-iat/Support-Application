@@ -29,7 +29,7 @@ class ContactRequestController extends Controller
 
         if($request->hasFile('file')) {
             //upload file
-            Storage::disk('s3')->putFile('contact-request', $request->file('file'), 'public');
+            Storage::disk('s3')->putFile('contact-request', $request->file('file'));
             $filename = $request->file('file')->hashName();
             $contact->file = $filename;
             $contact->save();
