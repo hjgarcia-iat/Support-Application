@@ -28,5 +28,8 @@
     "vue-template-compiler": "^2.6.11",
     "vuejs-datepicker": "1.5.*"
   },
-  "name": "support.activatelearning.com"
+  "name": "support.activatelearning.com",
+  "dependencies": {
+    "vue2-dropzone": "^3.6.0"
+  }
 }
