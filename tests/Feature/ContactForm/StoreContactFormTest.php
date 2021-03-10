@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\ContactForm;
 
+use App\Contact;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -18,15 +19,25 @@ class StoreContactFormTest extends TestCase
 
     public function test_the_contact_form_can_submit_with_a_file()
     {
+        //fake s3
         Storage::fake('s3');
+        //upload files to the server
         $file = UploadedFile::fake()->image('image.jpg');
-        $response = $this->withoutExceptionHandling()->from(route('contact_request.create'))
+        //make a call to the contact controller to save information for the request
+        $contactInfoResponse = $this->from(route('contact_request.create'))
             ->post(route('contact_request.store'), $this->validData([
                 'file' => $file,
             ]));
 
-        $response->assertStatus(200);
-        $response->assertJson(['success' => true]);
+        //make a call to File Controller to upload the files
+
+        //
+        $contactInfoResponse->assertStatus(200);
+        $contactInfoResponse->assertJson([
+            'success' => true,
+            'id'      => Contact::whereEmail($this->validData()['email'])->first()->id,
+        ]);
+
 
         Storage::disk('s3')->assertExists("contact-request/{$file->hashName()}");
 
@@ -47,14 +58,18 @@ class StoreContactFormTest extends TestCase
             'district' => $this->validData()['district'],
             'subject'  => $this->validData()['subject'],
             'details'  => $this->validData()['details'],
-            'file'     => $file->hashName(),
+        ]);
+
+        $this->assertDatabaseHas('files', [
+            'contact_id' => Contact::whereEmail($this->validData()['email'])->first()->id,
+            'file'       => $file->hashName(),
         ]);
     }
 
     public function test_we_can_submit_the_contact_form_without_a_file()
     {
         $response = $this->withoutExceptionHandling()->from(route('contact_request.create'))
-                         ->post(route('contact_request.store'), $this->validData());
+            ->post(route('contact_request.store'), $this->validData());
 
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
@@ -67,7 +82,7 @@ class StoreContactFormTest extends TestCase
         $this->seeEmailContains($this->validData()['district']);
         $this->seeEmailContains($this->validData()['details']);
         $this->seeEmailContains($this->validData()['details']);
-        $this->seeEmailDoesNotContain('View FIle');
+        $this->seeEmailDoesNotContain('View File');
 
         $this->assertDatabaseHas('contacts', [
             'reason'   => $this->validData()['reason'],
@@ -76,6 +91,10 @@ class StoreContactFormTest extends TestCase
             'district' => $this->validData()['district'],
             'subject'  => $this->validData()['subject'],
             'details'  => $this->validData()['details'],
+        ]);
+
+        $this->assertDatabaseMissing('files', [
+            'contact_id' => Contact::whereEmail($this->validData()['email'])->first()->id,
         ]);
     }
 
@@ -160,11 +179,11 @@ class StoreContactFormTest extends TestCase
     public function test_only_certain_files_can_submit()
     {
         Storage::fake('s3');
-        $file     = UploadedFile::fake()->create('video.mp4',20);
+        $file = UploadedFile::fake()->create('video.mp4', 20);
         $response = $this->from(route('contact_request.create'))
-                         ->post(route('contact_request.store'), $this->validData([
-                             'file' => $file,
-                         ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $file,
+            ]));
 
         $response->assertStatus(302);
         $response->assertRedirect(route('contact_request.create'));
@@ -173,44 +192,45 @@ class StoreContactFormTest extends TestCase
         $this->assertDatabaseMissing('contacts', $this->validData());
         $this->seeEmailWasNotSent();
     }
+
     public function test_file_for_required_uploads_can_submit()
     {
         Storage::fake('s3');
-        $fileA     = UploadedFile::fake()->image('image.jpg');
+        $fileA = UploadedFile::fake()->image('image.jpg');
         $responseA = $this->from(route('contact_request.create'))
-                         ->post(route('contact_request.store'), $this->validData([
-                             'file' => $fileA,
-                         ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileA,
+            ]));
 
-        $fileB     = UploadedFile::fake()->image('image.png');
+        $fileB = UploadedFile::fake()->image('image.png');
         $responseB = $this->from(route('contact_request.create'))
-                          ->post(route('contact_request.store'), $this->validData([
-                              'file' => $fileB,
-                          ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileB,
+            ]));
 
-        $fileC   = UploadedFile::fake()->image('image.gif');
+        $fileC = UploadedFile::fake()->image('image.gif');
         $responseC = $this->from(route('contact_request.create'))
-                          ->post(route('contact_request.store'), $this->validData([
-                              'file' => $fileC,
-                          ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileC,
+            ]));
 
-        $fileD     = UploadedFile::fake()->create('file.pdf', 4);
+        $fileD = UploadedFile::fake()->create('file.pdf', 4);
         $responseD = $this->from(route('contact_request.create'))
-                          ->post(route('contact_request.store'), $this->validData([
-                              'file' => $fileD,
-                          ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileD,
+            ]));
 
-        $fileE     = UploadedFile::fake()->create('word.doc', 4);
+        $fileE = UploadedFile::fake()->create('word.doc', 4);
         $responseE = $this->from(route('contact_request.create'))
-                          ->post(route('contact_request.store'), $this->validData([
-                              'file' => $fileE,
-                          ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileE,
+            ]));
 
-        $fileF     = UploadedFile::fake()->create('word.docx', 4);
+        $fileF = UploadedFile::fake()->create('word.docx', 4);
         $responseF = $this->from(route('contact_request.create'))
-                          ->post(route('contact_request.store'), $this->validData([
-                              'file' => $fileF,
-                          ]));
+            ->post(route('contact_request.store'), $this->validData([
+                'file' => $fileF,
+            ]));
 
         $responseA->assertStatus(200);
         $responseB->assertStatus(200);
