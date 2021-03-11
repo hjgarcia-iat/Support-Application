@@ -24,3 +24,5 @@ Route::post('/remote-learning-request', 'RemoteLearningRequestController@store')
 
 Route::get('/contact-request', 'ContactRequestController@create')->name('contact_request.create');
 Route::post('/contact-request', 'ContactRequestController@store')->name('contact_request.store');
+
+Route::post('/files', 'FilesController@store')->name('files.store');

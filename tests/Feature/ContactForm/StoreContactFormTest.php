@@ -30,19 +30,27 @@ class StoreContactFormTest extends TestCase
             ]));
 
         //make a call to File Controller to upload the files
+        $imageResponse = $this->withoutExceptionHandling()->post(route('files.store'), [
+            'id' => 1,
+            'file' => $file,
+        ]);
 
-        //
+
         $contactInfoResponse->assertStatus(200);
         $contactInfoResponse->assertJson([
             'success' => true,
             'id'      => Contact::whereEmail($this->validData()['email'])->first()->id,
         ]);
 
+        $imageResponse->assertStatus(200);
+        $imageResponse->assertJson(['success' => true]);
+
+
 
         Storage::disk('s3')->assertExists("contact-request/{$file->hashName()}");
 
         $this->seeEmailWasSent();
-        $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "]" . $this->validData()['subject']);
+        $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "] " . $this->validData()['subject']);
         $this->seeEmailContains($this->validData()['reason']);
         $this->seeEmailContains($this->validData()['name']);
         $this->seeEmailContains($this->validData()['email']);

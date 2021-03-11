@@ -15,7 +15,7 @@
 <p><strong>Name</strong>: {{ $name }}</p>
 <p><strong>Email</strong>: {{ $email }}</p>
 <p><strong>District</strong>: {{ $district }}</p>
-<p><strong>Details</strong><br>: {{ $details }}</p>
+<p><strong>Details</strong>: {{ $details }}</p>
 @if($file != null)
     <p><strong>File</strong><br>: <a href="{{ $file }}" target="_blank">View File</a></p>
 @endif
