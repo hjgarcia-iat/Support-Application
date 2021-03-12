@@ -4,8 +4,7 @@ namespace Tests\Unit;
 
 use App\Zip;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 /**
  * Class ZipTest
@@ -13,45 +12,21 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
  */
 class ZipTest extends TestCase
 {
-    use DatabaseTransactions, DatabaseMigrations;
+    use RefreshDatabase;
 
-    /**
-     * @test
-     */
-    public function test_is_has_a_zip_code_field()
+    public function test_it_has_the_correct_fields()
     {
-        $zip =  Zip::factory()->create(['zip_code' => 00000]);
+        $data = [
+            'zip_code' => 00000,
+            'city' => 'city',
+            'state' => 'state',
+            'abbr' => 'abbr'
+           
+        ];
 
-        $this->assertEquals(00000, $zip->zip_code);
+        Zip::factory()->create($data);
+
+        $this->assertDatabaseHas('zipcodes', $data);
     }
 
-    /**
-     * @test
-     */
-    public function test_is_has_a_city_field()
-    {
-        $zip = Zip::factory()->create(['city' => 'city']);
-
-        $this->assertEquals('city', $zip->city);
-    }
-
-    /**
-     * @test
-     */
-    public function test_is_has_a_state_field()
-    {
-        $zip = Zip::factory()->create(['state' => 'state']);
-
-        $this->assertEquals('state', $zip->state);
-    }
-
-    /**
-     * @test
-     */
-    public function test_is_has_an_abbr_field()
-    {
-        $zip = Zip::factory()->create(['abbr' => 'abbr']);
-
-        $this->assertEquals('abbr', $zip->abbr);
-    }
 }
