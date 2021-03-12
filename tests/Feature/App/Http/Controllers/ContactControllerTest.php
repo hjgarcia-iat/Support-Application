@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Feature\ContactForm;
+namespace Tests\App\Http\Controllers;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
- * Class CreateContactFormTest
+ * Class ContactControllerTest
  * @package Tests\Feature
  */
-class CreateContactFormTest extends TestCase
+class ContactControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @test
-     */
-    public function we_can_view_the_return_request_form()
+
+    public function test_we_can_view_the_form()
     {
         $response = $this->get(route('contact_request.create'));
 
