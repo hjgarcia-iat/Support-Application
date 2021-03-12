@@ -10,4 +10,10 @@ class Contact extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
 }
