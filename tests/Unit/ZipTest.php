@@ -20,7 +20,7 @@ class ZipTest extends TestCase
      */
     public function test_is_has_a_zip_code_field()
     {
-        $zip = factory(Zip::class)->create(['zip_code'=> 00000]);
+        $zip =  Zip::factory()->create(['zip_code' => 00000]);
 
         $this->assertEquals(00000, $zip->zip_code);
     }
@@ -30,7 +30,7 @@ class ZipTest extends TestCase
      */
     public function test_is_has_a_city_field()
     {
-        $zip = factory(Zip::class)->create(['city'=> 'city']);
+        $zip = Zip::factory()->create(['city' => 'city']);
 
         $this->assertEquals('city', $zip->city);
     }
@@ -40,7 +40,7 @@ class ZipTest extends TestCase
      */
     public function test_is_has_a_state_field()
     {
-        $zip = factory(Zip::class)->create(['state'=> 'state']);
+        $zip = Zip::factory()->create(['state' => 'state']);
 
         $this->assertEquals('state', $zip->state);
     }
@@ -50,7 +50,7 @@ class ZipTest extends TestCase
      */
     public function test_is_has_an_abbr_field()
     {
-        $zip = factory(Zip::class)->create(['abbr'=> 'abbr']);
+        $zip = Zip::factory()->create(['abbr' => 'abbr']);
 
         $this->assertEquals('abbr', $zip->abbr);
     }
