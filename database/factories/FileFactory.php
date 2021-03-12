@@ -1,18 +1,25 @@
 <?php
 
+namespace Database\Factories;
+
 use App\Contact;
 use App\File;
-use Faker\Generator as Faker;
-use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(File::class, function (Faker $faker) {
-    return [
-        'contact_id' => function () {
-            return Contact::factory()->create()->id;
-        },
-        'file'       => $faker->imageUrl(),
-        'created_at' => Carbon::now(),
-        'updated_at' => Carbon::now(),
-    ];
-});
+class FileFactory extends Factory
+{
+    protected $model = File::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'contact_id'   => 1,
+            'file'     => $this->faker->imageUrl,
+        ];
+    }
+}
