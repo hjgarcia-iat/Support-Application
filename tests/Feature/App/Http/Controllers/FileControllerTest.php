@@ -22,7 +22,7 @@ class ContactControllerTest extends TestCase
         $file = UploadedFile::fake()->image('image.jpg');
 
 
-        $response = $this->withoutExceptionHandling()->post(route('files.store'), [
+        $response = $this->post(route('files.store'), [
             'id' => 1,
             'file' => $file,
         ]);
