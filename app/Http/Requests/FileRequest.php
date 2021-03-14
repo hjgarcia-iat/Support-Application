@@ -9,6 +9,7 @@ class FileRequest extends FormRequest
     public function rules()
     {
         return [
+            'id' => 'required',
             'file' => 'mimes:jpg,png,gif,pdf,doc,docx',
         ];
     }

@@ -23,7 +23,7 @@ class StoreContactFormTest extends TestCase
         Storage::fake('s3');
         //upload files to the server
         $file = UploadedFile::fake()->image('image.jpg');
-        //make a call to the contact controller to save information for the request
+        //make a call to the contact controller to save information for the request 
         $contactInfoResponse = $this->from(route('contact_request.create'))
             ->post(route('contact_request.store'), $this->validData([
                 'file' => $file,
