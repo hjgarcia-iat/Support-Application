@@ -36,7 +36,7 @@ class ContactRequest extends Mailable
 
         return $this->view('mail.contact_request')
                     ->from(request()->get('email'))
-                    ->subject("[" . request('reason') . "]" . request('subject'))
+                    ->subject("[" . request('reason') . "] " . request('subject'))
                     ->with($data);
     }
 }

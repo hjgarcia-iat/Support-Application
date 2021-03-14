@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Http\Requests\ContactFormRequest;
-use App\Mail\ContactRequest;
-use Storage;
 
 class ContactRequestController extends Controller
 {
@@ -27,20 +25,11 @@ class ContactRequestController extends Controller
             'details'  => $request->get('details'),
         ]);
 
-//        if($request->hasFile('file')) {
-//            //upload file
-//            Storage::disk('s3')->putFile('contact-request', $request->file('file'),'public');
-//            $filename = $request->file('file')->hashName();
-//            $contact->file = $filename;
-//            $contact->save();
-//        }
-
-        //mail to support
-        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest($contact));
+        // \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest($contact));
 
         return response()->json([
             'success' => true,
-            'message' => 'Your request has been sent!',
+            'id' => $contact->id,
         ]);
     }
 }
