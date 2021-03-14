@@ -23,7 +23,7 @@ class ContactRequest extends Mailable
      *
      * @return $this
      */
-    public function build(): ContactRequest
+    public function build()
     {
         $data = [
             'reason'   => $this->contact->reason,
@@ -31,12 +31,12 @@ class ContactRequest extends Mailable
             'email'    => $this->contact->email,
             'district' => $this->contact->district,
             'details'  => $this->contact->details,
-            'file'     => ($this->contact->file !== null) ? \Storage::disk('s3')->url("contact-request/{$this->contact->file}") : null,
+            'files'     => ($this->contact->files !== null) ? $this->contact->files : null,
         ];
 
         return $this->view('mail.contact_request')
-                    ->from(request()->get('email'))
-                    ->subject("[" . request('reason') . "] " . request('subject'))
+                    ->from($this->contact->email)
+                    ->subject("[" . $this->contact->reason . "] " . $this->contact->subject)
                     ->with($data);
     }
 }

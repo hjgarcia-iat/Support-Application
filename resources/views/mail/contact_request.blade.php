@@ -16,8 +16,11 @@
 <p><strong>Email</strong>: {{ $email }}</p>
 <p><strong>District</strong>: {{ $district }}</p>
 <p><strong>Details</strong>: {{ $details }}</p>
-@if($file != null)
-    <p><strong>File</strong><br>: <a href="{{ $file }}" target="_blank">View File</a></p>
+@if($files != null)
+    <p><strong>Files</strong>:</p>
+    @foreach($files as $file)
+    <p><strong>File</strong>: <a href="{{ Storage::disk('s3')->url("contact-request/$file->file") }}" target="_blank">View File</a></p>
+    @endforeach
 @endif
 
 </body>
