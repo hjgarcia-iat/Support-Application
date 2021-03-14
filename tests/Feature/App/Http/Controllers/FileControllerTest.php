@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 /**
- * Class ContactControllerTest
+ * Class FileControllerTest
  * @package Tests\Feature
  */
-class ContactControllerTest extends TestCase
+class FileControllerTest extends TestCase
 {
     use RefreshDatabase;
 
