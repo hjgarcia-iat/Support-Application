@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Contact;
+use App\File;
 use App\Mail\ContactsDeleted;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
@@ -20,8 +21,11 @@ class RemoveContacts extends Command
         $count = $contacts->count();
         if($count > 0) {
             foreach ($contacts as $contact) {
-                if($contact->file !== null) {
-                    \Storage::disk('s3')->delete("contact-request/{$contact->file}");
+                if($contact->files !== null) {
+                    foreach ($contact->files as $file) {
+                        \Storage::disk('s3')->delete("contact-request/{$file->file}");
+                        File::find($file->id)->delete();
+                    }
                 }
 
                 $contact->delete();

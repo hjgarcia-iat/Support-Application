@@ -9,6 +9,11 @@
 </head>
 <body>
 <h1>Contact where deleted from the Support Application:</h1>
-<p>{{$count}} records were deleted.</p>
+
+@if($count > 1)
+    <p>{{$count}} records were deleted.</p>
+@elseif($count == 1)
+    <p>1 record was deleted.</p>
+@endif
 </body>
 </html>

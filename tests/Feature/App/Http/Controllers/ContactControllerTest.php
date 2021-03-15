@@ -43,16 +43,6 @@ class ContactControllerTest extends TestCase
             'subject'  => $this->validData()['subject'],
             'details'  => $this->validData()['details'],
         ]);
-
-        // $this->seeEmailWasSent();
-        // $this->seeEmailSubjectEquals("[" . $this->validData()['reason'] . "] " . $this->validData()['subject']);
-        // $this->seeEmailContains($this->validData()['reason']);
-        // $this->seeEmailContains($this->validData()['name']);
-        // $this->seeEmailContains($this->validData()['email']);
-        // $this->seeEmailContains($this->validData()['district']);
-        // $this->seeEmailContains($this->validData()['details']);
-        // $this->seeEmailContains($this->validData()['details']);
-        // $this->seeEmailContains(Storage::disk('s3')->url("contact-request/{$file->hashName()}"));
     }
 
     /**
