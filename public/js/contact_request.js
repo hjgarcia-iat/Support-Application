@@ -2185,9 +2185,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -2201,6 +2198,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      contact_created: false,
+      files_uploaded: false,
       step: 1,
       id: '',
       reason: '',
@@ -2209,14 +2208,14 @@ __webpack_require__.r(__webpack_exports__);
       district: '',
       subject: '',
       details: '',
-      files: '',
+      files: [],
       loading: false,
       formErrors: {},
       formMessage: '',
       formMessageType: 'success',
-      alertVisible: true,
+      alertVisible: false,
       dropzoneOptions: {
-        url: "/files/upload",
+        url: "/files",
         thumbnailWidth: 70,
         thumbnailHeight: 70,
         acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",
@@ -2249,6 +2248,8 @@ __webpack_require__.r(__webpack_exports__);
       this.alertVisible = false;
     },
     resetData: function resetData() {
+      this.contact_created = false;
+      this.files_uploaded = false;
       this.id = '';
       this.reason = '';
       this.name = '';
@@ -2256,7 +2257,7 @@ __webpack_require__.r(__webpack_exports__);
       this.district = '';
       this.subject = '';
       this.details = '';
-      this.file = '';
+      this.files = [];
       this.loading = false;
       this.formErrors = {};
       this.formMessage = '';
@@ -2264,7 +2265,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     //for dropzone
     sendingFiles: function sendingFiles(file, xhr, formData) {
-      formData.append('contact_id', this.id);
+      formData.append('id', this.id);
+    },
+    addedFile: function addedFile(file) {
+      this.files.push(file);
+    },
+    show_success: function show_success(message) {
+      this.resetData();
+      this.alertVisible = true;
+      this.formMessageType = 'success';
+      this.step = 1;
+      this.formMessage = message;
+      this.loading = false;
     },
     submitForm: function submitForm() {
       var _this = this;
@@ -2283,23 +2295,19 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('subject', this.subject);
       formData.append('details', this.details);
       axios.post('/contact-request', formData, config).then(function (response) {
-        //get the id being returned from the response and assign to the response.
-        _this.id = response.data.id; //process dropzone queue
+        if (response.data.success === true) {
+          _this.id = response.data.id; //show success message at the end
 
-        _this.$refs.dropzone.processQueue();
-
-        _this.resetData();
-
-        _this.alertVisible = true;
-        _this.formMessageType = 'success';
-        _this.formMessage = response.data.message;
-        _this.loading = false;
+          _this.show_success('Your request was processed.');
+        }
       })["catch"](function (error) {
-        _this.alertVisible = true;
-        _this.formErrors = error.response.data.errors;
-        _this.formMessageType = 'error';
-        _this.formMessage = 'Please see errors below!';
-        _this.loading = false;
+        if (error.response.status === 422) {
+          _this.alertVisible = true;
+          _this.formErrors = error.response.data.errors;
+          _this.formMessageType = 'error';
+          _this.formMessage = 'Please see errors below!';
+          _this.loading = false;
+        } else {}
       });
     }
   }
@@ -29558,598 +29566,624 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-8" }, [
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.step === 1,
-            expression: "step === 1"
-          }
-        ]
-      },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "mb-6" },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
-                  }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_1",
-                  value: "Curriculum"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Curriculum") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Curriculum"
-                  }
-                }
-              }),
+  return _c(
+    "div",
+    { staticClass: "p-8" },
+    [
+      _c("alert", {
+        attrs: {
+          message: _vm.formMessage,
+          type: _vm.formMessageType,
+          visible: _vm.alertVisible
+        },
+        on: { "alert-hide": _vm.hideAlert }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.step === 1,
+              expression: "step === 1"
+            }
+          ]
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mb-6" },
+            [
+              _vm._m(1),
               _vm._v(" "),
-              _vm._m(2)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_1",
+                    value: "Curriculum"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Curriculum") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Curriculum"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_2",
-                  value: "Errata"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Errata") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Errata"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ]),
               _vm._v(" "),
-              _vm._m(3)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_2",
+                    value: "Errata"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Errata") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Errata"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_3",
-                  value: "Integration"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Integration") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Integration"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(3)
+              ]),
               _vm._v(" "),
-              _vm._m(4)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_3",
+                    value: "Integration"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Integration") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Integration"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_4",
-                  value: "Operations"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Operations") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Operations"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]),
               _vm._v(" "),
-              _vm._m(5)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_4",
+                    value: "Operations"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Operations") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Operations"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_5",
-                  value: "Product"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Product") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Product"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(5)
+              ]),
               _vm._v(" "),
-              _vm._m(6)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_5",
+                    value: "Product"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Product") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Product"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_6",
-                  value: "Feedback"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Feedback") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Feedback"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(6)
+              ]),
               _vm._v(" "),
-              _vm._m(7)
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex items-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.reason,
-                    expression: "reason"
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_6",
+                    value: "Feedback"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Feedback") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Feedback"
+                    }
                   }
-                ],
-                attrs: {
-                  type: "radio",
-                  name: "reason",
-                  id: "reason_7",
-                  value: "Other Issue"
-                },
-                domProps: { checked: _vm._q(_vm.reason, "Other Issue") },
-                on: {
-                  change: function($event) {
-                    _vm.reason = "Other Issue"
-                  }
-                }
-              }),
+                }),
+                _vm._v(" "),
+                _vm._m(7)
+              ]),
               _vm._v(" "),
-              _vm._m(8)
-            ]),
-            _vm._v(" "),
-            _vm.formErrors.reason
-              ? _c("form-error", { attrs: { error: _vm.formErrors.reason[0] } })
-              : _vm._e()
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass:
-              "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-            class: {
-              "cursor-default hover:bg-blue-600": !_vm.disabled(),
-              "hover:bg-blue-800": _vm.disabled()
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.reason,
+                      expression: "reason"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "reason_7",
+                    value: "Other Issue"
+                  },
+                  domProps: { checked: _vm._q(_vm.reason, "Other Issue") },
+                  on: {
+                    change: function($event) {
+                      _vm.reason = "Other Issue"
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(8)
+              ]),
+              _vm._v(" "),
+              _vm.formErrors.reason
+                ? _c("form-error", {
+                    attrs: { error: _vm.formErrors.reason[0] }
+                  })
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+              class: {
+                "cursor-default hover:bg-blue-600": !_vm.disabled(),
+                "hover:bg-blue-800": _vm.disabled()
+              },
+              attrs: { type: "submit", disabled: !_vm.disabled() },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.next()
+                }
+              }
             },
-            attrs: { type: "submit", disabled: !_vm.disabled() },
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.next()
-              }
-            }
-          },
-          [_vm._v("\n            Next\n        ")]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.step === 2,
-            expression: "step === 2"
-          }
+            [_vm._v("\n            Next\n        ")]
+          )
         ]
-      },
-      [
-        _vm._m(9),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            attrs: { method: "POST", enctype: "multipart/form-data" },
-            on: {
-              submit: function($event) {
-                $event.preventDefault()
-                return _vm.submitForm($event)
-              }
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.step === 2,
+              expression: "step === 2"
             }
-          },
-          [
-            _c("alert", {
-              attrs: {
-                message: _vm.formMessage,
-                type: _vm.formMessageType,
-                visible: _vm.alertVisible
-              },
-              on: { "alert-hide": _vm.hideAlert }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _vm._m(10),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.name,
-                      expression: "name"
-                    }
-                  ],
-                  staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                  attrs: {
-                    type: "text",
-                    id: "name",
-                    placeholder: "Name",
-                    name: "name"
-                  },
-                  domProps: { value: _vm.name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.name = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.formErrors.name
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.name[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _vm._m(11),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.email,
-                      expression: "email"
-                    }
-                  ],
-                  staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                  attrs: {
-                    type: "text",
-                    id: "email",
-                    placeholder: "Email Address",
-                    name: "email"
-                  },
-                  domProps: { value: _vm.email },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.email = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.formErrors.email
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.email[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _vm._m(12),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.district,
-                      expression: "district"
-                    }
-                  ],
-                  staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                  attrs: {
-                    type: "text",
-                    id: "district",
-                    placeholder: "School District",
-                    name: "district"
-                  },
-                  domProps: { value: _vm.district },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.district = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.formErrors.district
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.district[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _vm._m(13),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.subject,
-                      expression: "subject"
-                    }
-                  ],
-                  staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                  attrs: {
-                    type: "text",
-                    id: "subject",
-                    placeholder: "School District",
-                    name: "subject"
-                  },
-                  domProps: { value: _vm.subject },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.subject = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.formErrors.subject
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.subject[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "block text-grey-darker text-sm font-bold mb-2",
-                    attrs: { for: "details" }
-                  },
-                  [_vm._v("Details")]
-                ),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.details,
-                      expression: "details"
-                    }
-                  ],
-                  staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                  attrs: {
-                    name: "details",
-                    id: "details",
-                    cols: "30",
-                    placeholder: "Details",
-                    rows: "5"
-                  },
-                  domProps: { value: _vm.details },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.details = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm.formErrors.details
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.details[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "mb-6" },
-              [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "block text-grey-darker text-sm font-bold mb-2",
-                    attrs: { for: "files" }
-                  },
-                  [_vm._v("Files")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "vue-dropzone",
-                  {
-                    ref: "dropzone",
-                    attrs: {
-                      id: "files",
-                      options: _vm.dropzoneOptions,
-                      useCustomSlot: true
-                    },
-                    on: { "vdropzone-sending": _vm.sendingFiles }
-                  },
-                  [
-                    _c("div", { staticClass: "dropzone-custom-content" }, [
-                      _c("h3", { staticClass: "dropzone-custom-title" }, [
-                        _vm._v("Drag and drop to upload content!")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "subtitle" }, [
-                        _vm._v(
-                          "...or click to select a file from your computer"
-                        )
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(14),
-                _vm._v(" "),
-                _vm.formErrors.file
-                  ? _c("form-error", {
-                      attrs: { error: _vm.formErrors.file[0] }
-                    })
-                  : _vm._e()
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-                class: {
-                  "cursor-default bg-blue-600 hover:bg-blue-600": _vm.loading
+          ]
+        },
+        [
+          _vm._m(9),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              attrs: { method: "POST", enctype: "multipart/form-data" },
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.submitForm($event)
+                }
+              }
+            },
+            [
+              _c("alert", {
+                attrs: {
+                  message: _vm.formMessage,
+                  type: _vm.formMessageType,
+                  visible: _vm.alertVisible
                 },
-                attrs: { type: "submit", disabled: _vm.loading }
-              },
-              [
-                _vm.loading
-                  ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                  : _vm._e(),
-                _vm._v(" Submit\n            ")
-              ]
-            ),
-            _vm._v(" "),
-            _vm.isInvalid()
-              ? _c(
-                  "a",
-                  {
+                on: { "alert-hide": _vm.hideAlert }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _vm._m(10),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.name,
+                        expression: "name"
+                      }
+                    ],
                     staticClass:
-                      "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
-                    attrs: { type: "submit" },
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    attrs: {
+                      type: "text",
+                      id: "name",
+                      placeholder: "Name",
+                      name: "name"
+                    },
+                    domProps: { value: _vm.name },
                     on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.prev()
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.name = $event.target.value
                       }
                     }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.name
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.name[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.email,
+                        expression: "email"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    attrs: {
+                      type: "text",
+                      id: "email",
+                      placeholder: "Email Address",
+                      name: "email"
+                    },
+                    domProps: { value: _vm.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.email = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.email
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.email[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.district,
+                        expression: "district"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    attrs: {
+                      type: "text",
+                      id: "district",
+                      placeholder: "School District",
+                      name: "district"
+                    },
+                    domProps: { value: _vm.district },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.district = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.district
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.district[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _vm._m(13),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.subject,
+                        expression: "subject"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    attrs: {
+                      type: "text",
+                      id: "subject",
+                      placeholder: "School District",
+                      name: "subject"
+                    },
+                    domProps: { value: _vm.subject },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.subject = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.subject
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.subject[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "block text-grey-darker text-sm font-bold mb-2",
+                      attrs: { for: "details" }
+                    },
+                    [_vm._v("Details")]
+                  ),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.details,
+                        expression: "details"
+                      }
+                    ],
+                    staticClass:
+                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    attrs: {
+                      name: "details",
+                      id: "details",
+                      cols: "30",
+                      placeholder: "Details",
+                      rows: "5"
+                    },
+                    domProps: { value: _vm.details },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.details = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.formErrors.details
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.details[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "block text-grey-darker text-sm font-bold mb-2",
+                      attrs: { for: "files" }
+                    },
+                    [_vm._v("Files")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "vue-dropzone",
+                    {
+                      ref: "dropzone",
+                      attrs: {
+                        id: "files",
+                        options: _vm.dropzoneOptions,
+                        useCustomSlot: true
+                      },
+                      on: {
+                        "vdropzone-sending": _vm.sendingFiles,
+                        "vdropzone-file-added": _vm.addedFile
+                      },
+                      model: {
+                        value: _vm.files,
+                        callback: function($$v) {
+                          _vm.files = $$v
+                        },
+                        expression: "files"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "dropzone-custom-content" }, [
+                        _c("h3", { staticClass: "dropzone-custom-title" }, [
+                          _vm._v("Drag and drop to upload content!")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "subtitle" }, [
+                          _vm._v(
+                            "...or click to select a file from your computer"
+                          )
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(14),
+                  _vm._v(" "),
+                  _vm.formErrors.file
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.file[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+                  class: {
+                    "cursor-default bg-blue-600 hover:bg-blue-600": _vm.loading
                   },
-                  [_vm._v(" Previous ")]
-                )
-              : _vm._e()
-          ],
-          1
-        )
-      ]
-    )
-  ])
+                  attrs: { type: "submit", disabled: _vm.loading }
+                },
+                [
+                  _vm.loading
+                    ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                    : _vm._e(),
+                  _vm._v(" Submit\n            ")
+                ]
+              ),
+              _vm._v(" "),
+              _vm.isInvalid()
+                ? _c(
+                    "a",
+                    {
+                      staticClass:
+                        "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
+                      attrs: { type: "submit" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.prev()
+                        }
+                      }
+                    },
+                    [_vm._v(" Previous ")]
+                  )
+                : _vm._e()
+            ],
+            1
+          )
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -30196,7 +30230,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Usage")]),
         _vm._v(
-          "\n                —\n                Questions about how our curriculum is to be used in the classroom or where to find curriculum\n                resources."
+          "\n                — Questions about how our curriculum is to be used in the classroom or where to find\n                curriculum resources."
         )
       ]
     )
@@ -30214,7 +30248,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Error")]),
         _vm._v(
-          "\n                —\n                Curriculum issues such as typos, incorrect label, or factual correctness."
+          "\n                — Curriculum issues such as typos, incorrect label, or factual correctness."
         )
       ]
     )
@@ -30232,7 +30266,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Integration Issue")]),
         _vm._v(
-          " —\n                                                                  Rostering or login issues related to integrations\n                                                                  with Clever, Canvas, Schoology, Google Classroom,\n                                                                  etc."
+          " — Rostering or login issues related to\n                                                                  integrations with Clever, Canvas, Schoology,\n                                                                  Google Classroom, etc."
         )
       ]
     )
@@ -30250,7 +30284,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Coupons, Specimens, Kits")]),
         _vm._v(
-          " —\n                                                                         Redeem coupons, report missing or damaged\n                                                                         materials."
+          " — Redeem coupons, report missing or\n                                                                         damaged materials."
         )
       ]
     )
@@ -30268,7 +30302,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Product Usage")]),
         _vm._v(
-          " —\n                                                              Questions like how do I do this, Where do I find that.\n                                                              But not about the curriculum."
+          " — Questions like how do I do this, Where do I\n                                                              find that. But not about the curriculum."
         )
       ]
     )
@@ -30304,7 +30338,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Other Issue")]),
         _vm._v(
-          " —\n                                                            Something is not working as it should, forgotten\n                                                            password, or other issue not listed above."
+          " — Something is not working as it should, forgotten\n                                                            password, or other issue not listed above."
         )
       ]
     )
@@ -42999,7 +43033,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
 
 
 /***/ })

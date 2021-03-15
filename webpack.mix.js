@@ -25,7 +25,7 @@ mix.js('resources/assets/js/contact_request.js', 'public/js')
     })
     .version()
     .browserSync({
-        proxy: "alsupport",
+        proxy: "http://support.activatelearning.local",
         files: [
             "public/js/*.js",
             "public/css/*.css",

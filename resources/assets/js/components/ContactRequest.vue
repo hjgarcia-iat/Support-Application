@@ -1,5 +1,6 @@
 <template>
     <div class="p-8">
+        <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
         <div v-show="step === 1">
             <div class="flex mb-4 items-center justify-between">
                 <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
@@ -16,9 +17,8 @@
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
                     for="reason_1"><strong>Curriculum Usage</strong>
-                    &mdash;
-                    Questions about how our curriculum is to be used in the classroom or where to find curriculum
-                    resources.</label>
+                    &mdash; Questions about how our curriculum is to be used in the classroom or where to find
+                    curriculum resources.</label>
                 </div>
                 <div class="flex items-center">
                     <input type="radio"
@@ -28,8 +28,7 @@
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
                     for="reason_2"><strong>Curriculum Error</strong>
-                    &mdash;
-                    Curriculum issues such as typos, incorrect label, or factual correctness.</label>
+                    &mdash; Curriculum issues such as typos, incorrect label, or factual correctness.</label>
                 </div>
 
                 <div class="flex items-center">
@@ -39,10 +38,9 @@
                            value="Integration"
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_3"><strong>Integration Issue</strong> &mdash;
-                                                                      Rostering or login issues related to integrations
-                                                                      with Clever, Canvas, Schoology, Google Classroom,
-                                                                      etc.</label>
+                    for="reason_3"><strong>Integration Issue</strong> &mdash; Rostering or login issues related to
+                                                                      integrations with Clever, Canvas, Schoology,
+                                                                      Google Classroom, etc.</label>
                 </div>
 
                 <div class="flex items-center">
@@ -52,9 +50,8 @@
                            value="Operations"
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_4"><strong>Coupons, Specimens, Kits</strong> &mdash;
-                                                                             Redeem coupons, report missing or damaged
-                                                                             materials.</label>
+                    for="reason_4"><strong>Coupons, Specimens, Kits</strong> &mdash; Redeem coupons, report missing or
+                                                                             damaged materials.</label>
                 </div>
 
                 <div class="flex items-center">
@@ -64,9 +61,8 @@
                            value="Product"
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_5"><strong>Product Usage</strong> &mdash;
-                                                                  Questions like how do I do this, Where do I find that.
-                                                                  But not about the curriculum.</label>
+                    for="reason_5"><strong>Product Usage</strong> &mdash; Questions like how do I do this, Where do I
+                                                                  find that. But not about the curriculum.</label>
                 </div>
 
                 <div class="flex items-center">
@@ -89,8 +85,7 @@
                            value="Other Issue"
                            v-model="reason"> <label
                     class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_7"><strong>Other Issue</strong> &mdash;
-                                                                Something is not working as it should, forgotten
+                    for="reason_7"><strong>Other Issue</strong> &mdash; Something is not working as it should, forgotten
                                                                 password, or other issue not listed above.</label>
                 </div>
 
@@ -192,7 +187,9 @@
                            for="files">Files</label>
                     <vue-dropzone ref="dropzone"
                                   @vdropzone-sending="sendingFiles"
+                                  @vdropzone-file-added="addedFile"
                                   id="files"
+                                  v-model="files"
                                   :options="dropzoneOptions"
                                   :useCustomSlot="true">
                         <div class="dropzone-custom-content">
@@ -240,6 +237,8 @@ export default {
     },
     data() {
         return {
+            contact_created: false,
+            files_uploaded: false,
             step: 1,
             id: '',
             reason: '',
@@ -248,14 +247,14 @@ export default {
             district: '',
             subject: '',
             details: '',
-            files: '',
+            files: [],
             loading: false,
             formErrors: {},
             formMessage: '',
             formMessageType: 'success',
-            alertVisible: true,
+            alertVisible: false,
             dropzoneOptions: {
-                url: "/files/upload",
+                url: "/files",
                 thumbnailWidth: 70,
                 thumbnailHeight: 70,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",
@@ -288,6 +287,8 @@ export default {
             this.alertVisible = false;
         },
         resetData() {
+            this.contact_created = false;
+            this.files_uploaded = false;
             this.id = '';
             this.reason = '';
             this.name = '';
@@ -295,7 +296,7 @@ export default {
             this.district = '';
             this.subject = '';
             this.details = '';
-            this.file = '';
+            this.files = [];
             this.loading = false;
             this.formErrors = {};
             this.formMessage = '';
@@ -303,12 +304,21 @@ export default {
         },
         //for dropzone
         sendingFiles(file, xhr, formData) {
-            formData.append('contact_id', this.id);
+            formData.append('id', this.id);
+        },
+        addedFile(file) {
+            this.files.push(file);
+        },
+        show_success(message) {
+            this.resetData();
+            this.alertVisible = true;
+            this.formMessageType = 'success';
+            this.step = 1;
+            this.formMessage = message;
+            this.loading = false;
         },
         submitForm() {
             this.loading = true;
-
-
             let formData = new FormData();
             const config = {
                 headers: {'content-type': 'multipart/form-data'}
@@ -322,27 +332,27 @@ export default {
             formData.append('details', this.details);
 
             axios.post('/contact-request', formData, config).then(response => {
-
-                //get the id being returned from the response and assign to the response.
-                this.id = response.data.id;
-                //process dropzone queue
-                this.$refs.dropzone.processQueue()
+                if(response.data.success === true) {
+                    this.id = response.data.id;
 
 
-                this.resetData();
-                this.alertVisible = true;
-                this.formMessageType = 'success';
-                this.formMessage = response.data.message;
-                this.loading = false;
+                    //show success message at the end
+                    this.show_success('Your request was processed.')
+                }
             }).catch(error => {
-                this.alertVisible = true;
-                this.formErrors = error.response.data.errors;
-                this.formMessageType = 'error';
-                this.formMessage = 'Please see errors below!';
-                this.loading = false;
+
+                if(error.response.status === 422) {
+                    this.alertVisible = true;
+                    this.formErrors = error.response.data.errors;
+                    this.formMessageType = 'error';
+                    this.formMessage = 'Please see errors below!';
+                    this.loading = false;
+                } else {
+
+                }
+
             });
         }
-
     }
 }
 </script>
