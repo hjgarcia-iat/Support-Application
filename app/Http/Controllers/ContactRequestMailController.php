@@ -7,11 +7,9 @@ use App\Mail\ContactRequest;
 
 class ContactRequestMailController extends Controller
 {
-    public function store($id)
+    public function store($id): \Illuminate\Http\JsonResponse
     {
-        $contact = Contact::find($id);
-    
-        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest($contact));
+        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new ContactRequest($id));
 
         return response()->json([
             'success' => true,

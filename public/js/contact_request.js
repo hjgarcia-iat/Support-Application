@@ -2179,12 +2179,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2220,7 +2214,10 @@ __webpack_require__.r(__webpack_exports__);
         thumbnailHeight: 70,
         acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",
         addRemoveLinks: true,
-        autoProcessQueue: false
+        autoProcessQueue: false,
+        headers: {
+          'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value
+        }
       }
     };
   },
@@ -2270,7 +2267,7 @@ __webpack_require__.r(__webpack_exports__);
     addedFile: function addedFile(file) {
       this.files.push(file);
     },
-    show_success: function show_success(message) {
+    showSuccess: function showSuccess(message) {
       this.resetData();
       this.alertVisible = true;
       this.formMessageType = 'success';
@@ -2278,37 +2275,60 @@ __webpack_require__.r(__webpack_exports__);
       this.formMessage = message;
       this.loading = false;
     },
-    submitForm: function submitForm() {
-      var _this = this;
-
-      this.loading = true;
+    showFormErrors: function showFormErrors(errors) {
+      this.alertVisible = true;
+      this.formErrors = errors;
+      this.formMessageType = 'error';
+      this.formMessage = 'Please see errors below!';
+      this.loading = false;
+    },
+    showError: function showError() {
+      this.resetData();
+      this.step = 1;
+      this.alertVisible = true;
+      this.formMessageType = 'error';
+      this.formMessage = 'There was an error please try again.';
+      this.loading = false;
+    },
+    getFormData: function getFormData() {
       var formData = new FormData();
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
-      };
       formData.append('reason', this.reason);
       formData.append('name', this.name);
       formData.append('email', this.email);
       formData.append('district', this.district);
       formData.append('subject', this.subject);
       formData.append('details', this.details);
-      axios.post('/contact-request', formData, config).then(function (response) {
-        if (response.data.success === true) {
-          _this.id = response.data.id; //show success message at the end
+      return formData;
+    },
+    submitForm: function submitForm() {
+      var _this = this;
 
-          _this.show_success('Your request was processed.');
+      this.loading = true;
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
         }
-      })["catch"](function (error) {
+      };
+      axios.post('/contact-request', this.getFormData(), config).then(function (response) {
+        if (response.data.success === true) {
+          _this.id = response.data.id;
+
+          _this.uploadImages();
+
+          _this.showSuccess('Your message was sent.');
+        }
+      }).then()["catch"](function (error) {
         if (error.response.status === 422) {
-          _this.alertVisible = true;
-          _this.formErrors = error.response.data.errors;
-          _this.formMessageType = 'error';
-          _this.formMessage = 'Please see errors below!';
-          _this.loading = false;
-        } else {}
+          _this.showFormErrors(error.response.data.errors);
+        } else {
+          _this.showError();
+        }
       });
+    },
+    uploadImages: function uploadImages() {
+      if (this.files.length > 0) {
+        this.$refs.dropzone.processQueue();
+      }
     }
   }
 });
@@ -29847,15 +29867,6 @@ var render = function() {
               }
             },
             [
-              _c("alert", {
-                attrs: {
-                  message: _vm.formMessage,
-                  type: _vm.formMessageType,
-                  visible: _vm.alertVisible
-                },
-                on: { "alert-hide": _vm.hideAlert }
-              }),
-              _vm._v(" "),
               _c(
                 "div",
                 { staticClass: "mb-6" },
@@ -30176,8 +30187,7 @@ var render = function() {
                     [_vm._v(" Previous ")]
                   )
                 : _vm._e()
-            ],
-            1
+            ]
           )
         ]
       )
@@ -30266,7 +30276,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Integration Issue")]),
         _vm._v(
-          " — Rostering or login issues related to\n                                                                  integrations with Clever, Canvas, Schoology,\n                                                                  Google Classroom, etc."
+          " — Rostering or login issues related to\n                integrations with Clever, Canvas, Schoology, Google Classroom, etc."
         )
       ]
     )
@@ -30284,7 +30294,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Coupons, Specimens, Kits")]),
         _vm._v(
-          " — Redeem coupons, report missing or\n                                                                         damaged materials."
+          " — Redeem coupons, report missing or\n                damaged materials."
         )
       ]
     )
@@ -30302,7 +30312,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Product Usage")]),
         _vm._v(
-          " — Questions like how do I do this, Where do I\n                                                              find that. But not about the curriculum."
+          " — Questions like how do I do this, Where do I\n                find that. But not about the curriculum."
         )
       ]
     )
@@ -30320,7 +30330,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Feedback/Feature Request")]),
         _vm._v(
-          " —\n                                                                         Ideas for improving our products or\n                                                                         providing feedback about our products and\n                                                                         services."
+          " —\n                Ideas for improving our products or providing feedback about our products and services."
         )
       ]
     )
@@ -30338,7 +30348,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Other Issue")]),
         _vm._v(
-          " — Something is not working as it should, forgotten\n                                                            password, or other issue not listed above."
+          " — Something is not working as it should, forgotten\n                password, or other issue not listed above."
         )
       ]
     )
@@ -43033,7 +43043,7 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/contact_request.js */"./resources/assets/js/contact_request.js");
 
 
 /***/ })
