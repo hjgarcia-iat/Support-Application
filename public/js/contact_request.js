@@ -2179,6 +2179,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2267,6 +2268,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     addedFile: function addedFile(file) {
       this.files.push(file);
+    },
+    uploadComplete: function uploadComplete(response) {
+      this.$refs.dropzone.removeAllFiles();
     },
     showSuccess: function showSuccess(message) {
       this.resetData();
@@ -30117,7 +30121,8 @@ var render = function() {
                       },
                       on: {
                         "vdropzone-sending": _vm.sendingFiles,
-                        "vdropzone-file-added": _vm.addedFile
+                        "vdropzone-file-added": _vm.addedFile,
+                        "vdropzone-complete": _vm.uploadComplete
                       },
                       model: {
                         value: _vm.files,

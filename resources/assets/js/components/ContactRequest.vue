@@ -182,6 +182,7 @@
                     <vue-dropzone ref="dropzone"
                         @vdropzone-sending="sendingFiles"
                         @vdropzone-file-added="addedFile"
+                        @vdropzone-complete="uploadComplete"
                         id="files"
                         v-model="files"
                         :options="dropzoneOptions"
@@ -306,6 +307,9 @@ export default {
         },
         addedFile(file) {
             this.files.push(file);
+        },
+        uploadComplete(response) {
+            this.$refs.dropzone.removeAllFiles();
         },
         showSuccess(message) {
             this.resetData();
