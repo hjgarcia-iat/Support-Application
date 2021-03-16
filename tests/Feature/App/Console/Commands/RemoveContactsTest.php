@@ -70,4 +70,10 @@ class RemoveContactsTest extends TestCase
         $this->seeEmailWasSent();
         $this->seeEmailContains("1 record was deleted.");
     }
+
+    public function test_it_will_not_send_out_email_if_no_record_is_found()
+    {
+        \Artisan::call('contacts:remove');
+        $this->seeEmailWasNotSent();
+    }
 }

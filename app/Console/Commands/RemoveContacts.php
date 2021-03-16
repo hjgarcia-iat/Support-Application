@@ -30,9 +30,8 @@ class RemoveContacts extends Command
 
                 $contact->delete();
             }
+
+            \Mail::to(env('DEV_EMAIL'))->send(new ContactsDeleted($count));
         }
-
-        \Mail::to(env('DEV_EMAIL'))->send(new ContactsDeleted($count));
-
     }
 }
