@@ -253,6 +253,7 @@ export default {
                 thumbnailHeight: 70,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",
                 addRemoveLinks: true,
+                parallelUploads: 5,
                 autoProcessQueue: false,
                 headers: {
                     'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value,
