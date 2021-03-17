@@ -2033,6 +2033,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_1___default.a);
@@ -2040,7 +2044,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
   name: "Calculator",
   data: function data() {
     return {
-      step: 1,
+      step: 2,
       number_of_teachers: 0,
       number_of_students: 0,
       one_year_dollar_savings: 0,
@@ -28827,43 +28831,53 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300" },
+              { staticClass: "text-center  border-2 border-blue-700" },
               [
                 _c(
-                  "h2",
-                  { staticClass: "text-4xl text-blue-700 font-medium" },
-                  [_vm._v("IQWST")]
+                  "p",
+                  { staticClass: "font-bold bg-blue-700 text-white py-1" },
+                  [_vm._v("Best Savings")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
-                  _vm._v("Interactive Digital Edition")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl font-bold" }, [
-                  _vm._v("6-Year")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscriptions")]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "text-2xl font-bold" }, [
-                  _vm._v("You would save")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                  _vm._v(
-                    _vm._s(_vm._f("currency")(_vm.six_year_dollar_savings))
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                  _vm._v(
-                    _vm._s(_vm._f("percent")(_vm.six_year_percentage_savings))
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("each year")])
+                _c("div", { staticClass: "p-4" }, [
+                  _c(
+                    "h2",
+                    { staticClass: "text-4xl text-blue-700 font-medium" },
+                    [_vm._v("IQWST")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [
+                    _vm._v("Interactive Digital Edition")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl font-bold" }, [
+                    _vm._v("6-Year")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [
+                    _vm._v("Subscriptions")
+                  ]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-2xl font-bold" }, [
+                    _vm._v("You would save")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("currency")(_vm.six_year_dollar_savings))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("percent")(_vm.six_year_percentage_savings))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("each year")])
+                ])
               ]
             )
           ]),
@@ -28874,7 +28888,9 @@ var render = function() {
               {
                 staticClass:
                   "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                attrs: { href: "" }
+                attrs: {
+                  href: "http://activatelearning.com/request-product-info/"
+                }
               },
               [_vm._v("Contact Us")]
             ),
@@ -28883,7 +28899,7 @@ var render = function() {
               "a",
               {
                 staticClass: "text-blue-700 hover:text-blue-500 font-bold",
-                attrs: { href: "" },
+                attrs: { href: "#" },
                 on: {
                   click: function($event) {
                     $event.preventDefault()

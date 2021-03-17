@@ -50,22 +50,26 @@
                     <p class="text-3xl text-orange-500">{{ three_year_percentage_savings | percent}}</p>
                     <p class="text-xl">each year</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300">
-                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">Interactive Digital Edition</p>
-                    <p class="text-3xl font-bold">6-Year</p>
-                    <p class="text-xl">Subscriptions</p>
-                    <h3 class="text-2xl font-bold">You would save</h3>
+                <div class="text-center  border-2 border-blue-700">
+                    <p class="font-bold bg-blue-700 text-white py-1">Best Savings</p>
+                    <div class="p-4">
+                        <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                        <p class="text-xl">Interactive Digital Edition</p>
+                        <p class="text-3xl font-bold">6-Year</p>
+                        <p class="text-xl">Subscriptions</p>
+                        <h3 class="text-2xl font-bold">You would save</h3>
 
-                    <p class="text-3xl text-orange-500">{{ six_year_dollar_savings | currency }}</p>
-                    <p class="text-xl">&ndash; or &ndash;</p>
-                    <p class="text-3xl text-orange-500">{{ six_year_percentage_savings | percent }}</p>
-                    <p class="text-xl">each year</p>
+                        <p class="text-3xl text-orange-500">{{ six_year_dollar_savings | currency }}</p>
+                        <p class="text-xl">&ndash; or &ndash;</p>
+                        <p class="text-3xl text-orange-500">{{ six_year_percentage_savings | percent }}</p>
+                        <p class="text-xl">each year</p>
+                    </div>
+
                 </div>
             </div>
             <div class="mt-6 flex justify-end items-center">
-                <a href="" class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">Contact Us</a>
-                <a href="" class="text-blue-700 hover:text-blue-500 font-bold" @click.prevent="step=1">Previous</a>
+                <a href="http://activatelearning.com/request-product-info/" class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">Contact Us</a>
+                <a href="#" class="text-blue-700 hover:text-blue-500 font-bold" @click.prevent="step=1">Previous</a>
             </div>
 
         </div>
@@ -82,7 +86,7 @@ export default {
     name: "Calculator",
     data() {
         return {
-            step: 1,
+            step: 2,
             number_of_teachers: 0,
             number_of_students: 0,
             one_year_dollar_savings: 0,
