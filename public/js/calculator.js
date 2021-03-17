@@ -2079,6 +2079,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
         return;
       }
 
+      this.hideAlert();
       this.step = 2;
       this.one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
       this.one_year_percentage_savings = this.one_year_dollar_savings / (this.number_of_students * 25.172);

@@ -120,6 +120,7 @@ export default {
                 return;
             }
 
+            this.hideAlert();
             this.step = 2;
 
             this.one_year_dollar_savings = (this.number_of_students * 25.172)-((this.number_of_students * 15.35)+(this.number_of_teachers*80));
