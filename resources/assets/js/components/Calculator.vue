@@ -25,9 +25,9 @@
         </div>
         <div v-if="step === 2">
             <div class="flex gap-3 mt-6">
-                <div class="text-center p-4 border-2 border-gray-300">
+                <div class="text-center p-4 border-2 border-gray-300 flex-1">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -37,9 +37,9 @@
                     <p class="text-3xl text-orange-500">{{ one_year_percentage_savings | percent }}</p>
                     <p class="text-xl">each year</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300">
+                <div class="text-center p-4 border-2 border-gray-300 flex-1">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -49,11 +49,11 @@
                     <p class="text-3xl text-orange-500">{{ three_year_percentage_savings | percent}}</p>
                     <p class="text-xl">each year</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700">
+                <div class="text-center  border-2 border-blue-700 flex-1">
                     <p class="font-bold bg-blue-700 text-white py-1">Best Savings</p>
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                        <p class="text-xl">Interactive Digital Edition</p>
+                        <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
                         <h3 class="text-2xl font-bold">You would save</h3>

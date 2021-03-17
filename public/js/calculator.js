@@ -28746,7 +28746,9 @@ var render = function() {
           _c("div", { staticClass: "flex gap-3 mt-6" }, [
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300" },
+              {
+                staticClass: "text-center p-4 border-2 border-gray-300 flex-1"
+              },
               [
                 _c(
                   "h2",
@@ -28754,15 +28756,13 @@ var render = function() {
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
-                  _vm._v("Interactive Digital Edition")
-                ]),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-3xl font-bold" }, [
                   _vm._v("1-Year")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscriptions")]),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
                 _vm._v(" "),
                 _c("h3", { staticClass: "text-2xl font-bold" }, [
                   _vm._v("You would save")
@@ -28788,7 +28788,9 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300" },
+              {
+                staticClass: "text-center p-4 border-2 border-gray-300 flex-1"
+              },
               [
                 _c(
                   "h2",
@@ -28796,15 +28798,13 @@ var render = function() {
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
-                  _vm._v("Interactive Digital Edition")
-                ]),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-3xl font-bold" }, [
                   _vm._v("3-Year")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscriptions")]),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
                 _vm._v(" "),
                 _c("h3", { staticClass: "text-2xl font-bold" }, [
                   _vm._v("You would save")
@@ -28830,7 +28830,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center  border-2 border-blue-700" },
+              { staticClass: "text-center  border-2 border-blue-700 flex-1" },
               [
                 _c(
                   "p",
@@ -28845,17 +28845,13 @@ var render = function() {
                     [_vm._v("IQWST")]
                   ),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
-                    _vm._v("Interactive Digital Edition")
-                  ]),
+                  _vm._m(2),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl font-bold" }, [
                     _vm._v("6-Year")
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
-                    _vm._v("Subscriptions")
-                  ]),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
                   _vm._v(" "),
                   _c("h3", { staticClass: "text-2xl font-bold" }, [
                     _vm._v("You would save")
@@ -28913,7 +28909,41 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-xl" }, [
+      _vm._v("IDE "),
+      _c("small", { staticClass: "text-sm text-gray-700 block" }, [
+        _vm._v("(Interactive Digital Edition)")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-xl" }, [
+      _vm._v("IDE "),
+      _c("small", { staticClass: "text-sm text-gray-700 block" }, [
+        _vm._v("(Interactive Digital Edition)")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-xl" }, [
+      _vm._v("IDE "),
+      _c("small", { staticClass: "text-sm text-gray-700 block" }, [
+        _vm._v("(Interactive Digital Edition)")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
