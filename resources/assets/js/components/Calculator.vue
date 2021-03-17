@@ -86,7 +86,7 @@ export default {
     name: "Calculator",
     data() {
         return {
-            step: 2,
+            step: 1,
             number_of_teachers: 0,
             number_of_students: 0,
             one_year_dollar_savings: 0,
