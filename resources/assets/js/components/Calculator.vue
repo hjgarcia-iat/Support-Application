@@ -21,7 +21,7 @@
             </div>
 
             <div class="mt-6">
-                <button type="submit" @click="calculate" class="rounded py-2 px-3 bg-gray-400 bg-blue-700 hover:bg-blue-500 text-white">Calculate</button>
+                <button :disabled="number_of_students <= 0 && number_of_teachers <= 0" type="submit" @click="calculate" class="rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto" :class="{'cursor-pointer bg-blue-700': number_of_students > 0 && number_of_teachers > 0}">Calculate</button>
             </div>
         </div>
         <div v-if="step === 2">

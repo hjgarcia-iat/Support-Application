@@ -28705,8 +28705,16 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  "rounded py-2 px-3 bg-gray-400 bg-blue-700 hover:bg-blue-500 text-white",
-                attrs: { type: "submit" },
+                  "rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto",
+                class: {
+                  "cursor-pointer bg-blue-700":
+                    _vm.number_of_students > 0 && _vm.number_of_teachers > 0
+                },
+                attrs: {
+                  disabled:
+                    _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+                  type: "submit"
+                },
                 on: { click: _vm.calculate }
               },
               [_vm._v("Calculate")]
