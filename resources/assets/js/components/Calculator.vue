@@ -1,5 +1,6 @@
 <template>
     <div class="p-6">
+        <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
         <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
         <div v-if="step === 1" class="border-t-2 border-black py-4">
 
@@ -24,10 +25,13 @@
             </div>
         </div>
         <div v-if="step === 2">
-            <div class="flex gap-3 mt-6">
-                <div class="text-center p-4 border-2 border-gray-300 flex-1">
+            <div class="grid mt-6">
+                <div class="mx-2">&nbsp;</div>
+                <div class="mx-2">&nbsp;</div>
+                <div class="mx-2"><p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p></div>
+                <div class="text-center p-4 border-2 border-gray-300 mx-2">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
+                    <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -37,9 +41,9 @@
                     <p class="text-3xl text-orange-500">{{ one_year_percentage_savings | percent }}</p>
                     <p class="text-xl">each year</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300 flex-1">
+                <div class="text-center p-4 border-2 border-gray-300 mx-2">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
+                    <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -47,13 +51,12 @@
                     <p class="text-3xl text-orange-500">{{ three_year_dollar_savings | currency }}</p>
                     <p class="text-xl">&ndash; or &ndash;</p>
                     <p class="text-3xl text-orange-500">{{ three_year_percentage_savings | percent}}</p>
-                    <p class="text-xl">each year</p>
+                    <p class="text-xl">over 3 years</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700 flex-1">
-                    <p class="font-bold bg-blue-700 text-white py-1">Best Savings</p>
+                <div class="text-center  border-2 border-blue-700 mx-2">
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                        <p class="text-xl">IDE <small class="text-sm text-gray-700 block">(Interactive Digital Edition)</small></p>
+                        <p class="text-xl">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
                         <h3 class="text-2xl font-bold">You would save</h3>
@@ -61,7 +64,7 @@
                         <p class="text-3xl text-orange-500">{{ six_year_dollar_savings | currency }}</p>
                         <p class="text-xl">&ndash; or &ndash;</p>
                         <p class="text-3xl text-orange-500">{{ six_year_percentage_savings | percent }}</p>
-                        <p class="text-xl">each year</p>
+                        <p class="text-xl">over 6 years</p>
                     </div>
 
                 </div>
@@ -77,14 +80,22 @@
 
 <script>
 import Vue from 'vue'
+import Alert from './partials/FormAlert.vue'
 import Vue2Filters from 'vue2-filters'
+import FormError from "./partials/FormError";
 
 Vue.use(Vue2Filters)
 
 export default {
+    components: {
+        Alert
+    },
     name: "Calculator",
     data() {
         return {
+            formMessage: '',
+            formMessageType: 'success',
+            alertVisible: false,
             step: 1,
             number_of_teachers: 0,
             number_of_students: 0,
@@ -97,7 +108,18 @@ export default {
         }
     },
     methods: {
+        hideAlert() {
+            this.alertVisible = false;
+        },
         calculate() {
+
+            if(this.number_of_teachers > this.number_of_students) {
+                this.formMessage = 'The number of teachers cannot be higher than the number of students.'
+                this.formMessageType = 'error';
+                this.alertVisible = true;
+                return;
+            }
+
             this.step = 2;
 
             this.one_year_dollar_savings = (this.number_of_students * 25.172)-((this.number_of_students * 15.35)+(this.number_of_teachers*80));
@@ -116,3 +138,10 @@ export default {
     }
 }
 </script>
+
+<style>
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+</style>
