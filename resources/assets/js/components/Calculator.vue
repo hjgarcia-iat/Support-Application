@@ -1,10 +1,9 @@
 <template>
     <div class="p-6">
-        <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate your digital Savings</h1>
+        <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
         <div v-if="step === 1" class="border-t-2 border-black py-4">
 
-            <p class="text-2xl mb-4">Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital
-                Edition.
+            <p class="text-2xl mb-4">Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital Edition.
             </p>
 
             <div class="mb-3">

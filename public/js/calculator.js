@@ -2036,7 +2036,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_1___default.a);
@@ -2044,7 +2043,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
   name: "Calculator",
   data: function data() {
     return {
-      step: 2,
+      step: 1,
       number_of_teachers: 0,
       number_of_students: 0,
       one_year_dollar_savings: 0,
@@ -28650,14 +28649,14 @@ var render = function() {
     _c(
       "h1",
       { staticClass: "text-5xl text-blue-700 font-medium text-center" },
-      [_vm._v("Calculate your digital Savings")]
+      [_vm._v("Calculate Your Digital Savings")]
     ),
     _vm._v(" "),
     _vm.step === 1
       ? _c("div", { staticClass: "border-t-2 border-black py-4" }, [
           _c("p", { staticClass: "text-2xl mb-4" }, [
             _vm._v(
-              "Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital\n            Edition.\n        "
+              "Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital Edition.\n        "
             )
           ]),
           _vm._v(" "),
