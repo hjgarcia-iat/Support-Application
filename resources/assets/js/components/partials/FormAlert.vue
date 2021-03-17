@@ -1,5 +1,5 @@
 <template>
-    <div class="border-l-4 p-4 mb-6"
+    <div class="border-l-4 p-4 mb-6 relative"
             :class="{'bg-green-200 border-green-800 text-green-800' : type==='success', 'bg-red-200 border-red-800 text-red-800' : type==='error'}"
             v-if="message"
             v-show="visible"
@@ -11,7 +11,7 @@
             <a href="http://activatelearning.com">Activate Learning</a>
         </p>
 
-        <a href="" @click.prevent="hide" class="no-underline float-right" :class="{'text-green-dark' : type==='success', 'text-red-dark' : type==='error'}">
+        <a href="" @click.prevent="hide" class="no-underline absolute close-button" :class="{'text-green-dark' : type==='success', 'text-red-dark' : type==='error'}">
             <i class="fa fa-remove"></i>
         </a>
     </div>
@@ -27,3 +27,10 @@
         }
     }
 </script>
+
+<style>
+.close-button {
+    top: 0.625rem;
+    right: 0.625rem;
+}
+</style>

@@ -2227,20 +2227,16 @@ __webpack_require__.r(__webpack_exports__);
     selectFile: function selectFile(e) {
       this.file = e.target.files[0];
     },
-    isInvalid: function isInvalid() {
-      if (this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '') {
-        return false;
-      }
-
-      return true;
+    canStepBack: function canStepBack() {
+      return !(this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '');
     },
     disabled: function disabled() {
       return this.reason !== "";
     },
-    prev: function prev() {
+    previousStep: function previousStep() {
       this.step--;
     },
-    next: function next() {
+    nextStep: function nextStep() {
       this.step++;
     },
     hideAlert: function hideAlert() {
@@ -2413,6 +2409,25 @@ exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base
 
 // module
 exports.push([module.i, "/*\n * The MIT License\n * Copyright (c) 2012 Matias Meno <m@tias.me>\n */\n\n@-webkit-keyframes passing-through {\n  0% {\n    opacity: 0;\n    transform: translateY(40px);\n  }\n\n  30%, 70% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translateY(-40px);\n  }\n}\n\n@keyframes passing-through {\n  0% {\n    opacity: 0;\n    transform: translateY(40px);\n  }\n\n  30%, 70% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translateY(-40px);\n  }\n}\n\n@-webkit-keyframes slide-in {\n  0% {\n    opacity: 0;\n    transform: translateY(40px);\n  }\n\n  30% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@keyframes slide-in {\n  0% {\n    opacity: 0;\n    transform: translateY(40px);\n  }\n\n  30% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@-webkit-keyframes pulse {\n  0% {\n    transform: scale(1);\n  }\n\n  10% {\n    transform: scale(1.1);\n  }\n\n  20% {\n    transform: scale(1);\n  }\n}\n\n@keyframes pulse {\n  0% {\n    transform: scale(1);\n  }\n\n  10% {\n    transform: scale(1.1);\n  }\n\n  20% {\n    transform: scale(1);\n  }\n}\n\n.dropzone, .dropzone * {\n  box-sizing: border-box;\n}\n\n.dropzone {\n  min-height: 150px;\n  border: 2px solid rgba(0, 0, 0, 0.3);\n  background: white;\n  padding: 20px 20px;\n}\n\n.dropzone.dz-clickable {\n  cursor: pointer;\n}\n\n.dropzone.dz-clickable * {\n  cursor: default;\n}\n\n.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {\n  cursor: pointer;\n}\n\n.dropzone.dz-started .dz-message {\n  display: none;\n}\n\n.dropzone.dz-drag-hover {\n  border-style: solid;\n}\n\n.dropzone.dz-drag-hover .dz-message {\n  opacity: 0.5;\n}\n\n.dropzone .dz-message {\n  text-align: center;\n  margin: 2em 0;\n}\n\n.dropzone .dz-preview {\n  position: relative;\n  display: inline-block;\n  vertical-align: top;\n  margin: 16px;\n  min-height: 100px;\n}\n\n.dropzone .dz-preview:hover {\n  z-index: 1000;\n}\n\n.dropzone .dz-preview:hover .dz-details {\n  opacity: 1;\n}\n\n.dropzone .dz-preview.dz-file-preview .dz-image {\n  border-radius: 20px;\n  background: #999;\n  background: linear-gradient(to bottom, #eee, #ddd);\n}\n\n.dropzone .dz-preview.dz-file-preview .dz-details {\n  opacity: 1;\n}\n\n.dropzone .dz-preview.dz-image-preview {\n  background: white;\n}\n\n.dropzone .dz-preview.dz-image-preview .dz-details {\n  transition: opacity 0.2s linear;\n}\n\n.dropzone .dz-preview .dz-remove {\n  font-size: 14px;\n  text-align: center;\n  display: block;\n  cursor: pointer;\n  border: none;\n}\n\n.dropzone .dz-preview .dz-remove:hover {\n  text-decoration: underline;\n}\n\n.dropzone .dz-preview:hover .dz-details {\n  opacity: 1;\n}\n\n.dropzone .dz-preview .dz-details {\n  z-index: 20;\n  position: absolute;\n  top: 0;\n  left: 0;\n  opacity: 0;\n  font-size: 13px;\n  min-width: 100%;\n  max-width: 100%;\n  padding: 2em 1em;\n  text-align: center;\n  color: rgba(0, 0, 0, 0.9);\n  line-height: 150%;\n}\n\n.dropzone .dz-preview .dz-details .dz-size {\n  margin-bottom: 1em;\n  font-size: 16px;\n}\n\n.dropzone .dz-preview .dz-details .dz-filename {\n  white-space: nowrap;\n}\n\n.dropzone .dz-preview .dz-details .dz-filename:hover span {\n  border: 1px solid rgba(200, 200, 200, 0.8);\n  background-color: rgba(255, 255, 255, 0.8);\n}\n\n.dropzone .dz-preview .dz-details .dz-filename:not(:hover) {\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.dropzone .dz-preview .dz-details .dz-filename:not(:hover) span {\n  border: 1px solid transparent;\n}\n\n.dropzone .dz-preview .dz-details .dz-filename span, .dropzone .dz-preview .dz-details .dz-size span {\n  background-color: rgba(255, 255, 255, 0.4);\n  padding: 0 0.4em;\n  border-radius: 3px;\n}\n\n.dropzone .dz-preview:hover .dz-image img {\n  transform: scale(1.05, 1.05);\n  -webkit-filter: blur(8px);\n  filter: blur(8px);\n}\n\n.dropzone .dz-preview .dz-image {\n  border-radius: 20px;\n  overflow: hidden;\n  width: 120px;\n  height: 120px;\n  position: relative;\n  display: block;\n  z-index: 10;\n}\n\n.dropzone .dz-preview .dz-image img {\n  display: block;\n}\n\n.dropzone .dz-preview.dz-success .dz-success-mark {\n  -webkit-animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n  animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.dropzone .dz-preview.dz-error .dz-error-mark {\n  opacity: 1;\n  -webkit-animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n  animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);\n}\n\n.dropzone .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark {\n  pointer-events: none;\n  opacity: 0;\n  z-index: 500;\n  position: absolute;\n  display: block;\n  top: 50%;\n  left: 50%;\n  margin-left: -27px;\n  margin-top: -27px;\n}\n\n.dropzone .dz-preview .dz-success-mark svg, .dropzone .dz-preview .dz-error-mark svg {\n  display: block;\n  width: 54px;\n  height: 54px;\n}\n\n.dropzone .dz-preview.dz-processing .dz-progress {\n  opacity: 1;\n  transition: all 0.2s linear;\n}\n\n.dropzone .dz-preview.dz-complete .dz-progress {\n  opacity: 0;\n  transition: opacity 0.4s ease-in;\n}\n\n.dropzone .dz-preview:not(.dz-processing) .dz-progress {\n  -webkit-animation: pulse 6s ease infinite;\n  animation: pulse 6s ease infinite;\n}\n\n.dropzone .dz-preview .dz-progress {\n  opacity: 1;\n  z-index: 1000;\n  pointer-events: none;\n  position: absolute;\n  height: 16px;\n  left: 50%;\n  top: 50%;\n  margin-top: -8px;\n  width: 80px;\n  margin-left: -40px;\n  background: rgba(255, 255, 255, 0.9);\n  -webkit-transform: scale(1);\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.dropzone .dz-preview .dz-progress .dz-upload {\n  background: #333;\n  background: linear-gradient(to bottom, #666, #444);\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 0;\n  transition: width 300ms ease-in-out;\n}\n\n.dropzone .dz-preview.dz-error .dz-error-message {\n  display: block;\n}\n\n.dropzone .dz-preview.dz-error:hover .dz-error-message {\n  opacity: 1;\n  pointer-events: auto;\n}\n\n.dropzone .dz-preview .dz-error-message {\n  pointer-events: none;\n  z-index: 1000;\n  position: absolute;\n  display: block;\n  display: none;\n  opacity: 0;\n  transition: opacity 0.3s ease;\n  border-radius: 8px;\n  font-size: 13px;\n  top: 130px;\n  left: -10px;\n  width: 140px;\n  background: #be2626;\n  background: linear-gradient(to bottom, #be2626, #a92222);\n  padding: 0.5em 1.2em;\n  color: white;\n}\n\n.dropzone .dz-preview .dz-error-message:after {\n  content: '';\n  position: absolute;\n  top: -6px;\n  left: 64px;\n  width: 0;\n  height: 0;\n  border-left: 6px solid transparent;\n  border-right: 6px solid transparent;\n  border-bottom: 6px solid #be2626;\n}\n\n.vue-dropzone{\n  border:2px solid #e5e5e5;\n  font-family:Arial,sans-serif;\n  letter-spacing:.2px;\n  color:#777;\n  transition:.2s linear\n}\n\n.vue-dropzone:hover{\n  background-color:#f6f6f6\n}\n\n.vue-dropzone>i{\n  color:#ccc\n}\n\n.vue-dropzone>.dz-preview .dz-image{\n  border-radius:0;\n  width:100%;\n  height:100%\n}\n\n.vue-dropzone>.dz-preview .dz-image img:not([src]){\n  width:200px;\n  height:200px\n}\n\n.vue-dropzone>.dz-preview .dz-image:hover img{\n  transform:none;\n  -webkit-filter:none\n}\n\n.vue-dropzone>.dz-preview .dz-details{\n  bottom:0;\n  top:0;\n  color:#fff;\n  background-color:rgba(33,150,243,.8);\n  transition:opacity .2s linear;\n  text-align:left\n}\n\n.vue-dropzone>.dz-preview .dz-details .dz-filename{\n  overflow:hidden\n}\n\n.vue-dropzone>.dz-preview .dz-details .dz-filename span,.vue-dropzone>.dz-preview .dz-details .dz-size span{\n  background-color:transparent\n}\n\n.vue-dropzone>.dz-preview .dz-details .dz-filename:not(:hover) span{\n  border:none\n}\n\n.vue-dropzone>.dz-preview .dz-details .dz-filename:hover span{\n  background-color:transparent;\n  border:none\n}\n\n.vue-dropzone>.dz-preview .dz-progress .dz-upload{\n  background:#ccc\n}\n\n.vue-dropzone>.dz-preview .dz-remove{\n  position:absolute;\n  z-index:30;\n  color:#fff;\n  margin-left:15px;\n  padding:10px;\n  top:inherit;\n  bottom:15px;\n  border:2px #fff solid;\n  text-decoration:none;\n  text-transform:uppercase;\n  font-size:.8rem;\n  font-weight:800;\n  letter-spacing:1.1px;\n  opacity:0\n}\n\n.vue-dropzone>.dz-preview:hover .dz-remove{\n  opacity:1\n}\n\n.vue-dropzone>.dz-preview .dz-error-mark,.vue-dropzone>.dz-preview .dz-success-mark{\n  margin-left:auto;\n  margin-top:auto;\n  width:100%;\n  top:35%;\n  left:0\n}\n\n.vue-dropzone>.dz-preview .dz-error-mark svg,.vue-dropzone>.dz-preview .dz-success-mark svg{\n  margin-left:auto;\n  margin-right:auto\n}\n\n.vue-dropzone>.dz-preview .dz-error-message{\n  margin-left:auto;\n  margin-right:auto;\n  left:0;\n  width:100%;\n  text-align:center\n}\n\n.vue-dropzone>.dz-preview .dz-error-message:after{\n  display:none\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
 
 // exports
 
@@ -20064,6 +20079,36 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormAlert.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -29604,279 +29649,285 @@ var render = function() {
         on: { "alert-hide": _vm.hideAlert }
       }),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.step === 1,
-              expression: "step === 1"
-            }
-          ]
-        },
-        [
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "mb-6" },
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_1",
-                    value: "Curriculum"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Curriculum") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Curriculum"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_2",
-                    value: "Errata"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Errata") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Errata"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_3",
-                    value: "Integration"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Integration") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Integration"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(4)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_4",
-                    value: "Operations"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Operations") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Operations"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(5)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_5",
-                    value: "Product"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Product") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Product"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(6)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_6",
-                    value: "Feedback"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Feedback") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Feedback"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(7)
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.reason,
-                      expression: "reason"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "reason_7",
-                    value: "Other Issue"
-                  },
-                  domProps: { checked: _vm._q(_vm.reason, "Other Issue") },
-                  on: {
-                    change: function($event) {
-                      _vm.reason = "Other Issue"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _vm._m(8)
-              ]),
-              _vm._v(" "),
-              _vm.formErrors.reason
-                ? _c("form-error", {
-                    attrs: { error: _vm.formErrors.reason[0] }
-                  })
-                : _vm._e()
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass:
-                "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-              class: {
-                "cursor-default hover:bg-blue-600": !_vm.disabled(),
-                "hover:bg-blue-800": _vm.disabled()
-              },
-              attrs: { type: "submit", disabled: !_vm.disabled() },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.next()
-                }
-              }
-            },
-            [_vm._v("\n            Next\n        ")]
-          )
-        ]
-      ),
+      _c("div", { staticClass: "flex mb-4 items-center justify-between" }, [
+        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
+          _vm._v("Contact Us")
+        ]),
+        _vm._v(" "),
+        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
+          _vm._v(_vm._s(_vm.step) + " of 2")
+        ])
+      ]),
       _vm._v(" "),
       _c(
-        "div",
+        "form",
         {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.step === 2,
-              expression: "step === 2"
+          attrs: { method: "POST", enctype: "multipart/form-data" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.submitForm($event)
             }
-          ]
+          }
         },
         [
-          _vm._m(9),
-          _vm._v(" "),
           _c(
-            "form",
+            "div",
             {
-              attrs: { method: "POST", enctype: "multipart/form-data" },
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.submitForm($event)
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.step === 1,
+                  expression: "step === 1"
                 }
-              }
+              ]
             },
             [
               _c(
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(10),
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_1",
+                        value: "Curriculum"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Curriculum") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Curriculum"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(1)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_2",
+                        value: "Errata"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Errata") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Errata"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(2)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_3",
+                        value: "Integration"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Integration") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Integration"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(3)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_4",
+                        value: "Operations"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Operations") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Operations"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(4)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_5",
+                        value: "Product"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Product") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Product"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(5)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_6",
+                        value: "Feedback"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Feedback") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Feedback"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(6)
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex items-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.reason,
+                          expression: "reason"
+                        }
+                      ],
+                      attrs: {
+                        type: "radio",
+                        name: "reason",
+                        id: "reason_7",
+                        value: "Other Issue"
+                      },
+                      domProps: { checked: _vm._q(_vm.reason, "Other Issue") },
+                      on: {
+                        change: function($event) {
+                          _vm.reason = "Other Issue"
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(7)
+                  ]),
+                  _vm._v(" "),
+                  _vm.formErrors.reason
+                    ? _c("form-error", {
+                        attrs: { error: _vm.formErrors.reason[0] }
+                      })
+                    : _vm._e()
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+                  class: {
+                    "cursor-default hover:bg-blue-600": !_vm.disabled(),
+                    "hover:bg-blue-800": _vm.disabled()
+                  },
+                  attrs: { type: "submit", disabled: !_vm.disabled() },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.nextStep()
+                    }
+                  }
+                },
+                [_vm._v("\n                Next Step\n            ")]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.step === 2,
+                  expression: "step === 2"
+                }
+              ]
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "mb-6" },
+                [
+                  _vm._m(8),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -29919,7 +29970,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(11),
+                  _vm._m(9),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -29962,7 +30013,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(12),
+                  _vm._m(10),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -30005,7 +30056,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _vm._m(13),
+                  _vm._m(11),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -30048,15 +30099,7 @@ var render = function() {
                 "div",
                 { staticClass: "mb-6" },
                 [
-                  _c(
-                    "label",
-                    {
-                      staticClass:
-                        "block text-grey-darker text-sm font-bold mb-2",
-                      attrs: { for: "details" }
-                    },
-                    [_vm._v("Details")]
-                  ),
+                  _vm._m(12),
                   _vm._v(" "),
                   _c("textarea", {
                     directives: [
@@ -30147,7 +30190,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(14),
+                  _vm._m(13),
                   _vm._v(" "),
                   _vm.formErrors.file
                     ? _c("form-error", {
@@ -30176,7 +30219,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm.isInvalid()
+              _vm.canStepBack()
                 ? _c(
                     "a",
                     {
@@ -30186,11 +30229,11 @@ var render = function() {
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          return _vm.prev()
+                          return _vm.previousStep()
                         }
                       }
                     },
-                    [_vm._v(" Previous ")]
+                    [_vm._v(" Previous Step ")]
                   )
                 : _vm._e()
             ]
@@ -30202,24 +30245,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex mb-4 items-center justify-between" },
-      [
-        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
-          _vm._v("Contact Us")
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
-          _vm._v("1 of 2")
-        ])
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -30246,7 +30271,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Usage")]),
         _vm._v(
-          "\n                — Questions about how our curriculum is to be used in the classroom or where to find\n                curriculum resources."
+          "\n                    — Questions about how our curriculum is to be used in the classroom or where to find\n                    curriculum resources."
         )
       ]
     )
@@ -30264,7 +30289,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Error")]),
         _vm._v(
-          "\n                — Curriculum issues such as typos, incorrect label, or factual correctness."
+          "\n                    — Curriculum issues such as typos, incorrect label, or factual correctness."
         )
       ]
     )
@@ -30282,7 +30307,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Integration Issue")]),
         _vm._v(
-          " — Rostering or login issues related to\n                integrations with Clever, Canvas, Schoology, Google Classroom, etc."
+          " — Rostering or login issues related to\n                    integrations with Clever, Canvas, Schoology, Google Classroom, etc."
         )
       ]
     )
@@ -30300,7 +30325,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Coupons, Specimens, Kits")]),
         _vm._v(
-          " — Redeem coupons, report missing or\n                damaged materials."
+          " — Redeem coupons, report missing\n                    or damaged materials."
         )
       ]
     )
@@ -30318,7 +30343,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Product Usage")]),
         _vm._v(
-          " — Questions like how do I do this, Where do I\n                find that. But not about the curriculum."
+          " — Questions like how do I do this, Where do\n                    I find that. But not about the curriculum."
         )
       ]
     )
@@ -30336,7 +30361,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Feedback/Feature Request")]),
         _vm._v(
-          " —\n                Ideas for improving our products or providing feedback about our products and services."
+          " —\n                    Ideas for improving our products or providing feedback about our products and services."
         )
       ]
     )
@@ -30354,26 +30379,8 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Other Issue")]),
         _vm._v(
-          " — Something is not working as it should, forgotten\n                password, or other issue not listed above."
+          " — Something is not working as it should,\n                    forgotten password, or other issue not listed above."
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "flex mb-4 items-center justify-between" },
-      [
-        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
-          _vm._v("Contact Us")
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
-          _vm._v("2 of 2")
-        ])
       ]
     )
   },
@@ -30446,6 +30453,22 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "details" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
+        _vm._v(" Details")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
       "div",
       { staticClass: "flex justify-between items-center text-gray-500" },
       [_c("span", [_vm._v("Accepted file type: jpg, png, gif, doc, pdf")])]
@@ -30485,7 +30508,7 @@ var render = function() {
               expression: "visible"
             }
           ],
-          staticClass: "border-l-4 p-4 mb-6",
+          staticClass: "border-l-4 p-4 mb-6 relative",
           class: {
             "bg-green-200 border-green-800 text-green-800":
               _vm.type === "success",
@@ -30507,7 +30530,7 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass: "no-underline float-right",
+              staticClass: "no-underline absolute close-button",
               class: {
                 "text-green-dark": _vm.type === "success",
                 "text-red-dark": _vm.type === "error"
@@ -42887,7 +42910,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FormAlert_vue_vue_type_template_id_0647d0f2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormAlert.vue?vue&type=template&id=0647d0f2& */ "./resources/assets/js/components/partials/FormAlert.vue?vue&type=template&id=0647d0f2&");
 /* harmony import */ var _FormAlert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormAlert.vue?vue&type=script&lang=js& */ "./resources/assets/js/components/partials/FormAlert.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormAlert.vue?vue&type=style&index=0&lang=css& */ "./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -42895,7 +42920,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _FormAlert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _FormAlert_vue_vue_type_template_id_0647d0f2___WEBPACK_IMPORTED_MODULE_0__["render"],
   _FormAlert_vue_vue_type_template_id_0647d0f2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -42924,6 +42949,22 @@ component.options.__file = "resources/assets/js/components/partials/FormAlert.vu
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormAlert.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************!*\
+  !*** ./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--6-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormAlert.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FormAlert_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 

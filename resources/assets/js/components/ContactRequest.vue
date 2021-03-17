@@ -1,111 +1,110 @@
 <template>
     <div class="p-8">
         <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-        <div v-show="step === 1">
-            <div class="flex mb-4 items-center justify-between">
-                <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
-                <h2 class="text-2xl uppercase text-gray-500">1 of 2</h2>
-            </div>
-            <div class="mb-6">
-                <label class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> Reason:</label>
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_1"
-                        value="Curriculum"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_1"><strong>Curriculum Usage</strong>
-                    &mdash; Questions about how our curriculum is to be used in the classroom or where to find
-                    curriculum resources.</label>
-                </div>
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_2"
-                        value="Errata"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_2"><strong>Curriculum Error</strong>
-                    &mdash; Curriculum issues such as typos, incorrect label, or factual correctness.</label>
-                </div>
-
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_3"
-                        value="Integration"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_3"><strong>Integration Issue</strong> &mdash; Rostering or login issues related to
-                    integrations with Clever, Canvas, Schoology, Google Classroom, etc.</label>
-                </div>
-
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_4"
-                        value="Operations"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_4"><strong>Coupons, Specimens, Kits</strong> &mdash; Redeem coupons, report missing or
-                    damaged materials.</label>
-                </div>
-
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_5"
-                        value="Product"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_5"><strong>Product Usage</strong> &mdash; Questions like how do I do this, Where do I
-                    find that. But not about the curriculum.</label>
-                </div>
-
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_6"
-                        value="Feedback"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_6"><strong>Feedback/Feature Request</strong> &mdash;
-                    Ideas for improving our products or providing feedback about our products and services.</label>
-                </div>
-
-                <div class="flex items-center">
-                    <input type="radio"
-                        name="reason"
-                        id="reason_7"
-                        value="Other Issue"
-                        v-model="reason"> <label
-                    class="ml-2 text-grey-darker text-sm mb-2"
-                    for="reason_7"><strong>Other Issue</strong> &mdash; Something is not working as it should, forgotten
-                    password, or other issue not listed above.</label>
-                </div>
-
-                <form-error :error=formErrors.reason[0]
-                    v-if="formErrors.reason"></form-error>
-            </div>
-            <button @click.prevent="next()"
-                type="submit"
-                :disabled="!disabled()"
-                class="bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                :class="{'cursor-default hover:bg-blue-600':!disabled(), 'hover:bg-blue-800': disabled()}">
-                Next
-            </button>
+        <div class="flex mb-4 items-center justify-between">
+            <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
+            <h2 class="text-2xl uppercase text-gray-500">{{ step }} of 2</h2>
         </div>
 
-        <div v-show="step === 2">
-            <div class="flex mb-4 items-center justify-between">
-                <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
-                <h2 class="text-2xl uppercase text-gray-500">2 of 2</h2>
+        <form method="POST"
+            enctype="multipart/form-data"
+            @submit.prevent="submitForm">
+
+            <div v-show="step === 1">
+                <div class="mb-6">
+                    <label class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> Reason:</label>
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_1"
+                            value="Curriculum"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_1"><strong>Curriculum Usage</strong>
+                        &mdash; Questions about how our curriculum is to be used in the classroom or where to find
+                        curriculum resources.</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_2"
+                            value="Errata"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_2"><strong>Curriculum Error</strong>
+                        &mdash; Curriculum issues such as typos, incorrect label, or factual correctness.</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_3"
+                            value="Integration"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_3"><strong>Integration Issue</strong> &mdash; Rostering or login issues related to
+                        integrations with Clever, Canvas, Schoology, Google Classroom, etc.</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_4"
+                            value="Operations"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_4"><strong>Coupons, Specimens, Kits</strong> &mdash; Redeem coupons, report missing
+                        or damaged materials.</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_5"
+                            value="Product"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_5"><strong>Product Usage</strong> &mdash; Questions like how do I do this, Where do
+                        I find that. But not about the curriculum.</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_6"
+                            value="Feedback"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_6"><strong>Feedback/Feature Request</strong> &mdash;
+                        Ideas for improving our products or providing feedback about our products and services.</label>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input type="radio"
+                            name="reason"
+                            id="reason_7"
+                            value="Other Issue"
+                            v-model="reason"> <label
+                        class="ml-2 text-grey-darker text-sm mb-2"
+                        for="reason_7"><strong>Other Issue</strong> &mdash; Something is not working as it should,
+                        forgotten password, or other issue not listed above.</label>
+                    </div>
+
+                    <form-error :error=formErrors.reason[0]
+                        v-if="formErrors.reason"></form-error>
+                </div>
+                <button @click.prevent="nextStep()"
+                    type="submit"
+                    :disabled="!disabled()"
+                    class="bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                    :class="{'cursor-default hover:bg-blue-600':!disabled(), 'hover:bg-blue-800': disabled()}">
+                    Next Step
+                </button>
             </div>
-            <form method="POST"
-                enctype="multipart/form-data"
-                @submit.prevent="submitForm">
+
+            <div v-show="step === 2">
+
 
                 <div class="mb-6">
                     <label for="name"
@@ -162,7 +161,8 @@
 
                 <div class="mb-6">
                     <label for="details"
-                        class="block text-grey-darker text-sm font-bold mb-2">Details</label>
+                        class="block text-grey-darker text-sm font-bold mb-2"><small
+                        class="text-lg text-red-600">*</small> Details</label>
 
                     <textarea name="details"
                         id="details"
@@ -208,12 +208,12 @@
                     <i class="fa fa-refresh fa-spin"
                         v-if="loading"></i> Submit
                 </button>
-                <a @click.prevent="prev()"
+                <a @click.prevent="previousStep()"
                     type="submit"
-                    v-if="isInvalid()"
-                    class="text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer"> Previous </a>
-            </form>
-        </div>
+                    v-if="canStepBack()"
+                    class="text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer"> Previous Step </a>
+            </div>
+        </form>
     </div>
 </template>
 
@@ -266,20 +266,16 @@ export default {
         selectFile(e) {
             this.file = e.target.files[0];
         },
-        isInvalid() {
-            if (this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '') {
-                return false
-            }
-
-            return true;
+        canStepBack() {
+            return !(this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '');
         },
         disabled() {
             return this.reason !== "";
         },
-        prev() {
+        previousStep() {
             this.step--;
         },
-        next() {
+        nextStep() {
             this.step++;
         },
         hideAlert() {
@@ -353,12 +349,12 @@ export default {
 
             axios.post('/contact-request', this.getFormData(), config)
                 .then(response => {
-                if (response.data.success === true) {
-                    this.id = response.data.id;
-                    this.uploadImages();
-                    this.showSuccess('Your message was sent.');
-                }
-            }).then().catch(error => {
+                    if (response.data.success === true) {
+                        this.id = response.data.id;
+                        this.uploadImages();
+                        this.showSuccess('Your message was sent.');
+                    }
+                }).then().catch(error => {
                 if (error.response.status === 422) {
                     this.showFormErrors(error.response.data.errors);
                 } else {
