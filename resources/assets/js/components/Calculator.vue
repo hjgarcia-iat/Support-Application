@@ -29,7 +29,7 @@
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
-                    <p class="text-xl">Subscriptions</p>
+                    <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
 
                     <p class="text-3xl text-orange-500">{{ one_year_dollar_savings | currency }}</p>
@@ -41,7 +41,7 @@
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
-                    <p class="text-xl">Subscriptions</p>
+                    <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
 
                     <p class="text-3xl text-orange-500">{{ three_year_dollar_savings | currency }}</p>
@@ -55,7 +55,7 @@
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                         <p class="text-xl">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
-                        <p class="text-xl">Subscriptions</p>
+                        <p class="text-xl">Subscription</p>
                         <h3 class="text-2xl font-bold">You would save</h3>
 
                         <p class="text-3xl text-orange-500">{{ six_year_dollar_savings | currency }}</p>
