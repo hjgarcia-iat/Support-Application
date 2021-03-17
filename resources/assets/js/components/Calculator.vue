@@ -25,46 +25,59 @@
             </div>
         </div>
         <div v-if="step === 2">
-            <div class="text-center">
-                <h2>IQWST</h2>
-                <p>Interactive Digital Edition</p>
-                <p>1-Year Subscriptions</p>
-                <h3>You would save</h3>
+            <div class="flex gap-3 mt-6">
+                <div class="text-center p-4 border-2 border-gray-300">
+                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-3xl font-bold">1-Year</p>
+                    <p class="text-xl">Subscriptions</p>
+                    <h3 class="text-2xl font-bold">You would save</h3>
 
-                <p>${{ one_year_dollar_savings }}</p>
-                <p>&ndash; or &ndash;</p>
-                <p>{{ one_year_percentage_savings }}%</p>
-                <p>each year</p>
-            </div>
-            <div class="text-center">
-                <h2>IQWST</h2>
-                <p>Interactive Digital Edition</p>
-                <p>1-Year Subscriptions</p>
-                <h3>You would save</h3>
+                    <p class="text-3xl text-orange-500">{{ one_year_dollar_savings | currency }}</p>
+                    <p class="text-xl">&ndash; or &ndash;</p>
+                    <p class="text-3xl text-orange-500">{{ one_year_percentage_savings | percent }}</p>
+                    <p class="text-xl">each year</p>
+                </div>
+                <div class="text-center p-4 border-2 border-gray-300">
+                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-3xl font-bold">3-Year</p>
+                    <p class="text-xl">Subscriptions</p>
+                    <h3 class="text-2xl font-bold">You would save</h3>
 
-                <p>${{ three_year_dollar_savings }}</p>
-                <p>&ndash; or &ndash;</p>
-                <p>{{ three_year_percentage_savings }}%</p>
-                <p>each year</p>
-            </div>
-            <div class="text-center">
-                <h2>IQWST</h2>
-                <p>Interactive Digital Edition</p>
-                <p>1-Year Subscriptions</p>
-                <h3>You would save</h3>
+                    <p class="text-3xl text-orange-500">{{ three_year_dollar_savings | currency }}</p>
+                    <p class="text-xl">&ndash; or &ndash;</p>
+                    <p class="text-3xl text-orange-500">{{ three_year_percentage_savings | percent}}</p>
+                    <p class="text-xl">each year</p>
+                </div>
+                <div class="text-center p-4 border-2 border-gray-300">
+                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-3xl font-bold">6-Year</p>
+                    <p class="text-xl">Subscriptions</p>
+                    <h3 class="text-2xl font-bold">You would save</h3>
 
-                <p>${{ six_year_dollar_savings }}</p>
-                <p>&ndash; or &ndash;</p>
-                <p>{{ six_year_percentage_savings }}%</p>
-                <p>each year</p>
+                    <p class="text-3xl text-orange-500">{{ six_year_dollar_savings | currency }}</p>
+                    <p class="text-xl">&ndash; or &ndash;</p>
+                    <p class="text-3xl text-orange-500">{{ six_year_percentage_savings | percent }}</p>
+                    <p class="text-xl">each year</p>
+                </div>
             </div>
-            <button>Contact Us</button>
-            <a href="" @click="step=1">Previous</a>
+            <div class="mt-6 flex justify-end items-center">
+                <a href="" class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">Contact Us</a>
+                <a href="" class="text-blue-700 hover:text-blue-500 font-bold" @click.prevent="step=1">Previous</a>
+            </div>
+
         </div>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import Vue2Filters from 'vue2-filters'
+
+Vue.use(Vue2Filters)
+
 export default {
     name: "Calculator",
     data() {
@@ -86,15 +99,16 @@ export default {
 
             this.one_year_dollar_savings = (this.number_of_students * 25.172)-((this.number_of_students * 15.35)+(this.number_of_teachers*80));
 
-            this.one_year_percentage_savings = (this.one_year_dollar_savings/(this.number_of_students*25.172))*100;
+            this.one_year_percentage_savings = (this.one_year_dollar_savings / (this.number_of_students * 25.172));
+
 
             this.three_year_dollar_savings = (3* (this.number_of_students * 25.172)) - ((this.number_of_students * 41.99) + (this.number_of_teachers * (80 * 3)));
 
-            this.three_year_percentage_savings = (this.three_year_dollar_savings / (3* (this.number_of_students * 25.172))) * 100;
+            this.three_year_percentage_savings = (this.three_year_dollar_savings / (3 * (this.number_of_students * 25.172)));
 
             this.six_year_dollar_savings = (6 * (this.number_of_students * 25.172)) - ((this.number_of_students * 68.50) + (this.number_of_teachers * (80 * 6)));
 
-            this.six_year_percentage_savings = (this.six_year_dollar_savings / (6 * (this.number_of_students * 25.172))) * 100;
+            this.six_year_percentage_savings = (this.six_year_dollar_savings / (6 * (this.number_of_students * 25.172)));
         }
     }
 }
