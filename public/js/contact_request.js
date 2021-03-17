@@ -2179,7 +2179,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2224,28 +2223,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    selectFile: function selectFile(e) {
-      this.file = e.target.files[0];
-    },
-    canStepBack: function canStepBack() {
-      return !(this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '');
-    },
-    disabled: function disabled() {
-      return this.reason !== "";
-    },
-    previousStep: function previousStep() {
-      this.step--;
-    },
-    nextStep: function nextStep() {
-      this.step++;
-    },
-    hideAlert: function hideAlert() {
-      this.alertVisible = false;
-    },
     resetData: function resetData() {
       this.contact_created = false;
       this.files_uploaded = false;
       this.id = '';
+      this.step = 1;
       this.reason = '';
       this.name = '';
       this.email = '';
@@ -2258,40 +2240,27 @@ __webpack_require__.r(__webpack_exports__);
       this.formMessage = '';
       this.formMessageType = 'success';
     },
-    //for dropzone
-    sendingFiles: function sendingFiles(file, xhr, formData) {
-      formData.append('id', this.id);
-    },
-    addedFile: function addedFile(file) {
-      this.files.push(file);
-    },
-    uploadComplete: function uploadComplete(response) {
-      this.$refs.dropzone.removeAllFiles();
-    },
     showSuccess: function showSuccess(message) {
       this.resetData();
-      this.alertVisible = true;
-      this.formMessageType = 'success';
-      this.step = 1;
       this.formMessage = message;
-      this.loading = false;
+      this.displayAlert('success');
     },
     showFormErrors: function showFormErrors(errors) {
-      this.alertVisible = true;
       this.formErrors = errors;
-      this.formMessageType = 'error';
       this.formMessage = 'Please see errors below!';
-      this.loading = false;
+      this.displayAlert('error');
     },
     showError: function showError() {
       this.resetData();
-      this.step = 1;
-      this.alertVisible = true;
-      this.formMessageType = 'error';
       this.formMessage = 'There was an error please try again.';
+      this.displayAlert('error');
+    },
+    displayAlert: function displayAlert(alert_type) {
+      this.alertVisible = true;
+      this.formMessageType = alert_type;
       this.loading = false;
     },
-    getFormData: function getFormData() {
+    formData: function formData() {
       var formData = new FormData();
       formData.append('reason', this.reason);
       formData.append('name', this.name);
@@ -2305,12 +2274,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
-      };
-      axios.post('/contact-request', this.getFormData(), config).then(function (response) {
+      axios.post('/contact-request', this.formData()).then(function (response) {
         if (response.data.success === true) {
           _this.id = response.data.id;
 
@@ -2318,7 +2282,7 @@ __webpack_require__.r(__webpack_exports__);
 
           _this.showSuccess('Your message was sent.');
         }
-      }).then()["catch"](function (error) {
+      })["catch"](function (error) {
         if (error.response.status === 422) {
           _this.showFormErrors(error.response.data.errors);
         } else {
@@ -2330,6 +2294,18 @@ __webpack_require__.r(__webpack_exports__);
       if (this.files.length > 0) {
         this.$refs.dropzone.processQueue();
       }
+    },
+    //for dropzone
+    sendingFiles: function sendingFiles(file, xhr, formData) {
+      formData.append('id', this.id);
+    },
+    //for dropzone
+    addedFile: function addedFile(file) {
+      this.files.push(file);
+    },
+    //for dropzone
+    uploadComplete: function uploadComplete(response) {
+      this.$refs.dropzone.removeAllFiles();
     }
   }
 });
@@ -29646,7 +29622,11 @@ var render = function() {
           type: _vm.formMessageType,
           visible: _vm.alertVisible
         },
-        on: { "alert-hide": _vm.hideAlert }
+        on: {
+          "alert-hide": function($event) {
+            _vm.alertVisible = false
+          }
+        }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "flex mb-4 items-center justify-between" }, [
@@ -29894,14 +29874,14 @@ var render = function() {
                   staticClass:
                     "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
                   class: {
-                    "cursor-default hover:bg-blue-600": !_vm.disabled(),
-                    "hover:bg-blue-800": _vm.disabled()
+                    "cursor-default hover:bg-blue-600": _vm.reason === "",
+                    "hover:bg-blue-800": _vm.reason !== ""
                   },
-                  attrs: { type: "submit", disabled: !_vm.disabled() },
+                  attrs: { type: "submit", disabled: _vm.reason === "" },
                   on: {
                     click: function($event) {
                       $event.preventDefault()
-                      return _vm.nextStep()
+                      _vm.step++
                     }
                   }
                 },
@@ -30219,23 +30199,21 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm.canStepBack()
-                ? _c(
-                    "a",
-                    {
-                      staticClass:
-                        "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
-                      attrs: { type: "submit" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.previousStep()
-                        }
-                      }
-                    },
-                    [_vm._v(" Previous Step ")]
-                  )
-                : _vm._e()
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
+                  attrs: { type: "submit" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.step--
+                    }
+                  }
+                },
+                [_vm._v(" Previous Step ")]
+              )
             ]
           )
         ]

@@ -1,6 +1,6 @@
 <template>
     <div class="p-8">
-        <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
+        <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="alertVisible=false"></alert>
         <div class="flex mb-4 items-center justify-between">
             <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
             <h2 class="text-2xl uppercase text-gray-500">{{ step }} of 2</h2>
@@ -94,11 +94,11 @@
                     <form-error :error=formErrors.reason[0]
                         v-if="formErrors.reason"></form-error>
                 </div>
-                <button @click.prevent="nextStep()"
+                <button @click.prevent="step++"
                     type="submit"
-                    :disabled="!disabled()"
+                    :disabled="reason===''"
                     class="bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                    :class="{'cursor-default hover:bg-blue-600':!disabled(), 'hover:bg-blue-800': disabled()}">
+                    :class="{'cursor-default hover:bg-blue-600': reason==='', 'hover:bg-blue-800': reason !== ''}">
                     Next Step
                 </button>
             </div>
@@ -208,9 +208,8 @@
                     <i class="fa fa-refresh fa-spin"
                         v-if="loading"></i> Submit
                 </button>
-                <a @click.prevent="previousStep()"
+                <a @click.prevent="step--"
                     type="submit"
-                    v-if="canStepBack()"
                     class="text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer"> Previous Step </a>
             </div>
         </form>
@@ -263,28 +262,11 @@ export default {
         }
     },
     methods: {
-        selectFile(e) {
-            this.file = e.target.files[0];
-        },
-        canStepBack() {
-            return !(this.reason !== '' && this.name !== '' && this.email !== '' && this.district !== '' && this.subject !== '' && this.details !== '');
-        },
-        disabled() {
-            return this.reason !== "";
-        },
-        previousStep() {
-            this.step--;
-        },
-        nextStep() {
-            this.step++;
-        },
-        hideAlert() {
-            this.alertVisible = false;
-        },
         resetData() {
             this.contact_created = false;
             this.files_uploaded = false;
             this.id = '';
+            this.step = 1;
             this.reason = '';
             this.name = '';
             this.email = '';
@@ -297,40 +279,27 @@ export default {
             this.formMessage = '';
             this.formMessageType = 'success';
         },
-        //for dropzone
-        sendingFiles(file, xhr, formData) {
-            formData.append('id', this.id);
-        },
-        addedFile(file) {
-            this.files.push(file);
-        },
-        uploadComplete(response) {
-            this.$refs.dropzone.removeAllFiles();
-        },
         showSuccess(message) {
             this.resetData();
-            this.alertVisible = true;
-            this.formMessageType = 'success';
-            this.step = 1;
             this.formMessage = message;
-            this.loading = false;
+            this.displayAlert('success');
         },
         showFormErrors(errors) {
-            this.alertVisible = true;
             this.formErrors = errors;
-            this.formMessageType = 'error';
             this.formMessage = 'Please see errors below!';
-            this.loading = false;
+            this.displayAlert('error');
         },
         showError() {
             this.resetData();
-            this.step = 1;
-            this.alertVisible = true;
-            this.formMessageType = 'error';
             this.formMessage = 'There was an error please try again.';
+            this.displayAlert('error');
+        },
+        displayAlert(alert_type) {
+            this.alertVisible = true;
+            this.formMessageType = alert_type;
             this.loading = false;
         },
-        getFormData() {
+        formData() {
             let formData = new FormData();
             formData.append('reason', this.reason);
             formData.append('name', this.name);
@@ -343,18 +312,15 @@ export default {
         },
         submitForm() {
             this.loading = true;
-            const config = {
-                headers: {'content-type': 'multipart/form-data'}
-            }
 
-            axios.post('/contact-request', this.getFormData(), config)
+            axios.post('/contact-request', this.formData())
                 .then(response => {
                     if (response.data.success === true) {
                         this.id = response.data.id;
                         this.uploadImages();
                         this.showSuccess('Your message was sent.');
                     }
-                }).then().catch(error => {
+                }).catch(error => {
                 if (error.response.status === 422) {
                     this.showFormErrors(error.response.data.errors);
                 } else {
@@ -366,6 +332,18 @@ export default {
             if (this.files.length > 0) {
                 this.$refs.dropzone.processQueue();
             }
+        },
+        //for dropzone
+        sendingFiles(file, xhr, formData) {
+            formData.append('id', this.id);
+        },
+        //for dropzone
+        addedFile(file) {
+            this.files.push(file);
+        },
+        //for dropzone
+        uploadComplete(response) {
+            this.$refs.dropzone.removeAllFiles();
         },
     }
 }
