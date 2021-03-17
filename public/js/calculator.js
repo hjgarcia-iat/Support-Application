@@ -2072,7 +2072,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       this.alertVisible = false;
     },
     calculate: function calculate() {
-      if (this.number_of_teachers > this.number_of_students) {
+      if (parseInt(this.number_of_teachers) > parseInt(this.number_of_students)) {
         this.formMessage = 'The number of teachers cannot be higher than the number of students.';
         this.formMessageType = 'error';
         this.alertVisible = true;
