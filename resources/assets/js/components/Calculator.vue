@@ -1,22 +1,27 @@
 <template>
-    <div>
-        <h1>Calculate your digital Savings</h1>
-        <div v-if="step === 1">
+    <div class="p-6">
+        <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate your digital Savings</h1>
+        <div v-if="step === 1" class="border-t-2 border-black py-4">
 
-            <p>Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital
+            <p class="text-2xl mb-4">Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital
                 Edition.
             </p>
 
-            <p>1. In your area, about how many students use IQWST?</p>
-            <input type="text" class="border px-2 py-1 border-gray-500 my-3 ml-3" name="number_of_students"
-                v-model="number_of_students">
+            <div class="mb-3">
+                <p class="mb-3 font-bold">1. In your area, about how many students use IQWST?</p>
+                <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_students"
+                    v-model="number_of_students">
+            </div>
 
-            <p>2. In your area, about how many teachers use IQWST?</p>
-            <input type="text" class="border px-2 py-1 border-gray-500 my-3 ml-3" name="number_of_teachers"
-                v-model="number_of_teachers">
 
-            <div>
-                <button @click="calculate" class="py-2 px-3 bg-gray-400 mb-3 mx-3">Calculate</button>
+            <div class="mb-3">
+                <p class="mb-3 font-bold">2. In your area, about how many teachers use IQWST?</p>
+                <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_teachers"
+                    v-model="number_of_teachers">
+            </div>
+
+            <div class="mt-6">
+                <button type="submit" @click="calculate" class="rounded py-2 px-3 bg-gray-400 bg-blue-700 hover:bg-blue-500 text-white">Calculate</button>
             </div>
         </div>
         <div v-if="step === 2">

@@ -2016,6 +2016,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Calculator",
   data: function data() {
@@ -28622,74 +28627,86 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Calculate your digital Savings")]),
+  return _c("div", { staticClass: "p-6" }, [
+    _c(
+      "h1",
+      { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+      [_vm._v("Calculate your digital Savings")]
+    ),
     _vm._v(" "),
     _vm.step === 1
-      ? _c("div", [
-          _c("p", [
+      ? _c("div", { staticClass: "border-t-2 border-black py-4" }, [
+          _c("p", { staticClass: "text-2xl mb-4" }, [
             _vm._v(
               "Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital\n            Edition.\n        "
             )
           ]),
           _vm._v(" "),
-          _c("p", [
-            _vm._v("1. In your area, about how many students use IQWST?")
+          _c("div", { staticClass: "mb-3" }, [
+            _c("p", { staticClass: "mb-3 font-bold" }, [
+              _vm._v("1. In your area, about how many students use IQWST?")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.number_of_students,
+                  expression: "number_of_students"
+                }
+              ],
+              staticClass:
+                "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
+              attrs: { type: "text", name: "number_of_students" },
+              domProps: { value: _vm.number_of_students },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.number_of_students = $event.target.value
+                }
+              }
+            })
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.number_of_students,
-                expression: "number_of_students"
-              }
-            ],
-            staticClass: "border px-2 py-1 border-gray-500 my-3 ml-3",
-            attrs: { type: "text", name: "number_of_students" },
-            domProps: { value: _vm.number_of_students },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", { staticClass: "mb-3" }, [
+            _c("p", { staticClass: "mb-3 font-bold" }, [
+              _vm._v("2. In your area, about how many teachers use IQWST?")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.number_of_teachers,
+                  expression: "number_of_teachers"
                 }
-                _vm.number_of_students = $event.target.value
+              ],
+              staticClass:
+                "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
+              attrs: { type: "text", name: "number_of_teachers" },
+              domProps: { value: _vm.number_of_teachers },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.number_of_teachers = $event.target.value
+                }
               }
-            }
-          }),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v("2. In your area, about how many teachers use IQWST?")
+            })
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.number_of_teachers,
-                expression: "number_of_teachers"
-              }
-            ],
-            staticClass: "border px-2 py-1 border-gray-500 my-3 ml-3",
-            attrs: { type: "text", name: "number_of_teachers" },
-            domProps: { value: _vm.number_of_teachers },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.number_of_teachers = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("div", [
+          _c("div", { staticClass: "mt-6" }, [
             _c(
               "button",
               {
-                staticClass: "py-2 px-3 bg-gray-400 mb-3 mx-3",
+                staticClass:
+                  "rounded py-2 px-3 bg-gray-400 bg-blue-700 hover:bg-blue-500 text-white",
+                attrs: { type: "submit" },
                 on: { click: _vm.calculate }
               },
               [_vm._v("Calculate")]
