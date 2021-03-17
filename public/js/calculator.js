@@ -1959,8 +1959,89 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Calculator"
+  name: "Calculator",
+  data: function data() {
+    return {
+      step: 1,
+      number_of_teachers: 0,
+      number_of_students: 0,
+      one_year_dollar_savings: 0,
+      one_year_percentage_savings: 0,
+      three_year_dollar_savings: 0,
+      three_year_percentage_savings: 0,
+      six_year_dollar_savings: 0,
+      six_year_percentage_savings: 0
+    };
+  },
+  methods: {
+    calculate: function calculate() {
+      this.step = 2;
+      this.one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
+      this.one_year_percentage_savings = this.one_year_dollar_savings / (this.number_of_students * 25.172) * 100;
+      this.three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3));
+      this.three_year_percentage_savings = this.three_year_dollar_savings / (3 * (this.number_of_students * 25.172)) * 100;
+      this.six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6));
+      this.six_year_percentage_savings = this.six_year_dollar_savings / (6 * (this.number_of_students * 25.172)) * 100;
+    }
+  }
 });
 
 /***/ }),
@@ -28541,7 +28622,155 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("calc")])
+  return _c("div", [
+    _c("h1", [_vm._v("Calculate your digital Savings")]),
+    _vm._v(" "),
+    _vm.step === 1
+      ? _c("div", [
+          _c("p", [
+            _vm._v(
+              "Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital\n            Edition.\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v("1. In your area, about how many students use IQWST?")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.number_of_students,
+                expression: "number_of_students"
+              }
+            ],
+            staticClass: "border px-2 py-1 border-gray-500 my-3 ml-3",
+            attrs: { type: "text", name: "number_of_students" },
+            domProps: { value: _vm.number_of_students },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.number_of_students = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v("2. In your area, about how many teachers use IQWST?")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.number_of_teachers,
+                expression: "number_of_teachers"
+              }
+            ],
+            staticClass: "border px-2 py-1 border-gray-500 my-3 ml-3",
+            attrs: { type: "text", name: "number_of_teachers" },
+            domProps: { value: _vm.number_of_teachers },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.number_of_teachers = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "button",
+              {
+                staticClass: "py-2 px-3 bg-gray-400 mb-3 mx-3",
+                on: { click: _vm.calculate }
+              },
+              [_vm._v("Calculate")]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.step === 2
+      ? _c("div", [
+          _c("div", { staticClass: "text-center" }, [
+            _c("h2", [_vm._v("IQWST")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Interactive Digital Edition")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("1-Year Subscriptions")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("You would save")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("$" + _vm._s(_vm.one_year_dollar_savings))]),
+            _vm._v(" "),
+            _c("p", [_vm._v("– or –")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.one_year_percentage_savings) + "%")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("each year")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c("h2", [_vm._v("IQWST")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Interactive Digital Edition")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("1-Year Subscriptions")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("You would save")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("$" + _vm._s(_vm.three_year_dollar_savings))]),
+            _vm._v(" "),
+            _c("p", [_vm._v("– or –")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.three_year_percentage_savings) + "%")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("each year")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text-center" }, [
+            _c("h2", [_vm._v("IQWST")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Interactive Digital Edition")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("1-Year Subscriptions")]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("You would save")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("$" + _vm._s(_vm.six_year_dollar_savings))]),
+            _vm._v(" "),
+            _c("p", [_vm._v("– or –")]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.six_year_percentage_savings) + "%")]),
+            _vm._v(" "),
+            _c("p", [_vm._v("each year")])
+          ]),
+          _vm._v(" "),
+          _c("button", [_vm._v("Contact Us")]),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              attrs: { href: "" },
+              on: {
+                click: function($event) {
+                  _vm.step = 1
+                }
+              }
+            },
+            [_vm._v("Previous")]
+          )
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
