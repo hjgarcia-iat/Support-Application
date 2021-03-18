@@ -29614,7 +29614,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "p-8" },
+    { staticClass: "p-8 bg-gray-100" },
     [
       _c("alert", {
         attrs: {
@@ -29889,7 +29889,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "name",
@@ -29932,7 +29932,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "email",
@@ -29975,7 +29975,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "district",
@@ -30018,7 +30018,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       type: "text",
                       id: "subject",
@@ -30061,7 +30061,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      "appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
                     attrs: {
                       name: "details",
                       id: "details",
