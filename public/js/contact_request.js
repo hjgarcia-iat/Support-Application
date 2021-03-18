@@ -29629,16 +29629,6 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "flex mb-4 items-center justify-between" }, [
-        _c("h1", { staticClass: "text-3xl uppercase leading-loose" }, [
-          _vm._v("Contact Us")
-        ]),
-        _vm._v(" "),
-        _c("h2", { staticClass: "text-2xl uppercase text-gray-500" }, [
-          _vm._v(_vm._s(_vm.step) + " of 2")
-        ])
-      ]),
-      _vm._v(" "),
       _c(
         "form",
         {
@@ -29866,26 +29856,6 @@ var render = function() {
                     : _vm._e()
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-                  class: {
-                    "cursor-default hover:bg-blue-600": _vm.reason === "",
-                    "hover:bg-blue-800": _vm.reason !== ""
-                  },
-                  attrs: { type: "submit", disabled: _vm.reason === "" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step++
-                    }
-                  }
-                },
-                [_vm._v("\n                Next Step\n            ")]
               )
             ]
           ),
@@ -30179,43 +30149,82 @@ var render = function() {
                     : _vm._e()
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-                  class: {
-                    "cursor-default bg-blue-600 hover:bg-blue-600": _vm.loading
-                  },
-                  attrs: { type: "submit", disabled: _vm.loading }
-                },
-                [
-                  _vm.loading
-                    ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                    : _vm._e(),
-                  _vm._v(" Submit\n            ")
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
-                  attrs: { type: "submit" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step--
-                    }
-                  }
-                },
-                [_vm._v(" Previous Step ")]
               )
             ]
-          )
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex mb-4 items-center justify-between" }, [
+            _vm.step === 1
+              ? _c("div", [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+                      class: {
+                        "cursor-default hover:bg-blue-600": _vm.reason === "",
+                        "hover:bg-blue-800": _vm.reason !== ""
+                      },
+                      attrs: { type: "submit", disabled: _vm.reason === "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.step++
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Next Step\n                "
+                      )
+                    ]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.step === 2
+              ? _c("div", [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+                      class: {
+                        "cursor-default bg-blue-600 hover:bg-blue-600":
+                          _vm.loading
+                      },
+                      attrs: { type: "submit", disabled: _vm.loading }
+                    },
+                    [
+                      _vm.loading
+                        ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                        : _vm._e(),
+                      _vm._v(" Submit\n                ")
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer",
+                      attrs: { type: "submit" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          _vm.step--
+                        }
+                      }
+                    },
+                    [_vm._v(" Previous Step ")]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-2xl uppercase text-gray-500" }, [
+              _vm._v(_vm._s(_vm.step) + " of 2")
+            ])
+          ])
         ]
       )
     ],

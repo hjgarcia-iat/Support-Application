@@ -1,11 +1,6 @@
 <template>
     <div class="p-8">
         <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="alertVisible=false"></alert>
-        <div class="flex mb-4 items-center justify-between">
-            <h1 class="text-3xl uppercase leading-loose">Contact Us</h1>
-            <h2 class="text-2xl uppercase text-gray-500">{{ step }} of 2</h2>
-        </div>
-
         <form method="POST"
             enctype="multipart/form-data"
             @submit.prevent="submitForm">
@@ -94,18 +89,10 @@
                     <form-error :error=formErrors.reason[0]
                         v-if="formErrors.reason"></form-error>
                 </div>
-                <button @click.prevent="step++"
-                    type="submit"
-                    :disabled="reason===''"
-                    class="bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                    :class="{'cursor-default hover:bg-blue-600': reason==='', 'hover:bg-blue-800': reason !== ''}">
-                    Next Step
-                </button>
+
             </div>
 
             <div v-show="step === 2">
-
-
                 <div class="mb-6">
                     <label for="name"
                         class="block text-grey-darker text-sm font-bold mb-2"> <small
@@ -199,18 +186,31 @@
                     <form-error :error=formErrors.file[0]
                         v-if="formErrors.file"></form-error>
                 </div>
+            </div>
+            <div class="flex mb-4 items-center justify-between">
+                <div v-if="step===1">
+                    <button @click.prevent="step++"
+                        type="submit"
+                        :disabled="reason===''"
+                        class="bg-blue-600 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                        :class="{'cursor-default hover:bg-blue-600': reason==='', 'hover:bg-blue-800': reason !== ''}">
+                        Next Step
+                    </button>
+                </div>
 
-
-                <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                    :disabled="loading"
-                    :class="{'cursor-default bg-blue-600 hover:bg-blue-600' : loading}">
-                    <i class="fa fa-refresh fa-spin"
-                        v-if="loading"></i> Submit
-                </button>
-                <a @click.prevent="step--"
-                    type="submit"
-                    class="text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer"> Previous Step </a>
+                <div v-if="step===2">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                        :disabled="loading"
+                        :class="{'cursor-default bg-blue-600 hover:bg-blue-600' : loading}">
+                        <i class="fa fa-refresh fa-spin"
+                            v-if="loading"></i> Submit
+                    </button>
+                    <a @click.prevent="step--"
+                        type="submit"
+                        class="text-blue-500 hover:text-blue-600 font-bold py-2 px-4 cursor-pointer"> Previous Step </a>
+                </div>
+                <p class="text-2xl uppercase text-gray-500">{{ step }} of 2</p>
             </div>
         </form>
     </div>
