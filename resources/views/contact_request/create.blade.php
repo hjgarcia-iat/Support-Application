@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.simple')
 @section('pageTitle','Contact Us')
 @section('content')
     <div id="contact-request">
