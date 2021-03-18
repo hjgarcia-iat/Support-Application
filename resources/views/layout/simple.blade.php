@@ -11,7 +11,7 @@
 </head>
 <body class="bg-gray-100">
 <div class="h-full app-grid w-full md:w-3/5 xl:w-2/5 mx-auto">
-    <main role="main" class="mt-8">
+    <main role="main">
         <section class="mb-5 border bg-white">
             @yield('content')
         </section>
