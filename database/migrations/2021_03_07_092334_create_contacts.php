@@ -17,6 +17,7 @@ class CreateContacts extends Migration
             $table->string('district');
             $table->string('subject');
             $table->string('details');
+            $table->boolean('email_processed')->default(0);
 
             $table->timestamps();
         });

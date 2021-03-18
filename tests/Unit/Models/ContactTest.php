@@ -20,6 +20,7 @@ class ContactTest extends TestCase
             'district' => 'district',
             'subject' => 'subject',
             'details' => 'details',
+            'email_processed' => true,
         ];
 
         Contact::factory()->create($data);

@@ -9,6 +9,10 @@ class Contact extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'email_processed' => 'boolean',
+    ];
+
     protected $guarded = [];
 
     public function files()
