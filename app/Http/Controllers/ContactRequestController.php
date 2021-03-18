@@ -12,7 +12,7 @@ class ContactRequestController extends Controller
         return view('contact_request.create');
     }
 
-    public function store(ContactFormRequest $request)
+    public function store(ContactFormRequest $request): \Illuminate\Http\JsonResponse
     {
         $contact = Contact::create([
             'reason'   => $request->get('reason'),
