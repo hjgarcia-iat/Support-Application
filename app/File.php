@@ -11,7 +11,7 @@ class File extends Model
 
     protected $guarded = [];
 
-    public function contact()
+    public function contact(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Contact::class);
     }

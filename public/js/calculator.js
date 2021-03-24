@@ -2041,6 +2041,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2059,12 +2118,17 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       step: 1,
       number_of_teachers: 0,
       number_of_students: 0,
-      one_year_dollar_savings: 0,
-      one_year_percentage_savings: 0,
-      three_year_dollar_savings: 0,
-      three_year_percentage_savings: 0,
-      six_year_dollar_savings: 0,
-      six_year_percentage_savings: 0
+      usage: "",
+      print_one_year_dollar_savings: 0,
+      print_one_year_percentage_savings: 0,
+      print_three_year_dollar_savings: 0,
+      print_three_year_percentage_savings: 0,
+      print_six_year_dollar_savings: 0,
+      print_six_year_percentage_savings: 0,
+      digital_three_year_dollar_savings: 0,
+      digital_three_year_percentage_savings: 0,
+      digital_six_year_dollar_savings: 0,
+      digital_six_year_percentage_savings: 0
     };
   },
   methods: {
@@ -2080,13 +2144,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       }
 
       this.hideAlert();
-      this.step = 2;
-      this.one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
-      this.one_year_percentage_savings = this.one_year_dollar_savings / (this.number_of_students * 25.172);
-      this.three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3));
-      this.three_year_percentage_savings = this.three_year_dollar_savings / (3 * (this.number_of_students * 25.172));
-      this.six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6));
-      this.six_year_percentage_savings = this.six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
+      if (this.usage === "IQWST Print") this.step = 2;
+      if (this.usage === "IQWST Interactive Digital Edition") this.step = 3;
+      this.print_one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
+      this.print_one_year_percentage_savings = this.print_one_year_dollar_savings / (this.number_of_students * 25.172);
+      this.print_three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3));
+      this.print_three_year_percentage_savings = this.print_three_year_dollar_savings / (3 * (this.number_of_students * 25.172));
+      this.print_six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6));
+      this.print_six_year_percentage_savings = this.print_six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
+      this.digital_three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3)) - 3 * this.print_one_year_dollar_savings;
+      this.digital_three_year_percentage_savings = this.digital_three_year_dollar_savings / (3 * (this.number_of_students * 25.172));
+      this.digital_six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6)) - 6 * this.print_one_year_dollar_savings;
+      this.digital_six_year_percentage_savings = this.digital_six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
     }
   }
 });
@@ -29508,6 +29577,85 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("p", { staticClass: "mb-3 font-bold" }, [
+                _vm._v("3. We currently are using:")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex items-center mb-3" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.usage,
+                      expression: "usage"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "usage_1",
+                    value: "IQWST Print"
+                  },
+                  domProps: { checked: _vm._q(_vm.usage, "IQWST Print") },
+                  on: {
+                    change: function($event) {
+                      _vm.usage = "IQWST Print"
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "ml-2 text-grey-darker cursor-pointer",
+                    attrs: { for: "usage_1" }
+                  },
+                  [_vm._v("IQWST Print")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.usage,
+                      expression: "usage"
+                    }
+                  ],
+                  attrs: {
+                    type: "radio",
+                    name: "reason",
+                    id: "usage_2",
+                    value: "IQWST Interactive Digital Edition"
+                  },
+                  domProps: {
+                    checked: _vm._q(
+                      _vm.usage,
+                      "IQWST Interactive Digital Edition"
+                    )
+                  },
+                  on: {
+                    change: function($event) {
+                      _vm.usage = "IQWST Interactive Digital Edition"
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "ml-2 text-grey-darker cursor-pointer",
+                    attrs: { for: "usage_2" }
+                  },
+                  [_vm._v("IQWST Interactive Digital Edition")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
             _c("div", { staticClass: "mt-6" }, [
               _c(
                 "button",
@@ -29569,7 +29717,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(_vm._f("currency")(_vm.one_year_dollar_savings))
+                      _vm._s(
+                        _vm._f("currency")(_vm.print_one_year_dollar_savings)
+                      )
                     )
                   ]),
                   _vm._v(" "),
@@ -29577,7 +29727,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(_vm._f("percent")(_vm.one_year_percentage_savings))
+                      _vm._s(
+                        _vm._f("percent")(_vm.print_one_year_percentage_savings)
+                      )
                     )
                   ]),
                   _vm._v(" "),
@@ -29613,7 +29765,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(_vm._f("currency")(_vm.three_year_dollar_savings))
+                      _vm._s(
+                        _vm._f("currency")(_vm.print_three_year_dollar_savings)
+                      )
                     )
                   ]),
                   _vm._v(" "),
@@ -29622,7 +29776,9 @@ var render = function() {
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
                       _vm._s(
-                        _vm._f("percent")(_vm.three_year_percentage_savings)
+                        _vm._f("percent")(
+                          _vm.print_three_year_percentage_savings
+                        )
                       )
                     )
                   ]),
@@ -29660,7 +29816,9 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
-                        _vm._s(_vm._f("currency")(_vm.six_year_dollar_savings))
+                        _vm._s(
+                          _vm._f("currency")(_vm.print_six_year_dollar_savings)
+                        )
                       )
                     ]),
                     _vm._v(" "),
@@ -29669,7 +29827,152 @@ var render = function() {
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
                         _vm._s(
-                          _vm._f("percent")(_vm.six_year_percentage_savings)
+                          _vm._f("percent")(
+                            _vm.print_six_year_percentage_savings
+                          )
+                        )
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-xl" }, [
+                      _vm._v("over 6 years")
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mt-6 flex justify-end items-center" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
+                  attrs: {
+                    href: "http://activatelearning.com/request-product-info/"
+                  }
+                },
+                [_vm._v("Contact Us")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "text-blue-700 hover:text-blue-500 font-bold",
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.step = 1
+                    }
+                  }
+                },
+                [_vm._v("Previous")]
+              )
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.step === 3
+        ? _c("div", [
+            _c("div", { staticClass: "grid mt-6" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "text-center p-4 border-2 border-gray-300 mx-2"
+                },
+                [
+                  _c(
+                    "h2",
+                    { staticClass: "text-4xl text-blue-700 font-medium" },
+                    [_vm._v("IQWST")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [
+                    _vm._v("Interactive Digital Edition")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl font-bold" }, [
+                    _vm._v("3-Year")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-2xl font-bold" }, [
+                    _vm._v("You would save")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(
+                        _vm._f("currency")(
+                          _vm.digital_three_year_dollar_savings
+                        )
+                      )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(
+                        _vm._f("percent")(
+                          _vm.digital_three_year_percentage_savings
+                        )
+                      )
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "text-center  border-2 border-blue-700 mx-2" },
+                [
+                  _c("div", { staticClass: "p-4" }, [
+                    _c(
+                      "h2",
+                      { staticClass: "text-4xl text-blue-700 font-medium" },
+                      [_vm._v("IQWST")]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-xl" }, [
+                      _vm._v("Interactive Digital Edition")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-3xl font-bold" }, [
+                      _vm._v("6-Year")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-xl" }, [
+                      _vm._v("Subscription")
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "text-2xl font-bold" }, [
+                      _vm._v("You would save")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                      _vm._v(
+                        _vm._s(
+                          _vm._f("currency")(
+                            _vm.digital_six_year_dollar_savings
+                          )
+                        )
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                      _vm._v(
+                        _vm._s(
+                          _vm._f("percent")(
+                            _vm.digital_six_year_percentage_savings
+                          )
                         )
                       )
                     ]),
