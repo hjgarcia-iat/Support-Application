@@ -2100,6 +2100,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -29515,13 +29519,15 @@ var render = function() {
         ? _c("div", { staticClass: "border-t-2 border-black py-4" }, [
             _c("p", { staticClass: "text-2xl mb-4" }, [
               _vm._v(
-                "Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital Edition.\n        "
+                "Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term."
               )
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v("1. In your area, about how many students use IQWST?")
+                _vm._v(
+                  "1. Approximately how many students use IQWST in your classroom, school, or\n                district?"
+                )
               ]),
               _vm._v(" "),
               _c("input", {
@@ -29550,7 +29556,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v("2. In your area, about how many teachers use IQWST?")
+                _vm._v(
+                  "2. Approximately how many teachers use IQWST in your classroom, school, or district?"
+                )
               ]),
               _vm._v(" "),
               _c("input", {
@@ -29876,6 +29884,12 @@ var render = function() {
       _vm.step === 3
         ? _c("div", [
             _c("div", { staticClass: "grid mt-6" }, [
+              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+              _vm._v(" "),
               _c(
                 "div",
                 {
@@ -30020,6 +30034,18 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mx-2" }, [
+      _c(
+        "p",
+        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
+        [_vm._v("Best Savings")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

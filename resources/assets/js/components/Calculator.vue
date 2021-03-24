@@ -4,18 +4,18 @@
         <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
         <div v-if="step === 1" class="border-t-2 border-black py-4">
 
-            <p class="text-2xl mb-4">Calculate how much you could save by switching your IQWST paper workbooks for IQWST Interactive Digital Edition.
-            </p>
+            <p class="text-2xl mb-4">Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term.</p>
 
             <div class="mb-3">
-                <p class="mb-3 font-bold">1. In your area, about how many students use IQWST?</p>
+                <p class="mb-3 font-bold">1. Approximately how many students use IQWST in your classroom, school, or
+                    district?</p>
                 <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_students"
                     v-model="number_of_students">
             </div>
 
 
             <div class="mb-3">
-                <p class="mb-3 font-bold">2. In your area, about how many teachers use IQWST?</p>
+                <p class="mb-3 font-bold">2. Approximately how many teachers use IQWST in your classroom, school, or district?</p>
                 <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_teachers"
                     v-model="number_of_teachers">
             </div>
@@ -99,6 +99,11 @@
 
         <div v-if="step === 3">
             <div class="grid mt-6">
+                <div class="mx-2">&nbsp;</div>
+                <div class="mx-2">
+                    <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
+                </div>
+                <div class="mx-2">&nbsp;</div>
                 <div class="text-center p-4 border-2 border-gray-300 mx-2">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl">Interactive Digital Edition</p>
@@ -124,7 +129,6 @@
                         <p class="text-3xl text-orange-500">{{ digital_six_year_percentage_savings | percent }}</p>
                         <p class="text-xl">over 6 years</p>
                     </div>
-
                 </div>
             </div>
             <div class="mt-6 flex justify-end items-center">
