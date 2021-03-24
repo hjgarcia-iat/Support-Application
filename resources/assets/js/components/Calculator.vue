@@ -1,10 +1,10 @@
 <template>
     <div class="p-6">
         <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-        <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
-        <div v-if="step === 1" class="border-t-2 border-black py-4">
 
-            <p class="text-2xl mb-4">Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term.</p>
+        <div v-if="step === 1" class="border-t-2 border-black py-4">
+            <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
+            <p class="text-2xl mb-4 text-center">Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term.</p>
 
             <div class="mb-3">
                 <p class="mb-3 font-bold">1. Approximately how many students use IQWST in your classroom, school, or
@@ -47,6 +47,7 @@
             </div>
         </div>
         <div v-if="step === 2">
+            <h1 class="text-5xl text-blue-700 font-medium text-center">Digital Savings Compared To Print</h1>
             <div class="grid mt-6">
                 <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">&nbsp;</div>
@@ -98,13 +99,21 @@
         </div>
 
         <div v-if="step === 3">
+            <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
             <div class="grid mt-6">
+                <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">
                     <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
                 </div>
-                <div class="mx-2">&nbsp;</div>
                 <div class="text-center p-4 border-2 border-gray-300 mx-2">
+                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-3xl font-bold">1-Year</p>
+                    <p class="text-xl">Subscription</p>
+                    <p class="text-2xl">Current Subscription</p>
+                </div>
+                    <div class="text-center p-4 border-2 border-gray-300 mx-2">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>

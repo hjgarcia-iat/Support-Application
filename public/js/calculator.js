@@ -2104,6 +2104,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -29509,15 +29518,15 @@ var render = function() {
         on: { "alert-hide": _vm.hideAlert }
       }),
       _vm._v(" "),
-      _c(
-        "h1",
-        { staticClass: "text-5xl text-blue-700 font-medium text-center" },
-        [_vm._v("Calculate Your Digital Savings")]
-      ),
-      _vm._v(" "),
       _vm.step === 1
         ? _c("div", { staticClass: "border-t-2 border-black py-4" }, [
-            _c("p", { staticClass: "text-2xl mb-4" }, [
+            _c(
+              "h1",
+              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              [_vm._v("Calculate Your Digital Savings")]
+            ),
+            _vm._v(" "),
+            _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
               _vm._v(
                 "Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term."
               )
@@ -29690,6 +29699,12 @@ var render = function() {
       _vm._v(" "),
       _vm.step === 2
         ? _c("div", [
+            _c(
+              "h1",
+              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              [_vm._v("Digital Savings Compared To Print")]
+            ),
+            _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
               _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
               _vm._v(" "),
@@ -29883,12 +29898,20 @@ var render = function() {
       _vm._v(" "),
       _vm.step === 3
         ? _c("div", [
+            _c(
+              "h1",
+              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              [_vm._v("Calculate Your Digital Savings")]
+            ),
+            _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
+              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+              _vm._v(" "),
               _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
               _vm._v(" "),
               _vm._m(1),
               _vm._v(" "),
-              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+              _vm._m(2),
               _vm._v(" "),
               _c(
                 "div",
@@ -30057,6 +30080,30 @@ var staticRenderFns = [
         [_vm._v("Best Savings")]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+      [
+        _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
+          _vm._v("IQWST")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-xl" }, [
+          _vm._v("Interactive Digital Edition")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-3xl font-bold" }, [_vm._v("1-Year")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-2xl" }, [_vm._v("Current Subscription")])
+      ]
+    )
   }
 ]
 render._withStripped = true
