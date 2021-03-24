@@ -29519,10 +29519,13 @@ var render = function() {
       }),
       _vm._v(" "),
       _vm.step === 1
-        ? _c("div", { staticClass: "border-t-2 border-black py-4" }, [
+        ? _c("div", [
             _c(
               "h1",
-              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              {
+                staticClass:
+                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+              },
               [_vm._v("Calculate Your Digital Savings")]
             ),
             _vm._v(" "),
@@ -29701,7 +29704,10 @@ var render = function() {
         ? _c("div", [
             _c(
               "h1",
-              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              {
+                staticClass:
+                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+              },
               [_vm._v("Digital Savings Compared To Print")]
             ),
             _vm._v(" "),
@@ -29900,7 +29906,10 @@ var render = function() {
         ? _c("div", [
             _c(
               "h1",
-              { staticClass: "text-5xl text-blue-700 font-medium text-center" },
+              {
+                staticClass:
+                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+              },
               [_vm._v("Calculate Your Digital Savings")]
             ),
             _vm._v(" "),

@@ -2,8 +2,8 @@
     <div class="p-6">
         <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
 
-        <div v-if="step === 1" class="border-t-2 border-black py-4">
-            <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
+        <div v-if="step === 1">
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Calculate Your Digital Savings</h1>
             <p class="text-2xl mb-4 text-center">Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term.</p>
 
             <div class="mb-3">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div v-if="step === 2">
-            <h1 class="text-5xl text-blue-700 font-medium text-center">Digital Savings Compared To Print</h1>
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Digital Savings Compared To Print</h1>
             <div class="grid mt-6">
                 <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">&nbsp;</div>
@@ -99,7 +99,7 @@
         </div>
 
         <div v-if="step === 3">
-            <h1 class="text-5xl text-blue-700 font-medium text-center">Calculate Your Digital Savings</h1>
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Calculate Your Digital Savings</h1>
             <div class="grid mt-6">
                 <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">&nbsp;</div>
