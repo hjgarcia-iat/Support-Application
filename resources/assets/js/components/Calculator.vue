@@ -20,15 +20,15 @@
                     v-model="number_of_teachers">
             </div>
             <div class="mb-3">
-                <p class="mb-3 font-bold">3. We currently are using:</p>
+                <p class="mb-3 font-bold">3. We currently use:</p>
                 <div class="flex items-center mb-3">
                     <input type="radio"
                         name="reason"
                         id="usage_1"
-                        value="IQWST Print"
+                        value="IQWST Print Student Workbooks"
                         v-model="usage">
 
-                    <label class="ml-2 text-grey-darker cursor-pointer" for="usage_1">IQWST Print</label>
+                    <label class="ml-2 text-grey-darker cursor-pointer" for="usage_1">IQWST Print Student Workbooks</label>
                 </div>
                 <div class="flex items-center">
                     <input type="radio"
@@ -199,7 +199,7 @@ export default {
 
             this.hideAlert();
 
-            if(this.usage === "IQWST Print")
+            if(this.usage === "IQWST Print Student Workbooks")
                 this.step = 2;
 
             if(this.usage === "IQWST Interactive Digital Edition")

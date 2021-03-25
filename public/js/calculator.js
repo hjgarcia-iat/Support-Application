@@ -2157,7 +2157,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       }
 
       this.hideAlert();
-      if (this.usage === "IQWST Print") this.step = 2;
+      if (this.usage === "IQWST Print Student Workbooks") this.step = 2;
       if (this.usage === "IQWST Interactive Digital Edition") this.step = 3;
       this.print_one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
       this.print_one_year_percentage_savings = this.print_one_year_dollar_savings / (this.number_of_students * 25.172);
@@ -29599,7 +29599,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v("3. We currently are using:")
+                _vm._v("3. We currently use:")
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "flex items-center mb-3" }, [
@@ -29616,12 +29616,14 @@ var render = function() {
                     type: "radio",
                     name: "reason",
                     id: "usage_1",
-                    value: "IQWST Print"
+                    value: "IQWST Print Student Workbooks"
                   },
-                  domProps: { checked: _vm._q(_vm.usage, "IQWST Print") },
+                  domProps: {
+                    checked: _vm._q(_vm.usage, "IQWST Print Student Workbooks")
+                  },
                   on: {
                     change: function($event) {
-                      _vm.usage = "IQWST Print"
+                      _vm.usage = "IQWST Print Student Workbooks"
                     }
                   }
                 }),
@@ -29632,7 +29634,7 @@ var render = function() {
                     staticClass: "ml-2 text-grey-darker cursor-pointer",
                     attrs: { for: "usage_1" }
                   },
-                  [_vm._v("IQWST Print")]
+                  [_vm._v("IQWST Print Student Workbooks")]
                 )
               ]),
               _vm._v(" "),
