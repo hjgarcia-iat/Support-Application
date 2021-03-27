@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\App\Http\Requests;
+namespace Tests\Feature\App\Http\Requests;
 
 use App\Http\Requests\ContactFormRequest;
 use Illuminate\Foundation\Testing\RefreshDatabase;
