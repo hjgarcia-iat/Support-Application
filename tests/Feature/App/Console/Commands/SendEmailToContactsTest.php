@@ -41,6 +41,30 @@ class SendEmailToContactsTest extends TestCase
         $this->seeEmailContains(Storage::disk('s3')->url("contact-request/{$fileC->file}"));
         $this->seeEmailContains(Storage::disk('s3')->url("contact-request/{$fileD->file}"));
         $this->seeEmailContains(Storage::disk('s3')->url("contact-request/{$fileE->file}"));
+        $this->assertDatabaseHas('contacts', [
+            'id'=> $contact->id,
+            'email_processed' => true,
+        ]);
+    }
 
+    public function test_a_user_that_already_has_emailed_processed_will_not_get_an_email()
+    {
+        Storage::fake('s3');
+
+        \File::copyDirectory(base_path('tests/Files'), storage_path('framework/testing/disks/s3/contact-request'));
+
+        $contact = Contact::factory()->create([
+            'created_at' => Carbon::now()->subMonths(5),
+            'email_processed' => true,
+        ]);
+        $fileA   = File::factory()->create(['contact_id' => $contact->id, 'file' => '1.docx']);
+        $fileB   = File::factory()->create(['contact_id' => $contact->id, 'file' => '2.docx']);
+        $fileC   = File::factory()->create(['contact_id' => $contact->id, 'file' => '3.docx']);
+        $fileD   = File::factory()->create(['contact_id' => $contact->id, 'file' => '4.docx']);
+        $fileE   = File::factory()->create(['contact_id' => $contact->id, 'file' => '5.docx']);
+
+        \Artisan::call('contacts:email');
+
+        $this->seeEmailWasNotSent();
     }
 }

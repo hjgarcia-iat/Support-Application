@@ -12,11 +12,14 @@ class ContactRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected int $id;
+    /**
+     * @var Contact $contact
+     */
+    protected $contact;
 
-    public function __construct($id)
+    public function __construct(Contact $contact)
     {
-        $this->id = (int)$id;
+        $this->contact = $contact;
     }
 
     /**
@@ -26,20 +29,18 @@ class ContactRequest extends Mailable
      */
     public function build()
     {
-        $contact = Contact::find($this->id);
-
         $data = [
-            'reason'   => $contact->reason,
-            'name'     => $contact->name,
-            'email'    => $contact->email,
-            'district' => $contact->district,
-            'details'  => $contact->details,
-            'files'    => File::whereContactId($contact->id)->get(),
+            'reason'   => $this->contact->reason,
+            'name'     => $this->contact->name,
+            'email'    => $this->contact->email,
+            'district' => $this->contact->district,
+            'details'  => $this->contact->details,
+            'files'    => File::whereContactId($this->contact->id)->get(),
         ];
 
         return $this->view('mail.contact_request')
-                    ->from($contact->email)
-                    ->subject("[" . $contact->reason . "] " . $contact->subject)
+                    ->from($this->contact->email)
+                    ->subject("[" . $this->contact->reason . "] " . $this->contact->subject)
                     ->with($data);
     }
 }
