@@ -17,8 +17,13 @@ class RemoveContacts extends Command
     public function handle()
     {
         $count = 0;
-        $contacts = Contact::where('created_at','<=', Carbon::now()->subMonths(1))->get();
+
+        $contacts = Contact::where('created_at','<=', Carbon::now()->subMonths(1))
+            ->whereEmailProcessed(true)
+            ->get();
+
         $count = $contacts->count();
+
         if($count > 0) {
             foreach ($contacts as $contact) {
                 if($contact->files !== null) {
@@ -31,7 +36,7 @@ class RemoveContacts extends Command
                 $contact->delete();
             }
 
-            \Mail::to(env('DEV_EMAIL'))->send(new ContactsDeleted($count));
+            \Mail::to(config('mail.to.dev_email'))->send(new ContactsDeleted($count));
         }
     }
 }
