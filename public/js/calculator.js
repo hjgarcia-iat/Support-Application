@@ -2247,7 +2247,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
+exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n", ""]);
 
 // exports
 
@@ -43567,7 +43567,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
 
 
 /***/ })
