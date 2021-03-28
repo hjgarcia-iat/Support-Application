@@ -29,6 +29,9 @@ class Kernel extends ConsoleKernel
     {
          $schedule->command('contacts:remove')
                   ->monthlyOn(1);
+
+         $schedule->command('contacts:email')
+             ->everyFifteenMinutes();
     }
 
     /**
