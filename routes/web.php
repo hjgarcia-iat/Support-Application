@@ -1,34 +1,36 @@
 <?php
 
+use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\ContactRequestController;
+use App\Http\Controllers\DigitalSetupController;
+use App\Http\Controllers\FilesController;
+use App\Http\Controllers\RemoteLearningRequestController;
+use App\Http\Controllers\RemoteSupportRequestController;
+use App\Http\Controllers\ReturnRequestController;
 
 Route::get('/', function () {
     return redirect('https://activatelearning.com');
 });
 
-Route::get('/access-request', 'AccessRequestController@create')->name('access_request.create');
-Route::post('/access-request', 'AccessRequestController@store')->name('access_request.store');
+Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
+Route::post('/access-request', [AccessRequestController::class, 'store'])->name('access_request.store');
 
-Route::get('/digital-setup-request', 'DigitalSetupController@create')->name('digital_setup_request.create');
-Route::post('/digital-setup-request', 'DigitalSetupController@store')->name('digital_setup_request.store');
+Route::get('/digital-setup-request', [DigitalSetupController::class, 'create'])->name('digital_setup_request.create');
+Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])->name('digital_setup_request.store');
 
-Route::get('/return-request', 'ReturnRequestController@create')->name('return_request.create');
-Route::post('/return-request', 'ReturnRequestController@store')->name('return_request.store');
+Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
+Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
-//Route::get('/next-gen-pet-request', 'NextGenPetRequestController@create')->name('nextgen_pet.create');
-//Route::post('/next-gen-pet-request', 'NextGenPetRequestController@store')->name('nextgen_pet.store');
+Route::get('/remote-learning-support', [RemoteSupportRequestController::class, 'create'])->name('remote_support.create');
+Route::post('/remote-learning-support', [RemoteSupportRequestController::class,'store'])->name('remote_support.store');
 
-Route::get('/remote-learning-support','RemoteSupportRequestController@create')->name('remote_support.create');
-Route::post('/remote-learning-support','RemoteSupportRequestController@store')->name('remote_support.store');
+Route::get('/remote-learning-request', [RemoteLearningRequestController::class, 'create'])->name('remote_learning_request.create');
+Route::post('/remote-learning-request', [RemoteLearningRequestController::class,'store'])->name('remote_learning_request.store');
 
-Route::get('/remote-learning-request', 'RemoteLearningRequestController@create')->name('remote_learning_request.create');
-Route::post('/remote-learning-request', 'RemoteLearningRequestController@store')->name('remote_learning_request.store');
+Route::get('/contact-request', [ContactRequestController::class, 'create'])->name('contact_request.create');
+Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');
 
-Route::get('/contact-request', 'ContactRequestController@create')->name('contact_request.create');
-Route::post('/contact-request', 'ContactRequestController@store')->name('contact_request.store');
+Route::get('calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 
-Route::post('/contact-request/{id}/mail', 'ContactRequestMailController@store')->name('contact_request.mail.store');
-
-Route::get('calculator',[CalculatorController::class,'show'])->name("calculator.show");
-
-Route::post('/files', 'FilesController@store')->name('files.store');
+Route::post('/files', [FilesController::class, 'store'])->name('files.store');
