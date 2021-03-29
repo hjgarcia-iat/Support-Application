@@ -99,7 +99,7 @@
         </div>
 
         <div v-if="step === 3">
-            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Calculate Your Digital Savings</h1>
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Multi-Year Digital Savings</h1>
             <div class="grid mt-6">
                 <div class="mx-2">&nbsp;</div>
                 <div class="mx-2">&nbsp;</div>
@@ -147,6 +147,7 @@
             </div>
 
         </div>
+        <p class="text-center text-sm text-gray-600 mt-8">Estimated digital savings. Your actual savings may vary.</p>
     </div>
 </template>
 
