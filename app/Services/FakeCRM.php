@@ -11,53 +11,34 @@ use App\Mail\EmailLeadToRep;
 class FakeCRM implements CRMInterface
 {
     /**
-     * Fake create lead method
+     * Temporary store for the FAKE Data
      *
-     * @param $request
-     * @return bool
+     * @var array|string[]
      */
-    public function createConceptuaDemoRequestLead($request)
+    protected array $data = ['A1' => []];
+
+    //get a a CRM record
+    public function find(string $id)
     {
-        return true;
+        return $this->data[$id];
     }
 
     /**
-     * @param $request
-     * @return mixed
-     */
-    public function createConceptuaQuoteRequestLead($request)
-    {
-        return true;
-    }
-
-    /**
-     * Create contact form lead
+     * Store a CRM Record
      *
-     * @param $request
-     * @return mixed
+     * @return string
      */
-    public function createContactFormLead($request)
+    public function store(): string
     {
-        return 'some-fake-lead-id';
-    }
+        $this->data['A1']['first_name'] = request('first_name');
+        $this->data['A1']['last_name'] = request('last_name');
+        $this->data['A1']['email'] = request('email');
+        $this->data['A1']['phone'] = request('phone');
+        $this->data['A1']['role'] = request('role');
+        $this->data['A1']['school'] = request('school');
+        $this->data['A1']['city'] = request('city');
+        $this->data['A1']['state'] = request('state');
 
-    /**
-     * @param $request
-     * @return mixed
-     */
-    public function createConceptuaCaseStudyLead($request)
-    {
-        $this->sendLeadEmailToRep($request, 'some-lead-id');
-        return true;
-    }
-
-    /**
-     * @param $request
-     * @param $leadId
-     * @return mixed
-     */
-    public function sendLeadEmailToRep($request, $leadId)
-    {
-        \Mail::to('salesperson@email.com')->send(new EmailLeadToRep($request, $leadId));
+        return 'A1';
     }
 }

@@ -32,5 +32,6 @@ Route::get('/contact-request', [ContactRequestController::class, 'create'])->nam
 Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');
 
 Route::get('calculator', [CalculatorController::class, 'show'])->name("calculator.show");
+Route::post('calculator', [CalculatorController::class, 'store'])->name("calculator.store");
 
 Route::post('/files', [FilesController::class, 'store'])->name('files.store');

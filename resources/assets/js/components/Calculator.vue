@@ -1,7 +1,6 @@
 <template>
     <div class="p-6">
         <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-
         <div v-if="step === 1">
             <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Calculate Your Digital Savings</h1>
             <p class="text-2xl mb-4 text-center">Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term.</p>
@@ -12,8 +11,6 @@
                 <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_students"
                     v-model="number_of_students">
             </div>
-
-
             <div class="mb-3">
                 <p class="mb-3 font-bold">2. Approximately how many teachers use IQWST in your classroom, school, or district?</p>
                 <input type="text" class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline" name="number_of_teachers"
@@ -142,10 +139,11 @@
             </div>
             <div class="mt-6 flex justify-end items-center">
                 <a href="http://activatelearning.com/request-product-info/"
-                    class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">Contact Us</a> <a href="#"
+                    class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">Contact Us</a>
+
+                <a href="#"
                 class="text-blue-700 hover:text-blue-500 font-bold" @click.prevent="step=1">Previous</a>
             </div>
-
         </div>
     </div>
 </template>
