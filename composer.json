@@ -16,6 +16,7 @@
     "laravel/tinker": "^2.0",
     "barryvdh/laravel-ide-helper": "v2.8.*",
     "doctrine/dbal": "~2.3",
+    "omniphx/forrest": "2.*",
     "league/flysystem-aws-s3-v3": "1.*",
     "spinen/laravel-mail-assertions": "dev-develop",
     "revolution/laravel-google-sheets": "5.3.*"

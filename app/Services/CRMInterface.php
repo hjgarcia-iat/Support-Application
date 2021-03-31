@@ -8,33 +8,10 @@ namespace App\Services;
 interface CRMInterface
 {
     /**
-     * @param $request
+     * @param $id string
      * @return mixed
      */
-    public function createConceptuaDemoRequestLead($request);
+    public function find(string $id);
 
-    /**
-     * @param $request
-     * @return mixed
-     */
-    public function createConceptuaQuoteRequestLead($request);
-
-    /**
-     * @param $request
-     * @return mixed
-     */
-    public function createContactFormLead($request);
-
-    /**
-     * @param $request
-     * @return mixed
-     */
-    public function createConceptuaCaseStudyLead($request);
-
-    /**
-     * @param $request
-     * @param $leadId
-     * @return mixed
-     */
-    public function sendLeadEmailToRep($request, $leadId);
+    public function store();
 }

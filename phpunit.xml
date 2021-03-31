@@ -30,6 +30,7 @@
         <env name="DESK_SUPPORT_EMAIL" value="support@email.com"/>
         <env name="REMOTE_SETUP_REQUEST" value="remote-setup@email.com"/>
         <env name="FULFILLMENT_EMAIL" value="fulfillment@email.com"/>
+        <env name="SF_STORAGE" value="object"/>
         <env name="GENERAL_ACTIVATE_LEARNING_EMAIL" value="general@email.com"/>
         <env name="GOOGLE_SPREADSHEET" value="1FCxa1G03-LnbXxLjDPbjWXJ-Pm-S7rPLijGCoCHh4b8"/>
     </php>

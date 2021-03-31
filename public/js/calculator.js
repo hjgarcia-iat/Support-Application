@@ -2111,9 +2111,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -2248,7 +2245,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
+exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n", ""]);
 
 // exports
 
@@ -29913,7 +29910,7 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Multi-Year Digital Savings")]
+              [_vm._v("Calculate Your Digital Savings")]
             ),
             _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
@@ -30063,11 +30060,7 @@ var render = function() {
               )
             ])
           ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-center text-sm text-gray-600 mt-8" }, [
-        _vm._v("Estimated digital savings. Your actual savings may vary.")
-      ])
+        : _vm._e()
     ],
     1
   )
@@ -43572,7 +43565,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
 
 
 /***/ })
