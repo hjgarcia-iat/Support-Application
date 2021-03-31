@@ -15,7 +15,7 @@ class ReturnRequestController extends Controller
     /**
      * @var SpreadsheetInterface
      */
-    private $spreadsheet;
+    private SpreadsheetInterface $spreadsheet;
 
     /**
      * ReturnRequestController constructor.
@@ -32,7 +32,7 @@ class ReturnRequestController extends Controller
      * @param string $code
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(string $code)
     {
         return view('return_request.create', [
             'refund' => Refund::whereRmaNumber($code)->firstOrFail()

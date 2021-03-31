@@ -19,7 +19,7 @@ Route::post('/access-request', [AccessRequestController::class, 'store'])->name(
 Route::get('/digital-setup-request', [DigitalSetupController::class, 'create'])->name('digital_setup_request.create');
 Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])->name('digital_setup_request.store');
 
-Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
+Route::get('/return-request/{code}', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
 Route::get('/remote-learning-support', [RemoteSupportRequestController::class, 'create'])->name('remote_support.create');

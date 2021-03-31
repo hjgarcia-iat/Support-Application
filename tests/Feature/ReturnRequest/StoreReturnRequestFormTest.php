@@ -2,9 +2,11 @@
 
 namespace Tests\Feature\ReturnRequest;
 
+use App\Refund;
 use App\Services\Spreadsheet\FakeSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
 use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
@@ -16,12 +18,20 @@ class StoreReturnRequestFormTest extends TestCase
     /**
      * @var FakeSpreadsheet
      */
-    protected $spreadsheet;
+    protected FakeSpreadsheet $spreadsheet;
+
+    /**
+     * @var Refund
+     */
+    protected Refund $refund;
+
+    use RefreshDatabase;
 
     public function setUp(): void
     {
         parent::setUp();
         $this->spreadsheet = new FakeSpreadsheet();
+        $this->refund = Refund::factory()->create();
         $this->app->instance(SpreadsheetInterface::class, $this->spreadsheet);
     }
 
@@ -30,7 +40,7 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_data_is_saved_to_the_spreadsheet()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams());
 
         $response->assertStatus(200);
@@ -66,11 +76,12 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_name_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $refund = Refund::factory()->create();
+        $response = $this->from(route('return_request.create', $this->refund->rma_number), )
             ->post(route('return_request.store'), $this->validParams(['name' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('name');
     }
 
@@ -79,11 +90,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_email_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['email' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('email');
     }
 
@@ -92,11 +103,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_email_field_is_valid()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['email' => 'invalid-email']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('email');
     }
 
@@ -105,11 +116,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_district_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['district' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('district');
     }
 
@@ -118,11 +129,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_order_number_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['order_number' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('order_number');
     }
 
@@ -131,11 +142,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_rma_number_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['rma_number' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('rma_number');
     }
 
@@ -144,11 +155,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_reason_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['reason' => '']));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('reason');
     }
 
@@ -157,11 +168,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_sku_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '', 'quantity' => 1]]));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('products.*.sku');
     }
 
@@ -170,11 +181,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_quantity_field_is_required()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234', 'quantity' => '']]));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('products.*.quantity');
     }
 
@@ -183,11 +194,11 @@ class StoreReturnRequestFormTest extends TestCase
      */
     public function the_quantity_field_is_a_number()
     {
-        $response = $this->from(route('return_request.create'))
+        $response = $this->from(route('return_request.create', $this->refund->rma_number))
             ->post(route('return_request.store'), $this->validParams(['products' => ['sku' => '1234', 'quantity' => 'invalid-quantity']]));
 
         $response->assertStatus(302);
-        $response->assertRedirect(route('return_request.create'));
+        $response->assertRedirect(route('return_request.create', $this->refund->rma_number));
         $response->assertSessionHasErrors('products.*.quantity');
     }
 
