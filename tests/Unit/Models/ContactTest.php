@@ -4,7 +4,6 @@ namespace Tests\Unit\Models;
 
 use App\Contact;
 use App\File;
-use App\Services\CRMInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
