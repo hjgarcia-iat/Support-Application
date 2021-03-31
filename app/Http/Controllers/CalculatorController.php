@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CalculatorRequest;
 use App\Services\CRMInterface;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class CalculatorController extends Controller
         return view("calculator.show");
     }
 
-    public function store(Request $request, CRMInterface $crm): \Illuminate\Http\JsonResponse
+    public function store(CalculatorRequest $request, CRMInterface $crm): \Illuminate\Http\JsonResponse
     {
         $crm->store();
 
