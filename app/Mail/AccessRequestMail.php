@@ -24,26 +24,27 @@ class AccessRequestMail extends Mailable
      */
     public function build()
     {
-        $zip = Zip::whereZipCode(request()->get('zip_code'))->first();
+
+        $data = [
+            'first_name' => request()->get('first_name'),
+            'last_name' => request()->get('last_name'),
+            'email' => request()->get('email'),
+            'school_district' => request()->get('district'),
+            'school' => request()->get('school'),
+            'sales_rep' => request()->get('sales_rep'),
+            'resources' => request()->get('resource'),
+            'access_type' => request()->get('access_type'),
+            'version' => request()->get('version'),
+            'ebooks' => request()->get('ebook_list'),
+            'time_frame' => request()->get('time_frame'),
+            'note' => request()->get('note'),
+            'city' => request('city'),
+            'state' => request('state'),
+        ];
 
         return $this->view('mail.access_request')
             ->from(request()->get('sales_rep'))
             ->subject('Form Submission - Demo Portal Access')
-            ->with([
-                'first_name' => request()->get('first_name'),
-                'last_name' => request()->get('last_name'),
-                'email' => request()->get('email'),
-                'school_district' => request()->get('district'),
-                'school' => request()->get('school'),
-                'zip_code' => $zip->zip_code,
-                'city' => $zip->city,
-                'state' => $zip->abbr,
-                'sales_reps' => request()->get('sales_reps'),
-                'resources' => request()->get('resource'),
-                'version' => request()->get('version'),
-                'ebooks' => request()->get('ebook_list'),
-                'time_frame' => request()->get('time_frame'),
-                'note' => request()->get('note'),
-            ]);
+            ->with($data);
     }
 }

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="bootstrap/autoload.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false">
+<phpunit backupGlobals="false" backupStaticAttributes="false" bootstrap="bootstrap/autoload.php" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" processIsolation="false" stopOnFailure="false">
     <testsuites>
+        <testsuite name="Acceptance">
+            <directory suffix="Test.php">./tests/Acceptance</directory>
+        </testsuite>
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
@@ -31,7 +26,11 @@
         <env name="FILESYSTEM_DRIVER" value="local"/>
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value=":memory:"/>
+        <env name="DEV_EMAIL" value="email@email.com"/>
         <env name="DESK_SUPPORT_EMAIL" value="support@email.com"/>
+        <env name="REMOTE_SETUP_REQUEST" value="remote-setup@email.com"/>
+        <env name="FULFILLMENT_EMAIL" value="fulfillment@email.com"/>
+        <env name="SF_STORAGE" value="object"/>
         <env name="GENERAL_ACTIVATE_LEARNING_EMAIL" value="general@email.com"/>
         <env name="GOOGLE_SPREADSHEET" value="1FCxa1G03-LnbXxLjDPbjWXJ-Pm-S7rPLijGCoCHh4b8"/>
     </php>

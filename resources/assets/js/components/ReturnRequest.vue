@@ -1,78 +1,79 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Return Request</h1>
-        <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are subject to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
-            memo will be issued for the approved returned items along with a restocking fee of 20%.  If you have questions regarding your return please contact our Customer Service Group at
+        <h1 class="mb-4 text-3xl uppercase leading-loose">Return Request</h1>
+        <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are
+            subject
+            to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
+            memo will be issued for the approved returned items along with a restocking fee of 20%. If you have
+            questions
+            regarding your return please contact our Customer Service Group at
             <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-            <h2 class="mb-4">General Information</h2>
+            <h2 class="mb-4 text-2xl uppercase leading-loose">General Information</h2>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="name" placeholder="Enter name"
-                       name="name" v-model="name">
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="name" placeholder="Enter name" name="name" v-model="name">
 
                 <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Email Address</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="email" placeholder="Enter Email Address"
-                       name="email" v-model="email">
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="email" placeholder="Enter Email Address" name="email" v-model="email">
 
                 <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     District Name</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="district" placeholder="Enter District Name"
-                       name="district" v-model="district">
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="district" placeholder="Enter District Name" name="district" v-model="district">
 
                 <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="order_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Order Number or PO Number</label>
                 <input type="text"
-                       class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                       id="order_number" placeholder="Order Number or PO Number"
-                       name="order_number" v-model="order_number">
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="order_number" placeholder="Order Number or PO Number" name="order_number"
+                    v-model="order_number">
 
                 <form-error :error=formErrors.order_number[0] v-if="formErrors.order_number"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="rma_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     RMA Number</label>
                 <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="rma_number" placeholder="RMA Number"
-                        name="rma_number" v-model="rma_number">
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="rma_number" placeholder="RMA Number" name="rma_number" v-model="rma_number">
 
                 <form-error :error=formErrors.rma_number[0] v-if="formErrors.rma_number"></form-error>
             </div>
 
             <div class="mb-6">
                 <label for="reason" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Reason for Return:</label>
-                <select name="reason" id="reason" v-model="reason" class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                <select name="reason" id="reason" v-model="reason"
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="">Select a Reason for Return</option>
                     <option value="Overstock">Overstock</option>
                     <option value="Ordered in error">Ordered in error</option>
@@ -85,54 +86,53 @@
             <hr class="border-t my-8">
 
             <div class="flex items-center mb-4">
-                <h2 class="mr-auto mb-0">Products to Return</h2>
+                <h2 class="mb-4 text-2xl mr-auto uppercase leading-loose">Products to Return</h2>
                 <a href="" @click.prevent="addProduct"
-                   class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline">
+                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
                     <small><i class="fa fa-plus mr-2"></i>Add Product</small>
                 </a>
             </div>
 
 
-            <table class="table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th><small class="text-lg text-red">*</small> SKU</th>
-                    <th><small class="text-lg text-red">*</small> Quantity</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="(product, key, index) in products">
-                    <td class="text-center">
+            <section class="mb-5">
+                <div class="grid grid-cols-7 mb-2">
+                    <div class="col-span-1"></div>
+                    <div class="col-span-3 px-2 flex">SKU</div>
+                    <div class="col-span-3 px-2 flex">Quantity</div>
+                </div>
+
+                <div class="grid grid-cols-7 grid-flow-row-dense mb-3" v-for="(product, key, index) in products">
+                    <div class="col-span-1">
                         <a href="" @click.prevent="removeProduct(key)"
-                                class="block bg-red-lighter hover:text-red-darker text-red font-bold py-2 px-3 focus:outline-none focus:shadow-outline block">
+                            class="block bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline">
                             <i class="fa fa-remove"></i>
                         </a>
-                    </td>
-                    <td>
+
+                    </div>
+                    <div class="col-span-3 px-2 flex flex-col row-span-2">
                         <input type="text"
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                :id="'sku_' + index"
-                                placeholder="Enter SKU" name="products[]['name']" v-model="product.sku">
+                            class="appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white"
+                            :id="'sku_' + index" placeholder="Enter SKU" name="products[]['name']"
+                            v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
-                                v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
-                    </td>
-                    <td>
+                            v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
+
+                    </div>
+                    <div class="col-span-3 px-2 flex flex-col row-span-2">
                         <input type="text"
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                :id="'quantity_'+index"
-                                placeholder="Enter Quantity" name="products[]['school']" v-model="product.quantity">
+                            class="appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white"
+                            :id="'quantity_'+index" placeholder="Enter Quantity" name="products[]['school']"
+                            v-model="product.quantity">
 
                         <form-error :error="getErrorForArray(key,'quantity')"
-                                v-if="checkForArrayError('products.' + key + '.quantity')"></form-error>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                            v-if="checkForArrayError('products.' + key + '.quantity')"></form-error>
+                    </div>
+                </div>
+            </section>
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-                    :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Process Return
             </button>
@@ -141,106 +141,106 @@
 </template>
 
 <script>
-    import * as Vue from "vue"
-    import Alert from "../components/partials/FormAlert"
-    import FormError from "../components/partials/FormError"
+import * as Vue from "vue"
+import Alert from "../components/partials/FormAlert"
+import FormError from "../components/partials/FormError"
 
-    export default {
-        components: {
-            Alert,
-            FormError
-        },
-        data() {
-            return {
-                name: '',
-                email: '',
-                district: '',
-                order_number: '',
-                rma_number: '',
-                reason: '',
-                products: [
-                    {
-                        sku: '',
-                        quantity: ''
-                    }
-                ],
-                product: {
+export default {
+    components: {
+        Alert,
+        FormError
+    },
+    data() {
+        return {
+            name: '',
+            email: '',
+            district: '',
+            order_number: '',
+            rma_number: '',
+            reason: '',
+            products: [
+                {
                     sku: '',
                     quantity: ''
-                },
-                formErrors: [],
-                formMessageType: 'success',
-                formMessage: '',
-                loading: false,
-                alertVisible: true
-            }
+                }
+            ],
+            product: {
+                sku: '',
+                quantity: ''
+            },
+            formErrors: [],
+            formMessageType: 'success',
+            formMessage: '',
+            loading: false,
+            alertVisible: true
+        }
+    },
+    methods: {
+        hideAlert() {
+            this.alertVisible = false;
         },
-        methods: {
-            hideAlert() {
-                this.alertVisible = false;
-            },
-            checkForArrayError(field) {
-                return this.formErrors.hasOwnProperty(field);
-            },
-            getErrorForArray(key, field) {
-                return this.formErrors['products.' + key + '.' + field][0];
-            },
-            addProduct() {
-                this.products.push(Vue.util.extend({}, this.product))
-            },
-            removeProduct(index) {
-                Vue.delete(this.products, index);
-            },
-            submit() {
-                this.loading = true;
-                axios.post('/return-request', {
-                    name: this.name,
-                    email: this.email,
-                    order_number: this.order_number,
-                    rma_number: this.rma_number,
-                    district: this.district,
-                    reason: this.reason,
-                    products: this.products,
-                }).then(response => {
-                    if (response.data.success) {
-                        this.alertVisible = true;
-                        this.reset();
-                        this.formMessageType = 'success';
-                        this.formMessage = response.data.message;
-                    }
-
-                    this.loading = false;
-                }).catch(error => {
+        checkForArrayError(field) {
+            return this.formErrors.hasOwnProperty(field);
+        },
+        getErrorForArray(key, field) {
+            return this.formErrors['products.' + key + '.' + field][0];
+        },
+        addProduct() {
+            this.products.push(Vue.util.extend({}, this.product))
+        },
+        removeProduct(index) {
+            Vue.delete(this.products, index);
+        },
+        submit() {
+            this.loading = true;
+            axios.post('/return-request', {
+                name: this.name,
+                email: this.email,
+                order_number: this.order_number,
+                rma_number: this.rma_number,
+                district: this.district,
+                reason: this.reason,
+                products: this.products,
+            }).then(response => {
+                if (response.data.success) {
                     this.alertVisible = true;
-                    this.formMessage = 'Please see errors below!';
-                    this.formErrors = error.response.data;
-                    this.formMessageType = 'error';
-                    this.loading = false;
-                });
+                    this.reset();
+                    this.formMessageType = 'success';
+                    this.formMessage = response.data.message;
+                }
 
-            },
-            reset() {
-                this.name = '';
-                this.email = '';
-                this.order_number = '';
-                this.rma_number = '';
-                this.district = '';
-                this.reason = '';
-                this.products = [
-                    {
-                        name: '',
-                        email: '',
-                        school: '',
-                    }
-                ];
-                this.product = {
-                    'name': '',
-                    'email': '',
-                    'school': '',
-                };
-                this.formErrors = [];
-                this.formMessage = '';
-            }
+                this.loading = false;
+            }).catch(error => {
+                this.alertVisible = true;
+                this.formMessage = 'Please see errors below!';
+                this.formErrors = error.response.data.errors;
+                this.formMessageType = 'error';
+                this.loading = false;
+            });
+
+        },
+        reset() {
+            this.name = '';
+            this.email = '';
+            this.order_number = '';
+            this.rma_number = '';
+            this.district = '';
+            this.reason = '';
+            this.products = [
+                {
+                    name: '',
+                    email: '',
+                    school: '',
+                }
+            ];
+            this.product = {
+                'name': '',
+                'email': '',
+                'school': '',
+            };
+            this.formErrors = [];
+            this.formMessage = '';
         }
     }
+}
 </script>

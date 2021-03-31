@@ -119,7 +119,7 @@ return [
     'attributes' => [
         'name' => 'Name',
         'dm_name' => 'District/IT Manager\'s Name',
-        'teacher_name' => 'Teachers\'s Name',
+        'teacher_name' => 'Teacher\'s Name',
         'dm_email' => 'District/IT Manager\'s Email Address',
         'teacher_email' => 'Teachers\'s Email Address',
         'teacher_school' => 'School Name',
@@ -133,6 +133,7 @@ return [
         'last_name' => 'Last Name',
         'zip' => 'Zip code',
         'zipcode' => 'Zip code',
+        'zip_code' => 'Zip code',
         'description' => 'Description',
         'comment' => 'Comment',
         'teachers.*.name' => 'Teacher Name',
@@ -148,6 +149,15 @@ return [
         'reason' => 'Reason',
         'order_number' => 'Order Number or PO Number',
         'rma_number' => 'RMA Number',
+        'access_type' => 'Access Type',
+        'time_frame' => 'Time Frame',
+        'resource' => 'Resource ',
+        'ebook_list' => 'E-Book',
+        'version' => 'Version',
+        'sales_rep' => 'Sales Representative',
+        'institution_name' => 'Institution Name',
+        'inquiry' => 'Inquiry',
+        'student_name' => 'Student Name',
     ],
 
 ];

@@ -14,20 +14,3 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
 }
-
-h1, h2, h3, h4, h5, h6, p {
-  @apply .mb-6;
-}
-
-p {
-  @apply .leading-loose;
-}
-
-a {
-  color: $color-orange;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}

@@ -1,13 +1,13 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4">Digital Setup Request</h1>
+        <h1 class="mb-4 text-3xl uppercase leading-loose">Digital Setup Request</h1>
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Name</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="name" placeholder="Enter Your Full Name"
                     name="name" v-model="name">
 
@@ -16,9 +16,9 @@
 
             <div class="mb-6">
                 <label for="po_number" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     PO Number</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="po_number" placeholder="Enter PO Number"
                     name="po_number" v-model="po_number">
 
@@ -27,9 +27,9 @@
 
             <div class="mb-6">
                 <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Email Address</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="email" placeholder="Enter your Email Address"
                     name="email" v-model="email">
 
@@ -37,9 +37,9 @@
             </div>
             <div class="mb-6">
                 <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     District Name</label> <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="district" placeholder="Enter District Name"
                     name="district" v-model="district">
 
@@ -48,10 +48,10 @@
 
             <div class="mb-6">
                 <label for="start_date" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     School Start Date</label>
                 <datepicker :format="'M/d/yyyy'" v-model="start_date" :id="start_date"
-                        :input-class="'appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'"
+                        :input-class="'appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'"
                         :placeholder="'Select School Start Date'"></datepicker>
 
                 <form-error :error=formErrors.start_date[0] v-if="formErrors.start_date"></form-error>
@@ -59,14 +59,47 @@
 
             <div class="mb-6">
                 <label for="curriculum" class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Curriculum</label> <select name="curriculum" id="curriculum" v-model="curriculum"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                 <option value="">Select a curriculum</option>
                 <option value="Active Science">Active Science</option>
                 <option value="Conceptua Math">Conceptua Math</option>
-                <option value="IQWST IDE">IQWST IDE</option>
+                <option value="IDE Active Physics">IDE Active Physics</option>
+                <option value="IDE IQWST">IDE IQWST</option>
                 <option value="IQWST Teacher Portal">IQWST Teacher Portal</option>
+                <option value="PBIScience Cyberpd">PBIScience Cyberpd</option>
+                <option value="IMP/MM Cyberpd">IMP/MM Cyberpd</option>
+                <option value="Activate Learning Prime">Activate Learning Prime</option>
+                <option value="Ebook: Active Physics">Ebook: Active Physics</option>
+                <option value="Ebook: Active Physics Video Series">Ebook: Active Physics Video Series</option>
+                <option value="Ebook: Active Chemistry">Ebook: Active Chemistry</option>
+                <option value="Ebook: Active Chemistry Video Series">Ebook: Active Chemistry Video Series</option>
+                <option value="Ebook: Active Physical Science">Ebook: Active Physical Science</option>
+                Ebook: <option value="Ebook: Astrobiology">Ebook: Astrobiology</option>
+                <option value="Ebook: EarthComm">Ebook: EarthComm</option>
+                <option value="Ebook: Engineering the Future">Ebook: Engineering the Future</option>
+                <option value="Ebook: Environmental Science and Biocomplexity">Ebook: Environmental Science and
+                    Biocomplexity
+                </option>
+                <option value="Ebook: Investigating Astronomy">Ebook: Investigating Astronomy</option>
+                <option value="Ebook: Interactive Mathematics Program">Ebook: Interactive Mathematics Program</option>
+                <option value="Ebook: Meaningful Math">Ebook: Meaningful Math</option>
+                <option value="Ebook: PBIScience: Animals in Action">Ebook: PBIScience: Animals in Action</option>
+                <option value="Ebook: PBIScience: Genetics">Ebook: PBIScience: Genetics</option>
+                <option value="Ebook: PBIScience: Good Friends & Germs">Ebook: PBIScience: Good Friends & Germs</option>
+                <option value="Ebook: PBIScience: Living Together">Ebook: PBIScience: Living Together</option>
+                <option value="Ebook: PBIScience: Digging In">Ebook: PBIScience: Digging In</option>
+                <option value="Ebook: PBIScience: Astronomy">Ebook: PBIScience: Astronomy</option>
+                <option value="Ebook: PBIScience: Ever-Changing Earth">Ebook: PBIScience: Ever-Changing Earth</option>
+                <option value="Ebook: PBIScience: Weather Watch">Ebook: PBIScience: Weather Watch</option>
+                <option value="Ebook: PBIScience: Diving Into Science">Ebook: PBIScience: Diving Into Science</option>
+                <option value="Ebook: PBIScience: Air Quality">Ebook: PBIScience: Air Quality</option>
+                <option value="Ebook: PBIScience: Energy">Ebook: PBIScience: Energy</option>
+                <option value="Ebook: PBIScience: Moving Big Things">Ebook: PBIScience: Moving Big Things</option>
+                <option value="Ebook: PBIScience: Vehicles in Motion">Ebook: PBIScience: Vehicles in Motion</option>
+                <option value="Ebook: PBIScience: Video Series">Ebook: PBIScience: Video Series</option>
+
             </select>
 
                 <form-error :error=formErrors.curriculum[0] v-if="formErrors.curriculum"></form-error>
@@ -74,7 +107,7 @@
 
             <div class="mb-6">
                 <label class="block text-grey-darker text-sm font-bold mb-2">
-                    <small class="text-lg text-red">*</small>
+                    <small class="text-lg text-red-600">*</small>
                     Is there a District/IT Manager Available?</label>
                 <div class="form-check form-check-inline">
                     <input type="radio" name="district_manager"
@@ -99,18 +132,18 @@
 
                 <div class="mb-6">
                     <label for="dm_name" class="block text-grey-darker text-sm font-bold mb-2">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         Name</label> <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="dm_name"
                         placeholder="District/IT Manager's Name" name="dm_name" v-model="dm_name">
                     <form-error :error=formErrors.dm_name[0] v-if="formErrors.dm_name"></form-error>
                 </div>
                 <div class="mb-6">
                     <label for="dm_email" class="block text-grey-darker text-sm font-bold mb-2">
-                        <small class="text-lg text-red">*</small>
+                        <small class="text-lg text-red-600">*</small>
                         Email</label> <input type="text"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         id="dm_email"
                         placeholder="District/IT Manager's Email Address" name="dm_email"
                         v-model="dm_email">
@@ -125,9 +158,9 @@
                 <hr class="border-t my-8">
 
                 <div class="flex items-center mb-4">
-                    <h2 class="mr-auto mb-0">Add Teachers</h2>
+                    <h2 class="mr-auto text-2xl uppercase leading-loose">Add Teachers</h2>
                     <a href="" @click.prevent="addTeacher"
-                            class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline no-underline"><small><i
+                            class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"><small><i
                             class="fa fa-plus mr-2"></i> Add Teacher</small></a>
                 </div>
 
@@ -140,9 +173,9 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th><small class="text-lg text-red">*</small> Name</th>
-                        <th><small class="text-lg text-red">*</small> Email</th>
-                        <th><small class="text-lg text-red">*</small> School</th>
+                        <th><small class="text-lg text-red-600">*</small> Name</th>
+                        <th><small class="text-lg text-red-600">*</small> Email</th>
+                        <th><small class="text-lg text-red-600">*</small> School</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -156,7 +189,7 @@
                         <td>
 
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_name_' + index"
                                     placeholder="Teacher Full Name" name="teachers[]['name']"
                                     v-model="teacher.name">
@@ -167,7 +200,7 @@
                         <td>
 
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_email_' + index"
                                     placeholder="Teacher Email Address" name="teachers[]['email']"
                                     v-model="teacher.email">
@@ -177,7 +210,7 @@
                         </td>
                         <td>
                             <input type="text"
-                                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                     :id="'teacher_school_'+index"
                                     placeholder="School Name" name="teachers[]['school']"
                                     v-model="teacher.school">
@@ -191,7 +224,7 @@
             </div>
 
             <button type="submit"
-                    class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <i class="fa fa-refresh fa-spin" v-if="loading"></i>
                 Send Request
@@ -283,7 +316,7 @@
                 }).catch(error => {
                     this.alertVisible = true;
                     this.formMessage = 'Please see errors below!';
-                    this.formErrors = error.response.data;
+                    this.formErrors = error.response.data.errors;
                     this.formMessageType = 'error';
                     this.loading = false;
                 });

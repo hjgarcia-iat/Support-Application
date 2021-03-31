@@ -2,11 +2,9 @@
 
 namespace Tests\Acceptance;
 
-use App\Services\Spreadsheet\FakeSpreadsheet;
-use App\Services\Spreadsheet\SpreadsheetInterface;
 use Carbon\Carbon;
-use Sheets;
 use Google;
+use Sheets;
 use Tests\TestCase;
 
 /**
@@ -43,16 +41,6 @@ class StoreReturnRequestFormTest extends TestCase
             'QTY' => 1,
         ];
 
-        $this->assertEquals(Carbon::now()->format('m/d/Y'), resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['Date Entered']);
-        $this->assertEquals($data['Requester Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['Requester Name']);
-        $this->assertEquals($data['Requester Email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['Requester Email']);
-        $this->assertEquals($data['District/Company Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['District / Company Name']);
-        $this->assertEquals($data['Order# or PO#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['Order# or PO#']);
-        $this->assertEquals($data['RMA#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['RMA#']);
-        $this->assertEquals($data['Reason for Return'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['Reason for Return']);
-        $this->assertEquals(1234, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['SKU']);
-        $this->assertEquals(1, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[1]['QTY']);
-
         $this->assertEquals(Carbon::now()->format('m/d/Y'), resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Date Entered']);
         $this->assertEquals($data['Requester Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Name']);
         $this->assertEquals($data['Requester Email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Email']);
@@ -60,8 +48,18 @@ class StoreReturnRequestFormTest extends TestCase
         $this->assertEquals($data['Order# or PO#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Order# or PO#']);
         $this->assertEquals($data['RMA#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['RMA#']);
         $this->assertEquals($data['Reason for Return'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Reason for Return']);
-        $this->assertEquals(1236, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['SKU']);
-        $this->assertEquals(4, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['QTY']);
+        $this->assertEquals(1234, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['SKU']);
+        $this->assertEquals(1, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['QTY']);
+
+        $this->assertEquals(Carbon::now()->format('m/d/Y'), resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Date Entered']);
+        $this->assertEquals($data['Requester Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Name']);
+        $this->assertEquals($data['Requester Email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Email']);
+        $this->assertEquals($data['District/Company Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['District / Company Name']);
+        $this->assertEquals($data['Order# or PO#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Order# or PO#']);
+        $this->assertEquals($data['RMA#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['RMA#']);
+        $this->assertEquals($data['Reason for Return'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Reason for Return']);
+        $this->assertEquals(1236, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['SKU']);
+        $this->assertEquals(4, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['QTY']);
     }
 
     /**

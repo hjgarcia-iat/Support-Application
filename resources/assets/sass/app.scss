@@ -3,10 +3,15 @@
 // Main Imports
 // --------------------------------------------------
 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "~font-awesome/scss/font-awesome";
-@import "tailwind";
-@import "variables";
-@import "grid";
 @import "fonts";
+@import "variables";
 @import "general";
-@import "page";
+
+.app-grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
