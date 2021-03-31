@@ -5,10 +5,10 @@ namespace App\Services;
 use Omniphx\Forrest\Providers\Laravel\Facades\Forrest;
 
 /**
- * Class SalesforceCrm
+ * Class CrmSalesforce
  * @package App\Services
  */
-class SalesforceCrm implements CRMInterface
+class CrmSalesforce implements CrmInterface
 {
     public function __construct()
     {

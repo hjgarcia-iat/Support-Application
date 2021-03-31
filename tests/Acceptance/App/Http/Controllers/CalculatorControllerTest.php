@@ -2,7 +2,7 @@
 
 namespace Tests\Acceptance\App\Http\Controllers;
 
-use App\Services\CRMInterface;
+use App\Services\CrmInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -24,7 +24,7 @@ class CalculatorControllerTest extends TestCase
 
     public function test_we_can_submit_the_results_of_the_calculator()
     {
-        resolve(CRMInterface::class)->find('test');
+        resolve(CrmInterface::class)->find('test');
 
         $data = [
             'first_name' => 'Jane',
@@ -41,7 +41,7 @@ class CalculatorControllerTest extends TestCase
 
         //get the record
 
-        $this->assertEquals(resolve(CRMInterface::class)->find('A1'), $data);
+        $this->assertEquals(resolve(CrmInterface::class)->find('A1'), $data);
         $response->assertStatus(200);
         $response->assertJson([
             'success' => true

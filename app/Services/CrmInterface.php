@@ -5,7 +5,7 @@ namespace App\Services;
  * Interface CRMInterface
  * @package App\Services
  */
-interface CRMInterface
+interface CrmInterface
 {
     /**
      * @param $id string

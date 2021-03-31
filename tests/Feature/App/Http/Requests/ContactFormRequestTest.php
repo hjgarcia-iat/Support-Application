@@ -12,9 +12,6 @@ use Tests\TestCase;
  */
 class ContactFormRequestTest extends TestCase
 {
-    use RefreshDatabase;
-
-
     public function test_the_form_request_returns_the_correct_rules()
     {
         $rules = [

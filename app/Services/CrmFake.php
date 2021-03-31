@@ -8,7 +8,7 @@ use App\Mail\EmailLeadToRep;
  * Class FakeCRM
  * @package App\Services
  */
-class FakeCRM implements CRMInterface
+class CrmFake implements CrmInterface
 {
     /**
      * Temporary store for the FAKE Data

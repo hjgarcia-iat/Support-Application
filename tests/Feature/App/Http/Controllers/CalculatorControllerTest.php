@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use App\Services\CRMInterface;
+use App\Services\CrmInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -37,7 +37,7 @@ class CalculatorControllerTest extends TestCase
 
         $response = $this->post(route('calculator.store'), $data);
 
-        $this->assertEquals(resolve(CRMInterface::class)->find('A1'), $data);
+        $this->assertEquals(resolve(CrmInterface::class)->find('A1'), $data);
         $response->assertStatus(200);
         $response->assertJson([
             'success' => true,

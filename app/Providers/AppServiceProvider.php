@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Services\CRMInterface;
-use App\Services\FakeCRM;
-use App\Services\SalesforceCrm;
+use App\Services\CrmInterface;
+use App\Services\CrmFake;
+use App\Services\CrmSalesforce;
 use App\Services\Spreadsheet\GoogleSpreadsheet;
 use App\Services\Spreadsheet\SpreadsheetInterface;
 use Illuminate\Support\ServiceProvider;
@@ -30,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if(env('APP_ENV') !== 'testing') {
-            $this->app->instance(CRMInterface::class, new SalesforceCrm());
+            $this->app->instance(CrmInterface::class, new CrmSalesforce());
         } else {
-            $this->app->instance(CRMInterface::class, new FakeCRM());
+            $this->app->instance(CrmInterface::class, new CrmFake());
         }
 
 
