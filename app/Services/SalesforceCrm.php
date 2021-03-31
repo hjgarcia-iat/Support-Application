@@ -2,15 +2,22 @@
 
 namespace App\Services;
 
+use Omniphx\Forrest\Providers\Laravel\Facades\Forrest;
+
 /**
  * Class SalesforceCrm
  * @package App\Services
  */
 class SalesforceCrm implements CRMInterface
 {
+    public function __construct()
+    {
+        Forrest::authenticate();
+    }
+
     public function find(string $id)
     {
-        // TODO: Implement find() method.
+        dd(Forrest::query('SELECT Id,email From Lead WHERE email=\'aalbert@littleflowerschoolnv.org\'')['records'][0]);
     }
 
     public function store()
