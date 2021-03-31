@@ -3,8 +3,6 @@
 namespace Tests\Feature\App\Http\Controllers;
 
 use App\Services\CRMInterface;
-use App\Services\FakeCRM;
-use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -26,11 +24,6 @@ class CalculatorControllerTest extends TestCase
 
     public function test_we_can_submit_the_results_of_the_calculator()
     {
-        //swap CRM instance for a fake one
-        //that way the controller does not anything about implementation details
-        $crm = new FakeCRM();
-        $this->app->instance(CRMInterface::class, $crm);
-
         $data = [
             'first_name' => 'Jane',
             'last_name'  => 'Doe',
@@ -47,7 +40,7 @@ class CalculatorControllerTest extends TestCase
         $this->assertEquals(resolve(CRMInterface::class)->find('A1'), $data);
         $response->assertStatus(200);
         $response->assertJson([
-            'success' => true
+            'success' => true,
         ]);
     }
 }
