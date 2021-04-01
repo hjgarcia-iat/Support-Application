@@ -25,14 +25,17 @@ class CalculatorControllerTest extends TestCase
     public function test_we_can_submit_the_results_of_the_calculator()
     {
         $data = [
-            'first_name' => 'Jane',
-            'last_name'  => 'Doe',
-            'email'      => 'email@email.com',
-            'phone'      => '000-0000-0000',
-            'role'       => 'Classroom Teacher',
-            'school'     => 'school',
-            'city'       => 'city',
-            'state'      => 'AA',
+            'first_name'         => 'Jane',
+            'last_name'          => 'Doe',
+            'email'              => 'email@email.com',
+            'phone'              => '000-0000-0000',
+            'role'               => 'Classroom Teacher',
+            'school'             => 'school',
+            'city'               => 'city',
+            'state'              => 'AA',
+            'number_of_teachers' => 100,
+            'number_of_students' => 1,
+            'usage'              => 'Test',
         ];
 
         $response = $this->post(route('calculator.store'), $data);
