@@ -35,4 +35,12 @@ class CrmFake implements CrmInterface
 
         return 'A1';
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function delete(string $email): bool
+    {
+        return true;
+    }
 }

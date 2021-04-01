@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 /**
@@ -14,4 +15,10 @@ interface CrmInterface
     public function findByEmail(string $email);
 
     public function store();
+
+    /**
+     * @param string $email
+     * @return boolean
+     */
+    public function delete(string $email): bool;
 }
