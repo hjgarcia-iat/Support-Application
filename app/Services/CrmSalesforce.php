@@ -21,7 +21,7 @@ class CrmSalesforce implements CrmInterface
      */
     public function findByEmail(string $email)
     {
-        $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State From Lead WHERE email='{$email}'")['records'];
+        $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State,Description From Lead WHERE email='{$email}'")['records'];
 
         if (!empty($records)) return $records[0];
 
@@ -33,14 +33,15 @@ class CrmSalesforce implements CrmInterface
         Forrest::sobjects('Lead', [
             'method' => 'post',
             'body'   => [
-                'FirstName' => request('first_name'),
-                'LastName'  => request('last_name'),
-                'Email'     => request('email'),
-                'Phone'     => request('phone'),
-                'Role__c'   => request('role'),
-                'Company'   => request('school'),
-                'City'      => request('city'),
-                'State'     => request('state'),
+                'FirstName'   => request('first_name'),
+                'LastName'    => request('last_name'),
+                'Email'       => request('email'),
+                'Phone'       => request('phone'),
+                'Role__c'     => request('role'),
+                'Company'     => request('school'),
+                'City'        => request('city'),
+                'State'       => request('state'),
+                'Description' => 'Number of teachers: ' . request('number_of_teachers') . ' Number of students: ' . request('number_of_teachers') . ' Usage: ' . request('usage'),
             ],
         ]);
     }

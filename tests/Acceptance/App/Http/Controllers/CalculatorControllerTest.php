@@ -30,14 +30,17 @@ class CalculatorControllerTest extends TestCase
 
 
         $data = [
-            'first_name' => 'Jane',
-            'last_name'  => 'Doe',
-            'email'      => 'jdoe@email.com',
-            'phone'      => '000-0000-0000',
-            'role'       => 'Classroom Teacher',
-            'school'     => 'school',
-            'city'       => 'city',
-            'state'      => 'AA',
+            'first_name'         => 'Jane',
+            'last_name'          => 'Doe',
+            'email'              => 'email@email.com',
+            'phone'              => '000-0000-0000',
+            'role'               => 'Classroom Teacher',
+            'school'             => 'school',
+            'city'               => 'city',
+            'state'              => 'AA',
+            'number_of_teachers' => 100,
+            'number_of_students' => 1,
+            'usage'              => 'Test',
         ];
 
         $response = $this->post(route('calculator.store'), $data);
@@ -53,6 +56,7 @@ class CalculatorControllerTest extends TestCase
         $this->assertEquals($record['Company'], $data['school']);
         $this->assertEquals($record['City'], $data['city']);
         $this->assertEquals($record['State'], $data['state']);
+        $this->assertEquals($record['Description'], 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_teachers'] . ' Usage: ' . $data['usage']);
         $response->assertStatus(200);
         $response->assertJson([
             'success' => true
