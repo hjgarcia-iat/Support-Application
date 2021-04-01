@@ -346,7 +346,7 @@ export default {
             alertVisible: false,
             formErrors: [],
             loading: false,
-            step: 4,
+            step: 1,
             number_of_teachers: 0,
             number_of_students: 0,
             usage: "",
