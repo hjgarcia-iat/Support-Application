@@ -172,10 +172,144 @@
         <div v-if="step===4">
             <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Get in Touch</h1>
 
-            <form action="">
+            <form method="POST"
+                @submit.prevent="submitForm">
+
+                <div class="mb-6">
+                    <label for="first_name" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> First Name</label> <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="first_name" placeholder="Enter your first name"
+                    name="first_name" v-model="first_name">
+                    <form-error :error=formErrors.first_name[0] v-if="formErrors.first_name"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="last_name" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> Last Name</label> <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="last_name" placeholder="Enter your last name"
+                    name="last_name" v-model="last_name">
+                    <form-error :error=formErrors.last_name[0] v-if="formErrors.last_name"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="email" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> Email</label> <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="email" placeholder="Enter your email"
+                    name="email" v-model="email">
+                    <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="phone" class="block text-grey-darker text-sm font-bold mb-2">Phone</label>
+
+                    <input
+                        type="text"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="phone" placeholder="Enter your phone"
+                        name="phone" v-model="phone">
+                    <form-error :error=formErrors.phone[0] v-if="formErrors.phone"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="role" class="block text-grey-darker text-sm font-bold mb-2">Phone</label>
+
+                    <select name="role" v-model="role" id="role"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                        <option value="">Select a role</option>
+                        <option value="Classroom Teacher">Classroom Teacher</option>
+                        <option value="School Administrator">School Administrator</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <form-error :error=formErrors.role[0] v-if="formErrors.role"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="school" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> School</label> <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="school" placeholder="Enter your school name"
+                    name="school" v-model="school">
+                    <form-error :error=formErrors.school[0] v-if="formErrors.school"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="city" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> City</label> <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="city" placeholder="Enter your city name"
+                    name="city" v-model="city">
+                    <form-error :error=formErrors.city[0] v-if="formErrors.city"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="state" class="block text-grey-darker text-sm font-bold mb-2"> <small
+                        class="text-lg text-red-600">*</small> State</label>
+
+                    <select name="state" v-model="state" id="state"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                        <option value="">Select a state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <form-error :error=formErrors.state[0] v-if="formErrors.state"></form-error>
+                </div>
 
 
-                <div class="mt-6 flex justify-end items-center">
+                <div class="mt-8 flex justify-end items-center">
                     <button type="submit"
                         class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">
                         Contact Us
@@ -195,12 +329,14 @@
 import Vue from 'vue'
 import Alert from './partials/FormAlert.vue'
 import Vue2Filters from 'vue2-filters'
+import FormError from "./partials/FormError";
 
 Vue.use(Vue2Filters)
 
 export default {
     components: {
-        Alert
+        Alert,
+        FormError
     },
     name: "Calculator",
     data() {
@@ -208,7 +344,9 @@ export default {
             formMessage: '',
             formMessageType: 'success',
             alertVisible: false,
-            step: 1,
+            formErrors: [],
+            loading: false,
+            step: 4,
             number_of_teachers: 0,
             number_of_students: 0,
             usage: "",
@@ -222,6 +360,14 @@ export default {
             digital_three_year_percentage_savings: 0,
             digital_six_year_dollar_savings: 0,
             digital_six_year_percentage_savings: 0,
+            first_name: '',
+            last_name: '',
+            email: '',
+            phone: '',
+            role: '',
+            school: '',
+            city: '',
+            state: '',
         }
     },
     methods: {
@@ -264,6 +410,9 @@ export default {
             this.digital_six_year_dollar_savings = ((6 * (this.number_of_students * 25.172)) - ((this.number_of_students * 68.50) + (this.number_of_teachers * (80 * 6)))) - (6 * this.print_one_year_dollar_savings);
 
             this.digital_six_year_percentage_savings = (this.digital_six_year_dollar_savings / (6 * (this.number_of_students * 25.172)));
+        },
+        submitForm() {
+
         }
     }
 }
