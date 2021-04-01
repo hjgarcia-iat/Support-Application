@@ -213,8 +213,8 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="role" class="block text-grey-darker text-sm font-bold mb-2">Phone</label>
-
+                    <label for="role" class="block text-grey-darker text-sm font-bold mb-2"><small
+                        class="text-lg text-red-600">*</small> Role</label>
                     <select name="role" v-model="role" id="role"
                         class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                         <option value="">Select a role</option>
@@ -223,6 +223,16 @@
                         <option value="Other">Other</option>
                     </select>
                     <form-error :error=formErrors.role[0] v-if="formErrors.role"></form-error>
+                </div>
+
+                <div class="mb-6">
+                    <label for="district" class="block text-grey-darker text-sm font-bold mb-2">District</label>
+
+                    <input type="text"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    id="district" placeholder="Enter your district name"
+                    name="district" v-model="district">
+                    <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
                 </div>
 
                 <div class="mb-6">
@@ -366,6 +376,7 @@ export default {
             phone: '',
             role: '',
             school: '',
+            district: '',
             city: '',
             state: '',
         }
@@ -422,6 +433,7 @@ export default {
                 role: this.role,
                 city: this.city,
                 school: this.school,
+                district: this.district,
                 state: this.state,
                 number_of_teachers: this.number_of_teachers,
                 number_of_students: this.number_of_students,
@@ -451,6 +463,7 @@ export default {
             this.role = '';
             this.city = '';
             this.school = '';
+            this.district = '';
             this.state = '';
             this.formErrors = [];
             this.formMessage = '';

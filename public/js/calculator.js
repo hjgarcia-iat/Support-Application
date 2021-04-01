@@ -2288,6 +2288,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2326,6 +2336,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       phone: '',
       role: '',
       school: '',
+      district: '',
       city: '',
       state: ''
     };
@@ -2368,6 +2379,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
         role: this.role,
         city: this.city,
         school: this.school,
+        district: this.district,
         state: this.state,
         number_of_teachers: this.number_of_teachers,
         number_of_students: this.number_of_students,
@@ -2400,6 +2412,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       this.role = '';
       this.city = '';
       this.school = '';
+      this.district = '';
       this.state = '';
       this.formErrors = [];
       this.formMessage = '';
@@ -30536,15 +30549,7 @@ var render = function() {
                   "div",
                   { staticClass: "mb-6" },
                   [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block text-grey-darker text-sm font-bold mb-2",
-                        attrs: { for: "role" }
-                      },
-                      [_vm._v("Phone")]
-                    ),
+                    _vm._m(6),
                     _vm._v(" "),
                     _c(
                       "select",
@@ -30612,7 +30617,58 @@ var render = function() {
                   "div",
                   { staticClass: "mb-6" },
                   [
-                    _vm._m(6),
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "block text-grey-darker text-sm font-bold mb-2",
+                        attrs: { for: "district" }
+                      },
+                      [_vm._v("District")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.district,
+                          expression: "district"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                      attrs: {
+                        type: "text",
+                        id: "district",
+                        placeholder: "Enter your district name",
+                        name: "district"
+                      },
+                      domProps: { value: _vm.district },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.district = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _vm.formErrors.district
+                      ? _c("form-error", {
+                          attrs: { error: _vm.formErrors.district[0] }
+                        })
+                      : _vm._e()
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "mb-6" },
+                  [
+                    _vm._m(7),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -30655,7 +30711,7 @@ var render = function() {
                   "div",
                   { staticClass: "mb-6" },
                   [
-                    _vm._m(7),
+                    _vm._m(8),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -30698,7 +30754,7 @@ var render = function() {
                   "div",
                   { staticClass: "mb-6" },
                   [
-                    _vm._m(8),
+                    _vm._m(9),
                     _vm._v(" "),
                     _c(
                       "select",
@@ -31102,6 +31158,22 @@ var staticRenderFns = [
       [
         _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
         _vm._v(" Email")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "role" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
+        _vm._v(" Role")
       ]
     )
   },

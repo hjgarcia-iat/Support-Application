@@ -54,7 +54,7 @@ class CalculatorControllerTest extends TestCase
         $this->assertEquals($record['Phone'], $data['phone']);
         $this->assertEquals($record['Role__c'], $data['role']);
         $this->assertEquals($record['Company'], $data['school']);
-        $this->assertEquals($record['District__c'], $data['district']);
+        $this->assertEquals($record['District_Name__c'], $data['district']);
         $this->assertEquals($record['City'], $data['city']);
         $this->assertEquals($record['State'], $data['state']);
         $this->assertEquals($record['Description'], 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_teachers'] . ' Usage: ' . $data['usage']);
