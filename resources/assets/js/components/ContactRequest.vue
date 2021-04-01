@@ -1,6 +1,19 @@
 <template>
     <div class="p-8 bg-gray-100">
-        <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="alertVisible=false"></alert>
+
+        <div class="border-l-4 p-4 mb-6 relative"
+            :class="{'bg-green-200 border-green-800 text-green-800' : formMessageType==='success', 'bg-red-200 border-red-800 text-red-800' : formMessageType==='error'}"
+            v-if="alertVisible"
+            role="alert">
+
+            {{ formMessage }}
+
+            <a href="" @click.prevent="hide" class="no-underline absolute close-button"
+                :class="{'text-green-dark' : formMessageType==='success', 'text-red-dark' : formMessageType==='error'}"> <i
+                class="fa fa-remove"></i> </a>
+        </div>
+
+
         <form method="POST"
             enctype="multipart/form-data"
             @submit.prevent="submitForm">
@@ -318,7 +331,7 @@ export default {
                     if (response.data.success === true) {
                         this.id = response.data.id;
                         this.uploadImages();
-                        this.showSuccess('Your message was sent.');
+                        this.showSuccess('Thanks! One of our support agents will respond shortly.');
                     }
                 }).catch(error => {
                 if (error.response.status === 422) {
