@@ -31,6 +31,7 @@ class CalculatorControllerTest extends TestCase
             'phone'              => '000-0000-0000',
             'role'               => 'Classroom Teacher',
             'school'             => 'school',
+            'district'             => 'district',
             'city'               => 'city',
             'state'              => 'AA',
             'number_of_teachers' => 100,

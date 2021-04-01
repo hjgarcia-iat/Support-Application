@@ -30,6 +30,7 @@ class CrmFake implements CrmInterface
         $this->data['A1']['phone'] = request('phone');
         $this->data['A1']['role'] = request('role');
         $this->data['A1']['school'] = request('school');
+        $this->data['A1']['district'] = request('district');
         $this->data['A1']['city'] = request('city');
         $this->data['A1']['state'] = request('state');
         $this->data['A1']['number_of_teachers'] = request('number_of_teachers');

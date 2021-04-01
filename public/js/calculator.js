@@ -2306,7 +2306,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       alertVisible: false,
       formErrors: [],
       loading: false,
-      step: 4,
+      step: 1,
       number_of_teachers: 0,
       number_of_students: 0,
       usage: "",
