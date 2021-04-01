@@ -30022,7 +30022,7 @@ var render = function() {
                     attrs: {
                       type: "text",
                       id: "subject",
-                      placeholder: "School District",
+                      placeholder: "Subject",
                       name: "subject"
                     },
                     domProps: { value: _vm.subject },

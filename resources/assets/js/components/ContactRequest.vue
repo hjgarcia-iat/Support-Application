@@ -138,7 +138,7 @@
                         class="text-lg text-red-600">*</small> Subject</label> <input type="text"
                     class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
                     id="subject"
-                    placeholder="School District"
+                    placeholder="Subject"
                     name="subject"
                     v-model="subject">
 
