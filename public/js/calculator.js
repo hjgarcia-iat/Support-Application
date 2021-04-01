@@ -1960,7 +1960,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_FormAlert_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/FormAlert.vue */ "./resources/assets/js/components/partials/FormAlert.vue");
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue2-filters */ "./node_modules/vue2-filters/dist/vue2-filters.js");
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _partials_FormError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/FormError */ "./resources/assets/js/components/partials/FormError.vue");
 //
 //
 //
@@ -2111,7 +2110,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2212,27 +2253,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["error"]
-});
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css& ***!
@@ -2245,7 +2265,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n", ""]);
+exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
 
 // exports
 
@@ -2264,7 +2284,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\r\n", ""]);
 
 // exports
 
@@ -29524,19 +29544,19 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Calculate Your Digital Savings")]
+              [_vm._v("Calculate Your\n            Digital Savings\n        ")]
             ),
             _vm._v(" "),
             _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
               _vm._v(
-                "Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your current subscription term."
+                "Calculate how much you could save by upgrading to IQWST Interactive\n            Digital Edition or increasing your current subscription term.\n        "
               )
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
                 _vm._v(
-                  "1. Approximately how many students use IQWST in your classroom, school, or\n                district?"
+                  "1. Approximately how many students use IQWST in your classroom, school, or\n                district?\n            "
                 )
               ]),
               _vm._v(" "),
@@ -29567,7 +29587,7 @@ var render = function() {
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
                 _vm._v(
-                  "2. Approximately how many teachers use IQWST in your classroom, school, or district?"
+                  "2. Approximately how many teachers use IQWST in your classroom, school, or\n                district?\n            "
                 )
               ]),
               _vm._v(" "),
@@ -29632,7 +29652,7 @@ var render = function() {
                     staticClass: "ml-2 text-grey-darker cursor-pointer",
                     attrs: { for: "usage_1" }
                   },
-                  [_vm._v("IQWST Print Student Workbooks")]
+                  [_vm._v("IQWST Print Student\n                    Workbooks")]
                 )
               ]),
               _vm._v(" "),
@@ -29671,7 +29691,11 @@ var render = function() {
                     staticClass: "ml-2 text-grey-darker cursor-pointer",
                     attrs: { for: "usage_2" }
                   },
-                  [_vm._v("IQWST Interactive Digital Edition")]
+                  [
+                    _vm._v(
+                      "IQWST Interactive Digital\n                    Edition"
+                    )
+                  ]
                 )
               ])
             ]),
@@ -29694,7 +29718,7 @@ var render = function() {
                   },
                   on: { click: _vm.calculate }
                 },
-                [_vm._v("Calculate")]
+                [_vm._v("Calculate\n            ")]
               )
             ])
           ])
@@ -29708,7 +29732,11 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Digital Savings Compared To Print")]
+              [
+                _vm._v(
+                  "Digital Savings\n            Compared To Print\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
@@ -29877,11 +29905,15 @@ var render = function() {
                 {
                   staticClass:
                     "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                  attrs: {
-                    href: "http://activatelearning.com/request-product-info/"
+                  attrs: { href: "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.step = 4
+                    }
                   }
                 },
-                [_vm._v("Contact Us")]
+                [_vm._v("Get\n                in Touch")]
               ),
               _vm._v(" "),
               _c(
@@ -29910,7 +29942,7 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Calculate Your Digital Savings")]
+              [_vm._v("Multi-Year Digital\n            Savings\n        ")]
             ),
             _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
@@ -30037,11 +30069,15 @@ var render = function() {
                 {
                   staticClass:
                     "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                  attrs: {
-                    href: "http://activatelearning.com/request-product-info/"
+                  attrs: { href: "" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      _vm.step = 4
+                    }
                   }
                 },
-                [_vm._v("Contact Us")]
+                [_vm._v("Get\n                in Touch")]
               ),
               _vm._v(" "),
               _c(
@@ -30060,7 +30096,55 @@ var render = function() {
               )
             ])
           ])
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.step === 4
+        ? _c("div", [
+            _c(
+              "h1",
+              {
+                staticClass:
+                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+              },
+              [_vm._v("Get in Touch")]
+            ),
+            _vm._v(" "),
+            _c("form", { attrs: { action: "" } }, [
+              _c("div", { staticClass: "mt-6 flex justify-end items-center" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
+                    attrs: { type: "submit" }
+                  },
+                  [_vm._v("\n                    Contact Us\n                ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "text-blue-700 hover:text-blue-500 font-bold",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        _vm.usage === "IQWST Print Student Workbooks"
+                          ? (_vm.step = 2)
+                          : (_vm.step = 3)
+                      }
+                    }
+                  },
+                  [_vm._v("Previous")]
+                )
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-center text-sm text-gray-600 mt-8" }, [
+        _vm._v("Estimated digital savings. Your actual savings may vary.")
+      ])
     ],
     1
   )
@@ -30188,32 +30272,6 @@ var render = function() {
         ]
       )
     : _vm._e()
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e&":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e& ***!
-  \****************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "text-sm text-red-600 mt-3" }, [
-    _vm._v("\n  " + _vm._s(_vm.error) + "\n")
-  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -43489,75 +43547,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/js/components/partials/FormError.vue":
-/*!***************************************************************!*\
-  !*** ./resources/assets/js/components/partials/FormError.vue ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormError.vue?vue&type=template&id=7116e39e& */ "./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e&");
-/* harmony import */ var _FormError_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormError.vue?vue&type=script&lang=js& */ "./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _FormError_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/assets/js/components/partials/FormError.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************!*\
-  !*** ./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormError_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormError.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormError.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormError_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e&":
-/*!**********************************************************************************************!*\
-  !*** ./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e& ***!
-  \**********************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormError.vue?vue&type=template&id=7116e39e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormError.vue?vue&type=template&id=7116e39e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormError_vue_vue_type_template_id_7116e39e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ 7:
 /*!*************************************************!*\
   !*** multi ./resources/assets/js/calculator.js ***!
@@ -43565,7 +43554,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
 
 
 /***/ })

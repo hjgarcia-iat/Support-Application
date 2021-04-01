@@ -2400,7 +2400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\r\n", ""]);
 
 // exports
 
