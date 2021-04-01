@@ -51,7 +51,6 @@
                 </div>
             </div>
 
-
             <div class="mt-6">
                 <button :disabled="number_of_students <= 0 && number_of_teachers <= 0" type="submit" @click="calculate"
                     class="rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto"
@@ -311,8 +310,9 @@
 
                 <div class="mt-8 flex justify-end items-center">
                     <button type="submit"
-                        class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3">
-                        Contact Us
+                        class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 mr-2 focus:outline-none focus:shadow-outline"
+                        :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                        <i class="fa fa-refresh fa-spin" v-if="loading"></i> Contact Us
                     </button>
                     <a href="#"
                         class="text-blue-700 hover:text-blue-500 font-bold"
@@ -412,7 +412,63 @@ export default {
             this.digital_six_year_percentage_savings = (this.digital_six_year_dollar_savings / (6 * (this.number_of_students * 25.172)));
         },
         submitForm() {
+            this.loading = true;
 
+            axios.post('/calculator', {
+                first_name: this.first_name,
+                last_name: this.last_name,
+                email: this.email,
+                phone: this.phone,
+                role: this.role,
+                city: this.city,
+                school: this.school,
+                state: this.state,
+                number_of_teachers: this.number_of_teachers,
+                number_of_students: this.number_of_students,
+                usage: this.usage
+            }).then(response => {
+                if (response.data.success) {
+                    this.alertVisible = true;
+                    this.reset();
+                    this.formMessageType = 'success';
+                    this.formMessage = response.data.message;
+                }
+                this.loading = false;
+            }).catch(error => {
+                this.alertVisible = true;
+                this.formMessage = 'Please see errors below!';
+                this.formErrors = error.response.data.errors;
+                this.formMessageType = 'error';
+                this.loading = false;
+            });
+        },
+        reset() {
+            this.step = 1;
+            this.first_name = '';
+            this.last_name = '';
+            this.email = '';
+            this.phone = '';
+            this.role = '';
+            this.city = '';
+            this.school = '';
+            this.state = '';
+            this.formErrors = [];
+            this.formMessage = '';
+            this.number_of_teachers = 0;
+            this.number_of_students = 0;
+            this.usage = '';
+            this.print_one_year_dollar_savings = 0;
+            this.print_one_year_percentage_savings = 0;
+            this.print_three_year_dollar_savings = 0;
+            this.print_three_year_percentage_savings = 0;
+            this.print_six_year_dollar_savings = 0;
+            this.print_six_year_percentage_savings = 0;
+            this.digital_one_year_dollar_savings = 0;
+            this.digital_one_year_percentage_savings = 0;
+            this.digital_three_year_dollar_savings = 0;
+            this.digital_three_year_percentage_savings = 0;
+            this.digital_six_year_dollar_savings = 0;
+            this.digital_six_year_percentage_savings = 0;
         }
     }
 }

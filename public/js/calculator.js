@@ -2356,7 +2356,69 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       this.digital_six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6)) - 6 * this.print_one_year_dollar_savings;
       this.digital_six_year_percentage_savings = this.digital_six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
     },
-    submitForm: function submitForm() {}
+    submitForm: function submitForm() {
+      var _this = this;
+
+      this.loading = true;
+      axios.post('/calculator', {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        phone: this.phone,
+        role: this.role,
+        city: this.city,
+        school: this.school,
+        state: this.state,
+        number_of_teachers: this.number_of_teachers,
+        number_of_students: this.number_of_students,
+        usage: this.usage
+      }).then(function (response) {
+        if (response.data.success) {
+          _this.alertVisible = true;
+
+          _this.reset();
+
+          _this.formMessageType = 'success';
+          _this.formMessage = response.data.message;
+        }
+
+        _this.loading = false;
+      })["catch"](function (error) {
+        _this.alertVisible = true;
+        _this.formMessage = 'Please see errors below!';
+        _this.formErrors = error.response.data.errors;
+        _this.formMessageType = 'error';
+        _this.loading = false;
+      });
+    },
+    reset: function reset() {
+      this.step = 1;
+      this.first_name = '';
+      this.last_name = '';
+      this.email = '';
+      this.phone = '';
+      this.role = '';
+      this.city = '';
+      this.school = '';
+      this.state = '';
+      this.formErrors = [];
+      this.formMessage = '';
+      this.number_of_teachers = 0;
+      this.number_of_students = 0;
+      this.usage = '';
+      this.print_one_year_dollar_savings = 0;
+      this.print_one_year_percentage_savings = 0;
+      this.print_three_year_dollar_savings = 0;
+      this.print_three_year_percentage_savings = 0;
+      this.print_six_year_dollar_savings = 0;
+      this.print_six_year_percentage_savings = 0;
+      this.digital_one_year_dollar_savings = 0;
+      this.digital_one_year_percentage_savings = 0;
+      this.digital_three_year_dollar_savings = 0;
+      this.digital_three_year_percentage_savings = 0;
+      this.digital_six_year_dollar_savings = 0;
+      this.digital_six_year_percentage_savings = 0;
+    }
   }
 });
 
@@ -30900,13 +30962,18 @@ var render = function() {
                       "button",
                       {
                         staticClass:
-                          "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                        attrs: { type: "submit" }
+                          "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 mr-2 focus:outline-none focus:shadow-outline",
+                        class: {
+                          "cursor-default bg-blue-light hover:bg-blue-light":
+                            _vm.loading
+                        },
+                        attrs: { type: "submit", disabled: _vm.loading }
                       },
                       [
-                        _vm._v(
-                          "\n                    Contact Us\n                "
-                        )
+                        _vm.loading
+                          ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                          : _vm._e(),
+                        _vm._v(" Contact Us\n                ")
                       ]
                     ),
                     _vm._v(" "),
