@@ -58,7 +58,7 @@ class CalculatorControllerTest extends TestCase
             'success' => true
         ]);
 
-//        //delete the record
-//        resolve(CrmInterface::class)->deleteByEmail($data['email']);
+        //delete the record
+        resolve(CrmInterface::class)->delete($data['email']);
     }
 }

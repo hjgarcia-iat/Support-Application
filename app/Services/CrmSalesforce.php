@@ -47,6 +47,10 @@ class CrmSalesforce implements CrmInterface
 
     public function delete(string $email): bool
     {
+        $record = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State From Lead WHERE email='{$email}'")['records'];
 
+        Forrest::sobjects('Lead/' . $record[0]['Id'], ['method' => 'delete']);
+
+        return true;
     }
 }
