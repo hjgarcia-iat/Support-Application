@@ -37,7 +37,7 @@ class CalculatorControllerTest extends TestCase
 
         $response = $this->post(route('calculator.store'), $data);
 
-        $this->assertEquals(resolve(CrmInterface::class)->find('A1'), $data);
+        $this->assertEquals(resolve(CrmInterface::class)->findByEmail('A1'), $data);
         $response->assertStatus(200);
         $response->assertJson([
             'success' => true,

@@ -17,17 +17,11 @@ class CrmFake implements CrmInterface
      */
     protected array $data = ['A1' => []];
 
-    //get a a CRM record
-    public function find(string $id)
+    public function findByEmail(string $email)
     {
-        return $this->data[$id];
+        return $this->data['A1'];
     }
 
-    /**
-     * Store a CRM Record
-     *
-     * @return string
-     */
     public function store(): string
     {
         $this->data['A1']['first_name'] = request('first_name');

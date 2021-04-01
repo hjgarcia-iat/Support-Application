@@ -15,14 +15,34 @@ class CrmSalesforce implements CrmInterface
         Forrest::authenticate();
     }
 
-    public function find(string $id)
+    /**
+     * @param string $email
+     * @return array|mixed
+     */
+    public function findByEmail(string $email)
     {
-        dd(Forrest::query('SELECT Id,email From Lead WHERE email=\'aalbert@littleflowerschoolnv.org\'')['records'][0]);
+        $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State From Lead WHERE email='{$email}'")['records'];
+
+        if (!empty($records)) return $records[0];
+
+        return [];
     }
 
     public function store()
     {
-        // TODO: Implement store() method.
+        Forrest::sobjects('Lead', [
+            'method' => 'post',
+            'body'   => [
+                'FirstName' => request('first_name'),
+                'LastName'  => request('last_name'),
+                'Email'     => request('email'),
+                'Phone'     => request('phone'),
+                'Role__c'   => request('role'),
+                'Company'   => request('school'),
+                'City'      => request('city'),
+                'State'     => request('state'),
+            ],
+        ]);
     }
 
 

@@ -8,10 +8,10 @@ namespace App\Services;
 interface CrmInterface
 {
     /**
-     * @param $id string
+     * @param $email string
      * @return mixed
      */
-    public function find(string $id);
+    public function findByEmail(string $email);
 
     public function store();
 }
