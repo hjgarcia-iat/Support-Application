@@ -2660,9 +2660,12 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     FormError: _components_partials_FormError__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['number_of_teachers', 'number_of_students', 'usage'],
+  props: ['no_teachers', 'no_students', 'reason'],
   data: function data() {
     return {
+      number_of_teachers: this.no_teachers,
+      number_of_students: this.no_students,
+      usage: this.reason,
       formErrors: [],
       loading: false,
       step: 1,
@@ -2680,8 +2683,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     step_back: function step_back() {
       _calculator__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit('step_back', {
-        number_of_students: this.number_of_students,
-        number_of_teachers: this.number_of_teachers,
+        number_of_students: this.number_of_teachers,
+        no_teachers: this.number_of_students,
         usage: this.usage
       });
     },
@@ -2747,7 +2750,7 @@ __webpack_require__.r(__webpack_exports__);
       this.state = '';
       this.formErrors = [];
       this.number_of_teachers = 0;
-      this.number_of_students = 0;
+      this.no_students = 0;
       this.usage = '';
     }
   }
@@ -30182,9 +30185,9 @@ var render = function() {
             [
               _c("contact-form", {
                 attrs: {
-                  number_of_students: _vm.number_of_students,
-                  number_of_teachers: _vm.number_of_teachers,
-                  usage: _vm.usage
+                  no_students: _vm.number_of_students,
+                  no_teachers: _vm.number_of_teachers,
+                  reason: _vm.usage
                 }
               })
             ],

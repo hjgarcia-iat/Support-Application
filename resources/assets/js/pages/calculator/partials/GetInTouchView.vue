@@ -213,12 +213,15 @@ export default {
         FormError
     },
     props: [
-        'number_of_teachers',
-        'number_of_students',
-        'usage',
+        'no_teachers',
+        'no_students',
+        'reason',
     ],
     data() {
         return {
+            number_of_teachers: this.no_teachers,
+            number_of_students: this.no_students,
+            usage: this.reason,
             formErrors: [],
             loading: false,
             step: 1,
@@ -236,8 +239,8 @@ export default {
     methods: {
         step_back() {
             EventBus.$emit('step_back', {
-                number_of_students: this.number_of_students,
-                number_of_teachers: this.number_of_teachers,
+                number_of_students: this.number_of_teachers,
+                no_teachers: this.number_of_students,
                 usage: this.usage,
             });
         },
@@ -304,7 +307,7 @@ export default {
             this.state = '';
             this.formErrors = [];
             this.number_of_teachers = 0;
-            this.number_of_students = 0;
+            this.no_students = 0;
             this.usage = '';
         }
 
