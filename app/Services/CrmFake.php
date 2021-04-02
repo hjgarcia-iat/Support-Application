@@ -2,8 +2,6 @@
 
 namespace App\Services;
 
-use App\Mail\EmailLeadToRep;
-
 /**
  * Class FakeCRM
  * @package App\Services
@@ -11,40 +9,31 @@ use App\Mail\EmailLeadToRep;
 class CrmFake implements CrmInterface
 {
     /**
-     * Temporary store for the FAKE Data
-     *
      * @var array|string[]
      */
-    protected array $data = ['A1' => []];
+    protected array $data = [];
 
     public function findByEmail(string $email)
     {
-        return $this->data['A1'];
+        return $this->data[$email];
     }
 
-    public function store(): string
+    public function store(array $data): string
     {
-        $this->data['A1']['first_name'] = request('first_name');
-        $this->data['A1']['last_name'] = request('last_name');
-        $this->data['A1']['email'] = request('email');
-        $this->data['A1']['phone'] = request('phone');
-        $this->data['A1']['role'] = request('role');
-        $this->data['A1']['school'] = request('school');
-        $this->data['A1']['district'] = request('district');
-        $this->data['A1']['city'] = request('city');
-        $this->data['A1']['state'] = request('state');
-        $this->data['A1']['number_of_teachers'] = request('number_of_teachers');
-        $this->data['A1']['number_of_students'] = request('number_of_students');
-        $this->data['A1']['usage'] = request('usage');
+        foreach ($data as $key => $field) {
+            $this->data[request('email')][$key] = $field;
+        }
 
-        return 'A1';
+        return request('email');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function delete(string $email): bool
     {
-        return true;
+        if (array_key_exists($email, $this->data)) {
+            unset($this->data[$email]);
+            return true;
+        }
+
+        return false;
     }
 }

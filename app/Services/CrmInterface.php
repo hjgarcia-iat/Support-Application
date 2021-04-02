@@ -14,7 +14,12 @@ interface CrmInterface
      */
     public function findByEmail(string $email);
 
-    public function store();
+    /**
+     *
+     * @param array $data
+     * @return mixed
+     */
+    public function store(array $data);
 
     /**
      * @param string $email

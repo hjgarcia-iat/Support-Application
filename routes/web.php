@@ -37,7 +37,5 @@ Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculat
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
 
 
-
-
 Route::get('/request-product-information', [RequestProductInformationController::class, 'create'])->name("request_product_info.create");
-//Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
+Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store");
