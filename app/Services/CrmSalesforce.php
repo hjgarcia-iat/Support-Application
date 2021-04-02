@@ -21,30 +21,33 @@ class CrmSalesforce implements CrmInterface
      */
     public function findByEmail(string $email)
     {
-        $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State,Description,District_Name__c From Lead WHERE email='{$email}'")['records'];
+        $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State,Description,Product_Interest__c,District_Name__c From Lead WHERE email='{$email}'")['records'];
 
         if (!empty($records)) return $records[0];
 
         return [];
     }
 
-    public function store()
+    public function store(array $data)
     {
         Forrest::sobjects('Lead', [
             'method' => 'post',
             'body'   => [
-                'FirstName'   => request('first_name'),
-                'LastName'    => request('last_name'),
-                'Email'       => request('email'),
-                'Phone'       => request('phone'),
-                'Role__c'     => request('role'),
-                'Company'     => request('school'),
-                'District_Name__c'     => request('district'),
-                'City'        => request('city'),
-                'State'       => request('state'),
-                'Description' => 'Number of teachers: ' . request('number_of_teachers') . ' Number of students: ' . request('number_of_teachers') . ' Usage: ' . request('usage'),
+                'FirstName'           => $data['first_name'],
+                'LastName'            => $data['last_name'],
+                'Email'               => $data['email'],
+                'Phone'               => $data['phone'],
+                'Role__c'             => $data['role'],
+                'Company'             => $data['school'],
+                'District_Name__c'    => $data['district'],
+                'City'                => $data['city'],
+                'State'               => $data['state'],
+                'Product_Interest__c' => $data['product_interest'],
+                'Description'         => (isset($data['description']) ? 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_teachers'] . ' Usage: ' . $data['usage'] : ''),
             ],
         ]);
+
+        return $data['email'];
     }
 
     public function delete(string $email): bool
