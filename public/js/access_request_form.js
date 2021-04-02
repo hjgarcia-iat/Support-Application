@@ -32356,7 +32356,8 @@ var render = function() {
           class: {
             "bg-green-200 border-green-800 text-green-800":
               _vm.type === "success",
-            "bg-red-200 border-red-800 text-red-800": _vm.type === "error"
+            "bg-red-200 border-red-800 text-red-800": _vm.type === "error",
+            "bg-blue-200 border-blue-800 text-blue-800": _vm.type === "info"
           },
           attrs: { role: "alert" }
         },
