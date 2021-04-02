@@ -195,7 +195,7 @@
                 </button>
                 <a href="#"
                     class="text-blue-700 hover:text-blue-500 font-bold"
-                    @click.prevent="usage==='IQWST Print Student Workbooks' ? step=2: step=3">Previous</a>
+                    @click.prevent="step_back">Previous</a>
             </div>
         </form>
     </div>
@@ -233,6 +233,13 @@ export default {
         }
     },
     methods: {
+        step_back() {
+            EventBus.$emit('step_back', {
+                number_of_students: this.number_of_students,
+                number_of_teachers: this.number_of_teachers,
+                usage: this.usage,
+            });
+        },
         submitForm() {
             this.loading = true;
 
