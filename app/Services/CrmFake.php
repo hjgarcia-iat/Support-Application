@@ -21,10 +21,10 @@ class CrmFake implements CrmInterface
     public function store(array $data): string
     {
         foreach ($data as $key => $field) {
-            $this->data[request('email')][$key] = $field;
+            $this->data[$data['email']][$key] = $field;
         }
 
-        return request('email');
+        return $data['email'];
     }
 
     public function delete(string $email): bool
