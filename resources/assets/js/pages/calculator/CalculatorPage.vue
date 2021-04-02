@@ -52,6 +52,7 @@ export default {
             this.number_of_teachers = parseInt(data.number_of_teachers)
             this.number_of_students = parseInt(data.number_of_students)
             this.usage = data.usage
+            this.alertVisible = false
             this.step = 2;
         })
 

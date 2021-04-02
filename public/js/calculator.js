@@ -2073,6 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.number_of_teachers = parseInt(data.number_of_teachers);
       _this.number_of_students = parseInt(data.number_of_students);
       _this.usage = data.usage;
+      _this.alertVisible = false;
       _this.step = 2;
     });
     _calculator__WEBPACK_IMPORTED_MODULE_4__["EventBus"].$on('step_back', function (data) {
@@ -2184,7 +2185,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CalculatorForm",
@@ -2192,17 +2192,26 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       no_students: this.number_of_students,
-      no_teachers: this.number_of_students,
+      no_teachers: this.number_of_teachers,
       reason: this.usage
     };
   },
   methods: {
     calculate: function calculate() {
-      _calculator__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit('calculate', {
-        number_of_students: this.no_students,
-        number_of_teachers: this.no_teachers,
-        usage: this.reason
-      });
+      if (parseInt(this.no_teachers) >= parseInt(this.no_students)) {
+        _calculator__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit('form_error', {
+          number_of_students: this.no_students,
+          number_of_teachers: this.no_teachers,
+          usage: this.reason,
+          formMessage: 'Number of teachers cannot be higher or equal to the number of students.'
+        });
+      } else {
+        _calculator__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit('calculate', {
+          number_of_students: this.no_students,
+          number_of_teachers: this.no_teachers,
+          usage: this.reason
+        });
+      }
     }
   }
 });
@@ -30201,7 +30210,7 @@ var render = function() {
     _c("div", { staticClass: "mb-3" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v(
-          "\n            1. Approximately how many students use IQWST in your classroom, school, or\n            district?\n        "
+          "\n            1. Approximately how many students use IQWST in your classroom, school, or district?\n        "
         )
       ]),
       _vm._v(" "),
