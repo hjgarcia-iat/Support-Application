@@ -2625,7 +2625,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\r\n", ""]);
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
 
 // exports
 
@@ -44902,8 +44902,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/resources/assets/js/access_request_form.js */"./resources/assets/js/access_request_form.js");
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+__webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/access_request_form.js */"./resources/assets/js/access_request_form.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
 
 
 /***/ })

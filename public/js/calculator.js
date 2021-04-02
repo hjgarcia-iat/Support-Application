@@ -2298,6 +2298,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2320,16 +2370,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       number_of_teachers: 0,
       number_of_students: 0,
       usage: "",
-      print_one_year_dollar_savings: 0,
-      print_one_year_percentage_savings: 0,
-      print_three_year_dollar_savings: 0,
-      print_three_year_percentage_savings: 0,
-      print_six_year_dollar_savings: 0,
-      print_six_year_percentage_savings: 0,
-      digital_three_year_dollar_savings: 0,
-      digital_three_year_percentage_savings: 0,
-      digital_six_year_dollar_savings: 0,
-      digital_six_year_percentage_savings: 0,
+      print_one_year_cost: 0,
+      print_one_year_savings: 0,
+      print_three_year_cost: 0,
+      print_three_year_savings: 0,
+      print_six_year_cost: 0,
+      print_six_year_savings: 0,
+      digital_three_year_cost: 0,
+      digital_three_year_savings: 0,
+      digital_six_year_cost: 0,
+      digital_six_year_savings: 0,
       first_name: '',
       last_name: '',
       email: '',
@@ -2338,7 +2388,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       school: '',
       district: '',
       city: '',
-      state: ''
+      state: '',
+      workbook_cost: 22.48,
+      shipping_rate: .12,
+      ide_one_year_cost_per_student: 18.40,
+      ide_one_year_cost_per_teacher: 80.00,
+      ide_three_year_cost_per_student: 41.99,
+      ide_three_year_cost_per_teacher: 210.00,
+      ide_six_year_cost_per_student: 68.50,
+      ide_six_year_cost_per_teacher: 360.00
     };
   },
   methods: {
@@ -2355,17 +2413,30 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
 
       this.hideAlert();
       if (this.usage === "IQWST Print Student Workbooks") this.step = 2;
-      if (this.usage === "IQWST Interactive Digital Edition") this.step = 3;
-      this.print_one_year_dollar_savings = this.number_of_students * 25.172 - (this.number_of_students * 15.35 + this.number_of_teachers * 80);
-      this.print_one_year_percentage_savings = this.print_one_year_dollar_savings / (this.number_of_students * 25.172);
-      this.print_three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3));
-      this.print_three_year_percentage_savings = this.print_three_year_dollar_savings / (3 * (this.number_of_students * 25.172));
-      this.print_six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6));
-      this.print_six_year_percentage_savings = this.print_six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
-      this.digital_three_year_dollar_savings = 3 * (this.number_of_students * 25.172) - (this.number_of_students * 41.99 + this.number_of_teachers * (80 * 3)) - 3 * this.print_one_year_dollar_savings;
-      this.digital_three_year_percentage_savings = this.digital_three_year_dollar_savings / (3 * (this.number_of_students * 25.172));
-      this.digital_six_year_dollar_savings = 6 * (this.number_of_students * 25.172) - (this.number_of_students * 68.50 + this.number_of_teachers * (80 * 6)) - 6 * this.print_one_year_dollar_savings;
-      this.digital_six_year_percentage_savings = this.digital_six_year_dollar_savings / (6 * (this.number_of_students * 25.172));
+      if (this.usage === "IQWST Interactive Digital Edition") this.step = 3; //print calculations
+
+      var workbook_total_cost = this.number_of_students * this.workbook_cost;
+      var workbook_yearly_cost = workbook_total_cost + workbook_total_cost * this.shipping_rate;
+      console.log(workbook_yearly_cost); //print -> to digital one year savings calculations
+
+      this.print_one_year_cost = this.number_of_students * this.ide_one_year_cost_per_student + this.number_of_teachers * this.ide_one_year_cost_per_teacher;
+      this.print_one_year_savings = (workbook_yearly_cost - this.print_one_year_cost) / workbook_yearly_cost; //print -> to digital three year savings calculations
+
+      this.print_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
+      this.print_three_year_savings = (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate - this.print_three_year_cost) / (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate); //print -> to digital six year savings calculations
+
+      this.print_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
+      this.print_six_year_savings = (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate - this.print_six_year_cost) / (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate); //digital calculations
+
+      var digital_one_year_student_cost = this.number_of_students * this.ide_one_year_cost_per_student;
+      var digital_one_year_teacher_cost = this.number_of_teachers * this.ide_one_year_cost_per_teacher;
+      var total_one_year_total_cost = digital_one_year_student_cost + digital_one_year_teacher_cost; //three year calculations
+
+      this.digital_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
+      this.digital_three_year_savings = (total_one_year_total_cost * 3 - this.digital_three_year_cost) / (total_one_year_total_cost * 3); //six year calculations
+
+      this.digital_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
+      this.digital_six_year_savings = (total_one_year_total_cost * 6 - this.digital_six_year_cost) / (total_one_year_total_cost * 6);
     },
     submitForm: function submitForm() {
       var _this = this;
@@ -2419,18 +2490,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
       this.number_of_teachers = 0;
       this.number_of_students = 0;
       this.usage = '';
-      this.print_one_year_dollar_savings = 0;
-      this.print_one_year_percentage_savings = 0;
-      this.print_three_year_dollar_savings = 0;
-      this.print_three_year_percentage_savings = 0;
-      this.print_six_year_dollar_savings = 0;
-      this.print_six_year_percentage_savings = 0;
+      this.print_one_year_cost = 0;
+      this.print_one_year_savings = 0;
+      this.print_three_year_cost = 0;
+      this.print_three_year_savings = 0;
+      this.print_six_year_cost = 0;
+      this.print_six_year_savings = 0;
       this.digital_one_year_dollar_savings = 0;
       this.digital_one_year_percentage_savings = 0;
-      this.digital_three_year_dollar_savings = 0;
-      this.digital_three_year_percentage_savings = 0;
-      this.digital_six_year_dollar_savings = 0;
-      this.digital_six_year_percentage_savings = 0;
+      this.digital_three_year_cost = 0;
+      this.digital_three_year_savings = 0;
+      this.digital_six_year_cost = 0;
+      this.digital_six_year_savings = 0;
     }
   }
 });
@@ -2509,7 +2580,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
+exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n", ""]);
 
 // exports
 
@@ -2528,7 +2599,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\r\n", ""]);
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
 
 // exports
 
@@ -29788,19 +29859,23 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Calculate Your\n            Digital Savings\n        ")]
+              [
+                _vm._v(
+                  "Calculate Your\n                                                                                                Digital Savings\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
               _vm._v(
-                "Calculate how much you could save by upgrading to IQWST Interactive\n            Digital Edition or increasing your current subscription term.\n        "
+                "Calculate how much you could save by upgrading to IQWST Interactive\n                                             Digital Edition or increasing your current subscription term.\n        "
               )
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
                 _vm._v(
-                  "1. Approximately how many students use IQWST in your classroom, school, or\n                district?\n            "
+                  "1. Approximately how many students use IQWST in your classroom, school, or\n                                      district?\n            "
                 )
               ]),
               _vm._v(" "),
@@ -29831,7 +29906,7 @@ var render = function() {
             _c("div", { staticClass: "mb-3" }, [
               _c("p", { staticClass: "mb-3 font-bold" }, [
                 _vm._v(
-                  "2. Approximately how many teachers use IQWST in your classroom, school, or\n                district?\n            "
+                  "2. Approximately how many teachers use IQWST in your classroom, school, or\n                                      district?\n            "
                 )
               ]),
               _vm._v(" "),
@@ -29896,7 +29971,11 @@ var render = function() {
                     staticClass: "ml-2 text-grey-darker cursor-pointer",
                     attrs: { for: "usage_1" }
                   },
-                  [_vm._v("IQWST Print Student\n                    Workbooks")]
+                  [
+                    _vm._v(
+                      "IQWST Print Student\n                                     Workbooks"
+                    )
+                  ]
                 )
               ]),
               _vm._v(" "),
@@ -29937,7 +30016,7 @@ var render = function() {
                   },
                   [
                     _vm._v(
-                      "IQWST Interactive Digital\n                    Edition"
+                      "IQWST Interactive Digital\n                                     Edition"
                     )
                   ]
                 )
@@ -29962,7 +30041,7 @@ var render = function() {
                   },
                   on: { click: _vm.calculate }
                 },
-                [_vm._v("Calculate\n            ")]
+                [_vm._v("\n                Calculate\n            ")]
               )
             ])
           ])
@@ -29978,7 +30057,7 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "Digital Savings\n            Compared To Print\n        "
+                  "Digital Savings\n                                                                                                Compared To Print\n        "
                 )
               ]
             ),
@@ -30017,20 +30096,14 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(_vm.print_one_year_dollar_savings)
-                      )
-                    )
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.print_one_year_cost)))
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("percent")(_vm.print_one_year_percentage_savings)
-                      )
+                      _vm._s(_vm._f("percent")(_vm.print_one_year_savings))
                     )
                   ]),
                   _vm._v(" "),
@@ -30066,9 +30139,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(_vm.print_three_year_dollar_savings)
-                      )
+                      _vm._s(_vm._f("currency")(_vm.print_three_year_cost))
                     )
                   ]),
                   _vm._v(" "),
@@ -30076,11 +30147,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("percent")(
-                          _vm.print_three_year_percentage_savings
-                        )
-                      )
+                      _vm._s(_vm._f("percent")(_vm.print_three_year_savings))
                     )
                   ]),
                   _vm._v(" "),
@@ -30117,9 +30184,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
-                        _vm._s(
-                          _vm._f("currency")(_vm.print_six_year_dollar_savings)
-                        )
+                        _vm._s(_vm._f("currency")(_vm.print_six_year_cost))
                       )
                     ]),
                     _vm._v(" "),
@@ -30127,11 +30192,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
-                        _vm._s(
-                          _vm._f("percent")(
-                            _vm.print_six_year_percentage_savings
-                          )
-                        )
+                        _vm._s(_vm._f("percent")(_vm.print_six_year_savings))
                       )
                     ]),
                     _vm._v(" "),
@@ -30157,7 +30218,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Get\n                in Touch")]
+                [_vm._v("Get\n                                       in Touch")]
               ),
               _vm._v(" "),
               _c(
@@ -30186,7 +30247,11 @@ var render = function() {
                 staticClass:
                   "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
               },
-              [_vm._v("Multi-Year Digital\n            Savings\n        ")]
+              [
+                _vm._v(
+                  "Multi-Year Digital\n                                                                                                Savings\n        "
+                )
+              ]
             ),
             _vm._v(" "),
             _c("div", { staticClass: "grid mt-6" }, [
@@ -30226,11 +30291,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("currency")(
-                          _vm.digital_three_year_dollar_savings
-                        )
-                      )
+                      _vm._s(_vm._f("currency")(_vm.digital_three_year_cost))
                     )
                   ]),
                   _vm._v(" "),
@@ -30238,11 +30299,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "text-3xl text-orange-500" }, [
                     _vm._v(
-                      _vm._s(
-                        _vm._f("percent")(
-                          _vm.digital_three_year_percentage_savings
-                        )
-                      )
+                      _vm._s(_vm._f("percent")(_vm.digital_three_year_savings))
                     )
                   ]),
                   _vm._v(" "),
@@ -30279,11 +30336,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
-                        _vm._s(
-                          _vm._f("currency")(
-                            _vm.digital_six_year_dollar_savings
-                          )
-                        )
+                        _vm._s(_vm._f("currency")(_vm.digital_six_year_cost))
                       )
                     ]),
                     _vm._v(" "),
@@ -30291,11 +30344,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "text-3xl text-orange-500" }, [
                       _vm._v(
-                        _vm._s(
-                          _vm._f("percent")(
-                            _vm.digital_six_year_percentage_savings
-                          )
-                        )
+                        _vm._s(_vm._f("percent")(_vm.digital_six_year_savings))
                       )
                     ]),
                     _vm._v(" "),
@@ -30321,7 +30370,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Get\n                in Touch")]
+                [_vm._v("Get\n                                       in Touch")]
               ),
               _vm._v(" "),
               _c(
@@ -44676,7 +44725,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
+module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
 
 
 /***/ })
