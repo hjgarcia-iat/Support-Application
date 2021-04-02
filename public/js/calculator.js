@@ -2105,6 +2105,15 @@ __webpack_require__.r(__webpack_exports__);
       _this.alertType = 'success';
       _this.step = 1;
     });
+    _calculator__WEBPACK_IMPORTED_MODULE_4__["EventBus"].$on('form_reset', function (data) {
+      _this.number_of_teachers = parseInt(data.number_of_teachers);
+      _this.number_of_students = parseInt(data.number_of_students);
+      _this.usage = data.usage;
+      _this.alertVisible = true;
+      _this.alertMessage = data.formMessage;
+      _this.alertType = 'info';
+      _this.step = 1;
+    });
   }
 });
 
@@ -2671,6 +2680,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     step_back: function step_back() {
       _calculator__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit('step_back', {
+        number_of_students: this.number_of_students,
+        number_of_teachers: this.number_of_teachers,
+        usage: this.usage
+      });
+    },
+    reset_form: function reset_form() {
+      this.reset();
+      _calculator__WEBPACK_IMPORTED_MODULE_1__["EventBus"].$emit('form_reset', {
+        formMessage: "The information has been cleared.",
         number_of_students: this.number_of_students,
         number_of_teachers: this.number_of_teachers,
         usage: this.usage
@@ -31402,6 +31420,22 @@ var render = function() {
                 : _vm._e(),
               _vm._v(" Send\n            ")
             ]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass:
+                "ml-auto text-gray-700 hover:text-gray-600 hover:underline",
+              attrs: { href: "" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.reset_form($event)
+                }
+              }
+            },
+            [_vm._v("Reset")]
           )
         ])
       ]

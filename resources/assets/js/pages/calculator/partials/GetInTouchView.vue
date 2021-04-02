@@ -196,7 +196,7 @@
                     <i class="fa fa-refresh fa-spin"
                         v-if="loading"></i> Send
                 </button>
-
+                <a href="" class="ml-auto text-gray-700 hover:text-gray-600 hover:underline" @click.prevent="reset_form">Reset</a>
             </div>
         </form>
     </div>
@@ -240,6 +240,16 @@ export default {
                 number_of_teachers: this.number_of_teachers,
                 usage: this.usage,
             });
+        },
+        reset_form() {
+            this.reset();
+
+            EventBus.$emit('form_reset', {
+                formMessage: "The information has been cleared.",
+                number_of_students: this.number_of_students,
+                number_of_teachers: this.number_of_teachers,
+                usage: this.usage,
+            })
         },
         submitForm() {
             this.loading = true;

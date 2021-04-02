@@ -90,6 +90,16 @@ export default {
             this.step = 1
         })
 
+        EventBus.$on('form_reset', (data) => {
+            this.number_of_teachers = parseInt(data.number_of_teachers)
+            this.number_of_students = parseInt(data.number_of_students)
+            this.usage = data.usage
+            this.alertVisible = true
+            this.alertMessage = data.formMessage
+            this.alertType = 'info'
+            this.step = 1
+        })
+
     }
 }
 </script>
