@@ -7,6 +7,7 @@ use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\RemoteLearningRequestController;
 use App\Http\Controllers\RemoteSupportRequestController;
+use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
 
 Route::get('/', function () {
@@ -30,8 +31,13 @@ Route::post('/remote-learning-request', [RemoteLearningRequestController::class,
 
 Route::get('/contact-request', [ContactRequestController::class, 'create'])->name('contact_request.create');
 Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');
+Route::post('/files', [FilesController::class, 'store'])->name('files.store');
 
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
 
-Route::post('/files', [FilesController::class, 'store'])->name('files.store');
+
+
+
+Route::get('/request-product-information', [RequestProductInformationController::class, 'create'])->name("request_product_info.create");
+//Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
