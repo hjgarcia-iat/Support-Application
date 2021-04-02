@@ -416,6 +416,8 @@ export default {
             print_three_year_savings: 0,
             print_six_year_cost: 0,
             print_six_year_savings: 0,
+            digital_one_year_cost: 0,
+            digital_one_year_savings: 0,
             digital_three_year_cost: 0,
             digital_three_year_savings: 0,
             digital_six_year_cost: 0,
@@ -477,15 +479,14 @@ export default {
             this.print_six_year_savings = (((workbook_total_cost * 6) + (workbook_total_cost * this.shipping_rate)) - this.print_six_year_cost) / ((workbook_total_cost * 6) + (workbook_total_cost * this.shipping_rate));
 
             //digital calculations
-            let digital_one_year_student_cost = this.number_of_students * this.ide_one_year_cost_per_student
-            let digital_one_year_teacher_cost = this.number_of_teachers * this.ide_one_year_cost_per_teacher
-            let total_one_year_total_cost = digital_one_year_student_cost + digital_one_year_teacher_cost;
+            //one year calculations
+            this.digital_one_year_cost = (this.number_of_students * this.ide_one_year_cost_per_student) + (this.number_of_teachers * this.ide_one_year_cost_per_teacher);
             //three year calculations
             this.digital_three_year_cost = (this.number_of_students * this.ide_three_year_cost_per_student) + (this.number_of_teachers * this.ide_three_year_cost_per_teacher);
-            this.digital_three_year_savings = ((total_one_year_total_cost * 3) - this.digital_three_year_cost) / (total_one_year_total_cost * 3);
+            this.digital_three_year_savings = ((this.digital_one_year_cost * 3) - this.digital_three_year_cost) / (this.digital_one_year_cost * 3);
             //six year calculations
             this.digital_six_year_cost = (this.number_of_students * this.ide_six_year_cost_per_student) + (this.number_of_teachers * this.ide_six_year_cost_per_teacher);
-            this.digital_six_year_savings = ((total_one_year_total_cost * 6) - this.digital_six_year_cost) / (total_one_year_total_cost * 6);
+            this.digital_six_year_savings = ((this.digital_one_year_cost * 6) - this.digital_six_year_cost) / (this.digital_one_year_cost * 6);
         },
         submitForm() {
             this.loading = true;
