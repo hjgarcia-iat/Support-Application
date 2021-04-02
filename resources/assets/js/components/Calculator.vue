@@ -3,7 +3,7 @@
         <alert :message=formMessage
                :type=formMessageType
                :visible=alertVisible
-               @alert-hide="hideAlert"></alert>
+               @alert-hide="alertVisible=false"></alert>
         <div v-if="step === 1">
             <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Calculate Your
                                                                                                     Digital Savings

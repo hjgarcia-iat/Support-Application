@@ -99,10 +99,10 @@
             </div>
         </div>
 
-        <div class="mt-6 flex justify-end items-center">
+        <div class="mt-6 flex items-center">
             <a href=""
                 class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3"
-                @click.prevent="step=4">Get in Touch</a> <a href="#"
+                @click.prevent="get_in_touch">Get in Touch</a> <a href="#"
             class="text-blue-700 hover:text-blue-500 font-bold"
             @click.prevent="step_back">Previous</a>
         </div>
@@ -156,6 +156,13 @@ export default {
     methods: {
         step_back() {
             EventBus.$emit('step_back',{
+                number_of_students: this.number_of_students,
+                number_of_teachers: this.number_of_teachers,
+                usage: this.usage,
+            });
+        },
+        get_in_touch(){
+            EventBus.$emit('get_in_touch', {
                 number_of_students: this.number_of_students,
                 number_of_teachers: this.number_of_teachers,
                 usage: this.usage,
