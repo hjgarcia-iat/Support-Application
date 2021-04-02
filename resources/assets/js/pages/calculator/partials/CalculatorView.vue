@@ -105,11 +105,14 @@
         </div>
 
         <div class="mt-6 flex items-center">
+
+            <a href="#"
+                class="text-blue-700 hover:text-blue-500 font-bold"
+                @click.prevent="step_back">Previous</a>
+
             <a href=""
-                class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3"
-                @click.prevent="get_in_touch">Learn More/Contact Rep</a> <a href="#"
-            class="text-blue-700 hover:text-blue-500 font-bold"
-            @click.prevent="step_back">Previous</a>
+                class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white ml-4"
+                @click.prevent="get_in_touch">Learn More/Contact Rep</a>
         </div>
 
     </div>

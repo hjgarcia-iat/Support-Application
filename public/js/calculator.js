@@ -2349,6 +2349,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2437,6 +2440,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue2_filters__WEBPACK_IMPORTED_MO
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_partials_FormError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/FormError */ "./resources/assets/js/components/partials/FormError.vue");
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
+//
 //
 //
 //
@@ -30673,22 +30677,6 @@ var render = function() {
       _c(
         "a",
         {
-          staticClass:
-            "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-          attrs: { href: "" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.get_in_touch($event)
-            }
-          }
-        },
-        [_vm._v("Learn More/Contact Rep")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
           staticClass: "text-blue-700 hover:text-blue-500 font-bold",
           attrs: { href: "#" },
           on: {
@@ -30699,6 +30687,22 @@ var render = function() {
           }
         },
         [_vm._v("Previous")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass:
+            "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white ml-4",
+          attrs: { href: "" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.get_in_touch($event)
+            }
+          }
+        },
+        [_vm._v("Learn More/Contact Rep")]
       )
     ])
   ])
@@ -30798,7 +30802,7 @@ var render = function() {
         staticClass:
           "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
       },
-      [_vm._v("Get in Touch")]
+      [_vm._v("Learn More/Contact Rep")]
     ),
     _vm._v(" "),
     _c(
@@ -31368,24 +31372,6 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "mt-8 flex items-center" }, [
           _c(
-            "button",
-            {
-              staticClass:
-                "bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 mr-2 focus:outline-none focus:shadow-outline",
-              class: {
-                "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
-              },
-              attrs: { type: "submit", disabled: _vm.loading }
-            },
-            [
-              _vm.loading
-                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                : _vm._e(),
-              _vm._v(" Contact Us\n            ")
-            ]
-          ),
-          _vm._v(" "),
-          _c(
             "a",
             {
               staticClass: "text-blue-700 hover:text-blue-500 font-bold",
@@ -31398,6 +31384,24 @@ var render = function() {
               }
             },
             [_vm._v("Previous")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass:
+                "bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 ml-4 focus:outline-none focus:shadow-outline focus:border-blue-600",
+              class: {
+                "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
+              },
+              attrs: { type: "submit", disabled: _vm.loading }
+            },
+            [
+              _vm.loading
+                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                : _vm._e(),
+              _vm._v(" Send\n            ")
+            ]
           )
         ])
       ]

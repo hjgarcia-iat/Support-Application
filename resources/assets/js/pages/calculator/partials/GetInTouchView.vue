@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Get in Touch</h1>
+        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Learn More/Contact Rep</h1>
 
         <form method="POST"
             @submit.prevent="submitForm">
@@ -186,16 +186,17 @@
 
 
             <div class="mt-8 flex items-center">
-                <button type="submit"
-                    class="bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 mr-2 focus:outline-none focus:shadow-outline"
-                    :disabled="loading"
-                    :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
-                    <i class="fa fa-refresh fa-spin"
-                        v-if="loading"></i> Contact Us
-                </button>
                 <a href="#"
                     class="text-blue-700 hover:text-blue-500 font-bold"
                     @click.prevent="step_back">Previous</a>
+                <button type="submit"
+                    class="bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 ml-4 focus:outline-none focus:shadow-outline focus:border-blue-600"
+                    :disabled="loading"
+                    :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                    <i class="fa fa-refresh fa-spin"
+                        v-if="loading"></i> Send
+                </button>
+
             </div>
         </form>
     </div>
