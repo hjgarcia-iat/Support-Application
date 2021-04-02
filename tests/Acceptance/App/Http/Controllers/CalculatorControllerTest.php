@@ -13,15 +13,6 @@ use Tests\TestCase;
  */
 class CalculatorControllerTest extends TestCase
 {
-    use RefreshDatabase;
-
-    public function test_we_can_view_the_form()
-    {
-        $response = $this->get(route("calculator.show"));
-
-        $response->assertStatus(200);
-        $response->assertViewIs("calculator.show");
-    }
 
     public function test_we_can_submit_the_results_of_the_calculator()
     {
@@ -43,11 +34,16 @@ class CalculatorControllerTest extends TestCase
             'usage'              => 'Test',
         ];
 
-        $response = $this->post(route('calculator.store'), $data);
+        $response = $this->withoutExceptionHandling()->post(route('calculator.store'), $data);
+
+
+        $response->assertStatus(200);
+        $response->assertJson([
+            'success' => true,
+        ]);
 
         //get the record
         $record = resolve(CrmInterface::class)->findByEmail($data['email']);
-
         $this->assertEquals($record['FirstName'], $data['first_name']);
         $this->assertEquals($record['LastName'], $data['last_name']);
         $this->assertEquals($record['Email'], $data['email']);
@@ -57,11 +53,7 @@ class CalculatorControllerTest extends TestCase
         $this->assertEquals($record['District_Name__c'], $data['district']);
         $this->assertEquals($record['City'], $data['city']);
         $this->assertEquals($record['State'], $data['state']);
-        $this->assertEquals($record['Description'], 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_teachers'] . ' Usage: ' . $data['usage']);
-        $response->assertStatus(200);
-        $response->assertJson([
-            'success' => true,
-        ]);
+        $this->assertEquals($record['Description'], 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_students'] . ' Usage: ' . $data['usage']);
 
         //delete the record
         resolve(CrmInterface::class)->delete($data['email']);

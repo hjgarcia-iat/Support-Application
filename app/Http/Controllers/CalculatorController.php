@@ -15,7 +15,7 @@ class CalculatorController extends Controller
 
     public function store(CalculatorRequest $request, CrmInterface $crm): \Illuminate\Http\JsonResponse
     {
-        $crm->store();
+        $crm->store($request->all());
 
         return response()->json([
             'success' => true,

@@ -42,8 +42,8 @@ class CrmSalesforce implements CrmInterface
                 'District_Name__c'    => $data['district'],
                 'City'                => $data['city'],
                 'State'               => $data['state'],
-                'Product_Interest__c' => $data['product_interest'],
-                'Description'         => (isset($data['description']) ? 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_teachers'] . ' Usage: ' . $data['usage'] : ''),
+                'Product_Interest__c' => ($data['product_interest'] ?? 'IQWST (all editions)'),
+                'Description'         => (isset($data['number_of_teachers']) ? 'Number of teachers: ' . $data['number_of_teachers'] . ' Number of students: ' . $data['number_of_students'] . ' Usage: ' . $data['usage'] : ''),
             ],
         ]);
 
