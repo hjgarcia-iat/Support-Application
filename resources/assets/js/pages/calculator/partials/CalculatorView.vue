@@ -1,17 +1,18 @@
 <template>
     <div>
         <div v-if="usage==='IQWST Print Student Workbooks'">
-            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Digital Savings
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Digital Savings <br>
                 Compared To Print
             </h1>
             <div class="grid mt-6">
-                <div class="mx-2">&nbsp;</div>
-                <div class="mx-2">&nbsp;</div>
-                <div class="mx-2">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>
                     <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300 mx-2">
+                <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl text-gray-600">with ONPAR</p>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
@@ -20,10 +21,11 @@
                     <p class="text-3xl text-orange-500">{{ print_one_year_cost | currency }}</p>
                     <p class="text-xl">&ndash; or &ndash;</p>
                     <p class="text-3xl text-orange-500">{{ print_one_year_savings | percent }}</p>
-                    <p class="text-xl">each year</p>
+                    <p class="text-xl">next year</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300 mx-2">
+                <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl text-gray-600">with ONPAR</p>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
@@ -34,9 +36,10 @@
                     <p class="text-3xl text-orange-500">{{ print_three_year_savings | percent }}</p>
                     <p class="text-xl">over 3 years</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700 mx-2">
+                <div class="text-center  border-2 border-blue-700">
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                        <p class="text-xl text-gray-600">with ONPAR</p>
                         <p class="text-xl">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
@@ -57,21 +60,22 @@
             <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Multi-Year Digital
                 Savings
             </h1>
-            <div class="grid mt-6">
-                <div class="mx-2">&nbsp;</div>
-                <div class="mx-2">&nbsp;</div>
-                <div class="mx-2">
+            <div class="grid">
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+                <div>
                     <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300 mx-2">
+                <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
                     <p class="text-2xl">Current Subscription</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300 mx-2">
+                <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <p class="text-xl text-gray-600">with ONPAR</p>
                     <p class="text-xl">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
@@ -80,11 +84,12 @@
                     <p class="text-3xl text-orange-500">{{ digital_three_year_cost | currency }}</p>
                     <p class="text-xl">&ndash; or &ndash;</p>
                     <p class="text-3xl text-orange-500">{{ digital_three_year_savings | percent }}</p>
-                    <p class="text-xl">over 3 years</p>
+                    <p>Compared to renewing a 1 yr subscription each of the 3 years</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700 mx-2">
+                <div class="text-center  border-2 border-blue-700">
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                        <p class="text-xl text-gray-600">with ONPAR</p>
                         <p class="text-xl">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
@@ -93,7 +98,7 @@
                         <p class="text-3xl text-orange-500">{{ digital_six_year_cost | currency }}</p>
                         <p class="text-xl">&ndash; or &ndash;</p>
                         <p class="text-3xl text-orange-500">{{ digital_six_year_savings | percent }}</p>
-                        <p class="text-xl">over 6 years</p>
+                        <p>Compared to renewing a 1 yr subscription each of the 6 years</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +107,7 @@
         <div class="mt-6 flex items-center">
             <a href=""
                 class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3"
-                @click.prevent="get_in_touch">Get in Touch</a> <a href="#"
+                @click.prevent="get_in_touch">Learn More/Contact Rep</a> <a href="#"
             class="text-blue-700 hover:text-blue-500 font-bold"
             @click.prevent="step_back">Previous</a>
         </div>
@@ -202,5 +207,6 @@ export default {
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 1em;
 }
 </style>

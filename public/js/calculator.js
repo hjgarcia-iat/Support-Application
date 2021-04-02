@@ -1946,569 +1946,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _partials_FormAlert_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/FormAlert.vue */ "./resources/assets/js/components/partials/FormAlert.vue");
-/* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue2-filters */ "./node_modules/vue2-filters/dist/vue2-filters.js");
-/* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _partials_FormError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/FormError */ "./resources/assets/js/components/partials/FormError.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_2___default.a);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Alert: _partials_FormAlert_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FormError: _partials_FormError__WEBPACK_IMPORTED_MODULE_3__["default"]
-  },
-  name: "Calculator",
-  data: function data() {
-    return {
-      formMessage: '',
-      formMessageType: 'success',
-      alertVisible: false,
-      formErrors: [],
-      loading: false,
-      step: 1,
-      number_of_teachers: 0,
-      number_of_students: 0,
-      usage: "",
-      print_one_year_cost: 0,
-      print_one_year_savings: 0,
-      print_three_year_cost: 0,
-      print_three_year_savings: 0,
-      print_six_year_cost: 0,
-      print_six_year_savings: 0,
-      digital_one_year_cost: 0,
-      digital_one_year_savings: 0,
-      digital_three_year_cost: 0,
-      digital_three_year_savings: 0,
-      digital_six_year_cost: 0,
-      digital_six_year_savings: 0,
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      role: '',
-      school: '',
-      district: '',
-      city: '',
-      state: '',
-      workbook_cost: 22.48,
-      shipping_rate: .12,
-      ide_one_year_cost_per_student: 18.40,
-      ide_one_year_cost_per_teacher: 80.00,
-      ide_three_year_cost_per_student: 41.99,
-      ide_three_year_cost_per_teacher: 210.00,
-      ide_six_year_cost_per_student: 68.50,
-      ide_six_year_cost_per_teacher: 360.00
-    };
-  },
-  methods: {
-    hideAlert: function hideAlert() {
-      this.alertVisible = false;
-    },
-    calculate: function calculate() {
-      if (parseInt(this.number_of_teachers) > parseInt(this.number_of_students)) {
-        this.formMessage = 'The number of teachers cannot be higher than the number of students.';
-        this.formMessageType = 'error';
-        this.alertVisible = true;
-        return;
-      }
-
-      this.hideAlert();
-      if (this.usage === "IQWST Print Student Workbooks") this.step = 2;
-      if (this.usage === "IQWST Interactive Digital Edition") this.step = 3; //print calculations
-
-      var workbook_total_cost = this.number_of_students * this.workbook_cost;
-      var workbook_yearly_cost = workbook_total_cost + workbook_total_cost * this.shipping_rate;
-      console.log(workbook_yearly_cost); //print -> to digital one year savings calculations
-
-      this.print_one_year_cost = this.number_of_students * this.ide_one_year_cost_per_student + this.number_of_teachers * this.ide_one_year_cost_per_teacher;
-      this.print_one_year_savings = (workbook_yearly_cost - this.print_one_year_cost) / workbook_yearly_cost; //print -> to digital three year savings calculations
-
-      this.print_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
-      this.print_three_year_savings = (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate - this.print_three_year_cost) / (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate); //print -> to digital six year savings calculations
-
-      this.print_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
-      this.print_six_year_savings = (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate - this.print_six_year_cost) / (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate); //digital calculations
-      //one year calculations
-
-      this.digital_one_year_cost = this.number_of_students * this.ide_one_year_cost_per_student + this.number_of_teachers * this.ide_one_year_cost_per_teacher; //three year calculations
-
-      this.digital_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
-      this.digital_three_year_savings = (this.digital_one_year_cost * 3 - this.digital_three_year_cost) / (this.digital_one_year_cost * 3); //six year calculations
-
-      this.digital_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
-      this.digital_six_year_savings = (this.digital_one_year_cost * 6 - this.digital_six_year_cost) / (this.digital_one_year_cost * 6);
-    },
-    submitForm: function submitForm() {
-      var _this = this;
-
-      this.loading = true;
-      axios.post('/calculator', {
-        first_name: this.first_name,
-        last_name: this.last_name,
-        email: this.email,
-        phone: this.phone,
-        role: this.role,
-        city: this.city,
-        school: this.school,
-        district: this.district,
-        state: this.state,
-        number_of_teachers: this.number_of_teachers,
-        number_of_students: this.number_of_students,
-        usage: this.usage
-      }).then(function (response) {
-        if (response.data.success) {
-          _this.alertVisible = true;
-
-          _this.reset();
-
-          _this.formMessageType = 'success';
-          _this.formMessage = response.data.message;
-        }
-
-        _this.loading = false;
-      })["catch"](function (error) {
-        _this.alertVisible = true;
-        _this.formMessage = 'Please see errors below!';
-        _this.formErrors = error.response.data.errors;
-        _this.formMessageType = 'error';
-        _this.loading = false;
-      });
-    },
-    reset: function reset() {
-      this.step = 1;
-      this.first_name = '';
-      this.last_name = '';
-      this.email = '';
-      this.phone = '';
-      this.role = '';
-      this.city = '';
-      this.school = '';
-      this.district = '';
-      this.state = '';
-      this.formErrors = [];
-      this.formMessage = '';
-      this.number_of_teachers = 0;
-      this.number_of_students = 0;
-      this.usage = '';
-      this.print_one_year_cost = 0;
-      this.print_one_year_savings = 0;
-      this.print_three_year_cost = 0;
-      this.print_three_year_savings = 0;
-      this.print_six_year_cost = 0;
-      this.print_six_year_savings = 0;
-      this.digital_one_year_dollar_savings = 0;
-      this.digital_one_year_percentage_savings = 0;
-      this.digital_three_year_cost = 0;
-      this.digital_three_year_savings = 0;
-      this.digital_six_year_cost = 0;
-      this.digital_six_year_savings = 0;
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=script&lang=js& ***!
@@ -2583,6 +2020,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/CalculatorView */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue");
 /* harmony import */ var _partials_GetInTouchView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/GetInTouchView */ "./resources/assets/js/pages/calculator/partials/GetInTouchView.vue");
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../calculator */ "./resources/assets/js/calculator.js");
+//
 //
 //
 //
@@ -2785,6 +2223,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3274,25 +2717,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css& ***!
@@ -3324,7 +2748,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".grid[data-v-634c2658] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
+exports.push([module.i, ".grid[data-v-634c2658] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 0 1em;\n}\r\n", ""]);
 
 // exports
 
@@ -20976,36 +20400,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Calculator.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=style&index=0&lang=css& ***!
@@ -30578,1468 +29972,6 @@ var install = VeeValidate$1.install;
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e& ***!
-  \********************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "p-6" },
-    [
-      _c("alert", {
-        attrs: {
-          message: _vm.formMessage,
-          type: _vm.formMessageType,
-          visible: _vm.alertVisible
-        },
-        on: {
-          "alert-hide": function($event) {
-            _vm.alertVisible = false
-          }
-        }
-      }),
-      _vm._v(" "),
-      _vm.step === 1
-        ? _c("div", [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-              },
-              [
-                _vm._v(
-                  "Calculate Your\n                                                                                                Digital Savings\n        "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
-              _vm._v(
-                "Calculate how much you could save by upgrading to IQWST Interactive\n                                             Digital Edition or increasing your current subscription term.\n        "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v(
-                  "1. Approximately how many students use IQWST in your classroom, school, or\n                                      district?\n            "
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.number_of_students,
-                    expression: "number_of_students"
-                  }
-                ],
-                staticClass:
-                  "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
-                attrs: { type: "text", name: "number_of_students" },
-                domProps: { value: _vm.number_of_students },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.number_of_students = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v(
-                  "2. Approximately how many teachers use IQWST in your classroom, school, or\n                                      district?\n            "
-                )
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.number_of_teachers,
-                    expression: "number_of_teachers"
-                  }
-                ],
-                staticClass:
-                  "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
-                attrs: { type: "text", name: "number_of_teachers" },
-                domProps: { value: _vm.number_of_teachers },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.number_of_teachers = $event.target.value
-                  }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-3" }, [
-              _c("p", { staticClass: "mb-3 font-bold" }, [
-                _vm._v("3. We currently use:")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center mb-3" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.usage,
-                      expression: "usage"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "usage_1",
-                    value: "IQWST Print Student Workbooks"
-                  },
-                  domProps: {
-                    checked: _vm._q(_vm.usage, "IQWST Print Student Workbooks")
-                  },
-                  on: {
-                    change: function($event) {
-                      _vm.usage = "IQWST Print Student Workbooks"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "ml-2 text-grey-darker cursor-pointer",
-                    attrs: { for: "usage_1" }
-                  },
-                  [
-                    _vm._v(
-                      "IQWST Print Student\n                                     Workbooks"
-                    )
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.usage,
-                      expression: "usage"
-                    }
-                  ],
-                  attrs: {
-                    type: "radio",
-                    name: "reason",
-                    id: "usage_2",
-                    value: "IQWST Interactive Digital Edition"
-                  },
-                  domProps: {
-                    checked: _vm._q(
-                      _vm.usage,
-                      "IQWST Interactive Digital Edition"
-                    )
-                  },
-                  on: {
-                    change: function($event) {
-                      _vm.usage = "IQWST Interactive Digital Edition"
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "label",
-                  {
-                    staticClass: "ml-2 text-grey-darker cursor-pointer",
-                    attrs: { for: "usage_2" }
-                  },
-                  [
-                    _vm._v(
-                      "IQWST Interactive Digital\n                                     Edition"
-                    )
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-6" }, [
-              _c(
-                "button",
-                {
-                  staticClass:
-                    "rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto",
-                  class: {
-                    "cursor-pointer bg-blue-700":
-                      _vm.number_of_students > 0 && _vm.number_of_teachers > 0
-                  },
-                  attrs: {
-                    disabled:
-                      _vm.number_of_students <= 0 &&
-                      _vm.number_of_teachers <= 0,
-                    type: "submit"
-                  },
-                  on: { click: _vm.calculate }
-                },
-                [_vm._v("\n                Calculate\n            ")]
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.step === 2
-        ? _c("div", [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-              },
-              [
-                _vm._v(
-                  "Digital Savings\n                                                                                                Compared To Print\n        "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "grid mt-6" }, [
-              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "text-center p-4 border-2 border-gray-300 mx-2"
-                },
-                [
-                  _c(
-                    "h2",
-                    { staticClass: "text-4xl text-blue-700 font-medium" },
-                    [_vm._v("IQWST")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
-                    _vm._v("Interactive Digital Edition")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl font-bold" }, [
-                    _vm._v("1-Year")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-                  _vm._v(" "),
-                  _c("h3", { staticClass: "text-2xl font-bold" }, [
-                    _vm._v("You would save")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(_vm._s(_vm._f("currency")(_vm.print_one_year_cost)))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("percent")(_vm.print_one_year_savings))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("each year")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "text-center p-4 border-2 border-gray-300 mx-2"
-                },
-                [
-                  _c(
-                    "h2",
-                    { staticClass: "text-4xl text-blue-700 font-medium" },
-                    [_vm._v("IQWST")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
-                    _vm._v("Interactive Digital Edition")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl font-bold" }, [
-                    _vm._v("3-Year")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-                  _vm._v(" "),
-                  _c("h3", { staticClass: "text-2xl font-bold" }, [
-                    _vm._v("You would save")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("currency")(_vm.print_three_year_cost))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("percent")(_vm.print_three_year_savings))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "text-center  border-2 border-blue-700 mx-2" },
-                [
-                  _c("div", { staticClass: "p-4" }, [
-                    _c(
-                      "h2",
-                      { staticClass: "text-4xl text-blue-700 font-medium" },
-                      [_vm._v("IQWST")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("Interactive Digital Edition")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl font-bold" }, [
-                      _vm._v("6-Year")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("Subscription")
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "text-2xl font-bold" }, [
-                      _vm._v("You would save")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                      _vm._v(
-                        _vm._s(_vm._f("currency")(_vm.print_six_year_cost))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                      _vm._v(
-                        _vm._s(_vm._f("percent")(_vm.print_six_year_savings))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("over 6 years")
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-6 flex justify-end items-center" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                  attrs: { href: "" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step = 4
-                    }
-                  }
-                },
-                [_vm._v("Get\n                                       in Touch")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "text-blue-700 hover:text-blue-500 font-bold",
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step = 1
-                    }
-                  }
-                },
-                [_vm._v("Previous")]
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.step === 3
-        ? _c("div", [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-              },
-              [
-                _vm._v(
-                  "Multi-Year Digital\n                                                                                                Savings\n        "
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "grid mt-6" }, [
-              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "text-center p-4 border-2 border-gray-300 mx-2"
-                },
-                [
-                  _c(
-                    "h2",
-                    { staticClass: "text-4xl text-blue-700 font-medium" },
-                    [_vm._v("IQWST")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
-                    _vm._v("Interactive Digital Edition")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl font-bold" }, [
-                    _vm._v("3-Year")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-                  _vm._v(" "),
-                  _c("h3", { staticClass: "text-2xl font-bold" }, [
-                    _vm._v("You would save")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("currency")(_vm.digital_three_year_cost))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("percent")(_vm.digital_three_year_savings))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "text-center  border-2 border-blue-700 mx-2" },
-                [
-                  _c("div", { staticClass: "p-4" }, [
-                    _c(
-                      "h2",
-                      { staticClass: "text-4xl text-blue-700 font-medium" },
-                      [_vm._v("IQWST")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("Interactive Digital Edition")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl font-bold" }, [
-                      _vm._v("6-Year")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("Subscription")
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "text-2xl font-bold" }, [
-                      _vm._v("You would save")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                      _vm._v(
-                        _vm._s(_vm._f("currency")(_vm.digital_six_year_cost))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                      _vm._v(
-                        _vm._s(_vm._f("percent")(_vm.digital_six_year_savings))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "text-xl" }, [
-                      _vm._v("over 6 years")
-                    ])
-                  ])
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-6 flex justify-end items-center" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
-                  attrs: { href: "" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step = 4
-                    }
-                  }
-                },
-                [_vm._v("Get\n                                       in Touch")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "text-blue-700 hover:text-blue-500 font-bold",
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      $event.preventDefault()
-                      _vm.step = 1
-                    }
-                  }
-                },
-                [_vm._v("Previous")]
-              )
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.step === 4
-        ? _c("div", [
-            _c(
-              "h1",
-              {
-                staticClass:
-                  "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-              },
-              [_vm._v("Get in Touch")]
-            ),
-            _vm._v(" "),
-            _c(
-              "form",
-              {
-                attrs: { method: "POST" },
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.submitForm($event)
-                  }
-                }
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.first_name,
-                          expression: "first_name"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "first_name",
-                        placeholder: "Enter your first name",
-                        name: "first_name"
-                      },
-                      domProps: { value: _vm.first_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.first_name = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.first_name
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.first_name[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.last_name,
-                          expression: "last_name"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "last_name",
-                        placeholder: "Enter your last name",
-                        name: "last_name"
-                      },
-                      domProps: { value: _vm.last_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.last_name = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.last_name
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.last_name[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(5),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.email,
-                          expression: "email"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "email",
-                        placeholder: "Enter your email",
-                        name: "email"
-                      },
-                      domProps: { value: _vm.email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.email = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.email
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.email[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block text-grey-darker text-sm font-bold mb-2",
-                        attrs: { for: "phone" }
-                      },
-                      [_vm._v("Phone")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.phone,
-                          expression: "phone"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "phone",
-                        placeholder: "Enter your phone",
-                        name: "phone"
-                      },
-                      domProps: { value: _vm.phone },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.phone = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.phone
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.phone[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(6),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.role,
-                            expression: "role"
-                          }
-                        ],
-                        staticClass:
-                          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                        attrs: { name: "role", id: "role" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.role = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Select a role")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "Classroom Teacher" } },
-                          [_vm._v("Classroom Teacher")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "option",
-                          { attrs: { value: "School Administrator" } },
-                          [_vm._v("School Administrator")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Other" } }, [
-                          _vm._v("Other")
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm.formErrors.role
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.role[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _c(
-                      "label",
-                      {
-                        staticClass:
-                          "block text-grey-darker text-sm font-bold mb-2",
-                        attrs: { for: "district" }
-                      },
-                      [_vm._v("District")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.district,
-                          expression: "district"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "district",
-                        placeholder: "Enter your district name",
-                        name: "district"
-                      },
-                      domProps: { value: _vm.district },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.district = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.district
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.district[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(7),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.school,
-                          expression: "school"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "school",
-                        placeholder: "Enter your school name",
-                        name: "school"
-                      },
-                      domProps: { value: _vm.school },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.school = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.school
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.school[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(8),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.city,
-                          expression: "city"
-                        }
-                      ],
-                      staticClass:
-                        "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                      attrs: {
-                        type: "text",
-                        id: "city",
-                        placeholder: "Enter your city name",
-                        name: "city"
-                      },
-                      domProps: { value: _vm.city },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.city = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _vm.formErrors.city
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.city[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mb-6" },
-                  [
-                    _vm._m(9),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.state,
-                            expression: "state"
-                          }
-                        ],
-                        staticClass:
-                          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-                        attrs: { name: "state", id: "state" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.state = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c("option", { attrs: { value: "" } }, [
-                          _vm._v("Select a state")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AL" } }, [
-                          _vm._v("Alabama")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AK" } }, [
-                          _vm._v("Alaska")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AZ" } }, [
-                          _vm._v("Arizona")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "AR" } }, [
-                          _vm._v("Arkansas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CA" } }, [
-                          _vm._v("California")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CO" } }, [
-                          _vm._v("Colorado")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "CT" } }, [
-                          _vm._v("Connecticut")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "DE" } }, [
-                          _vm._v("Delaware")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "DC" } }, [
-                          _vm._v("District Of Columbia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "FL" } }, [
-                          _vm._v("Florida")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "GA" } }, [
-                          _vm._v("Georgia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "HI" } }, [
-                          _vm._v("Hawaii")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ID" } }, [
-                          _vm._v("Idaho")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IL" } }, [
-                          _vm._v("Illinois")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IN" } }, [
-                          _vm._v("Indiana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "IA" } }, [
-                          _vm._v("Iowa")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "KS" } }, [
-                          _vm._v("Kansas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "KY" } }, [
-                          _vm._v("Kentucky")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "LA" } }, [
-                          _vm._v("Louisiana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ME" } }, [
-                          _vm._v("Maine")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MD" } }, [
-                          _vm._v("Maryland")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MA" } }, [
-                          _vm._v("Massachusetts")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MI" } }, [
-                          _vm._v("Michigan")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MN" } }, [
-                          _vm._v("Minnesota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MS" } }, [
-                          _vm._v("Mississippi")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MO" } }, [
-                          _vm._v("Missouri")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "MT" } }, [
-                          _vm._v("Montana")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NE" } }, [
-                          _vm._v("Nebraska")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NV" } }, [
-                          _vm._v("Nevada")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NH" } }, [
-                          _vm._v("New Hampshire")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NJ" } }, [
-                          _vm._v("New Jersey")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NM" } }, [
-                          _vm._v("New Mexico")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NY" } }, [
-                          _vm._v("New York")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "NC" } }, [
-                          _vm._v("North Carolina")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "ND" } }, [
-                          _vm._v("North Dakota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OH" } }, [
-                          _vm._v("Ohio")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OK" } }, [
-                          _vm._v("Oklahoma")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "OR" } }, [
-                          _vm._v("Oregon")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "PA" } }, [
-                          _vm._v("Pennsylvania")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "RI" } }, [
-                          _vm._v("Rhode Island")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "SC" } }, [
-                          _vm._v("South Carolina")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "SD" } }, [
-                          _vm._v("South Dakota")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "TN" } }, [
-                          _vm._v("Tennessee")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "TX" } }, [
-                          _vm._v("Texas")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "UT" } }, [
-                          _vm._v("Utah")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "VT" } }, [
-                          _vm._v("Vermont")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "VA" } }, [
-                          _vm._v("Virginia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WA" } }, [
-                          _vm._v("Washington")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WV" } }, [
-                          _vm._v("West Virginia")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WI" } }, [
-                          _vm._v("Wisconsin")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "WY" } }, [
-                          _vm._v("Wyoming")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "Other" } }, [
-                          _vm._v("Other")
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm.formErrors.state
-                      ? _c("form-error", {
-                          attrs: { error: _vm.formErrors.state[0] }
-                        })
-                      : _vm._e()
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "mt-8 flex justify-end items-center" },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 mr-2 focus:outline-none focus:shadow-outline",
-                        class: {
-                          "cursor-default bg-blue-light hover:bg-blue-light":
-                            _vm.loading
-                        },
-                        attrs: { type: "submit", disabled: _vm.loading }
-                      },
-                      [
-                        _vm.loading
-                          ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
-                          : _vm._e(),
-                        _vm._v(" Contact Us\n                ")
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "text-blue-700 hover:text-blue-500 font-bold",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.usage === "IQWST Print Student Workbooks"
-                              ? (_vm.step = 2)
-                              : (_vm.step = 3)
-                          }
-                        }
-                      },
-                      [_vm._v("Previous")]
-                    )
-                  ]
-                )
-              ]
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-center text-sm text-gray-600 mt-8" }, [
-        _vm._v("Estimated digital savings. Your actual savings may vary.")
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-2" }, [
-      _c(
-        "p",
-        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
-        [_vm._v("Best Savings")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-2" }, [
-      _c(
-        "p",
-        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
-        [_vm._v("Best Savings")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
-      [
-        _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
-          _vm._v("IQWST")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-xl" }, [
-          _vm._v("Interactive Digital Edition")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-3xl font-bold" }, [_vm._v("1-Year")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-2xl" }, [_vm._v("Current Subscription")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "first_name" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" First Name")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "last_name" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" Last Name")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "email" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" Email")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "role" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" Role")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "school" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" School")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "city" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" City")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      {
-        staticClass: "block text-grey-darker text-sm font-bold mb-2",
-        attrs: { for: "state" }
-      },
-      [
-        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
-        _vm._v(" State")
-      ]
-    )
-  }
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/partials/FormAlert.vue?vue&type=template&id=0647d0f2&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/components/partials/FormAlert.vue?vue&type=template&id=0647d0f2& ***!
@@ -32219,7 +30151,11 @@ var render = function() {
             ],
             1
           )
-        : _vm._e()
+        : _vm._e(),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-center text-gray-600 mt-4" }, [
+        _vm._v("Note: Estimated savings, actual sayings may vary.")
+      ])
     ],
     1
   )
@@ -32448,31 +30384,28 @@ var render = function() {
   return _c("div", [
     _vm.usage === "IQWST Print Student Workbooks"
       ? _c("div", [
-          _c(
-            "h1",
-            {
-              staticClass:
-                "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-            },
-            [_vm._v("Digital Savings\n            Compared To Print\n        ")]
-          ),
+          _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "grid mt-6" }, [
-            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _c("div", [_vm._v(" ")]),
             _vm._v(" "),
-            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _c("div", [_vm._v(" ")]),
             _vm._v(" "),
-            _vm._m(0),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              { staticClass: "text-center p-4 border-2 border-gray-300" },
               [
                 _c(
                   "h2",
                   { staticClass: "text-4xl text-blue-700 font-medium" },
                   [_vm._v("IQWST")]
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                  _vm._v("with ONPAR")
+                ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-xl" }, [
                   _vm._v("Interactive Digital Edition")
@@ -32498,19 +30431,23 @@ var render = function() {
                   _vm._v(_vm._s(_vm._f("percent")(_vm.print_one_year_savings)))
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("each year")])
+                _c("p", { staticClass: "text-xl" }, [_vm._v("next year")])
               ]
             ),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              { staticClass: "text-center p-4 border-2 border-gray-300" },
               [
                 _c(
                   "h2",
                   { staticClass: "text-4xl text-blue-700 font-medium" },
                   [_vm._v("IQWST")]
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                  _vm._v("with ONPAR")
+                ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-xl" }, [
                   _vm._v("Interactive Digital Edition")
@@ -32544,7 +30481,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center  border-2 border-blue-700 mx-2" },
+              { staticClass: "text-center  border-2 border-blue-700" },
               [
                 _c("div", { staticClass: "p-4" }, [
                   _c(
@@ -32552,6 +30489,10 @@ var render = function() {
                     { staticClass: "text-4xl text-blue-700 font-medium" },
                     [_vm._v("IQWST")]
                   ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl text-gray-600" }, [
+                    _vm._v("with ONPAR")
+                  ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-xl" }, [
                     _vm._v("Interactive Digital Edition")
@@ -32598,24 +30539,28 @@ var render = function() {
             [_vm._v("Multi-Year Digital\n            Savings\n        ")]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "grid mt-6" }, [
-            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+          _c("div", { staticClass: "grid" }, [
+            _c("div", [_vm._v(" ")]),
             _vm._v(" "),
-            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
-            _vm._v(" "),
-            _vm._m(1),
+            _c("div", [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
+            _vm._m(3),
+            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              { staticClass: "text-center p-4 border-2 border-gray-300" },
               [
                 _c(
                   "h2",
                   { staticClass: "text-4xl text-blue-700 font-medium" },
                   [_vm._v("IQWST")]
                 ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                  _vm._v("with ONPAR")
+                ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-xl" }, [
                   _vm._v("Interactive Digital Edition")
@@ -32645,13 +30590,17 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
+                _c("p", [
+                  _vm._v(
+                    "Compared to renewing a 1 yr subscription each of the 3 years"
+                  )
+                ])
               ]
             ),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center  border-2 border-blue-700 mx-2" },
+              { staticClass: "text-center  border-2 border-blue-700" },
               [
                 _c("div", { staticClass: "p-4" }, [
                   _c(
@@ -32659,6 +30608,10 @@ var render = function() {
                     { staticClass: "text-4xl text-blue-700 font-medium" },
                     [_vm._v("IQWST")]
                   ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl text-gray-600" }, [
+                    _vm._v("with ONPAR")
+                  ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-xl" }, [
                     _vm._v("Interactive Digital Edition")
@@ -32688,7 +30641,11 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
+                  _c("p", [
+                    _vm._v(
+                      "Compared to renewing a 1 yr subscription each of the 6 years"
+                    )
+                  ])
                 ])
               ]
             )
@@ -32710,7 +30667,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Get in Touch")]
+        [_vm._v("Learn More/Contact Rep")]
       ),
       _vm._v(" "),
       _c(
@@ -32735,7 +30692,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-2" }, [
+    return _c(
+      "h1",
+      {
+        staticClass:
+          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+      },
+      [
+        _vm._v("Digital Savings "),
+        _c("br"),
+        _vm._v("\n            Compared To Print\n        ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
       _c(
         "p",
         { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
@@ -32747,7 +30721,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-2" }, [
+    return _c("div", [
       _c(
         "p",
         { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
@@ -32761,7 +30735,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+      { staticClass: "text-center p-4 border-2 border-gray-300" },
       [
         _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
           _vm._v("IQWST")
@@ -46614,10 +44588,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
-/* harmony import */ var _components_Calculator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Calculator */ "./resources/assets/js/components/Calculator.vue");
-/* harmony import */ var _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/calculator/CalculatorPage */ "./resources/assets/js/pages/calculator/CalculatorPage.vue");
+/* harmony import */ var _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/calculator/CalculatorPage */ "./resources/assets/js/pages/calculator/CalculatorPage.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
-
 
 
 
@@ -46627,96 +44599,9 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vee_validate__WEBPACK_IMPORTED_MO
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#calculator',
   components: {
-    'calculator': _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_3__["default"]
+    'calculator': _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Calculator.vue":
-/*!*******************************************************!*\
-  !*** ./resources/assets/js/components/Calculator.vue ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Calculator.vue?vue&type=template&id=9c31310e& */ "./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e&");
-/* harmony import */ var _Calculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Calculator.vue?vue&type=script&lang=js& */ "./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Calculator.vue?vue&type=style&index=0&lang=css& */ "./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Calculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/assets/js/components/Calculator.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js&":
-/*!********************************************************************************!*\
-  !*** ./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Calculator.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&":
-/*!****************************************************************************************!*\
-  !*** ./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css& ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Calculator.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e&":
-/*!**************************************************************************************!*\
-  !*** ./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e& ***!
-  \**************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Calculator.vue?vue&type=template&id=9c31310e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/components/Calculator.vue?vue&type=template&id=9c31310e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Calculator_vue_vue_type_template_id_9c31310e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
 
 /***/ }),
 
