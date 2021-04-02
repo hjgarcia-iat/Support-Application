@@ -2583,8 +2583,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _partials_CalculatorForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/CalculatorForm */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue");
 /* harmony import */ var _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/CalculatorView */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue");
 /* harmony import */ var _partials_GetInTouchView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./partials/GetInTouchView */ "./resources/assets/js/pages/calculator/partials/GetInTouchView.vue");
-/* harmony import */ var _event_bus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../event-bus */ "./resources/assets/js/event-bus.js");
-//
+/* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../calculator */ "./resources/assets/js/calculator.js");
 //
 //
 //
@@ -2627,11 +2626,17 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    _event_bus__WEBPACK_IMPORTED_MODULE_5__["EventBus"].$on('calculate', function (data) {
-      _this.number_of_students = data.number_of_students;
-      _this.number_of_teachers = data.number_of_teachers;
+    _calculator__WEBPACK_IMPORTED_MODULE_5__["EventBus"].$on('calculate', function (data) {
+      _this.number_of_teachers = parseInt(data.number_of_teachers);
+      _this.number_of_students = parseInt(data.number_of_students);
       _this.usage = data.usage;
       _this.step = 2;
+    });
+    _calculator__WEBPACK_IMPORTED_MODULE_5__["EventBus"].$on('step_back', function (data) {
+      _this.number_of_teachers = parseInt(data.number_of_teachers);
+      _this.number_of_students = parseInt(data.number_of_students);
+      _this.usage = data.usage;
+      _this.step--;
     });
   }
 });
@@ -2647,7 +2652,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _event_bus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../event-bus */ "./resources/assets/js/event-bus.js");
+/* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
 //
 //
 //
@@ -2717,19 +2722,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CalculatorForm",
+  props: ['number_of_teachers', 'number_of_students', 'usage'],
   data: function data() {
     return {
-      number_of_students: 0,
-      number_of_teachers: 0,
-      usage: ''
+      no_students: this.number_of_students,
+      no_teachers: this.number_of_students,
+      reason: this.usage
     };
   },
   methods: {
     calculate: function calculate() {
-      _event_bus__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit('calculate', {
-        number_of_students: this.number_of_students,
-        number_of_teachers: this.number_of_teachers,
-        usage: this.usage
+      _calculator__WEBPACK_IMPORTED_MODULE_0__["EventBus"].$emit('calculate', {
+        number_of_students: this.no_students,
+        number_of_teachers: this.no_teachers,
+        usage: this.reason
       });
     }
   }
@@ -2746,14 +2752,189 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-filters */ "./node_modules/vue2-filters/dist/vue2-filters.js");
+/* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
 //
 //
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue2_filters__WEBPACK_IMPORTED_MODULE_0___default.a);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "CalculatorView"
+  name: "CalculatorView",
+  props: ['number_of_teachers', 'number_of_students', 'usage'],
+  data: function data() {
+    return {
+      workbook_cost: 22.48,
+      shipping_rate: .12,
+      ide_one_year_cost_per_student: 18.40,
+      ide_one_year_cost_per_teacher: 80.00,
+      ide_three_year_cost_per_student: 41.99,
+      ide_three_year_cost_per_teacher: 210.00,
+      ide_six_year_cost_per_student: 68.50,
+      ide_six_year_cost_per_teacher: 360.00,
+      print_one_year_cost: 0,
+      print_one_year_savings: 0,
+      print_three_year_cost: 0,
+      print_three_year_savings: 0,
+      print_six_year_cost: 0,
+      print_six_year_savings: 0,
+      digital_one_year_cost: 0,
+      digital_one_year_savings: 0,
+      digital_three_year_cost: 0,
+      digital_three_year_savings: 0,
+      digital_six_year_cost: 0,
+      digital_six_year_savings: 0
+    };
+  },
+  mounted: function mounted() {
+    this.calculate();
+  },
+  methods: {
+    step_back: function step_back() {
+      _calculator__WEBPACK_IMPORTED_MODULE_2__["EventBus"].$emit('step_back', {
+        number_of_students: this.number_of_students,
+        number_of_teachers: this.number_of_teachers,
+        usage: this.usage
+      });
+    },
+    calculate: function calculate() {
+      //print calculations
+      var workbook_total_cost = this.number_of_students * this.workbook_cost;
+      var workbook_yearly_cost = workbook_total_cost + workbook_total_cost * this.shipping_rate; //print -> to digital one year savings calculations
+
+      this.print_one_year_cost = this.number_of_students * this.ide_one_year_cost_per_student + this.number_of_teachers * this.ide_one_year_cost_per_teacher;
+      this.print_one_year_savings = (workbook_yearly_cost - this.print_one_year_cost) / workbook_yearly_cost; //print -> to digital three year savings calculations
+
+      this.print_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
+      this.print_three_year_savings = (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate - this.print_three_year_cost) / (workbook_total_cost * 3 + workbook_total_cost * this.shipping_rate); //print -> to digital six year savings calculations
+
+      this.print_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
+      this.print_six_year_savings = (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate - this.print_six_year_cost) / (workbook_total_cost * 6 + workbook_total_cost * this.shipping_rate); //digital calculations
+      //one year calculations
+
+      this.digital_one_year_cost = this.number_of_students * this.ide_one_year_cost_per_student + this.number_of_teachers * this.ide_one_year_cost_per_teacher; //three year calculations
+
+      this.digital_three_year_cost = this.number_of_students * this.ide_three_year_cost_per_student + this.number_of_teachers * this.ide_three_year_cost_per_teacher;
+      this.digital_three_year_savings = (this.digital_one_year_cost * 3 - this.digital_three_year_cost) / (this.digital_one_year_cost * 3); //six year calculations
+
+      this.digital_six_year_cost = this.number_of_students * this.ide_six_year_cost_per_student + this.number_of_teachers * this.ide_six_year_cost_per_teacher;
+      this.digital_six_year_savings = (this.digital_one_year_cost * 6 - this.digital_six_year_cost) / (this.digital_one_year_cost * 6);
+    }
+  }
 });
 
 /***/ }),
@@ -2791,7 +2972,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\n", ""]);
+exports.push([module.i, ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
 
 // exports
 
@@ -2810,7 +2991,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\n", ""]);
+exports.push([module.i, ".close-button {\n  top: 0.625rem;\n  right: 0.625rem;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".grid[data-v-634c2658] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n}\r\n", ""]);
 
 // exports
 
@@ -20522,6 +20722,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -31609,13 +31839,39 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-6" }, [
-    _vm.step === 1 ? _c("div", [_c("calculator-form")], 1) : _vm._e(),
+    _vm.step === 1
+      ? _c(
+          "div",
+          [
+            _c("calculator-form", {
+              attrs: {
+                number_of_students: _vm.number_of_students,
+                number_of_teachers: _vm.number_of_teachers,
+                usage: _vm.usage
+              }
+            })
+          ],
+          1
+        )
+      : _vm._e(),
     _vm._v(" "),
-    _vm.step === 2 ? _c("div", [_c("calculator")], 1) : _vm._e(),
+    _vm.step === 2
+      ? _c(
+          "div",
+          [
+            _c("calculator", {
+              attrs: {
+                number_of_students: _vm.number_of_students,
+                number_of_teachers: _vm.number_of_teachers,
+                usage: _vm.usage
+              }
+            })
+          ],
+          1
+        )
+      : _vm._e(),
     _vm._v(" "),
-    _vm.step === 3 ? _c("div", [_c("calculator")], 1) : _vm._e(),
-    _vm._v(" "),
-    _vm.step === 4 ? _c("div", [_c("contact-form")], 1) : _vm._e()
+    _vm.step === 3 ? _c("div", [_c("contact-form")], 1) : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -31625,10 +31881,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true&":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -31668,20 +31924,20 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.number_of_students,
-            expression: "number_of_students"
+            value: _vm.no_students,
+            expression: "no_students"
           }
         ],
         staticClass:
           "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
         attrs: { type: "text", name: "number_of_students" },
-        domProps: { value: _vm.number_of_students },
+        domProps: { value: _vm.no_students },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.number_of_students = $event.target.value
+            _vm.no_students = $event.target.value
           }
         }
       })
@@ -31699,20 +31955,20 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.number_of_teachers,
-            expression: "number_of_teachers"
+            value: _vm.no_teachers,
+            expression: "no_teachers"
           }
         ],
         staticClass:
           "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
         attrs: { type: "text", name: "number_of_teachers" },
-        domProps: { value: _vm.number_of_teachers },
+        domProps: { value: _vm.no_teachers },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.number_of_teachers = $event.target.value
+            _vm.no_teachers = $event.target.value
           }
         }
       })
@@ -31729,8 +31985,8 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.usage,
-              expression: "usage"
+              value: _vm.reason,
+              expression: "reason"
             }
           ],
           attrs: {
@@ -31740,11 +31996,11 @@ var render = function() {
             value: "IQWST Print Student Workbooks"
           },
           domProps: {
-            checked: _vm._q(_vm.usage, "IQWST Print Student Workbooks")
+            checked: _vm._q(_vm.reason, "IQWST Print Student Workbooks")
           },
           on: {
             change: function($event) {
-              _vm.usage = "IQWST Print Student Workbooks"
+              _vm.reason = "IQWST Print Student Workbooks"
             }
           }
         }),
@@ -31765,8 +32021,8 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.usage,
-              expression: "usage"
+              value: _vm.reason,
+              expression: "reason"
             }
           ],
           attrs: {
@@ -31776,11 +32032,11 @@ var render = function() {
             value: "IQWST Interactive Digital Edition"
           },
           domProps: {
-            checked: _vm._q(_vm.usage, "IQWST Interactive Digital Edition")
+            checked: _vm._q(_vm.reason, "IQWST Interactive Digital Edition")
           },
           on: {
             change: function($event) {
-              _vm.usage = "IQWST Interactive Digital Edition"
+              _vm.reason = "IQWST Interactive Digital Edition"
             }
           }
         }),
@@ -31804,11 +32060,10 @@ var render = function() {
             "rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto",
           class: {
             "cursor-pointer bg-blue-700":
-              _vm.number_of_students > 0 && _vm.number_of_teachers > 0
+              _vm.no_students > 0 && _vm.no_teachers > 0
           },
           attrs: {
-            disabled:
-              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+            disabled: _vm.no_students <= 0 && _vm.no_teachers <= 0,
             type: "submit"
           },
           on: { click: _vm.calculate }
@@ -31840,9 +32095,341 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    from the calculations\n")])
+  return _c("div", [
+    _vm.usage === "IQWST Print Student Workbooks"
+      ? _c("div", [
+          _c(
+            "h1",
+            {
+              staticClass:
+                "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+            },
+            [_vm._v("Digital Savings\n            Compared To Print\n        ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid mt-6" }, [
+            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              [
+                _c(
+                  "h2",
+                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  [_vm._v("IQWST")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [
+                  _vm._v("Interactive Digital Edition")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl font-bold" }, [
+                  _vm._v("1-Year")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "text-2xl font-bold" }, [
+                  _vm._v("You would save")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.print_one_year_cost)))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(_vm._s(_vm._f("percent")(_vm.print_one_year_savings)))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("each year")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              [
+                _c(
+                  "h2",
+                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  [_vm._v("IQWST")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [
+                  _vm._v("Interactive Digital Edition")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl font-bold" }, [
+                  _vm._v("3-Year")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "text-2xl font-bold" }, [
+                  _vm._v("You would save")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.print_three_year_cost)))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("percent")(_vm.print_three_year_savings))
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center  border-2 border-blue-700 mx-2" },
+              [
+                _c("div", { staticClass: "p-4" }, [
+                  _c(
+                    "h2",
+                    { staticClass: "text-4xl text-blue-700 font-medium" },
+                    [_vm._v("IQWST")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [
+                    _vm._v("Interactive Digital Edition")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl font-bold" }, [
+                    _vm._v("6-Year")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-2xl font-bold" }, [
+                    _vm._v("You would save")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.print_six_year_cost)))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("percent")(_vm.print_six_year_savings))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
+                ])
+              ]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.usage === "IQWST Interactive Digital Edition"
+      ? _c("div", [
+          _c(
+            "h1",
+            {
+              staticClass:
+                "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+            },
+            [_vm._v("Multi-Year Digital\n            Savings\n        ")]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "grid mt-6" }, [
+            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mx-2" }, [_vm._v(" ")]),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+              [
+                _c(
+                  "h2",
+                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  [_vm._v("IQWST")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [
+                  _vm._v("Interactive Digital Edition")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl font-bold" }, [
+                  _vm._v("3-Year")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "text-2xl font-bold" }, [
+                  _vm._v("You would save")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("currency")(_vm.digital_three_year_cost))
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(
+                    _vm._s(_vm._f("percent")(_vm.digital_three_year_savings))
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("over 3 years")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "text-center  border-2 border-blue-700 mx-2" },
+              [
+                _c("div", { staticClass: "p-4" }, [
+                  _c(
+                    "h2",
+                    { staticClass: "text-4xl text-blue-700 font-medium" },
+                    [_vm._v("IQWST")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [
+                    _vm._v("Interactive Digital Edition")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl font-bold" }, [
+                    _vm._v("6-Year")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-2xl font-bold" }, [
+                    _vm._v("You would save")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("currency")(_vm.digital_six_year_cost))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("percent")(_vm.digital_six_year_savings))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
+                ])
+              ]
+            )
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex justify-end items-center" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white mr-3",
+          attrs: { href: "" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.step = 4
+            }
+          }
+        },
+        [_vm._v("Get in Touch")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "text-blue-700 hover:text-blue-500 font-bold",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.step_back($event)
+            }
+          }
+        },
+        [_vm._v("Previous")]
+      )
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mx-2" }, [
+      _c(
+        "p",
+        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
+        [_vm._v("Best Savings")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mx-2" }, [
+      _c(
+        "p",
+        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
+        [_vm._v("Best Savings")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "text-center p-4 border-2 border-gray-300 mx-2" },
+      [
+        _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
+          _vm._v("IQWST")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-xl" }, [
+          _vm._v("Interactive Digital Edition")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-3xl font-bold" }, [_vm._v("1-Year")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-2xl" }, [_vm._v("Current Subscription")])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -44942,11 +45529,12 @@ if (token) {
 /*!*******************************************!*\
   !*** ./resources/assets/js/calculator.js ***!
   \*******************************************/
-/*! no exports provided */
+/*! exports provided: EventBus */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return EventBus; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vee_validate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vee-validate */ "./node_modules/vee-validate/dist/vee-validate.esm.js");
@@ -44958,6 +45546,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 
 
+var EventBus = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vee_validate__WEBPACK_IMPORTED_MODULE_1__["default"]);
 new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#calculator',
@@ -45211,23 +45800,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/js/event-bus.js":
-/*!******************************************!*\
-  !*** ./resources/assets/js/event-bus.js ***!
-  \******************************************/
-/*! exports provided: EventBus */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventBus", function() { return EventBus; });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-
-var EventBus = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
-
-/***/ }),
-
 /***/ "./resources/assets/js/pages/calculator/CalculatorPage.vue":
 /*!*****************************************************************!*\
   !*** ./resources/assets/js/pages/calculator/CalculatorPage.vue ***!
@@ -45306,7 +45878,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true& */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true&");
+/* harmony import */ var _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculatorForm.vue?vue&type=template&id=b962d11a& */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&");
 /* harmony import */ var _CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -45318,11 +45890,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "b962d11a",
+  null,
   null
   
 )
@@ -45348,19 +45920,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true& ***!
-  \*********************************************************************************************************************/
+/***/ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a& ***!
+  \*********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CalculatorForm.vue?vue&type=template&id=b962d11a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -45377,7 +45949,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CalculatorView_vue_vue_type_template_id_634c2658_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculatorView.vue?vue&type=template&id=634c2658&scoped=true& */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=template&id=634c2658&scoped=true&");
 /* harmony import */ var _CalculatorView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalculatorView.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -45385,7 +45959,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _CalculatorView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _CalculatorView_vue_vue_type_template_id_634c2658_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _CalculatorView_vue_vue_type_template_id_634c2658_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -45414,6 +45988,22 @@ component.options.__file = "resources/assets/js/pages/calculator/partials/Calcul
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CalculatorView.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader??ref--6-1!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--6-2!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/assets/js/pages/calculator/partials/CalculatorView.vue?vue&type=style&index=0&id=634c2658&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorView_vue_vue_type_style_index_0_id_634c2658_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -45511,7 +46101,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/henrygarcia/Desktop/Code/work/support.activatelearning.com/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/assets/js/calculator.js */"./resources/assets/js/calculator.js");
 
 
 /***/ })

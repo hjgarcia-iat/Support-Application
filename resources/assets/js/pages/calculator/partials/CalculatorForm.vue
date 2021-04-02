@@ -16,7 +16,7 @@
             <input type="text"
                    class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline"
                    name="number_of_students"
-                   v-model="number_of_students">
+                   v-model="no_students">
         </div>
         <div class="mb-3">
             <p class="mb-3 font-bold">
@@ -25,7 +25,7 @@
             <input type="text"
                    class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline"
                    name="number_of_teachers"
-                   v-model="number_of_teachers">
+                   v-model="no_teachers">
         </div>
         <div class="mb-3">
             <p class="mb-3 font-bold">3. We currently use:</p>
@@ -34,7 +34,7 @@
                        name="reason"
                        id="usage_1"
                        value="IQWST Print Student Workbooks"
-                       v-model="usage">
+                       v-model="reason">
 
                 <label class="ml-2 text-grey-darker cursor-pointer"
                        for="usage_1">IQWST Print Student Workbooks</label>
@@ -44,7 +44,7 @@
                        name="reason"
                        id="usage_2"
                        value="IQWST Interactive Digital Edition"
-                       v-model="usage">
+                       v-model="reason">
 
                 <label class="ml-2 text-grey-darker cursor-pointer"
                        for="usage_2">IQWST Interactive Digital Edition</label>
@@ -52,11 +52,11 @@
         </div>
 
         <div class="mt-6">
-            <button :disabled="number_of_students <= 0 && number_of_teachers <= 0"
+            <button :disabled="no_students <= 0 && no_teachers <= 0"
                     type="submit"
                     @click="calculate"
                     class="rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto"
-                    :class="{'cursor-pointer bg-blue-700': number_of_students > 0 && number_of_teachers > 0}">
+                    :class="{'cursor-pointer bg-blue-700': no_students > 0 && no_teachers > 0}">
                 Calculate
             </button>
         </div>
@@ -65,29 +65,30 @@
 </template>
 
 <script>
-import { EventBus } from '../../../event-bus';
+import {EventBus} from '../../../calculator'
 
 export default {
     name: "CalculatorForm",
+    props: [
+        'number_of_teachers',
+        'number_of_students',
+        'usage',
+    ],
     data() {
         return {
-            number_of_students: 0,
-            number_of_teachers: 0,
-            usage: ''
+            no_students: this.number_of_students,
+            no_teachers: this.number_of_students,
+            reason: this.usage
         }
     },
     methods: {
         calculate() {
             EventBus.$emit('calculate', {
-                number_of_students: this.number_of_students,
-                number_of_teachers: this.number_of_teachers,
-                usage: this.usage,
+                number_of_students: this.no_students,
+                number_of_teachers: this.no_teachers,
+                usage: this.reason,
             });
         }
     }
 }
 </script>
-
-<style scoped>
-
-</style>
