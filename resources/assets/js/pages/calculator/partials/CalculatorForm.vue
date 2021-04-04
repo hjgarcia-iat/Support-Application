@@ -13,7 +13,7 @@
                 1. Approximately how many students use IQWST in your classroom, school, or district?
             </p>
             <input type="text"
-                class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline"
+                class="border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline"
                 name="number_of_students"
                 v-model="no_students">
         </div>
@@ -22,7 +22,7 @@
                 2. Approximately how many teachers use IQWST in your classroom, school, or district?
             </p>
             <input type="text"
-                class="border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline"
+                class="border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline"
                 name="number_of_teachers"
                 v-model="no_teachers">
         </div>

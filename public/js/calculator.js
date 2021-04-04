@@ -29901,7 +29901,7 @@ var render = function() {
           }
         ],
         staticClass:
-          "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
+          "border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline",
         attrs: { type: "text", name: "number_of_students" },
         domProps: { value: _vm.no_students },
         on: {
@@ -29932,7 +29932,7 @@ var render = function() {
           }
         ],
         staticClass:
-          "border px-2 py-2 border-gray-500 w-1/2 rounded outline-none focus:shadow-outline",
+          "border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline",
         attrs: { type: "text", name: "number_of_teachers" },
         domProps: { value: _vm.no_teachers },
         on: {
