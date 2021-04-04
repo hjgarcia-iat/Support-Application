@@ -6,10 +6,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "~font-awesome/scss/font-awesome";
-@import "fonts";
-@import "variables";
-@import "general";
+
+html, body {
+  height: 100%;
+}
 
 .app-grid {
   display: grid;
