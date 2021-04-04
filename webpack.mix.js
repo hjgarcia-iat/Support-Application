@@ -19,6 +19,7 @@ mix.js('resources/assets/js/contact_request.js', 'public/js')
     .js('resources/assets/js/student_request.js', 'public/js')
     .js('resources/assets/js/remote_learning_request.js', 'public/js')
     .js('resources/assets/js/calculator.js', 'public/js')
+    .js('resources/assets/js/request_product_info.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
