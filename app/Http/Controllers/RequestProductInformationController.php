@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestProductInformationRequest;
 use App\Services\CrmInterface;
 
 class RequestProductInformationController extends Controller
@@ -11,9 +12,9 @@ class RequestProductInformationController extends Controller
         return view('request_product_info.create');
     }
 
-    public function store(CrmInterface $crm): \Illuminate\Http\JsonResponse
+    public function store(CrmInterface $crm, RequestProductInformationRequest $request): \Illuminate\Http\JsonResponse
     {
-        $crm->store(request()->all());
+        $crm->store($request->all());
 
         return response()->json([
             'success' => true,

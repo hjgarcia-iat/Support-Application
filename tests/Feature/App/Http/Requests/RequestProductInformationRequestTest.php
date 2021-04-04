@@ -19,9 +19,9 @@ class RequestProductInformationRequestTest extends TestCase
             'email'            => 'required|email',
             'role'             => 'required',
             'product_interest' => 'required',
-            'school'     => 'required',
-            'city'       => 'required',
-            'state'      => 'required',
+            'school'           => 'required',
+            'city'             => 'required',
+            'state'            => 'required',
         ];
 
         $request = new RequestProductInformationRequest();
