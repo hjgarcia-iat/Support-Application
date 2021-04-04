@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import * as Vue from "vue"
+import Vue from "vue"
 import Alert from "../components/partials/FormAlert"
 import FormError from "../components/partials/FormError"
 

@@ -11,15 +11,14 @@ const tailwindcss = require('tailwindcss')
  |
  */
 
-mix.js('resources/assets/js/access_request_form.js', 'public/js')
-mix.js('resources/assets/js/contact_request.js', 'public/js')
-    .js('resources/assets/js/digital_setup_form.js', 'public/js')
-    .js('resources/assets/js/return_request.js', 'public/js')
-    .js('resources/assets/js/nextgenpet_request.js', 'public/js')
-    .js('resources/assets/js/student_request.js', 'public/js')
-    .js('resources/assets/js/remote_learning_request.js', 'public/js')
-    .js('resources/assets/js/calculator.js', 'public/js')
-    .js('resources/assets/js/request_product_info.js', 'public/js')
+mix.js('resources/assets/js/access_request_form.js', 'public/js').vue({ version: 2 })
+mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/digital_setup_form.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/return_request.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/nextgenpet_request.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/remote_learning_request.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/calculator.js', 'public/js').vue({ version: 2 })
+    .js('resources/assets/js/request_product_info.js', 'public/js').vue({ version: 2 })
     .sass('resources/assets/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
