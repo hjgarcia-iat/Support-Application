@@ -239,8 +239,8 @@ export default {
     methods: {
         step_back() {
             EventBus.$emit('step_back', {
-                number_of_students: this.number_of_teachers,
-                no_teachers: this.number_of_students,
+                number_of_students: this.number_of_students,
+                number_of_teachers: this.number_of_teachers,
                 usage: this.usage,
             });
         },
