@@ -5,55 +5,55 @@
         <form @submit.prevent="submit">
             <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
             <div class="mb-6">
-                <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="name" placeholder="Enter name" name="name" v-model="name">
 
                 <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     Email Address</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="email" placeholder="Enter Email Address" name="email" v-model="email">
 
                 <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="school" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="school" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     School Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="school" placeholder="Enter School Name" name="school" v-model="school">
 
                 <form-error :error=formErrors.school[0] v-if="formErrors.school"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="district" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="district" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     District Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="district" placeholder="Enter District Name" name="district" v-model="district">
 
                 <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="state" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="state" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     State</label>
                 <select name="state" id="state" v-model="state"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -110,11 +110,11 @@
             </div>
 
             <div class="mb-6">
-                <label for="units" class="block text-grey-darker text-sm font-bold mb-2">
+                <label for="units" class="block text-gray-700 text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     Units</label>
                 <select name="units[]" id="units" v-model="units" multiple
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="LS1">LS1-Where Have All the Creatures Gone?</option>
                     <option value="LS2">LS2-What’s Going On Inside of Me?</option>
                     <option value="LS3">LS3-Why Do Organisms Look The Way They Do?</option>

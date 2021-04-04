@@ -19,11 +19,9 @@ mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 }
     .js('resources/assets/js/remote_learning_request.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/calculator.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/request_product_info.js', 'public/js').vue({ version: 2 })
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [tailwindcss('tailwind.js')],
-    })
+    .postCss("resources/css/app.css", "public/css", [
+        require("tailwindcss"),
+    ])
     .version()
     .browserSync({
         proxy: "http://support.activatelearning.local",
