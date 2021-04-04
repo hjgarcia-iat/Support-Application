@@ -1,14 +1,14 @@
 <template>
     <div>
-        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">
-            Calculate Your Digital Savings
+        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">
+            Calculate Your <br>Digital Savings
         </h1>
         <p class="text-2xl mb-4 text-center">
             Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your
             current subscription term.
         </p>
 
-        <div class="mb-3">
+        <div class="mb-6">
             <p class="mb-3 font-bold">
                 1. Approximately how many students use IQWST in your classroom, school, or district?
             </p>
@@ -17,7 +17,7 @@
                 name="number_of_students"
                 v-model="no_students">
         </div>
-        <div class="mb-3">
+        <div class="mb-6">
             <p class="mb-3 font-bold">
                 2. Approximately how many teachers use IQWST in your classroom, school, or district?
             </p>
@@ -26,7 +26,7 @@
                 name="number_of_teachers"
                 v-model="no_teachers">
         </div>
-        <div class="mb-3">
+        <div class="mb-6">
             <p class="mb-3 font-bold">3. We currently use:</p>
             <div class="flex items-center mb-3">
                 <input type="radio"

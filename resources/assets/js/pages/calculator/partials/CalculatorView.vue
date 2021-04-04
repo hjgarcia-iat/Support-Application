@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="usage==='IQWST Print Student Workbooks'">
-            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Digital Savings <br>
+            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">Digital Savings <br>
                 Compared To Print
             </h1>
             <div class="grid mt-6">
@@ -12,8 +12,8 @@
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl text-gray-600">with ONPAR</p>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                    <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -25,8 +25,8 @@
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl text-gray-600">with ONPAR</p>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                    <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -39,8 +39,8 @@
                 <div class="text-center  border-2 border-blue-700">
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                        <p class="text-xl text-gray-600">with ONPAR</p>
-                        <p class="text-xl">Interactive Digital Edition</p>
+                        <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                        <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
                         <h3 class="text-2xl font-bold">You would save</h3>
@@ -68,15 +68,16 @@
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                    <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
                     <p class="text-xl">Subscription</p>
                     <p class="text-2xl">Current Subscription</p>
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                    <p class="text-xl text-gray-600">with ONPAR</p>
-                    <p class="text-xl">Interactive Digital Edition</p>
+                    <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                    <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
                     <p class="text-xl">Subscription</p>
                     <h3 class="text-2xl font-bold">You would save</h3>
@@ -89,8 +90,8 @@
                 <div class="text-center  border-2 border-blue-700">
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
-                        <p class="text-xl text-gray-600">with ONPAR</p>
-                        <p class="text-xl">Interactive Digital Edition</p>
+                        <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
+                        <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
                         <p class="text-xl">Subscription</p>
                         <h3 class="text-2xl font-bold">You would save</h3>

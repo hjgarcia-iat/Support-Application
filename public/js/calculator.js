@@ -2258,6 +2258,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -29844,7 +29845,7 @@ var render = function() {
           )
         : _vm._e(),
       _vm._v(" "),
-      _c("p", { staticClass: "text-center text-gray-400 mt-4" }, [
+      _c("p", { staticClass: "text-center text-gray-400 mt-6" }, [
         _vm._v("Note: Estimated savings, actual sayings may vary.")
       ])
     ],
@@ -29875,14 +29876,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "h1",
-      {
-        staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
-      },
-      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
-    ),
+    _vm._m(0),
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
       _vm._v(
@@ -29890,7 +29884,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
+    _c("div", { staticClass: "mb-6" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v(
           "\n            1. Approximately how many students use IQWST in your classroom, school, or district?\n        "
@@ -29921,7 +29915,7 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
+    _c("div", { staticClass: "mb-6" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v(
           "\n            2. Approximately how many teachers use IQWST in your classroom, school, or district?\n        "
@@ -29952,7 +29946,7 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "mb-3" }, [
+    _c("div", { staticClass: "mb-6" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v("3. We currently use:")
       ]),
@@ -30051,7 +30045,25 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h1",
+      {
+        staticClass:
+          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
+      },
+      [
+        _vm._v("\n        Calculate Your "),
+        _c("br"),
+        _vm._v("Digital Savings\n    ")
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -30096,11 +30108,11 @@ var render = function() {
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
                   _vm._v("with ONPAR")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
+                _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
                   _vm._v("Interactive Digital Edition")
                 ]),
                 _vm._v(" "),
@@ -30138,11 +30150,11 @@ var render = function() {
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
                   _vm._v("with ONPAR")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
+                _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
                   _vm._v("Interactive Digital Edition")
                 ]),
                 _vm._v(" "),
@@ -30183,11 +30195,11 @@ var render = function() {
                     [_vm._v("IQWST")]
                   ),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl text-gray-600" }, [
+                  _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
                     _vm._v("with ONPAR")
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
+                  _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
                     _vm._v("Interactive Digital Edition")
                   ]),
                   _vm._v(" "),
@@ -30251,11 +30263,11 @@ var render = function() {
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl text-gray-600" }, [
+                _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
                   _vm._v("with ONPAR")
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [
+                _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
                   _vm._v("Interactive Digital Edition")
                 ]),
                 _vm._v(" "),
@@ -30302,11 +30314,11 @@ var render = function() {
                     [_vm._v("IQWST")]
                   ),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl text-gray-600" }, [
+                  _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
                     _vm._v("with ONPAR")
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [
+                  _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
                     _vm._v("Interactive Digital Edition")
                   ]),
                   _vm._v(" "),
@@ -30389,7 +30401,7 @@ var staticRenderFns = [
       "h1",
       {
         staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
       },
       [
         _vm._v("Digital Savings "),
@@ -30434,7 +30446,11 @@ var staticRenderFns = [
           _vm._v("IQWST")
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "text-xl" }, [
+        _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
+          _vm._v("with ONPAR")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
           _vm._v("Interactive Digital Edition")
         ]),
         _vm._v(" "),
@@ -30474,7 +30490,7 @@ var render = function() {
       "h1",
       {
         staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
       },
       [_vm._v("Learn More/Contact Rep")]
     ),

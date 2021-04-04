@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Learn More/Contact Rep</h1>
+        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">Learn More/Contact Rep</h1>
 
         <form method="POST"
             @submit.prevent="submitForm">
