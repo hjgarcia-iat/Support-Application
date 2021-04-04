@@ -4,13 +4,13 @@
             <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">Digital Savings <br>
                 Compared To Print
             </h1>
-            <div class="grid mt-6">
-                <div>&nbsp;</div>
-                <div>&nbsp;</div>
-                <div>
+            <div class="md:grid grid-cols-3 gap-x-4 mt-6">
+                <div class="hidden md:block">&nbsp;</div>
+                <div class="hidden md:block">&nbsp;</div>
+                <div class="hidden md:block">
                     <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300">
+                <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
@@ -23,7 +23,7 @@
                     <p class="text-3xl text-orange-500">{{ print_one_year_savings | percent }}</p>
                     <p class="text-xl">next year</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300">
+                <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
@@ -36,7 +36,8 @@
                     <p class="text-3xl text-orange-500">{{ print_three_year_savings | percent }}</p>
                     <p class="text-xl">over 3 years</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700">
+                <div class="text-center border-2 border-blue-700">
+                    <p class="font-bold bg-blue-700 text-white py-1 text-center block md:hidden">Best Savings</p>
                     <div class="p-4">
                         <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                         <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
@@ -66,7 +67,7 @@
                 <div>
                     <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
                 </div>
-                <div class="text-center p-4 border-2 border-gray-300">
+                <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
                     <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>

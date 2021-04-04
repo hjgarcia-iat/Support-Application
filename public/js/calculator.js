@@ -2259,6 +2259,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -30091,16 +30092,19 @@ var render = function() {
       ? _c("div", [
           _vm._m(0),
           _vm._v(" "),
-          _c("div", { staticClass: "grid mt-6" }, [
-            _c("div", [_vm._v(" ")]),
+          _c("div", { staticClass: "md:grid grid-cols-3 gap-x-4 mt-6" }, [
+            _c("div", { staticClass: "hidden md:block" }, [_vm._v(" ")]),
             _vm._v(" "),
-            _c("div", [_vm._v(" ")]),
+            _c("div", { staticClass: "hidden md:block" }, [_vm._v(" ")]),
             _vm._v(" "),
             _vm._m(1),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300" },
+              {
+                staticClass:
+                  "text-center p-4 border-2 border-gray-300 mb-6 md:mb-0"
+              },
               [
                 _c(
                   "h2",
@@ -30142,7 +30146,10 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center p-4 border-2 border-gray-300" },
+              {
+                staticClass:
+                  "text-center p-4 border-2 border-gray-300 mb-6 md:mb-0"
+              },
               [
                 _c(
                   "h2",
@@ -30184,51 +30191,54 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "text-center  border-2 border-blue-700" },
-              [
-                _c("div", { staticClass: "p-4" }, [
-                  _c(
-                    "h2",
-                    { staticClass: "text-4xl text-blue-700 font-medium" },
-                    [_vm._v("IQWST")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
-                    _vm._v("with ONPAR")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
-                    _vm._v("Interactive Digital Edition")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl font-bold" }, [
-                    _vm._v("6-Year")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-                  _vm._v(" "),
-                  _c("h3", { staticClass: "text-2xl font-bold" }, [
-                    _vm._v("You would save")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(_vm._s(_vm._f("currency")(_vm.print_six_year_cost)))
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                    _vm._v(
-                      _vm._s(_vm._f("percent")(_vm.print_six_year_savings))
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
-                ])
-              ]
-            )
+            _c("div", { staticClass: "text-center border-2 border-blue-700" }, [
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "font-bold bg-blue-700 text-white py-1 text-center block md:hidden"
+                },
+                [_vm._v("Best Savings")]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "p-4" }, [
+                _c(
+                  "h2",
+                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  [_vm._v("IQWST")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
+                  _vm._v("with ONPAR")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
+                  _vm._v("Interactive Digital Edition")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl font-bold" }, [
+                  _vm._v("6-Year")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "text-2xl font-bold" }, [
+                  _vm._v("You would save")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(_vm._s(_vm._f("currency")(_vm.print_six_year_cost)))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                  _vm._v(_vm._s(_vm._f("percent")(_vm.print_six_year_savings)))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
+              ])
+            ])
           ])
         ])
       : _vm._e(),
@@ -30414,7 +30424,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "hidden md:block" }, [
       _c(
         "p",
         { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
@@ -30440,7 +30450,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "text-center p-4 border-2 border-gray-300" },
+      { staticClass: "text-center p-4 border-2 border-gray-300 mb-6 md:mb-0" },
       [
         _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
           _vm._v("IQWST")
