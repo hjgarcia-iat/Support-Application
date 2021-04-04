@@ -326,18 +326,19 @@ export default {
                     state: this.state,
                 }).then(response => {
                     if (response.data.success) {
-                        this.alertVisible = true;
+                        this.alertVisible = true
+
+                        this.alertType = 'success'
+                        this.alertMessage = response.data.message
                         this.reset();
-                        this.alertType = 'success';
-                        this.alertMessage = response.data.message;
                     }
 
                     this.loading = false;
                 }).catch(error => {
-                    this.alertVisible = true;
-                    this.alertMessage = 'Please see errors below!';
-                    this.formErrors = error.response.data.errors;
-                    this.alertType = 'error';
+                    this.alertVisible = true
+                    this.alertMessage = 'Please see errors below!'
+                    this.formErrors = error.response.data.errors
+                    this.alertType = 'error'
                     this.loading = false;
                 });
 
@@ -345,9 +346,6 @@ export default {
         },
         reset() {
             this.loading = false
-            this.alertVisible = false
-            this.alertType = ''
-            this.alertMessage = ''
             this.formErrors = {}
             this.first_name = ''
             this.last_name = ''
