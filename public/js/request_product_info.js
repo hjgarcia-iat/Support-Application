@@ -2235,6 +2235,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2253,6 +2316,7 @@ __webpack_require__.r(__webpack_exports__);
       first_name: '',
       last_name: '',
       email: '',
+      phone: '',
       school: '',
       district: '',
       city: '',
@@ -2262,7 +2326,42 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    submit: function submit() {},
+    submit: function submit() {
+      var _this = this;
+
+      {
+        this.loading = true;
+        axios.post('/request-product-information', {
+          first_name: this.first_name,
+          last_name: this.last_name,
+          email: this.email,
+          phone: this.phone,
+          role: this.role,
+          product_interest: this.product_interest,
+          school: this.school,
+          district: this.district,
+          city: this.city,
+          state: this.state
+        }).then(function (response) {
+          if (response.data.success) {
+            _this.alertVisible = true;
+
+            _this.reset();
+
+            _this.alertType = 'success';
+            _this.alertMessage = response.data.message;
+          }
+
+          _this.loading = false;
+        })["catch"](function (error) {
+          _this.alertVisible = true;
+          _this.alertMessage = 'Please see errors below!';
+          _this.formErrors = error.response.data.errors;
+          _this.alertType = 'error';
+          _this.loading = false;
+        });
+      }
+    },
     reset: function reset() {
       this.loading = false;
       this.alertVisible = false;
@@ -2272,6 +2371,7 @@ __webpack_require__.r(__webpack_exports__);
       this.first_name = '';
       this.last_name = '';
       this.email = '';
+      this.phone = '';
       this.school = '';
       this.district = '';
       this.city = '';
@@ -20849,6 +20949,56 @@ var render = function() {
             "div",
             { staticClass: "mb-6" },
             [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-grey-darker text-sm font-bold mb-2",
+                  attrs: { for: "phone" }
+                },
+                [_vm._v("\n                Phone Number")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.phone,
+                    expression: "phone"
+                  }
+                ],
+                staticClass:
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                attrs: {
+                  type: "text",
+                  id: "phone",
+                  placeholder: "Enter phone number",
+                  name: "phone"
+                },
+                domProps: { value: _vm.phone },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.phone = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm.formErrors.phone
+                ? _c("form-error", {
+                    attrs: { error: _vm.formErrors.phone[0] }
+                  })
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mb-6" },
+            [
               _vm._m(3),
               _vm._v(" "),
               _c(
@@ -20912,6 +21062,68 @@ var render = function() {
             { staticClass: "mb-6" },
             [
               _vm._m(4),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.product_interest,
+                      expression: "product_interest"
+                    }
+                  ],
+                  staticClass:
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  attrs: { name: "product_interest", id: "product_interest" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.product_interest = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "" } }, [
+                    _vm._v("Select a product")
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _vm._m(9)
+                ]
+              ),
+              _vm._v(" "),
+              _vm.formErrors.product_interest
+                ? _c("form-error", {
+                    attrs: { error: _vm.formErrors.product_interest[0] }
+                  })
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "mb-6" },
+            [
+              _vm._m(10),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -21004,7 +21216,7 @@ var render = function() {
             "div",
             { staticClass: "mb-6" },
             [
-              _vm._m(5),
+              _vm._m(11),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -21045,7 +21257,7 @@ var render = function() {
             "div",
             { staticClass: "mb-6" },
             [
-              _vm._m(6),
+              _vm._m(12),
               _vm._v(" "),
               _c(
                 "select",
@@ -21294,6 +21506,106 @@ var staticRenderFns = [
         _vm._v("\n                Role")
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "block text-grey-darker text-sm font-bold mb-2",
+        attrs: { for: "product_interest" }
+      },
+      [
+        _c("small", { staticClass: "text-lg text-red-600" }, [_vm._v("*")]),
+        _vm._v("\n                Product Interest")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("optgroup", { attrs: { label: "K-8" } }, [
+      _c("option", { attrs: { value: "Activate Learning PRIME" } }, [
+        _vm._v("Activate Learning PRIME")
+      ]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "IQWST (all editions)" } }, [
+        _vm._v("IQWST (all editions)")
+      ]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "PBI Science" } }, [_vm._v("PBI Science")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("optgroup", { attrs: { label: "Middle School Science" } }, [
+      _c("option", { attrs: { value: "IQWST (all editions)" } }, [
+        _vm._v("IQWST (all editions)")
+      ]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "PBI Science" } }, [
+        _vm._v("PBI Science")
+      ]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "OnPar" } }, [_vm._v("OnPar")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "optgroup",
+      { attrs: { label: "High School Science & Engineering" } },
+      [
+        _c("option", { attrs: { value: "Active Chemistry" } }, [
+          _vm._v("Active Chemistry")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Active Physics" } }, [
+          _vm._v("Active Physics")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Active Physical Science" } }, [
+          _vm._v("Active Physical Science")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "EarthCOMM" } }, [_vm._v("EarthCOMM")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "Engineering the Future" } }, [
+          _vm._v("Engineering the Future")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("optgroup", { attrs: { label: "High School Math" } }, [
+      _c("option", { attrs: { value: "Interactive Mathematics Program" } }, [
+        _vm._v("Interactive Mathematics Program")
+      ]),
+      _vm._v(" "),
+      _c("option", { attrs: { value: "Meaningful Math" } }, [
+        _vm._v("Meaningful Math")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("optgroup", { attrs: { label: "College Science" } }, [
+      _c("option", { attrs: { value: "Next Generation PET" } }, [
+        _vm._v("Next Generation PET")
+      ])
+    ])
   },
   function() {
     var _vm = this

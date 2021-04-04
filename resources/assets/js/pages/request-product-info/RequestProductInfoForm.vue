@@ -60,6 +60,22 @@
             </div>
 
             <div class="mb-6">
+                <label for="phone"
+                       class="block text-grey-darker text-sm font-bold mb-2">
+                    Phone Number</label>
+
+                <input type="text"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       id="phone"
+                       placeholder="Enter phone number"
+                       name="phone"
+                       v-model="phone">
+
+                <form-error :error=formErrors.phone[0]
+                            v-if="formErrors.phone"></form-error>
+            </div>
+
+            <div class="mb-6">
                 <label for="role"
                        class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
@@ -77,6 +93,53 @@
 
                 <form-error :error=formErrors.role[0]
                             v-if="formErrors.role"></form-error>
+            </div>
+
+            <div class="mb-6">
+                <label for="product_interest"
+                       class="block text-grey-darker text-sm font-bold mb-2">
+                    <small class="text-lg text-red-600">*</small>
+                    Product Interest</label>
+
+                <select name="product_interest"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        v-model="product_interest"
+                        id="product_interest">
+
+                    <option value="">Select a product</option>
+                    <optgroup label="K-8">
+                        <option value="Activate Learning PRIME">Activate Learning PRIME</option>
+                        <option value="IQWST (all editions)">IQWST (all editions)</option>
+                        <option value="PBI Science">PBI Science</option>
+                    </optgroup>
+
+                    <optgroup label="Middle School Science">
+                        <option value="IQWST (all editions)">IQWST (all editions)</option>
+                        <option value="PBI Science">PBI Science</option>
+                        <option value="OnPar">OnPar</option>
+                    </optgroup>
+
+                    <optgroup label="High School Science & Engineering">
+                        <option value="Active Chemistry">Active Chemistry</option>
+                        <option value="Active Physics">Active Physics</option>
+                        <option value="Active Physical Science">Active Physical Science</option>
+                        <option value="EarthCOMM">EarthCOMM</option>
+                        <option value="Engineering the Future">Engineering the Future</option>
+                    </optgroup>
+
+                    <optgroup label="High School Math">
+                        <option value="Interactive Mathematics Program">Interactive Mathematics Program</option>
+                        <option value="Meaningful Math">Meaningful Math</option>
+                    </optgroup>
+
+                    <optgroup label="College Science">
+                        <option value="Next Generation PET">Next Generation PET</option>
+                    </optgroup>
+
+                </select>
+
+                <form-error :error=formErrors.product_interest[0]
+                            v-if="formErrors.product_interest"></form-error>
             </div>
 
             <div class="mb-6">
@@ -237,6 +300,7 @@ export default {
             first_name: '',
             last_name: '',
             email: '',
+            phone: '',
             school: '',
             district: '',
             city: '',
@@ -247,7 +311,37 @@ export default {
     },
     methods: {
         submit() {
+            {
+                this.loading = true;
+                axios.post('/request-product-information', {
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                    email: this.email,
+                    phone: this.phone,
+                    role: this.role,
+                    product_interest: this.product_interest,
+                    school: this.school,
+                    district: this.district,
+                    city: this.city,
+                    state: this.state,
+                }).then(response => {
+                    if (response.data.success) {
+                        this.alertVisible = true;
+                        this.reset();
+                        this.alertType = 'success';
+                        this.alertMessage = response.data.message;
+                    }
 
+                    this.loading = false;
+                }).catch(error => {
+                    this.alertVisible = true;
+                    this.alertMessage = 'Please see errors below!';
+                    this.formErrors = error.response.data.errors;
+                    this.alertType = 'error';
+                    this.loading = false;
+                });
+
+            }
         },
         reset() {
             this.loading = false
@@ -258,6 +352,7 @@ export default {
             this.first_name = ''
             this.last_name = ''
             this.email = ''
+            this.phone = ''
             this.school = ''
             this.district = ''
             this.city = ''
