@@ -12,7 +12,7 @@
 <body class="bg-gray-100">
     <div class="h-full app-grid w-full md:w-3/5 xl:w-2/5 mx-auto">
         <header class="flex justify-center mb-5" role="banner">
-            <section class="logo my-5">
+            <section class="logo m-6">
                 <img src="{{ asset('img/logo.png') }}" width="400" alt="{{ config('app.name') }}">
             </section>
         </header>
