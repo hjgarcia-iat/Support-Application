@@ -16,7 +16,7 @@
             <contact-form :no_students="number_of_students" :no_teachers="number_of_teachers"
                 :reason="usage"></contact-form>
         </div>
-        <p class="text-center text-gray-600 mt-4">Note: Estimated savings, actual sayings may vary.</p>
+        <p class="text-center text-gray-400 mt-4">Note: Estimated savings, actual sayings may vary.</p>
     </div>
 </template>
 

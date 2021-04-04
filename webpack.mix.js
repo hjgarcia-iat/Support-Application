@@ -23,6 +23,7 @@ mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 }
         require("tailwindcss"),
     ])
     .version()
+    .disableNotifications()
     .browserSync({
         proxy: "http://support.activatelearning.local",
         files: [
