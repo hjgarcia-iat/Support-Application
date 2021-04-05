@@ -21,7 +21,7 @@ class RequestProductInformationRequestTest extends TestCase
         $request = new RequestProductInformationRequest();
 
         $validator = \Validator::make($data, $request->rules());
-        //test data passes
+
         $this->assertTrue($validator->passes());
     }
 
@@ -87,6 +87,18 @@ class RequestProductInformationRequestTest extends TestCase
             [[//email is required
                 'first_name'       => $faker->firstName,
                 'last_name'        => $faker->lastName,
+                'phone'            => $faker->phoneNumber,
+                'role'             => $faker->title,
+                'school'           => $faker->company,
+                'district'         => $faker->company,
+                'city'             => $faker->city,
+                'state'            => $faker->state,
+                'product_interest' => $faker->word,
+            ]],
+            [[//email is valid
+                'first_name'       => $faker->firstName,
+                'last_name'        => $faker->lastName,
+                'email'        => 'email-invalid',
                 'phone'            => $faker->phoneNumber,
                 'role'             => $faker->title,
                 'school'           => $faker->company,
