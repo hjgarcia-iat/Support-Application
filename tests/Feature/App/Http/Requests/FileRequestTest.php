@@ -5,7 +5,6 @@ namespace Tests\Feature\App\Http\Requests;
 use App\Http\Requests\FileRequest;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Symfony\Component\HttpFoundation\Request;
 use Tests\TestCase;
 
 /**
