@@ -1,5 +1,5 @@
 <template>
-    <div class="p-6">
+    <div class="p-8">
         <alert :message=alertMessage
             :type=alertType
             :visible=alertVisible
