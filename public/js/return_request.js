@@ -2081,8 +2081,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -20329,11 +20327,10 @@ var render = function() {
             ),
             _vm._v(" "),
             _c(
-              "a",
+              "button",
               {
                 staticClass:
-                  "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
-                attrs: { href: "" },
+                  "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50",
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -20365,9 +20362,7 @@ var render = function() {
                       })
                     ]
                   ),
-                  _vm._v(
-                    "\n\n\n                    Add Product\n                "
-                  )
+                  _vm._v("\n                    Add Product\n                ")
                 ])
               ]
             )
@@ -20395,7 +20390,7 @@ var render = function() {
                             "a",
                             {
                               staticClass:
-                                "bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline inline-block",
+                                "bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:text-red-800 focus:ring focus:ring-red-400 focus:ring-opacity-50 inline-block",
                               attrs: { href: "" },
                               on: {
                                 click: function($event) {
@@ -20528,7 +20523,7 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center",
+                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center",
               class: {
                 "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
               },
@@ -20613,9 +20608,15 @@ var staticRenderFns = [
       _vm._v(
         "The district or school will be responsible for shipment of returned items. All returns are\n        subject\n        to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit\n        memo will be issued for the approved returned items along with a restocking fee of 20%. If you have\n        questions\n        regarding your return please contact our Customer Service Group at\n        "
       ),
-      _c("a", { attrs: { href: "mailto:csr@activatelearning.com" } }, [
-        _vm._v("csr@activatelearning.com")
-      ]),
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline",
+          attrs: { href: "mailto:csr@activatelearning.com" }
+        },
+        [_vm._v("csr@activatelearning.com")]
+      ),
       _vm._v(".\n    ")
     ])
   },

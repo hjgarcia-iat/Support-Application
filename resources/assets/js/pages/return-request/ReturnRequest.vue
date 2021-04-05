@@ -10,7 +10,7 @@
             memo will be issued for the approved returned items along with a restocking fee of 20%. If you have
             questions
             regarding your return please contact our Customer Service Group at
-            <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
+            <a href="mailto:csr@activatelearning.com" class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
             <h2 class="text-3xl text-blue-700 font-medium mb-4">General Information</h2>
@@ -88,19 +88,17 @@
             <div class="flex items-center mb-4">
                 <h2 class="text-3xl text-blue-700 font-medium mb-4 mr-auto">Products to Return</h2>
 
-                <a href="" @click.prevent="addProduct"
-                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
+                <button @click.prevent="addProduct"
+                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     <small class="flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
-
-
                         Add Product
                     </small>
-                </a>
+                </button>
             </div>
 
 
@@ -115,7 +113,7 @@
                     <div class="col-span-1 h-full">
                         <div class="flex justify-center items-center h-full">
                             <a href="" @click.prevent="removeProduct(key)"
-                                class="bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline inline-block">
+                                class="bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:text-red-800 focus:ring focus:ring-red-400 focus:ring-opacity-50 inline-block">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -146,7 +144,7 @@
             </section>
 
             <button type="submit"
-                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center"
                 :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg" v-if="!loading">
