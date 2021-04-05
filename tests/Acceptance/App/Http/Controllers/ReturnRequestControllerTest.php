@@ -16,8 +16,9 @@ class ReturnRequestControllerTest extends TestCase
     /**
      *
      */
-    public function test_the_the_form_is_saved()
+    public function test_the_return_request_form_is_stored()
     {
+        //set the google sheet service this will actually be connected to Google sheets
         Sheets::setService(Google::make('sheets'));
         Sheets::spreadsheet(config('google.config.spreadsheet'));
         Sheets::sheet('Authorized Returns')->range('3:100')->clear();
@@ -28,37 +29,25 @@ class ReturnRequestControllerTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['message' => 'Your information was saved. We will get back to you shortly.']);
 
-        $data = [
-            'Date Entered' => Carbon::now()->format('m/d/Y'),
-            'Requester Name' => 'Jane Doe',
-            'Requester Email' => 'jdoe@email.com',
-            'District/Company Name' => 'Some District',
-            'Order# or PO#' => '12345',
-            "RMA#" => '12345',
-            'Reason for Return' => 'some valid reason',
-            'SKU' => 1234,
-            'QTY' => 1,
-        ];
-
         $this->assertEquals(Carbon::now()->format('m/d/Y'), resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Date Entered']);
-        $this->assertEquals($data['Requester Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Name']);
-        $this->assertEquals($data['Requester Email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Email']);
-        $this->assertEquals($data['District/Company Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['District / Company Name']);
-        $this->assertEquals($data['Order# or PO#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Order# or PO#']);
-        $this->assertEquals($data['RMA#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['RMA#']);
-        $this->assertEquals($data['Reason for Return'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Reason for Return']);
-        $this->assertEquals(1234, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['SKU']);
-        $this->assertEquals(1, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['QTY']);
+        $this->assertEquals($this->validParams()['name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Name']);
+        $this->assertEquals($this->validParams()['email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Requester Email']);
+        $this->assertEquals($this->validParams()['district'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['District / Company Name']);
+        $this->assertEquals($this->validParams()['order_number'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Order# or PO#']);
+        $this->assertEquals($this->validParams()['rma_number'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['RMA#']);
+        $this->assertEquals($this->validParams()['reason'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['Reason for Return']);
+        $this->assertEquals($this->validParams()['products'][0]['sku'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['SKU']);
+        $this->assertEquals($this->validParams()['products'][0]['quantity'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[2]['QTY']);
 
         $this->assertEquals(Carbon::now()->format('m/d/Y'), resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Date Entered']);
-        $this->assertEquals($data['Requester Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Name']);
-        $this->assertEquals($data['Requester Email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Email']);
-        $this->assertEquals($data['District/Company Name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['District / Company Name']);
-        $this->assertEquals($data['Order# or PO#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Order# or PO#']);
-        $this->assertEquals($data['RMA#'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['RMA#']);
-        $this->assertEquals($data['Reason for Return'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Reason for Return']);
-        $this->assertEquals(1236, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['SKU']);
-        $this->assertEquals(4, resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['QTY']);
+        $this->assertEquals($this->validParams()['name'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Name']);
+        $this->assertEquals($this->validParams()['email'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Requester Email']);
+        $this->assertEquals($this->validParams()['district'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['District / Company Name']);
+        $this->assertEquals($this->validParams()['order_number'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Order# or PO#']);
+        $this->assertEquals($this->validParams()['rma_number'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['RMA#']);
+        $this->assertEquals($this->validParams()['reason'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['Reason for Return']);
+        $this->assertEquals($this->validParams()['products'][1]['sku'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['SKU']);
+        $this->assertEquals($this->validParams()['products'][1]['quantity'], resolve('App\Services\Spreadsheet\SpreadsheetInterface')->get()[3]['QTY']);
     }
 
     /**
