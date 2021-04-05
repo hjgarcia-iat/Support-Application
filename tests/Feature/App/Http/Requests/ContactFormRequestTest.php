@@ -3,7 +3,7 @@
 namespace Tests\Feature\App\Http\Requests;
 
 use App\Http\Requests\ContactFormRequest;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Faker\Factory;
 use Tests\TestCase;
 
 /**
@@ -12,19 +12,102 @@ use Tests\TestCase;
  */
 class ContactFormRequestTest extends TestCase
 {
-    public function test_the_form_request_returns_the_correct_rules()
+    /**
+     * @dataProvider validData
+     */
+    public function test_the_form_request_is_valid(array $data)
     {
-        $rules = [
-            'reason'   => 'required',
-            'name'     => 'required',
-            'email'    => 'required|email',
-            'district' => 'required',
-            'subject'  => 'required',
-            'details'  => 'required',
-        ];
-
         $request = new ContactFormRequest();
 
-        $this->assertEquals($rules, $request->rules());
+        $validator = \Validator::make($data, $request->rules());
+
+        $this->assertTrue($validator->passes());
     }
+
+    /**
+     * @dataProvider invalidData
+     */
+    public function test_the_form_request_is_invalid(array $data)
+    {
+        $request = new ContactFormRequest();
+
+        $validator = \Validator::make($data, $request->rules());
+
+        $this->assertFalse($validator->passes());
+    }
+
+    public function validData(): array
+    {
+        $faker = Factory::create(Factory::DEFAULT_LOCALE);
+
+        return [
+            [[
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'email'    => $faker->safeEmail,
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]]
+        ];
+    }
+
+    public function invalidData(): array
+    {
+        $faker = Factory::create(Factory::DEFAULT_LOCALE);
+
+        return [
+            [[//reason is required
+                 'name'     => $faker->name,
+                 'email'    => $faker->safeEmail,
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//name is required
+                 'reason'   => $faker->word,
+                 'email'    => $faker->safeEmail,
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//email is required
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//email is valid
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'email'    => 'invalid-email',
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//district is required
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'email'    => $faker->safeEmail,
+                 'subject'  => $faker->word,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//subject is required
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'email'    => $faker->safeEmail,
+                 'district' => $faker->title,
+                 'details'  => $faker->paragraph,
+             ]],
+            [[//details is required
+                 'reason'   => $faker->word,
+                 'name'     => $faker->name,
+                 'email'    => $faker->safeEmail,
+                 'district' => $faker->title,
+                 'subject'  => $faker->word,
+             ]],
+        ];
+    }
+
 }
