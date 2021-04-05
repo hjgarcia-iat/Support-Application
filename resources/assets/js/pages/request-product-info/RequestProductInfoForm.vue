@@ -5,7 +5,7 @@
                :visible=alertVisible
                @alert-hide="alertVisible=false"></alert>
 
-        <h1 class="mb-4 text-3xl uppercase leading-loose border-b border-gray-700">Request Product Information</h1>
+        <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Request Product Information</h1>
 
         <form @submit.prevent="submit">
             <div class="mb-6">
@@ -268,9 +268,9 @@
             </div>
 
             <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
+                    class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
                     :disabled="loading"
-                    :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                    :class="{'cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium' : loading}">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg" v-if="!loading">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

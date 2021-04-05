@@ -20010,7 +20010,7 @@ var render = function() {
         "h1",
         {
           staticClass:
-            "text-5xl text-blue-700 font-medium border-b-2 border-black mb-4 pb-4"
+            "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
         },
         [_vm._v("Return Request")]
       ),
@@ -20028,9 +20028,11 @@ var render = function() {
           }
         },
         [
-          _c("h2", { staticClass: "text-3xl text-blue-700 font-medium mb-4" }, [
-            _vm._v("General Information")
-          ]),
+          _c(
+            "h2",
+            { staticClass: "text-3xl text-blue-brand font-medium mb-4" },
+            [_vm._v("General Information")]
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -20321,7 +20323,7 @@ var render = function() {
             _c(
               "h2",
               {
-                staticClass: "text-3xl text-blue-700 font-medium mb-4 mr-auto"
+                staticClass: "text-3xl text-blue-brand font-medium mb-4 mr-auto"
               },
               [_vm._v("Products to Return")]
             ),
@@ -20330,7 +20332,7 @@ var render = function() {
               "button",
               {
                 staticClass:
-                  "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50",
+                  "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -20523,9 +20525,10 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center",
+                "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
               class: {
-                "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
+                "cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium":
+                  _vm.loading
               },
               attrs: { type: "submit", disabled: _vm.loading }
             },

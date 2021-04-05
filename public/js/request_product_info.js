@@ -20116,7 +20116,7 @@ var render = function() {
         "h1",
         {
           staticClass:
-            "mb-4 text-3xl uppercase leading-loose border-b border-gray-700"
+            "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
         },
         [_vm._v("Request Product Information")]
       ),
@@ -20739,9 +20739,10 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center",
+                "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
               class: {
-                "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
+                "cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium":
+                  _vm.loading
               },
               attrs: { type: "submit", disabled: _vm.loading }
             },

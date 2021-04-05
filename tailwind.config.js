@@ -10,12 +10,17 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                orange: colors.orange
+                orange: colors.orange,
+                blue: {
+                    'brand' : '#0061AA',
+                    'brand-medium' : '#004779',
+                    'brand-light' : '#4498d0',
+                    'brand-dark' : '#002e42'
+                }
             }
         },
     },
     variants: {
-        extend: {},
     },
     plugins: [],
 }

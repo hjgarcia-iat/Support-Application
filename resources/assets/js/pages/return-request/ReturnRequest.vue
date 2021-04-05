@@ -3,7 +3,7 @@
         <alert :message=formMessage :type=formMessageType :visible=alertVisible
             @alert-hide="alertVisible=false"></alert>
 
-        <h1 class="text-5xl text-blue-700 font-medium border-b-2 border-black mb-4 pb-4">Return Request</h1>
+        <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Return Request</h1>
         <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are
             subject
             to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
@@ -13,7 +13,7 @@
             <a href="mailto:csr@activatelearning.com" class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
-            <h2 class="text-3xl text-blue-700 font-medium mb-4">General Information</h2>
+            <h2 class="text-3xl text-blue-brand font-medium mb-4">General Information</h2>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
@@ -86,10 +86,10 @@
             </div>
 
             <div class="flex items-center mb-4">
-                <h2 class="text-3xl text-blue-700 font-medium mb-4 mr-auto">Products to Return</h2>
+                <h2 class="text-3xl text-blue-brand font-medium mb-4 mr-auto">Products to Return</h2>
 
                 <button @click.prevent="addProduct"
-                    class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center">
                     <small class="flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -144,8 +144,8 @@
             </section>
 
             <button type="submit"
-                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-800 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center"
-                :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
+                class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
+                :disabled="loading" :class="{'cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium' : loading}">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg" v-if="!loading">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
