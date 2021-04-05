@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ReturnRequestForm;
+use App\Http\Requests\ReturnRequest;
 use App\Refund;
 use App\Services\Spreadsheet\SpreadsheetInterface;
 
@@ -39,10 +39,10 @@ class ReturnRequestController extends Controller
     /**
      * Save the response to the spreadsheet
      *
-     * @param ReturnRequestForm $request
+     * @param ReturnRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(ReturnRequestForm $request)
+    public function store(ReturnRequest $request): \Illuminate\Http\JsonResponse
     {
         $this->spreadsheet->save($request->all());
 

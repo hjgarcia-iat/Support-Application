@@ -5,10 +5,10 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class ReturnRequestForm
+ * Class ReturnRequest
  * @package App\Http\Requests
  */
-class ReturnRequestForm extends FormRequest
+class ReturnRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
