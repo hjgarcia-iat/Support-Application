@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Acceptance;
+namespace Tests\Acceptance\App\Http\Controllers;
 
 use Carbon\Carbon;
 use Google;
@@ -8,19 +8,18 @@ use Sheets;
 use Tests\TestCase;
 
 /**
- * Class StoreReturnRequestFormTest
+ * Class ReturnRequestControllerTest
  * @package Tests\Acceptance
  */
-class StoreReturnRequestFormTest extends TestCase
+class ReturnRequestControllerTest extends TestCase
 {
-
     /**
-     * @test
+     *
      */
-    public function the_data_is_saved_to_the_spreadsheet()
+    public function test_the_the_form_is_saved()
     {
         Sheets::setService(Google::make('sheets'));
-        Sheets::spreadsheet(env('GOOGLE_SPREADSHEET'));
+        Sheets::spreadsheet(config('google.config.spreadsheet'));
         Sheets::sheet('Authorized Returns')->range('3:100')->clear();
 
         $response = $this->from(route('return_request.create'))
