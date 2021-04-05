@@ -2201,22 +2201,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2358,7 +2342,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.close-button {\n    top: 0.625rem;\n    right: 0.625rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.close-button {\r\n    top: 0.625rem;\r\n    right: 0.625rem;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20846,7 +20830,7 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline",
+                "bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center",
               class: {
                 "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
               },
@@ -20857,25 +20841,22 @@ var render = function() {
                 ? _c(
                     "svg",
                     {
-                      staticClass: "h-6 w-6 inline-block fill-current mr-2",
+                      staticClass: "w-6 h-6 mr-2",
                       attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 20 20",
-                        fill: "currentColor"
+                        fill: "none",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24",
+                        xmlns: "http://www.w3.org/2000/svg"
                       }
                     },
                     [
                       _c("path", {
                         attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
                           d:
-                            "M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                            "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         }
                       })
                     ]
@@ -20886,44 +20867,33 @@ var render = function() {
                 ? _c(
                     "svg",
                     {
-                      staticClass: "h-8 w-8 inline-block fill-current",
+                      staticClass: "animate-spin mr-2 h-5 w-5",
                       attrs: {
-                        version: "1.1",
-                        id: "L9",
                         xmlns: "http://www.w3.org/2000/svg",
-                        "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                        x: "0px",
-                        y: "0px",
-                        viewBox: "0 0 100 100",
-                        "enable-background": "new 0 0 0 0",
-                        "xml:space": "preserve"
+                        fill: "none",
+                        viewBox: "0 0 24 24"
                       }
                     },
                     [
-                      _c(
-                        "path",
-                        {
-                          attrs: {
-                            fill: "#fff",
-                            d:
-                              "M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
-                          }
-                        },
-                        [
-                          _c("animateTransform", {
-                            attrs: {
-                              attributeName: "transform",
-                              attributeType: "XML",
-                              type: "rotate",
-                              dur: "1s",
-                              from: "0 50 50",
-                              to: "360 50 50",
-                              repeatCount: "indefinite"
-                            }
-                          })
-                        ],
-                        1
-                      )
+                      _c("circle", {
+                        staticClass: "opacity-25",
+                        attrs: {
+                          cx: "12",
+                          cy: "12",
+                          r: "10",
+                          stroke: "currentColor",
+                          "stroke-width": "4"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        staticClass: "opacity-75",
+                        attrs: {
+                          fill: "currentColor",
+                          d:
+                            "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        }
+                      })
                     ]
                   )
                 : _vm._e(),
