@@ -271,8 +271,33 @@
                     class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
                     :disabled="loading"
                     :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
-                <i class="fa fa-refresh fa-spin"
-                   v-if="loading"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block fill-current mr-2" v-if="!loading" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                <svg version="1.1"
+                     class="h-8 w-8 inline-block fill-current"
+                     v-if="loading"
+                     id="L9"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 100 100"
+                     enable-background="new 0 0 0 0"
+                     xml:space="preserve">
+                    <path fill="#fff"
+                          d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                      <animateTransform
+                          attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          dur="1s"
+                          from="0 50 50"
+                          to="360 50 50"
+                          repeatCount="indefinite"/>
+                  </path>
+                </svg>
                 Submit
             </button>
         </form>

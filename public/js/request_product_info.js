@@ -2192,6 +2192,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -20828,8 +20853,79 @@ var render = function() {
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [
+              !_vm.loading
+                ? _c(
+                    "svg",
+                    {
+                      staticClass: "h-6 w-6 inline-block fill-current mr-2",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        viewBox: "0 0 20 20",
+                        fill: "currentColor"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        attrs: {
+                          d:
+                            "M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                        }
+                      })
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
               _vm.loading
-                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+                ? _c(
+                    "svg",
+                    {
+                      staticClass: "h-8 w-8 inline-block fill-current",
+                      attrs: {
+                        version: "1.1",
+                        id: "L9",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                        x: "0px",
+                        y: "0px",
+                        viewBox: "0 0 100 100",
+                        "enable-background": "new 0 0 0 0",
+                        "xml:space": "preserve"
+                      }
+                    },
+                    [
+                      _c(
+                        "path",
+                        {
+                          attrs: {
+                            fill: "#fff",
+                            d:
+                              "M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+                          }
+                        },
+                        [
+                          _c("animateTransform", {
+                            attrs: {
+                              attributeName: "transform",
+                              attributeType: "XML",
+                              type: "rotate",
+                              dur: "1s",
+                              from: "0 50 50",
+                              to: "360 50 50",
+                              repeatCount: "indefinite"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]
+                  )
                 : _vm._e(),
               _vm._v("\n            Submit\n        ")
             ]
