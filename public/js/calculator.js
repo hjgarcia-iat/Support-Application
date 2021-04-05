@@ -2094,6 +2094,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CalculatorForm",
@@ -2142,7 +2147,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
-//
 //
 //
 //
@@ -2354,6 +2358,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_partials_FormError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/FormError */ "./resources/assets/js/components/partials/FormError.vue");
 /* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29862,9 +29877,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c(
+      "h1",
+      {
+        staticClass:
+          "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+      },
+      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
+    ),
     _vm._v(" "),
-    _c("p", { staticClass: "text-2xl mb-4 text-center" }, [
+    _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
         "\n        Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your\n        current subscription term.\n    "
       )
@@ -29887,7 +29909,7 @@ var render = function() {
           }
         ],
         staticClass:
-          "border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline",
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
         attrs: { type: "text", name: "number_of_students" },
         domProps: { value: _vm.no_students },
         on: {
@@ -29918,7 +29940,7 @@ var render = function() {
           }
         ],
         staticClass:
-          "border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline",
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
         attrs: { type: "text", name: "number_of_teachers" },
         domProps: { value: _vm.no_teachers },
         on: {
@@ -30015,10 +30037,12 @@ var render = function() {
         "button",
         {
           staticClass:
-            "rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto",
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
           class: {
-            "cursor-pointer bg-blue-700":
-              _vm.no_students > 0 && _vm.no_teachers > 0
+            "cursor-pointer bg-blue-brand":
+              _vm.no_students > 0 && _vm.no_teachers > 0,
+            "bg-blue-brand-medium cursor-default":
+              _vm.no_students <= 0 && _vm.no_teachers <= 0
           },
           attrs: {
             disabled: _vm.no_students <= 0 && _vm.no_teachers <= 0,
@@ -30026,30 +30050,37 @@ var render = function() {
           },
           on: { click: _vm.calculate }
         },
-        [_vm._v("\n            Calculate\n        ")]
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 mr-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d:
+                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\n            Calculate\n        ")
+        ]
       )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "h1",
-      {
-        staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
-      },
-      [
-        _vm._v("\n        Calculate Your "),
-        _c("br"),
-        _vm._v("Digital Savings\n    ")
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -30075,14 +30106,21 @@ var render = function() {
   return _c("div", [
     _vm.usage === "IQWST Print Student Workbooks"
       ? _c("div", [
-          _vm._m(0),
+          _c(
+            "h1",
+            {
+              staticClass:
+                "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+            },
+            [_vm._v("Digital Savings\n            Compared To Print\n        ")]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "md:grid grid-cols-3 gap-x-4 mt-6" }, [
             _c("div", { staticClass: "hidden md:block" }, [_vm._v(" ")]),
             _vm._v(" "),
             _c("div", { staticClass: "hidden md:block" }, [_vm._v(" ")]),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(0),
             _vm._v(" "),
             _c(
               "div",
@@ -30093,7 +30131,7 @@ var render = function() {
               [
                 _c(
                   "h2",
-                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  { staticClass: "text-4xl text-blue-brand font-medium" },
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
@@ -30138,7 +30176,7 @@ var render = function() {
               [
                 _c(
                   "h2",
-                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  { staticClass: "text-4xl text-blue-brand font-medium" },
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
@@ -30176,54 +30214,60 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "text-center border-2 border-blue-700" }, [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "font-bold bg-blue-700 text-white py-1 text-center block md:hidden"
-                },
-                [_vm._v("Best Savings")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "p-4" }, [
+            _c(
+              "div",
+              { staticClass: "text-center border-2 border-blue-brand" },
+              [
                 _c(
-                  "h2",
-                  { staticClass: "text-4xl text-blue-700 font-medium" },
-                  [_vm._v("IQWST")]
+                  "p",
+                  {
+                    staticClass:
+                      "font-bold bg-blue-brand text-white py-1 text-center block md:hidden"
+                  },
+                  [_vm._v("Best Savings")]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
-                  _vm._v("with ONPAR")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
-                  _vm._v("Interactive Digital Edition")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl font-bold" }, [
-                  _vm._v("6-Year")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "text-2xl font-bold" }, [
-                  _vm._v("You would save")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                  _vm._v(_vm._s(_vm._f("currency")(_vm.print_six_year_cost)))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-3xl text-orange-500" }, [
-                  _vm._v(_vm._s(_vm._f("percent")(_vm.print_six_year_savings)))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
-              ])
-            ])
+                _c("div", { staticClass: "p-4" }, [
+                  _c(
+                    "h2",
+                    { staticClass: "text-4xl text-blue-brand font-medium" },
+                    [_vm._v("IQWST")]
+                  ),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl text-gray-600 mb-3" }, [
+                    _vm._v("with ONPAR")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl mb-3 text-gray-600" }, [
+                    _vm._v("Interactive Digital Edition")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl font-bold" }, [
+                    _vm._v("6-Year")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "text-2xl font-bold" }, [
+                    _vm._v("You would save")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(_vm._s(_vm._f("currency")(_vm.print_six_year_cost)))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                    _vm._v(
+                      _vm._s(_vm._f("percent")(_vm.print_six_year_savings))
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-xl" }, [_vm._v("over 6 years")])
+                ])
+              ]
+            )
           ])
         ])
       : _vm._e(),
@@ -30234,7 +30278,7 @@ var render = function() {
             "h1",
             {
               staticClass:
-                "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4"
+                "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
             },
             [_vm._v("Multi-Year Digital\n            Savings\n        ")]
           ),
@@ -30244,9 +30288,9 @@ var render = function() {
             _vm._v(" "),
             _c("div", [_vm._v(" ")]),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
-            _vm._m(3),
+            _vm._m(2),
             _vm._v(" "),
             _c(
               "div",
@@ -30254,7 +30298,7 @@ var render = function() {
               [
                 _c(
                   "h2",
-                  { staticClass: "text-4xl text-blue-700 font-medium" },
+                  { staticClass: "text-4xl text-blue-brand font-medium" },
                   [_vm._v("IQWST")]
                 ),
                 _vm._v(" "),
@@ -30292,7 +30336,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [
                   _vm._v(
-                    "Compared to renewing a 1 yr subscription each of the 3 years"
+                    "Compared to renewing a 1-yr subscription each of the 3 years"
                   )
                 ])
               ]
@@ -30300,12 +30344,12 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "text-center  border-2 border-blue-700" },
+              { staticClass: "text-center  border-2 border-blue-brand" },
               [
                 _c("div", { staticClass: "p-4" }, [
                   _c(
                     "h2",
-                    { staticClass: "text-4xl text-blue-700 font-medium" },
+                    { staticClass: "text-4xl text-blue-brand font-medium" },
                     [_vm._v("IQWST")]
                   ),
                   _vm._v(" "),
@@ -30343,7 +30387,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
-                      "Compared to renewing a 1 yr subscription each of the 6 years"
+                      "Compared to renewing a 1-yr subscription each of the 6 years"
                     )
                   ])
                 ])
@@ -30357,7 +30401,8 @@ var render = function() {
       _c(
         "a",
         {
-          staticClass: "text-blue-700 hover:text-blue-500 font-bold",
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline",
           attrs: { href: "#" },
           on: {
             click: function($event) {
@@ -30373,7 +30418,7 @@ var render = function() {
         "a",
         {
           staticClass:
-            "rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white ml-4",
+            "ml-4 bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
           attrs: { href: "" },
           on: {
             click: function($event) {
@@ -30392,27 +30437,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "h1",
-      {
-        staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
-      },
-      [
-        _vm._v("Digital Savings "),
-        _c("br"),
-        _vm._v("\n            Compared To Print\n        ")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "hidden md:block" }, [
       _c(
         "p",
-        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
+        { staticClass: "font-bold bg-blue-brand text-white py-1 text-center" },
         [_vm._v("Best Savings")]
       )
     ])
@@ -30424,7 +30452,7 @@ var staticRenderFns = [
     return _c("div", [
       _c(
         "p",
-        { staticClass: "font-bold bg-blue-700 text-white py-1 text-center" },
+        { staticClass: "font-bold bg-blue-brand text-white py-1 text-center" },
         [_vm._v("Best Savings")]
       )
     ])
@@ -30437,7 +30465,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "text-center p-4 border-2 border-gray-300 mb-6 md:mb-0" },
       [
-        _c("h2", { staticClass: "text-4xl text-blue-700 font-medium" }, [
+        _c("h2", { staticClass: "text-4xl text-blue-brand font-medium" }, [
           _vm._v("IQWST")
         ]),
         _vm._v(" "),
@@ -30485,7 +30513,7 @@ var render = function() {
       "h1",
       {
         staticClass:
-          "text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4"
+          "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
       [_vm._v("Learn More/Contact Rep")]
     ),
@@ -31059,7 +31087,8 @@ var render = function() {
           _c(
             "a",
             {
-              staticClass: "text-blue-700 hover:text-blue-500 font-bold",
+              staticClass:
+                "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline",
               attrs: { href: "#" },
               on: {
                 click: function($event) {
@@ -31075,17 +31104,75 @@ var render = function() {
             "button",
             {
               staticClass:
-                "bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 ml-4 focus:outline-none focus:shadow-outline focus:border-blue-600",
+                "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center ml-4",
               class: {
-                "cursor-default bg-blue-light hover:bg-blue-light": _vm.loading
+                "cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium":
+                  _vm.loading
               },
               attrs: { type: "submit", disabled: _vm.loading }
             },
             [
-              _vm.loading
-                ? _c("i", { staticClass: "fa fa-refresh fa-spin" })
+              !_vm.loading
+                ? _c(
+                    "svg",
+                    {
+                      staticClass: "w-6 h-6 mr-2",
+                      attrs: {
+                        fill: "none",
+                        stroke: "currentColor",
+                        viewBox: "0 0 24 24",
+                        xmlns: "http://www.w3.org/2000/svg"
+                      }
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                          "stroke-width": "2",
+                          d:
+                            "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        }
+                      })
+                    ]
+                  )
                 : _vm._e(),
-              _vm._v(" Send\n            ")
+              _vm._v(" "),
+              _vm.loading
+                ? _c(
+                    "svg",
+                    {
+                      staticClass: "animate-spin mr-2 h-5 w-5",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        fill: "none",
+                        viewBox: "0 0 24 24"
+                      }
+                    },
+                    [
+                      _c("circle", {
+                        staticClass: "opacity-25",
+                        attrs: {
+                          cx: "12",
+                          cy: "12",
+                          r: "10",
+                          stroke: "currentColor",
+                          "stroke-width": "4"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        staticClass: "opacity-75",
+                        attrs: {
+                          fill: "currentColor",
+                          d:
+                            "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        }
+                      })
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v("\n                Send\n            ")
             ]
           ),
           _vm._v(" "),
@@ -31093,7 +31180,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "ml-auto text-gray-700 hover:text-gray-600 hover:underline",
+                "ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline",
               attrs: { href: "" },
               on: {
                 click: function($event) {

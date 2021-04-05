@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">
-            Calculate Your <br>Digital Savings
+        <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">
+            Calculate Your Digital Savings
         </h1>
-        <p class="text-2xl mb-4 text-center">
+        <p class="text-2xl mb-4">
             Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your
             current subscription term.
         </p>
@@ -13,7 +13,7 @@
                 1. Approximately how many students use IQWST in your classroom, school, or district?
             </p>
             <input type="text"
-                class="border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline"
+                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="number_of_students"
                 v-model="no_students">
         </div>
@@ -22,7 +22,7 @@
                 2. Approximately how many teachers use IQWST in your classroom, school, or district?
             </p>
             <input type="text"
-                class="border px-2 py-2 border-gray-500 w-full  md:w-1/2 rounded outline-none focus:shadow-outline"
+                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="number_of_teachers"
                 v-model="no_teachers">
         </div>
@@ -54,8 +54,13 @@
             <button :disabled="no_students <= 0 && no_teachers <= 0"
                 type="submit"
                 @click="calculate"
-                class="rounded py-2 px-3 bg-blue-500 hover:bg-blue-500 text-white cursor-auto"
-                :class="{'cursor-pointer bg-blue-700': no_students > 0 && no_teachers > 0}">
+                class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
+                :class="{'cursor-pointer bg-blue-brand': no_students > 0 && no_teachers > 0, 'bg-blue-brand-medium cursor-default': no_students <= 0 && no_teachers <= 0}">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                </svg>
                 Calculate
             </button>
         </div>

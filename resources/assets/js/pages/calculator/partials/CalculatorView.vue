@@ -1,17 +1,17 @@
 <template>
     <div>
         <div v-if="usage==='IQWST Print Student Workbooks'">
-            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">Digital Savings <br>
+            <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Digital Savings
                 Compared To Print
             </h1>
             <div class="md:grid grid-cols-3 gap-x-4 mt-6">
                 <div class="hidden md:block">&nbsp;</div>
                 <div class="hidden md:block">&nbsp;</div>
                 <div class="hidden md:block">
-                    <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
+                    <p class="font-bold bg-blue-brand text-white py-1 text-center">Best Savings</p>
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
-                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
@@ -24,7 +24,7 @@
                     <p class="text-xl">next year</p>
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
-                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
@@ -36,10 +36,10 @@
                     <p class="text-3xl text-orange-500">{{ print_three_year_savings | percent }}</p>
                     <p class="text-xl">over 3 years</p>
                 </div>
-                <div class="text-center border-2 border-blue-700">
-                    <p class="font-bold bg-blue-700 text-white py-1 text-center block md:hidden">Best Savings</p>
+                <div class="text-center border-2 border-blue-brand">
+                    <p class="font-bold bg-blue-brand text-white py-1 text-center block md:hidden">Best Savings</p>
                     <div class="p-4">
-                        <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                        <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                         <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                         <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
@@ -58,17 +58,17 @@
         </div>
 
         <div v-if="usage==='IQWST Interactive Digital Edition'">
-            <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4">Multi-Year Digital
+            <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Multi-Year Digital
                 Savings
             </h1>
             <div class="grid">
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 <div>
-                    <p class="font-bold bg-blue-700 text-white py-1 text-center">Best Savings</p>
+                    <p class="font-bold bg-blue-brand text-white py-1 text-center">Best Savings</p>
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300 mb-6 md:mb-0">
-                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">1-Year</p>
@@ -76,7 +76,7 @@
                     <p class="text-2xl">Current Subscription</p>
                 </div>
                 <div class="text-center p-4 border-2 border-gray-300">
-                    <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                    <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                     <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                     <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                     <p class="text-3xl font-bold">3-Year</p>
@@ -86,11 +86,11 @@
                     <p class="text-3xl text-orange-500">{{ digital_three_year_cost | currency }}</p>
                     <p class="text-xl">&ndash; or &ndash;</p>
                     <p class="text-3xl text-orange-500">{{ digital_three_year_savings | percent }}</p>
-                    <p>Compared to renewing a 1 yr subscription each of the 3 years</p>
+                    <p>Compared to renewing a 1-yr subscription each of the 3 years</p>
                 </div>
-                <div class="text-center  border-2 border-blue-700">
+                <div class="text-center  border-2 border-blue-brand">
                     <div class="p-4">
-                        <h2 class="text-4xl text-blue-700 font-medium">IQWST</h2>
+                        <h2 class="text-4xl text-blue-brand font-medium">IQWST</h2>
                         <p class="text-xl text-gray-600 mb-3">with ONPAR</p>
                         <p class="text-xl mb-3 text-gray-600">Interactive Digital Edition</p>
                         <p class="text-3xl font-bold">6-Year</p>
@@ -100,20 +100,19 @@
                         <p class="text-3xl text-orange-500">{{ digital_six_year_cost | currency }}</p>
                         <p class="text-xl">&ndash; or &ndash;</p>
                         <p class="text-3xl text-orange-500">{{ digital_six_year_savings | percent }}</p>
-                        <p>Compared to renewing a 1 yr subscription each of the 6 years</p>
+                        <p>Compared to renewing a 1-yr subscription each of the 6 years</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="mt-6 flex items-center">
-
             <a href="#"
-                class="text-blue-700 hover:text-blue-500 font-bold"
+                class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline"
                 @click.prevent="step_back">Previous</a>
 
             <a href=""
-                class="rounded py-2 px-3 bg-blue-700 hover:bg-blue-500 text-white ml-4"
+                class="ml-4 bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
                 @click.prevent="get_in_touch">Learn More/Contact Rep</a>
         </div>
 

@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <h1 class="text-5xl text-blue-700 font-medium text-center border-b-2 border-black mb-4 pb-4">Learn More/Contact Rep</h1>
+        <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Learn More/Contact Rep</h1>
 
         <form method="POST"
             @submit.prevent="submitForm">
@@ -187,16 +187,27 @@
 
             <div class="mt-8 flex items-center">
                 <a href="#"
-                    class="text-blue-700 hover:text-blue-500 font-bold"
+                    class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline"
                     @click.prevent="step_back">Previous</a>
                 <button type="submit"
-                    class="bg-blue-600 rounded hover:bg-blue-800 text-white font-bold py-2 px-4 ml-4 focus:outline-none focus:shadow-outline focus:border-blue-600"
+                    class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center ml-4"
                     :disabled="loading"
-                    :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
-                    <i class="fa fa-refresh fa-spin"
-                        v-if="loading"></i> Send
+                    :class="{'cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium' : loading}">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" v-if="!loading">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <svg class="animate-spin mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" v-if="loading">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                            stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Send
                 </button>
-                <a href="" class="ml-auto text-gray-700 hover:text-gray-600 hover:underline" @click.prevent="reset_form">Reset</a>
+                <a href="" class="ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline" @click.prevent="reset_form">Reset</a>
             </div>
         </form>
     </div>
