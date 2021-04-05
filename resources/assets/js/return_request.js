@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import ReturnRequestForm from './components/ReturnRequest.vue';
+import ReturnRequestForm from './pages/return-request/ReturnRequest.vue';
 
 new Vue({
     el: '#request-quote-form',

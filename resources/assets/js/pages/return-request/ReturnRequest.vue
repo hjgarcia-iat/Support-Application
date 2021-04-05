@@ -1,6 +1,9 @@
 <template>
     <div class="p-8">
-        <h1 class="mb-4 text-3xl uppercase leading-loose">Return Request</h1>
+        <alert :message=formMessage :type=formMessageType :visible=alertVisible
+            @alert-hide="alertVisible=false"></alert>
+
+        <h1 class="text-5xl text-blue-700 font-medium border-b-2 border-black mb-4 pb-4">Return Request</h1>
         <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are
             subject
             to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit
@@ -10,14 +13,13 @@
             <a href="mailto:csr@activatelearning.com">csr@activatelearning.com</a>.
         </p>
         <form @submit.prevent="submit">
-            <alert :message=formMessage :type=formMessageType :visible=alertVisible @alert-hide="hideAlert"></alert>
-            <h2 class="mb-4 text-2xl uppercase leading-loose">General Information</h2>
+            <h2 class="text-3xl text-blue-700 font-medium mb-4">General Information</h2>
             <div class="mb-6">
                 <label for="name" class="block text-grey-darker text-sm font-bold mb-2">
                     <small class="text-lg text-red-600">*</small>
                     Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="name" placeholder="Enter name" name="name" v-model="name">
 
                 <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
@@ -28,7 +30,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Email Address</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="email" placeholder="Enter Email Address" name="email" v-model="email">
 
                 <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
@@ -39,7 +41,7 @@
                     <small class="text-lg text-red-600">*</small>
                     District Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="district" placeholder="Enter District Name" name="district" v-model="district">
 
                 <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
@@ -50,7 +52,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Order Number or PO Number</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="order_number" placeholder="Order Number or PO Number" name="order_number"
                     v-model="order_number">
 
@@ -62,7 +64,7 @@
                     <small class="text-lg text-red-600">*</small>
                     RMA Number</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="rma_number" placeholder="RMA Number" name="rma_number" v-model="rma_number">
 
                 <form-error :error=formErrors.rma_number[0] v-if="formErrors.rma_number"></form-error>
@@ -73,7 +75,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Reason for Return:</label>
                 <select name="reason" id="reason" v-model="reason"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
                     <option value="">Select a Reason for Return</option>
                     <option value="Overstock">Overstock</option>
                     <option value="Ordered in error">Ordered in error</option>
@@ -83,44 +85,57 @@
                 <form-error :error=formErrors.reason[0] v-if="formErrors.reason"></form-error>
             </div>
 
-            <hr class="border-t my-8">
-
             <div class="flex items-center mb-4">
-                <h2 class="mb-4 text-2xl mr-auto uppercase leading-loose">Products to Return</h2>
+                <h2 class="text-3xl text-blue-700 font-medium mb-4 mr-auto">Products to Return</h2>
+
                 <a href="" @click.prevent="addProduct"
                     class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline">
-                    <small><i class="fa fa-plus mr-2"></i>Add Product</small>
+                    <small class="flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+
+
+                        Add Product
+                    </small>
                 </a>
             </div>
 
 
             <section class="mb-5">
-                <div class="grid grid-cols-7 mb-2">
+                <div class="grid grid-cols-9 gap-x-2 mb-2">
                     <div class="col-span-1"></div>
-                    <div class="col-span-3 px-2 flex">SKU</div>
-                    <div class="col-span-3 px-2 flex">Quantity</div>
+                    <div class="col-span-4">SKU</div>
+                    <div class="col-span-4">Quantity</div>
                 </div>
 
-                <div class="grid grid-cols-7 grid-flow-row-dense mb-3" v-for="(product, key, index) in products">
-                    <div class="col-span-1">
-                        <a href="" @click.prevent="removeProduct(key)"
-                            class="block bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline">
-                            <i class="fa fa-remove"></i>
-                        </a>
-
+                <div class="grid grid-cols-9 mb-3 gap-x-2" v-for="(product, key, index) in products">
+                    <div class="col-span-1 h-full">
+                        <div class="flex justify-center items-center h-full">
+                            <a href="" @click.prevent="removeProduct(key)"
+                                class="bg-red-300 text-center hover:text-red-800 text-red-600 font-bold py-2 px-3 focus:outline-none focus:shadow-outline inline-block">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-span-3 px-2 flex flex-col row-span-2">
+                    <div class="col-span-4 flex flex-col">
                         <input type="text"
-                            class="appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                             :id="'sku_' + index" placeholder="Enter SKU" name="products[]['name']"
                             v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
                             v-if="checkForArrayError('products.' + key + '.sku')"></form-error>
 
                     </div>
-                    <div class="col-span-3 px-2 flex flex-col row-span-2">
+                    <div class="col-span-4 flex flex-col">
                         <input type="text"
-                            class="appearance-none block w-full h-full bg-grey-lighter text-grey-darker border px-4 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
                             :id="'quantity_'+index" placeholder="Enter Quantity" name="products[]['school']"
                             v-model="product.quantity">
 
@@ -131,10 +146,20 @@
             </section>
 
             <button type="submit"
-                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+                class="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline flex items-center"
                 :disabled="loading" :class="{'cursor-default bg-blue-light hover:bg-blue-light' : loading}">
-                <i class="fa fa-refresh fa-spin" v-if="loading"></i>
-                Process Return
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" v-if="!loading">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <svg class="animate-spin mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" v-if="loading">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Submit
             </button>
         </form>
     </div>
@@ -142,8 +167,8 @@
 
 <script>
 import Vue from "vue"
-import Alert from "../components/partials/FormAlert"
-import FormError from "../components/partials/FormError"
+import Alert from "../../components/partials/FormAlert"
+import FormError from "../../components/partials/FormError"
 
 export default {
     components: {
@@ -176,9 +201,6 @@ export default {
         }
     },
     methods: {
-        hideAlert() {
-            this.alertVisible = false;
-        },
         checkForArrayError(field) {
             return this.formErrors.hasOwnProperty(field);
         },
