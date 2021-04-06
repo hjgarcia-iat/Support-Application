@@ -3,7 +3,7 @@
         <alert :message=formMessage :type=formMessageType :visible=alertVisible
             @alert-hide="alertVisible=false"></alert>
 
-        <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Return Request</h1>
+        <h1 class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Return Request</h1>
         <p class="mb-4">The district or school will be responsible for shipment of returned items. All returns are
             subject
             to approval to ensure items have not be used, stamped or damaged and are in saleable condition. A credit

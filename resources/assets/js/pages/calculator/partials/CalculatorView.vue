@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="usage==='IQWST Print Student Workbooks'">
-            <h1 class="text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Digital Savings
+            <h1 class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Digital Savings
                 Compared To Print
             </h1>
             <div class="md:grid grid-cols-3 gap-x-4 mt-6">
