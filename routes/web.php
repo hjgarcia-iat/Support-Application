@@ -23,15 +23,15 @@ Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])-
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
-Route::get('/remote-learning-support', [RemoteSupportRequestController::class, 'create'])->name('remote_support.create');
-Route::post('/remote-learning-support', [RemoteSupportRequestController::class,'store'])->name('remote_support.store');
-
-Route::get('/remote-learning-request', [RemoteLearningRequestController::class, 'create'])->name('remote_learning_request.create');
-Route::post('/remote-learning-request', [RemoteLearningRequestController::class,'store'])->name('remote_learning_request.store');
+//Route::get('/remote-learning-support', [RemoteSupportRequestController::class, 'create'])->name('remote_support.create');
+//Route::post('/remote-learning-support', [RemoteSupportRequestController::class,'store'])->name('remote_support.store');
+//
+//Route::get('/remote-learning-request', [RemoteLearningRequestController::class, 'create'])->name('remote_learning_request.create');
+//Route::post('/remote-learning-request', [RemoteLearningRequestController::class,'store'])->name('remote_learning_request.store');
 
 Route::get('/contact-request', [ContactRequestController::class, 'create'])->name('contact_request.create');
 Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');
-Route::post('/files', [FilesController::class, 'store'])->name('files.store');
+Route::post('/contact-request/files', [FilesController::class, 'store'])->name('files.store');
 
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
