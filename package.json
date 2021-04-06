@@ -17,7 +17,7 @@
     "lodash": "^4.17.19",
     "sass": "^1.15.2",
     "sass-loader": "^11.0.1",
-    "tailwindcss": "^2.0.4",
+    "tailwindcss": "2.1.*",
     "tailwindcss-tables": "0.4.*",
     "vee-validate": "2.1.*",
     "vue": "2.6.12",
