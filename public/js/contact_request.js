@@ -20233,10 +20233,10 @@ var render = function() {
             _c(
               "a",
               {
-                staticClass: "no-underline absolute top-1 right-1 close-button",
+                staticClass: "absolute top-1 right-1 close-button",
                 class: {
-                  "text-green-dark": _vm.formMessageType === "success",
-                  "text-red-dark": _vm.formMessageType === "error"
+                  "text-green-600": _vm.formMessageType === "success",
+                  "text-red-600": _vm.formMessageType === "error"
                 },
                 attrs: { href: "" },
                 on: {
@@ -20844,9 +20844,7 @@ var render = function() {
                         })
                       ]
                     ),
-                    _vm._v(
-                      "\n\n                    Next Step\n                "
-                    )
+                    _vm._v("\n\n                    Next\n                ")
                   ]
                 )
               ])

@@ -8,8 +8,8 @@
 
             {{ formMessage }}
 
-            <a href="" @click.prevent="alertVisible=false" class="no-underline absolute top-1 right-1 close-button"
-                :class="{'text-green-dark' : formMessageType==='success', 'text-red-dark' : formMessageType==='error'}">
+            <a href="" @click.prevent="alertVisible=false" class="absolute top-1 right-1 close-button"
+                :class="{'text-green-600' : formMessageType==='success', 'text-red-600' : formMessageType==='error'}">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -218,7 +218,7 @@
                                 d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
                         </svg>
 
-                        Next Step
+                        Next
                     </button>
                 </div>
 
