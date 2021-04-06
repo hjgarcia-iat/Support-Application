@@ -261,7 +261,7 @@ export default {
             formMessageType: 'success',
             alertVisible: false,
             dropzoneOptions: {
-                url: "/files",
+                url: "/contact-request/files",
                 thumbnailWidth: 70,
                 thumbnailHeight: 70,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",
