@@ -5,8 +5,6 @@ use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
-use App\Http\Controllers\RemoteLearningRequestController;
-use App\Http\Controllers\RemoteSupportRequestController;
 use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
 
@@ -22,12 +20,6 @@ Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])-
 
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
-
-//Route::get('/remote-learning-support', [RemoteSupportRequestController::class, 'create'])->name('remote_support.create');
-//Route::post('/remote-learning-support', [RemoteSupportRequestController::class,'store'])->name('remote_support.store');
-//
-//Route::get('/remote-learning-request', [RemoteLearningRequestController::class, 'create'])->name('remote_learning_request.create');
-//Route::post('/remote-learning-request', [RemoteLearningRequestController::class,'store'])->name('remote_learning_request.store');
 
 Route::get('/contact-request', [ContactRequestController::class, 'create'])->name('contact_request.create');
 Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');

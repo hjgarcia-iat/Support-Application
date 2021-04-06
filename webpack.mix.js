@@ -15,8 +15,6 @@ mix.js('resources/assets/js/access_request_form.js', 'public/js').vue({ version:
 mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/digital_setup_form.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/return_request.js', 'public/js').vue({ version: 2 })
-    .js('resources/assets/js/nextgenpet_request.js', 'public/js').vue({ version: 2 })
-    .js('resources/assets/js/remote_learning_request.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/calculator.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/request_product_info.js', 'public/js').vue({ version: 2 })
     .postCss("resources/css/app.css", "public/css", [
