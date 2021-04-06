@@ -2169,6 +2169,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -20229,7 +20233,7 @@ var render = function() {
             _c(
               "a",
               {
-                staticClass: "no-underline absolute close-button",
+                staticClass: "no-underline absolute top-1 right-1 close-button",
                 class: {
                   "text-green-dark": _vm.formMessageType === "success",
                   "text-red-dark": _vm.formMessageType === "error"
@@ -20238,11 +20242,35 @@ var render = function() {
                 on: {
                   click: function($event) {
                     $event.preventDefault()
-                    return _vm.hide($event)
+                    _vm.alertVisible = false
                   }
                 }
               },
-              [_c("i", { staticClass: "fa fa-remove" })]
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "w-6 h-6",
+                    attrs: {
+                      fill: "none",
+                      stroke: "currentColor",
+                      viewBox: "0 0 24 24",
+                      xmlns: "http://www.w3.org/2000/svg"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                        d:
+                          "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      }
+                    })
+                  ]
+                )
+              ]
             )
           ]
         )
