@@ -1,11 +1,8 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import VeeValidate from 'vee-validate';
-import ContactRequest from './components/ContactRequest';
+import ContactRequest from './pages/contact-request/ContactRequest';
 
-
-Vue.use(VeeValidate);
 
 new Vue({
     el        : '#contact-request',

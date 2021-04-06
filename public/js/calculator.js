@@ -29881,7 +29881,7 @@ var render = function() {
       "h1",
       {
         staticClass:
-          "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
       [_vm._v("\n        Calculate Your Digital Savings\n    ")]
     ),
@@ -30110,7 +30110,7 @@ var render = function() {
             "h1",
             {
               staticClass:
-                "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+                "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
             },
             [_vm._v("Digital Savings\n            Compared To Print\n        ")]
           ),
@@ -30513,7 +30513,7 @@ var render = function() {
       "h1",
       {
         staticClass:
-          "text-5xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
       [_vm._v("Learn More/Contact Rep")]
     ),

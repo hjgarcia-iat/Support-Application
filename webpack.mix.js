@@ -23,7 +23,7 @@ mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 }
     .version()
     .disableNotifications()
     .browserSync({
-        proxy: "http://support.activatelearning.local/",
+        proxy: "http://support.activatelearning.local",
         files: [
             "public/js/*.js",
             "public/css/*.css",
