@@ -8,6 +8,7 @@
         <h1 class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Request Product Information</h1>
 
         <form @submit.prevent="submit">
+            <slot></slot>
             <div class="mb-6">
                 <label for="first_name"
                        class="block text-grey-darker text-sm font-bold mb-2">

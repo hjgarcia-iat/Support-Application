@@ -7,6 +7,7 @@ use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::get('/', function () {
     return redirect('https://activatelearning.com');
@@ -30,4 +31,4 @@ Route::post('/calculator', [CalculatorController::class, 'store'])->name("calcul
 
 
 Route::get('/request-product-information', [RequestProductInformationController::class, 'create'])->name("request_product_info.create");
-Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store");
+Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store")->middleware(ProtectAgainstSpam::class);;

@@ -2205,6 +2205,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -20132,6 +20133,8 @@ var render = function() {
           }
         },
         [
+          _vm._t("default"),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "mb-6" },
@@ -20810,7 +20813,8 @@ var render = function() {
               _vm._v("\n            Submit\n        ")
             ]
           )
-        ]
+        ],
+        2
       )
     ],
     1
