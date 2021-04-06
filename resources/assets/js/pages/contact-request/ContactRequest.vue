@@ -205,7 +205,7 @@
                 </div>
             </div>
             <div class="flex mb-4 items-center justify-between">
-                <div v-if="step===1">
+                <div v-if="step===1" class="flex items-center w-full">
                     <button @click.prevent="step++"
                         type="submit"
                         :disabled="reason===''"
@@ -220,9 +220,10 @@
 
                         Next
                     </button>
+                    <p class="text-2xl uppercase text-gray-500 ml-auto">{{ step }} of 2</p>
                 </div>
 
-                <div v-if="step===2" class="mt-8 flex items-center w-full">
+                <div v-if="step===2" class="flex items-center w-full">
                     <a href="#"
                         class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline"
                         @click.prevent="step=1">Previous</a>

@@ -2173,6 +2173,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -20802,7 +20803,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "flex mb-4 items-center justify-between" }, [
           _vm.step === 1
-            ? _c("div", [
+            ? _c("div", { staticClass: "flex items-center w-full" }, [
                 _c(
                   "button",
                   {
@@ -20846,12 +20847,18 @@ var render = function() {
                     ),
                     _vm._v("\n\n                    Next\n                ")
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "text-2xl uppercase text-gray-500 ml-auto" },
+                  [_vm._v(_vm._s(_vm.step) + " of 2")]
                 )
               ])
             : _vm._e(),
           _vm._v(" "),
           _vm.step === 2
-            ? _c("div", { staticClass: "mt-8 flex items-center w-full" }, [
+            ? _c("div", { staticClass: "flex items-center w-full" }, [
                 _c(
                   "a",
                   {
