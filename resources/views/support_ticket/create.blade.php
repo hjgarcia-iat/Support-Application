@@ -10,7 +10,7 @@
 @section('scripts')
     <script src="{{ mix('js/support_ticket.js') }}"></script>
     <script>
-        let input = document.getElementById("search-form");
+        let input = document.getElementById("search-field");
 
         input.addEventListener("keyup", function (event) {
 
