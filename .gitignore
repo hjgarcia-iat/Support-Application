@@ -14,3 +14,4 @@ yarn-error.log
 _ide_helper.php
 google.json
 .phpstorm.meta.php
+.DS_Store
