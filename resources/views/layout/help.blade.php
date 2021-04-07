@@ -15,7 +15,7 @@
 <body>
 <div class="h-full grid-help">
     <header class="page-header mb-10">
-        <div class="overlay relative h-full py-2 px-3 md:py-10 md:px-5 flex justify-between items-center">
+        <div class="overlay relative h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5">
             <div class="md:hidden text-white">
                 <a href="">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -32,12 +32,12 @@
                          alt="Activate Learning">
                 </a>
             </div>
-            <nav class="absolute hidden flex flex-col bg-white w-full left-0 top-12 z-10 md:gap-20 md:ml-auto">
-                <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
+            <nav class="absolute hidden  flex flex-col bg-white w-full left-0 top-12 md:flex-row md:relative md:top-0 z-10 md:gap-20 md:ml-auto md:bg-transparent md:w-auto md:block">
+                <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50"
                    href="https://help.activatelearning.com/s/">Home</a>
-                <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
+                <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50"
                    href="https://help.activatelearning.com/s/system-status">System Status</a>
-                <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
+                <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50"
                    href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
             </nav>
             <div class="text-white md:ml-16">
