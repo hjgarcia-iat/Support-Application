@@ -1,5 +1,5 @@
 <template>
-    <div class="p-8 bg-gray-100">
+    <div class="p-8 bg-gray-100 border">
 
         <div class="border-l-4 p-4 mb-6 relative"
             :class="{'bg-green-200 border-green-800 text-green-800' : formMessageType==='success', 'bg-red-200 border-red-800 text-red-800' : formMessageType==='error'}"

@@ -5,3 +5,28 @@
 html, body {
     height: 100%;
 }
+
+/*CSS Help Layout Grid*/
+.grid-help {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-rows: auto 1fr auto;
+}
+
+.page-header {
+    background: url("../img/header-bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.page-header .overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+.page-content {
+    grid-area: main
+}
+
+.page-footer {
+    grid-area: footer
+}

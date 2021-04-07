@@ -22,8 +22,8 @@ Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])-
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
-Route::get('/support-ticket', [SupportTicketController::class, 'create'])->name('support_ticket.create');
-Route::post('/support-ticket', [SupportTicketController::class,'store'])->name('support_ticket.store');
+Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
+Route::post('/support-tickets', [SupportTicketController::class,'store'])->name('support_ticket.store');
 Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
 
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
