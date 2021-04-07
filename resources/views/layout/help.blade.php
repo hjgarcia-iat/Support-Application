@@ -56,7 +56,7 @@
                                 </svg>
                             </a>
                             <div x-show="search === true" class="flex items-center absolute z-50 w-full" style="top: 40%; right: -80%">
-                                <input placeholder="Search..." type="text" class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none">
+                                <input id="search-form" placeholder="Search..." type="text" class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none">
                                 <a href="" @click.prevent="search = false" class="cursor-pointer" x-show="search === true">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -68,12 +68,9 @@
                 </div>
             </header>
             <main role="main" class="page-content">
-
-                <div class="">
-                    <section class="w-full md:w-3/5 xl:w-2/5 mx-auto">
-                        @yield('content')
-                    </section>
-                </div>
+                <section class="w-full md:w-3/5 xl:w-2/5 mx-auto">
+                    @yield('content')
+                </section>
             </main>
             <footer class="bg-black text-white p-5 page-footer">
                 <p class="text-center">&copy; Copyright 2021 Activate Learning</p>

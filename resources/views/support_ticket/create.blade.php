@@ -9,4 +9,17 @@
 
 @section('scripts')
     <script src="{{ mix('js/support_ticket.js') }}"></script>
+    <script>
+        let input = document.getElementById("search-form");
+
+        input.addEventListener("keyup", function (event) {
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+
+                window.location.href = 'https://help.activatelearning.com/s/global-search/' + input.value
+            }
+        });
+
+    </script>
 @endsection
