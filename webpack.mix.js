@@ -12,7 +12,7 @@ const tailwindcss = require('tailwindcss')
  */
 
 mix.js('resources/assets/js/access_request_form.js', 'public/js').vue({ version: 2 })
-mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 })
+mix.js('resources/assets/js/support_ticket.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/digital_setup_form.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/return_request.js', 'public/js').vue({ version: 2 })
     .js('resources/assets/js/calculator.js', 'public/js').vue({ version: 2 })
@@ -23,7 +23,7 @@ mix.js('resources/assets/js/contact_request.js', 'public/js').vue({ version: 2 }
     .version()
     .disableNotifications()
     .browserSync({
-        proxy: "http://support.activatelearning.local",
+        proxy: "alsupport",
         files: [
             "public/js/*.js",
             "public/css/*.css",

@@ -285,7 +285,7 @@ export default {
             formMessageType: 'success',
             alertVisible: false,
             dropzoneOptions: {
-                url: "/contact-request/files",
+                url: "/support-ticket/files",
                 thumbnailWidth: 70,
                 thumbnailHeight: 70,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.pdf,.doc,.docx",

@@ -7,5 +7,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ mix('js/contact_request.js') }}"></script>
+    <script src="{{ mix('js/support_ticket.js') }}"></script>
 @endsection

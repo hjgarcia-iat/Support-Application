@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\CalculatorController;
-use App\Http\Controllers\ContactRequestController;
+use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\RequestProductInformationController;
@@ -22,9 +22,9 @@ Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])-
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
-Route::get('/contact-request', [ContactRequestController::class, 'create'])->name('contact_request.create');
-Route::post('/contact-request', [ContactRequestController::class,'store'])->name('contact_request.store');
-Route::post('/contact-request/files', [FilesController::class, 'store'])->name('files.store');
+Route::get('/support-ticket', [SupportTicketController::class, 'create'])->name('support_ticket.create');
+Route::post('/support-ticket', [SupportTicketController::class,'store'])->name('support_ticket.store');
+Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
 
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");

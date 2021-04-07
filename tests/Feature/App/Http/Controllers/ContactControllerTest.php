@@ -16,16 +16,16 @@ class ContactControllerTest extends TestCase
 
     public function test_we_can_view_the_form()
     {
-        $response = $this->get(route('contact_request.create'));
+        $response = $this->get(route('support_ticket.create'));
 
         $response->assertStatus(200);
-        $response->assertViewIs('contact_request.create');
+        $response->assertViewIs('support_ticket.create');
     }
 
     public function test_the_contact_form_can_submit_with_a_file()
     {
-        $response = $this->from(route('contact_request.create'))
-            ->post(route('contact_request.store'), $this->validData());
+        $response = $this->from(route('support_ticket.create'))
+            ->post(route('support_ticket.store'), $this->validData());
 
         $contact = Contact::whereEmail($this->validData()['email'])->first();
 

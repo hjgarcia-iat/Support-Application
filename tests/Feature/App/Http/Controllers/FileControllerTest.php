@@ -22,7 +22,7 @@ class FileControllerTest extends TestCase
         $file = UploadedFile::fake()->image('image.jpg');
 
 
-        $response = $this->post(route('files.store'), [
+        $response = $this->post(route('support_ticket.files.store'), [
             'id' => 1,
             'file' => $file,
         ]);

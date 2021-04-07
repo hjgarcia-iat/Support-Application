@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Http\Requests\ContactFormRequest;
 
-class ContactRequestController extends Controller
+class SupportTicketController extends Controller
 {
     public function create()
     {
-        return view('contact_request.create');
+        return view('support_ticket.create');
     }
 
     public function store(ContactFormRequest $request): \Illuminate\Http\JsonResponse
