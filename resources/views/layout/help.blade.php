@@ -56,7 +56,7 @@
                                 </svg>
                             </a>
                             <div x-show="search === true" class="flex items-center absolute z-50 w-full" style="top: 40%; right: -80%">
-                                <input type="text" class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none">
+                                <input placeholder="Search..." type="text" class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none">
                                 <a href="" @click.prevent="search = false" class="cursor-pointer" x-show="search === true">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
