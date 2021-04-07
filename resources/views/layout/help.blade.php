@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <div x-data="{mobile_nav:false}" class="h-full">
+    <div x-data="{mobile_nav:false, search:false}" class="h-full">
         <div class="grid-help h-full relative">
-            <header class="page-header mb-10 relative z-20">
+            <header class="page-header mb-10 relative z-20 overflow-hidden">
                 <div class="overlay h-full">
-                    <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto">
+                    <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto relative">
                         <div class="md:hidden text-white">
                             <a href="" @click.prevent="mobile_nav = true" x-show="mobile_nav === false">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -44,15 +44,25 @@
                             <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
                         </nav>
 
-                        <nav class="hidden md:block flex ml-auto">
+                        <nav class="hidden md:block flex ml-auto" x-show="search===false">
                             <a class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90" href="https://help.activatelearning.com/s/">Home</a>
                             <a class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90" href="https://help.activatelearning.com/s/system-status">System Status</a>
                             <a class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
                         </nav>
                         <div class="text-white sm:ml-2 lg:ml-4">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                            <a @click.prevent="search = true" x-show="search === false" class="cursor-pointer">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </a>
+                            <div x-show="search === true" class="flex items-center absolute z-50 w-full" style="top: 40%; right: -80%">
+                                <input type="text" class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none">
+                                <a href="" @click.prevent="search = false" class="cursor-pointer" x-show="search === true">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
