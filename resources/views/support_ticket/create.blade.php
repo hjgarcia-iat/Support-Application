@@ -20,6 +20,5 @@
                 window.location.href = 'https://help.activatelearning.com/s/global-search/' + input.value
             }
         });
-
     </script>
 @endsection
