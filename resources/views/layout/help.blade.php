@@ -15,15 +15,24 @@
 <body>
 <div class="h-full grid-help">
     <header class="page-header mb-10">
-        <div class="overlay h-full py-10 px-5 flex items-center">
+        <div class="overlay h-full py-2 px-3 md:py-10 md:px-5 flex justify-between items-center">
+            <div class="md:hidden text-white">
+                <a href="">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </a>
+            </div>
             <div>
                 <a href="https://help.activatelearning.com/s/">
                     <img src="{{ asset('img/logo-w.png') }}"
-                         width="250px"
+                            class="w-48 md:w-64"
                          alt="Activate Learning">
                 </a>
             </div>
-            <nav class="flex gap-20 ml-auto">
+            <nav class="hidden md:flex gap-20 md:ml-auto">
                 <a class="text-white hover:text-opacity-90"
                    href="https://help.activatelearning.com/s/">Home</a>
                 <a class="text-white hover:text-opacity-90"
@@ -31,7 +40,7 @@
                 <a class="text-white hover:text-opacity-90"
                    href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
             </nav>
-            <div class="text-white ml-16">
+            <div class="text-white md:ml-16">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
         </div>
