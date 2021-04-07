@@ -36,15 +36,20 @@
                                 <img src="{{ asset('img/logo-w.png') }}" class="w-48 md:w-64" alt="Activate Learning">
                             </a>
                         </div>
-                        <nav class="absolute flex flex-col bg-white w-full left-0 top-12 md:flex-row md:relative md:top-0 md:gap-20 md:ml-auto md:bg-transparent md:w-auto md:block" x-show="mobile_nav">
+                        <nav class="absolute flex flex-col bg-white w-full left-0 top-12" x-show="mobile_nav">
+                            <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50" href="https://help.activatelearning.com/s/">Home</a>
 
-                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/">Home</a>
+                            <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50" href="https://help.activatelearning.com/s/system-status">System Status</a>
 
-                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/system-status">System Status</a>
-
-                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
+                            <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
                         </nav>
-                        <div class="text-white md:ml-16">
+
+                        <nav class="hidden md:block flex flex-row sm:gap-10 gap-20 ml-auto block">
+                            <a class="text-white inline-block hover:opacity-90" href="https://help.activatelearning.com/s/">Home</a>
+                            <a class="text-white inline-block hover:opacity-90" href="https://help.activatelearning.com/s/system-status">System Status</a>
+                            <a class="text-white inline-block hover:opacity-90" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
+                        </nav>
+                        <div class="text-white sm:ml-8 md:ml-16">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
