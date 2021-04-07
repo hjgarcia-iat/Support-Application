@@ -9,53 +9,62 @@
     <link rel="shortcut icon" href="{{  asset('favicon.png') }}">
     <title>Support - @yield('pageTitle')</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.8.0/dist/alpine.js">
+    <script src="{{ asset('js/alpine.js') }}"></script>
 </head>
 
 <body>
-    <div class="h-full grid-help">
-        <header class="page-header mb-10 relative">
-            <div class="overlay h-full">
-                <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto">
-                    <div class="md:hidden text-white">
-                        <a href="">
+    <div x-data="{mobile_nav:false}" class="h-full">
+        <div class="grid-help h-full relative">
+            <header class="page-header mb-10 relative z-20">
+                <div class="overlay h-full">
+                    <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto">
+                        <div class="md:hidden text-white">
+                            <a href="" @click.prevent="mobile_nav = true" x-show="mobile_nav === false">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </a>
+                            <a href="" @click.prevent="mobile_nav = false" x-show="mobile_nav === true">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="https://help.activatelearning.com/s/">
+                                <img src="{{ asset('img/logo-w.png') }}" class="w-48 md:w-64" alt="Activate Learning">
+                            </a>
+                        </div>
+                        <nav class="absolute flex flex-col bg-white w-full left-0 top-12 md:flex-row md:relative md:top-0 md:gap-20 md:ml-auto md:bg-transparent md:w-auto md:block" x-show="mobile_nav">
+
+                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/">Home</a>
+
+                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/system-status">System Status</a>
+
+                            <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
+                        </nav>
+                        <div class="text-white md:ml-16">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
-                        </a>
-                    </div>
-
-                    <div>
-                        <a href="https://help.activatelearning.com/s/">
-                            <img src="{{ asset('img/logo-w.png') }}" class="w-48 md:w-64" alt="Activate Learning">
-                        </a>
-                    </div>
-                    <nav class="absolute hidden  flex flex-col bg-white w-full left-0 top-12 md:flex-row md:relative md:top-0 z-10 md:gap-20 md:ml-auto md:bg-transparent md:w-auto md:block">
-
-                        <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/">Home</a>
-
-                        <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/system-status">System Status</a>
-
-                        <a class="text-gray-700 md:text-white px-5 py-3 border-b md:border-none block md:inline-block hover:text-orange-500 hover:bg-blue-50 md:hover:text-white md:hover:opacity-90 md:hover:bg-transparent" href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
-                    </nav>
-                    <div class="text-white md:ml-16">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                        </svg>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <main role="main" class="page-content">
-            <div class="">
-                <section class="w-full md:w-3/5 xl:w-2/5 mx-auto">
-                    @yield('content')
-                </section>
-            </div>
-        </main>
-        <footer class="bg-black text-white p-5 page-footer">
-            <p class="text-center">&copy; Copyright 2021 Activate Learning</p>
-        </footer>
+            </header>
+            <main role="main" class="page-content">
+
+                <div class="">
+                    <section class="w-full md:w-3/5 xl:w-2/5 mx-auto">
+                        @yield('content')
+                    </section>
+                </div>
+            </main>
+            <footer class="bg-black text-white p-5 page-footer">
+                <p class="text-center">&copy; Copyright 2021 Activate Learning</p>
+            </footer>
+        </div>
+        <a @click.prevent="mobile_nav = false" x-show="mobile_nav === true" class="absolute opacity-30 bg-black top-0 left-0 h-full w-full z-10 cursor-pointer"></a>
     </div>
     @yield('scripts')
 </body>
