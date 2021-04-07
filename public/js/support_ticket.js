@@ -33728,9 +33728,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
 
 
 new vue__WEBPACK_IMPORTED_MODULE_1__.default({
-  el: '#contact-request',
+  el: '#support-ticket-form',
   components: {
-    'contact_request_form': _pages_contact_request_SupportTicketPage__WEBPACK_IMPORTED_MODULE_0__.default
+    'support_ticket_form': _pages_contact_request_SupportTicketPage__WEBPACK_IMPORTED_MODULE_0__.default
   }
 });
 })();

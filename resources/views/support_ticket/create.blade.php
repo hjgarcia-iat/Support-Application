@@ -1,8 +1,8 @@
-@extends('layout.simple')
-@section('pageTitle','Contact Us')
+@extends('layout.help')
+@section('pageTitle','Create Support Ticket')
 @section('content')
-    <div id="contact-request">
-        <contact_request_form></contact_request_form>
+    <div id="support-ticket-form">
+        <support_ticket_form></support_ticket_form>
     </div>
 @endsection
 

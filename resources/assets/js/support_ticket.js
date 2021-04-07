@@ -1,12 +1,12 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import ContactRequest from './pages/contact-request/SupportTicketPage';
+import SupportTicketForm from './pages/contact-request/SupportTicketPage';
 
 
 new Vue({
-    el        : '#contact-request',
+    el        : '#support-ticket-form',
     components: {
-        'contact_request_form': ContactRequest
+        'support_ticket_form': SupportTicketForm
     }
 });
