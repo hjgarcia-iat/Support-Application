@@ -40,10 +40,10 @@
                 <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
                         href="https://help.activatelearning.com/s/">Home</a>
 
-                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90 {{ request()->is('system-status') ? 'border-blue-400 border-b-2' : '' }}"
                         href="{{ route('system_status.index') }}">System Status</a>
 
-                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90 {{ request()->is('support-ticket/create') ? 'border-blue-400 border-b-2' : '' }}"
                         href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
