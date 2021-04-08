@@ -33,9 +33,10 @@ Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('s
 
 Route::get('/system-status',[SystemStatusController::class,'index'])->name('system_status.index');
 
+
+
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
-
 
 Route::get('/request-product-information', [RequestProductInformationController::class, 'create'])->name("request_product_info.create");
 Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store")->middleware(ProtectAgainstSpam::class);;
