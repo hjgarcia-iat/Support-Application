@@ -18,11 +18,11 @@
     "league/flysystem-aws-s3-v3": "1.*",
     "omniphx/forrest": "2.*",
     "revolution/laravel-google-sheets": "5.3.*",
-    "spatie/laravel-honeypot": "^3.0"
+    "spatie/laravel-honeypot": "^3.0",
+    "barryvdh/laravel-ide-helper": "v2.8.*"
   },
   "require-dev": {
     "spinen/laravel-mail-assertions": "dev-develop",
-    "barryvdh/laravel-ide-helper": "v2.8.*",
     "facade/ignition": "^2.0",
     "fzaninotto/faker": "^1.9.1",
     "mockery/mockery": "^1.3.1",
