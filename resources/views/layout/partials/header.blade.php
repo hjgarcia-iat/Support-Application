@@ -37,11 +37,13 @@
             </nav>
 
             <nav class="hidden md:block flex ml-auto" x-show="search===false">
-                <a class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
-                        href="https://help.activatelearning.com/s/">Home</a> <a
-                        class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
-                        href="{{ route('system_status.index') }}">System Status</a> <a
-                        class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
+                        href="https://help.activatelearning.com/s/">Home</a>
+
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
+                        href="{{ route('system_status.index') }}">System Status</a>
+
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
                         href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
