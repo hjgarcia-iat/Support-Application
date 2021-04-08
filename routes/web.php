@@ -7,6 +7,7 @@ use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
+use App\Http\Controllers\SystemStatusController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::get('/', function () {
@@ -22,9 +23,15 @@ Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])-
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class,'store'])->name('return_request.store');
 
+
+/**
+ * Help area
+ */
 Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
 Route::post('/support-tickets', [SupportTicketController::class,'store'])->name('support_ticket.store');
 Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
+
+Route::get('/system-status',[SystemStatusController::class,'index'])->name('system_status.index');
 
 Route::get('/calculator', [CalculatorController::class, 'show'])->name("calculator.show");
 Route::post('/calculator', [CalculatorController::class, 'store'])->name("calculator.store");
