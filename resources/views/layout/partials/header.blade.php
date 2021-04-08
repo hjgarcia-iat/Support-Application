@@ -30,19 +30,19 @@
                         href="https://help.activatelearning.com/s/">Home</a>
 
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
-                        href="https://help.activatelearning.com/s/system-status">System Status</a>
+                        href="{{ route('system_status.index') }}">System Status</a>
 
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
-                        href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
+                        href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
             <nav class="hidden md:block flex ml-auto" x-show="search===false">
                 <a class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
                         href="https://help.activatelearning.com/s/">Home</a> <a
                         class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
-                        href="https://help.activatelearning.com/s/system-status">System Status</a> <a
+                        href="{{ route('system_status.index') }}">System Status</a> <a
                         class="text-white inline-block sm:mx-1 lg:mx-4 hover:opacity-90"
-                        href="https://help.activatelearning.com/s/contactsupport">Contact Support</a>
+                        href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
             <div x-show="search === true" class="flex items-center md:ml-auto w-full md:w-6/12">
