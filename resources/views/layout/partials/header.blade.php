@@ -1,6 +1,6 @@
 <header class="page-header mb-10 relative z-20">
     <div class="overlay h-full">
-        <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto">
+        <div class="h-full py-2 px-3 flex justify-between items-center md:py-10 md:px-5 md:w-4/6 mx-auto relative">
             <div class="md:hidden text-white" x-show="search===false">
                 <a href="" @click.prevent="mobile_nav = true" x-show="mobile_nav === false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -25,7 +25,7 @@
                 <a href="https://help.activatelearning.com/s/"> <img src="{{ asset('img/logo-w.png') }}"
                             class="w-48 md:w-64" alt="Activate Learning"> </a>
             </div>
-            <nav class="flex flex-col bg-white w-full" x-show="mobile_nav">
+            <nav class="flex flex-col bg-white w-full absolute top-12 left-0" x-show="mobile_nav">
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
                         href="https://help.activatelearning.com/s/">Home</a>
 
