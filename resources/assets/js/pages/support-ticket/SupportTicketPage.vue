@@ -350,12 +350,14 @@ export default {
         submitForm() {
             this.loading = true;
 
-            axios.post('/contact-request', this.formData())
+            axios.post('/support-tickets', this.formData())
                 .then(response => {
                     if (response.data.success === true) {
                         this.id = response.data.id;
+
                         this.uploadImages();
-                        this.showSuccess('Thanks! One of our support agents will respond shortly.');
+
+                        window.location.href = 'https://help.activatelearning.com/s/contactsupport'
                     }
                 }).catch(error => {
                 if (error.response.status === 422) {
@@ -365,9 +367,9 @@ export default {
                 }
             });
         },
-        uploadImages() {
+        async uploadImages() {
             if (this.files.length > 0) {
-                this.$refs.dropzone.processQueue();
+               await this.$refs.dropzone.processQueue();
             }
         },
         //for dropzone

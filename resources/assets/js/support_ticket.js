@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import SupportTicketForm from './pages/contact-request/SupportTicketPage';
+import SupportTicketForm from './pages/support-ticket/SupportTicketPage';
 
 
 new Vue({
