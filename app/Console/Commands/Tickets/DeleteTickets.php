@@ -33,8 +33,8 @@ class DeleteTickets extends Command
 
                 $ticket->delete();
             }
-
-            \Mail::to(config('mail.to.dev_email'))->send(new DeleteTicketsMail($count));
         }
+
+        \Mail::to(config('mail.to.dev_email'))->send(new DeleteTicketsMail($count));
     }
 }

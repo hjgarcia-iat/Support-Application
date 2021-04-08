@@ -1,26 +1,28 @@
-const colors = require('tailwindcss/colors')
+const colors = require("tailwindcss/colors");
 
 module.exports = {
     purge: [
-        './resources/**/*.blade.php',
-        './resources/**/*.js',
-        './resources/**/*.vue',
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
     ],
     darkMode: false,
     theme: {
         extend: {
+            spacing: {               
+                "100": "27rem",
+            },
             colors: {
                 orange: colors.orange,
                 blue: {
-                    'brand' : '#0061AA',
-                    'brand-medium' : '#004779',
-                    'brand-light' : '#4498d0',
-                    'brand-dark' : '#002e42'
-                }
-            }
+                    brand: "#0061AA",
+                    "brand-medium": "#004779",
+                    "brand-light": "#4498d0",
+                    "brand-dark": "#002e42",
+                },
+            },
         },
     },
-    variants: {
-    },
+    variants: {},
     plugins: [],
-}
+};

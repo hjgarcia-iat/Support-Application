@@ -22,6 +22,6 @@ class HomePageTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(302);
-        $response->assertRedirect('https://activatelearning.com');
+        $response->assertRedirect('https://help.activatelearning.com/s/');
     }
 }

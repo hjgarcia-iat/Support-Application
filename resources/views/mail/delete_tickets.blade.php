@@ -14,6 +14,8 @@
     <p>{{$count}} tickets were deleted.</p>
 @elseif($count == 1)
     <p>1 ticket was deleted from the system.</p>
+@elseif($count == 0)
+    <p>No tickets were deleted from the system.</p>
 @endif
 </body>
 </html>
