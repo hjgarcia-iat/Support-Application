@@ -47,7 +47,7 @@
                         href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
-            <div x-show="search === true" class="flex items-center md:ml-auto w-full md:w-6/12">
+            <div x-show="search === true" class="flex items-center md:ml-auto w-full md:w-100">
                 <input id="search-field" placeholder="Search..." type="text"
                         class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none flex-1">
                 <a href="" @click.prevent="search = false" class="cursor-pointer text-white" x-show="search === true">
