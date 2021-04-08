@@ -104,12 +104,15 @@ class DeleteTicketsTest extends TestCase
         Storage::disk('s3')->assertExists("contact-request/$fileD->file");
         Storage::disk('s3')->assertExists("contact-request/$fileE->file");
 
-        $this->seeEmailWasNotSent();
+        $this->seeEmailWasSent();
+        $this->seeEmailContains("No tickets were deleted from the system.");
     }
 
-    public function test_it_will_not_send_out_email_if_no_ticket_is_found()
+    public function test_an_email_is_sent_out_even_if_no_tickets_are_deleted()
     {
         \Artisan::call('tickets:delete');
-        $this->seeEmailWasNotSent();
+
+        $this->seeEmailWasSent();
+        $this->seeEmailContains("No tickets were deleted from the system.");
     }
 }
