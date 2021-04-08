@@ -2294,7 +2294,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
           _this.uploadImages();
 
-          window.location.href = 'https://help.activatelearning.com/s/contactsupport';
+          _this.showSuccess('Thanks for reaching out! One of our agents will respond shortly.');
         }
       })["catch"](function (error) {
         if (error.response.status === 422) {

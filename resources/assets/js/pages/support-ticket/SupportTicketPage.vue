@@ -357,7 +357,7 @@ export default {
 
                         this.uploadImages();
 
-                        window.location.href = 'https://help.activatelearning.com/s/contactsupport'
+                       this.showSuccess('Thanks for reaching out! One of our agents will respond shortly.');
                     }
                 }).catch(error => {
                 if (error.response.status === 422) {
