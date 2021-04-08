@@ -8,7 +8,7 @@
         </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 mx-4 py-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-12 mx-4 py-4 gap-8">
         <div class="md:col-span-8">
             <h2 class="font-bold text-gray-600 mb-4 text-2xl text-center">Activate Learning Status</h2>
             <iframe style="height:700px; width:100%; border: 0px solid white; margin: 0 auto;" scrolling="yes"
