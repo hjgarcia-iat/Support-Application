@@ -12,7 +12,7 @@
         <div class="grid-help h-full relative">
             @include('layout.partials.header')
             <main role="main" class="page-content">
-                <section class="w-full md:w-3/5 xl:w-2/5 mx-auto">
+                <section class="container mx-auto">
                     @yield('content')
                 </section>
             </main>
