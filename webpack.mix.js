@@ -20,6 +20,9 @@ mix.js('resources/assets/js/support_ticket.js', 'public/js').vue({ version: 2 })
     .postCss("resources/css/app.css", "public/css", [
         require("tailwindcss"),
     ])
+    .postCss("resources/css/help.css", "public/css", [
+        require("tailwindcss"),
+    ])
     .version()
     .disableNotifications()
     .browserSync({
