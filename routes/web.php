@@ -10,7 +10,7 @@ use App\Http\Controllers\ReturnRequestController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::get('/', function () {
-    return redirect('https://activatelearning.com');
+    return redirect('https://help.activatelearning.com/s/');
 });
 
 Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
