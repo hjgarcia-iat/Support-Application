@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Models;
 
-use App\Contact;
+use App\Ticket;
 use App\File;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -14,7 +14,7 @@ class FileTest extends TestCase
     public function test_it_has_the_correct_fields()
     {
         $data = [
-            'contact_id' => 1,
+            'ticket_id' => 1,
             'file' => 'image.jpg',
         ];
 
@@ -23,11 +23,11 @@ class FileTest extends TestCase
         $this->assertDatabaseHas('files', $data);
     }
 
-    public function test_it_has_a_contact_relationship()
+    public function test_it_has_a_ticket_relationship()
     {
-        $contact = Contact::factory()->create();
-        $file = File::factory()->create(['contact_id' => $contact->id]);
+        $ticket = Ticket::factory()->create();
+        $file = File::factory()->create(['ticket_id' => $ticket->id]);
 
-        $this->assertEquals($contact->id, $file->contact->id);
+        $this->assertEquals($ticket->id, $file->ticket->id);
     }
 }

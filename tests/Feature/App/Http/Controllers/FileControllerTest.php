@@ -34,7 +34,7 @@ class FileControllerTest extends TestCase
         Storage::disk('s3')->assertExists("contact-request/{$file->hashName()}");
 
         $this->assertDatabaseHas('files', [
-            'contact_id' => 1,
+            'ticket_id' => 1,
             'file'       => $file->hashName(),
         ]);
     }

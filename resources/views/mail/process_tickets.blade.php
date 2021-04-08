@@ -9,7 +9,7 @@
     <title>Access Request</title>
 </head>
 <body>
-<h1>Contact Submission</h1>
+<h1>New Ticket Submitted</h1>
 
 <p><strong>Reason</strong>: {{ $reason }}</p>
 <p><strong>Name</strong>: {{ $name }}</p>
@@ -18,9 +18,12 @@
 <p><strong>Details</strong>: {{ $details }}</p>
 @if(count($files) > 0)
     <p><strong>Files</strong>:</p>
+    <ul>
     @foreach($files as $file)
-    <p><strong>File</strong>: <a href="{{ Storage::disk('s3')->url("contact-request/$file->file") }}" target="_blank">View File</a></p>
+        <li><strong>File</strong>: <a href="{{ Storage::disk('s3')->url("contact-request/$file->file") }}"
+            target="_blank">View File</a></li>
     @endforeach
+    </ul>
 @endif
 
 </body>

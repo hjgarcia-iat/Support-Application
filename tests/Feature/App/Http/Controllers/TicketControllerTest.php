@@ -2,15 +2,15 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use App\Contact;
+use App\Ticket;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
- * Class ContactControllerTest
+ * Class TicketControllerTest
  * @package Tests\Feature
  */
-class ContactControllerTest extends TestCase
+class TicketControllerTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -22,20 +22,20 @@ class ContactControllerTest extends TestCase
         $response->assertViewIs('support_ticket.create');
     }
 
-    public function test_the_contact_form_can_submit_with_a_file()
+    public function test_a_ticket_can_be_saved()
     {
         $response = $this->from(route('support_ticket.create'))
             ->post(route('support_ticket.store'), $this->validData());
 
-        $contact = Contact::whereEmail($this->validData()['email'])->first();
+        $ticket = Ticket::whereEmail($this->validData()['email'])->first();
 
         $response->assertStatus(200);
         $response->assertJson([
             'success' => true,
-            'id'      => $contact->id,
+            'id'      => $ticket->id,
         ]);
 
-        $this->assertDatabaseHas('contacts', [
+        $this->assertDatabaseHas('tickets', [
             'reason'   => $this->validData()['reason'],
             'name'     => $this->validData()['name'],
             'email'    => $this->validData()['email'],

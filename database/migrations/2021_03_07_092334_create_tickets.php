@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContacts extends Migration
+class CreateTickets extends Migration
 {
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('reason');
@@ -25,6 +25,6 @@ class CreateContacts extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('tickets');
     }
 }

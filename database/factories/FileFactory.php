@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Contact;
 use App\File;
+use App\Ticket;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FileFactory extends Factory
@@ -18,8 +18,10 @@ class FileFactory extends Factory
     public function definition()
     {
         return [
-            'contact_id'   => 1,
-            'file'     => $this->faker->imageUrl,
+            'ticket_id' => function () {
+                return Ticket::factory()->create()->id;
+            },
+            'file'      => $this->faker->imageUrl,
         ];
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Contact;
+use App\Ticket;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ContactFactory extends Factory
+class TicketFactory extends Factory
 {
-    protected $model = Contact::class;
+    protected $model = Ticket::class;
 
     /**
      * Define the model's default state.

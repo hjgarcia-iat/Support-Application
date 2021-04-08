@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Models;
 
-use App\Contact;
+use App\Ticket;
 use App\File;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ContactTest extends TestCase
+class TicketTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -23,16 +23,16 @@ class ContactTest extends TestCase
             'email_processed' => true,
         ];
 
-        Contact::factory()->create($data);
+        Ticket::factory()->create($data);
 
-        $this->assertDatabaseHas('contacts', $data);
+        $this->assertDatabaseHas('tickets', $data);
     }
 
-    public function test_it_has_an_image_relationship()
+    public function test_it_has_a_file_relationship()
     {
-        $contact = Contact::factory()->create();
-        $file = File::factory()->create(['contact_id' => $contact->id]);
+        $ticket = Ticket::factory()->create();
+        $file = File::factory()->create(['ticket_id' => $ticket->id]);
 
-        $this->assertEquals($file->id, $contact->files->first()->id);
+        $this->assertEquals($file->id, $ticket->files->first()->id);
     }
 }

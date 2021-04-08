@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
+use App\Ticket;
 use App\Http\Requests\ContactFormRequest;
 
 class SupportTicketController extends Controller
@@ -14,7 +14,7 @@ class SupportTicketController extends Controller
 
     public function store(ContactFormRequest $request): \Illuminate\Http\JsonResponse
     {
-        $contact = Contact::create([
+        $contact = Ticket::create([
             'reason'   => $request->get('reason'),
             'name'     => $request->get('name'),
             'email'    => $request->get('email'),

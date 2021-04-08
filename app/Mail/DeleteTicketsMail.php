@@ -4,7 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Mail\Mailable;
 
-class ContactsDeleted extends Mailable
+class DeleteTicketsMail extends Mailable
 {
     protected int $count;
 
@@ -15,6 +15,7 @@ class ContactsDeleted extends Mailable
 
     public function build()
     {
-        return $this->view('emails.contacts-deleted',['count' => $this->count]);
+        return $this->subject('Tickets Deleted')
+                    ->view('mail.delete_tickets',['count' => $this->count]);
     }
 }

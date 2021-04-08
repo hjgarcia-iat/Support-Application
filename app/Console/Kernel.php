@@ -2,8 +2,8 @@
 
 namespace App\Console;
 
-use App\Console\Commands\RemoveContacts;
-use App\Console\Commands\SendEmailToContacts;
+use App\Console\Commands\Tickets\DeleteTickets;
+use App\Console\Commands\Tickets\ProcessTickets;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -15,8 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        RemoveContacts::class,
-        SendEmailToContacts::class,
+        DeleteTickets::class,
+        ProcessTickets::class,
     ];
 
     /**
@@ -27,10 +27,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('contacts:remove')
+         $schedule->command('tickets:delete')
                   ->monthlyOn(1);
 
-         $schedule->command('contacts:email')
+         $schedule->command('tickets:process')
              ->everyFifteenMinutes();
     }
 
