@@ -2252,11 +2252,9 @@ __webpack_require__.r(__webpack_exports__);
           state: this.state
         }).then(function (response) {
           if (response.data.success) {
-            _this.alertVisible = true;
-            _this.alertType = 'success';
-            _this.alertMessage = response.data.message;
-
             _this.reset();
+
+            window.location.href = 'https://activatelearning.com/product-request-confirmation/';
           }
 
           _this.loading = false;
