@@ -12,7 +12,7 @@
         <div class="md:col-span-8">
             <h2 class="font-bold text-gray-600 mb-4 text-2xl text-center">Activate Learning Status</h2>
             <iframe style="height:700px; width:100%; border: 0px solid white; margin: 0 auto;" scrolling="yes"
-                    title="Activate Learning Status" src="http://wwww.activatelearning.com/status/index.php"></iframe>
+                    title="Activate Learning Status" src="https://wwww.activatelearning.com/status/index.php"></iframe>
         </div>
         <div class="md:col-span-4">
             <h2 class="font-bold text-gray-600 mb-4 text-2xl text-center">Our Data Integration Partners</h2>
