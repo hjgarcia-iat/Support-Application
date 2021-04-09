@@ -19,7 +19,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                     id="name" placeholder="Enter name" name="name" v-model="name">
 
                 <form-error :error=formErrors.name[0] v-if="formErrors.name"></form-error>
@@ -30,7 +30,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Email Address</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                     id="email" placeholder="Enter Email Address" name="email" v-model="email">
 
                 <form-error :error=formErrors.email[0] v-if="formErrors.email"></form-error>
@@ -41,7 +41,7 @@
                     <small class="text-lg text-red-600">*</small>
                     District Name</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                     id="district" placeholder="Enter District Name" name="district" v-model="district">
 
                 <form-error :error=formErrors.district[0] v-if="formErrors.district"></form-error>
@@ -52,7 +52,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Order Number or PO Number</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                     id="order_number" placeholder="Order Number or PO Number" name="order_number"
                     v-model="order_number">
 
@@ -64,7 +64,7 @@
                     <small class="text-lg text-red-600">*</small>
                     RMA Number</label>
                 <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                     id="rma_number" placeholder="RMA Number" name="rma_number" v-model="rma_number">
 
                 <form-error :error=formErrors.rma_number[0] v-if="formErrors.rma_number"></form-error>
@@ -75,7 +75,7 @@
                     <small class="text-lg text-red-600">*</small>
                     Reason for Return:</label>
                 <select name="reason" id="reason" v-model="reason"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white">
                     <option value="">Select a Reason for Return</option>
                     <option value="Overstock">Overstock</option>
                     <option value="Ordered in error">Ordered in error</option>
@@ -124,7 +124,7 @@
                     </div>
                     <div class="col-span-4 flex flex-col">
                         <input type="text"
-                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 focus:outline-none focus:bg-white"
                             :id="'sku_' + index" placeholder="Enter SKU" name="products[]['name']"
                             v-model="product.sku">
                         <form-error :error="getErrorForArray(key, 'sku')"
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-span-4 flex flex-col">
                         <input type="text"
-                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white"
+                            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 focus:outline-none focus:bg-white"
                             :id="'quantity_'+index" placeholder="Enter Quantity" name="products[]['school']"
                             v-model="product.quantity">
 

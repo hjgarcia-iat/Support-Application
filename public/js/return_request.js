@@ -20050,7 +20050,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "name",
@@ -20091,7 +20091,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "email",
@@ -20134,7 +20134,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "district",
@@ -20177,7 +20177,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "order_number",
@@ -20220,7 +20220,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "rma_number",
@@ -20265,7 +20265,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                   attrs: { name: "reason", id: "reason" },
                   on: {
                     change: function($event) {
@@ -20445,7 +20445,7 @@ var render = function() {
                             }
                           ],
                           staticClass:
-                            "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
+                            "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 focus:outline-none focus:bg-white",
                           attrs: {
                             type: "text",
                             id: "sku_" + index,
@@ -20486,7 +20486,7 @@ var render = function() {
                             }
                           ],
                           staticClass:
-                            "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 leading-tight focus:outline-none focus:bg-white",
+                            "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 focus:outline-none focus:bg-white",
                           attrs: {
                             type: "text",
                             id: "quantity_" + index,

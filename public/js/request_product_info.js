@@ -20149,7 +20149,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "first_name",
@@ -20192,7 +20192,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "last_name",
@@ -20235,7 +20235,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "email",
@@ -20285,7 +20285,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "phone",
@@ -20330,7 +20330,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                   attrs: { name: "role", id: "role" },
                   on: {
                     change: function($event) {
@@ -20392,7 +20392,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                   attrs: { name: "product_interest", id: "product_interest" },
                   on: {
                     change: function($event) {
@@ -20452,7 +20452,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "school",
@@ -20502,7 +20502,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "district",
@@ -20545,7 +20545,7 @@ var render = function() {
                   }
                 ],
                 staticClass:
-                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                  "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                 attrs: {
                   type: "text",
                   id: "city",
@@ -20588,7 +20588,7 @@ var render = function() {
                     }
                   ],
                   staticClass:
-                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+                    "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white",
                   attrs: { name: "state", id: "state" },
                   on: {
                     change: function($event) {

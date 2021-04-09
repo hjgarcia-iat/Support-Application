@@ -114,7 +114,7 @@
                     <label for="name"
                         class="block text-grey-darker text-sm font-bold mb-2"> <small
                         class="text-lg text-red-600">*</small> Name</label> <input type="text"
-                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
+                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:border-orange-500"
                     id="name"
                     placeholder="Name"
                     name="name"
@@ -127,7 +127,7 @@
                     <label for="email"
                         class="block text-grey-darker text-sm font-bold mb-2"> <small
                         class="text-lg text-red-600">*</small> Email</label> <input type="text"
-                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
+                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:border-orange-500"
                     id="email"
                     placeholder="Email Address"
                     name="email"
@@ -140,7 +140,7 @@
                     <label for="district"
                         class="block text-grey-darker text-sm font-bold mb-2"> <small
                         class="text-lg text-red-600">*</small> School District</label> <input type="text"
-                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
+                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:border-orange-500"
                     id="district"
                     placeholder="School District"
                     name="district"
@@ -153,7 +153,7 @@
                     <label for="subject"
                         class="block text-grey-darker text-sm font-bold mb-2"> <small
                         class="text-lg text-red-600">*</small> Subject</label> <input type="text"
-                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
+                    class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:border-orange-500"
                     id="subject"
                     placeholder="Subject"
                     name="subject"
@@ -170,7 +170,7 @@
 
                     <textarea name="details"
                         id="details"
-                        class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-orange-500"
+                        class="appearance-none block w-full border border-gray-500 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:border-orange-500"
                         cols="30"
                         placeholder="Details"
                         rows="5"

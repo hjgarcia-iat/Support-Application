@@ -16,7 +16,7 @@
                     First Name</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="first_name"
                        placeholder="Enter first name"
                        name="first_name"
@@ -33,7 +33,7 @@
                     Last Name</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="last_name"
                        placeholder="Enter last name"
                        name="last_name"
@@ -50,7 +50,7 @@
                     Email Address</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="email"
                        placeholder="Enter email address"
                        name="email"
@@ -66,7 +66,7 @@
                     Phone Number</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="phone"
                        placeholder="Enter phone number"
                        name="phone"
@@ -83,7 +83,7 @@
                     Role</label>
 
                 <select name="role"
-                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                         v-model="role"
                         id="role">
                     <option value="">Select a role</option>
@@ -103,7 +103,7 @@
                     Product Interest</label>
 
                 <select name="product_interest"
-                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                         v-model="product_interest"
                         id="product_interest">
 
@@ -150,7 +150,7 @@
                     School Name</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="school"
                        placeholder="Enter school name"
                        name="school"
@@ -166,7 +166,7 @@
                     District Name</label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="district"
                        placeholder="Enter district name"
                        name="district"
@@ -184,7 +184,7 @@
                 </label>
 
                 <input type="text"
-                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                       class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                        id="city"
                        placeholder="Enter city name"
                        name="city"
@@ -201,7 +201,7 @@
                     State/Territory</label>
 
                 <select name="state"
-                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 focus:outline-none focus:bg-white"
                         v-model="state"
                         id="state">
 
