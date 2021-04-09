@@ -23,8 +23,6 @@
         </main>
         @include('layout.partials.footer')
     </div>
-    <a @click.prevent="mobile_nav = false" x-show="mobile_nav === true"
-            class="absolute opacity-30 bg-black top-0 left-0 h-full w-full z-10 cursor-pointer"></a>
 </div>
 @yield('scripts')
 </body>

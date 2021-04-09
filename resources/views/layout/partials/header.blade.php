@@ -25,7 +25,12 @@
                 <a href="https://help.activatelearning.com/s/"> <img src="{{ asset('img/logo-w.png') }}"
                             class="w-48 md:w-64" alt="Activate Learning"> </a>
             </div>
-            <nav class="flex flex-col bg-white w-full absolute top-12 left-0" x-show="mobile_nav">
+            <nav class="flex flex-col bg-white border-b w-full absolute top-12 left-0 shadow" x-show.transition="mobile_nav" x-on:click.away="mobile_nav=false"
+                    x-transition:enter="transition-transform ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-end="transform -translate-y-3">
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
                         href="https://help.activatelearning.com/s/">Home</a>
 
@@ -36,7 +41,8 @@
                         href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
-            <nav class="hidden md:block flex ml-auto" x-show="search===false">
+
+        <nav class="hidden md:block flex ml-auto" x-show.transition="search===false">
                 <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
                         href="https://help.activatelearning.com/s/">Home</a>
 
