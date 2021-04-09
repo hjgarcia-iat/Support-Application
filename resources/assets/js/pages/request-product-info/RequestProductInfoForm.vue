@@ -336,11 +336,8 @@ export default {
                     state: this.state,
                 }).then(response => {
                     if (response.data.success) {
-                        this.alertVisible = true
-
-                        this.alertType = 'success'
-                        this.alertMessage = response.data.message
-                        this.reset();
+                        this.reset()
+                       window.location.href = 'https://activatelearning.com/product-request-confirmation/'
                     }
 
                     this.loading = false;
