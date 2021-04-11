@@ -17,6 +17,7 @@ class CreateStatusesTable extends Migration
             $table->id();
             $table->string('post');
             $table->enum('type',[
+                'Default',
                 'High',
                 'Medium',
                 'Low'

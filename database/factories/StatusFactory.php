@@ -22,7 +22,7 @@ class StatusFactory extends Factory
     public function definition()
     {
         return [
-            'type' => $this->faker->randomElement(['High', 'Medium', 'Low']),
+            'type' => $this->faker->randomElement(['High', 'Medium', 'Low','Default']),
             'post' => $this->faker->paragraph
         ];
     }
