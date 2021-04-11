@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         Status::factory()->create(['type' => 'High', 'created_at' => Carbon::now()->subMonth()]);
         Status::factory()->create(['type' => 'Medium', 'created_at' => Carbon::now()->subDays(5)]);
         Status::factory()->create(['type' => 'Low', 'created_at' => Carbon::now()->subDays(2)]);
+        Status::factory()->create(['type' => 'Default']);
     }
 }
