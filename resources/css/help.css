@@ -12,23 +12,23 @@ html, body {
 }
 
 .status-default {
-    border-left-width: 1rem;
-    border-left-color: #15803D;
+    border-left-width: theme('borderWidth.8');
+    border-left-color: theme('colors.green.700');
 }
 
 .status-low {
-    border-left-width: 1rem;
-    border-left-color: #FDE047;
+    border-left-width: theme('borderWidth.8');
+    border-left-color: theme('colors.yellow.500');
 }
 
 .status-medium {
-    border-left-width: 1rem;
-    border-left-color: #EF4444;
+    border-left-width: theme('borderWidth.8');
+    border-left-color: theme('colors.orange.500');
 }
 
 .status-high {
-    border-left-width: 1rem;
-    border-left-color: #F97316;
+    border-left-width: theme('borderWidth.8');
+    border-left-color: theme('colors.red.500');
 }
 
 /*CSS Help Layout Grid*/
