@@ -7,6 +7,30 @@ html, body {
     height: 100%;
 }
 
+.status-block {
+     @apply border border-gray-300;
+}
+
+.status-default {
+    border-left-width: 1rem;
+    border-left-color: #15803D;
+}
+
+.status-low {
+    border-left-width: 1rem;
+    border-left-color: #FDE047;
+}
+
+.status-medium {
+    border-left-width: 1rem;
+    border-left-color: #EF4444;
+}
+
+.status-high {
+    border-left-width: 1rem;
+    border-left-color: #F97316;
+}
+
 /*CSS Help Layout Grid*/
 .grid-help {
     display: grid;
