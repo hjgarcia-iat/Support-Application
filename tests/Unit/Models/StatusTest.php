@@ -3,7 +3,6 @@
 namespace Tests\Unit\Models;
 
 use App\Status;
-use Carbon\Carbon;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
