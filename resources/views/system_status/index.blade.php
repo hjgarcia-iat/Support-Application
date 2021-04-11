@@ -15,7 +15,7 @@
             <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
                 <div class="flex items-center text-sm justify-between uppercase tracking-wide text-blue-brand">
                     <div>{{ $status->created_at->format("F j, Y") }}</div>
-                    <div>{{ $status->created_at->format("h:i:s A T") }}</div>
+                    <div>{{ $status->created_at->format("h:i A T") }}</div>
                 </div>
                 <p class="text-xl my-3">{{ $status->post }}</p>
             </div>
