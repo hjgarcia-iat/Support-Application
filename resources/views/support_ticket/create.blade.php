@@ -1,4 +1,4 @@
-@extends('layout.help')
+@extends('layouts.help')
 @section('pageTitle','Create Support Ticket')
 @section('content')
 

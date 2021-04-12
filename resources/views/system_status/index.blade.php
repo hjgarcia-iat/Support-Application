@@ -1,4 +1,4 @@
-@extends('layout.help')
+@extends('layouts.help')
 @section('pageTitle','System Status')
 @section('content')
     <div class="m-4">
