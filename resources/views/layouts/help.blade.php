@@ -4,15 +4,10 @@
 <head>
     @include('layouts.partials.meta')
     @include('layouts.partials.styles')
-    @if(config('app.env') === 'production')
-        <script>
-            document.domain = 'activatelearning.com';
-        </script>
-    @endif
     <script src="{{ asset('js/alpine.js') }}"></script>
 </head>
 
-<body>
+<body class="font-sans text-gray-900 antialiased">
 <div x-data="{mobile_nav:false, search:false}" class="h-full">
     <div class="grid-help h-full relative">
         @include('layouts.partials.header')

@@ -8,8 +8,11 @@ module.exports = {
     ],
     darkMode: false,
     theme: {
+        fontFamily: {
+            'sans': ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        },
         extend: {
-            spacing: {               
+            spacing: {
                 "100": "27rem",
             },
             colors: {
