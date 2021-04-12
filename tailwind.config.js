@@ -13,6 +13,7 @@ module.exports = {
                 "100": "27rem",
             },
             colors: {
+                lightBlue: colors.lightBlue,
                 orange: colors.orange,
                 blue: {
                     brand: "#0061AA",
