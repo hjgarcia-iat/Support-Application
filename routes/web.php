@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
@@ -10,9 +11,7 @@ use App\Http\Controllers\ReturnRequestController;
 use App\Http\Controllers\SystemStatusController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
-Route::get('/', function () {
-    return redirect('https://help.activatelearning.com/s/');
-});
+Route::get('/', [HomeController::class,'index'])->name('home');
 
 Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
 Route::post('/access-request', [AccessRequestController::class, 'store'])->name('access_request.store');
