@@ -32,7 +32,7 @@
                     x-transition:leave="transition ease-in duration-300"
                     x-transition:leave-end="transform -translate-y-3">
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
-                        href="https://help.activatelearning.com/s/">Home</a>
+                        href="{{ route('home') }}">Home</a>
 
                 <a class="text-gray-700 px-5 py-3 border-b block hover:text-orange-500 hover:bg-blue-50"
                         href="{{ route('system_status.index') }}">System Status</a>
@@ -43,8 +43,8 @@
 
 
         <nav class="hidden md:block flex ml-auto" x-show.transition="search===false">
-                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90"
-                        href="https://help.activatelearning.com/s/">Home</a>
+                <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90 {{ request()->is('/') ? 'border-blue-400 border-b-2' : '' }}"
+                        href="{{ route('home') }}">Home</a>
 
                 <a class="text-white text-lg inline-block sm:mx-1 lg:mx-6 hover:opacity-90 {{ request()->is('system-status') ? 'border-blue-400 border-b-2' : '' }}"
                         href="{{ route('system_status.index') }}">System Status</a>
