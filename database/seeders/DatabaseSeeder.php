@@ -16,8 +16,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Status::factory()->create(['type' => 'High', 'created_at' => Carbon::now()->subMonth()]);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(6), 'post' => 'All Systems Operational.']);
         Status::factory()->create(['type' => 'Medium', 'created_at' => Carbon::now()->subDays(5)]);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(5), 'post' => 'All Systems Operational.']);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(4), 'post' => 'All Systems Operational.']);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(3), 'post' => 'All Systems Operational.']);
         Status::factory()->create(['type' => 'Low', 'created_at' => Carbon::now()->subDays(2)]);
-        Status::factory()->create(['type' => 'Default','post' => 'All Systems Operational.']);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(2), 'post' => 'All Systems Operational.']);
+        Status::factory()->create(['type' => 'Low', 'created_at' => Carbon::now()->subDays(1)]);
+        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(1), 'post' => 'All Systems Operational.']);
+        Status::factory()->create(['type' => 'Default', 'post' => 'All Systems Operational.']);
     }
 }
