@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Status;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        User::factory()->create(['email' => 'test@email.com']);
+
         Status::factory()->create(['type' => 'High', 'created_at' => Carbon::now()->subMonth()]);
         Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(6), 'post' => 'All Systems Operational.']);
         Status::factory()->create(['type' => 'Medium', 'created_at' => Carbon::now()->subDays(5)]);
