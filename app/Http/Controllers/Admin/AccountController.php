@@ -16,7 +16,7 @@ class AccountController extends Controller
         auth()->user()->update([
             'name'     => request('name'),
             'email'    => request('email'),
-            'password' => bcrypt(request('password')),
+            'password' => request()->has('password') ? bcrypt(request('password')) : auth()->user()->password,
         ]);
 
         return redirect(route('admin.account.edit'))
