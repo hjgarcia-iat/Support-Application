@@ -14,7 +14,7 @@ class AccountControllerTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_we_can_see_the_account_page()
+    public function test_we_can_see_the_account_edit_page()
     {
         $user = User::factory()->create();
 
@@ -24,9 +24,9 @@ class AccountControllerTest extends TestCase
         $response->assertViewIs("admin.account.edit");
     }
 
-    public function test_we_cannot_see_the_dashboard_page_if_we_are_not_authenticated()
+    public function test_we_cannot_see_account_edit_page_if_we_are_not_authenticated()
     {
-        $this->get(route("dashboard"))->assertRedirect(route('login'));
+        $this->get(route("admin.account.edit"))->assertRedirect(route('login'));
     }
 
 }
