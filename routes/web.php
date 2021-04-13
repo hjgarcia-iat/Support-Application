@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccessRequestController;
+use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HomeController;
@@ -50,6 +51,10 @@ Route::get('/system-status',[SystemStatusController::class,'index'])->name('syst
 /**
  * Admin Routes
  */
-Route::get('/dashboard',[DashboardController::class,'index'])
-    ->name('dashboard')
-    ->middleware(['auth']);
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/dashboard',[DashboardController::class,'index'])
+        ->name('dashboard');
+
+    Route::get('/account',[AccountController::class, 'edit'])
+        ->name('admin.account.edit');
+});
