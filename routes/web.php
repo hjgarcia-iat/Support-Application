@@ -57,4 +57,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/account',[AccountController::class, 'edit'])
         ->name('admin.account.edit');
+
+    Route::post('/account',[AccountController::class, 'update'])
+        ->name('admin.account.update');
 });

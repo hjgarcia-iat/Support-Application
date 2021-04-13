@@ -10,4 +10,16 @@ class AccountController extends Controller
     {
         return view('admin.account.edit');
     }
+
+    public function update()
+    {
+        auth()->user()->update([
+            'name'     => request('name'),
+            'email'    => request('email'),
+            'password' => bcrypt(request('password')),
+        ]);
+
+        return redirect(route('admin.account.edit'))
+            ->with('success', 'Account was updated.');
+    }
 }
