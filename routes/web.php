@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RequestProductInformationController;
@@ -60,4 +61,22 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::post('/account',[AccountController::class, 'update'])
         ->name('admin.account.update');
+
+    Route::get('/statuses',[StatusController::class, 'index'])
+        ->name('admin.statuses');
+
+    Route::get('/statuses/create',[StatusController::class, 'create'])
+        ->name('admin.statuses.create');
+
+    Route::post('/statuses',[StatusController::class, 'store'])
+        ->name('admin.statuses.store');
+
+    Route::get('/statuses/{status}',[StatusController::class, 'edit'])
+        ->name('admin.statuses.edit');
+
+    Route::post('/statuses/{status}',[StatusController::class, 'update'])
+        ->name('admin.statuses.update');
+
+    Route::get('/statuses/{status}/delete',[StatusController::class, 'delete'])
+        ->name('admin.statuses.delete');
 });
