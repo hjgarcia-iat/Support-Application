@@ -50,7 +50,7 @@
                             </a>
                         </div>
                         <div class="col-span-4 text-center text-white shadow-sm">
-                            <a href=""
+                            <a href="{{ route('admin.account.edit') }}"
                                class="block w-full h-full p-8 bg-lightBlue-700 hover:bg-lightBlue-800">
                                 <h3 class="text-3xl mb-8">Account</h3>
                                 <div class="flex justify-center">
