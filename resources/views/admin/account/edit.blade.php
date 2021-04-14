@@ -20,19 +20,19 @@
                         @csrf
 
                         <div class="mt-4 md:grid grid-cols-6 gap-8 items-center">
-                            <x-label for="name" class="col-span-1 font-bold uppercase tracking-wide" :value="__('Name')"/>
+                            <x-label for="name" class="col-span-1 font-bold uppercase tracking-wide text-left md:text-right" :value="__('Name')"/>
                             <x-input id="name" class="block mt-1 w-full col-span-5" type="name" name="name" :value="old('name', auth()->user()->name)"
                                      autofocus/>
                         </div>
 
                         <div class="mt-4 md:grid grid-cols-6 gap-8 items-center">
-                            <x-label for="email" class="col-span-1 font-bold uppercase tracking-wide" :value="__('Email')"/>
+                            <x-label for="email" class="col-span-1 font-bold uppercase tracking-wide text-left md:text-right" :value="__('Email')"/>
                             <x-input id="email" class="block mt-1 w-full col-span-5" type="email" name="email"
                                      :value="old('email', auth()->user()->email)" autofocus/>
                         </div>
 
                         <div class="mt-4 md:grid grid-cols-6 gap-8 items-center">
-                            <x-label for="password" class="col-span-1 font-bold uppercase tracking-wide" :value="__('Password')"/>
+                            <x-label for="password" class="col-span-1 font-bold uppercase tracking-wide text-left md:text-right" :value="__('Password')"/>
                             <x-input id="password" class="block mt-1 w-full col-span-5"
                                      type="password"
                                      name="password"
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="mt-4 md:grid grid-cols-6 gap-8 items-center">
-                            <x-label for="password_confirmation" class="col-span-1 font-bold uppercase tracking-wide" :value="__('Confirm Password')"/>
+                            <x-label for="password_confirmation" class="col-span-1 font-bold uppercase tracking-wide text-left md:text-right" :value="__('Confirm Password')"/>
                             <x-input id="password_confirmation" class="block mt-1 w-full col-span-5"
                                      type="password"
                                      name="password_confirmation"
