@@ -17,7 +17,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    <x-auth-session-status class="mb-4" :status="session('status')"/>
+                    <x-auth-session-status class="mb-4" :status="session('status')" :type="session('type')"/>
 
                     <div class="my-4">
                         {{ $statuses->links() }}

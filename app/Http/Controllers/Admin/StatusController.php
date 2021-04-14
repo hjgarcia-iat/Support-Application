@@ -27,7 +27,8 @@ class StatusController extends Controller
         ]);
 
         return redirect(route('admin.statuses'))
-            ->with('success', 'System status added.');
+            ->with('type', 'success')
+            ->with('status', 'System status added.');
     }
 
     public function edit(Status $status)
@@ -43,7 +44,8 @@ class StatusController extends Controller
         ]);
 
         return redirect(route('admin.statuses.edit', $status))
-            ->with('success', 'Status was updated.');
+            ->with('type', 'success')
+            ->with('status', 'System status updated.');
     }
 
     public function delete(Status $status)
@@ -51,7 +53,8 @@ class StatusController extends Controller
         $status->delete();
 
         return redirect(route('admin.statuses'))
-            ->with('success', 'Status was deleted.');
+            ->with('type', 'success')
+            ->with('status', 'System status deleted.');
 
     }
 }

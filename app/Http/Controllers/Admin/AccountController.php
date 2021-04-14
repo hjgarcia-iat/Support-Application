@@ -21,6 +21,7 @@ class AccountController extends Controller
         ]);
 
         return redirect(route('admin.account.edit'))
-            ->with('success', 'Account was updated.');
+            ->with('type', 'success')
+            ->with('status', 'Account was updated.');
     }
 }
