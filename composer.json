@@ -20,6 +20,7 @@
     "league/flysystem-aws-s3-v3": "1.*",
     "omniphx/forrest": "2.*",
     "revolution/laravel-google-sheets": "5.3.*",
+    "schuppo/password-strength": "~2.0",
     "spatie/laravel-honeypot": "^3.0"
   },
   "require-dev": {
