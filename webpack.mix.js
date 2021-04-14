@@ -26,7 +26,7 @@ mix.js('resources/assets/js/support_ticket.js', 'public/js').vue({ version: 2 })
     .version()
     .disableNotifications()
     .browserSync({
-        proxy: "http://support.activatelearning.local",
+        proxy: "alsupport",
         files: [
             "public/js/*.js",
             "public/css/*.css",
