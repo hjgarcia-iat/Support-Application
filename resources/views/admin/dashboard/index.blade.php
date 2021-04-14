@@ -13,7 +13,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="grid grid-cols-12 gap-x-12">
                         <div class="col-span-4 text-center text-white shadow-sm">
-                            <a href=""
+                            <a href="{{ route('admin.tickets') }}"
                                class="block w-full h-full p-8 bg-lightBlue-700 hover:bg-lightBlue-800">
                                 <h3 class="text-3xl mb-8">Tickets</h3>
                                 <div class="flex justify-center">

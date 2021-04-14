@@ -20,11 +20,6 @@ class TicketController extends Controller
         return view('admin.tickets.create',);
     }
 
-    public function show(Ticket $ticket)
-    {
-        return view('admin.tickets.show',compact('ticket'));
-    }
-
     public function delete(Ticket $ticket)
     {
         if ($ticket->files !== null) {

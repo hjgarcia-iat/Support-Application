@@ -31,37 +31,6 @@ class TicketControllerTest extends TestCase
         });
     }
 
-    public function test_we_can_see_the_create_tickets_page()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->get(route("admin.tickets.create"));
-
-        $response->assertStatus(200);
-        $response->assertViewIs("admin.tickets.create");
-    }
-
-    public function test_we_can_view_a_ticket()
-    {
-        $user   = User::factory()->create();
-        $ticket = Ticket::factory()->create();
-
-        $response = $this->actingAs($user)->get(route("admin.tickets.show", $ticket));
-
-        $response->assertStatus(200);
-        $response->assertViewIs("admin.tickets.show");
-        $response->assertSee($ticket->name);
-    }
-
-    public function test_we_cannot_see_a_ticket_that_does_not_exist()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->actingAs($user)->get(route("admin.tickets.show", 'does-not-exist'));
-
-        $response->assertStatus(404);
-    }
-
     public function test_we_can_delete_a_ticket()
     {
         $user   = User::factory()->create();
@@ -121,8 +90,6 @@ class TicketControllerTest extends TestCase
     public function test_we_cannot_see_the_tickets_page_if_we_are_not_authenticated()
     {
         $this->get(route("admin.tickets"))->assertRedirect(route('login'));
-        $this->get(route("admin.tickets.create"))->assertRedirect(route('login'));
-        $this->get(route("admin.tickets.show", 'ticket'))->assertRedirect(route('login'));
         $this->get(route("admin.tickets.delete", 'ticket'))->assertRedirect(route('login'));
     }
 }

@@ -66,12 +66,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/tickets', [TicketController::class, 'index'])
          ->name('admin.tickets');
 
-    Route::get('/tickets/create', [TicketController::class, 'create'])
-         ->name('admin.tickets.create');
-
-    Route::get('/tickets/{ticket}', [TicketController::class, 'show'])
-         ->name('admin.tickets.show');
-
     Route::get('/tickets/{ticket}/delete', [TicketController::class, 'delete'])
          ->name('admin.tickets.delete');
 

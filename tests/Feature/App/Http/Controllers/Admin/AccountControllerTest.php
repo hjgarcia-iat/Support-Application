@@ -33,7 +33,7 @@ class AccountControllerTest extends TestCase
             'password' => 'NewPassword1',
             'password_confirmation' => 'NewPassword1',
         ];
-A
+
         $response = $this->actingAs($user)
             ->from(route('admin.account.edit'))
             ->post(route("admin.account.update"), $data);
