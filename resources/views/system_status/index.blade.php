@@ -19,7 +19,7 @@
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->startOfDay())
                             <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
-                                <p class="text-xl my-3">{{ $status->post }}</p>
+                                {!! $status->post !!}
                             </div>
                         @endif
                     @empty
@@ -30,7 +30,7 @@
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->subDays($i)->startOfDay() && $status->created_at <=now()->startOfDay())
                             <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
-                                <p class="text-xl my-3">{{ $status->post }}</p>
+                                {!! $status->post !!}
                             </div>
                         @endif
                     @empty
@@ -42,7 +42,7 @@
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->subDays($i)->startOfDay() && $status->created_at <= now()->subDays($i - 1)->startOfDay())
                             <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
-                                <p class="text-xl my-3">{{ $status->post }}</p>
+                                {!! $status->post !!}
                             </div>
                         @endif
                     @empty
