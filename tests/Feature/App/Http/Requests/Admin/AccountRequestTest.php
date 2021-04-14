@@ -90,7 +90,6 @@ class AccountRequestTest extends TestCase
             [[
                 'name' => $faker->firstName,
                 'email' => $faker->safeEmail,
-                'password' => 'Password1',
             ]]
         ];
     }
@@ -121,22 +120,32 @@ class AccountRequestTest extends TestCase
             'password must at least characters' => [[
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
-                'password' => 'Pa1'
+                'password' => 'Pa1',
+                'password_confirmation' => 'Pa1',
             ]],
             'password must have numbers' => [[
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
-                'password' => 'Password'
+                'password' => 'Password',
+                'password_confirmation' => 'Password',
             ]],
             'password must have letters' => [[
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
-                'password' => '12345678'
+                'password' => '12345678',
+                'password_confirmation' => '12345678',
             ]],
             'password must have case difference' => [[
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
-                'password' => 'password1'
+                'password' => 'password1',
+                'password_confirmation' => 'password1',
+            ]],
+            'passwords needs to be confirmed' => [[
+                'name' => $faker->name,
+                'email' => $faker->safeEmail,
+                'password' => 'Password1',
+                'password_confirmation' => 'WordPass1'
             ]],
         ];
     }
