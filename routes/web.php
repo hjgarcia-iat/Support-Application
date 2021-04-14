@@ -4,6 +4,7 @@ use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StatusController;
+use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RequestProductInformationController;
@@ -61,6 +62,18 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::post('/account',[AccountController::class, 'update'])
         ->name('admin.account.update');
+
+    Route::get('/tickets', [TicketController::class, 'index'])
+         ->name('admin.tickets');
+
+    Route::get('/tickets/create', [TicketController::class, 'create'])
+         ->name('admin.tickets.create');
+
+    Route::get('/tickets/{ticket}', [TicketController::class, 'show'])
+         ->name('admin.tickets.show');
+
+    Route::get('/tickets/{ticket}/delete', [TicketController::class, 'delete'])
+         ->name('admin.tickets.delete');
 
     Route::get('/statuses',[StatusController::class, 'index'])
         ->name('admin.statuses');

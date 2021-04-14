@@ -69,7 +69,7 @@ class SystemStatusControllerTest extends TestCase
         $response->assertSee($status->type);
     }
 
-    public function test_we_cannnot_see_the_edit_status_page_for_a_status_that_does_not_exist()
+    public function test_we_cannot_see_the_edit_status_page_for_a_status_that_does_not_exist()
     {
         $user = User::factory()->create();
 
