@@ -30,7 +30,7 @@ class AccountControllerTest extends TestCase
         $data = [
             'name' => 'Jane Doe',
             'email' => 'jdoe@email.com',
-            'password' => 'new_password',
+            'password' => 'NewPassword1',
         ];
 
         $response = $this->actingAs($user)
