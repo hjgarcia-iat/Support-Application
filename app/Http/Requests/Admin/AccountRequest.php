@@ -11,8 +11,11 @@ class AccountRequest extends FormRequest
         $rules = [
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'min:8|numbers|letters|case_diff'
         ];
+
+        if($this->get('password') !== null) {
+            $rules['password'] = 'min:8|numbers|letters|case_diff|confirmed';
+        }
 
         return $rules;
     }
