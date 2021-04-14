@@ -47,8 +47,8 @@
                                      autocomplete="current-password"/>
                         </div>
 
-                        <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-3">
+                        <div class="md:flex items-center justify-end mt-8">
+                            <x-button class="block md:inline-flex w-full md:w-auto text-center justify-center">
                                 {{ __('Update') }}
                             </x-button>
                         </div>
