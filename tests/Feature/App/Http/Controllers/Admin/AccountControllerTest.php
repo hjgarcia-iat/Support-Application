@@ -31,6 +31,7 @@ class AccountControllerTest extends TestCase
             'name' => 'Jane Doe',
             'email' => 'jdoe@email.com',
             'password' => 'NewPassword1',
+            'password_confirmation' => 'NewPassword1',
         ];
 
         $response = $this->actingAs($user)

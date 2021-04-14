@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\StatusRequest;
 use App\Status;
 
 class StatusController extends Controller
@@ -18,11 +19,11 @@ class StatusController extends Controller
         return view('admin.statuses.create');
     }
 
-    public function store()
+    public function store(StatusRequest $request)
     {
         Status::create([
-            'type' => request('type'),
-            'post' => request('post'),
+            'type' => $request->get('type'),
+            'post' => $request->get('post'),
         ]);
 
         return redirect(route('admin.statuses'))
@@ -34,11 +35,11 @@ class StatusController extends Controller
         return view('admin.statuses.edit', compact('status'));
     }
 
-    public function update(Status $status)
+    public function update(Status $status, StatusRequest $request)
     {
         $status->update([
-            'type' => request('type'),
-            'post' => request('post'),
+            'type' => $request->get('type'),
+            'post' => $request->get('post'),
         ]);
 
         return redirect(route('admin.statuses.edit', $status))
