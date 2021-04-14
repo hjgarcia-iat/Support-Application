@@ -20,7 +20,7 @@
                             {{ __('Tickets') }}
                         </x-nav-link>
 
-                        <x-nav-link :href="route('admin.statuses')" :active="request()->routeIs('admin.statuses')">
+                        <x-nav-link :href="route('admin.statuses')" :active="request()->routeIs(['admin.statuses','admin.statuses.*'])">
                             {{ __('System Status') }}
                         </x-nav-link>
 
