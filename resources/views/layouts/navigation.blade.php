@@ -15,7 +15,23 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(!request()->routeIs('dashboard'))
+                        <x-nav-link :href="'#'" :active="request()->routeIs('#')">
+                            {{ __('Tickets') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="'#'" :active="request()->routeIs('#')">
+                            {{ __('System Status') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.account.edit')" :active="request()->routeIs('admin.account.edit')">
+                            {{ __('Account') }}
+                        </x-nav-link>
+
+                    @endif
                 </div>
+
+
             </div>
 
             <!-- Settings Dropdown -->
