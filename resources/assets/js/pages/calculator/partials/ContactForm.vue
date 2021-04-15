@@ -7,124 +7,79 @@
             @submit.prevent="submitForm">
 
             <div class="mb-6">
-                <label for="first_name"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> First Name</label> <input type="text"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="first_name"
-                placeholder="Enter your first name"
-                name="first_name"
-                v-model="first_name">
+                <form-label field="first_name" :required="true">First Name</form-label>
+                <form-input v-model="first_name" field="first_name" type="text"
+                    placeholder="Enter your first name"/>
                 <form-error :error=formErrors.first_name[0]
                     v-if="formErrors.first_name"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="last_name"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> Last Name</label> <input type="text"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="last_name"
-                placeholder="Enter your last name"
-                name="last_name"
-                v-model="last_name">
+                <form-label field="last_name" :required="true">Last Name</form-label>
+                <form-input v-model="last_name" field="last_name" type="text"
+                    placeholder="Enter your last name"/>
                 <form-error :error=formErrors.last_name[0]
                     v-if="formErrors.last_name"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="email"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> Email</label> <input type="text"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="email"
-                placeholder="Enter your email"
-                name="email"
-                v-model="email">
+                <form-label field="email" :required="true">Email</form-label>
+                <form-input v-model="email" field="email" type="text"
+                    placeholder="Enter your email"/>
                 <form-error :error=formErrors.email[0]
                     v-if="formErrors.email"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="phone"
-                    class="block text-grey-darker text-sm font-bold mb-2">Phone</label>
-
-                <input
-                    type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="phone"
-                    placeholder="Enter your phone"
-                    name="phone"
-                    v-model="phone">
+                <form-label field="phone" :required="false">Email</form-label>
+                <form-input v-model="phone" field="phone" type="text"
+                    placeholder="Enter your phone"/>
                 <form-error :error=formErrors.phone[0]
                     v-if="formErrors.phone"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="role"
-                    class="block text-grey-darker text-sm font-bold mb-2"><small
-                    class="text-lg text-red-600">*</small> Role</label> <select name="role"
-                v-model="role"
-                id="role"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
-                <option value="">Select a role</option>
-                <option value="Classroom Teacher">Classroom Teacher</option>
-                <option value="School Administrator">School Administrator</option>
-                <option value="Other">Other</option>
-            </select>
+                <form-label field="role" :required="true">Role</form-label>
+
+                <form-select field="role" v-model="role">
+                    <option value="">Select a role</option>
+                    <option value="Classroom Teacher">Classroom Teacher</option>
+                    <option value="School Administrator">School Administrator</option>
+                    <option value="Other">Other</option>
+                </form-select>
+
                 <form-error :error=formErrors.role[0]
                     v-if="formErrors.role"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="district"
-                    class="block text-grey-darker text-sm font-bold mb-2">District</label>
-
-                <input type="text"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    id="district"
-                    placeholder="Enter your district name"
-                    name="district"
-                    v-model="district">
+                <form-label field="district" :required="false">District</form-label>
+                <form-input v-model="district" field="district" type="text"
+                    placeholder="Enter the district name"/>
                 <form-error :error=formErrors.district[0]
                     v-if="formErrors.district"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="school"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> School</label> <input type="text"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="school"
-                placeholder="Enter your school name"
-                name="school"
-                v-model="school">
+                <form-label field="school" :required="true">School</form-label>
+                <form-input v-model="school" field="school" type="text"
+                    placeholder="Enter the school name"/>
                 <form-error :error=formErrors.school[0]
                     v-if="formErrors.school"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="city"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> City</label> <input type="text"
-                class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="city"
-                placeholder="Enter your city name"
-                name="city"
-                v-model="city">
+                <form-label field="city" :required="true">City</form-label>
+                <form-input v-model="city" field="city" type="text"
+                    placeholder="Enter the city name"/>
                 <form-error :error=formErrors.city[0]
                     v-if="formErrors.city"></form-error>
             </div>
 
             <div class="mb-6">
-                <label for="state"
-                    class="block text-grey-darker text-sm font-bold mb-2"> <small
-                    class="text-lg text-red-600">*</small> State</label>
+                <form-label field="state" :required="true">State</form-label>
 
-                <select name="state"
-                    v-model="state"
-                    id="state"
-                    class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                <form-select field="state" v-model="state">
                     <option value="">Select a state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -178,7 +133,7 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                     <option value="Other">Other</option>
-                </select>
+                </form-select>
 
                 <form-error :error=formErrors.state[0]
                     v-if="formErrors.state"></form-error>
@@ -218,11 +173,17 @@
 <script>
 
 import FormError from "../../../components/partials/FormError";
+import FormLabel from "../../../components/forms/FormLabel";
+import FormInput from "../../../components/forms/FormInput";
+import FormSelect from "../../../components/forms/FormSelect";
 
 export default {
     name: "ContactForm",
     components: {
-        FormError
+        FormError,
+        FormLabel,
+        FormInput,
+        FormSelect,
     },
     data() {
         return {
