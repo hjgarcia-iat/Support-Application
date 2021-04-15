@@ -23,6 +23,7 @@ class TicketFactory extends Factory
             'district' => $this->faker->company,
             'subject'  => $this->faker->sentence,
             'details'  => $this->faker->sentence,
+            'email_processed' => $this->faker->boolean
         ];
     }
 }
