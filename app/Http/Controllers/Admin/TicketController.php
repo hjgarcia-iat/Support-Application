@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\File;
 use App\Http\Controllers\Controller;
 use App\Ticket;
 
@@ -10,8 +9,16 @@ class TicketController extends Controller
 {
     public function index()
     {
-        $tickets = Ticket::latest()->paginate(25);
-        
+        $tickets = Ticket::latest();
+
+        if (request()->has('query')) {
+            $tickets = $tickets->where('name', 'LIKE', "%" . request('query') . "%")
+                               ->orWhere('email', 'LIKE', "%" . request('query') . "%")
+                               ->orWhere('subject', 'LIKE', "%" . request('query') . "%");
+        }
+
+        $tickets = $tickets->paginate(25)->appends('query', request('query'));
+
         return view('admin.tickets.index', compact('tickets'));
     }
 
@@ -24,7 +31,8 @@ class TicketController extends Controller
     {
         if ($ticket->files !== null) {
             foreach ($ticket->files as $file) {
-                \Storage::disk('s3')->delete("contact-request/{$file->file}");
+                \Storage::disk('s3')->delete("contact - request /{
+                $file->file}");
                 File::find($file->id)->delete();
             }
         }
@@ -32,7 +40,7 @@ class TicketController extends Controller
         $ticket->delete();
 
         return redirect(route('admin.tickets'))
-            ->with('success','Ticket was deleted.');
+            ->with('success', 'Ticket was deleted.');
     }
 
 }

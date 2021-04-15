@@ -1,10 +1,10 @@
-@section('pageTitle','Tickets')
+@section('pageTitle','Support Tickets')
 
 <x-app-layout>
     <x-slot name="header">
         <div class="flex justify-between items-center">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Tickets') }}
+                {{ __('Support Tickets') }}
             </h2>
         </div>
     </x-slot>
@@ -15,11 +15,12 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     <x-auth-session-status class="mb-4"
-                                           :status="session('status')"
-                                           :type="session('type')"/>
+                            :status="session('status')"
+                            :type="session('type')"/>
+
+                   <x-search-form :route="route('admin.tickets')" :query="'query'"/>
 
                     @if($tickets->count() > 0)
-
                         <div class="my-4">
                             {{ $tickets->links() }}
                         </div>
@@ -47,25 +48,25 @@
                                     <td class="border px-8 py-4 text-center">
                                         @if($ticket->email_processed)
                                             <svg class="w-5 h-5 inline-block"
-                                                 fill="none"
-                                                 stroke="currentColor"
-                                                 viewBox="0 0 24 24"
-                                                 xmlns="http://www.w3.org/2000/svg">
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
                                                 <path stroke-linecap="round"
-                                                      stroke-linejoin="round"
-                                                      stroke-width="2"
-                                                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
                                         @else
                                             <svg class="w-5 h-5 inline-block"
-                                                 fill="none"
-                                                 stroke="currentColor"
-                                                 viewBox="0 0 24 24"
-                                                 xmlns="http://www.w3.org/2000/svg">
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
                                                 <path stroke-linecap="round"
-                                                      stroke-linejoin="round"
-                                                      stroke-width="2"
-                                                      d="M6 18L18 6M6 6l12 12"></path>
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
                                         @endif
                                     </td>
@@ -73,16 +74,16 @@
                                     <td class="border px-8 py-4">
                                         <div class="items-center flex h-full items-center">
                                             <a href="{{ route('admin.tickets.delete', $ticket) }}"
-                                               class="p-1 mx-2 hover:text-red-600">
+                                                    class="p-1 mx-2 hover:text-red-600">
                                                 <svg class="w-5 h-5"
-                                                     fill="none"
-                                                     stroke="currentColor"
-                                                     viewBox="0 0 24 24"
-                                                     xmlns="http://www.w3.org/2000/svg">
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
                                                     <path stroke-linecap="round"
-                                                          stroke-linejoin="round"
-                                                          stroke-width="2"
-                                                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                                 </svg>
                                             </a>
                                         </div>
