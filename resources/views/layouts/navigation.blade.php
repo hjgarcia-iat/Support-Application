@@ -17,7 +17,7 @@
                     </x-nav-link>
                     @if(!request()->routeIs('dashboard'))
                         <x-nav-link :href="route('admin.tickets')" :active="request()->routeIs(['admin.tickets','admin.tickets.*'])">
-                            {{ __('Tickets') }}
+                            {{ __('Support Tickets') }}
                         </x-nav-link>
 
                         <x-nav-link :href="route('admin.statuses')" :active="request()->routeIs(['admin.statuses','admin.statuses.*'])">
