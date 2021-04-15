@@ -7,8 +7,6 @@ import CalculatorPage from './pages/calculator/CalculatorPage';
 
 Vue.use(Vuex)
 
-export const EventBus = new Vue();
-
 const store = new Vuex.Store({
     state: {
         number_of_teachers: 0,

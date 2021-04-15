@@ -218,7 +218,6 @@
 <script>
 
 import FormError from "../../../components/partials/FormError";
-import {EventBus} from "../../../calculator";
 
 export default {
     name: "ContactForm",

@@ -122,7 +122,6 @@
 <script>
 import Vue2Filters from 'vue2-filters'
 import Vue from "vue";
-import {EventBus} from '../../../calculator'
 
 Vue.use(Vue2Filters)
 

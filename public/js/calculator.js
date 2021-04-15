@@ -2143,8 +2143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-filters */ "./node_modules/vue2-filters/dist/vue2-filters.js");
 /* harmony import */ var vue2_filters__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_filters__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 //
 //
 //
@@ -2268,8 +2267,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
-
-vue__WEBPACK_IMPORTED_MODULE_2__.default.use((vue2_filters__WEBPACK_IMPORTED_MODULE_0___default()));
+vue__WEBPACK_IMPORTED_MODULE_1__.default.use((vue2_filters__WEBPACK_IMPORTED_MODULE_0___default()));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "CalculatorView",
   data: function data() {
@@ -2368,7 +2366,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_partials_FormError__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/partials/FormError */ "./resources/assets/js/components/partials/FormError.vue");
-/* harmony import */ var _calculator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../calculator */ "./resources/assets/js/calculator.js");
 //
 //
 //
@@ -2586,7 +2583,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ContactForm",
@@ -2847,86 +2843,6 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
-
-/***/ }),
-
-/***/ "./resources/assets/js/calculator.js":
-/*!*******************************************!*\
-  !*** ./resources/assets/js/calculator.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "EventBus": () => (/* binding */ EventBus)
-/* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/calculator/CalculatorPage */ "./resources/assets/js/pages/calculator/CalculatorPage.vue");
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
-
-
-
-
-vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.default);
-var EventBus = new vue__WEBPACK_IMPORTED_MODULE_1__.default();
-var store = new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
-  state: {
-    number_of_teachers: 0,
-    number_of_students: 0,
-    usage: '',
-    product_interest: '',
-    step: 1,
-    alert_type: '',
-    alert_message: '',
-    alert_show: false
-  },
-  mutations: {
-    updateStep: function updateStep(state, step) {
-      state.step = step;
-    },
-    updateProductInterest: function updateProductInterest(state, product) {
-      state.product_interest = product;
-    },
-    updateNumberOfStudents: function updateNumberOfStudents(state, number_of_students) {
-      state.number_of_students = number_of_students;
-    },
-    updateNumberOfTeachers: function updateNumberOfTeachers(state, number_of_teachers) {
-      state.number_of_teachers = number_of_teachers;
-    },
-    updateUsage: function updateUsage(state, usage) {
-      state.usage = usage;
-    },
-    showAlert: function showAlert(state) {
-      state.alert_show = true;
-    },
-    setAlertMessage: function setAlertMessage(state, message) {
-      state.alert_message = message;
-    },
-    setAlertType: function setAlertType(state, type) {
-      state.alert_type = type;
-    },
-    hideAlert: function hideAlert(state) {
-      state.alert_show = false;
-      state.alert_message = '';
-      state.alert_type = '';
-    },
-    reset: function reset(state) {
-      state.number_of_teachers = 0;
-      state.number_of_students = 0;
-      state.usage = 0;
-      state.product_interest = '';
-    }
-  }
-});
-new vue__WEBPACK_IMPORTED_MODULE_1__.default({
-  el: '#calculator',
-  store: store,
-  components: {
-    'calculator': _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_0__.default
-  }
-});
 
 /***/ }),
 
@@ -37488,11 +37404,80 @@ var index = {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/js/calculator.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!*******************************************!*\
+  !*** ./resources/assets/js/calculator.js ***!
+  \*******************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/calculator/CalculatorPage */ "./resources/assets/js/pages/calculator/CalculatorPage.vue");
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.default);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
+  state: {
+    number_of_teachers: 0,
+    number_of_students: 0,
+    usage: '',
+    product_interest: '',
+    step: 1,
+    alert_type: '',
+    alert_message: '',
+    alert_show: false
+  },
+  mutations: {
+    updateStep: function updateStep(state, step) {
+      state.step = step;
+    },
+    updateProductInterest: function updateProductInterest(state, product) {
+      state.product_interest = product;
+    },
+    updateNumberOfStudents: function updateNumberOfStudents(state, number_of_students) {
+      state.number_of_students = number_of_students;
+    },
+    updateNumberOfTeachers: function updateNumberOfTeachers(state, number_of_teachers) {
+      state.number_of_teachers = number_of_teachers;
+    },
+    updateUsage: function updateUsage(state, usage) {
+      state.usage = usage;
+    },
+    showAlert: function showAlert(state) {
+      state.alert_show = true;
+    },
+    setAlertMessage: function setAlertMessage(state, message) {
+      state.alert_message = message;
+    },
+    setAlertType: function setAlertType(state, type) {
+      state.alert_type = type;
+    },
+    hideAlert: function hideAlert(state) {
+      state.alert_show = false;
+      state.alert_message = '';
+      state.alert_type = '';
+    },
+    reset: function reset(state) {
+      state.number_of_teachers = 0;
+      state.number_of_students = 0;
+      state.usage = 0;
+      state.product_interest = '';
+    }
+  }
+});
+new vue__WEBPACK_IMPORTED_MODULE_1__.default({
+  el: '#calculator',
+  store: store,
+  components: {
+    'calculator': _pages_calculator_CalculatorPage__WEBPACK_IMPORTED_MODULE_0__.default
+  }
+});
+})();
+
 /******/ })()
 ;
