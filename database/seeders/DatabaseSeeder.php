@@ -6,6 +6,7 @@ use App\Status;
 use App\Ticket;
 use App\User;
 use Carbon\Carbon;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,19 +18,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
+
         User::factory()->create(['email' => 'test@email.com']);
 
-        Status::factory()->create(['type' => 'High', 'created_at' => Carbon::now()->subMonth()]);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(6), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Medium', 'created_at' => Carbon::now()->subDays(5)]);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(5), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(4), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(3), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Low', 'created_at' => Carbon::now()->subDays(2)]);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(2), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Low', 'created_at' => Carbon::now()->subDays(1)]);
-        Status::factory()->create(['type' => 'Default', 'created_at' => Carbon::now()->subDays(1), 'post' => 'All Systems Operational.']);
-        Status::factory()->create(['type' => 'Default', 'post' => 'All Systems Operational.']);
+        for ($i = 0; $i < 50; $i++) {
+            Status::factory()->create([
+                'type'       => $faker->randomElement(['Low', 'Default', 'Medium', 'High']),
+                'created_at' => Carbon::today()->subDays(rand(0, 365)),
+            ]);
+        }
+
+
 
         Ticket::factory(50)->create();
     }
