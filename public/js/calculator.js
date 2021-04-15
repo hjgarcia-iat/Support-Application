@@ -1861,11 +1861,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "FormButton",
   props: {
@@ -2787,6 +2782,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
+/* harmony import */ var _components_forms_FormSelect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormSelect */ "./resources/assets/js/components/forms/FormSelect.vue");
 //
 //
 //
@@ -2826,10 +2823,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ProductInterestView",
+  components: {
+    FormLabel: _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__.default,
+    FormSelect: _components_forms_FormSelect__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   computed: {
     product_interest: {
       get: function get() {
@@ -21338,7 +21339,7 @@ var render = function() {
     "button",
     {
       staticClass:
-        "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center ml-4",
+        "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-centerW",
       class: {
         "cursor-default bg-blue-brand-medium hover:bg-blue-brand-medium":
           _vm.is_working
@@ -21346,32 +21347,6 @@ var render = function() {
       attrs: { type: "submit", disabled: _vm.is_working }
     },
     [
-      !_vm.is_working
-        ? _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                }
-              })
-            ]
-          )
-        : _vm._e(),
-      _vm._v(" "),
       _vm.is_working
         ? _c(
             "svg",
@@ -22924,98 +22899,107 @@ var render = function() {
       [_vm._v("\n        Calculate Your Digital Savings\n    ")]
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "mb-6" }, [
-      _c("p", { staticClass: "mb-3 font-bold" }, [
-        _vm._v("\n            Select a product\n        ")
-      ]),
-      _vm._v(" "),
-      _c(
-        "select",
-        {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.product_interest,
-              expression: "product_interest"
-            }
-          ],
-          staticClass:
-            "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-          attrs: { name: "number_of_students" },
-          on: {
-            change: function($event) {
-              var $$selectedVal = Array.prototype.filter
-                .call($event.target.options, function(o) {
-                  return o.selected
-                })
-                .map(function(o) {
-                  var val = "_value" in o ? o._value : o.value
-                  return val
-                })
-              _vm.product_interest = $event.target.multiple
-                ? $$selectedVal
-                : $$selectedVal[0]
-            }
-          }
-        },
-        [
-          _c("option", { attrs: { value: "" } }, [_vm._v("Product...")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "IQWST" } }, [_vm._v("IQWST")]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Active Chemistry" } }, [
-            _vm._v("Active Chemistry")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "Active Physics" } }, [
-            _vm._v("Active Physics")
-          ]),
-          _vm._v(" "),
-          _c("option", { attrs: { value: "EarthComm" } }, [_vm._v("EarthComm")])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-6 flex items-center" }, [
+    _c(
+      "div",
+      { staticClass: "mb-6" },
+      [
         _c(
-          "button",
+          "form-label",
+          { attrs: { field: "product_interest", required: true } },
+          [_vm._v("Select a product")]
+        ),
+        _vm._v(" "),
+        _c(
+          "select",
           {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.product_interest,
+                expression: "product_interest"
+              }
+            ],
             staticClass:
-              "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
-            class: {
-              "cursor-pointer bg-blue-brand": _vm.product_interest !== "",
-              "bg-blue-brand-medium cursor-default": _vm.product_interest === ""
-            },
-            attrs: { disabled: _vm.product_interest === "", type: "submit" },
-            on: { click: _vm.nextStep }
+              "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+            attrs: { name: "number_of_students" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.product_interest = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
           },
           [
-            _c(
-              "svg",
-              {
-                staticClass: "w-6 h-6 mr-2",
-                attrs: {
-                  fill: "none",
-                  stroke: "currentColor",
-                  viewBox: "0 0 24 24",
-                  xmlns: "http://www.w3.org/2000/svg"
-                }
-              },
-              [
-                _c("path", {
-                  attrs: {
-                    "stroke-linecap": "round",
-                    "stroke-linejoin": "round",
-                    "stroke-width": "2",
-                    d: "M17 8l4 4m0 0l-4 4m4-4H3"
-                  }
-                })
-              ]
-            ),
-            _vm._v("\n                Next Step\n            ")
+            _c("option", { attrs: { value: "" } }, [_vm._v("Product...")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "IQWST" } }, [_vm._v("IQWST")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Active Chemistry" } }, [
+              _vm._v("Active Chemistry")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Active Physics" } }, [
+              _vm._v("Active Physics")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "EarthComm" } }, [
+              _vm._v("EarthComm")
+            ])
           ]
         )
-      ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex items-center" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
+          class: {
+            "cursor-pointer bg-blue-brand": _vm.product_interest !== "",
+            "bg-blue-brand-medium cursor-default": _vm.product_interest === ""
+          },
+          attrs: { disabled: _vm.product_interest === "", type: "submit" },
+          on: { click: _vm.nextStep }
+        },
+        [
+          _vm._v("\n\n            Next Step\n            "),
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 ml-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d: "M17 8l4 4m0 0l-4 4m4-4H3"
+                }
+              })
+            ]
+          )
+        ]
+      )
     ])
   ])
 }
@@ -37720,7 +37704,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
     number_of_students: 0,
     usage: '',
     product_interest: '',
-    step: 4,
+    step: 1,
     alert_type: '',
     alert_message: '',
     alert_show: false
