@@ -28,7 +28,7 @@
                         <table class="w-full">
                             <thead>
                             <tr>
-                                <th class="bg-gray-100 border text-left px-8 py-4">ID</th>
+                                <th class="bg-gray-100 border text-left px-8 py-4 text-center">ID</th>
                                 <th class="bg-gray-100 border text-left px-8 py-4">Created On</th>
                                 <th class="bg-gray-100 border text-left px-8 py-4">Name</th>
                                 <th class="bg-gray-100 border text-left px-8 py-4">Email</th>
@@ -40,7 +40,7 @@
                             <tbody>
                             @foreach($tickets as $ticket)
                                 <tr>
-                                    <td class="border px-8 py-4">{{ $ticket->id }}</td>
+                                    <td class="border px-8 py-4 text-center">{{ $ticket->id }}</td>
                                     <td class="border px-8 py-4">{{ $ticket->created_at->format('m/d/Y') }}</td>
                                     <td class="border px-8 py-4">{{ $ticket->name }}</td>
                                     <td class="border px-8 py-4">{{ $ticket->email }}</td>
