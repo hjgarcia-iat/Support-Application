@@ -118,7 +118,9 @@ export default {
         },
         next_step() {
             if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
-                //show error
+                this.$store.commit('showAlert')
+                this.$store.commit('setAlertType','info')
+                this.$store.commit('setAlertMessage','The number of teachers cannot be equal or higher than then the number of students.')
             } else {
                 this.step = 3
             }
