@@ -2196,11 +2196,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ActiveChemistryCalculatorForm",
   computed: {
@@ -2261,11 +2256,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2946,10 +2936,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ActiveEarthCommCalculatorForm",
   computed: {
@@ -3010,10 +2996,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
 //
 //
 //
@@ -3186,12 +3168,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3330,7 +3306,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.grid[data-v-634c2658] {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 0 1em;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.grid[data-v-634c2658] {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 0 1em;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22331,19 +22307,19 @@ var render = function() {
         staticClass:
           "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
-      [_vm._v("\r\n        Calculate Your Digital Savings\r\n    ")]
+      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
     ),
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\r\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\r\n    "
+        "\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\n    "
       )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "mb-6" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v(
-          "\r\n            1. Approximately how many students use Active Chemistry in your classroom, school, or district?\r\n        "
+          "\n            1. Approximately how many students use Active Chemistry in your classroom, school, or district?\n        "
         )
       ]),
       _vm._v(" "),
@@ -22374,7 +22350,7 @@ var render = function() {
     _c("div", { staticClass: "mb-6" }, [
       _c("p", { staticClass: "mb-3 font-bold" }, [
         _vm._v(
-          "\r\n            2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?\r\n        "
+          "\n            2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?\n        "
         )
       ]),
       _vm._v(" "),
@@ -22437,32 +22413,7 @@ var render = function() {
           },
           on: { click: _vm.next_step }
         },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                }
-              })
-            ]
-          ),
-          _vm._v("\r\n            Calculate\r\n        ")
-        ]
+        [_vm._v("\n            Calculate\n        ")]
       )
     ])
   ])
@@ -22603,32 +22554,7 @@ var render = function() {
           },
           on: { click: _vm.next_step }
         },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                }
-              })
-            ]
-          ),
-          _vm._v("\n            Calculate\n        ")
-        ]
+        [_vm._v("\n            Calculate\n        ")]
       )
     ])
   ])
@@ -23701,32 +23627,7 @@ var render = function() {
           },
           on: { click: _vm.next_step }
         },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                }
-              })
-            ]
-          ),
-          _vm._v("\n            Calculate\n        ")
-        ]
+        [_vm._v("\n            \n            Calculate\n        ")]
       )
     ])
   ])
@@ -23945,32 +23846,7 @@ var render = function() {
           },
           on: { click: _vm.next_step }
         },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                }
-              })
-            ]
-          ),
-          _vm._v("\n            Calculate\n        ")
-        ]
+        [_vm._v("\n            \n            Calculate\n        ")]
       )
     ])
   ])
@@ -24083,31 +23959,7 @@ var render = function() {
           attrs: { disabled: _vm.product_interest === "", type: "submit" },
           on: { click: _vm.nextStep }
         },
-        [
-          _vm._v("\n\n            Next Step\n            "),
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 ml-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d: "M17 8l4 4m0 0l-4 4m4-4H3"
-                }
-              })
-            ]
-          )
-        ]
+        [_vm._v("\n            Next Step\n        ")]
       )
     ])
   ])
