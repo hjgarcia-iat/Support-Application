@@ -2156,8 +2156,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ActiveChemistryCalculatorForm"
+  name: "ActiveChemistryCalculatorForm",
+  computed: {
+    product_interest: function product_interest() {
+      return this.$store.state.product_interest;
+    },
+    number_of_teachers: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_teachers);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+      }
+    },
+    number_of_students: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_students);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfStudents', parseInt(value));
+      }
+    },
+    step: {
+      get: function get() {
+        return this.$store.state.step;
+      },
+      set: function set(value) {
+        this.$store.commit('updateStep', value);
+      }
+    }
+  },
+  methods: {
+    step_back: function step_back() {
+      this.step = 1;
+    },
+    next_step: function next_step() {
+      if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
+        this.$store.commit('showAlert');
+        this.$store.commit('setAlertType', 'info');
+        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+      } else {
+        this.step = 6;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2177,8 +2265,98 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "ActivePhysicsCalculatorForm"
+  name: "ActivePhysicsCalculatorForm",
+  computed: {
+    product_interest: function product_interest() {
+      return this.$store.state.product_interest;
+    },
+    number_of_teachers: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_teachers);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+      }
+    },
+    number_of_students: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_students);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfStudents', parseInt(value));
+      }
+    },
+    step: {
+      get: function get() {
+        return this.$store.state.step;
+      },
+      set: function set(value) {
+        this.$store.commit('updateStep', value);
+      }
+    }
+  },
+  methods: {
+    step_back: function step_back() {
+      this.step = 1;
+    },
+    next_step: function next_step() {
+      if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
+        this.$store.commit('showAlert');
+        this.$store.commit('setAlertType', 'info');
+        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+      } else {
+        this.step = 6;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2726,8 +2904,97 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "EarthCommCalculatorForm"
+  name: "ActiveEarthCommCalculatorForm",
+  computed: {
+    product_interest: function product_interest() {
+      return this.$store.state.product_interest;
+    },
+    number_of_teachers: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_teachers);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+      }
+    },
+    number_of_students: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_students);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfStudents', parseInt(value));
+      }
+    },
+    step: {
+      get: function get() {
+        return this.$store.state.step;
+      },
+      set: function set(value) {
+        this.$store.commit('updateStep', value);
+      }
+    }
+  },
+  methods: {
+    step_back: function step_back() {
+      this.step = 1;
+    },
+    next_step: function next_step() {
+      if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
+        this.$store.commit('showAlert');
+        this.$store.commit('setAlertType', 'info');
+        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+      } else {
+        this.step = 6;
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -22057,7 +22324,148 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\r\n    Active Chemistry\r\n")])
+  return _c("div", [
+    _c(
+      "h1",
+      {
+        staticClass:
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+      },
+      [_vm._v("\r\n        Calculate Your Digital Savings\r\n    ")]
+    ),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-2xl mb-4" }, [
+      _vm._v(
+        "\r\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\r\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\r\n            1. Approximately how many students use Active Chemistry in your classroom, school, or district?\r\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_students,
+            expression: "number_of_students"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_students" },
+        domProps: { value: _vm.number_of_students },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_students = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\r\n            2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?\r\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_teachers,
+            expression: "number_of_teachers"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_teachers" },
+        domProps: { value: _vm.number_of_teachers },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_teachers = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex items-center" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.step_back($event)
+            }
+          }
+        },
+        [_vm._v("Previous")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
+          class: {
+            "cursor-pointer bg-blue-brand":
+              _vm.number_of_students > 0 && _vm.number_of_teachers > 0,
+            "bg-blue-brand-medium cursor-default":
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0
+          },
+          attrs: {
+            disabled:
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+            type: "submit"
+          },
+          on: { click: _vm.next_step }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 mr-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d:
+                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\r\n            Calculate\r\n        ")
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22082,7 +22490,148 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v(" Active Physics Calculator Form")])
+  return _c("div", [
+    _c(
+      "h1",
+      {
+        staticClass:
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+      },
+      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
+    ),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-2xl mb-4" }, [
+      _vm._v(
+        "\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            1. Approximately how many students use Active Physics in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_students,
+            expression: "number_of_students"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_students" },
+        domProps: { value: _vm.number_of_students },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_students = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            2. Approximately how many teachers use Active Physics in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_teachers,
+            expression: "number_of_teachers"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_teachers" },
+        domProps: { value: _vm.number_of_teachers },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_teachers = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex items-center" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.step_back($event)
+            }
+          }
+        },
+        [_vm._v("Previous")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
+          class: {
+            "cursor-pointer bg-blue-brand":
+              _vm.number_of_students > 0 && _vm.number_of_teachers > 0,
+            "bg-blue-brand-medium cursor-default":
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0
+          },
+          attrs: {
+            disabled:
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+            type: "submit"
+          },
+          on: { click: _vm.next_step }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 mr-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d:
+                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\n            Calculate\n        ")
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -23039,7 +23588,148 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    EarthComm Calculator\n")])
+  return _c("div", [
+    _c(
+      "h1",
+      {
+        staticClass:
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+      },
+      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
+    ),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-2xl mb-4" }, [
+      _vm._v(
+        "\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your\n        current subscription terms.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            1. Approximately how many students use EarthComm in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_students,
+            expression: "number_of_students"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_students" },
+        domProps: { value: _vm.number_of_students },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_students = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            2. Approximately how many teachers use EarthComm in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_teachers,
+            expression: "number_of_teachers"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_teachers" },
+        domProps: { value: _vm.number_of_teachers },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_teachers = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex items-center" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.step_back($event)
+            }
+          }
+        },
+        [_vm._v("Previous")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
+          class: {
+            "cursor-pointer bg-blue-brand":
+              _vm.number_of_students > 0 && _vm.number_of_teachers > 0,
+            "bg-blue-brand-medium cursor-default":
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0
+          },
+          attrs: {
+            disabled:
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+            type: "submit"
+          },
+          on: { click: _vm.next_step }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 mr-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d:
+                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\n            Calculate\n        ")
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
