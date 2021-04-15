@@ -15,7 +15,7 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('post');
+            $table->text('post');
             $table->enum('type',[
                 'Default',
                 'High',
