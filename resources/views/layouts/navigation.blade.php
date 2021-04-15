@@ -23,11 +23,6 @@
                         <x-nav-link :href="route('admin.statuses')" :active="request()->routeIs(['admin.statuses','admin.statuses.*'])">
                             {{ __('System Status') }}
                         </x-nav-link>
-
-                        <x-nav-link :href="route('admin.account.edit')" :active="request()->routeIs('admin.account.edit')">
-                            {{ __('Account') }}
-                        </x-nav-link>
-
                     @endif
                 </div>
 
@@ -50,10 +45,12 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <!-- Authentication -->
+                        <x-dropdown-link :href="route('admin.account.edit')">
+                            {{ __('Account') }}
+                        </x-dropdown-link>
+
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
