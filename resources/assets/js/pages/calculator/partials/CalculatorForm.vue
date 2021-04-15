@@ -5,7 +5,7 @@
         </h1>
         <p class="text-2xl mb-4">
             Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your
-            current subscription term.
+            current subscription terms.
         </p>
 
         <div class="mb-6">
@@ -15,7 +15,7 @@
             <input type="text"
                 class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="number_of_students"
-                v-model="no_students">
+                v-model="number_of_students">
         </div>
         <div class="mb-6">
             <p class="mb-3 font-bold">
@@ -24,7 +24,7 @@
             <input type="text"
                 class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="number_of_teachers"
-                v-model="no_teachers">
+                v-model="number_of_teachers">
         </div>
         <div class="mb-6">
             <p class="mb-3 font-bold">3. We currently use:</p>
@@ -33,7 +33,7 @@
                     name="reason"
                     id="usage_1"
                     value="IQWST Print Student Workbooks"
-                    v-model="reason">
+                    v-model="usage">
 
                 <label class="ml-2 text-grey-darker cursor-pointer"
                     for="usage_1">IQWST Print Student Workbooks</label>
@@ -43,19 +43,22 @@
                     name="reason"
                     id="usage_2"
                     value="IQWST Interactive Digital Edition"
-                    v-model="reason">
+                    v-model="usage">
 
                 <label class="ml-2 text-grey-darker cursor-pointer"
                     for="usage_2">IQWST Interactive Digital Edition</label>
             </div>
         </div>
 
-        <div class="mt-6">
-            <button :disabled="no_students <= 0 && no_teachers <= 0"
+        <div class="mt-6 flex items-center">
+            <a href="#"
+                class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2"
+                @click.prevent="step_back">Previous</a>
+            <button :disabled="number_of_students <= 0 && number_of_teachers <= 0"
                 type="submit"
-                @click="calculate"
+                @click="next_step"
                 class="bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
-                :class="{'cursor-pointer bg-blue-brand': no_students > 0 && no_teachers > 0, 'bg-blue-brand-medium cursor-default': no_students <= 0 && no_teachers <= 0}">
+                :class="{'cursor-pointer bg-blue-brand': number_of_students > 0 && number_of_teachers > 0, 'bg-blue-brand-medium cursor-default': number_of_students <= 0 && number_of_teachers <= 0}">
                 <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -69,39 +72,55 @@
 </template>
 
 <script>
-import {EventBus} from '../../../calculator'
 
 export default {
     name: "CalculatorForm",
-    props: [
-        'number_of_teachers',
-        'number_of_students',
-        'usage',
-    ],
-    data() {
-        return {
-            no_students: this.number_of_students,
-            no_teachers: this.number_of_teachers,
-            reason: this.usage
-        }
+    computed: {
+        product_interest() {
+            return this.$store.state.product_interest
+        },
+        number_of_teachers: {
+            get() {
+                return parseInt(this.$store.state.number_of_teachers)
+            },
+            set(value) {
+                this.$store.commit('updateNumberOfTeachers', parseInt(value))
+            }
+        },
+        number_of_students: {
+            get() {
+                return parseInt(this.$store.state.number_of_students)
+            },
+            set(value) {
+                this.$store.commit('updateNumberOfStudents', parseInt(value))
+            }
+        },
+        usage: {
+            get() {
+                return this.$store.state.usage
+            },
+            set(value) {
+                this.$store.commit('updateUsage', value)
+            }
+        },
+        step: {
+            get() {
+                return this.$store.state.step
+            },
+            set(value) {
+                this.$store.commit('updateStep', value)
+            }
+        },
     },
     methods: {
-        calculate() {
-
-
-            if (parseInt(this.no_teachers) >= parseInt(this.no_students)) {
-                EventBus.$emit('form_error', {
-                    number_of_students: this.no_students,
-                    number_of_teachers: this.no_teachers,
-                    usage: this.reason,
-                    formMessage: 'Number of teachers cannot be higher or equal to the number of students.',
-                })
+        step_back() {
+            this.step = 1
+        },
+        next_step() {
+            if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
+                //show error
             } else {
-                EventBus.$emit('calculate', {
-                    number_of_students: this.no_students,
-                    number_of_teachers: this.no_teachers,
-                    usage: this.reason,
-                });
+                this.step = 3
             }
         }
     }

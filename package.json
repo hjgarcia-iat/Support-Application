@@ -34,6 +34,7 @@
     },
     "dependencies": {
         "autoprefixer": "^10.2.5",
-        "postcss": "^8.2.9"
+        "postcss": "^8.2.9",
+        "vuex": "^3.6.2"
     }
 }

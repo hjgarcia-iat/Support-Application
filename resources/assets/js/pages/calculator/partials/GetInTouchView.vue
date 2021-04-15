@@ -207,7 +207,9 @@
                     </svg>
                     Send
                 </button>
-                <a href="" class="ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline" @click.prevent="reset_form">Reset</a>
+                <a href=""
+                    class="ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline"
+                    @click.prevent="reset_form">Reset</a>
             </div>
         </form>
     </div>
@@ -223,19 +225,10 @@ export default {
     components: {
         FormError
     },
-    props: [
-        'no_teachers',
-        'no_students',
-        'reason',
-    ],
     data() {
         return {
-            number_of_teachers: this.no_teachers,
-            number_of_students: this.no_students,
-            usage: this.reason,
             formErrors: [],
             loading: false,
-            step: 1,
             first_name: '',
             last_name: '',
             email: '',
@@ -247,23 +240,34 @@ export default {
             state: '',
         }
     },
+    computed: {
+        product_interest() {
+            return this.$store.state.product_interest
+        },
+        number_of_students() {
+            return parseInt(this.$store.state.number_of_students)
+        },
+        number_of_teachers() {
+            return parseInt(this.$store.state.number_of_teachers)
+        },
+        usage() {
+            return this.$store.state.usage
+        },
+        step: {
+            get() {
+                return this.$store.state.step
+            },
+            set(value) {
+                this.$store.commit('updateStep', value)
+            }
+        },
+    },
     methods: {
         step_back() {
-            EventBus.$emit('step_back', {
-                number_of_students: this.number_of_students,
-                number_of_teachers: this.number_of_teachers,
-                usage: this.usage,
-            });
+            this.step = 3
         },
         reset_form() {
             this.reset();
-
-            EventBus.$emit('form_reset', {
-                formMessage: "The information has been cleared.",
-                number_of_students: this.number_of_students,
-                number_of_teachers: this.number_of_teachers,
-                usage: this.usage,
-            })
         },
         submitForm() {
             this.loading = true;
@@ -280,26 +284,21 @@ export default {
                 state: this.state,
                 number_of_teachers: this.number_of_teachers,
                 number_of_students: this.number_of_students,
+                product_interest: this.product_interest,
                 usage: this.usage
             }).then(response => {
                 if (response.data.success) {
                     this.reset();
+
                     EventBus.$emit('form_success', {
                         formMessage: response.data.message,
-                        number_of_students: this.number_of_students,
-                        number_of_teachers: this.number_of_teachers,
-                        usage: this.usage,
                     })
-
-
                 }
                 this.loading = false;
             }).catch(error => {
                 this.formErrors = error.response.data.errors;
+
                 EventBus.$emit('form_error', {
-                    number_of_students: this.number_of_students,
-                    number_of_teachers: this.number_of_teachers,
-                    usage: this.usage,
                     formMessage: 'Please see errors below!',
                 })
 
@@ -307,6 +306,7 @@ export default {
             });
         },
         reset() {
+
             this.first_name = '';
             this.last_name = '';
             this.email = '';
@@ -315,13 +315,11 @@ export default {
             this.city = '';
             this.school = '';
             this.district = '';
-            this.state = '';
+            this.state = ''
             this.formErrors = [];
-            this.number_of_teachers = 0;
-            this.no_students = 0;
-            this.usage = '';
-        }
 
+            this.$store.commit('reset')
+        }
     }
 }
 </script>
