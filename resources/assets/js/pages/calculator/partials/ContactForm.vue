@@ -266,9 +266,6 @@ export default {
         step_back() {
             this.step = 3
         },
-        reset_form() {
-            this.reset();
-        },
         submitForm() {
             this.loading = true;
 
@@ -303,7 +300,6 @@ export default {
             });
         },
         reset() {
-
             this.first_name = '';
             this.last_name = '';
             this.email = '';
@@ -316,6 +312,15 @@ export default {
             this.formErrors = [];
 
             this.$store.commit('reset')
+
+        },
+        reset_form() {
+            this.reset();
+
+            this.$store.commit('updateStep', 1)
+            this.$store.commit('showAlert')
+            this.$store.commit('setAlertType', 'info')
+            this.$store.commit('setAlertMessage', 'You have been set back to the beginning.')
         }
     }
 }

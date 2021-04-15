@@ -2634,9 +2634,6 @@ __webpack_require__.r(__webpack_exports__);
     step_back: function step_back() {
       this.step = 3;
     },
-    reset_form: function reset_form() {
-      this.reset();
-    },
     submitForm: function submitForm() {
       var _this = this;
 
@@ -2683,6 +2680,13 @@ __webpack_require__.r(__webpack_exports__);
       this.state = '';
       this.formErrors = [];
       this.$store.commit('reset');
+    },
+    reset_form: function reset_form() {
+      this.reset();
+      this.$store.commit('updateStep', 1);
+      this.$store.commit('showAlert');
+      this.$store.commit('setAlertType', 'info');
+      this.$store.commit('setAlertMessage', 'You have been set back to the beginning.');
     }
   }
 });
