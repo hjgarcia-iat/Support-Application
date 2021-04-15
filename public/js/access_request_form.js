@@ -2340,6 +2340,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -31206,6 +31218,103 @@ var render = function() {
                     "\n                    IQWST Oklahoma\n                "
                   )
                 ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-7",
+                  name: "version",
+                  type: "radio",
+                  value: "Active Physics"
+                },
+                domProps: {
+                  checked: _vm._q(_vm.ide_version, "Active Physics")
+                },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "Active Physics"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-7" } },
+                [_vm._v("Active Physics")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-8",
+                  name: "version",
+                  type: "radio",
+                  value: "Active Chemistry"
+                },
+                domProps: {
+                  checked: _vm._q(_vm.ide_version, "Active Chemistry")
+                },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "Active Chemistry"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-8" } },
+                [_vm._v("Active Chemistry")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-3" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.ide_version,
+                    expression: "ide_version"
+                  }
+                ],
+                attrs: {
+                  id: "version-9",
+                  name: "version",
+                  type: "radio",
+                  value: "EarthComm"
+                },
+                domProps: { checked: _vm._q(_vm.ide_version, "EarthComm") },
+                on: {
+                  change: function($event) {
+                    _vm.ide_version = "EarthComm"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                { staticClass: "ml-2", attrs: { for: "version-9" } },
+                [_vm._v("EarthComm")]
               )
             ]),
             _vm._v(" "),

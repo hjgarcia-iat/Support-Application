@@ -419,6 +419,18 @@
                         IQWST Oklahoma
                     </label>
                 </div>
+                <div class="mb-3">
+                    <input id="version-7" name="version" type="radio" value="Active Physics" v-model="ide_version"> <label
+                    class="ml-2" for="version-7">Active Physics</label>
+                </div>
+                <div class="mb-3">
+                    <input id="version-8" name="version" type="radio" value="Active Chemistry" v-model="ide_version"> <label
+                    class="ml-2" for="version-8">Active Chemistry</label>
+                </div>
+                <div class="mb-3">
+                    <input id="version-9" name="version" type="radio" value="EarthComm" v-model="ide_version"> <label
+                    class="ml-2" for="version-9">EarthComm</label>
+                </div>
                 <small class="mt-3 block text-grey-dark">Please indicate
                     which version of IQWST IDE you will need.
                 </small>
