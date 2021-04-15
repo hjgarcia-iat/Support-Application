@@ -2042,11 +2042,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_partials_FormAlert__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/partials/FormAlert */ "./resources/assets/js/components/partials/FormAlert.vue");
-/* harmony import */ var _partials_CalculatorForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/CalculatorForm */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue");
-/* harmony import */ var _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/CalculatorView */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue");
-/* harmony import */ var _partials_ContactForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/ContactForm */ "./resources/assets/js/pages/calculator/partials/ContactForm.vue");
-/* harmony import */ var _partials_SuccessView__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./partials/SuccessView */ "./resources/assets/js/pages/calculator/partials/SuccessView.vue");
-/* harmony import */ var _partials_ProductInterestView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./partials/ProductInterestView */ "./resources/assets/js/pages/calculator/partials/ProductInterestView.vue");
+/* harmony import */ var _partials_IqwstCalculatorForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./partials/IqwstCalculatorForm */ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue");
+/* harmony import */ var _partials_ActivePhysicsCalculatorForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./partials/ActivePhysicsCalculatorForm */ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue");
+/* harmony import */ var _partials_ActiveChemistryCalculatorForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./partials/ActiveChemistryCalculatorForm */ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue");
+/* harmony import */ var _partials_EarthCommCalculatorForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./partials/EarthCommCalculatorForm */ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue");
+/* harmony import */ var _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./partials/CalculatorView */ "./resources/assets/js/pages/calculator/partials/CalculatorView.vue");
+/* harmony import */ var _partials_ContactForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./partials/ContactForm */ "./resources/assets/js/pages/calculator/partials/ContactForm.vue");
+/* harmony import */ var _partials_SuccessView__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./partials/SuccessView */ "./resources/assets/js/pages/calculator/partials/SuccessView.vue");
+/* harmony import */ var _partials_ProductInterestView__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./partials/ProductInterestView */ "./resources/assets/js/pages/calculator/partials/ProductInterestView.vue");
 //
 //
 //
@@ -2076,6 +2079,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -2085,11 +2104,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     Alert: _components_partials_FormAlert__WEBPACK_IMPORTED_MODULE_0__.default,
-    ProductInterest: _partials_ProductInterestView__WEBPACK_IMPORTED_MODULE_5__.default,
-    CalculatorForm: _partials_CalculatorForm__WEBPACK_IMPORTED_MODULE_1__.default,
-    CalculatorView: _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_2__.default,
-    ContactForm: _partials_ContactForm__WEBPACK_IMPORTED_MODULE_3__.default,
-    SuccessView: _partials_SuccessView__WEBPACK_IMPORTED_MODULE_4__.default
+    ProductInterest: _partials_ProductInterestView__WEBPACK_IMPORTED_MODULE_8__.default,
+    IqwstCalculatorForm: _partials_IqwstCalculatorForm__WEBPACK_IMPORTED_MODULE_1__.default,
+    ActivePhysicsCalculatorForm: _partials_ActivePhysicsCalculatorForm__WEBPACK_IMPORTED_MODULE_2__.default,
+    ActiveChemistryCalculatorForm: _partials_ActiveChemistryCalculatorForm__WEBPACK_IMPORTED_MODULE_3__.default,
+    EarthCommCalculatorForm: _partials_EarthCommCalculatorForm__WEBPACK_IMPORTED_MODULE_4__.default,
+    CalculatorView: _partials_CalculatorView__WEBPACK_IMPORTED_MODULE_5__.default,
+    ContactForm: _partials_ContactForm__WEBPACK_IMPORTED_MODULE_6__.default,
+    SuccessView: _partials_SuccessView__WEBPACK_IMPORTED_MODULE_7__.default
   },
   name: "CalculatorPage",
   data: function data() {
@@ -2117,10 +2139,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2134,126 +2156,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "ActiveChemistryCalculatorForm"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 //
 //
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "CalculatorForm",
-  computed: {
-    product_interest: function product_interest() {
-      return this.$store.state.product_interest;
-    },
-    number_of_teachers: {
-      get: function get() {
-        return parseInt(this.$store.state.number_of_teachers);
-      },
-      set: function set(value) {
-        this.$store.commit('updateNumberOfTeachers', parseInt(value));
-      }
-    },
-    number_of_students: {
-      get: function get() {
-        return parseInt(this.$store.state.number_of_students);
-      },
-      set: function set(value) {
-        this.$store.commit('updateNumberOfStudents', parseInt(value));
-      }
-    },
-    usage: {
-      get: function get() {
-        return this.$store.state.usage;
-      },
-      set: function set(value) {
-        this.$store.commit('updateUsage', value);
-      }
-    },
-    step: {
-      get: function get() {
-        return this.$store.state.step;
-      },
-      set: function set(value) {
-        this.$store.commit('updateStep', value);
-      }
-    }
-  },
-  methods: {
-    step_back: function step_back() {
-      this.step = 1;
-    },
-    next_step: function next_step() {
-      if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
-        this.$store.commit('showAlert');
-        this.$store.commit('setAlertType', 'info');
-        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
-      } else {
-        this.step = 3;
-      }
-    }
-  }
+  name: "ActivePhysicsCalculatorForm"
 });
 
 /***/ }),
@@ -2452,7 +2377,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use((vue2_filters__WEBPACK_IMPORTED_MOD
       this.step = 2;
     },
     next_step: function next_step() {
-      this.step = 4;
+      this.step = 7;
     },
     calculate: function calculate() {
       //print calculations
@@ -2706,7 +2631,20 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     step_back: function step_back() {
-      this.step = 3;
+      if (this.product_interest === 'IQWST') {
+        this.step = 6;
+      } // if (this.product_interest === 'Active Physics') {
+      //     this.step = 4
+      // }
+      //
+      // if (this.product_interest === 'Active Chemistry') {
+      //     this.step = 3
+      // }
+      //
+      // if (this.product_interest === 'EarthComm') {
+      //     this.step = 5
+      // }
+
     },
     submitForm: function submitForm() {
       var _this = this;
@@ -2765,6 +2703,170 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.commit('showAlert');
       this.$store.commit('setAlertType', 'info');
       this.$store.commit('setAlertMessage', 'You have been set back to the beginning.');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "EarthCommCalculatorForm"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "IqwstCalculatorForm",
+  computed: {
+    product_interest: function product_interest() {
+      return this.$store.state.product_interest;
+    },
+    number_of_teachers: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_teachers);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+      }
+    },
+    number_of_students: {
+      get: function get() {
+        return parseInt(this.$store.state.number_of_students);
+      },
+      set: function set(value) {
+        this.$store.commit('updateNumberOfStudents', parseInt(value));
+      }
+    },
+    usage: {
+      get: function get() {
+        return this.$store.state.usage;
+      },
+      set: function set(value) {
+        this.$store.commit('updateUsage', value);
+      }
+    },
+    step: {
+      get: function get() {
+        return this.$store.state.step;
+      },
+      set: function set(value) {
+        this.$store.commit('updateStep', value);
+      }
+    }
+  },
+  methods: {
+    step_back: function step_back() {
+      this.step = 1;
+    },
+    next_step: function next_step() {
+      if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
+        this.$store.commit('showAlert');
+        this.$store.commit('setAlertType', 'info');
+        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+      } else {
+        this.step = 6;
+      }
     }
   }
 });
@@ -2851,7 +2953,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     nextStep: function nextStep() {
-      this.step = 2;
+      if (this.product_interest === 'IQWST') {
+        this.step = 2;
+      }
+
+      if (this.product_interest === 'Active Chemistry') {
+        this.step = 3;
+      }
+
+      if (this.product_interest === 'Active Physics') {
+        this.step = 4;
+      }
+
+      if (this.product_interest === 'EarthComm') {
+        this.step = 5;
+      }
     }
   }
 });
@@ -20709,10 +20825,10 @@ component.options.__file = "resources/assets/js/pages/calculator/CalculatorPage.
 
 /***/ }),
 
-/***/ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/assets/js/pages/calculator/partials/CalculatorForm.vue ***!
-  \**************************************************************************/
+/***/ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue":
+/*!*****************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue ***!
+  \*****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -20720,8 +20836,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CalculatorForm.vue?vue&type=template&id=b962d11a& */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&");
-/* harmony import */ var _CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7& */ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7&");
+/* harmony import */ var _ActiveChemistryCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -20731,9 +20847,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
-  _CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
-  _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__.render,
-  _CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _ActiveChemistryCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -20743,7 +20859,46 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/assets/js/pages/calculator/partials/CalculatorForm.vue"
+component.options.__file = "resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue":
+/*!***************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea& */ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea&");
+/* harmony import */ var _ActivePhysicsCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _ActivePhysicsCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -20824,6 +20979,84 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/assets/js/pages/calculator/partials/ContactForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82& */ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82&");
+/* harmony import */ var _EarthCommCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EarthCommCalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _EarthCommCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__.render,
+  _EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue":
+/*!*******************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IqwstCalculatorForm.vue?vue&type=template&id=735c848e& */ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e&");
+/* harmony import */ var _IqwstCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IqwstCalculatorForm.vue?vue&type=script&lang=js& */ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _IqwstCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -21018,10 +21251,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************/
+/***/ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21029,8 +21262,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CalculatorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ActiveChemistryCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ActiveChemistryCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ActivePhysicsCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ActivePhysicsCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -21063,6 +21312,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ContactForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ContactForm.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EarthCommCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EarthCommCalculatorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EarthCommCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IqwstCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./IqwstCalculatorForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IqwstCalculatorForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -21217,19 +21498,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a& ***!
-  \*********************************************************************************************************/
+/***/ "./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7& ***!
+  \************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CalculatorForm_vue_vue_type_template_id_b962d11a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./CalculatorForm.vue?vue&type=template&id=b962d11a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActiveChemistryCalculatorForm_vue_vue_type_template_id_46ea15c7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7&");
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea& ***!
+  \**********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ActivePhysicsCalculatorForm_vue_vue_type_template_id_49aba5ea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea&");
 
 
 /***/ }),
@@ -21264,6 +21562,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_template_id_5e25b672___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_template_id_5e25b672___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ContactForm.vue?vue&type=template&id=5e25b672& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ContactForm.vue?vue&type=template&id=5e25b672&");
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82& ***!
+  \******************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EarthCommCalculatorForm_vue_vue_type_template_id_6a575b82___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82&");
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e& ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IqwstCalculatorForm_vue_vue_type_template_id_735c848e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./IqwstCalculatorForm.vue?vue&type=template&id=735c848e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e&");
 
 
 /***/ }),
@@ -21675,13 +22007,25 @@ var render = function() {
       _vm._v(" "),
       _vm.step === 1 ? _c("div", [_c("product-interest")], 1) : _vm._e(),
       _vm._v(" "),
-      _vm.step === 2 ? _c("div", [_c("calculator-form")], 1) : _vm._e(),
+      _vm.step === 2 ? _c("div", [_c("iqwst-calculator-form")], 1) : _vm._e(),
       _vm._v(" "),
-      _vm.step === 3 ? _c("div", [_c("calculator-view")], 1) : _vm._e(),
+      _vm.step === 3
+        ? _c("div", [_c("active-chemistry-calculator-form")], 1)
+        : _vm._e(),
       _vm._v(" "),
-      _vm.step === 4 ? _c("div", [_c("contact-form")], 1) : _vm._e(),
+      _vm.step === 4
+        ? _c("div", [_c("active-physics-calculator-form")], 1)
+        : _vm._e(),
       _vm._v(" "),
-      _vm.step === 5 ? _c("div", [_c("success-view")], 1) : _vm._e(),
+      _vm.step === 5
+        ? _c("div", [_c("earth-comm-calculator-form")], 1)
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.step === 6 ? _c("div", [_c("calculator-view")], 1) : _vm._e(),
+      _vm._v(" "),
+      _vm.step === 7 ? _c("div", [_c("contact-form")], 1) : _vm._e(),
+      _vm._v(" "),
+      _vm.step === 8 ? _c("div", [_c("success-view")], 1) : _vm._e(),
       _vm._v(" "),
       _c("p", { staticClass: "text-center text-gray-400 mt-6" }, [
         _vm._v("Note: Estimated savings, actual sayings may vary.")
@@ -21697,10 +22041,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a&":
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/CalculatorForm.vue?vue&type=template&id=b962d11a& ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActiveChemistryCalculatorForm.vue?vue&type=template&id=46ea15c7& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21713,226 +22057,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "h1",
-      {
-        staticClass:
-          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
-      },
-      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
-    ),
-    _vm._v(" "),
-    _c("p", { staticClass: "text-2xl mb-4" }, [
-      _vm._v(
-        "\n        Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your\n        current subscription terms.\n    "
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-6" }, [
-      _c("p", { staticClass: "mb-3 font-bold" }, [
-        _vm._v(
-          "\n            1. Approximately how many students use IQWST in your classroom, school, or district?\n        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.number_of_students,
-            expression: "number_of_students"
-          }
-        ],
-        staticClass:
-          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-        attrs: { type: "text", name: "number_of_students" },
-        domProps: { value: _vm.number_of_students },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.number_of_students = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-6" }, [
-      _c("p", { staticClass: "mb-3 font-bold" }, [
-        _vm._v(
-          "\n            2. Approximately how many teachers use IQWST in your classroom, school, or district?\n        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.number_of_teachers,
-            expression: "number_of_teachers"
-          }
-        ],
-        staticClass:
-          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-        attrs: { type: "text", name: "number_of_teachers" },
-        domProps: { value: _vm.number_of_teachers },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.number_of_teachers = $event.target.value
-          }
-        }
-      })
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mb-6" }, [
-      _c("p", { staticClass: "mb-3 font-bold" }, [
-        _vm._v("3. We currently use:")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex items-center mb-3" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.usage,
-              expression: "usage"
-            }
-          ],
-          attrs: {
-            type: "radio",
-            name: "reason",
-            id: "usage_1",
-            value: "IQWST Print Student Workbooks"
-          },
-          domProps: {
-            checked: _vm._q(_vm.usage, "IQWST Print Student Workbooks")
-          },
-          on: {
-            change: function($event) {
-              _vm.usage = "IQWST Print Student Workbooks"
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "ml-2 text-grey-darker cursor-pointer",
-            attrs: { for: "usage_1" }
-          },
-          [_vm._v("IQWST Print Student Workbooks")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex items-center" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.usage,
-              expression: "usage"
-            }
-          ],
-          attrs: {
-            type: "radio",
-            name: "reason",
-            id: "usage_2",
-            value: "IQWST Interactive Digital Edition"
-          },
-          domProps: {
-            checked: _vm._q(_vm.usage, "IQWST Interactive Digital Edition")
-          },
-          on: {
-            change: function($event) {
-              _vm.usage = "IQWST Interactive Digital Edition"
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "ml-2 text-grey-darker cursor-pointer",
-            attrs: { for: "usage_2" }
-          },
-          [_vm._v("IQWST Interactive Digital Edition")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "mt-6 flex items-center" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
-          attrs: { href: "#" },
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.step_back($event)
-            }
-          }
-        },
-        [_vm._v("Previous")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass:
-            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
-          class: {
-            "cursor-pointer bg-blue-brand":
-              _vm.number_of_students > 0 && _vm.number_of_teachers > 0,
-            "bg-blue-brand-medium cursor-default":
-              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0
-          },
-          attrs: {
-            disabled:
-              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
-            type: "submit"
-          },
-          on: { click: _vm.next_step }
-        },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "w-6 h-6 mr-2",
-              attrs: {
-                fill: "none",
-                stroke: "currentColor",
-                viewBox: "0 0 24 24",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "stroke-linecap": "round",
-                  "stroke-linejoin": "round",
-                  "stroke-width": "2",
-                  d:
-                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                }
-              })
-            ]
-          ),
-          _vm._v("\n            Calculate\n        ")
-        ]
-      )
-    ])
-  ])
+  return _c("div", [_vm._v("\r\n    Active Chemistry\r\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/ActivePhysicsCalculatorForm.vue?vue&type=template&id=49aba5ea& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v(" Active Physics Calculator Form")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22828,7 +22978,7 @@ var render = function() {
               "a",
               {
                 staticClass:
-                  "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline",
+                  "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
                 attrs: { href: "#" },
                 on: {
                   click: function($event) {
@@ -22864,6 +23014,275 @@ var render = function() {
         )
       ]
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82&":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/EarthCommCalculatorForm.vue?vue&type=template&id=6a575b82& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._v("\n    EarthComm Calculator\n")])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/assets/js/pages/calculator/partials/IqwstCalculatorForm.vue?vue&type=template&id=735c848e& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "h1",
+      {
+        staticClass:
+          "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+      },
+      [_vm._v("\n        Calculate Your Digital Savings\n    ")]
+    ),
+    _vm._v(" "),
+    _c("p", { staticClass: "text-2xl mb-4" }, [
+      _vm._v(
+        "\n        Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your\n        current subscription terms.\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            1. Approximately how many students use IQWST in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_students,
+            expression: "number_of_students"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_students" },
+        domProps: { value: _vm.number_of_students },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_students = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v(
+          "\n            2. Approximately how many teachers use IQWST in your classroom, school, or district?\n        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.number_of_teachers,
+            expression: "number_of_teachers"
+          }
+        ],
+        staticClass:
+          "appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
+        attrs: { type: "text", name: "number_of_teachers" },
+        domProps: { value: _vm.number_of_teachers },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.number_of_teachers = $event.target.value
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mb-6" }, [
+      _c("p", { staticClass: "mb-3 font-bold" }, [
+        _vm._v("3. We currently use:")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex items-center mb-3" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.usage,
+              expression: "usage"
+            }
+          ],
+          attrs: {
+            type: "radio",
+            name: "reason",
+            id: "usage_1",
+            value: "IQWST Print Student Workbooks"
+          },
+          domProps: {
+            checked: _vm._q(_vm.usage, "IQWST Print Student Workbooks")
+          },
+          on: {
+            change: function($event) {
+              _vm.usage = "IQWST Print Student Workbooks"
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "ml-2 text-grey-darker cursor-pointer",
+            attrs: { for: "usage_1" }
+          },
+          [_vm._v("IQWST Print Student Workbooks")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex items-center" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.usage,
+              expression: "usage"
+            }
+          ],
+          attrs: {
+            type: "radio",
+            name: "reason",
+            id: "usage_2",
+            value: "IQWST Interactive Digital Edition"
+          },
+          domProps: {
+            checked: _vm._q(_vm.usage, "IQWST Interactive Digital Edition")
+          },
+          on: {
+            change: function($event) {
+              _vm.usage = "IQWST Interactive Digital Edition"
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          {
+            staticClass: "ml-2 text-grey-darker cursor-pointer",
+            attrs: { for: "usage_2" }
+          },
+          [_vm._v("IQWST Interactive Digital Edition")]
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "mt-6 flex items-center" }, [
+      _c(
+        "a",
+        {
+          staticClass:
+            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+          attrs: { href: "#" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.step_back($event)
+            }
+          }
+        },
+        [_vm._v("Previous")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center",
+          class: {
+            "cursor-pointer bg-blue-brand":
+              _vm.number_of_students > 0 && _vm.number_of_teachers > 0,
+            "bg-blue-brand-medium cursor-default":
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0
+          },
+          attrs: {
+            disabled:
+              _vm.number_of_students <= 0 && _vm.number_of_teachers <= 0,
+            type: "submit"
+          },
+          on: { click: _vm.next_step }
+        },
+        [
+          _c(
+            "svg",
+            {
+              staticClass: "w-6 h-6 mr-2",
+              attrs: {
+                fill: "none",
+                stroke: "currentColor",
+                viewBox: "0 0 24 24",
+                xmlns: "http://www.w3.org/2000/svg"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round",
+                  "stroke-width": "2",
+                  d:
+                    "M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\n            Calculate\n        ")
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = []

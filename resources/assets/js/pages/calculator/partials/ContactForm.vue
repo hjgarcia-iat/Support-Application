@@ -142,7 +142,7 @@
 
             <div class="mt-8 flex items-center">
                 <a href="#"
-                    class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline"
+                    class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2"
                     @click.prevent="step_back">Previous</a>
                 <form-button :is_working="loading">Send</form-button>
                 <a href=""
@@ -209,7 +209,21 @@ export default {
     },
     methods: {
         step_back() {
-            this.step = 3
+            if (this.product_interest === 'IQWST') {
+                this.step = 6
+            }
+
+            // if (this.product_interest === 'Active Physics') {
+            //     this.step = 4
+            // }
+            //
+            // if (this.product_interest === 'Active Chemistry') {
+            //     this.step = 3
+            // }
+            //
+            // if (this.product_interest === 'EarthComm') {
+            //     this.step = 5
+            // }
         },
         submitForm() {
             this.loading = true;

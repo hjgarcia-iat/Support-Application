@@ -74,7 +74,7 @@
 <script>
 
 export default {
-    name: "CalculatorForm",
+    name: "IqwstCalculatorForm",
     computed: {
         product_interest() {
             return this.$store.state.product_interest
@@ -122,7 +122,7 @@ export default {
                 this.$store.commit('setAlertType','info')
                 this.$store.commit('setAlertMessage','The number of teachers cannot be equal or higher than then the number of students.')
             } else {
-                this.step = 3
+                this.step = 6
             }
         }
     }

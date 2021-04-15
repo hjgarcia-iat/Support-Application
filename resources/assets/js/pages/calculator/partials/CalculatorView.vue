@@ -184,7 +184,7 @@ export default {
             this.step = 2
         },
         next_step(){
-            this.step = 4
+            this.step = 7
         },
         calculate() {
             //print calculations

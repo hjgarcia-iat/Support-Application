@@ -10,17 +10,30 @@
         </div>
 
         <div v-if="step===2">
-            <calculator-form></calculator-form>
+            <iqwst-calculator-form/>
         </div>
 
         <div v-if="step===3">
-            <calculator-view></calculator-view>
+            <active-chemistry-calculator-form/>
         </div>
 
         <div v-if="step===4">
+            <active-physics-calculator-form/>
+        </div>
+
+        <div v-if="step===5">
+            <earth-comm-calculator-form/>
+        </div>
+
+        <div v-if="step===6">
+            <calculator-view></calculator-view>
+        </div>
+
+        <div v-if="step===7">
             <contact-form></contact-form>
         </div>
-        <div v-if="step===5">
+
+        <div v-if="step===8">
             <success-view></success-view>
         </div>
         <p class="text-center text-gray-400 mt-6">Note: Estimated savings, actual sayings may vary.</p>
@@ -30,7 +43,10 @@
 <script>
 
 import Alert from '../../components/partials/FormAlert'
-import CalculatorForm from "./partials/CalculatorForm";
+import IqwstCalculatorForm from "./partials/IqwstCalculatorForm";
+import ActivePhysicsCalculatorForm from "./partials/ActivePhysicsCalculatorForm";
+import ActiveChemistryCalculatorForm from "./partials/ActiveChemistryCalculatorForm";
+import EarthCommCalculatorForm from "./partials/EarthCommCalculatorForm";
 import CalculatorView from "./partials/CalculatorView";
 import ContactForm from "./partials/ContactForm";
 import SuccessView from "./partials/SuccessView";
@@ -40,7 +56,10 @@ export default {
     components: {
         Alert,
         ProductInterest,
-        CalculatorForm,
+        IqwstCalculatorForm,
+        ActivePhysicsCalculatorForm,
+        ActiveChemistryCalculatorForm,
+        EarthCommCalculatorForm,
         CalculatorView,
         ContactForm,
         SuccessView,

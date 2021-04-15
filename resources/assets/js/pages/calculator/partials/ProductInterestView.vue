@@ -67,7 +67,22 @@ export default {
     },
     methods: {
         nextStep() {
-            this.step = 2
+
+            if(this.product_interest === 'IQWST') {
+                this.step = 2
+            }
+
+            if (this.product_interest === 'Active Chemistry') {
+                this.step = 3
+            }
+
+            if (this.product_interest === 'Active Physics') {
+                this.step = 4
+            }
+
+            if (this.product_interest === 'EarthComm') {
+                this.step = 5
+            }
         }
     }
 }
