@@ -221,7 +221,7 @@ import FormError from "../../../components/partials/FormError";
 import {EventBus} from "../../../calculator";
 
 export default {
-    name: "GetInTouchView",
+    name: "ContactForm",
     components: {
         FormError
     },
@@ -289,10 +289,7 @@ export default {
             }).then(response => {
                 if (response.data.success) {
                     this.reset();
-
-                    EventBus.$emit('form_success', {
-                        formMessage: response.data.message,
-                    })
+                    this.step = 5
                 }
                 this.loading = false;
             }).catch(error => {

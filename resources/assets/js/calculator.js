@@ -16,6 +16,9 @@ const store = new Vuex.Store({
         usage: '',
         product_interest: '',
         step: 1,
+        alert_type: '',
+        alert_message: '',
+        alert_show: false,
     },
     mutations: {
         updateStep(state, step) {
@@ -33,12 +36,25 @@ const store = new Vuex.Store({
         updateUsage(state, usage) {
             state.usage = usage
         },
+        showAlert(state) {
+            state.alert_show = true
+        },
+        setAlertMessage(state, message){
+            state.alert_message = message
+        },
+        setAlertType(state, type){
+            state.alert_type = type
+        },
+        hideAlert(state) {
+            state.alert_show = false
+            state.alert_message = ''
+            state.alert_type = ''
+        },
         reset(state) {
             state.number_of_teachers = 0
             state.number_of_students = 0
             state.usage = 0
-            state.product_interest = 0
-            state.step = 1
+            state.product_interest = ''
         }
     }
 })
