@@ -2662,9 +2662,13 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = false;
       })["catch"](function (error) {
         _this.formErrors = error.response.data.errors;
-        _calculator__WEBPACK_IMPORTED_MODULE_1__.EventBus.$emit('form_error', {
-          formMessage: 'Please see errors below!'
-        });
+
+        _this.$store.commit('showAlert');
+
+        _this.$store.commit('setAlertType', 'error');
+
+        _this.$store.commit('setAlertMessage', 'Please see errors below.');
+
         _this.loading = false;
       });
     },

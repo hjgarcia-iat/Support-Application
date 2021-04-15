@@ -292,9 +292,9 @@ export default {
             }).catch(error => {
                 this.formErrors = error.response.data.errors;
 
-                EventBus.$emit('form_error', {
-                    formMessage: 'Please see errors below!',
-                })
+                this.$store.commit('showAlert')
+                this.$store.commit('setAlertType', 'error')
+                this.$store.commit('setAlertMessage', 'Please see errors below.')
 
                 this.loading = false;
             });
