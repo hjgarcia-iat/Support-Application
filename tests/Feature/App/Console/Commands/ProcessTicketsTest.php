@@ -21,7 +21,7 @@ class ProcessTicketsTest extends TestCase
 
         \File::copyDirectory(base_path('tests/Files'), storage_path('framework/testing/disks/s3/contact-request'));
 
-        $ticket = Ticket::factory()->create(['created_at' => Carbon::now()->subMonths(5)]);
+        $ticket = Ticket::factory()->create(['created_at' => Carbon::now()->subMonths(5),'email_processed' => false]);
         $fileA   = File::factory()->create(['ticket_id' => $ticket->id, 'file' => '1.docx']);
         $fileB   = File::factory()->create(['ticket_id' => $ticket->id, 'file' => '2.docx']);
         $fileC   = File::factory()->create(['ticket_id' => $ticket->id, 'file' => '3.docx']);
