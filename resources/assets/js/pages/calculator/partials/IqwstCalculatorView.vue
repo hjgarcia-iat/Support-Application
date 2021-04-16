@@ -126,7 +126,7 @@ import Vue from "vue";
 Vue.use(Vue2Filters)
 
 export default {
-    name: "CalculatorView",
+    name: "IqwstCalculatorView",
     data() {
         return {
             workbook_cost: 22.48,
@@ -184,7 +184,7 @@ export default {
             this.step = 2
         },
         next_step(){
-            this.step = 7
+            this.step = 8
         },
         calculate() {
             //print calculations
