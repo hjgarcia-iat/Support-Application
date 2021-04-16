@@ -6,8 +6,7 @@
             Calculate Your Digital Savings
         </h1>
         <p class="text-2xl mb-4">
-            Calculate how much you could save by upgrading to Activate Learning
-            Digital Platform or increasing your current subscription terms.
+            Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.
         </p>
 
         <div class="mb-6">

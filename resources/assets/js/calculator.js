@@ -13,18 +13,18 @@ const store = new Vuex.Store({
         number_of_students: 0,
 
         student_ap_digital_one_year_access_cost: 59.55,
-        student_ac_digital_one_year_access_cost: 53.6,
-        student_ec_digital_one_year_access_cost: 53.6,
+        student_ac_digital_one_year_access_cost: 53.60,
+        student_ec_digital_one_year_access_cost: 53.60,
         student_ap_digital_six_year_access_cost: 120.55,
-        student_ac_digital_six_year_access_cost: 180.6,
-        student_ec_digital_six_year_access_cost: 180.6,
+        student_ac_digital_six_year_access_cost: 108.60,
+        student_ec_digital_six_year_access_cost: 108.60,
 
-        teacher_ap_digital_one_year_access_cost: 25.0,
-        teacher_ac_digital_one_year_access_cost: 25.0,
-        teacher_ec_digital_one_year_access_cost: 25.0,
-        teacher_ap_digital_six_year_access_cost: 75.0,
-        teacher_ac_digital_six_year_access_cost: 75.0,
-        teacher_ec_digital_six_year_access_cost: 75.0,
+        teacher_ap_digital_one_year_access_cost: 25.00,
+        teacher_ac_digital_one_year_access_cost: 25.00,
+        teacher_ec_digital_one_year_access_cost: 25.00,
+        teacher_ap_digital_six_year_access_cost: 75.00,
+        teacher_ac_digital_six_year_access_cost: 75.00,
+        teacher_ec_digital_six_year_access_cost: 75.00,
 
         one_year_ap_costs: 0,
         six_year_ap_costs: 0,
@@ -131,7 +131,7 @@ const store = new Vuex.Store({
             commit("sixYearApCost", six_year_cost);
 
             let six_year_savings =
-                (one_year_cost * 6 - six_year_cost) / (one_year_cost * 6);
+                ((one_year_cost * 6) - six_year_cost) / (one_year_cost * 6);
 
             commit("sixYearApSavings", six_year_savings);
         },
@@ -153,7 +153,7 @@ const store = new Vuex.Store({
             commit("sixYearAcCost", six_year_cost);
 
             let six_year_savings =
-                (one_year_cost * 6 - six_year_cost) / (one_year_cost * 6);
+                ((one_year_cost * 6) - six_year_cost) / (one_year_cost * 6);
 
             commit("sixYearAcSavings", six_year_savings);
         },
@@ -175,7 +175,7 @@ const store = new Vuex.Store({
             commit("sixYearEcCost", six_year_cost);
 
             let six_year_savings =
-                (one_year_cost * 6 - six_year_cost) / (one_year_cost * 6);
+                ((one_year_cost * 6) - six_year_cost) / (one_year_cost * 6);
 
             commit("sixYearEcSavings", six_year_savings);
         },

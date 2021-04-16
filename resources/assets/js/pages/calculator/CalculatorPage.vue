@@ -40,7 +40,7 @@
         <div v-if="step===9">
             <success-view></success-view>
         </div>
-        <p class="text-center text-gray-400 mt-6">Note: Estimated savings, actual sayings may vary.</p>
+        <p class="text-center text-gray-600 mt-6">Note: Estimated savings, actual sayings may vary.</p>
     </div>
 </template>
 

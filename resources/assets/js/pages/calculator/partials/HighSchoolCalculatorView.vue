@@ -24,7 +24,27 @@
                 </p>
                 <p class="text-3xl font-bold">1-Year</p>
                 <p class="text-xl">Subscription</p>
-                <p class="text-2xl">Current Subscription</p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Physics'"
+                >
+                    {{ ap_one_year_cost | currency }}
+                </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Chemistry'"
+                >
+                    {{ ac_one_year_cost | currency }}
+                </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'EarthComm'"
+                >
+                    {{ ec_one_year_cost | currency }}
+                </p>
             </div>
 
             <div class="text-center  border-2 border-blue-brand p-4">
@@ -39,13 +59,50 @@
                 <p class="text-xl">Subscription</p>
                 <h3 class="text-2xl font-bold">You would save</h3>
 
-                <p class="text-3xl text-orange-500">
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Physics'"
+                >
                     {{ ap_six_year_cost | currency }}
                 </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Chemistry'"
+                >
+                    {{ ac_six_year_cost | currency }}
+                </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'EarthComm'"
+                >
+                    {{ ec_six_year_cost | currency }}
+                </p>
+
                 <p class="text-xl">&ndash; or &ndash;</p>
-                <p class="text-3xl text-orange-500">
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Physics'"
+                >
                     {{ ap_six_year_savings | percent }}
                 </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'Active Chemistry'"
+                >
+                    {{ ac_six_year_savings | percent }}
+                </p>
+
+                <p
+                    class="text-3xl text-orange-500"
+                    v-if="product_interest === 'EarthComm'"
+                >
+                    {{ ec_six_year_savings | percent }}
+                </p>
+
                 <p>
                     Compared to renewing a 1-yr subscription each of the 6 years
                 </p>
@@ -80,6 +137,9 @@
     export default {
         data() {
             return {
+                ap_one_year_cost: 0,
+                ac_one_year_cost: 0,
+                ec_one_year_cost: 0,
                 ap_six_year_cost: 0,
                 ap_six_year_savings: 0,
                 ac_six_year_cost: 0,
@@ -94,6 +154,9 @@
             this.$store.dispatch("getAcCalculations");
             this.$store.dispatch("getEcCalculations");
 
+            this.ap_one_year_cost = this.$store.state.one_year_ap_costs;
+            this.ac_one_year_cost = this.$store.state.one_year_ac_costs;
+            this.ec_one_year_cost = this.$store.state.one_year_ec_costs;
             this.ap_six_year_cost = this.$store.state.six_year_ap_costs;
             this.ap_six_year_savings = this.$store.state.six_year_ap_savings;
             this.ac_six_year_cost = this.$store.state.six_year_ac_costs;
@@ -103,7 +166,7 @@
         },
         computed: {
             product_interest() {
-                console.log(this.$store.state.product_interest)
+                console.log(this.$store.state.product_interest);
                 return this.$store.state.product_interest;
             },
             step: {

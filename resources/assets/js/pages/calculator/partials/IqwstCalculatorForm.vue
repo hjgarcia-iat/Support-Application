@@ -4,7 +4,7 @@
             Calculate Your Digital Savings
         </h1>
         <p class="text-2xl mb-4">
-            Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your
+            Calculate how much you could save by upgrading to IQWST Interactive Digital Edition (IDE) or increasing your
             current subscription terms.
         </p>
 

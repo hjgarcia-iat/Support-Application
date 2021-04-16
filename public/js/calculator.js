@@ -2222,6 +2222,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2290,7 +2291,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
 /* harmony import */ var _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormInput */ "./resources/assets/js/components/forms/FormInput.vue");
-//
 //
 //
 //
@@ -2849,6 +2849,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2991,12 +2992,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 vue__WEBPACK_IMPORTED_MODULE_1__.default.use((vue2_filters__WEBPACK_IMPORTED_MODULE_0___default()));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      ap_one_year_cost: 0,
+      ac_one_year_cost: 0,
+      ec_one_year_cost: 0,
       ap_six_year_cost: 0,
       ap_six_year_savings: 0,
       ac_six_year_cost: 0,
@@ -3010,6 +3071,9 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use((vue2_filters__WEBPACK_IMPORTED_MOD
     this.$store.dispatch("getApCalculations");
     this.$store.dispatch("getAcCalculations");
     this.$store.dispatch("getEcCalculations");
+    this.ap_one_year_cost = this.$store.state.one_year_ap_costs;
+    this.ac_one_year_cost = this.$store.state.one_year_ac_costs;
+    this.ec_one_year_cost = this.$store.state.one_year_ec_costs;
     this.ap_six_year_cost = this.$store.state.six_year_ap_costs;
     this.ap_six_year_savings = this.$store.state.six_year_ap_savings;
     this.ac_six_year_cost = this.$store.state.six_year_ac_costs;
@@ -22690,7 +22754,7 @@ var render = function() {
       _vm._v(" "),
       _vm.step === 9 ? _c("div", [_c("success-view")], 1) : _vm._e(),
       _vm._v(" "),
-      _c("p", { staticClass: "text-center text-gray-400 mt-6" }, [
+      _c("p", { staticClass: "text-center text-gray-600 mt-6" }, [
         _vm._v("Note: Estimated savings, actual sayings may vary.")
       ])
     ],
@@ -22732,7 +22796,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to Activate Learning\n        Digital Platform or increasing your current subscription terms.\n    "
+        "\n        \n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.\n\n    "
       )
     ]),
     _vm._v(" "),
@@ -22875,7 +22939,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to Activate Learning\n        Digital Platform or increasing your current subscription terms.\n    "
+        "\n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.\n    "
       )
     ]),
     _vm._v(" "),
@@ -23545,7 +23609,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to Activate Learning\n        Digital Platform or increasing your current subscription terms.\n    "
+        "\n        \n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.\n    \n    "
       )
     ]),
     _vm._v(" "),
@@ -23717,7 +23781,35 @@ var render = function() {
           _vm._v(" "),
           _c("p", { staticClass: "text-xl" }, [_vm._v("Subscription")]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-2xl" }, [_vm._v("Current Subscription")])
+          _vm.product_interest === "Active Physics"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ap_one_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "Active Chemistry"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ac_one_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "EarthComm"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ec_one_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e()
         ]
       ),
       _vm._v(" "),
@@ -23747,23 +23839,67 @@ var render = function() {
             _vm._v("You would save")
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-3xl text-orange-500" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm._f("currency")(_vm.ap_six_year_cost)) +
-                "\n            "
-            )
-          ]),
+          _vm.product_interest === "Active Physics"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ap_six_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "Active Chemistry"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ac_six_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "EarthComm"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("currency")(_vm.ec_six_year_cost)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("p", { staticClass: "text-xl" }, [_vm._v("– or –")]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-3xl text-orange-500" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm._f("percent")(_vm.ap_six_year_savings)) +
-                "\n            "
-            )
-          ]),
+          _vm.product_interest === "Active Physics"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("percent")(_vm.ap_six_year_savings)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "Active Chemistry"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("percent")(_vm.ac_six_year_savings)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product_interest === "EarthComm"
+            ? _c("p", { staticClass: "text-3xl text-orange-500" }, [
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm._f("percent")(_vm.ec_six_year_savings)) +
+                    "\n            "
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("p", [
             _vm._v(
@@ -23859,7 +23995,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to IQWST Interactive Digital Edition or increasing your\n        current subscription terms.\n    "
+        "\n        Calculate how much you could save by upgrading to IQWST Interactive Digital Edition (IDE) or increasing your\n        current subscription terms.\n    "
       )
     ]),
     _vm._v(" "),
@@ -39289,17 +39425,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
     number_of_teachers: 0,
     number_of_students: 0,
     student_ap_digital_one_year_access_cost: 59.55,
-    student_ac_digital_one_year_access_cost: 53.6,
-    student_ec_digital_one_year_access_cost: 53.6,
+    student_ac_digital_one_year_access_cost: 53.60,
+    student_ec_digital_one_year_access_cost: 53.60,
     student_ap_digital_six_year_access_cost: 120.55,
-    student_ac_digital_six_year_access_cost: 180.6,
-    student_ec_digital_six_year_access_cost: 180.6,
-    teacher_ap_digital_one_year_access_cost: 25.0,
-    teacher_ac_digital_one_year_access_cost: 25.0,
-    teacher_ec_digital_one_year_access_cost: 25.0,
-    teacher_ap_digital_six_year_access_cost: 75.0,
-    teacher_ac_digital_six_year_access_cost: 75.0,
-    teacher_ec_digital_six_year_access_cost: 75.0,
+    student_ac_digital_six_year_access_cost: 108.60,
+    student_ec_digital_six_year_access_cost: 108.60,
+    teacher_ap_digital_one_year_access_cost: 25.00,
+    teacher_ac_digital_one_year_access_cost: 25.00,
+    teacher_ec_digital_one_year_access_cost: 25.00,
+    teacher_ap_digital_six_year_access_cost: 75.00,
+    teacher_ac_digital_six_year_access_cost: 75.00,
+    teacher_ec_digital_six_year_access_cost: 75.00,
     one_year_ap_costs: 0,
     six_year_ap_costs: 0,
     six_year_ap_savings: 0,
