@@ -122,7 +122,7 @@
                         "The number of teachers cannot be equal or higher than then the number of students."
                     );
                 } else {
-                    this.step = 6;
+                    this.step = 7;
                 }
             },
         },

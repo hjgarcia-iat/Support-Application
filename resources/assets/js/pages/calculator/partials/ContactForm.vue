@@ -274,17 +274,17 @@
                     this.step = 6;
                 }
 
-                // if (this.product_interest === 'Active Physics') {
-                //     this.step = 4
-                // }
-                //
-                // if (this.product_interest === 'Active Chemistry') {
-                //     this.step = 3
-                // }
-                //
-                // if (this.product_interest === 'EarthComm') {
-                //     this.step = 5
-                // }
+                if (this.product_interest === 'Active Physics') {
+                    this.step = 7
+                }
+                
+                if (this.product_interest === 'Active Chemistry') {
+                    this.step = 7
+                }
+                
+                if (this.product_interest === 'EarthComm') {
+                    this.step = 7
+                }
             },
             submitForm() {
                 this.loading = true;
@@ -308,7 +308,7 @@
                     .then((response) => {
                         if (response.data.success) {
                             this.reset();
-                            this.step = 5;
+                            this.step = 9;
                         }
                         this.loading = false;
                     })
