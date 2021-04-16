@@ -26,14 +26,18 @@
         </div>
 
         <div v-if="step===6">
-            <calculator-view></calculator-view>
+            <iqwst-calculator-view/>
         </div>
 
         <div v-if="step===7">
-            <contact-form></contact-form>
+            High School Results
         </div>
 
         <div v-if="step===8">
+            <contact-form></contact-form>
+        </div>
+
+        <div v-if="step===9">
             <success-view></success-view>
         </div>
         <p class="text-center text-gray-400 mt-6">Note: Estimated savings, actual sayings may vary.</p>
@@ -47,7 +51,7 @@ import IqwstCalculatorForm from "./partials/IqwstCalculatorForm";
 import ActivePhysicsCalculatorForm from "./partials/ActivePhysicsCalculatorForm";
 import ActiveChemistryCalculatorForm from "./partials/ActiveChemistryCalculatorForm";
 import EarthCommCalculatorForm from "./partials/EarthCommCalculatorForm";
-import CalculatorView from "./partials/CalculatorView";
+import IqwstCalculatorView from "./partials/IqwstCalculatorView";
 import ContactForm from "./partials/ContactForm";
 import SuccessView from "./partials/SuccessView";
 import ProductInterest from "./partials/ProductInterestView";
@@ -60,9 +64,9 @@ export default {
         ActivePhysicsCalculatorForm,
         ActiveChemistryCalculatorForm,
         EarthCommCalculatorForm,
-        CalculatorView,
+        IqwstCalculatorView,
         ContactForm,
-        SuccessView,
+        SuccessView
     },
     name: "CalculatorPage",
     data() {
