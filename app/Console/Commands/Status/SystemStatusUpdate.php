@@ -3,6 +3,7 @@
 namespace App\Console\Commands\Status;
 
 use App\Status;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class SystemStatusUpdate extends Command
@@ -13,7 +14,7 @@ class SystemStatusUpdate extends Command
 
     public function handle()
     {
-        $currentPosts = Status::where('created_at',now())->get();
+        $currentPosts = Status::whereDate('created_at',Carbon::today())->get();
 
         if($currentPosts->count() === 0) {
             Status::create([
