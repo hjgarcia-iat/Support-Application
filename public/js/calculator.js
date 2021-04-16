@@ -2215,14 +2215,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2237,18 +2229,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     number_of_teachers: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_teachers);
+        return this.$store.state.number_of_teachers;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfTeachers", parseInt(value));
+        this.$store.commit("updateNumberOfTeachers", value);
       }
     },
     number_of_students: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_students);
+        return this.$store.state.number_of_students;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfStudents", parseInt(value));
+        this.$store.commit("updateNumberOfStudents", value);
       }
     },
     step: {
@@ -2367,18 +2359,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     number_of_teachers: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_teachers);
+        return this.$store.state.number_of_teachers;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfTeachers", parseInt(value));
+        this.$store.commit("updateNumberOfTeachers", value);
       }
     },
     number_of_students: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_students);
+        return this.$store.state.number_of_students;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfStudents", parseInt(value));
+        this.$store.commit("updateNumberOfStudents", value);
       }
     },
     step: {
@@ -2864,18 +2856,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     number_of_teachers: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_teachers);
+        return this.$store.state.number_of_teachers;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfTeachers", parseInt(value));
+        this.$store.commit("updateNumberOfTeachers", value);
       }
     },
     number_of_students: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_students);
+        return this.$store.state.number_of_students;
       },
       set: function set(value) {
-        this.$store.commit("updateNumberOfStudents", parseInt(value));
+        this.$store.commit("updateNumberOfStudents", value);
       }
     },
     step: {
@@ -22796,7 +22788,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        \n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.\n\n    "
+        "\n\n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE)\n        of your science program.\n\n    "
       )
     ]),
     _vm._v(" "),
@@ -22809,7 +22801,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_students" } },
           [
             _vm._v(
-              "\n            1. Approximately how many students use Active Chemistry in your\n            classroom, school, or district?\n        "
+              "\n            1. Approximately how many students use Active Chemistry in your classroom, school, or district?\n        "
             )
           ]
         ),
@@ -22841,7 +22833,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_teachers" } },
           [
             _vm._v(
-              "\n            2. Approximately how many teachers use Active Chemistry in your\n            classroom, school, or district?\n        "
+              "\n            2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?\n        "
             )
           ]
         ),
