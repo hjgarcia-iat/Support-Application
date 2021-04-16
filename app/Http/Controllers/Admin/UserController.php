@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UserRequest;
 use App\User;
 
 class UserController extends Controller
@@ -36,12 +37,12 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(User $user)
+    public function update(User $user, UserRequest $request)
     {
         $user->update([
-            'name' => request('name'),
-            'email' => request('email'),
-            'password' => (request()->get('password') != null) ? bcrypt(request('password')) : $user->password,
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => ($request->get('password') != null) ? bcrypt($request->get('password')) : $user->password,
         ]);
 
         return redirect(route('admin.users.edit', $user))
