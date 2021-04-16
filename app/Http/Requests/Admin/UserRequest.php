@@ -22,6 +22,10 @@ class UserRequest extends FormRequest
                 Rule::unique('users')->ignore($this->route()->parameter('user')->id)];
         }
 
+        if($this->get('password') !== null) {
+            $rules['password'] = 'min:8|numbers|letters|case_diff|confirmed';
+        }
+
         return $rules;
     }
 

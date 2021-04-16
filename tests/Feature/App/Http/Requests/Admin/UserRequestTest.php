@@ -124,13 +124,14 @@ class UserRequestTest extends TestCase
      */
     public function test_invalid_password_data(array $data)
     {
-        $user = User::factory()->create(['password' => bcrypt('password')]);
+        $authenticatedUser = User::factory()->create();
+        $user = User::factory()->create();
 
-        $response = $this->actingAs($user)
-            ->from(route('admin.account.edit'))
-            ->post(route("admin.account.update"), $data);
+        $response = $this->actingAs($authenticatedUser)
+            ->from(route('admin.users.edit', $user))
+            ->post(route("admin.users.update", $user), $data);
 
-        $response->assertRedirect(route('admin.account.edit'));
+        $response->assertRedirect(route('admin.users.edit', $user));
         $this->assertTrue(\Hash::check('password', $user->fresh()->password));
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
