@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\File;
 use App\Http\Controllers\Controller;
 use App\Ticket;
 
@@ -31,8 +32,7 @@ class TicketController extends Controller
     {
         if ($ticket->files !== null) {
             foreach ($ticket->files as $file) {
-                \Storage::disk('s3')->delete("contact - request /{
-                $file->file}");
+                \Storage::disk('s3')->delete("contact-request/{$file->file}");
                 File::find($file->id)->delete();
             }
         }

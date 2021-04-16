@@ -57,7 +57,7 @@ class TicketControllerTest extends TestCase
         $fileD  = File::factory()->create(['ticket_id' => $ticket->id, 'file' => '4.docx']);
         $fileE  = File::factory()->create(['ticket_id' => $ticket->id, 'file' => '5.docx']);
 
-        $response = $this->actingAs($user)->get(route("admin.tickets.delete", $ticket));
+        $response = $this->withoutExceptionHandling()->actingAs($user)->get(route("admin.tickets.delete", $ticket));
 
         $response->assertRedirect(route('admin.tickets'));
         $this->assertDatabaseMissing('tickets', ['id' => $ticket->id]);
