@@ -19,9 +19,19 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 require __DIR__ . '/auth.php';
 
 
-
+/**
+ * Help area
+ */
 Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
+Route::post('/support-tickets', [SupportTicketController::class, 'store'])->name('support_ticket.store');
+Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
+Route::get('/system-status', [SystemStatusController::class, 'index'])->name('system_status.index');
 
+
+/**
+ * Everything below is part of the forms
+ */
 Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
 Route::post('/access-request', [AccessRequestController::class, 'store'])->name('access_request.store');
 
@@ -40,14 +50,6 @@ Route::get('/request-product-information', [RequestProductInformationController:
 Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store")->middleware(ProtectAgainstSpam::class);;
 
 
-/**
- * Help area
- */
-Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
-Route::post('/support-tickets', [SupportTicketController::class,'store'])->name('support_ticket.store');
-Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
-
-Route::get('/system-status',[SystemStatusController::class,'index'])->name('system_status.index');
 
 
 /**
