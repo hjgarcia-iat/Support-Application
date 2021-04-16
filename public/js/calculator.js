@@ -2150,6 +2150,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
+/* harmony import */ var _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormInput */ "./resources/assets/js/components/forms/FormInput.vue");
 //
 //
 //
@@ -2194,8 +2196,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ActiveChemistryCalculatorForm",
+  components: {
+    FormLabel: _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__.default,
+    FormInput: _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   computed: {
     product_interest: function product_interest() {
       return this.$store.state.product_interest;
@@ -2205,7 +2232,7 @@ __webpack_require__.r(__webpack_exports__);
         return parseInt(this.$store.state.number_of_teachers);
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+        this.$store.commit("updateNumberOfTeachers", parseInt(value));
       }
     },
     number_of_students: {
@@ -2213,7 +2240,7 @@ __webpack_require__.r(__webpack_exports__);
         return parseInt(this.$store.state.number_of_students);
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfStudents', parseInt(value));
+        this.$store.commit("updateNumberOfStudents", parseInt(value));
       }
     },
     step: {
@@ -2221,7 +2248,7 @@ __webpack_require__.r(__webpack_exports__);
         return this.$store.state.step;
       },
       set: function set(value) {
-        this.$store.commit('updateStep', value);
+        this.$store.commit("updateStep", value);
       }
     }
   },
@@ -2231,9 +2258,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     next_step: function next_step() {
       if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
-        this.$store.commit('showAlert');
-        this.$store.commit('setAlertType', 'info');
-        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+        this.$store.commit("showAlert");
+        this.$store.commit("setAlertType", "info");
+        this.$store.commit("setAlertMessage", "The number of teachers cannot be equal or higher than then the number of students.");
       } else {
         this.step = 6;
       }
@@ -2254,6 +2281,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
+/* harmony import */ var _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormInput */ "./resources/assets/js/components/forms/FormInput.vue");
 //
 //
 //
@@ -2297,8 +2326,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ActivePhysicsCalculatorForm",
+  components: {
+    FormLabel: _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__.default,
+    FormInput: _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   computed: {
     product_interest: function product_interest() {
       return this.$store.state.product_interest;
@@ -2308,7 +2363,7 @@ __webpack_require__.r(__webpack_exports__);
         return parseInt(this.$store.state.number_of_teachers);
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+        this.$store.commit("updateNumberOfTeachers", parseInt(value));
       }
     },
     number_of_students: {
@@ -2316,7 +2371,7 @@ __webpack_require__.r(__webpack_exports__);
         return parseInt(this.$store.state.number_of_students);
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfStudents', parseInt(value));
+        this.$store.commit("updateNumberOfStudents", parseInt(value));
       }
     },
     step: {
@@ -2324,7 +2379,7 @@ __webpack_require__.r(__webpack_exports__);
         return this.$store.state.step;
       },
       set: function set(value) {
-        this.$store.commit('updateStep', value);
+        this.$store.commit("updateStep", value);
       }
     }
   },
@@ -2334,9 +2389,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     next_step: function next_step() {
       if (parseInt(this.number_of_teachers) >= parseInt(this.number_of_students)) {
-        this.$store.commit('showAlert');
-        this.$store.commit('setAlertType', 'info');
-        this.$store.commit('setAlertMessage', 'The number of teachers cannot be equal or higher than then the number of students.');
+        this.$store.commit("showAlert");
+        this.$store.commit("setAlertType", "info");
+        this.$store.commit("setAlertMessage", "The number of teachers cannot be equal or higher than then the number of students.");
       } else {
         this.step = 6;
       }
@@ -2883,6 +2938,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
+/* harmony import */ var _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormInput */ "./resources/assets/js/components/forms/FormInput.vue");
 //
 //
 //
@@ -2946,8 +3003,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ActiveEarthCommCalculatorForm",
+  components: {
+    FormLabel: _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__.default,
+    FormInput: _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__.default
+  },
   computed: {
     product_interest: function product_interest() {
       return this.$store.state.product_interest;
@@ -22330,7 +22393,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\n    "
+        "\n        Calculate how much you could save by upgrading to Activate Learning\n        Digital Platform or increasing your current subscription terms.\n    "
       )
     ]),
     _vm._v(" "),
@@ -22343,7 +22406,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_students" } },
           [
             _vm._v(
-              "\n            1. Approximately how many students use Active Chemistry in your classroom, school, or district?\n        "
+              "\n            1. Approximately how many students use Active Chemistry in your\n            classroom, school, or district?\n        "
             )
           ]
         ),
@@ -22375,7 +22438,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_teachers" } },
           [
             _vm._v(
-              "\n            2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?\n        "
+              "\n            2. Approximately how many teachers use Active Chemistry in your\n            classroom, school, or district?\n        "
             )
           ]
         ),
@@ -22473,7 +22536,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.\n    "
+        "\n        Calculate how much you could save by upgrading to Activate Learning\n        Digital Platform or increasing your current subscription terms.\n    "
       )
     ]),
     _vm._v(" "),
@@ -22486,7 +22549,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_students" } },
           [
             _vm._v(
-              "\n        1. Approximately how many students use Active Physics in your classroom, school, or district?\n    "
+              "\n            1. Approximately how many students use Active Physics in your\n            classroom, school, or district?\n        "
             )
           ]
         ),
@@ -22518,7 +22581,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_teachers" } },
           [
             _vm._v(
-              "\n        2. Approximately how many teachers use Active Physics in your classroom, school, or district?\n    "
+              "\n            2. Approximately how many teachers use Active Physics in your\n            classroom, school, or district?\n        "
             )
           ]
         ),

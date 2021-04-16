@@ -62,8 +62,14 @@
 </template>
 
 <script>
+    import FormLabel from "../../../components/forms/FormLabel";
+    import FormInput from "../../../components/forms/FormInput";
     export default {
         name: "ActiveEarthCommCalculatorForm",
+        components: {
+            FormLabel,
+            FormInput,
+        },
         computed: {
             product_interest() {
                 return this.$store.state.product_interest;
