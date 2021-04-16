@@ -1,41 +1,70 @@
 <template>
     <div>
+        <h1
+            class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
+        >
+            Learn More/Contact Rep
+        </h1>
 
-        <h1 class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4">Learn More/Contact Rep</h1>
-
-        <form method="POST"
-            @submit.prevent="submitForm">
-
+        <form method="POST" @submit.prevent="submitForm">
             <div class="mb-6">
-                <form-label field="first_name" :required="true">First Name</form-label>
-                <form-input v-model="first_name" field="first_name" type="text"
-                    placeholder="Enter your first name"/>
-                <form-error :error=formErrors.first_name[0]
-                    v-if="formErrors.first_name"></form-error>
+                <form-label field="first_name" :required="true"
+                    >First Name</form-label
+                >
+                <form-input
+                    v-model="first_name"
+                    field="first_name"
+                    type="text"
+                    placeholder="Enter your first name"
+                />
+                <form-error
+                    :error="formErrors.first_name[0]"
+                    v-if="formErrors.first_name"
+                ></form-error>
             </div>
 
             <div class="mb-6">
-                <form-label field="last_name" :required="true">Last Name</form-label>
-                <form-input v-model="last_name" field="last_name" type="text"
-                    placeholder="Enter your last name"/>
-                <form-error :error=formErrors.last_name[0]
-                    v-if="formErrors.last_name"></form-error>
+                <form-label field="last_name" :required="true"
+                    >Last Name</form-label
+                >
+                <form-input
+                    v-model="last_name"
+                    field="last_name"
+                    type="text"
+                    placeholder="Enter your last name"
+                />
+                <form-error
+                    :error="formErrors.last_name[0]"
+                    v-if="formErrors.last_name"
+                ></form-error>
             </div>
 
             <div class="mb-6">
                 <form-label field="email" :required="true">Email</form-label>
-                <form-input v-model="email" field="email" type="text"
-                    placeholder="Enter your email"/>
-                <form-error :error=formErrors.email[0]
-                    v-if="formErrors.email"></form-error>
+                <form-input
+                    v-model="email"
+                    field="email"
+                    type="text"
+                    placeholder="Enter your email"
+                />
+                <form-error
+                    :error="formErrors.email[0]"
+                    v-if="formErrors.email"
+                ></form-error>
             </div>
 
             <div class="mb-6">
                 <form-label field="phone" :required="false">Email</form-label>
-                <form-input v-model="phone" field="phone" type="text"
-                    placeholder="Enter your phone"/>
-                <form-error :error=formErrors.phone[0]
-                    v-if="formErrors.phone"></form-error>
+                <form-input
+                    v-model="phone"
+                    field="phone"
+                    type="text"
+                    placeholder="Enter your phone"
+                />
+                <form-error
+                    :error="formErrors.phone[0]"
+                    v-if="formErrors.phone"
+                ></form-error>
             </div>
 
             <div class="mb-6">
@@ -44,36 +73,60 @@
                 <form-select field="role" v-model="role">
                     <option value="">Select a role</option>
                     <option value="Classroom Teacher">Classroom Teacher</option>
-                    <option value="School Administrator">School Administrator</option>
+                    <option value="School Administrator"
+                        >School Administrator</option
+                    >
                     <option value="Other">Other</option>
                 </form-select>
 
-                <form-error :error=formErrors.role[0]
-                    v-if="formErrors.role"></form-error>
+                <form-error
+                    :error="formErrors.role[0]"
+                    v-if="formErrors.role"
+                ></form-error>
             </div>
 
             <div class="mb-6">
-                <form-label field="district" :required="false">District</form-label>
-                <form-input v-model="district" field="district" type="text"
-                    placeholder="Enter the district name"/>
-                <form-error :error=formErrors.district[0]
-                    v-if="formErrors.district"></form-error>
+                <form-label field="district" :required="false"
+                    >District</form-label
+                >
+                <form-input
+                    v-model="district"
+                    field="district"
+                    type="text"
+                    placeholder="Enter the district name"
+                />
+                <form-error
+                    :error="formErrors.district[0]"
+                    v-if="formErrors.district"
+                ></form-error>
             </div>
 
             <div class="mb-6">
                 <form-label field="school" :required="true">School</form-label>
-                <form-input v-model="school" field="school" type="text"
-                    placeholder="Enter the school name"/>
-                <form-error :error=formErrors.school[0]
-                    v-if="formErrors.school"></form-error>
+                <form-input
+                    v-model="school"
+                    field="school"
+                    type="text"
+                    placeholder="Enter the school name"
+                />
+                <form-error
+                    :error="formErrors.school[0]"
+                    v-if="formErrors.school"
+                ></form-error>
             </div>
 
             <div class="mb-6">
                 <form-label field="city" :required="true">City</form-label>
-                <form-input v-model="city" field="city" type="text"
-                    placeholder="Enter the city name"/>
-                <form-error :error=formErrors.city[0]
-                    v-if="formErrors.city"></form-error>
+                <form-input
+                    v-model="city"
+                    field="city"
+                    type="text"
+                    placeholder="Enter the city name"
+                />
+                <form-error
+                    :error="formErrors.city[0]"
+                    v-if="formErrors.city"
+                ></form-error>
             </div>
 
             <div class="mb-6">
@@ -135,152 +188,168 @@
                     <option value="Other">Other</option>
                 </form-select>
 
-                <form-error :error=formErrors.state[0]
-                    v-if="formErrors.state"></form-error>
+                <form-error
+                    :error="formErrors.state[0]"
+                    v-if="formErrors.state"
+                ></form-error>
             </div>
 
-
             <div class="mt-8 flex items-center">
-                <a href="#"
-                    class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2"
-                    @click.prevent="step_back">Previous</a>
+                <a
+                    href="#"
+                    class="text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2"
+                    @click.prevent="step_back"
+                    >Previous</a
+                >
+
                 <form-button :is_working="loading">Send</form-button>
-                <a href=""
+                
+                <a
+                    href="#"
                     class="ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline"
-                    @click.prevent="reset_form">Reset</a>
+                    @click.prevent="reset_form"
+                    >Reset</a
+                >
             </div>
         </form>
     </div>
 </template>
 
 <script>
+    import FormError from "../../../components/partials/FormError";
+    import FormLabel from "../../../components/forms/FormLabel";
+    import FormInput from "../../../components/forms/FormInput";
+    import FormSelect from "../../../components/forms/FormSelect";
+    import FormButton from "../../../components/forms/FormButton";
 
-import FormError from "../../../components/partials/FormError";
-import FormLabel from "../../../components/forms/FormLabel";
-import FormInput from "../../../components/forms/FormInput";
-import FormSelect from "../../../components/forms/FormSelect";
-import FormButton from "../../../components/forms/FormButton";
-
-export default {
-    name: "ContactForm",
-    components: {
-        FormError,
-        FormLabel,
-        FormInput,
-        FormSelect,
-        FormButton,
-    },
-    data() {
-        return {
-            formErrors: [],
-            loading: false,
-            first_name: '',
-            last_name: '',
-            email: '',
-            phone: '',
-            role: '',
-            school: '',
-            district: '',
-            city: '',
-            state: '',
-        }
-    },
-    computed: {
-        product_interest() {
-            return this.$store.state.product_interest
+    export default {
+        name: "ContactForm",
+        components: {
+            FormError,
+            FormLabel,
+            FormInput,
+            FormSelect,
+            FormButton,
         },
-        number_of_students() {
-            return parseInt(this.$store.state.number_of_students)
+        data() {
+            return {
+                formErrors: [],
+                loading: false,
+                first_name: "",
+                last_name: "",
+                email: "",
+                phone: "",
+                role: "",
+                school: "",
+                district: "",
+                city: "",
+                state: "",
+            };
         },
-        number_of_teachers() {
-            return parseInt(this.$store.state.number_of_teachers)
-        },
-        usage() {
-            return this.$store.state.usage
-        },
-        step: {
-            get() {
-                return this.$store.state.step
+        computed: {
+            product_interest() {
+                return this.$store.state.product_interest;
             },
-            set(value) {
-                this.$store.commit('updateStep', value)
-            }
+            number_of_students() {
+                return parseInt(this.$store.state.number_of_students);
+            },
+            number_of_teachers() {
+                return parseInt(this.$store.state.number_of_teachers);
+            },
+            usage() {
+                return this.$store.state.usage;
+            },
+            step: {
+                get() {
+                    return this.$store.state.step;
+                },
+                set(value) {
+                    this.$store.commit("updateStep", value);
+                },
+            },
         },
-    },
-    methods: {
-        step_back() {
-            if (this.product_interest === 'IQWST') {
-                this.step = 6
-            }
-
-            // if (this.product_interest === 'Active Physics') {
-            //     this.step = 4
-            // }
-            //
-            // if (this.product_interest === 'Active Chemistry') {
-            //     this.step = 3
-            // }
-            //
-            // if (this.product_interest === 'EarthComm') {
-            //     this.step = 5
-            // }
-        },
-        submitForm() {
-            this.loading = true;
-
-            axios.post('/calculator', {
-                first_name: this.first_name,
-                last_name: this.last_name,
-                email: this.email,
-                phone: this.phone,
-                role: this.role,
-                city: this.city,
-                school: this.school,
-                district: this.district,
-                state: this.state,
-                number_of_teachers: this.number_of_teachers,
-                number_of_students: this.number_of_students,
-                product_interest: this.product_interest,
-                usage: this.usage
-            }).then(response => {
-                if (response.data.success) {
-                    this.reset();
-                    this.step = 5
+        methods: {
+            step_back() {
+                if (this.product_interest === "IQWST") {
+                    this.step = 6;
                 }
-                this.loading = false;
-            }).catch(error => {
-                this.formErrors = error.response.data.errors;
 
-                this.$store.commit('showAlert')
-                this.$store.commit('setAlertType', 'error')
-                this.$store.commit('setAlertMessage', 'Please see errors below.')
+                // if (this.product_interest === 'Active Physics') {
+                //     this.step = 4
+                // }
+                //
+                // if (this.product_interest === 'Active Chemistry') {
+                //     this.step = 3
+                // }
+                //
+                // if (this.product_interest === 'EarthComm') {
+                //     this.step = 5
+                // }
+            },
+            submitForm() {
+                this.loading = true;
 
-                this.loading = false;
-            });
+                axios
+                    .post("/calculator", {
+                        first_name: this.first_name,
+                        last_name: this.last_name,
+                        email: this.email,
+                        phone: this.phone,
+                        role: this.role,
+                        city: this.city,
+                        school: this.school,
+                        district: this.district,
+                        state: this.state,
+                        number_of_teachers: this.number_of_teachers,
+                        number_of_students: this.number_of_students,
+                        product_interest: this.product_interest,
+                        usage: this.usage,
+                    })
+                    .then((response) => {
+                        if (response.data.success) {
+                            this.reset();
+                            this.step = 5;
+                        }
+                        this.loading = false;
+                    })
+                    .catch((error) => {
+                        this.formErrors = error.response.data.errors;
+
+                        this.$store.commit("showAlert");
+                        this.$store.commit("setAlertType", "error");
+                        this.$store.commit(
+                            "setAlertMessage",
+                            "Please see errors below."
+                        );
+
+                        this.loading = false;
+                    });
+            },
+            reset() {
+                this.first_name = "";
+                this.last_name = "";
+                this.email = "";
+                this.phone = "";
+                this.role = "";
+                this.city = "";
+                this.school = "";
+                this.district = "";
+                this.state = "";
+                this.formErrors = [];
+
+                this.$store.commit("reset");
+            },
+            reset_form() {
+                this.reset();
+
+                this.$store.commit("updateStep", 1);
+                this.$store.commit("showAlert");
+                this.$store.commit("setAlertType", "info");
+                this.$store.commit(
+                    "setAlertMessage",
+                    "You have been set back to the beginning."
+                );
+            },
         },
-        reset() {
-            this.first_name = '';
-            this.last_name = '';
-            this.email = '';
-            this.phone = '';
-            this.role = '';
-            this.city = '';
-            this.school = '';
-            this.district = '';
-            this.state = ''
-            this.formErrors = [];
-
-            this.$store.commit('reset')
-
-        },
-        reset_form() {
-            this.reset();
-
-            this.$store.commit('updateStep', 1)
-            this.$store.commit('showAlert')
-            this.$store.commit('setAlertType', 'info')
-            this.$store.commit('setAlertMessage', 'You have been set back to the beginning.')
-        }
-    }
-}
+    };
 </script>

@@ -2796,6 +2796,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2814,15 +2876,15 @@ __webpack_require__.r(__webpack_exports__);
     return {
       formErrors: [],
       loading: false,
-      first_name: '',
-      last_name: '',
-      email: '',
-      phone: '',
-      role: '',
-      school: '',
-      district: '',
-      city: '',
-      state: ''
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone: "",
+      role: "",
+      school: "",
+      district: "",
+      city: "",
+      state: ""
     };
   },
   computed: {
@@ -2843,13 +2905,13 @@ __webpack_require__.r(__webpack_exports__);
         return this.$store.state.step;
       },
       set: function set(value) {
-        this.$store.commit('updateStep', value);
+        this.$store.commit("updateStep", value);
       }
     }
   },
   methods: {
     step_back: function step_back() {
-      if (this.product_interest === 'IQWST') {
+      if (this.product_interest === "IQWST") {
         this.step = 6;
       } // if (this.product_interest === 'Active Physics') {
       //     this.step = 4
@@ -2868,7 +2930,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.loading = true;
-      axios.post('/calculator', {
+      axios.post("/calculator", {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
@@ -2893,34 +2955,34 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this.formErrors = error.response.data.errors;
 
-        _this.$store.commit('showAlert');
+        _this.$store.commit("showAlert");
 
-        _this.$store.commit('setAlertType', 'error');
+        _this.$store.commit("setAlertType", "error");
 
-        _this.$store.commit('setAlertMessage', 'Please see errors below.');
+        _this.$store.commit("setAlertMessage", "Please see errors below.");
 
         _this.loading = false;
       });
     },
     reset: function reset() {
-      this.first_name = '';
-      this.last_name = '';
-      this.email = '';
-      this.phone = '';
-      this.role = '';
-      this.city = '';
-      this.school = '';
-      this.district = '';
-      this.state = '';
+      this.first_name = "";
+      this.last_name = "";
+      this.email = "";
+      this.phone = "";
+      this.role = "";
+      this.city = "";
+      this.school = "";
+      this.district = "";
+      this.state = "";
       this.formErrors = [];
-      this.$store.commit('reset');
+      this.$store.commit("reset");
     },
     reset_form: function reset_form() {
       this.reset();
-      this.$store.commit('updateStep', 1);
-      this.$store.commit('showAlert');
-      this.$store.commit('setAlertType', 'info');
-      this.$store.commit('setAlertMessage', 'You have been set back to the beginning.');
+      this.$store.commit("updateStep", 1);
+      this.$store.commit("showAlert");
+      this.$store.commit("setAlertType", "info");
+      this.$store.commit("setAlertMessage", "You have been set back to the beginning.");
     }
   }
 });
@@ -3071,6 +3133,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_forms_FormLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/forms/FormLabel */ "./resources/assets/js/components/forms/FormLabel.vue");
 /* harmony import */ var _components_forms_FormInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/forms/FormInput */ "./resources/assets/js/components/forms/FormInput.vue");
+//
 //
 //
 //
@@ -22966,7 +23029,7 @@ var render = function() {
         "a",
         {
           staticClass:
-            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline",
+            "text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2",
           attrs: { href: "#" },
           on: {
             click: function($event) {
@@ -23079,7 +23142,7 @@ var render = function() {
         staticClass:
           "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
-      [_vm._v("Learn More/Contact Rep")]
+      [_vm._v("\n        Learn More/Contact Rep\n    ")]
     ),
     _vm._v(" "),
     _c(
@@ -23538,7 +23601,7 @@ var render = function() {
               "a",
               {
                 staticClass:
-                  "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+                  "text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2",
                 attrs: { href: "#" },
                 on: {
                   click: function($event) {
@@ -23559,7 +23622,7 @@ var render = function() {
               {
                 staticClass:
                   "ml-auto text-gray-700 hover:text-gray-600 hover:underline focus:outline-none focus:underline",
-                attrs: { href: "" },
+                attrs: { href: "#" },
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -23910,7 +23973,7 @@ var render = function() {
         "a",
         {
           staticClass:
-            "text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2",
+            "text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2",
           attrs: { href: "#" },
           on: {
             click: function($event) {

@@ -108,7 +108,7 @@
 
         <div class="mt-6 flex items-center">
             <a href="#"
-                class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline"
+                class="text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2"
                 @click.prevent="step_back">Previous</a>
 
             <a href=""

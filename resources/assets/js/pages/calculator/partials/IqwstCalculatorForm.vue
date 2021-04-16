@@ -52,8 +52,9 @@
 
         <div class="mt-6 flex items-center">
             <a href="#"
-                class="text-orange-500 hover:text-orange-600 hover:underline focus:outline-none focus:underline mr-2"
+                class="text-blue-500 hover:text-blue-600 hover:underline focus:outline-none focus:underline mr-2"
                 @click.prevent="step_back">Previous</a>
+                
             <button :disabled="number_of_students <= 0 && number_of_teachers <= 0"
                 type="submit"
                 @click="next_step"
