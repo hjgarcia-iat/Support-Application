@@ -2832,16 +2832,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -23601,7 +23591,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "text-2xl mb-4" }, [
       _vm._v(
-        "\n        \n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE) of your science program.\n    \n    "
+        "\n        Calculate how much you would save by purchasing multi-year access to the Interactive Digital Edition (IDE)\n        of your science program.\n    "
       )
     ]),
     _vm._v(" "),
@@ -23614,7 +23604,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_students" } },
           [
             _vm._v(
-              "\n            1. Approximately how many students use EarthComm in your\n            classroom, school, or district?\n        "
+              "\n            1. Approximately how many students use EarthComm in your classroom, school, or district?\n        "
             )
           ]
         ),
@@ -23646,7 +23636,7 @@ var render = function() {
           { attrs: { required: true, field: "number_of_teachers" } },
           [
             _vm._v(
-              "\n            2. Approximately how many teachers use EarthComm in your\n            classroom, school, or district?\n        "
+              "\n            2. Approximately how many teachers use EarthComm in your classroom, school, or district?\n        "
             )
           ]
         ),
