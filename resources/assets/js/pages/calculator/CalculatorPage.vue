@@ -30,7 +30,7 @@
         </div>
 
         <div v-if="step===7">
-            High School Results
+            <high-school-calculator-view/>
         </div>
 
         <div v-if="step===8">
@@ -52,6 +52,7 @@ import ActivePhysicsCalculatorForm from "./partials/ActivePhysicsCalculatorForm"
 import ActiveChemistryCalculatorForm from "./partials/ActiveChemistryCalculatorForm";
 import EarthCommCalculatorForm from "./partials/EarthCommCalculatorForm";
 import IqwstCalculatorView from "./partials/IqwstCalculatorView";
+import HighSchoolCalculatorView from "./partials/HighSchoolCalculatorView";
 import ContactForm from "./partials/ContactForm";
 import SuccessView from "./partials/SuccessView";
 import ProductInterest from "./partials/ProductInterestView";
@@ -65,6 +66,7 @@ export default {
         ActiveChemistryCalculatorForm,
         EarthCommCalculatorForm,
         IqwstCalculatorView,
+        HighSchoolCalculatorView,
         ContactForm,
         SuccessView
     },
