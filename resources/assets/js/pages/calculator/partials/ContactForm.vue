@@ -3,7 +3,7 @@
         <h1
             class="text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
         >
-            Learn More/Contact Rep
+            Learn More
         </h1>
 
         <form method="POST" @submit.prevent="submitForm">

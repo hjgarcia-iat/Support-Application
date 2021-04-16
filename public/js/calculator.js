@@ -23054,7 +23054,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("Learn More/Contact Rep")]
+        [_vm._v("Learn More")]
       )
     ])
   ])
@@ -23142,7 +23142,7 @@ var render = function() {
         staticClass:
           "text-4xl text-blue-brand font-medium border-b-2 border-black mb-4 pb-4"
       },
-      [_vm._v("\n        Learn More/Contact Rep\n    ")]
+      [_vm._v("\n        Learn More\n    ")]
     ),
     _vm._v(" "),
     _c(

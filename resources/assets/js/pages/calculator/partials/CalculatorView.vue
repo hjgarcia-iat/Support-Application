@@ -113,7 +113,7 @@
 
             <a href=""
                 class="ml-4 bg-blue-brand hover:bg-blue-brand-medium text-white font-bold py-2 px-4 focus:outline-none focus:bg-blue-brand-medium focus:ring-2 focus:ring-blue-brand-light focus:ring-opacity-50 flex items-center"
-                @click.prevent="next_step">Learn More/Contact Rep</a>
+                @click.prevent="next_step">Learn More</a>
         </div>
 
     </div>
