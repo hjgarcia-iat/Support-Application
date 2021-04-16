@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Status\SystemStatusUpdate;
 use App\Console\Commands\Tickets\DeleteTickets;
 use App\Console\Commands\Tickets\ProcessTickets;
 use Illuminate\Console\Scheduling\Schedule;
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         DeleteTickets::class,
         ProcessTickets::class,
+        SystemStatusUpdate::class,
     ];
 
     /**
