@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\TicketController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RequestProductInformationController;
@@ -88,4 +89,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/statuses/{status}/delete',[StatusController::class, 'delete'])
         ->name('admin.statuses.delete');
+
+    Route::get('/users',[UserController::class,'index'])->name('admin.users');
+    Route::get('/users/create',[UserController::class,'create'])->name('admin.users.create');
+    Route::post('/users',[UserController::class,'store'])->name('admin.users.store');
+    Route::get('/users/{user}',[UserController::class,'edit'])->name('admin.users.edit');
+    Route::post('/users/{user}',[UserController::class,'update'])->name('admin.users.update');
+    Route::get('/users/{user}/delete',[UserController::class,'delete'])->name('admin.users.delete');
 });
