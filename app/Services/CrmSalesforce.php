@@ -10,17 +10,14 @@ use Omniphx\Forrest\Providers\Laravel\Facades\Forrest;
  */
 class CrmSalesforce implements CrmInterface
 {
-    public function __construct()
-    {
-        Forrest::authenticate();
-    }
-
     /**
      * @param string $email
      * @return array|mixed
      */
     public function findByEmail(string $email)
     {
+        $this->authenticate();
+
         $records = Forrest::query("SELECT Id,email,FirstName,LastName,Phone,Role__c,Company,City,State,Description,Product_Interest__c,District_Name__c From Lead WHERE email='{$email}'")['records'];
 
         if (!empty($records)) return $records[0];
@@ -30,6 +27,8 @@ class CrmSalesforce implements CrmInterface
 
     public function store(array $data)
     {
+        $this->authenticate();
+
         Forrest::sobjects('Lead', [
             'method' => 'post',
             'body'   => [
@@ -52,10 +51,17 @@ class CrmSalesforce implements CrmInterface
 
     public function delete(string $email): bool
     {
+        $this->authenticate();
+
         $record = Forrest::query("SELECT Id From Lead WHERE email='{$email}'")['records'];
 
         Forrest::sobjects('Lead/' . $record[0]['Id'], ['method' => 'delete']);
 
         return true;
+    }
+
+    private function authenticate()
+    {
+        Forrest::authenticate();
     }
 }
