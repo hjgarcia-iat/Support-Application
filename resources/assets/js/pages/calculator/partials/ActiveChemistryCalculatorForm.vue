@@ -7,24 +7,22 @@
     <p class="text-2xl mb-4">
         Calculate how much you could save by upgrading to Activate Learning Digital Platform or increasing your current subscription terms.
     </p>
+    
 
     <div class="mb-6">
-        <p class="mb-3 font-bold">
+        <form-label :required="true" field="number_of_students">
             1. Approximately how many students use Active Chemistry in your classroom, school, or district?
-        </p>
-        <input type="text"
-            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="number_of_students"
-            v-model="number_of_students">
+        </form-label>
+
+        <form-input v-model="number_of_students" field="number_of_students" type="text"
+                placeholder="Enter the number of students"/>
     </div>
     <div class="mb-6">
-        <p class="mb-3 font-bold">
+        <form-label :required="true" field="number_of_teachers">
             2. Approximately how many teachers use Active Chemistry in your classroom, school, or district?
-        </p>
-        <input type="text"
-            class="appearance-none block w-full bg-gray-100 text-grey-darker border py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            name="number_of_teachers"
-            v-model="number_of_teachers">
+        </form-label>
+        <form-input v-model="number_of_teachers" field="number_of_teachers" type="text"
+                placeholder="Enter the number of teachers"/>
     </div>
 
     <div class="mt-6 flex items-center">
