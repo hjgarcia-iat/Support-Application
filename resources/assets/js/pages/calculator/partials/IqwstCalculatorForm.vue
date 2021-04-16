@@ -69,7 +69,6 @@
 </template>
 
 <script>
-
 import FormLabel from "../../../components/forms/FormLabel";
 import FormInput from "../../../components/forms/FormInput";
 
@@ -85,18 +84,18 @@ export default {
         },
         number_of_teachers: {
             get() {
-                return parseInt(this.$store.state.number_of_teachers)
+                return this.$store.state.number_of_teachers
             },
             set(value) {
-                this.$store.commit('updateNumberOfTeachers', parseInt(value))
+                this.$store.commit('updateNumberOfTeachers', value)
             }
         },
         number_of_students: {
             get() {
-                return parseInt(this.$store.state.number_of_students)
+                return this.$store.state.number_of_students
             },
             set(value) {
-                this.$store.commit('updateNumberOfStudents', parseInt(value))
+                this.$store.commit('updateNumberOfStudents', value)
             }
         },
         usage: {

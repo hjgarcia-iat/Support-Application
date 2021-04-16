@@ -113,20 +113,20 @@ const store = new Vuex.Store({
         },
     },
     actions: {
-        getApCalculations({ commit, state }) {
+        getApCalculations({commit, state}) {
             let one_year_cost =
                 state.student_ap_digital_one_year_access_cost *
-                    state.number_of_students +
+                state.number_of_students +
                 state.teacher_ap_digital_one_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("oneYearApCost", one_year_cost);
 
             let six_year_cost =
                 state.student_ap_digital_six_year_access_cost *
-                    state.number_of_students +
+                state.number_of_students +
                 state.teacher_ap_digital_six_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("sixYearApCost", six_year_cost);
 
@@ -136,19 +136,19 @@ const store = new Vuex.Store({
             commit("sixYearApSavings", six_year_savings);
         },
 
-        getAcCalculations({ commit, state }) {
+        getAcCalculations({commit, state}) {
             let one_year_cost =
                 state.student_ac_digital_one_year_access_cost *
-                    state.number_of_students +
+                state.number_of_students +
                 state.teacher_ac_digital_one_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("oneYearAcCost", one_year_cost);
 
             let six_year_cost =
                 state.student_ac_digital_six_year_access_cost * state.number_of_students +
                 state.teacher_ac_digital_six_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("sixYearAcCost", six_year_cost);
 
@@ -157,20 +157,20 @@ const store = new Vuex.Store({
 
             commit("sixYearAcSavings", six_year_savings);
         },
-        getEcCalculations({ commit, state }) {
+        getEcCalculations({commit, state}) {
             let one_year_cost =
                 state.student_ec_digital_one_year_access_cost *
-                    state.number_of_students +
+                state.number_of_students +
                 state.teacher_ec_digital_one_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("oneYearEcCost", one_year_cost);
 
             let six_year_cost =
                 state.student_ec_digital_six_year_access_cost *
-                    state.number_of_students +
+                state.number_of_students +
                 state.teacher_ec_digital_six_year_access_cost *
-                    state.number_of_teachers;
+                state.number_of_teachers;
 
             commit("sixYearEcCost", six_year_cost);
 

@@ -3214,18 +3214,18 @@ __webpack_require__.r(__webpack_exports__);
     },
     number_of_teachers: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_teachers);
+        return this.$store.state.number_of_teachers;
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfTeachers', parseInt(value));
+        this.$store.commit('updateNumberOfTeachers', value);
       }
     },
     number_of_students: {
       get: function get() {
-        return parseInt(this.$store.state.number_of_students);
+        return this.$store.state.number_of_students;
       },
       set: function set(value) {
-        this.$store.commit('updateNumberOfStudents', parseInt(value));
+        this.$store.commit('updateNumberOfStudents', value);
       }
     },
     usage: {
@@ -3695,7 +3695,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.grid[data-v-1d45d9cc] {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 0 1em;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.grid[data-v-1d45d9cc] {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr 1fr;\r\n    gap: 0 1em;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
