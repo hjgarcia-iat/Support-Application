@@ -34,6 +34,9 @@ class Kernel extends ConsoleKernel
 
          $schedule->command('tickets:process')
              ->everyFifteenMinutes();
+
+        $schedule->command('system-status:update')
+                 ->hourly();
     }
 
     /**
