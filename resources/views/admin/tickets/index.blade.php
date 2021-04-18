@@ -18,7 +18,7 @@
                             :status="session('status')"
                             :type="session('type')"/>
 
-                   <x-search-form :route="route('admin.tickets')" :query="'query'"/>
+                   <x-search-form :placeholder="'Search for ticket...'" :route="route('admin.tickets')" :query="'query'"/>
 
                     @if($tickets->count() > 0)
                         <div class="my-4">
