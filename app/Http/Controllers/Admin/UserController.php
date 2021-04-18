@@ -27,12 +27,12 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    public function store()
+    public function store(UserRequest $request)
     {
         User::create([
-            'name' => request('name'),
-            'email' => request('email'),
-            'password' => bcrypt(request('password')),
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
         ]);
 
         return redirect(route('admin.users'))

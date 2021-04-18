@@ -10,30 +10,30 @@ class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @
-     */
-    public function test_registration_screen_can_be_rendered()
-    {
-        $this->markTestIncomplete('This feature will not be implemented.');
+//    /**
+//     * @
+//     */
+//    public function test_registration_screen_can_be_rendered()
+//    {
+//        $this->markTestIncomplete('This feature will not be implemented.');
+//
+//        $response = $this->get('/register');
+//
+//        $response->assertStatus(200);
+//    }
 
-        $response = $this->get('/register');
-
-        $response->assertStatus(200);
-    }
-
-    public function test_new_users_can_register()
-    {
-        $this->markTestIncomplete('This feature will not be implemented.');
-
-        $response = $this->post('/register', [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
-        ]);
-
-        $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard'));
-    }
+//    public function test_new_users_can_register()
+//    {
+//        $this->markTestIncomplete('This feature will not be implemented.');
+//
+//        $response = $this->post('/register', [
+//            'name' => 'Test User',
+//            'email' => 'test@example.com',
+//            'password' => 'password',
+//            'password_confirmation' => 'password',
+//        ]);
+//
+//        $this->assertAuthenticated();
+//        $response->assertRedirect(route('dashboard'));
+//    }
 }

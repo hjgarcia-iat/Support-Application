@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\App\Http\Requests\Admin;
 
-use App\Http\Requests\Admin\UserRequest;
 use App\User;
 use Faker\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -12,68 +11,28 @@ class UserRequestTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @dataProvider validData
-     */
-    public function test_valid_data(array $data)
+    public function test_a_user_with_valid_data_can_be_created()
     {
-        $request = new UserRequest();
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertTrue($validator->passes());
-    }
-
-    public function validData(): array
-    {
-        $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
-
-        return [
-            [[
-                'name' => $faker->firstName,
-                'email' => $faker->safeEmail,
-                'password' => 'Password1',
-                'password_confirmation' => 'Password1',
-            ]]
+        $authenticatedUser = User::factory()->create();
+        $data = [
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+            'password' => 'Password1',
+            'password_confirmation' => 'Password1'
         ];
+
+        $response = $this->actingAs($authenticatedUser)
+            ->post(route("admin.users.store"), $data);
+
+        $response->assertRedirect(route('admin.users'));
+        $this->assertTrue(\Hash::check('Password1', User::where('email', $data['email'])->first()->password));
+        $this->assertDatabaseHas('users', [
+            'name' => 'Jane Doe',
+            'email' => 'jdoe@email.com',
+        ]);
     }
 
-    /**
-     * @dataProvider invalidData
-     */
-    public function test_invalid_data(array $data)
-    {
-        User::factory()->create(['email' => 'email@email.com']);
-        $request = new UserRequest();
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
-    }
-
-    public function invalidData(): array
-    {
-        $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
-
-        return [
-            'name is required' => [[
-                'email' => $faker->safeEmail,
-            ]],
-            'email is required' => [[
-                'name' => $faker->name,
-            ]],
-            'email is valid' => [[
-                'name' => $faker->name,
-                'email' => 'invalid-email',
-            ]],
-            'email is unique' => [[
-                'name' => $faker->name,
-                'email' => 'email@email.com',
-            ]],
-        ];
-    }
-
-
-    public function test_password_is_not_required()
+    public function test_password_is_not_required_to_update_a_user()
     {
         $authenticatedUser = User::factory()->create();
         $user = User::factory()->create();
@@ -96,7 +55,7 @@ class UserRequestTest extends TestCase
         ]);
     }
 
-    public function test_we_can_update_a_user_if_the_email_provided_is_the_same()
+    public function test_we_can_update_a_user_if_the_email_provided_is_the_same_as_the_user_being_updated()
     {
         $authenticatedUser = User::factory()->create();
         $user = User::factory()->create(['email' => 'jdoe@email.com']);
@@ -120,32 +79,48 @@ class UserRequestTest extends TestCase
     }
 
     /**
-     * @dataProvider invalidPasswordData
+     * @dataProvider invalidData
      */
-    public function test_invalid_password_data(array $data)
+    public function test_a_user_with_invalid_data_cannot_be_created(array $data)
     {
         $authenticatedUser = User::factory()->create();
-        $user = User::factory()->create();
+        User::factory()->create(['email' => 'email@email.com']);
 
         $response = $this->actingAs($authenticatedUser)
-            ->from(route('admin.users.edit', $user))
-            ->post(route("admin.users.update", $user), $data);
+            ->from(route('admin.users.create'))
+            ->post(route("admin.users.store"), $data);
 
-        $response->assertRedirect(route('admin.users.edit', $user));
-        $this->assertTrue(\Hash::check('password', $user->fresh()->password));
-        $this->assertDatabaseHas('users', [
-            'id' => $user->id,
-            'name' => $user->fresh()->name,
-            'email' => $user->fresh()->email,
-        ]);
+        $response->assertRedirect(route('admin.users.create'));
+        $this->assertDatabaseCount('users', 2);
     }
 
-
-    public function invalidPasswordData(): array
+    public function invalidData(): array
     {
         $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
 
         return [
+            'name is required' => [[
+                'email' => $faker->safeEmail,
+                'password' => 'Password1',
+                'password_confirmation' => 'Password1'
+            ]],
+            'email is required' => [[
+                'name' => $faker->name,
+                'password' => 'Password1',
+                'password_confirmation' => 'Password1'
+            ]],
+            'email is valid' => [[
+                'name' => $faker->name,
+                'email' => 'invalid-email',
+                'password' => 'Password1',
+                'password_confirmation' => 'Password1'
+            ]],
+            'email is unique' => [[
+                'name' => $faker->name,
+                'email' => 'email@email.com',
+                'password' => 'Password1',
+                'password_confirmation' => 'Password1'
+            ]],
             'password must at least characters' => [[
                 'name' => $faker->name,
                 'email' => $faker->safeEmail,
@@ -178,5 +153,4 @@ class UserRequestTest extends TestCase
             ]],
         ];
     }
-
 }
