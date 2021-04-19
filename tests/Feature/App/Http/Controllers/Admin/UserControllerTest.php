@@ -19,9 +19,9 @@ class UserControllerTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertViewIs("admin.users.index");
-        $response->assertDontSee($authenticatedUser->id);
+        $this->assertFalse($response->viewData('users')->contains($authenticatedUser));
         $users->each(function ($user) use ($response) {
-            $response->assertSee($user->id);
+            $response->assertSee($user->name);
         });
     }
 

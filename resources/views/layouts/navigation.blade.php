@@ -23,6 +23,9 @@
                         <x-nav-link :href="route('admin.statuses')" :active="request()->routeIs(['admin.statuses','admin.statuses.*'])">
                             {{ __('System Status') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('admin.users')" :active="request()->routeIs(['admin.users','admin.users.*'])">
+                            {{ __('Users') }}
+                        </x-nav-link>
                     @endif
                 </div>
 

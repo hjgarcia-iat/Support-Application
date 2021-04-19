@@ -10,7 +10,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::where('id', '<>', auth()->id())->paginate(25);
+        $users = User::where('id', '<>', auth()->id());
+
+        if (request()->has('query')) {
+            $users = $users->where('name', 'LIKE', "%" . request('query') . "%")
+                ->orWhere('email', 'LIKE', "%" . request('query') . "%");
+        }
+
+        $users = $users->paginate(25);
+
         return view('admin.users.index', compact('users'));
     }
 
@@ -19,12 +27,12 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    public function store()
+    public function store(UserRequest $request)
     {
         User::create([
-            'name' => request('name'),
-            'email' => request('email'),
-            'password' => bcrypt(request('password')),
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
         ]);
 
         return redirect(route('admin.users'))
@@ -57,6 +65,6 @@ class UserController extends Controller
         return redirect()
             ->route('admin.users')
             ->with('type', 'success')
-            ->with('status', 'User was added.');
+            ->with('status', 'User was deleted.');
     }
 }
