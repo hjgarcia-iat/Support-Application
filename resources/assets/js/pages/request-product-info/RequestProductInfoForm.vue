@@ -124,6 +124,7 @@
                         <option value="Active Chemistry">Active Chemistry</option>
                         <option value="Active Physics">Active Physics</option>
                         <option value="Active Physical Science">Active Physical Science</option>
+                        <option value="Astrobiology">Astrobiology</option>
                         <option value="EarthCOMM">EarthCOMM</option>
                         <option value="Engineering the Future">Engineering the Future</option>
                     </optgroup>
