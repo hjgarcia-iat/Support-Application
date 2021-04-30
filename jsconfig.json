@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "resources/assests/js/*"
+            ],
+            "@Components/*": [
+                "resources/assets/js/components/*"
+            ],
+            "@Pages/*": [
+                "resources/assets/js/pages/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "public"
+    ]
+}
