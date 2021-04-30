@@ -1,5 +1,5 @@
 @section('scripts')
-<script src="{{ asset('js/tinymce.min.js') }}"></script>
+<script src="https://cdn.tiny.cloud/1/3j5blf69sp3fcwle545j2cglnb7mzdn5cfom7scfbm6jnk9x/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
         tinymce.init({
         selector: 'textarea#post',
