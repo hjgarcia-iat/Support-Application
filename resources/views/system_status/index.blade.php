@@ -3,7 +3,7 @@
 @section('content')
     <div class="m-4">
         <h1 class="text-center font-bold text-blue-brand-medium text-3xl mb-2">System Status</h1>
-        <p class="text-grayP-600 text-center">If you are experiencing an issue not posted here, please submit a support
+        <p class="text-gray-600 text-center">If you are experiencing an issue not posted here, please submit a support
             ticket.
         </p>
     </div>
@@ -15,10 +15,10 @@
             @for ($i = 0; $i < 7; $i++)
 
                 @if($i === 0)
-                    <h3 class="font-bold text-gray-600 mb-4 text-xl mb-4">{{ now()->format('m/d/Y') }}</h3>
+                    <h3 class="font-bold text-gray-600 mb-4 text-xl">{{ now()->format('m/d/Y') }}</h3>
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->startOfDay())
-                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
+                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md mb-8 status-block status-{{ strtolower($status->type) }}">
                                 {!! $status->post !!}
                             </div>
                         @endif
@@ -26,10 +26,10 @@
                         <p class="text-xl">No status updates available at this time.</p>
                     @endforelse
                 @elseif($i === 1)
-                    <h3 class="font-bold text-gray-600 mb-4 text-xl mb-4">{{ now()->subDays($i)->format('m/d/Y') }}</h3>
+                    <h3 class="font-bold text-gray-600 mb-4 text-xl">{{ now()->subDays($i)->format('m/d/Y') }}</h3>
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->subDays($i)->startOfDay() && $status->created_at <=now()->startOfDay())
-                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
+                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md mb-8 status-block status-{{ strtolower($status->type) }}">
                                 {!! $status->post !!}
                             </div>
                         @endif
@@ -38,10 +38,10 @@
                     @endforelse
 
                 @else
-                    <h3 class="font-bold text-gray-600 mb-4 text-xl mb-4">{{ now()->subDays($i)->format('m/d/Y') }}</h3>
+                    <h3 class="font-bold text-gray-600 mb-4 text-xl">{{ now()->subDays($i)->format('m/d/Y') }}</h3>
                     @forelse ($statuses as $status)
                         @if($status->created_at >= now()->subDays($i)->startOfDay() && $status->created_at <= now()->subDays($i - 1)->startOfDay())
-                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md status-block mb-8 status-block status-{{ strtolower($status->type) }}">
+                            <div class="shadow-sm py-5 px-7 bg-gray-100 rounded-md mb-8 status-block status-{{ strtolower($status->type) }}">
                                 {!! $status->post !!}
                             </div>
                         @endif

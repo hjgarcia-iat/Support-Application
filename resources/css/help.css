@@ -10,6 +10,38 @@ html, body {
      @apply border border-gray-300;
 }
 
+.status-block h2 {
+    @apply text-3xl;
+}
+
+.status-block h3 {
+    @apply text-2xl;
+}
+
+.status-block p, .status-block h2, .status-block h3, .status-block ul, .status-block ol {
+    @apply mb-3;
+}
+
+.status-block ul {
+    @apply list-disc list-inside;
+}
+
+.status-block ol {
+    @apply list-decimal list-inside;
+}
+
+.status-block table {
+    @apply min-w-full leading-normal;
+}
+
+.status-block th {
+    @apply px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider;
+}
+
+.status-block td {
+    @apply px-5 py-5 border-b border-gray-200 bg-white text-sm;
+}
+
 .status-default {
     border-left-width: theme('borderWidth.8');
     border-left-color: theme('colors.green.700');
