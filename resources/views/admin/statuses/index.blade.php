@@ -29,8 +29,6 @@
                             <th class="bg-gray-100 border text-left px-8 py-4">ID</th>
                             <th class="bg-gray-100 border text-left px-8 py-4">Created On</th>
                             <th class="bg-gray-100 border text-left px-8 py-4">Type</th>
-                            <th class="bg-gray-100 border text-left px-8 py-4">Post</th>
-
                             <th class="bg-gray-100 border text-left px-8 py-4">Actions</th>
                         </tr>
                         </thead>
@@ -40,9 +38,8 @@
                                 <td class="border px-8 py-4">{{ $status->id }}</td>
                                 <td class="border px-8 py-4">{{ $status->created_at->format('m/d/Y') }}</td>
                                 <td class="border px-8 py-4">{{ $status->type }}</td>
-                                <td class="border px-8 py-4">{{ $status->post }}</td>
                                 <td class="border px-8 py-4">
-                                    <div class="items-center flex h-full justify-between">
+                                    <div class="items-center flex h-full space-x-2">
                                         <a href="{{ route('admin.statuses.edit', $status) }}" class="p-1 hover:text-blue-600">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                                         </a>
