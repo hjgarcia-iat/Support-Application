@@ -33,8 +33,8 @@ Route::get('/system-status', [SystemStatusController::class, 'index'])->name('sy
 /**
  * Everything below is part of the forms
  */
-Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
-Route::post('/access-request', [AccessRequestController::class, 'store'])->name('access_request.store');
+//Route::get('/access-request', [AccessRequestController::class, 'create'])->name('access_request.create');
+//Route::post('/access-request', [AccessRequestController::class, 'store'])->name('access_request.store');
 
 Route::get('/digital-setup-request', [DigitalSetupController::class, 'create'])->name('digital_setup_request.create');
 Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])->name('digital_setup_request.store');
