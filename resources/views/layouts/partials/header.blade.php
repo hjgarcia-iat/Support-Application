@@ -18,11 +18,11 @@
             </div>
 
             <div class="md:hidden" x-show="search===false">
-                <a href="https://help.activatelearning.com/s/"> <img src="{{ asset('img/logo-w.png') }}"
+                <a href="https://www.activatelearning.com/"> <img src="{{ asset('img/logo-w.png') }}"
                             class="w-48 md:w-64" alt="Activate Learning"> </a>
             </div>
             <div class="hidden md:block">
-                <a href="https://help.activatelearning.com/s/"> <img src="{{ asset('img/logo-w.png') }}"
+                <a href="https://www.activatelearning.com/"> <img src="{{ asset('img/logo-w.png') }}"
                             class="w-48 md:w-64" alt="Activate Learning"> </a>
             </div>
             <nav class="flex flex-col bg-white border-b w-full absolute top-12 left-0 shadow" x-show.transition="mobile_nav" x-on:click.away="mobile_nav=false"
