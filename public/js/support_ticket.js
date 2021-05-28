@@ -2134,65 +2134,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -21252,7 +21193,7 @@ var render = function() {
                     attrs: {
                       type: "radio",
                       name: "reason",
-                      id: "reason_6",
+                      id: "reason_8",
                       value: "Feedback"
                     },
                     domProps: { checked: _vm._q(_vm.reason, "Feedback") },
@@ -21279,6 +21220,33 @@ var render = function() {
                     attrs: {
                       type: "radio",
                       name: "reason",
+                      id: "reason_9",
+                      value: "Order Status"
+                    },
+                    domProps: { checked: _vm._q(_vm.reason, "Order Status") },
+                    on: {
+                      change: function($event) {
+                        _vm.reason = "Order Status"
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(7)
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex items-center" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.reason,
+                        expression: "reason"
+                      }
+                    ],
+                    attrs: {
+                      type: "radio",
+                      name: "reason",
                       id: "reason_7",
                       value: "Other Issue"
                     },
@@ -21290,7 +21258,7 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _vm._m(7)
+                  _vm._m(8)
                 ]),
                 _vm._v(" "),
                 _vm.formErrors.reason
@@ -21321,7 +21289,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(8),
+                _vm._m(9),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -21364,7 +21332,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(9),
+                _vm._m(10),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -21407,7 +21375,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(10),
+                _vm._m(11),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -21450,7 +21418,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(11),
+                _vm._m(12),
                 _vm._v(" "),
                 _c("input", {
                   directives: [
@@ -21493,7 +21461,7 @@ var render = function() {
               "div",
               { staticClass: "mb-6" },
               [
-                _vm._m(12),
+                _vm._m(13),
                 _vm._v(" "),
                 _c("textarea", {
                   directives: [
@@ -21584,7 +21552,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(13),
+                _vm._m(14),
                 _vm._v(" "),
                 _vm.formErrors.file
                   ? _c("form-error", {
@@ -21786,7 +21754,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Usage")]),
         _vm._v(
-          "\n                    — Questions about how our curriculum is to be used in the classroom or where to find\n                    curriculum resources."
+          " — Questions about how our curriculum is to be used in the classroom or where to find curriculum resources."
         )
       ]
     )
@@ -21804,7 +21772,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Curriculum Error")]),
         _vm._v(
-          "\n                    — Curriculum issues such as typos, incorrect label, or factual correctness."
+          " — Curriculum issues such as typos, incorrect label, or factual correctness."
         )
       ]
     )
@@ -21822,7 +21790,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Integration Issue")]),
         _vm._v(
-          " — Rostering or login issues related to\n                    integrations with Clever, Canvas, Schoology, Google Classroom, etc."
+          " — Rostering or login issues related to integrations with Clever, Canvas, Schoology, Google Classroom, etc."
         )
       ]
     )
@@ -21839,9 +21807,7 @@ var staticRenderFns = [
       },
       [
         _c("strong", [_vm._v("Coupons, Specimens, Kits")]),
-        _vm._v(
-          " — Redeem coupons, report missing\n                    or damaged materials."
-        )
+        _vm._v(" — Redeem coupons, report missing or damaged materials.")
       ]
     )
   },
@@ -21858,7 +21824,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Product Usage")]),
         _vm._v(
-          " — Questions like how do I do this, Where do\n                    I find that. But not about the curriculum."
+          " — Questions like how do I do this, Where do I find that. But not about the curriculum."
         )
       ]
     )
@@ -21871,13 +21837,29 @@ var staticRenderFns = [
       "label",
       {
         staticClass: "ml-2 text-grey-darker text-sm mb-2",
-        attrs: { for: "reason_6" }
+        attrs: { for: "reason_8" }
       },
       [
         _c("strong", [_vm._v("Feedback/Feature Request")]),
         _vm._v(
-          " —\n                    Ideas for improving our products or providing feedback about our products and services."
+          " — Ideas for improving our products or providing feedback about our products and services."
         )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "label",
+      {
+        staticClass: "ml-2 text-grey-darker text-sm mb-2",
+        attrs: { for: "reason_9" }
+      },
+      [
+        _c("strong", [_vm._v("Order/Shipment Status")]),
+        _vm._v(" — Inquire about the status of an existing order or shipment.")
       ]
     )
   },
@@ -21894,7 +21876,7 @@ var staticRenderFns = [
       [
         _c("strong", [_vm._v("Other Issue")]),
         _vm._v(
-          " — Something is not working as it should,\n                    forgotten password, or other issue not listed above."
+          " — Something is not working as it should, forgotten password, or other issue not listed above."
         )
       ]
     )
