@@ -57,6 +57,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
     Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('/categories/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+    Route::patch('/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+    Route::delete('/categories/{category}', [CategoryController::class, 'delete'])->name('admin.categories.delete');
 
     Route::get('/account', [AccountController::class, 'edit'])->name('admin.account.edit');
     Route::post('/account', [AccountController::class, 'update'])->name('admin.account.update');
