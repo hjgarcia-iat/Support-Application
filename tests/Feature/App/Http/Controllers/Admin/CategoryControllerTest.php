@@ -124,4 +124,20 @@ class CategoryControllerTest extends TestCase
             'id' => $category->id,
         ]);
     }
+
+    public function test_as_admin_we_cannot_delete_a_category_that_has_a_category_associated_to_it()
+    {
+        $categoryA = Category::factory()->create();
+        $categoryB = Category::factory()->create(['parent_id' => $categoryA->id]);
+
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->delete(route('admin.categories.delete', $categoryA));
+
+        $response->assertRedirect(route('admin.categories'));
+        $this->assertDatabaseHas('categories', [
+            'id' => $categoryB->id,
+        ]);
+    }
+
 }
