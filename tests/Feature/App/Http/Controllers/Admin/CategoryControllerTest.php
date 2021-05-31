@@ -109,7 +109,8 @@ class CategoryControllerTest extends TestCase
     public function test_as_admin_we_cannot_delete_a_category_that_has_an_article_associated_to_it()
     {
         $category = Category::factory()->create();
-        $article = Article::factory()->create(['category_id' => $category->id]);
+        $article = Article::factory()->create();
+        $category->articles()->attach($article);
         $user = User::factory()->create();
 
         $response = $this->actingAs($user)->delete(route('admin.categories.delete', $category->id));

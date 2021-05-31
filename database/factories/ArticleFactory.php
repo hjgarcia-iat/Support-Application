@@ -21,9 +21,6 @@ class ArticleFactory extends Factory
         $name = $this->faker->word;
 
         return [
-            'category_id' => function () {
-                return Category::factory()->create()->id;
-            },
             'name' => $name,
             'slug' => Str::slug($name),
             'content' => $this->faker->paragraph,

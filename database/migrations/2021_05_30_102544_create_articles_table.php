@@ -10,7 +10,6 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('category_id')->index();
             $table->string('name')->index();
             $table->string('slug')->unique()->index();
             $table->mediumText('content');

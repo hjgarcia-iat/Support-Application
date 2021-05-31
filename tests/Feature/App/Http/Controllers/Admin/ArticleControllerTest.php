@@ -59,7 +59,14 @@ class ArticleControllerTest extends TestCase
         $response = $this->actingAs($user)->post(route('admin.articles.store'), $data);
 
         $response->assertRedirect(route('admin.articles'));
-        $this->assertDatabaseHas('articles', $data + ['views' => 0, 'rating' => 0]);
+        $this->assertDatabaseHas('articles', [
+            'views' => 0,
+            'rating' => 0,
+            'name' => 'test',
+            'slug' => 'test',
+            'content' => 'test',
+            'pinned' => true,
+        ]);
     }
 
     public function test_as_an_admin_we_can_see_the_article_edit_page()
@@ -99,7 +106,15 @@ class ArticleControllerTest extends TestCase
         $response = $this->actingAs($user)->patch(route('admin.articles.edit', $article), $data);
 
         $response->assertRedirect(route('admin.articles.edit', $article));
-        $this->assertDatabaseHas('articles', $data + ['views' => 0, 'rating' => 0, 'id' => $article->id]);
+        $this->assertDatabaseHas('articles', [
+            'views' => 0,
+            'rating' => 0,
+            'id' => $article->id,
+            'name' => 'test',
+            'slug' => 'test',
+            'content' => 'test',
+            'pinned' => true,
+        ]);
     }
 
     public function test_as_an_admin_we_can_delete_an_article()

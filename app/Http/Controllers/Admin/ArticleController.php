@@ -29,7 +29,6 @@ class ArticleController extends Controller
     public function store()
     {
         Article::create([
-            'category_id' => request('category_id'),
             'name' => request('name'),
             'slug' => request('slug'),
             'content' => request('content'),
@@ -55,7 +54,6 @@ class ArticleController extends Controller
     public function update(Article $article)
     {
         $article->update([
-            'category_id' => request('category_id'),
             'name' => request('name'),
             'slug' => request('slug'),
             'content' => request('content'),
