@@ -24,6 +24,7 @@ class CategoryController extends Controller
     public function store()
     {
         Category::create([
+            'parent_id' => request('parent_id'),
             'name' => request('name'),
             'slug' => request('slug'),
         ]);
@@ -43,6 +44,7 @@ class CategoryController extends Controller
     public function update(Category $category)
     {
         $category->update([
+            'parent_id' => request('parent_id'),
             'name' => request('name'),
             'slug' => request('slug'),
         ]);

@@ -45,6 +45,7 @@ class CategoryControllerTest extends TestCase
     {
         $user = User::factory()->create();
         $data = [
+            'parent_id' => 1,
             'name' => 'test',
             'slug' => 'test'
         ];
@@ -53,6 +54,7 @@ class CategoryControllerTest extends TestCase
 
         $response->assertRedirect(route('admin.categories'));
         $this->assertDatabaseHas('categories', [
+            'parent_id' => 1,
             'name' => 'test',
             'slug' => 'test'
         ]);
@@ -77,6 +79,7 @@ class CategoryControllerTest extends TestCase
         $category = Category::factory()->create();
         $user = User::factory()->create();
         $data = [
+            'parent_id' => 1,
             'name' => 'test',
             'slug' => 'test'
         ];
@@ -86,6 +89,7 @@ class CategoryControllerTest extends TestCase
         $response->assertRedirect(route('admin.categories.edit', $category->id));
         $this->assertDatabaseHas('categories', [
             'id' => $category->id,
+            'parent_id' => 1,
             'name' => 'test',
             'slug' => 'test'
         ]);
