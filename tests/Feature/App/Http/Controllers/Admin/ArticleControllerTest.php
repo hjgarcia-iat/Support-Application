@@ -47,9 +47,13 @@ class ArticleControllerTest extends TestCase
     public function test_as_admin_we_can_store_an_article()
     {
         $user = User::factory()->create();
-        $category = Category::factory()->create();
+        $categoryA = Category::factory()->create();
+        $categoryB = Category::factory()->create();
         $data = [
-            'category_id' => $category->id,
+            'categories' => [
+                $categoryA->id,
+                $categoryB->id
+            ],
             'name' => 'test',
             'slug' => 'test',
             'content' => 'test',
@@ -66,6 +70,14 @@ class ArticleControllerTest extends TestCase
             'slug' => 'test',
             'content' => 'test',
             'pinned' => true,
+        ]);
+        $this->assertDatabaseHas('article_category', [
+            'category_id' => $categoryA->id,
+            'article_id' => Article::first()->id,
+        ]);
+        $this->assertDatabaseHas('article_category', [
+            'category_id' => $categoryB->id,
+            'article_id' => Article::first()->id,
         ]);
     }
 
@@ -93,10 +105,16 @@ class ArticleControllerTest extends TestCase
     public function test_as_an_admin_we_update_an_article()
     {
         $user = User::factory()->create();
-        $category = Category::factory()->create();
+        $categoryA = Category::factory()->create();
+        $categoryB = Category::factory()->create();
+        $categoryC = Category::factory()->create();
         $article = Article::factory()->create(['rating' => 0, 'views' => 0]);
+        $article->categories()->attach($categoryA);
         $data = [
-            'category_id' => $category->id,
+            'categories' => [
+                $categoryB->id,
+                $categoryC->id,
+            ],
             'name' => 'test',
             'slug' => 'test',
             'content' => 'test',
@@ -114,6 +132,18 @@ class ArticleControllerTest extends TestCase
             'slug' => 'test',
             'content' => 'test',
             'pinned' => true,
+        ]);
+        $this->assertDatabaseMissing('article_category', [
+            'category_id' => $categoryA->id,
+            'article_id' => $article->id,
+        ]);
+        $this->assertDatabaseHas('article_category', [
+            'category_id' => $categoryB->id,
+            'article_id' => $article->id,
+        ]);
+        $this->assertDatabaseHas('article_category', [
+            'category_id' => $categoryC->id,
+            'article_id' => $article->id,
         ]);
     }
 

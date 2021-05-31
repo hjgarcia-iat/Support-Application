@@ -28,13 +28,14 @@ class ArticleController extends Controller
 
     public function store()
     {
-        Article::create([
+        $article = Article::create([
             'name' => request('name'),
             'slug' => request('slug'),
             'content' => request('content'),
             'pinned' => request('pinned'),
         ]);
 
+        $article->categories()->attach(collect(request('categories'))->values());
 
         return redirect(route('admin.articles'))
             ->with('type', 'success')
@@ -59,6 +60,8 @@ class ArticleController extends Controller
             'content' => request('content'),
             'pinned' => request('pinned'),
         ]);
+
+        $article->categories()->sync(collect(request('categories'))->values());
 
         return redirect(route('admin.articles.edit', $article))
             ->with('type', 'success')
