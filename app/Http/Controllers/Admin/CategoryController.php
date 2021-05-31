@@ -54,6 +54,12 @@ class CategoryController extends Controller
 
     public function delete(Category $category)
     {
+        if ($category->articles()->exists()) {
+            return redirect(route('admin.categories'))
+                ->with('type', 'into')
+                ->with('status', 'Category was not deleted. There are articles associated to it.');
+        }
+
         $category->delete();
 
         return redirect(route('admin.categories'))

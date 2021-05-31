@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\App\Http\Controllers\Admin;
 
+use App\Article;
 use App\Category;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -102,6 +103,20 @@ class CategoryControllerTest extends TestCase
             'id' => $category->id,
             'name' => 'test',
             'slug' => 'test'
+        ]);
+    }
+
+    public function test_as_admin_we_cannot_delete_a_category_that_has_an_article_associated_to_it()
+    {
+        $category = Category::factory()->create();
+        $article = Article::factory()->create(['category_id' => $category->id]);
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->delete(route('admin.categories.delete', $category->id));
+
+        $response->assertRedirect(route('admin.categories'));
+        $this->assertDatabaseHas('categories', [
+            'id' => $category->id,
         ]);
     }
 }
