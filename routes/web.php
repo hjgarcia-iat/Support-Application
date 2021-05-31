@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\StatusController;
@@ -61,6 +62,13 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/categories/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     Route::patch('/categories/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/categories/{category}', [CategoryController::class, 'delete'])->name('admin.categories.delete');
+
+    Route::get('/articles', [ArticleController::class, 'index'])->name('admin.articles');
+    Route::get('/articles/create', [ArticleController::class, 'create'])->name('admin.articles.create');
+    Route::post('/articles', [ArticleController::class, 'store'])->name('admin.articles.store');
+    Route::get('/articles/{article}', [ArticleController::class, 'edit'])->name('admin.articles.edit');
+    Route::patch('/articles/{article}', [ArticleController::class, 'update'])->name('admin.articles.update');
+    Route::delete('/articles/{article}', [ArticleController::class, 'delete'])->name('admin.articles.delete');
 
     Route::get('/account', [AccountController::class, 'edit'])->name('admin.account.edit');
     Route::post('/account', [AccountController::class, 'update'])->name('admin.account.update');
