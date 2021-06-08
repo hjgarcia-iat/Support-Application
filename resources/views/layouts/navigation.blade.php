@@ -17,7 +17,7 @@
                     </x-nav-link>
                     @if(!request()->routeIs('dashboard'))
                         <x-nav-link :href="route('admin.categories')" :active="request()->routeIs(['admin.categories','admin.categories.*'])">
-                            {{ __('Categores') }}
+                            {{ __('Categories') }}
                         </x-nav-link>
 
                         <x-nav-link :href="route('admin.articles')" :active="request()->routeIs(['admin.articles','admin.articles.*'])">
