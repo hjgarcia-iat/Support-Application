@@ -16,6 +16,15 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if(!request()->routeIs('dashboard'))
+                        <x-nav-link :href="route('admin.categories')" :active="request()->routeIs(['admin.categories','admin.categories.*'])">
+                            {{ __('Categores') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.articles')" :active="request()->routeIs(['admin.articles','admin.articles.*'])">
+                            {{ __('Articles') }}
+                        </x-nav-link>
+
+
                         <x-nav-link :href="route('admin.tickets')" :active="request()->routeIs(['admin.tickets','admin.tickets.*'])">
                             {{ __('Support Tickets') }}
                         </x-nav-link>
