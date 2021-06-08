@@ -68,13 +68,13 @@ class CategoryController extends Controller
         if ($category->articles()->exists()) {
             return redirect(route('admin.categories'))
                 ->with('type', 'info')
-                ->with('status', 'Category was not deleted. There are articles associated to it.');
+                ->with('status', 'Category cannot be deleted. There are articles associated to it.');
         }
 
         if ($category->children()->exists()) {
             return redirect(route('admin.categories'))
                 ->with('type', 'info')
-                ->with('status', 'Category was not deleted. There are categories associated to it.');
+                ->with('status', 'Category cannot be deleted. There are categories associated to it.');
         }
 
         $category->delete();
