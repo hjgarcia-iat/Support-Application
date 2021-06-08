@@ -26,7 +26,6 @@ class CategoryTest extends TestCase
         $this->assertEquals($data['slug'], $category->fresh()->slug);
     }
 
-
     public function test_it_can_have_a_category_as_a_parent_relationship()
     {
         $categoryA = Category::factory()->create();
