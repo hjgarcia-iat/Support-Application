@@ -40,14 +40,13 @@
                                           name="parent_id">
                                     <option value="">Select a related category</option>
                                     @foreach($categories as $relatedCategory)
-                                        <option value="{{ $category->id }}"
+                                        <option value="{{ $relatedCategory->id }}"
                                                 @if (old('parent_id', $category->parent_id)===$relatedCategory->id ) selected="selected" @endif>
                                             {{ $relatedCategory->name }}
                                         </option>
                                     @endforeach
                                 </x-select>
                             </div>
-
                         @endif
 
                         <div class="mt-4 md:grid grid-cols-6 gap-8 items-center">
