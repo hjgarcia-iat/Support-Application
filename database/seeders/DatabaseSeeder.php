@@ -18,8 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
-
         User::factory()->create(['email' => 'test@email.com']);
     }
 }
