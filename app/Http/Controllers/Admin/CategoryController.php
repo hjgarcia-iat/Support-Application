@@ -9,22 +9,26 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::paginate(25);
+        $categories = Category::with(['children', 'articles', 'parent'])->paginate(25);
 
-        return \view('admin.category.index', [
+        return view('admin.category.index', [
             'categories' => $categories,
         ]);
     }
 
     public function create()
     {
-        return \view('admin.category.create');
+        $categories = Category::all();
+
+        return view('admin.category.create', [
+            'categories' => $categories,
+        ]);
     }
 
     public function store()
     {
         Category::create([
-            'parent_id' => request('parent_id'),
+            'parent_id' => (request()->has('parent_id')) ? request('parent_id') : null,
             'name' => request('name'),
             'slug' => request('slug'),
         ]);
@@ -36,8 +40,11 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
+        $categories = Category::all();
+
         return view('admin.category.edit', [
-            'category' => $category
+            'category' => $category,
+            'categories' => $categories
         ]);
     }
 
@@ -62,7 +69,7 @@ class CategoryController extends Controller
                 ->with('status', 'Category was not deleted. There are articles associated to it.');
         }
 
-        if($category->children()->exists()) {
+        if ($category->children()->exists()) {
             return redirect(route('admin.categories'))
                 ->with('type', 'info')
                 ->with('status', 'Category was not deleted. There are categories associated to it.');
