@@ -43,9 +43,10 @@ class CategoryControllerTest extends TestCase
 
     public function test_as_admin_we_can_store_a_category()
     {
+        $category = Category::factory()->create();
         $user = User::factory()->create();
         $data = [
-            'parent_id' => 1,
+            'parent_id' => $category->id,
             'name' => 'test',
             'slug' => 'test'
         ];
