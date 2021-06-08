@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\CategoryCreateRequest;
+use App\Http\Requests\Admin\CategoryEditRequest;
 
 class CategoryController extends Controller
 {
@@ -25,12 +27,12 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(CategoryCreateRequest $request)
     {
         Category::create([
-            'parent_id' => (request()->has('parent_id')) ? request('parent_id') : null,
-            'name' => request('name'),
-            'slug' => request('slug'),
+            'parent_id' => ($request->has('parent_id')) ? $request->get('parent_id') : null,
+            'name' => $request->get('name'),
+            'slug' => $request->get('slug'),
         ]);
 
         return redirect(route('admin.categories'))
@@ -48,12 +50,12 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function update(Category $category)
+    public function update(CategoryEditRequest $request, Category $category)
     {
         $category->update([
-            'parent_id' => request('parent_id'),
-            'name' => request('name'),
-            'slug' => request('slug'),
+            'parent_id' => $request->get('parent_id'),
+            'name' => $request->get('name'),
+            'slug' => $request->get('slug'),
         ]);
 
         return redirect(route('admin.categories.edit', $category))
