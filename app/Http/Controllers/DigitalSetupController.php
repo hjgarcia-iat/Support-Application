@@ -15,7 +15,7 @@ class DigitalSetupController extends Controller
 
     public function store(DigitalSetupRequestForm $request)
     {
-        \Mail::to(env('DESK_SUPPORT_EMAIL'))->send(new DigitalSetupRequestMail());
+        \Mail::to(config('mail.to.support_email'))->send(new DigitalSetupRequestMail());
 
         return response()->json([
             'success' => true,

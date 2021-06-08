@@ -2206,7 +2206,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -20950,10 +20949,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("option", { attrs: { value: "Active Physical Science" } }, [
           _vm._v("Active Physical Science")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "Astrobiology" } }, [
-          _vm._v("Astrobiology")
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "EarthCOMM" } }, [_vm._v("EarthCOMM")]),

@@ -22737,7 +22737,7 @@ var render = function() {
       _vm.step === 9 ? _c("div", [_c("success-view")], 1) : _vm._e(),
       _vm._v(" "),
       _c("p", { staticClass: "text-center text-gray-600 mt-6" }, [
-        _vm._v("Note: Estimated savings, actual sayings may vary.")
+        _vm._v("Note: Estimated savings, actual savings may vary.")
       ])
     ],
     1

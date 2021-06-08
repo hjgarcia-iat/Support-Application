@@ -1,23 +1,23 @@
 <?php
 
-namespace Tests\Feature\DigitalSetupRequest;
+namespace Tests\Feature\App\Http\Controllers;
 
-use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Spinen\MailAssertions\MailTracking;
 use Tests\TestCase;
 
-/**
- * Class StoreDigitalSetupRequestTest
- * @package Tests\Feature
- */
-class StoreDigitalSetupRequestTest extends TestCase
+class DigitalSetupControllerTest extends TestCase
 {
-    use MailTracking;
+    use RefreshDatabase, MailTracking;
 
-    /**
-     * @test
-     */
-    public function we_can_send_the_digital_setup_request_form_with_it_manager_information()
+    public function test_as_a_user_we_can_see_the_digital_setup_request_form()
+    {
+        $this->get(route('digital_setup_request.create'))
+            ->assertStatus(200)
+            ->assertViewIs('digital_setup_request.create');
+    }
+
+    public function test_as_a_user_we_can_send_the_digital_setup_request_form_with_it_manager_information()
     {
         $response = $this->from(route('digital_setup_request.create'))
             ->post(route('digital_setup_request.store'), $this->validData());
@@ -26,7 +26,7 @@ class StoreDigitalSetupRequestTest extends TestCase
         $response->assertJson(['message' => 'Your message was sent!']);
 
         $this->seeEmailWasSent();
-        $this->seeEmailTo(env('DESK_SUPPORT_EMAIL'));
+        $this->seeEmailTo(config('mail.to.support_email'));
         $this->seeEmailFrom($this->validData()['email']);
         $this->seeEmailSubjectContains('NEW ORDER - IDE setup form');
         $this->seeEmailContains($this->validData()['name']);
@@ -39,10 +39,7 @@ class StoreDigitalSetupRequestTest extends TestCase
         $this->seeEmailContains($this->validData()['dm_email']);
     }
 
-    /**
-     * @test
-     */
-    public function we_can_send_digital_setup_information_with_teacher_information()
+    public function test_as_a_user_we_can_send_digital_setup_information_with_teacher_information()
     {
         $response = $this->from(route('digital_setup_request.create'))
             ->post(route('digital_setup_request.store'), $this->validData([
@@ -60,6 +57,7 @@ class StoreDigitalSetupRequestTest extends TestCase
         $response->assertJson(['success' => 'Your message was sent!']);
 
         $this->seeEmailWasSent();
+        $this->seeEmailTo(config('mail.to.support_email'));
         $this->seeEmailSubjectContains('NEW ORDER - IDE setup form');
         $this->seeEmailFrom($this->validData()['email']);
         $this->seeEmailContains($this->validData()['name']);
@@ -73,11 +71,7 @@ class StoreDigitalSetupRequestTest extends TestCase
         $this->seeEmailContains('school');
     }
 
-
-    /**
-     * @test
-     */
-    public function the_name_field_is_required()
+    public function test_the_name_field_is_required()
     {
         $response = $this->from(route('digital_setup_request.create'))
             ->post(route('digital_setup_request.store'), $this->validData(['name' => '']));
@@ -109,7 +103,6 @@ class StoreDigitalSetupRequestTest extends TestCase
         $response->assertSessionHasErrors('email');
         $this->seeEmailWasNotSent();
     }
-
 
     public function test_the_po_number_field_is_required()
     {
@@ -233,8 +226,8 @@ class StoreDigitalSetupRequestTest extends TestCase
         $response = $this->from(route('digital_setup_request.create'))
             ->post(route('digital_setup_request.store'), $this->validData(['district_manager' => 'no', 'teachers' => [
                 ['name'   => 'Jane Doe',
-                 'email'  => '',
-                 'school' => 'school',],
+                    'email'  => '',
+                    'school' => 'school',],
             ]]));
 
         $response->assertStatus(302);
@@ -248,8 +241,8 @@ class StoreDigitalSetupRequestTest extends TestCase
         $response = $this->from(route('digital_setup_request.create'))
             ->post(route('digital_setup_request.store'), $this->validData(['district_manager' => 'no', 'teachers' => [
                 ['name'   => 'Jane Doe',
-                 'email'  => 'invalid-email',
-                 'school' => 'school',],
+                    'email'  => 'invalid-email',
+                    'school' => 'school',],
             ]]));
 
         $response->assertStatus(302);
@@ -275,13 +268,7 @@ class StoreDigitalSetupRequestTest extends TestCase
         $this->seeEmailWasNotSent();
     }
 
-    /**
-     * Get valid form data
-     *
-     * @param array $overrides
-     * @return array
-     */
-    private function validData($overrides = [])
+    private function validData(array $overrides = []): array
     {
         return array_merge([
             'name'             => 'Jeff Doe',
@@ -289,7 +276,7 @@ class StoreDigitalSetupRequestTest extends TestCase
             'po_number'        => '00000',
             'district'         => 'Some School District',
             'district_manager' => 'yes',
-            'start_date'       => Carbon::now()->addMonth(1)->format('m/d/Y'),
+            'start_date'       => now()->addMonth()->format('m/d/Y'),
             'curriculum'       => 'Some Curriculum',
             'dm_name'          => 'Jane Doe',
             'dm_email'         => 'jdoe@email.com',
