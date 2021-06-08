@@ -21,17 +21,5 @@ class DatabaseSeeder extends Seeder
         $faker = \Faker\Factory::create(Factory::DEFAULT_LOCALE);
 
         User::factory()->create(['email' => 'test@email.com']);
-        User::factory(20)->create();
-
-        for ($i = 0; $i < 50; $i++) {
-            Status::factory()->create([
-                'type'       => $faker->randomElement(['Low', 'Default', 'Medium', 'High']),
-                'created_at' => Carbon::today()->subDays(rand(0, 365)),
-            ]);
-        }
-
-
-
-        Ticket::factory(50)->create();
     }
 }
