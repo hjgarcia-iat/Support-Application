@@ -53,7 +53,7 @@ Route::post('/request-product-information', [RequestProductInformationController
  * Admin Routes
  */
 Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])
+    Route::get('/', [DashboardController::class, 'index'])
         ->name('dashboard');
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
