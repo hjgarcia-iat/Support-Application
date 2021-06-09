@@ -35,9 +35,23 @@ class CategoryTest extends TestCase
 
     public function test_the_slugs_converts_underscores_to_dashes()
     {
-        $article = Category::factory()->create(['slug' => 'Should_be_a_slug']);
+        $category = Category::factory()->create(['slug' => 'Should_be_a_slug']);
 
-        $this->assertEquals('should-be-a-slug', $article->fresh()->slug);
+        $this->assertEquals('should-be-a-slug', $category->fresh()->slug);
+    }
+
+    public function test_it_returns_root_categories()
+    {
+        $parents = Category::factory(4)->create();
+        $child = Category::factory()->create(['parent_id' => Category::first()->id]);
+
+        $categories = Category::root()->get();
+
+        foreach ($parents as $parent) {
+            $this->assertTrue($categories->contains($parent));
+        }
+
+        $this->assertFalse($categories->contains($child));
     }
 
     public function test_it_can_have_a_category_as_a_parent_relationship()

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        $categories = Category::root()->get();
+
+        return view('home.index', ['categories' => $categories]);
     }
 }

@@ -35,4 +35,12 @@ class Category extends Model
         return $this->belongsToMany(Article::class);
     }
 
+    /**
+     * Scope a query to only root level elements
+     *
+     */
+    public function scopeRoot(\Illuminate\Database\Eloquent\Builder $query): \Illuminate\Database\Eloquent\Builder
+    {
+        return $query->where('parent_id',null);
+    }
 }
