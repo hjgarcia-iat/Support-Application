@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -9,6 +8,7 @@ use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\SupportTicketController;
@@ -26,6 +26,7 @@ require __DIR__ . '/auth.php';
  * Help area
  */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/categories/{slug}', [CategoriesController::class, 'show'])->name('article.show');
 Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
 Route::post('/support-tickets', [SupportTicketController::class, 'store'])->name('support_ticket.store');
 Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
