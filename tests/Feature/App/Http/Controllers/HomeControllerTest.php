@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
@@ -10,11 +11,13 @@ use Tests\TestCase;
  */
 class HomeControllerTest extends TestCase
 {
+    use RefreshDatabase;
 
     public function test_we_can_see_the_home_page()
     {
-        $this->get(route('home'))
-             ->assertStatus(200)
-             ->assertViewIs('home.index');
+        $response = $this->get(route('home'));
+
+        $response->assertStatus(200)
+            ->assertViewIs('home.index');
     }
 }
