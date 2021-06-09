@@ -144,4 +144,23 @@ class ArticleCreateRequestTest extends TestCase
         $this->assertFalse($validator->passes());
         $this->assertTrue($validator->messages()->has('slug'));
     }
+
+    public function test_the_content_field_required()
+    {
+        $category = Category::factory()->create();
+        $data = [
+            'pinned' => true,
+            'categories' => [$category->id],
+            'name' => 'test',
+            'slug' => 'test',
+        ];
+
+        $request = new ArticleCreateRequest();
+
+        $validator = \Validator::make($data, $request->rules());
+
+        $this->assertFalse($validator->passes());
+        $this->assertTrue($validator->messages()->has('content'));
+    }
+
 }

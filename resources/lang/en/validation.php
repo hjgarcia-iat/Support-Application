@@ -158,6 +158,10 @@ return [
         'institution_name' => 'Institution Name',
         'inquiry' => 'Inquiry',
         'student_name' => 'Student Name',
+        'slug' => 'Slug',
+        'categories' => 'Categories',
+        'pinned' => 'Pinned',
+        'content' => 'Content'
     ],
 
 ];

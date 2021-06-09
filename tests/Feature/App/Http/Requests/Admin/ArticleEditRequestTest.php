@@ -4,7 +4,6 @@ namespace Tests\Feature\App\Http\Requests\Admin;
 
 use App\Article;
 use App\Category;
-use App\Http\Requests\Admin\ArticleEditRequest;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Route;
