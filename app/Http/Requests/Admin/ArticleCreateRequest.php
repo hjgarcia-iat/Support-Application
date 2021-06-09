@@ -12,7 +12,8 @@ class ArticleCreateRequest extends FormRequest
             'pinned' => ['required', 'boolean'],
             'categories' => ['required','exists:categories,id'],
             'name' => ['required'],
-            'slug' => ['required', 'unique:articles']
+            'slug' => ['required', 'unique:articles'],
+            'content' => ['required']
         ];
     }
 

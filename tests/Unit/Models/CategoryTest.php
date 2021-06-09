@@ -26,6 +26,20 @@ class CategoryTest extends TestCase
         $this->assertEquals($data['slug'], $category->fresh()->slug);
     }
 
+    public function test_it_sluggaffies_the_slug_field()
+    {
+        $category = Category::factory()->create(['slug' => 'Should be a slug']);
+
+        $this->assertEquals('should-be-a-slug', $category->fresh()->slug);
+    }
+
+    public function test_the_slugs_converts_underscores_to_dashes()
+    {
+        $article = Category::factory()->create(['slug' => 'Should_be_a_slug']);
+
+        $this->assertEquals('should-be-a-slug', $article->fresh()->slug);
+    }
+
     public function test_it_can_have_a_category_as_a_parent_relationship()
     {
         $categoryA = Category::factory()->create();
