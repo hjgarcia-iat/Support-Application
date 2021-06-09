@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Article;
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ArticleCreateRequest;
+use App\Http\Requests\Admin\ArticleEditRequest;
 
 class ArticleController extends Controller
 {
@@ -26,16 +28,16 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(ArticleCreateRequest $request)
     {
         $article = Article::create([
-            'name' => request('name'),
-            'slug' => request('slug'),
-            'content' => request('content'),
-            'pinned' => request('pinned'),
+            'name' => $request->get('name'),
+            'slug' => $request->get('slug'),
+            'content' => $request->get('content'),
+            'pinned' => $request->get('pinned'),
         ]);
 
-        $article->categories()->attach(collect(request('categories'))->values());
+        $article->categories()->attach(collect($request->get('categories'))->values());
 
         return redirect(route('admin.articles'))
             ->with('type', 'success')
@@ -52,16 +54,16 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function update(Article $article)
+    public function update(ArticleEditRequest $request, Article $article)
     {
         $article->update([
-            'name' => request('name'),
-            'slug' => request('slug'),
-            'content' => request('content'),
-            'pinned' => request('pinned'),
+            'name' => $request->get('name'),
+            'slug' => $request->get('slug'),
+            'content' => $request->get('content'),
+            'pinned' => $request->get('pinned'),
         ]);
 
-        $article->categories()->sync(collect(request('categories'))->values());
+        $article->categories()->sync(collect($request->get('categories'))->values());
 
         return redirect(route('admin.articles.edit', $article))
             ->with('type', 'success')

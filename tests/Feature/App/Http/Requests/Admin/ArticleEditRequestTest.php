@@ -5,9 +5,9 @@ namespace Tests\Feature\App\Http\Requests\Admin;
 use App\Article;
 use App\Category;
 use App\Http\Requests\Admin\ArticleEditRequest;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpFoundation\Request;
 use Tests\TestCase;
 
 /**
@@ -22,7 +22,8 @@ class ArticleEditRequestTest extends TestCase
     {
         $category = Category::factory()->create();
         $article = Article::factory()->create();
-        $route = route('admin.articles.update', $article);
+        $category->articles()->attach($article);
+        $user = User::factory()->create();
         $data = [
             'pinned' => true,
             'categories' => [$category->id],
@@ -31,17 +32,17 @@ class ArticleEditRequestTest extends TestCase
             'content' => 'test'
         ];
 
-        $request = ArticleEditRequest::create($route, 'PATCH', $data);
+        $response = $this->actingAs($user)->patch(\route('admin.articles.update', $article), $data);
 
-        $request->setRouteResolver(function () use ($request) {
-            $routes = Route::getRoutes();
-
-            return $routes->match($request);
-        });
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertTrue($validator->passes());
+        $response->assertRedirect(\route('admin.articles.edit', $article));
+        $response->assertSessionDoesntHaveErrors();
+        $this->assertDatabaseHas('articles', [
+            'id' => $article->id,
+            'pinned' => $data['pinned'],
+            'name' => $data['name'],
+            'slug' => $article->slug,
+            'content' => $data['content']
+        ]);
     }
 
 
@@ -50,7 +51,9 @@ class ArticleEditRequestTest extends TestCase
         $category = Category::factory()->create();
         $articleA = Article::factory()->create();
         $articleB = Article::factory()->create();
-        $route = route('admin.articles.update', $articleA);
+        $category->articles()->attach($articleA);
+        $category->articles()->attach($articleB);
+        $user = User::factory()->create();
         $data = [
             'pinned' => true,
             'categories' => [$category->id],
@@ -59,17 +62,18 @@ class ArticleEditRequestTest extends TestCase
             'content' => 'test'
         ];
 
-        $request = ArticleEditRequest::create($route, 'PATCH', $data);
+        $response = $this->actingAs($user)
+            ->from(\route('admin.articles.edit', $articleA))
+            ->patch(\route('admin.articles.update', $articleA), $data);
 
-        $request->setRouteResolver(function () use ($request) {
-            $routes = Route::getRoutes();
-
-            return $routes->match($request);
-        });
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
-        $this->assertTrue($validator->messages()->has('slug'));
+        $response->assertRedirect(\route('admin.articles.edit', $articleA));
+        $response->assertSessionHasErrors();
+        $this->assertDatabaseMissing('articles', [
+            'id' => $articleA->id,
+            'pinned' => $data['pinned'],
+            'name' => $data['name'],
+            'slug' => $articleA->slug,
+            'content' => $data['content']
+        ]);
     }
 }

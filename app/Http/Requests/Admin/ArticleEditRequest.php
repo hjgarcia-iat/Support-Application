@@ -12,7 +12,7 @@ class ArticleEditRequest extends FormRequest
             'pinned' => ['required', 'boolean'],
             'categories' => ['required', 'exists:categories,id'],
             'name' => ['required'],
-            'slug' => ['required', 'unique:articles,slug,' . $this->route()->parameter('article')]
+            'slug' => ['required', 'unique:articles,slug,' . $this->route()->parameter('article')->id]
         ];
     }
 
