@@ -72,7 +72,7 @@
                                      name="slug"
                                      :value="old('slug', $category->slug)"
                                      autofocus
-                                     placeholder="Enter category name"/>
+                                     placeholder="Enter category slug"/>
                         </div>
 
                         <div class="md:flex items-center justify-end mt-8">

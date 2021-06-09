@@ -48,7 +48,7 @@ class ArticleController extends Controller
 
         return view('admin.articles.edit', [
             'categories' => $categories,
-            'article' => $article
+            'article' => $article->load('categories')
         ]);
     }
 
