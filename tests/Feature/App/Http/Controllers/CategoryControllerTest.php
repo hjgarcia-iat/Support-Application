@@ -25,7 +25,7 @@ class CategoryControllerTest extends TestCase
             $article->categories()->attach($categoryA);
         }
 
-        $response = $this->get(\route('article.show', $categoryA->slug));
+        $response = $this->get(\route('category.show', $categoryA->slug));
 
         $response->assertOk();
         $response->assertSee($categoryA->name);
