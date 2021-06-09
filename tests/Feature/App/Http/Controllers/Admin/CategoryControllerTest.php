@@ -75,6 +75,23 @@ class CategoryControllerTest extends TestCase
         $response->assertSee($category->slug);
     }
 
+    public function test_as_an_admin_we_can_see_the_category_edit_page_but_not_see_the_current_category_as_choice()
+    {
+        $categoryA = Category::factory()->create();
+        $categoryB = Category::factory()->create();
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get(route('admin.categories.edit', $categoryA->id));
+
+        $response->assertStatus(200);
+        $this->assertEquals($response->viewData('categories')->first()->name, $categoryB->name);
+        $response->assertViewIs('admin.category.edit');
+        $response->assertSee($categoryA->id);
+        $response->assertSee($categoryA->name);
+        $response->assertSee($categoryA->slug);
+    }
+
+
     public function test_as_an_admin_we_can_update_a_category()
     {
         $category = Category::factory()->create();
@@ -95,6 +112,28 @@ class CategoryControllerTest extends TestCase
             'slug' => 'test'
         ]);
     }
+
+    public function test_as_an_admin_we_can_update_a_category_without_a_parent_id()
+    {
+        $category = Category::factory()->create();
+
+        $user = User::factory()->create();
+        $data = [
+            'name' => 'test',
+            'slug' => 'test'
+        ];
+
+        $response = $this->actingAs($user)->patch(route('admin.categories.update', $category->id), $data);
+
+        $response->assertRedirect(route('admin.categories.edit', $category->id));
+        $this->assertDatabaseHas('categories', [
+            'id' => $category->id,
+            'parent_id' => null,
+            'name' => 'test',
+            'slug' => 'test'
+        ]);
+    }
+
 
     public function test_as_admin_we_can_delete_a_category()
     {

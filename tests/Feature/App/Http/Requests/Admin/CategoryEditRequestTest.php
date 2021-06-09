@@ -3,9 +3,8 @@
 namespace Tests\Feature\App\Http\Requests\Admin;
 
 use App\Category;
-use App\Http\Requests\Admin\CategoryCreateRequest;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Symfony\Component\HttpFoundation\Request;
 use Tests\TestCase;
 
 /**
@@ -16,81 +15,27 @@ class CategoryEditRequestTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_parent_id_exists()
+    public function test_we_can_update_a_category_if_the_pass_the_same_slug_from_the_same_category()
     {
-        $data = [
-            'parent_id' => 1,
-            'name' => 'test',
-            'slug' => 'test',
-        ];
-
-        $request = new CategoryCreateRequest();
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
-    }
-
-    public function test_parent_id_is_not_required()
-    {
-        $data = [
-            'name' => 'test',
-            'slug' => 'test',
-        ];
-
-        $request = new CategoryCreateRequest();
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertTrue($validator->passes());
-    }
-
-
-    public function test_name_field_is_required()
-    {
+        $user = User::factory()->create();
         $category = Category::factory()->create();
-
         $data = [
-            'parent_id' => $category->id,
-            'slug' => 'test',
-        ];
-
-        $request = new CategoryCreateRequest();
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
-    }
-
-    public function test_slug_field_is_required()
-    {
-        $category = Category::factory()->create();
-        $data     = [
-            'parent_id' => $category->id,
-            'name' => 'name',
-        ];
-
-        $request = new CategoryCreateRequest();
-
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
-    }
-
-    public function test_slug_field_is_unique()
-    {
-        $category = Category::factory()->create(['slug' => 'not-unique']);
-
-        $data = [
-            'parent_id' => $category->id,
+            'parent_id' => null,
             'name' => 'name',
             'slug' => $category->slug
         ];
 
-        $request = new CategoryCreateRequest();
+        $response = $this->actingAs($user)
+            ->from(route('admin.categories.edit', $category))
+            ->patch(route('admin.categories.update', $category), $data);
 
-        $validator = \Validator::make($data, $request->rules());
-
-        $this->assertFalse($validator->passes());
+        $response->assertRedirect(route('admin.categories.edit', $category));
+        $response->assertSessionDoesntHaveErrors();
+        $this->assertDatabaseHas('categories', [
+            'id' => $category->id,
+            'parent_id' => null,
+            'name' => $data['name'],
+            'slug' => $data['slug'],
+        ]);
     }
 }
