@@ -33,6 +33,7 @@ class CategoryCreateRequestTest extends TestCase
     public function test_parent_id_is_not_required()
     {
         $data = [
+            'parent_id' => null,
             'name' => 'test',
             'slug' => 'test',
         ];

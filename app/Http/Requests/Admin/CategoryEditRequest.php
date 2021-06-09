@@ -9,9 +9,9 @@ class CategoryEditRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'parent_id' => ['sometimes', 'exists:categories,id'],
+            'parent_id' => ['nullable', 'exists:categories,id'],
             'name' => ['required'],
-            'slug' => ['required', 'unique:categories,slug,' . $this->route()->parameter('id')],
+            'slug' => ['required', 'unique:categories,slug,' . $this->route()->parameter('category')->id],
         ];
     }
 
