@@ -21,11 +21,10 @@
         @endif
 
         <div class="md:col-span-9">
-            @foreach($category->articles as $article)
-                <h2 class="text-2xl mb-6">
-                    <a href="" class="hover:text-orange-600 hover:underline">{{ $article->name }}</a>
-                </h2>
-            @endforeach
+            <h2 class="text-2xl mb-6">
+                <a href="" class="hover:text-orange-600 hover:underline">{{ $article->name }}</a>
+            </h2>
+           {!! $article->content !!}
         </div>
     </div>
 @endsection

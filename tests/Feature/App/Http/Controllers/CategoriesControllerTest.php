@@ -27,7 +27,7 @@ class CategoriesControllerTest extends TestCase
         $categoryA->articles()->attach($articlePinnedA);
         $categoryA->articles()->attach($articlePinnedB);
 
-        $response = $this->get(route('categories.articles.show', $categoryA->slug));
+        $response = $this->get(route('categories.show', $categoryA->slug));
 
         $response->assertOk();
         $this->assertEquals($articlePinnedB->id, $response->viewData('category')->articles[0]->id);

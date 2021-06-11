@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\StatusController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\CategoriesArticlesController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
@@ -28,8 +29,9 @@ require __DIR__ . '/auth.php';
  */
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.articles.show');
-Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.articles.show');
+Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.show');
+Route::get('/categories/{slug}/articles/{articleSlug}', [CategoriesArticlesController::class, 'show'])->name('categories.articles.show');
+
 
 Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
 Route::post('/support-tickets', [SupportTicketController::class, 'store'])->name('support_ticket.store');
