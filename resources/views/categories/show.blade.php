@@ -9,7 +9,7 @@
         <div class="md:col-span-3">
             <ul>
                 @foreach($category->children as $child)
-                    <li><a href="" class="w-full bg-gray-100 rounded mb-2 py-2 px-2 block hover:bg-gray-200">{{ $child->name }}</a></li>
+                    <li><a href="{{ route('categories.articles.show', $child->slug) }}" class="w-full bg-gray-100 rounded mb-2 py-2 px-2 block hover:bg-gray-200">{{ $child->name }}</a></li>
                 @endforeach
             </ul>
         </div>
