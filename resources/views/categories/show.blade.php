@@ -6,6 +6,8 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-12 mx-4 py-4 gap-x-12">
+
+        @if($category->children->isNotEmpty())
         <div class="md:col-span-3">
             <ul>
                 @foreach($category->children as $child)
@@ -13,6 +15,7 @@
                 @endforeach
             </ul>
         </div>
+        @endif
 
         <div class="md:col-span-9">
             @foreach($category->articles as $article)
