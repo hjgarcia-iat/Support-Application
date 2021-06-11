@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
     public function show($slug)
     {
-        $category = Category::with(['children', 'articles'])
+        $category = Category::with(['children','articles'])
             ->whereSlug($slug)
-            ->first();
+            ->firstOrFail();
 
-        return \view('categories.show', ['category' => $category]);
+        return view('categories.show',['category' => $category]);
     }
 }

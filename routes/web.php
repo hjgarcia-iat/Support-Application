@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccessRequestController;
 use App\Http\Controllers\Admin\AccountController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -9,12 +10,12 @@ use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RequestProductInformationController;
-use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\DigitalSetupController;
 use App\Http\Controllers\FilesController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
+use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\SystemStatusController;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
@@ -26,7 +27,10 @@ require __DIR__ . '/auth.php';
  * Help area
  */
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/categories/{slug}', [CategoriesController::class, 'show'])->name('category.show');
+
+Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.articles.show');
+Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.articles.show');
+
 Route::get('/support-ticket/create', [SupportTicketController::class, 'create'])->name('support_ticket.create');
 Route::post('/support-tickets', [SupportTicketController::class, 'store'])->name('support_ticket.store');
 Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('support_ticket.files.store');
@@ -46,8 +50,6 @@ Route::post('/calculator', [CalculatorController::class, 'store'])->name("calcul
 //Request product information form
 Route::get('/request-product-information', [RequestProductInformationController::class, 'create'])->name("request_product_info.create");
 Route::post('/request-product-information', [RequestProductInformationController::class, 'store'])->name("request_product_info.store")->middleware(ProtectAgainstSpam::class);;
-
-
 
 
 /**
