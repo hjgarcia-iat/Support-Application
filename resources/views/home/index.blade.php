@@ -14,7 +14,7 @@
 
                 @foreach($categories as $category)
                     <div class="col-span-1 md:col-span-4 h-44 shadow-md rounded-lg">
-                        <a href="https://help.activatelearning.com/s/curriculum"
+                        <a href="{{ route('categories.articles.show', $category->slug) }}"
                            class="text-white block h-full flex items-center justify-center bg-lightBlue-800 text-center rounded-lg font-bold text-2xl p-3 hover:bg-lightBlue-700">{{ $category->name }}</a>
                     </div>
                 @endforeach
