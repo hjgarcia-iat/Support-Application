@@ -23,7 +23,7 @@
         <div class="md:col-span-9">
             @foreach($category->articles as $article)
                 <h2 class="text-2xl mb-6">
-                    <a href="" class="hover:text-orange-600 hover:underline">{{ $article->name }}</a>
+                    <a href="{{ route('categories.articles.show',[$category->slug, $article->slug]) }}" class="hover:text-orange-600 hover:underline">{{ $article->name }}</a>
                 </h2>
             @endforeach
         </div>
