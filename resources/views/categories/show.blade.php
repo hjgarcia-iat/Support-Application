@@ -1,6 +1,9 @@
 @extends('layouts.categories')
 @section('pageTitle',$category->name)
 @section('content')
+
+    {{ Breadcrumbs::render('articles', $category) }}
+
     <div class="m-4">
         <h1 class="font-bold text-blue-brand-medium text-3xl mb-2">{{ $category->name }}</h1>
     </div>
