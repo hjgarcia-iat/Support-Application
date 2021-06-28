@@ -20,12 +20,18 @@ class CategoriesControllerTest extends TestCase
         $categoryA = Category::factory()->create();
         $categoryB = Category::factory()->create(['parent_id' => $categoryA->id]);
         $categoryC = Category::factory()->create(['parent_id' => $categoryA->id]);
-        $articles = Article::factory(3)->create();
+        $articles = Article::factory(3)->create(['pinned' => false]);
+        $articlePinnedA = Article::factory()->create(['pinned' => true, 'name' => 'should be second']);
+        $articlePinnedB = Article::factory()->create(['pinned' => true,'name' => 'should be first']);
         $categoryA->articles()->attach($articles->pluck('id'));
+        $categoryA->articles()->attach($articlePinnedA);
+        $categoryA->articles()->attach($articlePinnedB);
 
         $response = $this->get(route('categories.articles.show', $categoryA->slug));
 
         $response->assertOk();
+        $this->assertEquals($articlePinnedB->id, $response->viewData('category')->articles[0]->id);
+        $this->assertEquals($articlePinnedA->id, $response->viewData('category')->articles[1]->id);
         $response->assertSee($categoryA->name);
         $response->assertSee($categoryB->name);
         $response->assertSee($categoryC->name);
