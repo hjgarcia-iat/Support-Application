@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             Category::factory(5)->create(['parent_id' => $category->id]);
         }
 
-        $articles = Article::factory(400)->create(['pinned' => false]);
+        $articles = Article::factory(400)->create(['pinned' => false,'views' => 0]);
 
         foreach ($articles as $article) {
             $article->categories()->attach(Category::inRandomOrder()->first());

@@ -34,6 +34,7 @@ class Category extends Model
     {
         return $this->belongsToMany(Article::class)
             ->orderBy('pinned','DESC')
+            ->orderBy('views','DESC')
             ->orderBy('name','ASC');
     }
 
