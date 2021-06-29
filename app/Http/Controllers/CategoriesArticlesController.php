@@ -14,9 +14,12 @@ class CategoriesArticlesController extends Controller
                             ->firstOrFail();
         $article  = Article::whereSlug($articleSlug)->firstOrFail();
 
+        $article->views += 1;
+        $article->save();
+
         return view('categories.articles.show', [
             'category' => $category,
-            'article' => $article,
+            'article' => $article->fresh(),
         ]);
     }
 }

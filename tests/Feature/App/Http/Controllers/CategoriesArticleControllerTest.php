@@ -20,7 +20,7 @@ class CategoriesArticleControllerTest extends TestCase
         $categoryA = Category::factory()->create();
         $categoryB = Category::factory()->create(['parent_id' => $categoryA->id]);
         $categoryC = Category::factory()->create(['parent_id' => $categoryA->id]);
-        $article   = Article::factory()->create(['pinned' => false]);
+        $article   = Article::factory()->create(['pinned' => false,'views' => 0]);
         $categoryA->articles()->attach($article);
 
         $response = $this->get(route('categories.articles.show', [$categoryA->slug, $article->slug]));
@@ -30,6 +30,7 @@ class CategoriesArticleControllerTest extends TestCase
         $response->assertSee($categoryB->name);
         $response->assertSee($categoryC->name);
         $response->assertSee($article->name);
+        $this->assertEquals(1, $article->fresh()->views);
     }
 
     public function test_as_a_user_we_see_a_404_error_if_category_does_not_exist()
