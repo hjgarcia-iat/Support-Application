@@ -18,15 +18,15 @@ class ArticleFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->unique()->word();
+        $title = $this->faker->sentence;
 
         return [
-            'name' => $name,
-            'slug' => Str::slug($name),
+            'name' => $title,
+            'slug' => Str::slug($title),
             'content' => $this->faker->paragraph,
             'views' => $this->faker->randomDigit,
             'pinned' => $this->faker->boolean,
-            'rating' => $this->faker->randomElement([0, 1, 2, 3, 4, 5]),
+            'rating' => 3,
         ];
     }
 }

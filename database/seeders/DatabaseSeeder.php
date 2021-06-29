@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Article;
 use App\Category;
 use App\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -44,6 +46,19 @@ class DatabaseSeeder extends Seeder
             'name' => 'Teacher & Student Accounts',
             'slug' => 'Teacher and Student Accounts'
         ]);
+
+        //foreach category create 5 dummy ones.
+        $categories = Category::all();
+
+        foreach ($categories as $category) {
+            Category::factory(5)->create(['parent_id' => $category->id]);
+        }
+
+        $articles = Article::factory(400)->create();
+
+        foreach ($articles as $article) {
+            $article->categories()->attach(Category::inRandomOrder()->first());
+        }
 
         User::factory()->create(['email' => 'test@email.com']);
     }
