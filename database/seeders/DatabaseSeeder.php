@@ -61,8 +61,10 @@ class DatabaseSeeder extends Seeder
         }
 
         //create 2 pinned articles
-        $article = Article::factory()->create(['pinned' => true,'name' => 'this is a pinned article']);
-        $article->categories()->attach(Category::first());
+        $articleA = Article::factory()->create(['pinned' => true,'name' => 'this is the first pinned article']);
+        $articleB = Article::factory()->create(['pinned' => true,'name' => 'this is the second pinned article']);
+        $articleA->categories()->attach(Category::first());
+        $articleB->categories()->attach(Category::first());
 
         User::factory()->create(['email' => 'test@email.com']);
     }
