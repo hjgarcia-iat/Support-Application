@@ -53,16 +53,20 @@
                         href="{{ route('support_ticket.create') }}">Contact Support</a>
             </nav>
 
-            <div x-show="search === true" class="flex items-center md:ml-auto w-full md:w-100">
-                <input id="search-field" placeholder="Search..." type="text"
-                        class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none flex-1">
-                <a href="" @click.prevent="search = false" class="cursor-pointer text-white" x-show="search === true">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </a>
+            <div x-show="search === true">
+                <form action="{{ route('search.index') }}" method="get" class="flex items-center md:ml-auto w-full md:w-100">
+                    <input id="search-field" placeholder="Search..." type="text"
+                           name="q"
+                           class="rounded-full mr-2 bg-white text-gray-700 px-4 py-1 border-gray-600 focus:outline-none flex-1">
+                    <a href="" @click.prevent="search = false" class="cursor-pointer text-white" x-show="search === true">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </a>
+                </form>
+
             </div>
 
             <div class="text-white sm:ml-2 lg:ml-4" x-show="search === false">

@@ -16,6 +16,7 @@ use App\Http\Controllers\FilesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RequestProductInformationController;
 use App\Http\Controllers\ReturnRequestController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SupportTicketController;
 use App\Http\Controllers\SystemStatusController;
 use Spatie\Honeypot\ProtectAgainstSpam;
@@ -28,6 +29,8 @@ require __DIR__ . '/auth.php';
  * Help area
  */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/search', [SearchController::class, 'index'])->name('search.index');
 
 Route::get('/categories/{slug}/articles', [CategoriesController::class, 'show'])->name('categories.show');
 Route::get('/categories/{slug}/articles/{articleSlug}', [CategoriesArticlesController::class, 'show'])->name('categories.articles.show');
