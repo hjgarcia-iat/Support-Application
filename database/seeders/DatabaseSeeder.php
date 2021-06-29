@@ -54,11 +54,15 @@ class DatabaseSeeder extends Seeder
             Category::factory(5)->create(['parent_id' => $category->id]);
         }
 
-        $articles = Article::factory(400)->create();
+        $articles = Article::factory(400)->create(['pinned' => false]);
 
         foreach ($articles as $article) {
             $article->categories()->attach(Category::inRandomOrder()->first());
         }
+
+        //create 2 pinned articles
+        $article = Article::factory()->create(['pinned' => true,'name' => 'this is a pinned article']);
+        $article->categories()->attach(Category::first());
 
         User::factory()->create(['email' => 'test@email.com']);
     }
