@@ -42,9 +42,6 @@ Route::post('/support-ticket/files', [FilesController::class, 'store'])->name('s
 Route::get('/system-status', [SystemStatusController::class, 'index'])->name('system_status.index');
 
 
-Route::get('/digital-setup-request', [DigitalSetupController::class, 'create'])->name('digital_setup_request.create');
-Route::post('/digital-setup-request', [DigitalSetupController::class, 'store'])->name('digital_setup_request.store');
-
 Route::get('/return-request', [ReturnRequestController::class, 'create'])->name('return_request.create');
 Route::post('/return-request', [ReturnRequestController::class, 'store'])->name('return_request.store');
 
